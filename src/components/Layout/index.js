@@ -5,9 +5,9 @@ import "./styles.css"
 
 class Layout extends React.PureComponent {
   render() {
-    const { children } = this.props
+    const { children, ...props } = this.props
 
-    return <main>{children}</main>
+    return <main {...props}>{children}</main>
   }
 }
 
