@@ -1,13 +1,20 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import Navigation from "../Navigation"
+
 import "./styles.css"
 
 class Layout extends React.PureComponent {
   render() {
     const { children, ...props } = this.props
 
-    return <main {...props}>{children}</main>
+    return (
+      <main {...props}>
+        <Navigation />
+        {children}
+      </main>
+    )
   }
 }
 
