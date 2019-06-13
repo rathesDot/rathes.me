@@ -3,8 +3,10 @@ import PropTypes from "prop-types"
 
 class Toggle extends PureComponent {
   render() {
+    const { onClick, ...props } = this.props
+
     return (
-      <button onClick={this.props.onClick}>
+      <button onClick={onClick} {...props}>
         <svg
           width="30"
           height="25"
