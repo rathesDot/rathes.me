@@ -1,5 +1,6 @@
 import React, { PureComponent } from "react"
 import { Link } from "gatsby"
+import cx from "classnames"
 
 import Toggle from "../Toggle"
 import Logo from "../Logo"
@@ -14,7 +15,7 @@ class Navigation extends PureComponent {
           </Link>
           <Toggle />
         </div>
-        <div className="text-right">
+        <div className={cx("text-right")}>
           <Link to="/page-2/" className="font-bold mr-2">
             <span className="font-normal mr-2">//</span>About
           </Link>
