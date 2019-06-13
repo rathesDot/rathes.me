@@ -11,6 +11,8 @@ class Navigation extends PureComponent {
   }
 
   render() {
+    const { isNavOpen } = this.state
+
     return (
       <div className="mb-24">
         <div className="flex items-center justify-between mb-4">
@@ -19,7 +21,7 @@ class Navigation extends PureComponent {
           </Link>
           <Toggle />
         </div>
-        <div className={cx("text-right")}>
+        <div className={cx("text-right", { hidden: !isNavOpen })}>
           <Link to="/page-2/" className="font-bold mr-2">
             <span className="font-normal mr-2">//</span>About
           </Link>
