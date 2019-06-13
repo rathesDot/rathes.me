@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Rathes Sachchithananthan <sachchi@rathes.de>",
   "dependencies": {
+    "classnames": "^2.2.6",
     "gatsby": "^2.9.1",
     "gatsby-image": "^2.1.3",
     "gatsby-plugin-manifest": "^2.1.1",
