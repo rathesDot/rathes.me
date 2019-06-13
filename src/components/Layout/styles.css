@@ -3,7 +3,7 @@
 @tailwind base;
 
 body {
-  @apply .font-sans .bg-black;
+  @apply .font-sans .bg-black .text-silver;
 }
 
 @tailwind components;
