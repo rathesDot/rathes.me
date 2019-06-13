@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 module.exports = {
   theme: {
     colors: {
@@ -5,7 +7,11 @@ module.exports = {
       silver: "#CFD3DC",
       white: "#FFF",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Source Sans Pro", ...defaultTheme.fontFamily.sans],
+      },
+    },
   },
   variants: {},
   plugins: [],
