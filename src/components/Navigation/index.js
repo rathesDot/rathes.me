@@ -6,6 +6,10 @@ import Toggle from "../Toggle"
 import Logo from "../Logo"
 
 class Navigation extends PureComponent {
+  state = {
+    isNavOpen: false,
+  }
+
   render() {
     return (
       <div className="mb-24">
