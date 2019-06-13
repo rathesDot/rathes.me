@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
@@ -11,7 +10,6 @@ const IndexPage = () => (
       Hi there, I’m Rathes Sachchithananthan and I’m a web developer currently
       living in Belgium
     </h1>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 
