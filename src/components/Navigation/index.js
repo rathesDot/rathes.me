@@ -10,6 +10,12 @@ class Navigation extends PureComponent {
     isNavOpen: false,
   }
 
+  toggleNavigation = () => {
+    this.setState({
+      isNavOpen: !this.state.isNavOpen,
+    })
+  }
+
   render() {
     const { isNavOpen } = this.state
 
@@ -19,7 +25,7 @@ class Navigation extends PureComponent {
           <Link to="/">
             <Logo />
           </Link>
-          <Toggle />
+          <Toggle onClick={this.toggleNavigation} />
         </div>
         <div className={cx("text-right", { hidden: !isNavOpen })}>
           <Link to="/page-2/" className="font-bold mr-2">
