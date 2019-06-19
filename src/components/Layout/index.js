@@ -17,7 +17,7 @@ class Layout extends React.PureComponent {
         className={cx(className, "flex flex-col justify-between min-h-screen")}
       >
         <Navigation />
-        {children}
+        <section className="flex-grow">{children}</section>
         <Footer />
       </main>
     )
