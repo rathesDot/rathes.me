@@ -4,7 +4,10 @@ module.exports = {
   theme: {
     colors: {
       black: "#111",
-      silver: "#CFD3DC",
+      silver: {
+        default: "#CFD3DC",
+        darker: "CCC",
+      },
       white: "#FFF",
     },
     extend: {
