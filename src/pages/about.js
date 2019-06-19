@@ -1,9 +1,11 @@
 import React from "react"
+import { graphql } from "gatsby"
+import Img from "gatsby-image"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
-const SecondPage = () => (
+const SecondPage = ({ data }) => (
   <Layout className="p-4">
     <SEO title="About me" />
     <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
@@ -42,7 +44,96 @@ const SecondPage = () => (
       Aheenam. Right now I’m working on providing a platform for people to learn
       my mother language Tamil.
     </p>
+
+    <h2 className="text-3xl mt-12 font-bold leading-none text-white break-words xs:text-4xl">
+      What I read
+    </h2>
+    <p>
+      Books play an important part in my life. Just sitting my couch or bed and
+      reading a novel can be really inspiring.
+    </p>
+    <p>
+      I do fancy crime novels with interesting detective characters from good
+      old Sherlock Holmes to Harry Hole. But I read basically any kind of books
+      that can broaden one’s horizons.
+    </p>
+    <p>
+      Actually, I dream to have my own library one where I can invite everybody
+      to pick up a nice book and read.
+    </p>
+    <div className="flex my-4">
+      <Img
+        className="w-1/2 mr-4"
+        fluid={data.companyOfOne.childImageSharp.fluid}
+      />
+      <Img className="w-1/2" fluid={data.carrie.childImageSharp.fluid} />
+    </div>
+    <div className="flex my-4">
+      <Img
+        className="w-1/2 mr-4"
+        fluid={data.crookedKingdom.childImageSharp.fluid}
+      />
+      <Img
+        className="w-1/2"
+        fluid={data.knotsAndCrosses.childImageSharp.fluid}
+      />
+    </div>
+    <h2 className="text-3xl mt-12 font-bold leading-none text-white break-words xs:text-4xl">
+      What I write
+    </h2>
+    <p>
+      From time to time I also write. It can be work related topics that I share
+      in the writing section of this website but I also write to empty my mind
+      and eternalize ideas.
+    </p>
+    <p>
+      I have several ideas for some crime novel and I even developed my
+      detective character “Chris Garner”. I want to publish my first short
+      stories soon.
+    </p>
+    <p>
+      Before I can do that I have to finish my current book which is called “A
+      guide to basic Tamil Grammar”. I’m writing that book as an entry point for
+      my learning platform.
+    </p>
   </Layout>
 )
+
+export const query = graphql`
+  query {
+    companyOfOne: file(relativePath: { eq: "company-of-one-paul-jarvis.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    carrie: file(relativePath: { eq: "stephen-king-carrie.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    knotsAndCrosses: file(
+      relativePath: { eq: "knots-and-crosses-ian-rankin.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    crookedKingdom: file(
+      relativePath: { eq: "crooked-kingdom-leigh-bardugo.png" }
+    ) {
+      childImageSharp {
+        fluid(maxWidth: 300) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 export default SecondPage
