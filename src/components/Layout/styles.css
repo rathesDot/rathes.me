@@ -3,7 +3,11 @@
 @tailwind base;
 
 body {
-  @apply .font-sans .bg-black .text-silver;
+  @apply .font-sans .bg-black .text-silver .text-base;
+}
+
+p {
+  @apply .leading-loose .my-6;
 }
 
 @tailwind components;
