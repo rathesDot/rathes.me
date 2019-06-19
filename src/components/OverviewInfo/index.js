@@ -6,33 +6,33 @@ class OverviewInfo extends PureComponent {
     return (
       <ul className="flex justify-between mt-20">
         <li>
-          <span className="block text-xs text-silver leading-none">
+          <span className="block tracking-wide text-xs text-silver leading-none">
             Working at
           </span>
           <a
-            className="text-white text-base font-bold"
+            className="text-white text-base font-bold xs:text-lg"
             href="https://www.teamleader.eu/"
           >
             Teamleader
           </a>
         </li>
         <li>
-          <span className="block text-xs text-silver leading-none">
+          <span className="block tracking-wide text-xs text-silver leading-none">
             Living in
           </span>
           <a
-            className="text-white text-base font-bold"
+            className="text-white text-base font-bold xs:text-lg"
             href="https://goo.gl/maps/9kKByTYJhSz"
           >
             Ghent, BE
           </a>
         </li>
         <li>
-          <span className="block text-xs text-silver leading-none">
+          <span className="block tracking-wide text-xs text-silver leading-none">
             Follow me
           </span>
           <a
-            className="text-white text-base font-bold"
+            className="text-white text-base font-bold xs:text-lg"
             href="https://twitter.com/rswebdesigner"
           >
             @rswebdesigner
