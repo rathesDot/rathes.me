@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
-const SecondPage = ({ data }) => (
+const AboutMe = ({ data }) => (
   <Layout className="p-4">
     <SEO title="About me" />
     <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
@@ -136,4 +136,4 @@ export const query = graphql`
   }
 `
 
-export default SecondPage
+export default AboutMe
