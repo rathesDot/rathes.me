@@ -28,7 +28,7 @@ class Navigation extends PureComponent {
           <Toggle className="md:hidden" onClick={this.toggleNavigation} />
         </div>
         <div className={cx("text-right", { hidden: !isNavOpen }, "md:block")}>
-          <Link to="/page-2/" className="font-bold mr-2">
+          <Link to="/about" className="font-bold mr-2">
             <span className="font-normal mr-2">//</span>About
           </Link>
           <Link to="/page-2/" className="font-bold mr-2">
