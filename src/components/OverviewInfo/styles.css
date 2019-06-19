@@ -1,0 +1,4 @@
+ul li:before {
+  content: "";
+  @apply .block .my-2 .w-8 .border-t .border-white;
+}
