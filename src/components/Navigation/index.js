@@ -20,7 +20,7 @@ class Navigation extends PureComponent {
     const { isNavOpen } = this.state
 
     return (
-      <div className="mb-24 md:flex md:items-center md:justify-between">
+      <div className="mb-20 md:flex md:items-center md:justify-between">
         <div className="flex items-center justify-between mb-4 md:mb-0">
           <Link to="/">
             <Logo />
