@@ -10,6 +10,14 @@ p {
   @apply .leading-loose .my-6;
 }
 
+h1 + p {
+  @apply mt-3;
+}
+
+h2 + p {
+  @apply mt-2;
+}
+
 @tailwind components;
 
 @tailwind utilities;
