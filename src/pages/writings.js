@@ -23,27 +23,31 @@ const Writings = ({ data }) => (
       translate a specific article, just drop a message{" "}
       <a href="https://twitter.com/rswebdesigner">@rswebdesigner</a>
     </p>
-    {Object.entries(
-      data.allMarkdownRemark.edges.reduce((acc, { node }) => {
-        ;(acc[new Date(Date.parse(node.frontmatter.date)).getFullYear()] =
-          acc[new Date(Date.parse(node.frontmatter.date)).getFullYear()] ||
-          []).push(node)
-        return acc
-      }, {})
-    )
-      .reverse()
-      .map(([key, nodes]) => {
-        return (
-          <div key={key}>
-            <h2>{key}</h2>
-            {nodes.map(node => (
-              <h3 key={node.id} className="mb-4">
-                {node.frontmatter.title}
-              </h3>
-            ))}
-          </div>
-        )
-      })}
+    <div className="mt-12">
+      {Object.entries(
+        data.allMarkdownRemark.edges.reduce((acc, { node }) => {
+          ;(acc[new Date(Date.parse(node.frontmatter.date)).getFullYear()] =
+            acc[new Date(Date.parse(node.frontmatter.date)).getFullYear()] ||
+            []).push(node)
+          return acc
+        }, {})
+      )
+        .reverse()
+        .map(([key, nodes]) => {
+          return (
+            <div key={key} className="mb-10">
+              <h2 className="text-silver-darker tracking-wider text-sm mb-2">
+                {key}
+              </h2>
+              {nodes.map(node => (
+                <h3 key={node.id} className="text-white text-lg mb-2">
+                  {node.frontmatter.title}
+                </h3>
+              ))}
+            </div>
+          )
+        })}
+    </div>
   </Layout>
 )
 
