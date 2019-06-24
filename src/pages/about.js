@@ -101,14 +101,16 @@ const AboutMe = ({ data }) => (
 
 export const query = graphql`
   query {
-    companyOfOne: file(relativePath: { eq: "company-of-one-paul-jarvis.png" }) {
+    companyOfOne: file(
+      relativePath: { eq: "images/company-of-one-paul-jarvis.png" }
+    ) {
       childImageSharp {
         fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    carrie: file(relativePath: { eq: "stephen-king-carrie.png" }) {
+    carrie: file(relativePath: { eq: "images/stephen-king-carrie.png" }) {
       childImageSharp {
         fluid(maxWidth: 300) {
           ...GatsbyImageSharpFluid
@@ -116,7 +118,7 @@ export const query = graphql`
       }
     }
     knotsAndCrosses: file(
-      relativePath: { eq: "knots-and-crosses-ian-rankin.png" }
+      relativePath: { eq: "images/knots-and-crosses-ian-rankin.png" }
     ) {
       childImageSharp {
         fluid(maxWidth: 300) {
@@ -125,7 +127,7 @@ export const query = graphql`
       }
     }
     crookedKingdom: file(
-      relativePath: { eq: "crooked-kingdom-leigh-bardugo.png" }
+      relativePath: { eq: "images/crooked-kingdom-leigh-bardugo.png" }
     ) {
       childImageSharp {
         fluid(maxWidth: 300) {
