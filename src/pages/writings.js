@@ -14,24 +14,26 @@ const Writings = ({ data }) => (
           []).push(node)
         return acc
       }, {})
-    ).map(([key, nodes]) => {
-      return (
-        <div key={key}>
-          <h2>{key}</h2>
-          {nodes.map(node => (
-            <h3 key={node.id} className="mb-4">
-              {node.frontmatter.title}
-            </h3>
-          ))}
-        </div>
-      )
-    })}
+    )
+      .reverse()
+      .map(([key, nodes]) => {
+        return (
+          <div key={key}>
+            <h2>{key}</h2>
+            {nodes.map(node => (
+              <h3 key={node.id} className="mb-4">
+                {node.frontmatter.title}
+              </h3>
+            ))}
+          </div>
+        )
+      })}
   </Layout>
 )
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id
