@@ -12,6 +12,7 @@ module.exports = {
         path: `${__dirname}/src/content`,
       },
     },
+    `gatsby-transformer-remark`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
