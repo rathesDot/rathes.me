@@ -6,10 +6,6 @@ body {
   @apply .font-sans .bg-black .text-silver .text-base;
 }
 
-a {
-  @apply .text-white .underline;
-}
-
 p {
   @apply .leading-loose .my-6;
 }
