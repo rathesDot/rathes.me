@@ -34,7 +34,7 @@ class Navigation extends PureComponent {
           <Link to="/page-2/" className="font-bold mr-2">
             <span className="font-normal mr-2">//</span>Work
           </Link>
-          <Link to="/page-2/" className="font-bold mr-2">
+          <Link to="/writings" className="font-bold mr-2">
             <span className="font-normal mr-2">//</span>Writings
           </Link>
           <Link to="/page-2/" className="font-bold">
