@@ -1,0 +1,204 @@
+---
+id: 1787
+title: Facebook Messenger Chatbot mit Laravel
+date: 2017-04-01T18:02:37+00:00
+author: Rathes Sachchithananthan
+template: post
+image: /images/blog/laravel-facebook-messenger-chatbot.png
+description: In diesem Artikel zeige ich dir wie du mit Laravel einen Chatbot für den Facebook Messenger aufsetzen kannst.
+categories:
+  - Featured
+  - Web
+tags:
+  - Chatbot
+  - Facebook Messenger
+  - Laravel
+locale: de_DE
+---
+
+In diesem Artikel zeige ich dir wie du mit Laravel einen Chatbot für den Facebook Messenger aufsetzen kannst.
+
+<!--more-->
+
+## Warum Chatbots?
+
+Du fragst dich vielleicht, warum so ein Chatbot sinnvoll sein kann? Der Hype konnte dich nicht überzeugen? Dann will ich dir in einem kleinen Absatz erklären, warum sich der Einsatz von Chatbots lohnen kann.
+
+Der Grund ist sehr simpel: Ca. Mitte 2015 wurde zum ersten Mal die Marke geknackt. Seitdem werden Messenger Apps häufiger benutzt als Soziale Netzwerke. Das heißt, dass Plattformen wie der Facebook Messenger, Slack, WhatsApp und Co. mittlerweile viel öfters benutzt werden als Facebook, Twitter und die anderen Netzwerke.
+
+Wenn du also an einem Online Business, dann wirst du mit sehr hoher Wahrscheinlichkeit über die Messenger Dienste mehr Menschen erreichen als in den Sozialen Netzwerken. Und dieser Trend hin zu den Messenger Apps wird definitiv noch weiter wachsen. Wenn du dir also jetzt schon Gedanken darüber machst, wie du diesen Trend effektiv nutzen kannst, dann wirst du definitiv davon stark profitieren können.
+
+## Facebook Messenger Chatbot mit Laravel
+
+Als ich mich das erste Mal mit dem Thema beschäftigt habe, hatte ich noch keine Ahnung vom Thema. So waren meine ersten Anlaufstellen einige Artikel auf Medium, die mich dazu motiviert haben in dieses Thema einzusteigen. Eine weitere Anlaufstelle war für mich als Entwickler natürlich der Developer-Bereich von Facebook und der Facebook Messenger Plattform. Das Tutorial "[Getting Started — Create a bot in 10 minutes using Node JS](https://developers.facebook.com/docs/messenger-platform/guides/quick-start)" hat mir dabei sehr geholfen. Hier wird ein einfacher Chatbot entwickelt, der einfach genau das antwortet, das der Benutzer ihm geschrieben hat.
+
+Dieses einfache Tutorial hat mir sehr gut erklärt wie ich beim Messenger einen Bot einrichte und die Kommunikation zwischen Plattform, dem Bot und meinem Server aussieht. Der Artikel erläutert quasi komplett wie man anfängt. Was mich dabei gestört hat, war, dass ich noch nicht zu gut mit Node JS vertraut bin. Ich habe also das Tutorial übersetzt und in eine einfach Applikation in Laravel umgesetzt.
+
+Mit Node JS ist man sehr wahrscheinlich sehr viel performanter als mit PHP oder gar mit einem PHP-Framework wie Laravel im Hintergrund, aber es kann einem ungemein helfen, wenn man in ein neues Thema einsteigt und dabei zumindest der Beispiel-Code einem vertraut vorkommt. Das ist auch die Intention dieses Artikels: Ich zeige dir, wie du einen einfach Bot für den Facebook Messenger in Laravel implementieren kannst und du lernst dabei die groben Konzepte, die zum Einsatz kommen.
+
+### 1. Facebook App und Page
+
+Als erstes solltest du wissen, dass du für deinen Chatbot eine Facebook-Seite und eine App erstellen musst. Oder du wählst eine bestehende Seite und setzt darauf deine Messenger App auf.
+
+Auf der Seite developers.facebook.com kannst du rechts oben das Dropdown anklicken und dort den Punkt "Add New App" auswählen. Im darauffolgend erscheinenden Fenster gibst du deiner App einen Namen, hinterlegst eine Kontakt-E-Mail und wählst als Kategorie "Apps for Messenger" aus.
+
+### 2. Webhooks
+
+Du landest auf der Seite deiner neu erstellten App direkt auf den Punkt "Products > Messenger > Settings". Dort richtest du als erstes deine Webhooks ein. Klick auf Webhooks und du wirst sehen, dass du eine Callback-URL deines Servers hinterlegen, einen Token festlegen und die Subscription-Felder festlegen musst.
+
+Wofür braucht man den Webhook? Facebook bzw. der Messenger wird den Webhook in zwei Situationen ansteuern: Einmal wird er einem GET Request auf die Route des Webhooks abfeuern, um deine App zu verifizieren. Ein anderes Mal wird er einen POST Request feuern. Nämlich immer dann, wenn eines der Situationen auftritt, die du in den Subscription-Feldern ausgewählt hast.
+
+Um den Webhook eintragen zu können müssen wir erst einmal ein Laravel-Projekt anlegen und die beiden Routen definieren. Der Code für die GET Route muss du so implementieren, dass den von dir festgelegten Token verifizierst und die von Facebook im Webhook mitgelieferte Challenge wieder zurückgibst. So verifizieren sich deine Laravel Anwendung und die Facebook Messenger Anwendung gegenseitig via Handshake.
+
+Die Controller-Funktion für den GET Request sieht wie folgt aus:
+
+```php
+/**
+ * @param Request $request
+ *
+ * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\JsonResponse|\Symfony\Component\HttpFoundation\Response
+ */
+public function getWebhook(Request $request)
+{
+
+   Log::info('Request:', $request-&gt;all());
+
+   if ($request-&gt;input('hub_mode') === 'subscribe' &&
+       $request-&gt;input('hub_verify_token') === 'aheenam_verify_that_bot') {
+      return response($request-&gt;input('hub_challenge'));
+   }
+
+   return response()-&gt;json([], 403);
+
+}
+```
+
+Man erkennt hier, dass mein Token "Aheenam\_verify\_that\_bot" lautet. Dies muss dann natürlich so in dem Formular eingetragen werden. Ein Klick auf "Verify & Save" führt den Handshake aus.
+
+Bei den Subscription Fields solltest du wie bereits oben erläutert diejenigen auswählen, die du benötigst. Was die einzelnen bewirken und wann diese ausgelöst werden, kannst du hier in der [Facebook Developer Dokumentation](https://developers.facebook.com/docs/messenger-platform/webhook-reference) nachlesen.
+
+### 3. Page Access Token
+
+Im Feld über den Webhooks kannst du die App einer Facebook-Seite zuordnen und bekommst daraufhin einen Access-Token. Diesen solltest du in der `.env` Datei deine Laravel Projektes sichern.
+
+In dem Webhook Bereich solltest du die Subscription ebenfalls durch eine Zuordnung aktivieren.
+
+### 4. Nachrichten verarbeiten
+
+Nachdem die Subscriptions alle eingerichtet sind, können Nachrichten empfangen werden. All diesen Anfragen werden an die Webhook als POST Request geschickt. Diese kannst du nun abfangen und weiterverarbeiten. Das einfach Script, um die eingehende Textnachricht im Wortlaut identisch wieder zurückzuschicken, sieht wie folgt aus:
+
+```php
+/**
+ * @param Request $request
+ *
+ * @return \Illuminate\Contracts\Routing\ResponseFactory|\Symfony\Component\HttpFoundation\Response
+ */
+public function postWebhook(Request $request)
+{
+
+   Log::info('Request:', $request-&gt;all());
+
+   if ( $request-&gt;get('object') === 'page' ) {
+
+      foreach ( $request-&gt;get('entry') as $entry ) {
+
+         $pageId = $entry['id'];
+         $timeOfEvent = $entry['time'];
+
+         foreach ( $entry['messaging'] as $event ) {
+            if ( isset($event['message']) ) {
+               $this-&gt;receivedMessage($event);
+            } else {
+               Log::error("Webhook received unknown event: ", $event);
+            }
+         }
+
+      }
+
+   }
+
+   return response('', 200);
+
+}
+
+protected function receivedMessage( $event )
+{
+
+   $senderID = $event['sender']['id'];
+   $recipientID = $event['recipient']['id'];
+   $timeOfMessage = $event['timestamp'];
+   $message = $event['message'];
+
+   Log::info("Received message for user $senderID and page $recipientID at $timeOfMessage with message:");
+   Log::info($message);
+
+   $messageId = $message['mid'];
+
+   $messageText = $message['text'];
+   if ( isset($message['attachments']) )
+   {
+      $messageAttachments = $message['attachments'];
+   }
+   else
+   {
+      $messageAttachments = null;
+   }
+
+   if ($messageText) {
+      $this-&gt;sendTextMessage($senderID, $messageText);
+   } elseif ($messageAttachments) {
+      $this-&gt;sendTextMessage($senderID, "Message with attachment received");
+   }
+
+}
+
+/**
+ * @param $recipientId
+ * @param $messageText
+ * @return void
+ */
+protected function sendTextMessage( $recipientId, $messageText )
+{
+   $messageData = [
+      'recipient' =&gt; [
+         'id' =&gt; $recipientId
+      ],
+      'message' =&gt; [
+         'text' =&gt; $messageText
+      ]
+   ];
+
+   $this-&gt;callSendAPI($messageData);
+
+}
+
+/**
+ * @param $messageData
+ */
+protected function callSendAPI( $messageData )
+{
+
+   $client = new Client([
+      // Base URI is used with relative requests
+      'base_uri' =&gt; 'https://graph.facebook.com/v2.6',
+      // You can set any number of default request options.
+      'timeout'  =&gt; 2.0,
+   ]);
+
+   $response = $client-&gt;request('POST', '/me/messages', [
+      'query' =&gt; [
+         'access_token' =&gt; env('FB_MESSENGER_ACCESS_TOKEN')
+      ],
+      'json' =&gt; $messageData
+   ]);
+
+}
+```
+
+Die Funktion `callSendAPI()`, die du hier siehst, ist dafür zuständig, dass an den Facebook-Server die Nachricht zurückgeschickt wird, welche dem Nutzer angezeigt werden soll. Um einen Request auszuführen, kommt hier das [Package Guzzle 6](http://docs.guzzlephp.org/en/latest/) zum Einsatz. Du kannst an dieser Stelle natürlich aus etwas anderes einsetzen.
+
+## Zusammenfassung
+
+Das war schon der erste einfach Chatbot, der im Messenger die Nachricht empfängt und die dann plump wieder als Antwort ausgibt. Du kannst damit natürlich noch viel mehr machen und die Nachricht weiterverarbeiten und auswerten. Themen wie Context-Analyse und auch Natural Language Processing (NLP) wirst du beim Thema Chatbots häufig begegnen.
+
+Noch ein kleiner Kommentar zu Laravel bzw. PHP: Für einfache Skripte oder auch für den Einstieg wie in diesem Fall kannst du ohne Probleme mit Laravel arbeiten. Du musst nur sicherstellen, dass die Webhook-Anfragen von Facebook von deinem Server innerhalb von 20 Sekunden beantwortet werden, denn dauert es länger wertet Facebook das als Timeout und wird die Anfrage erneut stellen. Wenn du den Bot zusammen mit einer bestehenden Laravel Applikation einsetzen willst, macht es eher Sinn, den Bot als einen Microservice auszulagern und in einer performanteren Sprache zu entwickeln. So viel komplizierter als PHP sind Node JS und JavaScript nun wieder auch nicht.

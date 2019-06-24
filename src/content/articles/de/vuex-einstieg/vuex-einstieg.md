@@ -1,0 +1,243 @@
+---
+id: 1793
+title: Einstieg in Vue mit Vuex
+date: 2017-04-02T13:21:46+00:00
+author: Rathes Sachchithananthan
+template: post
+image: /images/blog/einfuehrung-in-vuejs.jpg
+categories:
+  - Web
+tags:
+  - Frontendentwicklung
+  - vuejs
+locale: de_DE
+description: Mit Vuex wirst du Herr der Lage, wenn es um die ganzen Mengen an Daten geht, die sich in einer Web App, die auf VueJS basiert, ansammeln.
+---
+
+Es gibt immer einen Zeitpunkt bei der Entwicklung einer Webapp mit Vue, ab dem du dir ernsthaft Gedanken darüber machen musst wie du mit deinen Daten umgehen willst und diese organisieren willst. Mit Vue kannst du sehr einfach mit Daten innerhalb einer Komponente arbeiten. Sobald es einmal größer wird, reicht das aber nicht aus. Hier kommt Vuex ins Spiel.
+
+<!--more-->
+
+Ein einfaches Beispiel wie es sehr häufig bei dir auch auftreten wird, ist Folgendes:
+
+```javascript
+import axios from 'axios'
+
+export default {
+  name: 'exercises',
+  data: function () {
+    return {
+      exercises: []
+    }
+  },
+  methods: {
+    getAllExercises: function () {
+      axios.get('/api/v1/exercises').then((response) => {
+        this.exercises = response.data
+      }, (err) => {
+        // @todo handle this error
+      })
+    }
+  },
+  mounted: function () {
+    this.getAllExercises()
+  }
+}
+```
+
+Du siehst, dass wir das exercises array sehr einfach mit Daten beladen und im Template weiterverwenden können. Bei kleineren Projekten wird das ohne Probleme funktionieren, aber stell dir mal den Fall vor, dass du diese exercises in einer anderen Komponente nochmal brauchst. Was würdest du dann machen? Nochmal bei der Komponente vom Server laden? Was würdest du machen, wenn die exercises nun bei einer Komponente aktualisiert werden? Wie stellst du sicher, dass sauber synchronisiert wird? Mit Events? Je nach Komplexiätsgrad der App ist das sicherlich möglich, dass man Daten projektübergreifend auch selbst in den Griff bekommt. Eine einfache, von den Machern von Vue mitgelieferte, ist Vuex, ein Plugin für zentralisierte Datenverwaltung bei einer Vue App.
+
+## Was ist Vuex?
+
+Wenn du noch sehr neu in der Entwicklung mit Frontend-Frameworks bist, dann rate ich dir die [einführenden Seiten der Vuex-Dokumentation](https://vuex.vuejs.org/en/intro.html) anzusehen. Dort schreibt man
+
+> Vuex is a state management pattern + library for Vue.js applications. It serves as a centralized store for all the components in an application, with rules ensuring that the state can only be mutated in a predictable fashion. It also integrates with Vue's official [devtools extension](https://github.com/vuejs/vue-devtools) to provide advanced features such as zero-config time-travel debugging and state snapshot export / import.
+
+Mit Vuex will man erreichen, dass die Daten nur in einem bestimmten Muster verändert und bearbeitet werden können, das sogenannte Konzept des "One-Way Data Flow". Unter dem Namen Flux kommt dieses Konzept bei Facebook und React zum Einsatz und unter Vue wird das Konzept als Vuex fertig implementiert geliefert.
+
+[![Flux pattern](/images/blog/flux-pattern.png)](http://www.youtube.com/watch?v=nYkdrAPrdcw)
+
+Bei dem Konzept von Vuex geht man von einem einzigen Datensatz aus. Anstelle von mehreren kleinen Datensätzen innerhalb einer Komponente, greifen diese nun die Daten eines "Stores" ab, um damit dann die View mit den richtigen Daten zu befüllen.
+
+Ein einfacher Store mit Vuex sieht dabei folgendermaßen aus:
+
+```javascript
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+  state: {},
+  actions: {},
+  mutations: {},
+  getters: {},
+  modules: {}
+})
+
+export default store
+```
+
+Gehen wir die einzelnen Objekte doch mal Stück für Stück durch:
+
+### State
+
+In diesem Objekt legst du die Struktur deines Datensatzes für deine App fest. Hier kannst du auch Default-Werte festlegen.
+
+```javascript
+state: {
+  exercises: [],
+  currentUnit: null
+}
+```
+
+### Actions
+
+Bei den Actions definierst du die Funktion, die Änderungen an deiner Datenstruktur aufrufen sollen. Hier würdest du zum Beispiel Daten von deinem Server laden und dann mit den neuen Daten eine Änderung des Datensatzes ausrufen. Die Änderung an sich findet hier aber nicht statt. Diese Actions kannst du in deinen Komponenten aufrufen und so mit dem Store interagieren.
+
+```javascript
+actions: {
+  GET_ALL_EXERCISES: function ({ commit }) {
+    axios.get('/api/v1/exercises').then((response) => {
+      commit('SET_EXERCISES', { exercises: response.data })
+    }, (err) => {
+      // @todo handle this error
+    })
+  }
+}
+```
+
+In dem Beispiel siehst du, dass nach einem erfolgreichen API-Call ein `commit()` ausgeführt wird. Dieser löst die Mutation "SET_EXERCISES" aus und überliefert diesem den neu erhaltenen Datnsatz.
+
+### Mutations
+
+Hier und nur hier werden Änderungen am Datensatz ausgeführt. Oben haben wir bereits eine Mutation ausgelöst, diese muss dann hier implementiert sein.
+
+```javascript
+mutations: {
+  SET_PROJECT_LIST: (state, { exercises }) => {
+    state.exercises = exercises
+  }
+}
+```
+
+### Getters
+
+Getter-Funktionen sind eine Möglichkeit "[computed data](https://vuejs.org/v2/guide/computed.html)" im Store zu realisieren. Zum Beispiel könnte man umsetzen, dass nur erledigte/nicht erledigte exercises ausgegeben werden.
+
+### Modules
+
+Die Modules liefern die dir Möglichkeit deinen Store in kleine Substores aufzuteilen und trotzdem die Daten aus diesen Substores im Hauptdatensatz zu behalten. Sobald deine Datenstruktur anfängt zu wachsen, wirst du diese Möglichkeit nutzen und lieben lernen!
+
+## Workflow zwischen Vue & Vuex
+
+Jetzt, wo du die Grundlagen kennst, ist der nächste Schritt wie man Vuex nun in eine Vue-App intergriert. In der Dokumentation von Vuex zeigt folgende Grafik wie der Workflow aussieht:
+
+![Vuex Workflow](/images/blog/vuex-workflow.png)
+
+*Grafische Darstellung vom Datenworkflow mit Vuex (Quelle: <https://vuex.vuejs.org/en/intro.html>)*
+
+Als erstes musst du natürlich Vuex installieren. Das machst du mit npm `npm install --save Vuex`. Dann erstellst du einen Ordner store und darin eine index.js Datei und befüllst diese Datei mit dem Grundaufbau, den du oben bereits findest.
+
+In deiner Hauptdatei (meistens main.js) importierst du dann den Store:
+
+```javascript
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+import store from './store'
+
+Vue.config.productionTip = false
+
+/* eslint-disable no-new */
+new Vue({
+  el: '#app',
+  router,
+  <strong>store,</strong>
+  template: '<App/>',
+  components: { App }
+})
+```
+
+Jetzt musst du nur noch den Store implementieren. Machen wir das anhand eines Beispiels. Wir haben oben bereits oben eine einfache Datenstruktur samt Action und Mutation definiert, sodass unser Store wie folgt aussieht:
+
+```javascript
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+ state: {
+ exercises: [],
+   currentUnit: null
+ },
+ actions: {
+   GET_ALL_EXERCISES: function ({ commit }) {
+     axios.get('/api/v1/exercises').then((response) => {
+       commit('SET_EXERCISES', { exercises: response.data })
+     }, (err) => {
+       // @todo handle this error
+     })
+   }
+ },
+ mutations: {
+   SET_PROJECT_LIST: (state, { exercises }) => {
+     state.exercises = exercises
+   }
+ },
+ getters: {},
+ modules: {}
+})
+
+export default store
+```
+
+So haben wir bereits einen voll funktionsfähigen Store. Der Vuex Bereich aus der Grafik oben ist also implementiert. Nun müssen wir nur noch die Verbindung zur Vue Komponente schaffen.
+
+```html
+<template>
+</template>
+
+<script>
+import { mapState } from 'vuex'
+
+export default {
+ name: 'ExerciseList',
+ computed: mapState([
+ 'exercises'
+ ])
+}
+</script>
+
+<style>
+</style>
+```
+
+Oben stehender Codeschnipsel ist ein einfaches Konstrukt einer Vue Komponente. Mit der Funktion mapState, die Vuex mitliefert kannst du einen bestimmten Bereich aus deinem Store extrahieren und in deiner View benutzen.
+
+Wenn du nun deine exercises ausgeben lässt, wirst du feststellen, dass das array leer ist. So wie du es im Default auch festgelegt hast. Wie also sorgst du dafür, dass der API-Call ausgeführt wird? Dafür gibt es die Funktion "dispatch()", welche ebenfalls mitgeliefert wird.
+
+```html
+<script>
+import { mapState } from 'vuex'
+
+export default {
+ name: 'ExerciseList',
+ computed: mapState([
+ 'exercises'
+ ]),
+ mounted() {
+  this.$store.dispatch('GET_ALL_EXERCISES')
+ },
+}
+</script>
+```
+
+Was passiert hier? Wenn die Komponente ins DOM geladen wird, initiieren wir die Action "GET\_ALL\_EXERCISES". Diese Action lädt unsere Daten vom Server und schickt diese an die Mutation, welche wiederum unser exercises array aktualisiert. Und dieses aktualisierte array sehen wir dann dank 2-way-data-binding direkt bei uns in der Komponente. Der Kreis wird also geschlossen.
+
+Die Dispatch-Methode musst du nicht unbedingt beim mounten aufrufen. Wenn du zum Beispiel beim Submit eines Formulars eine Action ausführen willst, dann kommt das natürlich in die entsprechende Methode.
+
+## Fazit
+
+Auch wenn das Beispiel jetzt sehr kurz war, haben wir sehr schnell und einfach einen Vuex-Store zum laufen gebracht. Meiner Meinung nach ist dieses Flux-Konzept sehr hilfreich, sobald die App viel größer wird und mit vielen Daten arbeitet. Gerade beim Tracken von Bugs wird es dir sehr helfen, dass du einen bestimmen Workflow der Daten hast, den du verfolgen kannst.

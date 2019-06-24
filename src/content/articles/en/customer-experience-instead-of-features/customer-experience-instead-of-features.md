@@ -1,0 +1,64 @@
+---
+id: 201902181
+title: "Stop thinking in features. Start thinking in customer experience."
+date: 2019-02-18T19:45:00+02:00
+author: Rathes Sachchithananthan
+template: post
+description: Instead of adding more and more features improve the experience the user makes with your product. It will have a bigger impact on your churn.
+categories:
+  - Business
+tags:
+  - Product Development
+  - Customer Experience
+locale: en_US
+---
+
+A common misconception that I notice quite often among people in the business of product development is that the more features their product has the better it will be. But that is absolutely not true.
+
+Your customer does not need just another feature. Think back at how you made them choosing your product and why they became your customer. They were looking for a solution that would solve their problem and your product seemed to be the best fit. They choose your product and try it in their day to day business. At a certain point, they will notice that your product is just not what they were looking for and will quit using it.
+
+The reason that your product was not their best fit is not only caused by missing feature. You can have all the features the users need and still have high churn. What you should look for instead is how exactly you are solving the user's problem.
+
+## Listen to your customers
+
+Start listening to them and start understanding them. Ask the right questions and identify the pain point in their lives. Identify what problem they expect to be solved with your product.
+
+If the expectations are not on par with your product vision, you should consider how you communicate about your product. Apparently, you are targeting the wrong people or trigger false thoughts.
+
+But if your vision of your product is exactly about solving your customers' problem, then focus on exactly that. Instead of thinking about what your product needs think about your customer. What do they need, how do you solve their problem.
+
+## You don't need a perfect product
+
+And then execute. You know the problems of the user and you have an idea about how to solve that problem. Now you have to go ahead and make it happen.
+
+And I suggest going for a lean strategy. So don't spend too much time to get from idea to your first results. You don't have to deliver the perfect feature. If your MVP already improves the customer experience, you can ship it. Your customer will like every single step that solves their problems and if they encounter any other problems they will let you know. So keep listening to them and iterate over the MVP. Improve it using the feedback your customers give you and I promise that the product will fit your customers' needs.
+
+## Listen to their needs, not solutions
+
+A caveat when you listen to your customer is that you should not listen to what they think they need.
+
+> “If I had asked people what they wanted, they would have said faster horses.”  
+
+This quote that is said to be one from Henry Ford describes exactly how you would end if you listen to your customers' solutions. Don't fall into that trap. Your customer does not have a proper solution for their problems that is why they trust you and your product to help them. 
+
+Instead of listening to their ideas or solutions keep identifying their needs. Learn what makes them feel uncomfortable and look for solutions on how to improve your product to better solve your customers' needs.
+
+## Educate your customers
+
+Sometimes the solution that you provide your customers can be something they never thought of, sometimes it can be something disruptive. Lots of customers fear changes, they are afraid that their workflows will be destroyed and they won't see the benefit of your disruptive product compared to their already working processes and workflows.
+
+This is the time when your customer needs you the most. Make sure that you do not leave them alone with your product. Explain to them why you came up with this solution. Educate them. Teach them how to use your product properly and ensure that the new way to tackle their problems does not take any more effort than before.
+
+And then again, listen to your customers' feedback and iterate over your solution to improve it.
+
+## What about features then?
+
+In the whole process of listening to your customers, understanding them, crafting and delivering the solution and then learning from the feedback to improve your solution, there is no way for feature-driven thinking.
+
+Features are, however, the result of this process. At one point your product can be identified by certain features. Your customer will give names to parts of your product names and they become your product's features. You can then use them to target new customers, to explain to them what you offer and what problem you can solve.
+
+---
+
+In order to make customers happy, you don't need to fire them with lots of features. You have to understand them and support them in solving their problems. Otherwise, they will just leave and look for something better. And I don't have to tell you that finding a new customer is more expensive than keeping an existing one, right?
+
+So, stop thinking is features, start thinking in customer experience.

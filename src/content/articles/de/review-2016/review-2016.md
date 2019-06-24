@@ -1,0 +1,50 @@
+---
+id: 1733
+title: 'Jahresrückblick: Mein Jahr 2016'
+date: 2016-12-19T21:23:19+00:00
+author: Rathes Sachchithananthan
+template: post
+image: /images/blog/oslo-16-12.jpg
+categories:
+  - Welt
+locale: de_DE
+---
+Es ist bei mir üblich, dass ich mich jedes Jahr hinsetze und mir Gedanken darüber mache wie das Jahr gelaufen ist, was ich daraus lernen kann und was ich mir für das kommende Jahr erhoffe. Dieses Jahr neigt sich ebenfalls dem Ende zu und es wird Zeit für einen kleinen Jahresrückblick.<!--more-->
+
+Wie jedes Jahr habe ich nur wenig von dem erreicht, was ich mir letztes Jahr vorgenommen habe. Aber dieses Jahr kann ich mit bestem Gewissen sagen, dass ich trotzdem zufrieden bin. Und das ist es doch was zählt.
+
+## Mein Buch über das Freelancer-Dasein
+
+[Schon im letzten Jahr hatte mich mir vorgenommen das Buch im nächsten Jahr auf den Markt zu bringen.](/blog/de/review-2015/) Das hätte nämlich zeitlich gepasst wegen Jubiläum und so, aber es ist nichts draus geworden. Stattdessen fehlen mir im Dezember dieses Jahres immer noch die beiden letzten Kapitel. Inhaltlich ist alles durchgeplant und durchgedacht. Ich muss es nur noch runterschreiben, aber irgendwie komme ich nicht dazu. Werde es aber sehr wahrscheinlich noch dieses Jahr fertig bekommen, habe mir fest vorgenommen in den paar Tagen in meiner alten Heimat in Haltern mich dem Ende des Buches zu widmen.
+
+Anders als ursprünglich geplant werde ich das Werk nicht drucken lassen und auch nicht verkaufen. Stattdessen wird das Buch online und kostenlos erscheinen. Ich werde wohl bei diesem Buch eine kleine Idee von mir austesten, etwas in Richtung Online-Buch (nein kein E-Book) mit sozialen Funktionalitäten, denn nicht nur ich bin Freelancer, der Tipps geben kann, es gibt noch einige mehr, die das können und auch gerne machen. Das ist doch was Spannendes. Falls das nicht klappen sollte, werde ich das Buch einfach als PDF ausgeben.
+
+## Selbstständigkeit mit Aheenam
+
+Daneben hatte ich mir noch so einiges vorgenommen, eines der wichtigsten Sachen war Aheenam und die Agentur habe ich auch als eigenständige Gesellschaft ausgegründet. Doch ganz so wie geplant lief es nicht. Ursprünglich wollte ich mit Aheenam nur meine eigenen Projekte auf Vordermann bringen und auch mehr Zeit in [KERNWERK](https://kernwerk.de/) investieren. Dafür brauchte ich ein wenig Kapital, um davon leben zu können.
+
+Angefangen eben kurz Projekte umzusetzen, verhedderte ich mich aber darin, dass ich nur noch Zeit für eben diese Projekte hatte. Und meine eigenen Projekte liegen immer noch im Nichts rum.
+
+Etwas Zusätzliches hat mich in diesem Jahr extremst gestört. Ich arbeite seit mehr als 10 Jahren im und mit dem Web und ich habe schon einiges ausprobiert und vieles gelernt. Aber ich hatte einfach den Fokus verloren. Ich bin in den letzten Jahren einfach zu einem Generalist mutiert, der einfach alles umgesetzt hat, dass ihm etwas Kohle bringt. Ich bin aber in keinem Gebiet Spezialist. Vielmehr habe ich in allen Bereichen grundlegende Kenntnisse, aber in nahezu allen Bereichen bin ich raus sobald man tiefer in die Materie eintaucht.
+
+Auch das wollte ich beheben und habe mich für einen Schritt entschieden, mit dem ich sehr zufrieden. Seit Anfang November lebe ich in der schönen Stadt Schleswig und arbeite mit einem sehr geilen Team an Laravel Projekte. Das ist quasi die Spezialisierung, die ich mir erwünscht habe. Laravel + Vue sollen meine Zukunft werden und ich bin sehr zuversichtlich, dass ich mich mit diesem Team sehr gut weiterentwickeln kann. Mehr über meine Gründe nach Schleswig zu ziehen, kannst du [in meinem Beitrag auf Medium nachlesen](https://medium.com/@rathes/pivot-in-leben-warum-ich-mich-entschied-nach-schleswig-zu-ziehen-dbb268db09a6#.1b5fgt1dc).
+
+Zusätzlich habe ich bei Aheenam die Bremse gezogen und werde auch dort keine kleinen WordPress Projekte mehr machen. Customized Digital Solutions — das war mein Anspruch und an den werde ich mich in Zukunft auch halten. Wenn ich also mitbekomme, dass die beste Lösung für meinen Kunden eine einfache WordPress-Seite ist, dann werde ich ihn zwar beraten, aber die Arbeit werde ich auslagern oder die Umsetzung ablehnen und den Kunden an sehr kompetente Kollegen verweisen.
+
+Und falls mal keine Projekte anstehen werde ich an meinen Projekten arbeiten. Ich werde aber keine Deadlines setzen, da ich weiß, dass ich die eh nicht einhalten kann.
+
+## Mehr Privatleben, mehr ich
+
+Wenn ich nicht gerade arbeite will ich mich mal wieder um mein Privatleben kümmern. Ich habe dieses Jahr schon einiges in die Richtung getan, habe mir Zeit genommen um in mich hineinzuhorchen und mir eigene Gedanken zu machen.
+
+Aber was dennoch fehlt ist mein Umgang mit meinen Mitmenschen. Ich war früher mal einer, der offen auf die Menschen zugegangen ist, zu dem man mit jedem Anliegen ankommen konnte. Das hat sich in den letzten Jahren stark verändert. Ich bin mehr und mehr in meiner Arbeit versunken und Freunde und Bekannte kannte ich kaum noch.
+
+Das werde ich in den nächsten Monaten angehen und mich da akut verbessern. Mir geht das selbst auf den Sack wie sehr ich mich verändert habe und das ist definitiv ein Zeichen, dass es nicht so weitergehen kann.
+
+Auch mehr helfen steht auf meiner Agenda. Ich spende zwar immer noch regelmäßig an Organisation, die Kindern helfen, aber früher habe ich mehr getan als nur Geld hinhalten. Da will ich wieder hin. Da mir aber regelmäßig die Zeit fehlt, werde ich mir was Schickes überlegen. Ich überlege, ob ich das nicht irgendwie mit Aheenam verbinden kann, mal schauen was die Zukunft das so bringt.
+
+---
+
+So, jetzt hab ich mir wieder Einiges von der Seele geschrieben. Sollte ich auch mal öfters machen. Das war mein wahrscheinlich kurzfristigster Rückblick, aber er hat sich gelohnt. Man fühlt sich immer besser und motivierter danach.
+
+Ich wünsche euch schöne Feiertage und ein schönen Start ins Jahr 2017.
