@@ -7,6 +7,22 @@ import SEO from "../components/SEO"
 const Writings = ({ data }) => (
   <Layout className="p-4">
     <SEO title="Writings" />
+    <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
+      My writings
+    </h1>
+    <p>
+      From time to time, I do write. Sometime on my blog, but also on other
+      blogs such as on <a href="https://medium.com/@rathes">Medium</a>. The
+      topics, I write about are diverse. Obviously, I write about the web, but
+      also about non-web topics like my mother tongue Tamil or even about movies
+      or anime.
+    </p>
+    <p>
+      I do write in English, German and Tamil. So if you do not understand the
+      title, it may be that you do not speak the language. If you want me to
+      translate a specific article, just drop a message{" "}
+      <a href="https://twitter.com/rswebdesigner">@rswebdesigner</a>
+    </p>
     {Object.entries(
       data.allMarkdownRemark.edges.reduce((acc, { node }) => {
         ;(acc[new Date(Date.parse(node.frontmatter.date)).getFullYear()] =
