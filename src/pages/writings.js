@@ -12,16 +12,24 @@ const Writings = ({ data }) => (
     </h1>
     <p>
       From time to time, I do write. Sometime on my blog, but also on other
-      blogs such as on <a href="https://medium.com/@rathes">Medium</a>. The
-      topics, I write about are diverse. Obviously, I write about the web, but
-      also about non-web topics like my mother tongue Tamil or even about movies
-      or anime.
+      blogs such as on{" "}
+      <a className="text-white underline" href="https://medium.com/@rathes">
+        Medium
+      </a>
+      . The topics, I write about are diverse. Obviously, I write about the web,
+      but also about non-web topics like my mother tongue Tamil or even about
+      movies or anime.
     </p>
     <p>
       I do write in English, German and Tamil. So if you do not understand the
       title, it may be that you do not speak the language. If you want me to
       translate a specific article, just drop a message{" "}
-      <a href="https://twitter.com/rswebdesigner">@rswebdesigner</a>
+      <a
+        className="text-white underline"
+        href="https://twitter.com/rswebdesigner"
+      >
+        @rswebdesigner
+      </a>
     </p>
     <div className="mt-12">
       {Object.entries(
