@@ -1,0 +1,149 @@
+---
+id: 1405
+title: Laravel Homestead unter Windows 10 einrichten
+date: 2016-05-23T16:03:57+00:00
+author: Rathes Sachchithananthan
+template: post
+image: /images/blog/laravel-vagrant-homestead.png
+categories:
+  - Web
+tags:
+  - Laravel
+  - PHP
+  - Vagrant
+description: Mit dieser Anleitung schaffst du es Laravel Homestead auch ganz einfach unter Windows 10 einzurichten.
+locale: de_DE
+---
+Homestead ist eine von Laravel vorkonfigurierte Vagrant Box, die es einem ermöglicht ganz einfach und unkompliziert Laravel in seiner lokalen Umgebung zu installieren. Für Windows User ist es dann doch nicht so unkompliziert. Daher gibt es hier eine kleine Anleitung für die Einrichtung von Laravel Homestead unter Windows.
+
+<!--more-->
+
+Wenn man mich fragt, dann ist [Laravel](https://laravel.com) das beste PHP-Framework, das es auf dem Markt gibt. Und ich bin mit dieser Aussage definitiv nicht allein. Laravel ist sehr simpel gebaut und ist dennoch sehr komplex, dass man sehr große Webanwendungen damit bauen kann. Mit der Vagrant Box "Laravel Homestead" wird die Entwicklung mit diesem Framework noch weiter vereinfacht.
+
+## Homestead? Vagrant?
+
+[Vagrant](https://www.vagrantup.com) ist ein Tool, das einem die Arbeit abnimmt komplette Entwicklungsumgebungen einzurichten. Außerdem kann man mithilfe von Vagrant verschiedene für die einzelnen Projekte angepassten Umgebungen sehr einfach verwalten.
+
+In diesem Punkt sticht der große Vorteil von Vagrant hervor. In meinem persönlichen Fall habe ich einige Projekte, die immer noch mit PHP 5.6 laufen, während ich neue Projekte bereits von Grund auf mit PHP 7 entwickle. Außerdem unterscheiden sich die Remote-Server auf denen die Projekte laufen ein wenig voneinander.
+
+Jetzt stellt euch mal vor, ich würde für jedes dieser Projekte — es sind ja mehr als zwei — immer wieder eine passende lokale Umgebung einrichten und müsste dann immer, wenn ich das eine Projekt bearbeite die Einstellungen wechseln. Das ist mit dem einfachen Aufsetzen von XAMPP nicht getan.
+
+Mein bisheriger Ansatz war es, dass ich neben der Produktionsumgebung und dem Staging in der Regel auf dem Server auch meine Entwicklungsumgebung hatte und immer bei, Arbeiten schon auf dem Remote-Server hochgeladen habe. War zwar sehr anstrengend, aber besser als die lokale Schiene. Irgendwann wurde ich dann aber von einem Kollegen überredet einfach mit Vagrant zu arbeiten und so habe ich angefangen mich damit auseinander zu setzen.
+
+Homestead ist eine Box für Vagrant. Eine Box ist einfach nichts anderes als das Paket-Format von Vagrant. In Homestead sind die Konfigurationen, die man für die Arbeit mit Laravel braucht, schon definiert und man kann im Prinzip nach erfolgreicher Einrichtung mit „vagrant up“ die Maschine starten und loslegen.
+
+### Das Problem
+
+Die Einrichtung ist unter Windows an einigen Stellen tückisch. Schwierig ist das nicht, sondern tückisch. Die Anleitung, die Laravel auf der Webseite anbietet, kann man leider nicht eins zu eins unter Windows einsetzen.
+
+Daher möchte ich in diesem kleinen Artikel zeigen, worauf man achten sollte, wenn man unter Windows arbeitet. Ich versuche mich an den Schritten aus der Dokumentation von Laravel zu halten, fasse mich aber ein wenig kürzer und gehe dafür näher auf die Tücken unter Windows ein.
+
+## Vorbereitung für dein Einsatz von Homestead
+
+Bevor man Homestead überhaupt einsetzen kann, musst du zwei Sachen installieren:
+
+1. **VirtualBox**:
+Da Vagrant einen Provider für die Virtuellen Maschinen benötigt, müssen wir auch einen installieren. [VirtualBox ist kostenlos](https://www.virtualbox.org/) und bietet sich halt gut dafür an. Alternativ kann man auch VMWare benutzen, das aber kostenpflichtig ist, dafür aber auch bessere Performance haben soll
+
+2. **Vagrant**:
+Natürlich muss man auch Vagrant installieren. Die Installation ist aber sehr einfach: [Auf der Downloadseite von Vagrant herunterladen](https://www.vagrantup.com/downloads.html) und Installer ausführen.
+
+Als Nutzer von Windows muss man darauf achten, dass man VT-x aktiviert. Dies macht über BIOS. Ich musste außerdem Hyper-V deaktivieren. Dafür geht man unter Windows 10 zu `Systemsteuerungen > Programme > Windows Features aktivieren oder deaktivieren`. Dort sucht man nach der Checkbox für Hyper-V, entfernt dort das Häkchen, bestätigt das und startet den PC neu.
+
+## Die Homestead-Box installieren
+
+Nachdem wir nun Vagrant und VirtualBox auf unserem System haben, kann es losgehen. Nun kann man sich verschiedene Vagrant-Boxen installieren und diese einsetzen. Oder man konfiguriert sich eigene Boxen.
+
+Wir wollen die Laravel Homestead Box einsetzen und daher installieren wir diese. Dafür führt man einfach in der Konsole
+
+```bash
+$ vagrant box add laravel/homestead
+```
+
+aus. Nun kann das je nach Rechnerleistung und Internetgeschwindigkeit einen kurzen oder längeren Moment dauern bis die Box installiert ist.
+
+Hier kann eigentlich nichts passieren. Falls die Installation doch fehlschlägt, dann schaut nach, ob euer Vagrant aktuell ist.
+
+## Homestead installieren
+
+Im nächsten Schritt installieren wir Homestead an sich. Dafür klonen wir uns einfach das entsprechende GitHub-Repository. Die Dokumentation von Laravel dieses Repository in den „home“ Ordner zu klonen, da die Homestead-Box als Host für alle Laravel-Projekte dient.
+
+Unter Windows ist mir aber kein „home“ bekannt? Ich bin jetzt hingegangen und habe Homestead einfach unter `C:\Users\<benutzername>` geklont. Ich denke, dass das dem „home“ am Nächsten kommt. Falls da jemand besser informiert ist, gerne her mit den Infos!
+
+Als nächsten Schritt soll man in diesem neu geklonten Homestead-Ordner den Befehl
+
+```bash
+bash init.sh
+```
+
+ausführen, um die initialen Dateien für Homestead zu generieren. Natürlich gibt es den Befehl unter Windows nicht. Man führt in diesem Fall daher in `C:\Users\<benutzername>\Homestead` stattdessen
+
+```bash
+init.bat
+```
+
+aus.
+
+Dadurch wird in `C:\Users\<benutzername>` ein versteckter Ordner `.homestead` mit drei Dateien erzeugt.
+
+## Laravel Homestead einrichten
+
+Eine davon ist die `Homestead.yaml`, welche man nun benutzt, um Homestead einzurichten. Wenn du die Datei öffnest, wirst du bereits eine beispielhafte Einrichtung vorfinden.
+
+Bei der Angabe **provider** legst du deinen Provider fest. Wenn du die VirtualBox benutzt, dann musst du hier nichts mehr ändern. Andernfalls trägst du hier `vmware_fusion` oder `vmware_workstation` ein.
+
+Danach siehst du weiter unten den Bereich "folders". Hier legst du fest, welche Ordner deiner lokalen Umgebung wie auf deiner virtuellen Maschine gemappt werden sollen. Hier solltest du darauf achten, dass du mit vollständigen Pfaden arbeitest.
+
+Statt `~/Code` würdest du unter Windows irgendwas mit `C:\<pfad-zu-project>` haben, oder in meinem Fall sogar eine andere Partition auf der Festplatte.
+
+Bei `sites` hast du das gleiche Prozedere: Du legst eine Domain fest `projektname.app` und legst fest, wo auf deiner lokalen Maschine diese zeigen soll. Bei mir sieht das komplett nun so aus:
+
+```yaml
+folders:
+  - map: D:\<projektname>
+    to: /home/vagrant/projects/<projektname>
+
+sites:
+  - map: projektname.app
+    to: /home/vagrant/projects/<projektname>
+```
+
+Als letzten Schritt musst du noch deine hosts Datei anpassen und um den Eintrag von projektname.app ergänzen. Als IP legst du dann die IP fest, die in deiner Homestead.yaml oben als IP festgelegt ist.
+
+Nun kannst du mit vagrant up deine Box hochfahren und erreichst dann dein Projekt unter <http://projektname.app>
+
+### Problem mit SSH-Keys
+
+Ich hatte noch das Problem, dass mir folgende Fehlermeldung ausgegeben wurde:
+
+```bash
+vagrant up /Users/<benutzername>/Homestead/scripts/homestead.rb:26:in read: No such file or directory - /Users/<benutzername>/.ssh/id_rsa.pub (Errno::ENOENT)
+```
+
+Das Problem hier ist, dass kein SSH Key eingerichtet ist. Im [Laravel.io Forum wird das besprochen mit der Lösung](http://laravel.io/forum/06-04-2014-problem-launching-vagrant-on-homestead), dass man doch den Befehl
+
+```bash
+ssh-keygen -t rsa -C your@email.com
+```
+
+ausführen soll, um den Key zu generieren. Das Problem bei Windows ssh-keygen gibt es nicht als Befehl. Ich hatte auch keine Ahnung wie ich das anders machen sollte. Ich habe also einfach das Programm `git bash` benutzt, um den key zu generieren und dann konnte die Box ohne Probleme geöffnet werden.
+
+### Problem mit multiplen Seiten:
+
+Ein großer Vorteil von Homestead ist, dass man nur einmal Homestead installieren muss, um damit alle Laravel-Projekte abzudecken. Problematisch ist nur, wenn alle Hosts dann auf die gleiche Seite zeigen. So geschehen bei mir. Eine einfache Suche hat ergeben, dass man mit
+
+```bash
+vagrant provision <id>
+```
+
+das Problem sehr schnell gefunden hat. Die ID vom Homestead findet man mit
+
+```bash
+vagrant global-status
+```
+
+## Fazit
+
+Sehr viel anders ist die Einrichtung nicht, aber man muss halt wissen, was man an einigen Stellen macht. Ich habe viel gegoogelt und Foren durchsucht und bin dann zu einem Ergebnis gekommen. Ich hoffe, dass ihr euch hiermit das Suchen erspart.
+
+Falls ihr Fragen habt, dann meldet euch. Vielleicht kann ich euch den einen oder anderen Hinweis mehr geben.

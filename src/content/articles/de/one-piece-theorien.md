@@ -1,0 +1,65 @@
+---
+id: 1837
+title: One Piece Theorien
+date: 2017-09-02T22:39:16+00:00
+author: Rathes Sachchithananthan
+template: post
+image: /images/blog/one-piece.jpg
+categories:
+  - Anime
+tags:
+  - One Piece
+locale: de_DE
+description: Einige der Theorien, die ich über den Anime One Piece und seinem Ende aufgestellt habe, werde ich dir hier verraten
+---
+Wer mich halbwegs kennt, weiß, dass ich ein absoluter Fan des Animes bin. Ich schaue kaum Serien, weil die Stories mir da viel zu lange dauern, aber One Piece habe ich mindestens schon drei mal von vorne geschaut. Bei fast 800 Folgen. Und wer ebenfalls die Serie schaut, weiß, dass da sehr viel Raum für Theorien da ist. Einige meiner Theorien möchte ich dir in diesem Beitrag vorstellen.
+
+<!--more-->
+
+_SPOILER ALERT: Während ich diesen Beitrag schreibe, habe ich den Anime bis zum Ende des Zou Arc geschaut. Also bis einschließlich Folge 779. Falls du dich für den Anime interessierst und du noch nicht so weit bist, dann vielleicht erst später weiterlesen._
+
+## Was bedeutet das D.
+
+Das wohl mysteriöseste an der Serie ist das "D." in den Namen einiger Charaktere: Trafalgar D. Law, Marshall D. Teach, Hagwar D. Sauro. Oder auch im Namen vom Piratenkönig Gol D. Roger und natürlich auch in Monkey D. Dragon. Es gibt viele Theorien dazu. Und ich gehöre zu denen, die der Meinung sind, dass das D. darauf hindeutet, dass die D. auf irgendeine Art zusammengehören. Nämlich eine Familie, eine Königsfamilie.
+
+## Das verlorene Jahrhundert
+
+Um die Familie der "D."s zu finden, muss man etwas weiter in die Geschichte zurückblicken. Und man wird trotzdem nichts finden. Die Familie der "D."s hat in dem verlorenen Jahrhundert existiert und gibt es seitdem nicht mehr.
+
+Über das verlorene Jahrhundert gibt es nicht viele Informationen. Am Ende des Jahrhunderts wurde vor 800 Jahren die Weltregierung von 20 Königen gegründet. Meine Theorie dazu ist, dass in den 100 Jahren die Familie der "D."s das Sagen hatte, die Welt sozusagen regiert hat.
+
+Wie konnten die das tun? Immerhin muss jetzt für die Kontrolle das Dreiergespann zwischen der Marine, den 4 Kaisern und den 7 Samurai intakt sein. Die "D."s waren dazu alleine in der Lage, weil die Macht der antiken Waffen hatten. Fähigkeiten von Ruffy, der zum Beispiel die Seekönige und sogar Zou hören kann sind Anzeichen dafür. Außerdem war der Regierungsstil und das Verständnis von Gerechtigkeit so ausgeprägt, dass die Völker gerne unter den "D."s gelebt haben. Auch das spiegelt sich in Ruffy wieder. Sein Charakter ist so ausgeprägt, dass die Bewohner jeder Insel, die er verlässt, ihm immer als Freund ansehen und nicht als einen der berüchtigten Rookies.
+
+## Das One Piece
+
+Und genau das ist auch das One Piece. Das "One Piece" ist kein Schatz wie ihn die Piraten erwarten, die auf die weiten der Meere nach diesem suchen, sondern ist die Macht, die man erhält, wenn man die Meere überquert hat und sich so Freunde auf der ganzen Welt gemacht hat, wie es Ruffy und seine Crew es machen. Diese Macht ist das One Piece. Freundschaft und loyale Mitstreiter. Das ist übrigens auch meiner Meinung nach die größte Macht, die wir in der realen Welt erreichen können!
+
+## Das Ende
+
+So wie wird der Anime als enden, wenn es keinen Reichtum am Ende zu gewinnen gibt? Mit einer gigantischen Schlacht. Nämlich zwischen der Weltregierung und den "D."s. Mit der Hilfe von Nico Robin wird Ruffy die komplette Wahrheit über die "D."s herausfinden. Das wird die Weltregierung natürlich zu verhindern wissen.
+
+An Ruffys Seite werden neben seiner Crew (die ja mittlerweile nicht nur die Crew an sich ist), auch sein Vater samt den Revolutionären kämpfen und all diejenigen Königreiche, denen Ruffy geholfen hat. Das sind bisher die Alabasta, die Himmelsvölker und das Königreich des Meeres. Da kommen dann noch diejenigen aus dem Wano Kuni Reich dazu und wahrscheinlich noch ein oder zwei weitere, von denen wir bisher noch nichts wissen. Zusätzlich erwarte ich die Whitebeard-Piraten unter der Führung von Marco auf Ruffys Seite und von den Rookies mindestens die Crew von Law. Außerdem kämpfen sehr wahrscheinlich auch Shanks Piraten, Die Kuja Piraten und die Jimbei (wenn er nicht bereits zu Ruffys fester Crew gehört) zusammen mit Ruffy.
+
+Auf der Gegenseite steht die ganze Weltregierung: Die Marine bestehend aus den Admirälen, die restlichen Samurai und die Cipher-Pol.
+
+Besondere Aufmerksamkeit sollte dem "blauen Fasan" schenken. Aokiji gehört nicht mehr zu den Admirälen und er wird sich wahrscheinlich auch auf Seiten von Ruffy schlagen.
+
+### Was passiert mit den 4 Kaisern?
+
+Bevor es überhaupt zu der großen Schlacht kommt, müssen die 4 Kaiser besiegt werden. Zumindest drei von denen: Zuerst Big Mom, dann Kaido und zu allerletzt Blackbeard. Das heißt, da kommen noch einige Schlachten bevor der große Endkampf kommt. Bei dem Kampf gegen Blackbeard wird sich Dragon endlich direkt auf Ruffy treffen und die Story hinter deren Trennung wird erklärt. Die Schlacht findet bei dem Versteck der Revolutionäre statt.
+
+### Nach dem Ende
+
+Die Schlacht gewinnen wird — oh Wunder, oh Wunder — Ruffy und seine Crew. Die Welt erfährt die wahre Geschichte und die Ordnung wird wieder so hergestellt wie von 900 Jahren (als die "D."s regiert haben). Ruffy verzichtet aber auf eine Herrschaft, sondern lässt die Marine, die nun von Smoker angeführt wird (Corby wird ein Admiral), für die Gerechtigkeit sorgen (die richtige Gerechtigkeit) Die Weltregierung gibt es nicht mehr, so wenig wie die Samurai oder Kaiser und Ruffy begibt sich auf weitere Abenteuer und besucht all die Freunde, denen er versprochen hat wieder zu besuchen.
+
+## Spannende Kämpfe
+
+Hört sich doch spannend an, oder? Es wird noch einige epische Schlachten geben. Bei dem Kampf zwischen Blackbeard und Ruffy wird letzterer eine durch seinen Willen hervorgerufene neue Form des Haki offenbaren, das ihn auf ein neues Level hebt.
+
+Beim Endkampf kommt es zum finalen Kräftemessen zwischen Mihawk und Zorro, wobei Falkenauge zugeben muss, dass Zorro ihn endlich übertroffen hat. Dabei wird auch seine Narbe am Auge erklärt. Ist bestimmt eine spezielle Form des Vorhersehungs-Haki.
+
+Beim Endkampf wird Garp auf seinen Posten als Admiral scheißen und sich für Ruffy opfern, damit er nicht mit ansehen muss wie ein weiterer Enkel vor seinen Augen stirbt.
+
+Smoker wird übrigens auch sein Ziel erreichen und Ruffy schnappen, weil er bereit ist sich wie Gol D. Roger zu stellen. Aber er wird sich dagegen entscheiden und ihn laufen lassen, weil er für die Gerechtigkeit einsteht für die Ruffy gekämpft hat.
+
+Sehr viele Theorien. Ich bin gespannt wie viele davon eintreffen und wie sich das in Wirklichkeit entwickelt. Was sind so deine Gedanken? Ich bin gespannt. Schreib mir in die Kommentare!

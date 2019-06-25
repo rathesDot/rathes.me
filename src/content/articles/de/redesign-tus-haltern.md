@@ -1,0 +1,90 @@
+---
+id: 676
+title: 'Redesign: TuS Haltern'
+date: 2015-05-18T08:00:23+00:00
+author: Rathes Sachchithananthan
+template: post
+image: /images/blog/tus-haltern-sportwerbung.jpg
+categories:
+  - Fußball
+  - Web
+tags:
+  - Mobile
+  - Redesign
+  - responsive Webdesign
+  - Webdesign
+locale: de_DE
+---
+Einmal im Monat veröffentliche ich Redesigns. Dabei suche ich mir eine Webseite aus und entwickle ein verbessertes Webdesign dieser. Dieses Mal habe ich die Webseite des TuS Haltern neu gestaltet.
+
+Bisher war es immer der Fall, dass ich mir Webseiten ausgesucht habe, die nicht mobil optimiert sind und diesen habe ich dann ein responsive Webdesign verpasst. Auch beim TuS Haltern war das ursprünglich die Idee. Einfach mal ein neues Layout verpassen. Bei der Analyse des IST-Zustands habe ich dann aber festgestellt, dass da mehr als nur das Layout verbessert werden muss, sodass ich kurzerhand beschlossen habe, in diesem Beitrag auch die grundlegenden Fehler der TuS Webseite zu erläutern.
+
+<!--more-->
+
+## Vorbemerkung zum Redesign
+
+Viele werden es nicht merken, aber ich werde es schon im Voraus erwähnen: Vorbild beim Redesign war für mich die [Internetpräsenz des BVB](http://www.bvb.de/). Was Internetpräsenz und generell Image-Ausrichtung angeht, da ist meiner Meinung nach der BVB die klare Nummer eins in Deutschland. Mit Abstand. Wenn ich als Bayern-Fan das zugebe, dann hat das schon was zu bedeuten.
+
+Die Webseite vom BVB passt genau in das Image, welches der Verein und vor allem der Trainer verkörpern. Schade, dass die Ära Kloppo beim BVB zu Ende geht. Mit Tuchel hat man aber einen gefunden, der gut in das Image reinpasst, nur sportlich bin ich mir da nicht so sicher. Aber egal, das ist ein anderes Thema.
+
+Neben dem BVB habe ich mir natürlich auch andere Seiten angesehen, die ich als (sehr) gut konzipiert empfinde. National sind es die Seiten vom [FC Bayern München](http://www.fcbayern.de/de/index.php), [vom SC Freiburg](http://www.scfreiburg.com/) und [von der Eintracht aus Braunschweig](http://www.eintracht.com/start/). International überzeugen mich die Internetauftritte von [Real Madrid](http://www.realmadrid.com/) und [Arsenal London](http://www.arsenal.com/home). Aber alles nur vom Design her, die technische Umsetzung habe ich bei diesen Seiten nicht analysiert.
+
+## Probleme vor eigentlichem Redesign
+
+Kommen wir aber wieder zurück zum TuS Haltern und ihrer Webseite. Bevor man mit dem Redesign loslegen kann, muss man an der Webseite einige Änderungen vornehmen, von denen ich zwei in diesem Beitrag durchgehen möchte.
+
+### Aufbau der Webseite
+
+Das A und O jeder Webseite ist die Navigation einer Webseite. Wenn diese nicht so gestaltet ist, dass der Benutzer ganz einfach durch die Seiten navigieren kann, dann ist die ganze Webseite nichts wert. Zu der Usability der Navigation zählen aber nicht nur das Design, sondern auch der Aufbau und die Struktur der Seiten und die Benennung der einzelnen Menüpunkte.
+
+Man muss sich Gedanken darüber machen, welche Inhalte man dem Benutzer vermitteln möchte und wo diese vermittelt werden sollen. Auf einer eigenen Seite? Auf einer, die bereits existiert? Wo soll die Seite eingeordnet werden? Wenn man sich für eine neue Seite entscheidet steht man vor der weiteren Frage der Benennung. Der Name sollte soweit wie möglich eindeutig sein und sofort verstanden werden. Man kann einfach einen aus dem Bekanntenkreis fragen, der nicht vom Fach ist und an ihm ermitteln, ob der Name des Menüpunktes gut gewählt ist.
+
+Beim Redesign der TuS Haltern Webseite habe ich gemerkt, dass die Seite überhaupt nicht gut aufgebaut ist. Schaut man sich die [diese Grafik (Klick)](/images/blog/navigation-alt-tus-haltern.png) mal an, dann sieht man, dass einige Menüpunkte doppelt an verschiedenen Ebenen vorkommen. Das liegt daran, dass die Webseite versucht neben dem Verein an sich auch die verschiedenen Abteilungen abzudecken. Außerdem versucht man die Fußballabteilung noch weiter hervorzuheben, indem man diese im Menü auf oberster Ebene noch einmal bringt. Ist zwar nett gedacht, aber nicht sehr strukturiert. Für den Besucher könnte das verwirrend werden, für Google und seine Bots bestimmt auch.
+
+Es gibt zwei Möglichkeiten das Problem zu lösen. Die Erste wäre, dass man jeder Abteilung eine eigene Webseite spendiert und die Seite tus-haltern.de lediglich den Verein repräsentiert. Das würde aber viel Verwaltungsarbeit heißen, da man dann für jede Abteilung eigenen Inhalt bräuchte und diese verwaltet werden müssten.
+
+Die zweite Möglichkeit wäre und die empfehle ich auch, dass man die Seite auf den Fußballverein TuS Haltern optimiert, der noch nebenbei andere Abteilungen am Start hat. BVB hat noch nebenbei den Handball, Real Madrid hat den Basketball und so weiter. So hat der TuS Haltern halt noch einige andere Abteilungen mehr. Die ganzen anderen Abteilungen bekommen in der Gesamtstruktur lediglich eine Unterseite und können dann bei genügend Inhalt auf eine zusätzliche Webseite verweisen.
+
+Ich habe den aktuellen Inhalt mal genommen und aus diesem eine neue Menüstruktur konzipiert. Diese ist eindeutig schlanker als die aktuelle und trotzdem passen sämtliche Inhalte in die Webseite. Bei der neuen Version muss man halt größere Inhaltsseiten schaffen.
+
+### Fans und Talentschmiede
+
+Außerdem habe ich die Hauptstruktur der Webseite abgeändert und diese an die der großen Vereine angepasst. Dabei sieht man, dass ich den Menüpunkt Fans hinzugefügt habe, obwohl für diesen fast gar kein Inhalt existiert. Der Grund dafür ist, dass das ein Punkt ist, an welchem die Marketingabteilung (oder Person) sofern diese existiert ansetzen könnte und was Gescheites schaffen könnte. Hier wäre auch Platz für die Verlinkung der Social-Media Kanäle.
+
+Ein weiterer Punkt der auffällt ist die Talentschmiede. Hier existieren keine Unterpunkte, obwohl genügend Inhalt vorhanden ist. Ich würde hier raten, dass man die Talentschmiede als eine zusätzliche Webseite errichtet und weiter ausarbeitet. Die Talentschmiede sollte mit ihrer Idee und ihrem Konzept auf einer Ebene sein wie der gesamte Verein und auf dem Niveau auch verkauft werden. Wie wäre es mit der Domain talentschmiede.de? Diese scheint unbenutzt zu sein. Ich würde das Konzept weiter ausbreiten und unabhängig von der Vereinsseite vermarkten: "La Masia" von Deutschland. Auch wenn man den TuS Haltern eher auf regionaler Ebene vermarktet, kann man die Talentschmiede parallel noch weiterpushen. Der Erfolg beider Bereiche wird sich positiv auf den jeweiligen anderen Bereich auswirken.
+
+### Corporate Design
+
+Ein weiterer letzter Punkt, den ich gerne ansprechen würde, ist das Corporate Design. Ich meine mich zu erinnern, dass man um 2009 oder 2010 rum, als Metze das Projekt "Außendarstellung" vorangetrieben hat, auch das Design des Logos, aber auch der Webseite überarbeitet hat. Was mich daran aber stört ist, dass vom sauberen Stil des Logos und der Plakate (siehe Bild) nichts auf der Webseite zu sehen ist.
+
+![Die Webseite passt mit dem Stil dieses Plakates definitiv nicht überein](/images/blog/tus-haltern-sportwerbung.jpg)
+
+Da muss man auf jeden Fall mal ansetzen und ein Design-Konzept entwickeln, welches medienübergreifend funktioniert. Ich hab bei meinen Redesigns selbst keine Vorgaben beachtet, sondern meine klassischen Web-Fonts benutzt, aber im Falle einer ernsthaften Neugestaltung sollte das nie vergessen werden. Denn mit einem einheitlichen Corporate Design fängt die Außendarstellung an und darauf baut dann die gesamte Webseite auf.
+
+## Das Redesign
+
+Das Redesign selber ist in diesem Falle verdammt kurz geraten, ich habe mich zu sehr auf die obigen Punkte konzentriert. Daher habe ich dieses Mal nur die Startseite neugestaltet und selbst dabei habe ich ein wenig unsauber gearbeitet. Trotzdem sieht man einen deutlichen Unterschied zum derzeitigen Stand und man sieht auch sofort wie ich mir das komplette Design vorgestellt habe.
+
+### Redesign der Navigation
+
+Beim Redesign war das größte Problem die Navigation. Diese ist auch in meiner neuen Version gewaltig, sodass man auf Smartphones nicht einfach so als Drop-Down-Menü anbringen konnte. [In einem Artikel auf Smashing Magazine werden zwei Fallbeispiele erläutert](http://www.smashingmagazine.com/2013/09/11/responsive-navigation-on-complex-websites/), die sich mit großen Menüs auseinandersetzen mussten. Diese waren bisher immer mein Vorbild bei der Entwicklung von großen Menüpunkte, doch diesmal ging dies hier nicht. [Im letzten Abschnitt aber kam der entsprechende hilfreiche Hinweis: Ein responsive Multi-Level-Menü](http://tympanus.net/Development/ResponsiveMultiLevelMenu/index.html), welches sich seitlich immer aufklappt. Daraus ist dann das Menü entstanden, welches man auf dem Bild sieht.
+
+![Menü der Website auf dem Smartphone](/images/blog//tus-haltern-redesign-menue.png)
+
+In der Desktop-Version kann das Menü ganz einfach mit einem Drop-Down-Menü umgesetzt werden. In der Galerie findet ihr eine Möglichkeit zu dieser.
+
+### Redesign des Inhalts
+
+Beim Redesign der restlichen Seitenelemente bin ich wie immer vorgegangen: Nach dem Mobile-First-Konzept die Inhalte analysieren und ggf. unnötige aus der mobilen Ansicht streichen. Dann immer weiter mit der Größe des Screens nach oben gehen und das Design dementsprechend anpassen und ggf. erweitern.
+
+## Fazit zum Redesign
+
+Das Ganze Redesign ist nur grafisch erstellt worden. Aber auch eine Umsetzung des Projektes ist definitiv machbar. Das erfordert aber eine vollständige Analyse und ein komplett neues Konzept wie die Zukunft aussehen soll.
+
+Außerdem muss man sich überlegen wie man das Ganze umsetzen will. Die aktuelle Seite ist mit Joomla umgesetzt. Darauf würde ich verzichten. Ich würde sogar raten, dass man kein fertiges CMS nutzen sollte, sondern eine komplette Eigenentwicklung in Angriff nehmen sollte. Für die Webseite ist das natürlich zu viel unnötige Arbeit, aber man könnte mit einem kompletten System einige Abläufe im Verein auch automatisieren und noch viele weitere Ideen integrieren. Die Internetpräsenz eines Fußballvereins ist mehr als nur eine Informationsplattform. Es sollte eine Interaktionsplattform sein zwischen Verein und Mitglied. Auch bei einem Amateurverein.
+
+Was denkt ihr zu meinem Entwurf? Gut, das ist nur eine Startseite und die ist auch nicht ganz fertig, aber wie findet ihr den Ansatz? Bin gespannt was ihr so denkt.
+
+![Redesign TuS Haltern: Startseite auf dem Desktop](/images/blog/tushaltern-redesign-index-desktop.jpg)
+
+[_Klick hier für die mobile Ansicht_](/images/blog/tus-haltern-redesign-index-mobile.jpg)

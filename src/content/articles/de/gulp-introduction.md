@@ -1,0 +1,154 @@
+---
+id: 1036
+title: 'Gulp &#8211; Wie du dank Taskrunner besser durchstartest'
+date: 2015-11-01T16:40:52+00:00
+author: Rathes Sachchithananthan
+template: post
+image: /images/blog/gulp-logo.jpg
+categories:
+  - Web
+tags:
+  - Frontendentwicklung
+  - Webentwicklung
+locale: de_DE
+---
+Ihr arbeitet an einer Frontend-Entwicklung und euch schwirrt nur eine Frage durch den Kopf: Das ist doch immer das Gleiche. Kann nicht ein anderer das für mich übernehmen? – Nein, ich meine nicht die Frontend-Entwicklung an sich, sondern die kleinen nervigen Aufgaben, die da immer wieder dazwischen kommen. Aus SCSS die CSS-Datei, diese minifizieren, JavaScript-Dateien zusammenführen und minifizieren und noch viele ähnliche Sachen. Kommt euch das bekannt vor? Was ihr braucht ist ein Task-Runner! Gulp!
+
+<!--more-->
+
+Stopp! Es gab doch schon Mal einen Beitrag, der genauso ähnlich klingt, oder? Ja, du hast vollkommen Recht. In einem Beitrag vor einiger Zeit habe ich erklärt [wie man Grunt für optimierte Frontend-Entwicklung verwenden kann](https://web-und-die-welt.de/2015/06/grunt-fuer-optimierte-frontend-entwicklung/). Wenn du diesen bereits kennst, dann wird dir der folgende Artikel sehr leicht fallen, wenn nicht, dann aber auch, da ich wie im anderen Artikel auch Schritt für Schritt in Gulp einsteigen werde.
+
+## Warum jetzt Gulp statt Grunt?
+
+Das ist eine sehr berechtigte Frage. Ich habe [Grunt](http://gruntjs.com) jetzt seit mehreren Monaten in Einsatz gehabt und war auch recht zufrieden, zumal ich für viele Projekte immer die passendsten Plug-Ins für Grunt gefunden habe. Doch eines hat mich immer gestört. Je komplexer die Projekte wurden, desto langsamer wurde auch Grunt. Die Dauer bis die Tasks ausgeführt wurden, hat einfach so lange gedauert, dass ich mich nach Möglichkeiten umgeschaut habe Grunt schneller zu bekommen. Und was habe ich gefunden? Weg von Grunt, hin zu Gulp.
+
+Gulp arbeitet mit Streams von Node, um Task-Gruppen abzuarbeiten. Wenn man in Grunt vier verschiedene Tasks einsetzen würde für eine Datei, dann würde man „Datei öffnen“ und „Datei schreiben“ für alle 4 Tasks einmal ausführen. In Gulp kann man beides auf einen Vorgang reduzieren. Was natürlich die Sache um einiges schneller macht.
+
+Ein weiterer Punkt ist die Konfiguration. Wenn du mal mit vielen Grunt-Tasks gearbeitet hast, dann wirst du wissen wie umfangreich das werden kann, diese zu konfigurieren. In Gulp geht das viel schneller und kürzer.
+
+Einige Nachteile von Gulp oder Punkt bei denen Grunt besser ist:
+
+- Grunt hat eine größere Community
+- Grunt hat somit auch mehr Plug-Ins und hat schon quasi mehr Erfahrung gesammelt
+
+Auf diese beiden Punkte konnte ich aber gut verzichten, da die Gulp Community stetig wächst und auch die für mich Wichtigsten Plug-Ins direkt da hat.
+
+## Gulp einrichten
+
+Okay, genug geredet. Jetzt geht es los. Ich gehe jetzt davon aus, dass du einen Task-Runner zum ersten Mal benutzt und werde dir hier Schritt für Schritt erklären, was du machen musst. Wenn du bereits Grunt einmal installiert hattest, dann wirst du einige Schritte überspringen können.
+
+### Schritt 1 – Node installieren
+
+Als Erstes der Wichtigste Schritt, um Gulp benutzen zu können. Wir brauchen Node. Auf nodejs.org findest du diesbezüglich viele Informationen. Ist verdammt simpel. Als Windows User ist es quasi den Installer runterladen und installieren. Ungefähr so.
+
+### Schritt 2 – Mit der Konsole klarkommen
+
+Das mag für den einen oder anderen zwar komisch klingen, aber ich bin nicht der Konsolen-Typ. Selbst für Git versuche ich die Konsole soweit wie möglich zu vermeiden. PHPStorm sei Dank! Aber hier brauchst du eine Konsole. Ich bin ein Windows-Fanboy und benutze so auch nur die Windows Konsole (CMD, Command Prompt). Einfach Windows-Taste klicken, `cmd` eingeben, Enter und schon ist man drin.
+
+Jetzt brauchst du eigentlich erstmal nur einen Befehl: „cd“ Damit kannst du zu deinem Projekt-Ordner wechseln. Die Pfadangaben funktionieren wie relative Pfade im HTML oder CSS. Benutze also den Befehl und wechsle zu deinem Projekt. Der Befehl „dir“ zeigt dir die aktuellen Ordner im Verzeichnis in dem du dich gerade befindest, nur als kleiner Tipp nebenbei. So jetzt bist du also in deinem Ordner und kannst direkt loslegen.
+
+Führ als Erstes folgenden Befehl durch:
+
+```bash
+npm init
+```
+
+Fülle die Angaben aus, die hier nun erfragt werden und es wird eine passende `package.js` Datei erzeugt. Diese ist dazu da, dass du die Projektinformationen gespeichert werden und die Node-Abhängigkeiten in diesem Projekt.
+
+### Schritt 3 – Gulp installieren
+
+Bisher haben wir nur Vorbereitungen getroffen. Du kannst jetzt Node benutzen, du hast dein Einsatz von Node für dein Projekt eingerichtet und jetzt ist die Zeit gekommen, dass du Gulp installierst.
+
+Gib folgenden Befehl in die Konsole ein und es wird Gulp installiert:
+
+```bash
+npm install –g gulp
+```
+
+Was passiert hier? Mit npm installieren wir unsere Node-Pakete und wir installieren gulp. Das kleine „-g“ ist ein Flag. Das sagt aus, dass wir gulp global installieren wollen. Also projektübergreifened. Macht ja Sinn, da du Gulp ja nicht nur in diesem Projekt benutzen willst.
+
+Wenn jetzt keine Fehlermeldungen ausgegeben werden, dann ist alles super. Dann hast du gulp installiert. Ansonsten schreib doch deine Meldung, die du erhältst in die Kommentare, dann kann ich dir bestimmt weiterhelfen. Wir führen diesen Befehl auch noch einmal lokal aus:
+
+```bash
+npm install gulp --save-dev
+```
+
+Warum machen wir das? Weil wir so sicherstellen, dass gulp als eine Abhängigkeit in unserer `package.json` abgespeichert wird. (Das `--save-dev` ist das Flag dafür). Für den Fall, dass noch weitere Personen am Projekt arbeiten, hat er direkt eine Liste an Sachen, die er braucht.
+
+### Schritt 4 – Gulp einrichten und starten
+
+Kommen wir also zum letzten Schritt. Wir richten Gulp ein und können dann direkt loslegen. Das geht am besten mit einem Beispiel. Wir nehmen an, dass wir folgende Aufgaben von Gulp machen lassen wollen:
+
+- Unsere SCSS-Dateien zu CSS umwandeln
+- JavaScript-Dateien zusammenführen und minifizieren
+
+Das reicht für den Anfang. Dafür brauchen wir folgende Gulp-Plug-Ins:
+
+- gulp-sass
+- gulp-concat
+- gulp-uglify
+- gulp-rename
+
+Diese installieren wir also lokal in unserem Projekt und speichern diese in unserer package.json Datei.
+
+```bash
+npm install gulp-sass gulp-concat gulp-uglify gulp-rename --save-dev
+```
+
+Mit diesem Befehl werden alle 4 Plug-Ins heruntergeladen, installiert und als Abhängigkeiten festgehalten. Jetzt erstellen wir im unserem Wurzelverzeichnis des Projekts eine Datei `gulpfile.js`. Hier laden wir als Erstes all unsere Plug-Ins und natürlich allen voran Gulp selbst:
+
+```javascript
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
+```
+
+Damit können jetzt alles Tasks benutzt werden. Schreiben wir nun die Aufgabe, um Sass zu kompilieren:
+
+```javascript
+gulp.task('sass', function() {
+     return gulp.src('scss/*.scss')
+         .pipe(sass())
+         .pipe(gulp.dest('css'));
+ });
+ ```
+
+`gulp.task()` definiert eine Aufgabe, wobei der erste Parameter der Name der Aufgabe ist und der zweite Parameter eine Funktion ist, die ausgeführt werden soll. In unserem Fall werden alles scss-Dateien im Ordner `scss/` geöffnet, `sass()` wird ausgeführt und im Ordner `css/` gespeichert.
+
+```javascript
+gulp.task('scripts', function() {
+     return gulp.src('js/*.js')
+         .pipe(concat('all.js'))
+         .pipe(gulp.dest('dist'))
+         .pipe(rename('all.min.js'))
+         .pipe(uglify())
+         .pipe(gulp.dest('dist'));
+ });
+ ```
+
+Hier unsere zweite Aufgabe für die JavaScript Dateien. Wir laden hier alles mit der Endung `*.js` aus dem Ordner `js/` führen alle in eine `all.js` zusammen, schreiben diese Datei in den Ordner dist/, benennen diese um zu all.min.js, minifizieren diese Datei uns speichern die Datei nocheinmal im Ordner `dist/` ab.
+
+Wenn du ein Grunt-User bist, weißt du wie umständlich diese paar Zeilen Code in Grunt gewesen wären. Jetzt können wir mit den Befehlen gulp sass und gulp scripts schon einiges automatisieren. Es geht aber nicht weiter.
+
+Folgender Task wird benutzt um Änderungen zu überwachen und dementsprechende Aufgaben auszuführen:
+
+```javascript
+gulp.task('watch', function() {
+     gulp.watch('js/*.js', ['scripts']);
+     gulp.watch('scss/*.scss', ['sass']);
+ });
+```
+
+Sobald irgendeine Änderung im `js/` Ordner an der .js Dateien passiert, wird der Task `scripts` ausgeführt. So auch bei den Sass Dateien.
+
+Zu guter Letzt definieren wir auch noch einen Default-Task. Dieser wird ausgeführt, wenn du einfach nur `gulp` in die Konsole eingibst.
+
+```javascript
+gulp.task('default', ['sass', 'scripts', 'watch']);
+```
+
+## Mit Gulp richtig loslegen
+
+Hiermit bist du dann fertig. Mit dem Befehl gulp startest du jetzt die gulp und dieser führt deine drei Tasks einmal aus. Der watch-task endet erst, wenn du ihn mit CTRL+C bei Windows beendest, da er sonst immer auf Veränderungen wartet und darauf reagiert. Jetzt kannst du in deinem Editor deiner Wahl loslegen und die Gulp macht dann den langweiligen Kram.

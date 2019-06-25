@@ -1,0 +1,129 @@
+---
+id: 1781
+title: Authentifizierung einer Vue App
+date: 2017-04-03T12:57:19+00:00
+author: Rathes Sachchithananthan
+template: post
+image: /images/blog/einfuehrung-in-vuejs.jpg
+categories:
+  - Web
+tags:
+  - Frontendentwicklung
+  - vuejs
+locale: de_DE
+description: So realisierst du die Authentifizierung in einer Web App, die auf VueJS basiert.
+---
+
+Authentifizierung ist ein Thema, mit dem man sich fast immer beschäftigen muss, wenn man eine größere Webanwendung entwickelt. Anders als bei der klassischen Authentifizierung bei serverseitigen Anwendungen, kann man bei der Entwicklung einer Webapp, die auf eine API zugreift, nicht mit Sessions arbeiten. REST API’s, die im Web immer wieder Verwendung finden, sind zustandslos. Daher muss bei jeder Anfrage eine die Information der Authentifizierung immer mitgeschickt werden.
+
+<!--more-->
+
+Diese Information ist in der Regel ein Token, das von der API geliefert bei Login wird. Du kannst dafür zum Beispiel das [JSON Webtoken](/blog/json-web-token) verwenden. Dieses Token musst du also immer mitschicken. Wie dieses Token erzeugt wird, ist aber nicht die Aufgabe der Webapp. Das ist der Job der API.
+
+## Ablauf einer Authentifizierung in einer Webapp
+
+Schauen wir uns mal den Ablauf der Authentifizierung an:
+
+  1. Im ersten Schritt gehen wir davon aus, dass der User eine Seite besucht, bei der ein Login notwendig ist. Ist der User eingeloggt, können kann er den Inhalt einsehen. Ansonsten wir er zum Login weitergeleitet.
+  2. Auf der Login-Seite kann er seine Login-Daten eingeben. Diese werden an die API geschickt. Die API verarbeitet die Daten. Sind die Daten nicht korrekt, dann wird eine Error-Meldung und ein entsprechender Status-Code zurückgeliefert. Ansonsten wird ein Token zurückgeliefert.
+  3. Diesen müssen wir in unseren zukünftigen Anfragen immer als Authentifizierungsheader (oder wenn die API das zulässt als Querystring Parameter) mitschicken, um so zu zeigen, dass wir für die zukünftigen Aktionen befugt sind.
+
+Beim Ablauf stellen sich zwei Fragen und Problemstellungen, die wir in einer Webapp bewältigen müssen:
+
+  1. Wie können wir feststellen, ob der User eingeloggt ist oder nicht?
+  2. Wie sorgen wir dafür, dass sich der Benutzer nicht bei jedem Request neu einloggen muss?
+
+## Authentifizierung mit Vue Router
+
+Im Folgenden behandeln wir das Thema auf Basis eine Vue 2 Webapp, die mit dem Vue Router ausgestattet ist, sodass sämtliches Routing auch clientseitig stattfindet. Auch wenn hier das Frontend-Framework Vue zur Veranschaulichung benutzt wird, kannst du diese Herangehensweise in der Regel auch für andere JavaScript-Frameworks anwenden.
+
+Bevor dein User nun eine Seite besuchen kann, die durch einen Login abgesichert ist, musst du also prüfen, ob der User eingeloggt ist. Wann ist der User eingeloggt? Nämlich genau dann, wenn der User ein valides Token besitzt. Du musst also beim Client nach einem Token suchen und schauen, ob das Token valide ist.
+
+### Speichern eines Token
+
+Damit du nach einem Token suchen kannst, musst du dieses erstmal speichern können. Dafür wiederum musst du erstmal eines erhalten. Wir landen also bei dem Punkt, dass wir einen Login realisieren müssen. Folgender JavaScript Code, ist hierfür zuständig.
+
+```javascript
+import router from '@/router'
+import { API_ENDPOINT } from '@/constants/api.js'
+
+export default {
+
+ // authentication status
+ authenticated () {
+   return (localStorage.getItem('user') !== null && JSON.parse(localStorage.getItem('user')).data.token !== '')
+ },
+
+ // Send a request to the login URL and save the returned JWT
+ login (creds, redirect) {
+   window.axios.post(API_ENDPOINT + '/auth', creds)
+     .then((response) => {
+       localStorage.setItem('user', JSON.stringify(response))
+       // Redirect to a specified route
+       if (redirect) {
+         router.go(redirect)
+       }
+     })
+     .catch(function (error) {
+       console.log(error)
+     })
+   },
+
+ // To log out
+ logout: function () {
+   localStorage.removeItem('user')
+   router.go('/login')
+ }
+}
+```
+
+Was machen wir hier? Dieser kleine Service liefert zwei Funktionen: Login & Logout. Beim Login erwartet er ein Objekt mit den Zugangsdaten und eine URL, wohin der User weitergeleitet werden soll. Dann schicken wir einen POST-Request an die API und erhalten entweder einen Response mit Token oder einen Error. Wenn wir ein Token bekommen, dass speichern wir das Token im localStorage und leiten dann zu der Seite weiter. Ansonsten behandeln wir den Fehler.
+
+An dieser Stelle beantwortet sich dann auch direkt die andere Frage. Wo finden wir das Token? Im localStorage, weil wir es dort abspeichern. Finden wir also im localStorage kein Token, wissen wir, dass kein User eingeloggt ist. Dies übernimmt die Methode `authenticated()`, welche einfach nur schaut, ob das Token im localStorage existiert oder nicht.
+
+### Routen absichern
+
+Jetzt können wir also unseren User authentifizieren. Jetzt müssen wir nur noch sicherstellen, dass die zu authentifizierenden Seiten auch wirklich abgesichert sind. Dafür liefert uns in Vue 2 der Router eine Möglichkeit sogenannte "[Navigation Guards](https://router.vuejs.org/en/advanced/navigation-guards.html)" einzusetzen. Sowohl global als auch pro einzelne Router kann man festlegen, was passieren soll bevor die Route ausgeführt wird. In [Laravel kennt man da zum Beispiel das Konzept der Middlware](https://laravel.com/docs/middleware). Wir benutzen diese Möglichkeit und prüfen, ob ein Token existiert. Erst dann kann dann diese Route besucht werden.
+
+```javascript
+router.beforeEach((to, from, next) => {
+  if (to.meta.auth && !Auth.authenticated()) {
+    next('/login')
+  } else {
+    next()
+  }
+})
+```
+
+Wir prüfen hier, ob die Route, welche der Benutzer besuchen will (to) überhaupt eine Authentifizierung benötigt und ob der Benutzer dann dafür authentifiziert ist. Ist das nicht der Fall leiten wir den Benutzer zum Login weiter. Ansonsten kann er die Route besuchen. Dieses `to.meta.auth` ist einfach nur ein [benutzerdefinierte Variable im Route-Objekt](https://router.vuejs.org/en/advanced/meta.html), womit du bestimmen kannst, ob Auth zum Einsatz kommen soll oder nicht. Das Route-Objekt sieht dann zum Beispiel so aus:
+
+```javascript
+{
+  path: '/dashboard',
+  name: 'Dashboard',
+  component: Dashboard,
+  meta: {
+    auth: true
+  }
+}
+```
+
+### API-Call authorisieren
+
+Somit ist die komplette Authentifizierung auf Seiten von Vue umgesetzt. Wenn der User sich einloggt, wird ein Token im localStorage gesetzt. Und wenn eine gesicherte Route aufgerufen wird, dann schaut der Router vorher nach, ob ein Token gesetzt ist und leitet dich dementsprechend weiter zum Login oder lässt dich durch. Das einzige, das du nun noch realisieren musst, ist die Authorisierung. Du musst quasi an deine API immer dein Token mitschicken.
+
+Wie du oben bereits gesehen hast, benutze ich für die Kommunikation mit dem Server das Axios Package. Dieses lade ich in meiner main.js Datei global und habe auch direkt einen common Header gesetzt, der quasi immer bei einem Request mitgeschickt wird.
+
+```javascript
+window.axios = axios
+
+if (Auth.authenticated()) {
+  window.axios.defaults.headers.common = {
+    'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('user')).data.token
+  }
+}
+```
+
+## Fazit
+
+Eine einfach Authentifizierung ist mit Vue und Vue-Router sehr schnell realisiert. Ich möchte hier aber darauf hinweisen, dass es wirklich nur eine einfach Variante ist und einige Fälle noch abgearbeitet werden müssen. Zum Beispiel wird hier localStorage vorausgesetzt. Außerdem wird das Token erst als abgelaufen erkannt, wenn man einen Request an die API sendet, das geht bestimmt auch eleganter. Aber wie gesagt, als kleine Einführung ist dieses kleine Projekt echt einfach.

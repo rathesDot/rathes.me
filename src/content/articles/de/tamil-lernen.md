@@ -1,0 +1,51 @@
+---
+id: 1012
+title: 'Tamil: Warum es sich lohnt die Sprache der Tamilen zu erlernen und wie du dabei vorgehen solltest'
+date: 2016-03-27T12:00:23+00:00
+author: Rathes Sachchithananthan
+template: post
+image: /images/blog/tamil.png
+categories:
+  - Tamil
+tags:
+  - Sprache
+  - tamilische Sprache
+locale: de_DE
+desciption: Ist Tamil lernen schwierig? Was bringt es mirüberhaupt? Wie lerne ich Tamil? Diese und mehr Fragen beantworte ich dir in diesem Beitrag.
+---
+12 Vokale. 18 Konsonanten. 247 Buchstaben insgesamt. Dazu noch 8 Fälle. Viele, die das hier zum ersten Mal mitbekommen, werden sich denken, dass es unmöglich sei Tamil zu lernen. Sogar viele hier im Ausland geborenen Tamilen denken so. Dabei ist Tamil verdammt einfach, sehr viel einfacher als andere asiatische Sprachen wie Chinesisch oder Thai. Wie das geht und warum es sich lohnt Tamil zu erlernen, das verrate ich dir in diesem Beitrag.
+
+<!--more-->
+
+## Eine spannende alte Sprache
+
+Wenn ich sage, dass Tamil eine alte Sprache ist, dann meine ich sehr alt. Kann man ungefähr mit Latein vergleichen. Nur spricht — wahrscheinlich außer meinem Lateinlehrer aus Schulzeiten — keiner mehr fließend Latein, während Tamil noch von mehr als 70 Millionen Menschen gesprochen wird. Tamil ist neben Telugu, Kannada und Malayalam — letztere hört sich fast genauso an wie Tamil — eine der vier großen dravidischen Sprachen, hat aber in Vergleich zu den anderen eine sehr viel komplexere Literaturgeschichte und ist auch weniger (bzw. erst spät) vom Sanskrit (dem Latein der Inder) beeinflusst worden.
+
+Das Spannende an der Sprache ist, dass man historisch noch nicht viel weiß. Mehr als 70 Millionen Menschen sprechen diese Sprache, aber keiner kann genau sagen, wann und wo die Sprache entstanden ist. Ist die Sprache autochthon, also in der Gegend um Südindien und Sri Lanka entstanden, oder ist doch irgendwo anders entstanden und dann mit der Zeit gewandert?
+
+Der Legende von Kumarikkandam nach, von vielen Tamilen sogar noch immer als wahr verkauft, gab es vor allzu langer Zeit südlich von Kanniyakumari (der Südspitze Indiens) einen großen Kontinent: Kumarikkandam, der Kumari-Kontinent (kandam = Kontinent). Demnach entstammt das tamilische Volk und sogar die ganze Zivilisation diesem Kontinent. Dass das nicht sein kann, wurde bereits belegt, aber im Hinduismus und auch im tamililschen Nationalismus wird diese Legende noch oft benutzt. Aber auch in der Esoterik, was zeigt wie viel von der Legende zu halten ist. Was mit dem Kontinent passiert ist? Unglücklicherweise gesunken. Atlantis auf Tamil.
+
+Zeitlich kann man Tamil in drei Perioden einteilen. Alt-Tamil fängt schon 300 BC an, entwickelt sich weiter zu Mittel-Tamil (von 700-1660) und seitdem dann das moderne Tamil. Das hat man damit eingestuft, dass man als älteste Beweise Steininschriften aus dem Jahr 254 BC gefunden hat und das Tolkappiyam, das älteste bekannte Tamil Werk, ist aus 200 BC. Aber was war davor? Wenn Tamil eben nicht autochthon ist, dann hat man nicht mal an der richtigen Stelle suchen können oder? Man kann also noch weiter in die Geschichte forschen und es gibt noch so viele Anlaufstellen. Es wurden und werden regelmäßig Relikte aus der Vergangenheit gefunden, aber richtige Schlussfolgerungen und Theorien, die bewiesen wurden, sind bisher nicht an die breite Öffentlichkeit gelangt. Soweit ist man noch nicht, Zeit also jetzt noch einzusteigen. Die Voraussetzung dafür: Man kann Tamil lesen und versteht es auch. Tamil sprechen wäre bestimmt auch nicht verkehrt.
+
+## Tamil erlernen
+
+Wie aber erlerne ich jetzt die Sprache? 12 Vokale. 18 Konsonanten. 247 Buchstaben insgesamt. Dazu noch 8 Fälle. Das ist doch unmöglich denkst du dir bestimmt jetzt. Aber ich verrate dir: Nein! Tamil ist ganz einfach. Man muss nur einmal reinkommen, dann kann man Tamil innerhalb von kürzester Zeit erlernen.
+
+### Tamil Schrift
+
+Das Wichtigste, das man verstanden haben muss, ist, dass Tamil zwar aus vielen Zeichen und Regeln besteht, aber gerade dies dafür sorgt, dass es verdammt wenige Ausnahmen gibt oder man Annahmen machen muss und aus dem Kontext herleiten. Nehmen wir zum Beispiel die 247 Buchstaben. Streichen wir den einen extra Buchstaben ஃ, dann haben wir 246 Buchstaben. Diese kann man einfach aufteilen in 12 Vokale und 18 Konsonanten. Die übrigen 216 Buchstaben sind einfach nur die Kombination aus Vokal und Konsonant. Wir haben ein `a` und ein `k` und im Deutschen würde man, beides zusammenschreiben und erhielte dann ein `ka`, aber im Tamil gibt es dafür einen extra Buchstaben. Daher die Menge. Wenn man noch weiterschaut und sich die 12 Vokale anschaut, wird man schnell eines feststellen. Es gibt für jeden Vokallaut zwei Versionen, eine kurze und eine lange. `a` und `aa` wäre im Tamil zwei einzelne Buchstaben. Man muss also nicht überlegen, ob das verlängerte `a` jetzt mit `ah` oder `aa` geschrieben wird, sondern hat einfach einen passenden Buchstaben dafür. Ist doch einleuchtend, oder? Im Prinzip sogar einfacher als Deutsch. Zumindest in dem Punkt.
+
+### Tamil Grammatik
+
+Auch in der Grammatik gibt es viele Regeln, die dafür sorgen, dass alles klar strukturiert ist. Es gibt zwar 8 Fälle, aber diese dienen nur der genauen Bestimmung des Falles. Wie im Deutschen gibt es Nominativ, Akkusativ, Dativ und Genitiv als Antwort auf die Fragen `Wer?/Was?`, `Wen?/Was?`, `Wem?` und `Wessen?`. Zusätzlich gibt es noch die 4 Fälle Komitativ (Mit wem?), Instrumental (Wodurch?), Lokativ (Wo?) und Ablativ (Woher?). Wer Latein in der Schule hatte, dem wird der Begriff Ablativ schon bekannt sein und auch merken, dass die letzten Fälle im Latein zu einem Fall zusammengefasst wurden (Ablativus sociativus, Ablativus instrumentalis, Ablativus locativus, Ablativus separativus). Im Tamil kann diese Fälle also gekonnt anhand der Endungen erkennen und muss nicht aus dem Zusammenhang schlussfolgern (was bei mir in der Schule nie besonders gut geklappt hat).
+
+### Tamil (online) lernen
+
+Ich habe hier zwei kleine und einfache Hinweise wie du Tamil erlernen kannst:
+
+  1. Befasse dich als Erstes mit den Buchstaben, lerne diese so auswendig, dass du jedes einzelne Schriftzeichen erkennst. Das hört sich nach viel Arbeit an, aber ist es nicht. Zumindest nicht so komplex wie die Katakana aus dem Japanischen zu erlernen. Da nämlich die meisten Buchstaben nur eine Kombination aus Konsonant und Vokal ist, sehen diese auch ähnlich aus und die sehen konsequent ähnlich aus. Das heißt, wenn du verstanden hast, wie man ein `k` zum `ka` umschreibt, dann kannst du auch schnell ein `p` zum `pa` umschreiben.
+  2. Spring jetzt ins kalte Wasser. Schnapp dir ein Wörterbuch und eine Grammatikbuch. Setz dich hin und überleg, was du in deinem Alltag brauchen könntest und fang an dir Phrasen und Sätze zu merken. Und lern immer dazu wie man diese Phrasen und Sätze schreibt. Wenn du die Möglichkeit hast, dann flieg doch mal nach Tamil Nadu (Nach Eelam ist dann doch ein wenig gefährlich) oder du hast Glück und hast eine Freundin oder einen Freund, der Tamil kann.
+
+Was ich dir auf jeden Fall noch empfehlen kann: Auf <https://learn-tamil-online.com/> vorbeizuschauen. Ich muss es empfehlen, da es mein Projekt ist. Noch gibt es da nicht viel zu sehen, aber in naher Zukunft erscheinen dort erste Lektionen, um Tamil zu erlernen, ein Online-Wörterbuch und dann wird nach und nach eine Plattform eingerichtet, die dafür sorgen wird, dass du schnell und gut Tamil lernst.
+
+Hast du noch Tipps wie man eine Sprache schnell erlernen kann? Vielleicht hast du ja bereits Fremdsprache erlernt und kannst davon berichten. Schreib uns in die Kommentare und hilf uns dabei Tamil einfacher zu lernen!

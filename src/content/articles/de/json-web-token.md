@@ -1,0 +1,127 @@
+---
+id: 657
+title: Einsatz von JSON Web Token für die Authentifikation in Webanwendungen
+date: 2015-05-11T08:00:32+00:00
+author: Rathes Sachchithananthan
+template: post
+image: /images/blog/jwt-in-webapplikationen.png
+categories:
+  - Web
+tags:
+  - Framework
+  - Frontendentwicklung
+  - PHP
+  - Webentwicklung
+description: Was ist das JSON Web Token, wie funktioniert es und welche Vorteile hat man mit JSON Web Token im Vergleich zu Cookies. Und es geht um die Anwendung in PHP.
+locale: de_DE
+---
+REST API’s, die im Web immer wieder Verwendung finden, sind zustandslos. Das bedeutet, dass bei jeder Anfrage vom Client an den Server diese mit allen Informationen bestückt sein muss, die für die Verarbeitung der Anfrage benötigt wird. Um diese Zustandslosigkeit auch beim Login und dem Status des Logins beizubehalten braucht man eine andere Methode als das gute $_SESSION in PHP. An dieser Stelle kommt das JSON Web Token zum Einsatz.
+
+In diesem Beitrag erkläre ich euch was das JSON Web Token ist, wie es funktioniert und welche Vorteile man mit JSON Web Token im Vergleich zu Cookies hat. Außerdem erfahrt ihr wie es zusammen mit einer in PHP geschriebenen API benutzt werden könnte.
+
+<!--more-->
+
+## Cookies vs. JSON Web Token
+
+Betrachten wir zunächst die traditionelle Variante der Authentifizierung und Autorisierung. Der Client sendet eine POST Anfrage an den Server mit den Daten des Benutzers für die Authentifizierung und bekommt eine Antwort mit einem Cookie welches eine Session beinhaltet, um den Benutzer zu identifizieren. Bei jeder weiteren Anfrage an den Server muss dieser die Session finden, deserialisieren und auswerten.
+
+Bei der Variante mit dem JSON Web Token sendet der Client ebenfalls eine Anfrage an der Server mit den Benutzerdaten. Diesmal bekommt der Client als Antwort ein Token, das JSON Web Token. Bei jedem Request muss der Client nun dieses Token als Query-String oder als Autorisierungs-Header mitgeliefert werden. Der Server validiert dieses Token und gewährt dementsprechend Zugriff zu der gewünschten Ressource.
+
+### Vorteile des JSON Web Token
+
+Der Einsatz von JSON Web Token hat mehrere Vorteile gegenüber dem Einsatz von Cookies.
+
+- **Zustandslos**: Wie bereits eingangs erläutert sind REST Anwendungen zustandslos und die Umsetzung der Authentifikation und der Autorisierung mithilfe von Cookies würde diesem Paradigma nur im Weg stehen. Bei JSON Web Token werden die Informationen für die Authentifikation direkt beim Request mitgeliefert und so ist die Zustandslosigkeit gesichert
+
+- **CORS**: Beim Cross-Origin Request Sharing hat man mit den Cookies auch Probleme, denn bei Cross-Origin Anfragen werden in der Regel Cookies nicht mitgesendet. Beim Einsatz von JSON Web Token ist dieses Problem nicht vorhanden
+
+- **Mobile Applikationen**: Bei mobilen Anwendungen ist der Einsatz von Cookies auch nicht sehr sinnvoll
+
+- **Einsatz von Frameworks**: Beim Einsatz von Frameworks ist man oft an die Authentifikation vom jeweiligen Framework gebunden. Wenn man gleich mehrere im Einsatz hat wie Laravel 5 und AngularJS, dann weiß man um die Probleme, die man hat, die Daten der Authentifikation zwischen beiden Frameworks zu teilen. JSON Web Token ist standardisiert und man kann dieses Verfahren immer wieder einsetzen. Außerdem gibt es für viele Programmiersprachen bereits Implementierungen für JSON Web Token.
+
+## Aufbau von JSON Web Token
+
+Wie sieht denn nun ein JSON Web Token aus? Dieser Frage gehen wir im folgenden Abschnitt nach. Allgemein gesehen ist ein Token eine Anreihung von Zeichen. Diese wird aus mehreren JSON generiert, wodurch dieses Token auch nun bereits oft erwähnten Namen bekommen hat. JSON Web Token wird auch gerne mit JWT abgekürzt (- genau, JWT heißt nicht irgendwie "Java Web Tools" oder so).
+
+Das JSON Web Token besteht aus drei Teilen: Dem Header, dem Payload (Claims) und dem Signature.
+
+### Header
+
+Im Header findet man die Meta-Daten über das Token. Minimal stehen dort der Typ und das Hash-Verfahren des Signature drin:
+
+```json
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+```
+
+Kodiert man dieses JSON nun mit Base64, dann erhält man den ersten Teil des JSON Web Token. In diesem Fall wäre dies: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9`
+
+### Payload (Claims)
+
+Der Payload (oder sagt man das Payload?) beinhaltet alle Informationen, die an den Server übermittelt werden sollen und welche vom Server für die Authentifizierung des Users benötigt werden. Ein Claim ist eine Aussage über eine Entität, im Falle der Authentifikation über den User. Es gibt verschiedene Art von Claims: die registrierten Claims, die öffentlichen Claims und die privaten Claims.
+
+**Registered Claims**: Die registrierten Claims sind jene, die im IANA JSON Web Token Register eingetragen sind. Diese sind nicht zwingend, aber dienen als guter Einstiegspunkt für die Wahl der Claims. [Die registrierten JSON Web Token Claims kannst du hier auf der IANA Webseite nachlesen.](http://www.iana.org/assignments/jwt/jwt.xhtml) Es wird auch direkt erklärt, welcher Inhalt dort erwartet wird.
+
+**Public Claims**: Wie die registrierten JSON Web Token Claims kannst du auch selber welche definieren. Wenn der Empfänger und der Sender dieser Claims nicht einem geschlossenen Netzwerk angehören, dann sind dieses Claims öffentlich und es muss sichergestellt werden, dass die Namen der einzelnen Claims eindeutig sind. Am besten erreicht man dies über die Verwendung von URN.
+
+**Private Claims**: Private Claims sind Claims, die nur im geschlossenen Netzwerk vorkommen. Hier können wir die Claims so benennen wie wir sie wollen, da uns das ganze System ja bekannt ist bzw. wir vorgeben können wie sämtliche Claims gelesen werden.
+
+Ein vollständiger Payload kann dann wie folgt aussehen:
+
+```json
+{
+  "iss": "rathes.de",
+  "exp": 1431061608,
+  "http://rathes.de/jwt/role": "admin",
+  "user" : 342
+}
+```
+
+Bei „iss“ und „exp“ handelt es sich dabei um IANA registered JSON Web Token Claims, „http://rathes.de/jwt/role“ ist ein öffentlicher Claim und „user“ ist ein privater Claim.
+
+Auch der Payload wird Base64 kodiert und sieht in unserem Fall folgendermaßen aus:
+
+```bash
+eyJpc3MiOiJyYXRoZXMuZGUiLCJleHAiOjE0MzEwNjE2MDgsImh0dHA6Ly9yYXRoZXMuZGUvand0L3JvbGUiOiJhZG1pbiIsInVzZXIiOjM0Mn0=
+```
+
+### Signature
+
+Die Signatur des Tokens erhält man mithilfe der beiden oberen Base64 kodierten JSON Strukturen. Verbindet man beide zusammen mit einem Punkt „.“ und kodiert diese zusammen mit dem im Header definierten Algorithmus, dann erhält man die Signatur des JSON Web Token. In unserem Fall wäre das also:
+
+```bash
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9 + . + eyJpc3MiOiJyYXRoZXMuZGUiLCJleHAiOjE0MzEwNjE2MDgsImh0dHA6Ly9yYXRoZXMuZGUvand0L3JvbGUiOiJhZG1pbiIsInVzZXIiOjM0Mn0=
+```
+
+ergibt
+
+```bash
+ae449a3bf3174ce688e72811d1ff63e87614004cbd67e6241bfa6d7adabe859d
+```
+
+Der Key für die Verschlüsselung liegt beim Server, sodass er diesen für die Entschlüsselung auch wieder benutzen kann.
+
+Verbindet man nun alle drei Teile erneut mit einem Punkt, dann erhält man das komplette JSON Web Token, welches nun für den Einsatz bereits ist. Das heißt unser fertiges JSON Web Token lautet:
+
+```bash
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYXRoZXMuZGUiLCJleHAiOjE0MzEwNjE2MDgsImh0dHA6Ly9yYXRoZXMuZGUvand0L3JvbGUiOiJhZG1pbiIsInVzZXIiOjM0Mn0=.ae449a3bf3174ce688e72811d1ff63e87614004cbd67e6241bfa6d7adabe859d
+```
+
+
+![Das JSON Web Token besteht aus den drei Teilen Header, Payload und Signature](/images/blog/json-web-token.png)
+
+## Einsatz von JSON Web Token in PHP und Laravel 5
+
+Wie bereits in den Vorteilen erwähnt ist das Konzept der JSON Web Token Standard. Auch größere und namhafte Unternehmen setzen neben OAuth 2.0 auch auf JSON Web Token. Und aus diesem Grund gibt es auch für wahrscheinlich jede Programmiersprache eine Implementierung dieses Konzeptes.
+
+In PHP existieren zahlreiche Implementierungen. [Auf GitHub findet man hier eine simple Implementierung, welches Framework-unabhängig ist](https://github.com/firebase/php-jwt). Einfach mithilfe von composer installieren und einsetzen.
+
+Für das von mit fast immer eingesetzte und meiner Meinung nach beste PHP-Framework Laravel gibt es natürlich auch spezifischere Implementierungen. Ich empfehle [JWT-Auth von Tymon, zu finden im Packagist Archiv und somit auch ganz einfach via composer zu installieren.](https://packagist.org/packages/tymon/jwt-auth)
+
+Version 0.5.* ist auf Laravel 5 zugeschnitten, die älteren Versionen funktionieren mit Laravel 4. Wenn ihr eine noch ältere Version von Laravel benutzt, dann einfach mal das Framework updaten – lohnt sich in jeden Fall.
+
+Installation, Konfiguration und Einsatz ist verdammt einfach und im GitHub Wiki anhand von Beispielen verdammt simpel erklärt. Es ist so eingerichtet, dass man mithilfe des Laravel User Objekts die JSON Web Token erstellen kann. Auch die Authentifikation und Autorisierung ist erläutert und verdammt einfach zu benutzen.
+
+Schaut es euch an, setzt es ein und ihr werdet euch fragen, warum ihr JSON Web Token nicht schon immer benutzt habt. Bei mir jedenfalls werde ich, wenn ich eine gute Anwendung schreibe, diese immer im Einsatz haben. Cookies sind bei mit Geschichte – zumindest im Web.
