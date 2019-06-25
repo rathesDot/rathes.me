@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
@@ -48,9 +48,13 @@ const Writings = ({ data }) => (
                 {key}
               </h2>
               {nodes.map(node => (
-                <h3 key={node.id} className="text-white text-lg mb-2">
+                <Link
+                  to={node.fields.slug}
+                  key={node.id}
+                  className="block text-white text-lg mb-2"
+                >
                   {node.frontmatter.title}
-                </h3>
+                </Link>
               ))}
             </div>
           )
@@ -68,6 +72,9 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+          }
+          fields {
+            slug
           }
         }
       }
