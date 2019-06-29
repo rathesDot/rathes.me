@@ -13,6 +13,23 @@ export default ({ data }) => {
           value:
             data.site.siteMetadata.siteUrl + post.frontmatter.image.publicURL,
         },
+        {
+          name: `og:url`,
+          value: data.site.siteMetadata.siteUrl + post.fields.slug,
+        },
+        {
+          name: `og:type`,
+          value: `article`,
+        },
+        {
+          name: `og:locale`,
+          value: post.frontmatter.locale,
+        },
+        {
+          name: `og:image`,
+          value:
+            data.site.siteMetadata.siteUrl + post.frontmatter.image.publicURL,
+        },
       ]
     : []
 
@@ -49,8 +66,12 @@ export const query = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       excerpt(format: PLAIN)
+      fields {
+        slug
+      }
       frontmatter {
         title
+        locale
         image {
           publicURL
           childImageSharp {
