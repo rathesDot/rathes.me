@@ -4,7 +4,7 @@ title: Namen in Formularen
 date: 2017-02-17T22:30:59+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/ux-namen-formular.png
+image: ../../images/blog/ux-namen-formular.png
 categories:
   - Web
 tags:
@@ -13,6 +13,7 @@ tags:
 locale: de_DE
 description: Du kannst alleine durch das Erfragen des Namens deinen Benutzer direkt wieder verlieren. Wie du das verhinderst zeige ich dir hier.
 ---
+
 Es gibt einige Momente im Web, wo du den Namen von deinen Benutzern in Erfahrung bringen musst. In den meisten Fällen wirst du das über ein einfaches Formular machen. Wie sieht das Formular bei dir dann aus? Hast du ein oder mehrere Felder?
 
 <!--more-->

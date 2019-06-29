@@ -1,10 +1,10 @@
 ---
 id: 1519
-title: 'Oslo: Was ich an Norwegens Hauptstadt liebe und was nicht'
+title: "Oslo: Was ich an Norwegens Hauptstadt liebe und was nicht"
 date: 2016-08-05T10:48:05+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/oslo.jpg
+image: ../../images/blog/oslo.jpg
 categories:
   - Welt
 tags:
@@ -14,6 +14,7 @@ tags:
 locale: de_DE
 desciption: Ich bin jetzt schon einige Male in Oslo gewesen, der Hauptstadt von Norwegen. Derzeit befinde ich mich auch dort und werde wie immer sehr begeistert aus dieser Stadt zurückkehren.
 ---
+
 Ich bin jetzt schon einige Male in Oslo gewesen, der Hauptstadt von Norwegen. Derzeit befinde ich mich auch dort und werde wie immer sehr begeistert aus dieser Stadt zurückkehren.
 
 <!--more-->
@@ -28,7 +29,7 @@ Oslo hat noch den großen Vorteil, dass es am Wasser liegt. Ich könnte Tag und 
 
 Die einzige deutsche Großstadt, die an Oslo in dieser Hinsicht rankommt ist Hamburg, wer diese schöne Hansestadt kennt, kann sich dann auch denken wie schön Oslo ist.
 
-![Oslo am Meer](/images/blog/oslo-am-meer.jpg)
+![Oslo am Meer](../../images/blog/oslo-am-meer.jpg)
 
 ## Oslo und moderne Technologien in der Webentwicklung
 
@@ -44,7 +45,7 @@ Vielleicht liegt das daran, dass ich mit dem Ruhrpott nicht die beste Lage für 
 
 Habe ich schon mal erwähnt, dass ich ein riesiger Tesla-Fan bin? Und das obwohl ich nie eines selbst testen konnte (falls mir das jemand möglich machen konnte wäre ich ihm sehr dankbar).
 
-![Teslas in Oslo](/images/blog/teslas-in-oslo.jpg)
+![Teslas in Oslo](../../images/blog/teslas-in-oslo.jpg)
 
 In Oslo findest du an jeder Straßenecke einen Tesla. Aber nicht nur Tesla, du findest hier Elektroautos sämtlicher Hersteller. Das liegt daran, dass die Stadt bzw. das Land Norwegen die Elektromobilität stark fördert. Nicht nur auf Papier und mit leeren Aussagen wie in Deutschland, sondern aktiv. Wenn du hier in Oslo einen Elektrowagen fährst, dann parkst du fast überall kostenlos. Du kommst in das Stadtgebiet rein ohne die typischen Mauten zu bezahlen und du bekommst beim Kauf ebenfalls ne Förderung.
 
@@ -62,7 +63,7 @@ Das Beste ist aber die hohe Zahl an offenen Wifi Hotspots. In Oslo kannst quasi 
   <p lang="en" dir="ltr">
     Free WiFi in a supermarket. I love this place <3 <a href="https://twitter.com/hashtag/oslo?src=hash">#oslo</a> <a href="https://twitter.com/hashtag/visitoslo?src=hash">#visitoslo</a> <a href="https://twitter.com/hashtag/rema1000?src=hash">#rema1000</a>
   </p>
-  
+
   <p>
     &mdash; Rathes Sachchi (@rswebdesigner) <a href="https://twitter.com/rswebdesigner/status/756812612655087616">July 23, 2016</a>
   </p>

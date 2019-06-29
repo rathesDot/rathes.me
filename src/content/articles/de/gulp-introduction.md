@@ -1,10 +1,10 @@
 ---
 id: 1036
-title: 'Gulp &#8211; Wie du dank Taskrunner besser durchstartest'
+title: "Gulp &#8211; Wie du dank Taskrunner besser durchstartest"
 date: 2015-11-01T16:40:52+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/gulp-logo.jpg
+image: ../../images/blog/gulp-logo.jpg
 categories:
   - Web
 tags:
@@ -12,6 +12,7 @@ tags:
   - Webentwicklung
 locale: de_DE
 ---
+
 Ihr arbeitet an einer Frontend-Entwicklung und euch schwirrt nur eine Frage durch den Kopf: Das ist doch immer das Gleiche. Kann nicht ein anderer das für mich übernehmen? – Nein, ich meine nicht die Frontend-Entwicklung an sich, sondern die kleinen nervigen Aufgaben, die da immer wieder dazwischen kommen. Aus SCSS die CSS-Datei, diese minifizieren, JavaScript-Dateien zusammenführen und minifizieren und noch viele ähnliche Sachen. Kommt euch das bekannt vor? Was ihr braucht ist ein Task-Runner! Gulp!
 
 <!--more-->
@@ -98,35 +99,37 @@ npm install gulp-sass gulp-concat gulp-uglify gulp-rename --save-dev
 Mit diesem Befehl werden alle 4 Plug-Ins heruntergeladen, installiert und als Abhängigkeiten festgehalten. Jetzt erstellen wir im unserem Wurzelverzeichnis des Projekts eine Datei `gulpfile.js`. Hier laden wir als Erstes all unsere Plug-Ins und natürlich allen voran Gulp selbst:
 
 ```javascript
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
+var gulp = require("gulp")
+var sass = require("gulp-sass")
+var concat = require("gulp-concat")
+var uglify = require("gulp-uglify")
+var rename = require("gulp-rename")
 ```
 
 Damit können jetzt alles Tasks benutzt werden. Schreiben wir nun die Aufgabe, um Sass zu kompilieren:
 
 ```javascript
-gulp.task('sass', function() {
-     return gulp.src('scss/*.scss')
-         .pipe(sass())
-         .pipe(gulp.dest('css'));
- });
- ```
+gulp.task("sass", function() {
+  return gulp
+    .src("scss/*.scss")
+    .pipe(sass())
+    .pipe(gulp.dest("css"))
+})
+```
 
 `gulp.task()` definiert eine Aufgabe, wobei der erste Parameter der Name der Aufgabe ist und der zweite Parameter eine Funktion ist, die ausgeführt werden soll. In unserem Fall werden alles scss-Dateien im Ordner `scss/` geöffnet, `sass()` wird ausgeführt und im Ordner `css/` gespeichert.
 
 ```javascript
-gulp.task('scripts', function() {
-     return gulp.src('js/*.js')
-         .pipe(concat('all.js'))
-         .pipe(gulp.dest('dist'))
-         .pipe(rename('all.min.js'))
-         .pipe(uglify())
-         .pipe(gulp.dest('dist'));
- });
- ```
+gulp.task("scripts", function() {
+  return gulp
+    .src("js/*.js")
+    .pipe(concat("all.js"))
+    .pipe(gulp.dest("dist"))
+    .pipe(rename("all.min.js"))
+    .pipe(uglify())
+    .pipe(gulp.dest("dist"))
+})
+```
 
 Hier unsere zweite Aufgabe für die JavaScript Dateien. Wir laden hier alles mit der Endung `*.js` aus dem Ordner `js/` führen alle in eine `all.js` zusammen, schreiben diese Datei in den Ordner dist/, benennen diese um zu all.min.js, minifizieren diese Datei uns speichern die Datei nocheinmal im Ordner `dist/` ab.
 
@@ -135,10 +138,10 @@ Wenn du ein Grunt-User bist, weißt du wie umständlich diese paar Zeilen Code i
 Folgender Task wird benutzt um Änderungen zu überwachen und dementsprechende Aufgaben auszuführen:
 
 ```javascript
-gulp.task('watch', function() {
-     gulp.watch('js/*.js', ['scripts']);
-     gulp.watch('scss/*.scss', ['sass']);
- });
+gulp.task("watch", function() {
+  gulp.watch("js/*.js", ["scripts"])
+  gulp.watch("scss/*.scss", ["sass"])
+})
 ```
 
 Sobald irgendeine Änderung im `js/` Ordner an der .js Dateien passiert, wird der Task `scripts` ausgeführt. So auch bei den Sass Dateien.
@@ -146,7 +149,7 @@ Sobald irgendeine Änderung im `js/` Ordner an der .js Dateien passiert, wird de
 Zu guter Letzt definieren wir auch noch einen Default-Task. Dieser wird ausgeführt, wenn du einfach nur `gulp` in die Konsole eingibst.
 
 ```javascript
-gulp.task('default', ['sass', 'scripts', 'watch']);
+gulp.task("default", ["sass", "scripts", "watch"])
 ```
 
 ## Mit Gulp richtig loslegen

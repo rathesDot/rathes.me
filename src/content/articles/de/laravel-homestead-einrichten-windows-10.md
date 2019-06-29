@@ -4,7 +4,7 @@ title: Laravel Homestead unter Windows 10 einrichten
 date: 2016-05-23T16:03:57+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/laravel-vagrant-homestead.png
+image: ../../images/blog/laravel-vagrant-homestead.png
 categories:
   - Web
 tags:
@@ -14,6 +14,7 @@ tags:
 description: Mit dieser Anleitung schaffst du es Laravel Homestead auch ganz einfach unter Windows 10 einzurichten.
 locale: de_DE
 ---
+
 Homestead ist eine von Laravel vorkonfigurierte Vagrant Box, die es einem ermöglicht ganz einfach und unkompliziert Laravel in seiner lokalen Umgebung zu installieren. Für Windows User ist es dann doch nicht so unkompliziert. Daher gibt es hier eine kleine Anleitung für die Einrichtung von Laravel Homestead unter Windows.
 
 <!--more-->
@@ -43,10 +44,10 @@ Daher möchte ich in diesem kleinen Artikel zeigen, worauf man achten sollte, we
 Bevor man Homestead überhaupt einsetzen kann, musst du zwei Sachen installieren:
 
 1. **VirtualBox**:
-Da Vagrant einen Provider für die Virtuellen Maschinen benötigt, müssen wir auch einen installieren. [VirtualBox ist kostenlos](https://www.virtualbox.org/) und bietet sich halt gut dafür an. Alternativ kann man auch VMWare benutzen, das aber kostenpflichtig ist, dafür aber auch bessere Performance haben soll
+   Da Vagrant einen Provider für die Virtuellen Maschinen benötigt, müssen wir auch einen installieren. [VirtualBox ist kostenlos](https://www.virtualbox.org/) und bietet sich halt gut dafür an. Alternativ kann man auch VMWare benutzen, das aber kostenpflichtig ist, dafür aber auch bessere Performance haben soll
 
 2. **Vagrant**:
-Natürlich muss man auch Vagrant installieren. Die Installation ist aber sehr einfach: [Auf der Downloadseite von Vagrant herunterladen](https://www.vagrantup.com/downloads.html) und Installer ausführen.
+   Natürlich muss man auch Vagrant installieren. Die Installation ist aber sehr einfach: [Auf der Downloadseite von Vagrant herunterladen](https://www.vagrantup.com/downloads.html) und Installer ausführen.
 
 Als Nutzer von Windows muss man darauf achten, dass man VT-x aktiviert. Dies macht über BIOS. Ich musste außerdem Hyper-V deaktivieren. Dafür geht man unter Windows 10 zu `Systemsteuerungen > Programme > Windows Features aktivieren oder deaktivieren`. Dort sucht man nach der Checkbox für Hyper-V, entfernt dort das Häkchen, bestätigt das und startet den PC neu.
 

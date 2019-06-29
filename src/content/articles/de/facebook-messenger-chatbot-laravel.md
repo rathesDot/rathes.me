@@ -4,7 +4,7 @@ title: Facebook Messenger Chatbot mit Laravel
 date: 2017-04-01T18:02:37+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/laravel-facebook-messenger-chatbot.png
+image: ../../images/blog/laravel-facebook-messenger-chatbot.png
 description: In diesem Artikel zeige ich dir wie du mit Laravel einen Chatbot für den Facebook Messenger aufsetzen kannst.
 categories:
   - Featured
@@ -73,7 +73,7 @@ public function getWebhook(Request $request)
 }
 ```
 
-Man erkennt hier, dass mein Token "Aheenam\_verify\_that\_bot" lautet. Dies muss dann natürlich so in dem Formular eingetragen werden. Ein Klick auf "Verify & Save" führt den Handshake aus.
+Man erkennt hier, dass mein Token "Aheenam_verify_that_bot" lautet. Dies muss dann natürlich so in dem Formular eingetragen werden. Ein Klick auf "Verify & Save" führt den Handshake aus.
 
 Bei den Subscription Fields solltest du wie bereits oben erläutert diejenigen auswählen, die du benötigst. Was die einzelnen bewirken und wann diese ausgelöst werden, kannst du hier in der [Facebook Developer Dokumentation](https://developers.facebook.com/docs/messenger-platform/webhook-reference) nachlesen.
 

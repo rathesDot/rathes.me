@@ -1,14 +1,15 @@
 ---
 id: 1733
-title: 'Jahresrückblick: Mein Jahr 2016'
+title: "Jahresrückblick: Mein Jahr 2016"
 date: 2016-12-19T21:23:19+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/oslo-16-12.jpg
+image: ../../images/blog/oslo-16-12.jpg
 categories:
   - Welt
 locale: de_DE
 ---
+
 Es ist bei mir üblich, dass ich mich jedes Jahr hinsetze und mir Gedanken darüber mache wie das Jahr gelaufen ist, was ich daraus lernen kann und was ich mir für das kommende Jahr erhoffe. Dieses Jahr neigt sich ebenfalls dem Ende zu und es wird Zeit für einen kleinen Jahresrückblick.<!--more-->
 
 Wie jedes Jahr habe ich nur wenig von dem erreicht, was ich mir letztes Jahr vorgenommen habe. Aber dieses Jahr kann ich mit bestem Gewissen sagen, dass ich trotzdem zufrieden bin. Und das ist es doch was zählt.
