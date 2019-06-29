@@ -40,6 +40,10 @@ class SEO extends React.PureComponent {
                   content: title,
                 },
                 {
+                  property: `og:site_name`,
+                  content: `rathes.me`,
+                },
+                {
                   property: `og:description`,
                   content: metaDescription,
                 },
