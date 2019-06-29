@@ -3,6 +3,7 @@ module.exports = {
     title: `Web Developer — Rathes Sachchithananthan`,
     description: `I am a former freelancing Web Designer and Web Developer. Currently you can find me working at Aheenam, the agency I started to provide digital solutions for anyone. Get in touch with me using social media!`,
     author: `@rswebdesigner`,
+    siteUrl: `https://rathes.me`,
   },
   plugins: [
     {
