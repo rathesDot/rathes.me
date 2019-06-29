@@ -5,7 +5,7 @@ date: 2018-09-21T08:25:25+02:00
 author: Rathes Sachchithananthan
 template: post
 description: How does a morning routine have to look like to make me more successful? There is only one answer to it.
-image: /images/blog/morning-routine.jpg
+image: ../../images/blog/morning-routine.jpg
 categories:
   - Life
 tags:

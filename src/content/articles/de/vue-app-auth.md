@@ -4,7 +4,7 @@ title: Authentifizierung einer Vue App
 date: 2017-04-03T12:57:19+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/einfuehrung-in-vuejs.jpg
+image: ../../images/blog/einfuehrung-in-vuejs.jpg
 categories:
   - Web
 tags:
@@ -24,14 +24,14 @@ Diese Information ist in der Regel ein Token, das von der API geliefert bei Logi
 
 Schauen wir uns mal den Ablauf der Authentifizierung an:
 
-  1. Im ersten Schritt gehen wir davon aus, dass der User eine Seite besucht, bei der ein Login notwendig ist. Ist der User eingeloggt, können kann er den Inhalt einsehen. Ansonsten wir er zum Login weitergeleitet.
-  2. Auf der Login-Seite kann er seine Login-Daten eingeben. Diese werden an die API geschickt. Die API verarbeitet die Daten. Sind die Daten nicht korrekt, dann wird eine Error-Meldung und ein entsprechender Status-Code zurückgeliefert. Ansonsten wird ein Token zurückgeliefert.
-  3. Diesen müssen wir in unseren zukünftigen Anfragen immer als Authentifizierungsheader (oder wenn die API das zulässt als Querystring Parameter) mitschicken, um so zu zeigen, dass wir für die zukünftigen Aktionen befugt sind.
+1. Im ersten Schritt gehen wir davon aus, dass der User eine Seite besucht, bei der ein Login notwendig ist. Ist der User eingeloggt, können kann er den Inhalt einsehen. Ansonsten wir er zum Login weitergeleitet.
+2. Auf der Login-Seite kann er seine Login-Daten eingeben. Diese werden an die API geschickt. Die API verarbeitet die Daten. Sind die Daten nicht korrekt, dann wird eine Error-Meldung und ein entsprechender Status-Code zurückgeliefert. Ansonsten wird ein Token zurückgeliefert.
+3. Diesen müssen wir in unseren zukünftigen Anfragen immer als Authentifizierungsheader (oder wenn die API das zulässt als Querystring Parameter) mitschicken, um so zu zeigen, dass wir für die zukünftigen Aktionen befugt sind.
 
 Beim Ablauf stellen sich zwei Fragen und Problemstellungen, die wir in einer Webapp bewältigen müssen:
 
-  1. Wie können wir feststellen, ob der User eingeloggt ist oder nicht?
-  2. Wie sorgen wir dafür, dass sich der Benutzer nicht bei jedem Request neu einloggen muss?
+1. Wie können wir feststellen, ob der User eingeloggt ist oder nicht?
+2. Wie sorgen wir dafür, dass sich der Benutzer nicht bei jedem Request neu einloggen muss?
 
 ## Authentifizierung mit Vue Router
 
@@ -44,36 +44,39 @@ Bevor dein User nun eine Seite besuchen kann, die durch einen Login abgesichert 
 Damit du nach einem Token suchen kannst, musst du dieses erstmal speichern können. Dafür wiederum musst du erstmal eines erhalten. Wir landen also bei dem Punkt, dass wir einen Login realisieren müssen. Folgender JavaScript Code, ist hierfür zuständig.
 
 ```javascript
-import router from '@/router'
-import { API_ENDPOINT } from '@/constants/api.js'
+import router from "@/router"
+import { API_ENDPOINT } from "@/constants/api.js"
 
 export default {
+  // authentication status
+  authenticated() {
+    return (
+      localStorage.getItem("user") !== null &&
+      JSON.parse(localStorage.getItem("user")).data.token !== ""
+    )
+  },
 
- // authentication status
- authenticated () {
-   return (localStorage.getItem('user') !== null && JSON.parse(localStorage.getItem('user')).data.token !== '')
- },
+  // Send a request to the login URL and save the returned JWT
+  login(creds, redirect) {
+    window.axios
+      .post(API_ENDPOINT + "/auth", creds)
+      .then(response => {
+        localStorage.setItem("user", JSON.stringify(response))
+        // Redirect to a specified route
+        if (redirect) {
+          router.go(redirect)
+        }
+      })
+      .catch(function(error) {
+        console.log(error)
+      })
+  },
 
- // Send a request to the login URL and save the returned JWT
- login (creds, redirect) {
-   window.axios.post(API_ENDPOINT + '/auth', creds)
-     .then((response) => {
-       localStorage.setItem('user', JSON.stringify(response))
-       // Redirect to a specified route
-       if (redirect) {
-         router.go(redirect)
-       }
-     })
-     .catch(function (error) {
-       console.log(error)
-     })
-   },
-
- // To log out
- logout: function () {
-   localStorage.removeItem('user')
-   router.go('/login')
- }
+  // To log out
+  logout: function() {
+    localStorage.removeItem("user")
+    router.go("/login")
+  },
 }
 ```
 
@@ -88,7 +91,7 @@ Jetzt können wir also unseren User authentifizieren. Jetzt müssen wir nur noch
 ```javascript
 router.beforeEach((to, from, next) => {
   if (to.meta.auth && !Auth.authenticated()) {
-    next('/login')
+    next("/login")
   } else {
     next()
   }
@@ -119,7 +122,8 @@ window.axios = axios
 
 if (Auth.authenticated()) {
   window.axios.defaults.headers.common = {
-    'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem('user')).data.token
+    Authorization:
+      "Bearer " + JSON.parse(localStorage.getItem("user")).data.token,
   }
 }
 ```

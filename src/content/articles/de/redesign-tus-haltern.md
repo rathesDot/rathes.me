@@ -4,7 +4,7 @@ title: "Redesign: TuS Haltern"
 date: 2015-05-18T08:00:23+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/tus-haltern-sportwerbung.jpg
+image: ../../images/blog/tus-haltern-sportwerbung.jpg
 categories:
   - Fußball
   - Web

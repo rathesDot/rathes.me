@@ -1,10 +1,10 @@
 ---
 id: 1012
-title: 'Tamil: Warum es sich lohnt die Sprache der Tamilen zu erlernen und wie du dabei vorgehen solltest'
+title: "Tamil: Warum es sich lohnt die Sprache der Tamilen zu erlernen und wie du dabei vorgehen solltest"
 date: 2016-03-27T12:00:23+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/tamil.png
+image: ../../images/blog/tamil.png
 categories:
   - Tamil
 tags:
@@ -13,6 +13,7 @@ tags:
 locale: de_DE
 desciption: Ist Tamil lernen schwierig? Was bringt es mirüberhaupt? Wie lerne ich Tamil? Diese und mehr Fragen beantworte ich dir in diesem Beitrag.
 ---
+
 12 Vokale. 18 Konsonanten. 247 Buchstaben insgesamt. Dazu noch 8 Fälle. Viele, die das hier zum ersten Mal mitbekommen, werden sich denken, dass es unmöglich sei Tamil zu lernen. Sogar viele hier im Ausland geborenen Tamilen denken so. Dabei ist Tamil verdammt einfach, sehr viel einfacher als andere asiatische Sprachen wie Chinesisch oder Thai. Wie das geht und warum es sich lohnt Tamil zu erlernen, das verrate ich dir in diesem Beitrag.
 
 <!--more-->
@@ -43,8 +44,8 @@ Auch in der Grammatik gibt es viele Regeln, die dafür sorgen, dass alles klar s
 
 Ich habe hier zwei kleine und einfache Hinweise wie du Tamil erlernen kannst:
 
-  1. Befasse dich als Erstes mit den Buchstaben, lerne diese so auswendig, dass du jedes einzelne Schriftzeichen erkennst. Das hört sich nach viel Arbeit an, aber ist es nicht. Zumindest nicht so komplex wie die Katakana aus dem Japanischen zu erlernen. Da nämlich die meisten Buchstaben nur eine Kombination aus Konsonant und Vokal ist, sehen diese auch ähnlich aus und die sehen konsequent ähnlich aus. Das heißt, wenn du verstanden hast, wie man ein `k` zum `ka` umschreibt, dann kannst du auch schnell ein `p` zum `pa` umschreiben.
-  2. Spring jetzt ins kalte Wasser. Schnapp dir ein Wörterbuch und eine Grammatikbuch. Setz dich hin und überleg, was du in deinem Alltag brauchen könntest und fang an dir Phrasen und Sätze zu merken. Und lern immer dazu wie man diese Phrasen und Sätze schreibt. Wenn du die Möglichkeit hast, dann flieg doch mal nach Tamil Nadu (Nach Eelam ist dann doch ein wenig gefährlich) oder du hast Glück und hast eine Freundin oder einen Freund, der Tamil kann.
+1. Befasse dich als Erstes mit den Buchstaben, lerne diese so auswendig, dass du jedes einzelne Schriftzeichen erkennst. Das hört sich nach viel Arbeit an, aber ist es nicht. Zumindest nicht so komplex wie die Katakana aus dem Japanischen zu erlernen. Da nämlich die meisten Buchstaben nur eine Kombination aus Konsonant und Vokal ist, sehen diese auch ähnlich aus und die sehen konsequent ähnlich aus. Das heißt, wenn du verstanden hast, wie man ein `k` zum `ka` umschreibt, dann kannst du auch schnell ein `p` zum `pa` umschreiben.
+2. Spring jetzt ins kalte Wasser. Schnapp dir ein Wörterbuch und eine Grammatikbuch. Setz dich hin und überleg, was du in deinem Alltag brauchen könntest und fang an dir Phrasen und Sätze zu merken. Und lern immer dazu wie man diese Phrasen und Sätze schreibt. Wenn du die Möglichkeit hast, dann flieg doch mal nach Tamil Nadu (Nach Eelam ist dann doch ein wenig gefährlich) oder du hast Glück und hast eine Freundin oder einen Freund, der Tamil kann.
 
 Was ich dir auf jeden Fall noch empfehlen kann: Auf <https://learn-tamil-online.com/> vorbeizuschauen. Ich muss es empfehlen, da es mein Projekt ist. Noch gibt es da nicht viel zu sehen, aber in naher Zukunft erscheinen dort erste Lektionen, um Tamil zu erlernen, ein Online-Wörterbuch und dann wird nach und nach eine Plattform eingerichtet, die dafür sorgen wird, dass du schnell und gut Tamil lernst.
 

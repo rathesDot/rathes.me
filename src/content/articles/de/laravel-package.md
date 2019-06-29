@@ -1,11 +1,11 @@
 ---
 id: 1558
-title: 'Laravel 5: In wenigen Schritten zum Laravel 5 Package'
+title: "Laravel 5: In wenigen Schritten zum Laravel 5 Package"
 date: 2016-08-16T14:25:25+00:00
 updated: 2018-02-04T06:28:00+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/laravel-logo.png
+image: ../../images/blog/laravel-logo.png
 categories:
   - Web
 tags:
@@ -36,7 +36,7 @@ Du solltest auch ein wenig Erfahrung mit Laravel gesammelt haben, da wir bei der
 
 Wenn du doch ein wenig unsicher bist, dann erstelle dir ein neues Projekt und entwickle das Package in diesem Projekt. Erstelle dir einfach einen neuen Ordner `packages` im Root-Verzeichnis des Projektes. Darin erstelle einen Ordner mit deinem Namen oder dem Namen deines Unternehmens (der vendor) und darin wiederum einen Ordner mit dem Namen des Packages.
 
-Wenn ich zum Beispiel für mein Unternehmen [Aheenam](https://aheenam.com) das Package *Awesome* erstellen will, dann habe arbeite ich im Ordner `packages/aheenam/awesome/`.
+Wenn ich zum Beispiel für mein Unternehmen [Aheenam](https://aheenam.com) das Package _Awesome_ erstellen will, dann habe arbeite ich im Ordner `packages/aheenam/awesome/`.
 
 ## 1. Die Struktur
 
@@ -101,11 +101,10 @@ Meine Datei sieht so aus:
   "name": "aheenam/awesome",
   "description": "An awesome Laravel Package",
   "license": "MIT",
-  "authors": [
-  ],
+  "authors": [],
   "minimum-stability": "stable",
   "require": {
-    "php" : "^7.0",
+    "php": "^7.0",
     "illuminate/support": "~5.5.0"
   },
   "require-dev": {
@@ -115,7 +114,7 @@ Meine Datei sieht so aus:
 }
 ```
 
-Wenn du nun 
+Wenn du nun
 
 ```bash
 $ composer install
@@ -140,7 +139,7 @@ Wenn jemand dein Package in seinem Laravel Projekt installiert, schaut composer 
 },
 ```
 
-Bei mir wird ganz einfach alles mit `Aheenam\Awesome` in den `src/` Ordner gemappt und alles, wo noch ein *Test* dran ist, in den `tests/` Ordner. Die anderen Ordner `config` und `database` lasse ich hier weg.
+Bei mir wird ganz einfach alles mit `Aheenam\Awesome` in den `src/` Ordner gemappt und alles, wo noch ein _Test_ dran ist, in den `tests/` Ordner. Die anderen Ordner `config` und `database` lasse ich hier weg.
 
 ### Package Discovery
 
@@ -162,7 +161,7 @@ Mit diesem kleinen Eintrag sorgst du dafür, dass der Benutzer deines Package be
 
 ## 3. Schritt: Der ServiceProvider
 
-Im nächsten Schritt müssen wir natürlich auch den ServiceProvider erstellen, den wir bereits definiert haben. Dieser liegt bei mir direkt im `src/` Verzeichnis und trägt den Namen des Packages: Der ServiceProvider für das Package *Awesome* lautet also `AwesomeServiceProvider`.
+Im nächsten Schritt müssen wir natürlich auch den ServiceProvider erstellen, den wir bereits definiert haben. Dieser liegt bei mir direkt im `src/` Verzeichnis und trägt den Namen des Packages: Der ServiceProvider für das Package _Awesome_ lautet also `AwesomeServiceProvider`.
 
 So sieht die Grundstruktur für diesen Provider aus:
 

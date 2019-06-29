@@ -4,7 +4,7 @@ title: Den Laravel Code mit dem Repository Pattern entkoppeln
 date: 2017-04-15T17:09:27+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/repository-pattern-laravel.png
+image: ../../images/blog/repository-pattern-laravel.png
 categories:
   - Featured
   - Web

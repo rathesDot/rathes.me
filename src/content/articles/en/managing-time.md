@@ -5,7 +5,7 @@ date: 2019-04-08T12:13:22+02:00
 author: Rathes Sachchithananthan
 template: post
 description: Time Management is not logical but emotional, you don't manage time, you manage yourself.
-image: /images/blog/time.jpg
+image: ../../images/blog/time.jpg
 categories:
   - Life
 tags:

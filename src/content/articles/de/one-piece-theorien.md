@@ -4,7 +4,7 @@ title: One Piece Theorien
 date: 2017-09-02T22:39:16+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/one-piece.jpg
+image: ../../images/blog/one-piece.jpg
 categories:
   - Anime
 tags:
@@ -12,6 +12,7 @@ tags:
 locale: de_DE
 description: Einige der Theorien, die ich über den Anime One Piece und seinem Ende aufgestellt habe, werde ich dir hier verraten
 ---
+
 Wer mich halbwegs kennt, weiß, dass ich ein absoluter Fan des Animes bin. Ich schaue kaum Serien, weil die Stories mir da viel zu lange dauern, aber One Piece habe ich mindestens schon drei mal von vorne geschaut. Bei fast 800 Folgen. Und wer ebenfalls die Serie schaut, weiß, dass da sehr viel Raum für Theorien da ist. Einige meiner Theorien möchte ich dir in diesem Beitrag vorstellen.
 
 <!--more-->

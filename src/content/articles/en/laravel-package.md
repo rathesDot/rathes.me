@@ -1,10 +1,10 @@
 ---
 id: 201801311
-title: 'Create your own Laravel package'
+title: "Create your own Laravel package"
 date: 2018-01-31T09:08:25+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/laravel-logo.png
+image: ../../images/blog/laravel-logo.png
 description: A step-by-step guide on how to create a custom Laravel package, that you can ship to packagist.
 categories:
   - Web
@@ -106,11 +106,10 @@ At the end of this program you should have a `composer.json` file. This is the o
   "name": "aheenam/awesome",
   "description": "An awesome Laravel Package",
   "license": "MIT",
-  "authors": [
-  ],
+  "authors": [],
   "minimum-stability": "stable",
   "require": {
-    "php" : "^7.0",
+    "php": "^7.0",
     "illuminate/support": "~5.5.0"
   },
   "require-dev": {

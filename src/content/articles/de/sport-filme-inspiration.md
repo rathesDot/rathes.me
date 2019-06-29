@@ -4,7 +4,7 @@ title: Top 8 inspirierende Sportfilme
 date: 2017-02-04T08:00:15+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/invincible-film.jpg
+image: ../../images/blog/invincible-film.jpg
 categories:
   - Welt
 tags:
@@ -20,7 +20,7 @@ Sport sorgt sowohl im echten Leben als auch im Film für ganz viel Action und Sp
 
 ## Remember the Titans
 
-Der erste Sport-Film, den ich dir vorstellen will, ist in Deutschland im Jahr 2000 unter dem Titel "[Gegen jede Regel](http://amzn.to/2jzWAFh)" (*) in den Kinos erschienen. Die Story spielt in den 1970 in Alexandria, Virginia. Als Maßnahme der Politik werden zwei Highschools zusammengelegt, sodass plötzlich Schwarze und Weiße miteinander zurechtkommen müssen. So auch die Spieler beider Footballmannschaften.
+Der erste Sport-Film, den ich dir vorstellen will, ist in Deutschland im Jahr 2000 unter dem Titel "[Gegen jede Regel](http://amzn.to/2jzWAFh)" (\*) in den Kinos erschienen. Die Story spielt in den 1970 in Alexandria, Virginia. Als Maßnahme der Politik werden zwei Highschools zusammengelegt, sodass plötzlich Schwarze und Weiße miteinander zurechtkommen müssen. So auch die Spieler beider Footballmannschaften.
 
 Herman Boone, gespielt von Denzel Washington, schafft es die Spieler in einem Trainingscamp zusammenzubringen und zu einem Team zu machen. Doch gerade in der echten Welt außerhalb des Trainingsfelds kommen auf das Team die Probleme zu. Der Rassismus in den 1970er wird meiner Meinung nach in diesem Film echt gut zum Ausdruck gebracht.
 
@@ -28,7 +28,7 @@ Inspirierend ist vor allem die Rede von Herman Boone, die er vor dem Team hält 
 
 ## Coach Carter
 
-[Coach Carter](http://amzn.to/2joOKem) (*) ist definitiv eines meiner Lieblingssportfilme. Ken Carter &#8211; gespielt von Samuel L. Jackson &#8211; nimmt einen Job als Basketballcoach an seiner alten Highschool an. Das Team hat in der vorigen Saison nicht nur fast alle Spiele verloren, sondern dem ganzen Team mangelt es an Respekt und Anstand.
+[Coach Carter](http://amzn.to/2joOKem) (\*) ist definitiv eines meiner Lieblingssportfilme. Ken Carter &#8211; gespielt von Samuel L. Jackson &#8211; nimmt einen Job als Basketballcoach an seiner alten Highschool an. Das Team hat in der vorigen Saison nicht nur fast alle Spiele verloren, sondern dem ganzen Team mangelt es an Respekt und Anstand.
 
 Coach Carter sorgt für neue Disziplin, indem er neue Regeln einführt, damit man für das Team spielen darf: In der Schule in der ersten Reihe sitzen und einen bestimmten Schnitt erreichen. Doch mit diesen Maßnahmen macht sich der Coach keine Freunde.
 
@@ -36,7 +36,7 @@ Wie er dagegen ankämpft und den Leuten weiß macht, dass Anstand, Disziplin und
 
 ## Rocky
 
-Über diesen Film muss ich dir wohl nichts erzählen. Die Geschichte von [Rocky](http://amzn.to/2kdMRWg) (*) dürfte mittlerweile jedem bekannt sein. Boxchampion gegen Amateur. Und am Ende ist der Amateur zwar der Verlierer des Kampfes, aber der Gewinner der Herzen.
+Über diesen Film muss ich dir wohl nichts erzählen. Die Geschichte von [Rocky](http://amzn.to/2kdMRWg) (\*) dürfte mittlerweile jedem bekannt sein. Boxchampion gegen Amateur. Und am Ende ist der Amateur zwar der Verlierer des Kampfes, aber der Gewinner der Herzen.
 
 Der Film ist Kult, genauso die Szenen in denen Sylvester Stallone wie ein verrückter trainiert. Wenn mir mal die Motivation zum Training fehlt, dann schaue ich mir gerne diese Szenen an, denn danach habe ich wieder Bock. Auch die ganze Filmmusik im Film ist echt motivierend.
 
@@ -45,26 +45,26 @@ Der Film ist Kult, genauso die Szenen in denen Sylvester Stallone wie ein verrü
 
 ## Hoosiers
 
-Der Film [Hoosiers](http://amzn.to/2jp0Ns8) (*) ist der Klassiker schlechthin, wenn es um einen Film über Underdogs und Außenseiter geht, die am Ende aufsteigen und von der Menge geliebt werden. Dieser Film aus dem Jahre 1986 hat wohl den Grundstein dafür gelegt, dass in sämtlichen Sportfilmen mit Außenseiterteams eine emotionale Rede in der Kabine drin vorkommt. An die motivierende Rede vom Coach aus diesem Film kommen meiner Meinung nach nur wenige ran.
+Der Film [Hoosiers](http://amzn.to/2jp0Ns8) (\*) ist der Klassiker schlechthin, wenn es um einen Film über Underdogs und Außenseiter geht, die am Ende aufsteigen und von der Menge geliebt werden. Dieser Film aus dem Jahre 1986 hat wohl den Grundstein dafür gelegt, dass in sämtlichen Sportfilmen mit Außenseiterteams eine emotionale Rede in der Kabine drin vorkommt. An die motivierende Rede vom Coach aus diesem Film kommen meiner Meinung nach nur wenige ran.
 
 <div class="embed-wrapper">
 </div>
 
 ## Any given Sunday
 
-Die Rede aus "Any given Sunday" oder auch bekannt unter "[An jedem verdammten Sonntag](http://amzn.to/2kx706Q)" (*) ist einer der wenigen Ausnahmen. Aber das ist klar, dieser Sportfilm hat Kultstatus und ist wohl der beste existierende Footballfilm aller Zeiten.
+Die Rede aus "Any given Sunday" oder auch bekannt unter "[An jedem verdammten Sonntag](http://amzn.to/2kx706Q)" (\*) ist einer der wenigen Ausnahmen. Aber das ist klar, dieser Sportfilm hat Kultstatus und ist wohl der beste existierende Footballfilm aller Zeiten.
 
 Dieser Film zeigt fast alle Facetten aus dem Football, von egozentrischen Spieler über den Erfolgsdruck der Coaches bishin zu Franchise-Team-Managern, die nur auf den persönlichen Erfolg aus sind. Inspirierend ist die von Al Pacino als Coach gehaltene Ansprache an das zerrüttete Team. Jedes Mal, wenn ich diese Ansprache höre, habe ich selbst das Gefühl aufstehen und aufs Spielfeld gehen zu müssen, um alles für das Team zu geben. Dabei bin ich nicht mehr in einem Team aktiv.
 
 ## Gridiron Gang
 
-Dwayne "The Rock" Johnson als Sean Porter stellt in Gridiron Gang (auch [Spiel auf Bewährung](http://amzn.to/2k2YfBN) (*)) zusammen mit seinem Kollegen ein Footballteam zusammen. Das Besondere: Er selbst ist ein Bewährungshelfer in einer Jugendstrafanstalt und seine Team-Mitglieder sind jugendliche Kriminelle.
+Dwayne "The Rock" Johnson als Sean Porter stellt in Gridiron Gang (auch [Spiel auf Bewährung](http://amzn.to/2k2YfBN) (\*)) zusammen mit seinem Kollegen ein Footballteam zusammen. Das Besondere: Er selbst ist ein Bewährungshelfer in einer Jugendstrafanstalt und seine Team-Mitglieder sind jugendliche Kriminelle.
 
 Die Story ist sehr einfach gestrickt und nicht zu sehr mit Action geladen, aber trotzdem inspirieren und motivierend zuzusehen wie Porter versucht den scheinbar hoffnungslosen Fällen einen Sinn für Respekt und Verantwortung zu vermitteln. Noch inspirierender ist wie sehr Porter sich für diese Jugendlichen einsetzt, wie er sich in deren Probleme hineinversetzt, für sie da ist und versucht ihre Welt zu verbessern.
 
 ## Invincible
 
-In diesem Film geht es ausnahmsweise Mal nicht um eine Mannschaft. Invincible ([Unbesiegbar &#8211; Der Traum seines Lebens](http://amzn.to/2jHvl9d) (*)) ist ein Sportfilm, der auf der Biografie von NFL Spieler Vince Papale beruht.
+In diesem Film geht es ausnahmsweise Mal nicht um eine Mannschaft. Invincible ([Unbesiegbar &#8211; Der Traum seines Lebens](http://amzn.to/2jHvl9d) (\*)) ist ein Sportfilm, der auf der Biografie von NFL Spieler Vince Papale beruht.
 
 Papale ist ein 30-Jähriger Eagles-Fan aus Philadelphia. Mit Jobs als Aushilfslehrer und Barkeeper kommt er eher schlecht als recht durchs Leben. Irgendwann verliert er auch noch seinen Job als Lehrer und seine Frau räumt ihm die Wohnung aus und verschwindet mit allem. Sie hinterlässt ihm nur eine Nachricht, die ihm mitteilt, dass er ein Nichtsnutz sei.
 
@@ -76,7 +76,7 @@ Dieser Film ist gerade in Zeiten, in denen man sich schwach und wie ein Versager
 
 ## We are Marshall
 
-Am 14. November 1970 verliert die Football-Mannschaft der Marshall University, die Thundering Herds, nahezu alle Mitglieder des Teams. Diese Tragödie ist die Grundlage für diesen Sportfilm, welcher im deutschsprachigen Raum auch als "[Sie waren Helden](http://amzn.to/2kdbGBl)" (*) bekannt ist.
+Am 14. November 1970 verliert die Football-Mannschaft der Marshall University, die Thundering Herds, nahezu alle Mitglieder des Teams. Diese Tragödie ist die Grundlage für diesen Sportfilm, welcher im deutschsprachigen Raum auch als "[Sie waren Helden](http://amzn.to/2kdbGBl)" (\*) bekannt ist.
 
 Obwohl viele in der Kleinstadt gegen den Aufbau einer neuen Mannschaft sind und den Kopf in den Sand stecken und in ihrer Trauer versinken, protestieren die paar Spieler, die beim Flugzeugabsturz nicht dabei waren und überlebt haben, zusammen mit anderen Studenten um eine neue Mannschaft. Wie der neue Trainer Jack Lengyel das Team zusammenstellt und aufbaut ist die Story des Films. Es ist ein sehr emotionaler Film, der zeigt, dass Sport nicht nur Menschen vereint, sondern auch sehr bei der Verarbeitung von Trauer helfen kann.
 
@@ -85,10 +85,10 @@ Obwohl viele in der Kleinstadt gegen den Aufbau einer neuen Mannschaft sind und 
 
 ## Weitere erwähnenswerte Filme
 
-Neben diesen Top 8 der Sportfilme gibt es noch einige weitere. Ich kann aber nicht alle in diesem Beitrag unterbringen ohne den Rahmen zu sprengen. Einige Sportfilme sollten aber trotzdem nicht unerwähnt bleiben. Für Fußball-Fans ist der Film "[The Damned United – Der ewige Gegner](http://amzn.to/2kd3AIQ)" (*) auf jeden Fall ein Muss. Auch der Film "Rudy" ist sehr inspirierend. Auch der Baseball-Film "[Moneyball](http://amzn.to/2kxf33T)" (*) mit Brad Pitt in der Hauptrolle ist sehr interessant.
+Neben diesen Top 8 der Sportfilme gibt es noch einige weitere. Ich kann aber nicht alle in diesem Beitrag unterbringen ohne den Rahmen zu sprengen. Einige Sportfilme sollten aber trotzdem nicht unerwähnt bleiben. Für Fußball-Fans ist der Film "[The Damned United – Der ewige Gegner](http://amzn.to/2kd3AIQ)" (_) auf jeden Fall ein Muss. Auch der Film "Rudy" ist sehr inspirierend. Auch der Baseball-Film "[Moneyball](http://amzn.to/2kxf33T)" (_) mit Brad Pitt in der Hauptrolle ist sehr interessant.
 
 Hast du weitere Sportfilme als Tipps? Welche sollte man sich auch definitiv ansehen? Schreib mir gerne in die Kommentare!
 
 –
 
-*Hinweis: Bei allen mit (\*) gekennzeichneten Links handelt es sich um Affiliate-Links. Wenn du über diesen Link ein Produkt erwirbst, hilfst du uns sehr damit, da wir dafür mit einer kleinen Provision belohnt werden. Für dich entstehen aber keine zusätzlichen Kosten.*
+_Hinweis: Bei allen mit (\*) gekennzeichneten Links handelt es sich um Affiliate-Links. Wenn du über diesen Link ein Produkt erwirbst, hilfst du uns sehr damit, da wir dafür mit einer kleinen Provision belohnt werden. Für dich entstehen aber keine zusätzlichen Kosten._

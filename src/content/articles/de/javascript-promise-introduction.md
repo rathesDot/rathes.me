@@ -3,7 +3,7 @@ id: 1822
 title: Einführung in JavaScript Promise
 date: 2017-05-25T14:30:12+00:00
 author: Rathes Sachchithananthan
-image: /images/blog/javascript-promise.png
+image: ../../images/blog/javascript-promise.png
 categories:
   - Web
 tags:

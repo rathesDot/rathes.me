@@ -4,7 +4,7 @@ title: Tamilen und die Gleichberechtigung
 date: 2015-06-28T11:59:20+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/marriage-equality.jpg
+image: ../../images/blog/marriage-equality.jpg
 categories:
   - Tamil
   - Welt
@@ -12,6 +12,7 @@ tags:
   - Tamil Gesellschaft
 locale: de_DE
 ---
+
 Die USA haben die gleichgeschlechtliche Ehe legalisiert. Diese Entscheidung wird als historischer Paukenschlag gefeiert. Andere Länder sind aber noch nicht soweit. Andere Kulturen haben noch weitaus andere Sorgen, so auch wir Tamilen.
 
 <!--more-->

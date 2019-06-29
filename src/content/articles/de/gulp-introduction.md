@@ -4,7 +4,7 @@ title: "Gulp &#8211; Wie du dank Taskrunner besser durchstartest"
 date: 2015-11-01T16:40:52+00:00
 author: Rathes Sachchithananthan
 template: post
-image: /images/blog/gulp-logo.jpg
+image: ../../images/blog/gulp-logo.jpg
 categories:
   - Web
 tags:

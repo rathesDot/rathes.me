@@ -5,7 +5,7 @@ date: 2018-12-23T15:27:25+02:00
 author: Rathes Sachchithananthan
 template: post
 description: Looking back at an incredible year 2018 and planning things for another upcoming great year
-image: /images/blog/time.jpg
+image: ../../images/blog/time.jpg
 categories:
   - Life
 tags:

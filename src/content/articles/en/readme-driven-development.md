@@ -5,7 +5,7 @@ date: 2018-11-11T16:55:22+02:00
 author: Rathes Sachchithananthan
 template: post
 description: Readme Driven Development (RDD) is a powerful approach in software development to write libraries that people can use and want to use
-image: /images/blog/readme-driven-development.jpg
+image: ../../images/blog/readme-driven-development.jpg
 categories:
   - Web
 tags:
@@ -38,7 +38,7 @@ But what does it exactly mean to write the Readme first? It is pretty straight f
 
 Start with a title and a subtitle that make it directly clear what the topic is. Then continue with a small paragraph explaining what the code you write intends to do and what it is going to solve.
 
-Then follow with some *Getting Started* information, so that the user of this piece of software will be able to set things up and configure them if needed.
+Then follow with some _Getting Started_ information, so that the user of this piece of software will be able to set things up and configure them if needed.
 
 Next explain the usage of what you are writing. Describe the most important parts of the public interface of your software and how to use them.
 
