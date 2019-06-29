@@ -14,6 +14,7 @@ tags:
 locale: de_DE
 description: Ich zeige dir, wie du das Repository Pattern in Laravel anwendest und damit deinen Code noch besser machst.
 ---
+
 Mit der regelmäßigen Weiterentwicklung einer Laravel Webanwendung steigt auch die Komplexität dieser. Um trotzdem einen sauberen Code zu haben, lohnt es sich die Software regelmäßig zu überarbeiten und zu optimieren. Ein Muster, das dir die Arbeit des Refactoring erheblich erleichtern kann, ist das Repository Pattern.
 
 <!--more-->
@@ -28,7 +29,7 @@ Der zusätzliche Layer im Repository Pattern beinhaltet sämtliche Logik wie a
 
 Ein Repository ist im Prinzip eine Klasse, die Zugriffe auf die Datenquellen hat und diese auf eine bestimmte Art und Weise ausgibt. Diese Repositories werden dann für die Implementierung der Anwendungslogik verwendet. Bei dieser Implementierung ist der Anwendungslogik absolut egal wie die Datenquelle aussieht. Das heißt, diese kann auch beliebig ausgetauscht werden. Man muss dann nur noch das Repository anpassen und muss nicht mehr alle Stellen in der Businesslogik suchen, um die Datenquelle anzupassen.
 
-!["Repository Pattern Skizze"](/images/blog/repository-pattern-skizze.png "Das Repository Pattern ist ein Layer zwischen Daten und Businesslogik")
+!["Repository Pattern Skizze"](../../images/blog/repository-pattern-skizze.png "Das Repository Pattern ist ein Layer zwischen Daten und Businesslogik")
 
 ## Repository Pattern und Laravel
 
@@ -87,7 +88,7 @@ interface PostRepositoryInterface
 
    /**
     * returns all posts
-    * 
+    *
     * @return mixed
     */
     public function all();
@@ -125,7 +126,7 @@ class PostsController extends Controller
 }
 ```
 
-Dank Laravel müssen wir im Konstruktur für die Variable $post nur einen einfachen Type-Hint setzen. [Laravel's Service Container löst dann die Dependency automatisch auf](https://laravel.com/docs/5.4/container#automatic-injection) und erzeugt das passende Objekt.
+Dank Laravel müssen wir im Konstruktur für die Variable \$post nur einen einfachen Type-Hint setzen. [Laravel's Service Container löst dann die Dependency automatisch auf](https://laravel.com/docs/5.4/container#automatic-injection) und erzeugt das passende Objekt.
 
 So gehen wir nun also für alle weiteren Stellen vor, wo wir Daten aus der Datenbank abgreifen müssen. Wir definieren die Funktion im Interface und implementieren diese dann im Repository und rufen dann in unseren Controllern die Funktion über das Repository auf.
 
@@ -144,7 +145,7 @@ Bisher haben wir in unserem Controller das Repository direkt injiziert. Stell di
 Um das zu vermeiden injizieren wir in den Controllern nicht das Repository selbst, sondern das Interface: `public function __construct(PostRepositoryInterface $post)`. Jetzt muss nur noch das Problem gelöst werden, dass Laravel das Interface nicht automatisch auflösen kann. Wir müssen hier also nachhelfen. Wir bauen also einen ServiceProvider (oder können auch den AppServiceProvider nehmen, wenn wir kein Package entwickeln) und definieren, wie das PostRepositoryInterface aufgelöst werden soll:
 
 ```php
-<?php 
+<?php
 
 /**
  * Register any application services.

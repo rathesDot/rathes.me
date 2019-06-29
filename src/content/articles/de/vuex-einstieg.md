@@ -21,27 +21,30 @@ Es gibt immer einen Zeitpunkt bei der Entwicklung einer Webapp mit Vue, ab dem d
 Ein einfaches Beispiel wie es sehr häufig bei dir auch auftreten wird, ist Folgendes:
 
 ```javascript
-import axios from 'axios'
+import axios from "axios"
 
 export default {
-  name: 'exercises',
-  data: function () {
+  name: "exercises",
+  data: function() {
     return {
-      exercises: []
+      exercises: [],
     }
   },
   methods: {
-    getAllExercises: function () {
-      axios.get('/api/v1/exercises').then((response) => {
-        this.exercises = response.data
-      }, (err) => {
-        // @todo handle this error
-      })
-    }
+    getAllExercises: function() {
+      axios.get("/api/v1/exercises").then(
+        response => {
+          this.exercises = response.data
+        },
+        err => {
+          // @todo handle this error
+        }
+      )
+    },
   },
-  mounted: function () {
+  mounted: function() {
     this.getAllExercises()
-  }
+  },
 }
 ```
 
@@ -55,15 +58,15 @@ Wenn du noch sehr neu in der Entwicklung mit Frontend-Frameworks bist, dann rate
 
 Mit Vuex will man erreichen, dass die Daten nur in einem bestimmten Muster verändert und bearbeitet werden können, das sogenannte Konzept des "One-Way Data Flow". Unter dem Namen Flux kommt dieses Konzept bei Facebook und React zum Einsatz und unter Vue wird das Konzept als Vuex fertig implementiert geliefert.
 
-[![Flux pattern](/images/blog/flux-pattern.png)](http://www.youtube.com/watch?v=nYkdrAPrdcw)
+[![Flux pattern](../../images/blog/flux-pattern.png)](http://www.youtube.com/watch?v=nYkdrAPrdcw)
 
 Bei dem Konzept von Vuex geht man von einem einzigen Datensatz aus. Anstelle von mehreren kleinen Datensätzen innerhalb einer Komponente, greifen diese nun die Daten eines "Stores" ab, um damit dann die View mit den richtigen Daten zu befüllen.
 
 Ein einfacher Store mit Vuex sieht dabei folgendermaßen aus:
 
 ```javascript
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue"
+import Vuex from "vuex"
 
 Vue.use(Vuex)
 
@@ -72,7 +75,7 @@ const store = new Vuex.Store({
   actions: {},
   mutations: {},
   getters: {},
-  modules: {}
+  modules: {},
 })
 
 export default store
@@ -133,9 +136,9 @@ Die Modules liefern die dir Möglichkeit deinen Store in kleine Substores aufzut
 
 Jetzt, wo du die Grundlagen kennst, ist der nächste Schritt wie man Vuex nun in eine Vue-App intergriert. In der Dokumentation von Vuex zeigt folgende Grafik wie der Workflow aussieht:
 
-![Vuex Workflow](/images/blog/vuex-workflow.png)
+![Vuex Workflow](../../images/blog/vuex-workflow.png)
 
-*Grafische Darstellung vom Datenworkflow mit Vuex (Quelle: <https://vuex.vuejs.org/en/intro.html>)*
+_Grafische Darstellung vom Datenworkflow mit Vuex (Quelle: <https://vuex.vuejs.org/en/intro.html>)_
 
 Als erstes musst du natürlich Vuex installieren. Das machst du mit npm `npm install --save Vuex`. Dann erstellst du einen Ordner store und darin eine index.js Datei und befüllst diese Datei mit dem Grundaufbau, den du oben bereits findest.
 
@@ -162,32 +165,35 @@ new Vue({
 Jetzt musst du nur noch den Store implementieren. Machen wir das anhand eines Beispiels. Wir haben oben bereits oben eine einfache Datenstruktur samt Action und Mutation definiert, sodass unser Store wie folgt aussieht:
 
 ```javascript
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue"
+import Vuex from "vuex"
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
- state: {
- exercises: [],
-   currentUnit: null
- },
- actions: {
-   GET_ALL_EXERCISES: function ({ commit }) {
-     axios.get('/api/v1/exercises').then((response) => {
-       commit('SET_EXERCISES', { exercises: response.data })
-     }, (err) => {
-       // @todo handle this error
-     })
-   }
- },
- mutations: {
-   SET_PROJECT_LIST: (state, { exercises }) => {
-     state.exercises = exercises
-   }
- },
- getters: {},
- modules: {}
+  state: {
+    exercises: [],
+    currentUnit: null,
+  },
+  actions: {
+    GET_ALL_EXERCISES: function({ commit }) {
+      axios.get("/api/v1/exercises").then(
+        response => {
+          commit("SET_EXERCISES", { exercises: response.data })
+        },
+        err => {
+          // @todo handle this error
+        }
+      )
+    },
+  },
+  mutations: {
+    SET_PROJECT_LIST: (state, { exercises }) => {
+      state.exercises = exercises
+    },
+  },
+  getters: {},
+  modules: {},
 })
 
 export default store
@@ -196,22 +202,18 @@ export default store
 So haben wir bereits einen voll funktionsfähigen Store. Der Vuex Bereich aus der Grafik oben ist also implementiert. Nun müssen wir nur noch die Verbindung zur Vue Komponente schaffen.
 
 ```html
-<template>
-</template>
+<template> </template>
 
 <script>
-import { mapState } from 'vuex'
+  import { mapState } from "vuex"
 
-export default {
- name: 'ExerciseList',
- computed: mapState([
- 'exercises'
- ])
-}
+  export default {
+    name: "ExerciseList",
+    computed: mapState(["exercises"]),
+  }
 </script>
 
-<style>
-</style>
+<style></style>
 ```
 
 Oben stehender Codeschnipsel ist ein einfaches Konstrukt einer Vue Komponente. Mit der Funktion mapState, die Vuex mitliefert kannst du einen bestimmten Bereich aus deinem Store extrahieren und in deiner View benutzen.
@@ -220,21 +222,19 @@ Wenn du nun deine exercises ausgeben lässt, wirst du feststellen, dass das arra
 
 ```html
 <script>
-import { mapState } from 'vuex'
+  import { mapState } from "vuex"
 
-export default {
- name: 'ExerciseList',
- computed: mapState([
- 'exercises'
- ]),
- mounted() {
-  this.$store.dispatch('GET_ALL_EXERCISES')
- },
-}
+  export default {
+    name: "ExerciseList",
+    computed: mapState(["exercises"]),
+    mounted() {
+      this.$store.dispatch("GET_ALL_EXERCISES")
+    },
+  }
 </script>
 ```
 
-Was passiert hier? Wenn die Komponente ins DOM geladen wird, initiieren wir die Action "GET\_ALL\_EXERCISES". Diese Action lädt unsere Daten vom Server und schickt diese an die Mutation, welche wiederum unser exercises array aktualisiert. Und dieses aktualisierte array sehen wir dann dank 2-way-data-binding direkt bei uns in der Komponente. Der Kreis wird also geschlossen.
+Was passiert hier? Wenn die Komponente ins DOM geladen wird, initiieren wir die Action "GET_ALL_EXERCISES". Diese Action lädt unsere Daten vom Server und schickt diese an die Mutation, welche wiederum unser exercises array aktualisiert. Und dieses aktualisierte array sehen wir dann dank 2-way-data-binding direkt bei uns in der Komponente. Der Kreis wird also geschlossen.
 
 Die Dispatch-Methode musst du nicht unbedingt beim mounten aufrufen. Wenn du zum Beispiel beim Submit eines Formulars eine Action ausführen willst, dann kommt das natürlich in die entsprechende Methode.
 

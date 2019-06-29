@@ -21,11 +21,12 @@ Promises in JavaScript sind ein mächtiges Feature, dass die Arbeit mit asynchro
 Gerade wenn du dich im Bereich der Web-App Entwicklung herumtreibst, wirst du im das Thema asynchrone Requests nicht herumkommen. Denn du wirst in der Regel sehr viele Anfragen an eine API machen, die nicht synchron laufen werden. Wenn du zum Beispiel das Package Axios einsetzt (welche ich in meinem Beitrag zur Einführung in Vuex bereits erwähnt habe), dann wirst du sehr oft Code wie Folgenden gemacht haben.
 
 ```javascript
-axios.get('https://domain.tld/api/xyz')
-  .then((response) => {
+axios
+  .get("https://domain.tld/api/xyz")
+  .then(response => {
     console.log(response)
   })
-  .catch((error) => {
+  .catch(error => {
     console.log(error)
   })
 ```
@@ -44,9 +45,9 @@ Du wirst auf einige Begriffe stoßen, wenn du dich mit dem Thema befasst und dic
 
 Ein Promise kann die folgenden einen der folgenden drei Zustände haben:
 
-  * pending: Der ursprüngliche Status, weder ausgeführt noch abgebrochen
-  * fulfilled: Die Operation wurde erfolgreich ausgeführt
-  * rejected: Operation fehlgeschlagen
+- pending: Der ursprüngliche Status, weder ausgeführt noch abgebrochen
+- fulfilled: Die Operation wurde erfolgreich ausgeführt
+- rejected: Operation fehlgeschlagen
 
 Außerdem wirst du auf die zwei Begriffe resolve und reject stoßen, welche ich dir in weiteren Verlauf näher erläutern werde.
 
@@ -55,29 +56,28 @@ Außerdem wirst du auf die zwei Begriffe resolve und reject stoßen, welche ich 
 Ein einfacher Promise sieht wie folgt aus:
 
 ```javascript
-function myAsyncRequest (uri) {
+function myAsyncRequest(uri) {
   return new Promise((resolve, reject) => {
-    
-    let image = new Image();
-    
-    image.onload = function () {
-      resolve(image);
+    let image = new Image()
+
+    image.onload = function() {
+      resolve(image)
     }
 
-    image.onerror = function () {
-      reject(new Error('Could not load image with URI ' + uri));
+    image.onerror = function() {
+      reject(new Error("Could not load image with URI " + uri))
     }
 
-    image.src = uri;    
-  });
+    image.src = uri
+  })
 }
 
 myAsyncRequest("https://this.is.my/uri/to/my/image.jpg")
-  .then((image) => {
-    console.log(image);
+  .then(image => {
+    console.log(image)
   })
-  .catch((error) => {
-    console.log(error);
+  .catch(error => {
+    console.log(error)
   })
 ```
 
@@ -91,18 +91,18 @@ Die `.then()` Funktion eines Promises liefert immer wieder einen weiteren Promis
 
 ```javascript
 myAsyncRequest("https://this.is.my/uri/to/my/image.jpg")
-  .then((image) => {
-    console.log(image);
+  .then(image => {
+    console.log(image)
     return { src: image.src, width: image.width, height: image.height }
-  })
-  .then((data) => {
-    console.log(data.height);
-    console.log(data.width);
-    console.log(data.src);
   })
-  .catch((error) => {
-    console.log(error);
-  })
+  .then(data => {
+    console.log(data.height)
+    console.log(data.width)
+    console.log(data.src)
+  })
+  .catch(error => {
+    console.log(error)
+  })
 ```
 
 Die erste Funktion liefert ein Objekt zurück, das die Daten des Bildes beinhaltet. Dieses können wir ganz einfach in einem weiteren `.then()` abgreifen und weiterverarbeiten.
@@ -113,40 +113,40 @@ Anders als oben gezeigt, muss das catch nicht unbedingt am Ende dieser Kette ste
 
 ```javascript
 myAsyncRequest("https://this.is.my/uri/to/my/image.jpg")
-  .catch((error) => {
-    console.log(error);
+  .catch(error => {
+    console.log(error)
     let notFoundImage = new Image()
     notFoundImage.src = "./some/path/dummy.png"
     return notFoundImage
-  })
-  .then((image) => {
-    console.log(image);
-    return { src: image.src, width: image.width, height: image.height }
-  })
-  .then((data) => {
-    console.log(data.height);
-    console.log(data.width);
-    console.log(data.src);
-  })
+  })
+  .then(image => {
+    console.log(image)
+    return { src: image.src, width: image.width, height: image.height }
+  })
+  .then(data => {
+    console.log(data.height)
+    console.log(data.width)
+    console.log(data.src)
+  })
 ```
 
 Man kann sogar einen weiteren Promise in dem auflösenden `.then()` zurückgeben, welcher dann vor dem nächsten `.then()` ausgeführt wird.
 
 ```javascript
 myAsyncRequest("https://this.is.my/uri/to/my/image.jpg")
-  .catch((error) => {
-    console.log(error);
-    return myAsyncRequest("./some/path/dummy.png")
-  })
-  .then((image) => {
-    console.log(image);
-    return { src: image.src, width: image.width, height: image.height }
-  })
-  .then((data) => {
-    console.log(data.height);
-    console.log(data.width);
-    console.log(data.src);
-  })
+  .catch(error => {
+    console.log(error)
+    return myAsyncRequest("./some/path/dummy.png")
+  })
+  .then(image => {
+    console.log(image)
+    return { src: image.src, width: image.width, height: image.height }
+  })
+  .then(data => {
+    console.log(data.height)
+    console.log(data.width)
+    console.log(data.src)
+  })
 ```
 
 ## Promise.all()
@@ -156,16 +156,20 @@ Bisher hast du immer nur ein Bild asynchron geladen. Was aber, wenn du mehr als 
 Der erste Gedanke wäre eine sehr lange Kette und am Ende dieser Kette im letzten `.then()` dann die Aktion. Es geht aber definitiv einfacher:
 
 ```javascript
-var urls = ['https://my.tld/one.jpg', 'https://my.tld/two.png', 'https://my.tld/three.png'];
-let promises = urls.map(myAsyncRequest);
+var urls = [
+  "https://my.tld/one.jpg",
+  "https://my.tld/two.png",
+  "https://my.tld/three.png",
+]
+let promises = urls.map(myAsyncRequest)
 
 Promise.all(promises)
- .then(function(images) {
- console.log('All images loaded', images);
- })
- .catch(function(err) {
- console.error(err);
- });
+  .then(function(images) {
+    console.log("All images loaded", images)
+  })
+  .catch(function(err) {
+    console.error(err)
+  })
 ```
 
 Wenn man `Promise.all()` einen Array an Promises übergeben, wartet dieser ab, bis alle geladen werden und geht dann erst in die nächste `.then()` Funktion.

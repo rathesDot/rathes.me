@@ -73,7 +73,7 @@ public function getWebhook(Request $request)
 }
 ```
 
-Man erkennt hier, dass mein Token "Aheenam\_verify\_that\_bot" lautet. Dies muss dann natürlich so in dem Formular eingetragen werden. Ein Klick auf "Verify & Save" führt den Handshake aus.
+Man erkennt hier, dass mein Token "Aheenam_verify_that_bot" lautet. Dies muss dann natürlich so in dem Formular eingetragen werden. Ein Klick auf "Verify & Save" führt den Handshake aus.
 
 Bei den Subscription Fields solltest du wie bereits oben erläutert diejenigen auswählen, die du benötigst. Was die einzelnen bewirken und wann diese ausgelöst werden, kannst du hier in der [Facebook Developer Dokumentation](https://developers.facebook.com/docs/messenger-platform/webhook-reference) nachlesen.
 

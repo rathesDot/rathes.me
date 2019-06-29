@@ -1,6 +1,6 @@
 ---
 id: 676
-title: 'Redesign: TuS Haltern'
+title: "Redesign: TuS Haltern"
 date: 2015-05-18T08:00:23+00:00
 author: Rathes Sachchithananthan
 template: post
@@ -15,6 +15,7 @@ tags:
   - Webdesign
 locale: de_DE
 ---
+
 Einmal im Monat veröffentliche ich Redesigns. Dabei suche ich mir eine Webseite aus und entwickle ein verbessertes Webdesign dieser. Dieses Mal habe ich die Webseite des TuS Haltern neu gestaltet.
 
 Bisher war es immer der Fall, dass ich mir Webseiten ausgesucht habe, die nicht mobil optimiert sind und diesen habe ich dann ein responsive Webdesign verpasst. Auch beim TuS Haltern war das ursprünglich die Idee. Einfach mal ein neues Layout verpassen. Bei der Analyse des IST-Zustands habe ich dann aber festgestellt, dass da mehr als nur das Layout verbessert werden muss, sodass ich kurzerhand beschlossen habe, in diesem Beitrag auch die grundlegenden Fehler der TuS Webseite zu erläutern.
@@ -57,7 +58,7 @@ Ein weiterer Punkt der auffällt ist die Talentschmiede. Hier existieren keine U
 
 Ein weiterer letzter Punkt, den ich gerne ansprechen würde, ist das Corporate Design. Ich meine mich zu erinnern, dass man um 2009 oder 2010 rum, als Metze das Projekt "Außendarstellung" vorangetrieben hat, auch das Design des Logos, aber auch der Webseite überarbeitet hat. Was mich daran aber stört ist, dass vom sauberen Stil des Logos und der Plakate (siehe Bild) nichts auf der Webseite zu sehen ist.
 
-![Die Webseite passt mit dem Stil dieses Plakates definitiv nicht überein](/images/blog/tus-haltern-sportwerbung.jpg)
+![Die Webseite passt mit dem Stil dieses Plakates definitiv nicht überein](../../images/blog/tus-haltern-sportwerbung.jpg)
 
 Da muss man auf jeden Fall mal ansetzen und ein Design-Konzept entwickeln, welches medienübergreifend funktioniert. Ich hab bei meinen Redesigns selbst keine Vorgaben beachtet, sondern meine klassischen Web-Fonts benutzt, aber im Falle einer ernsthaften Neugestaltung sollte das nie vergessen werden. Denn mit einem einheitlichen Corporate Design fängt die Außendarstellung an und darauf baut dann die gesamte Webseite auf.
 
@@ -69,7 +70,7 @@ Das Redesign selber ist in diesem Falle verdammt kurz geraten, ich habe mich zu 
 
 Beim Redesign war das größte Problem die Navigation. Diese ist auch in meiner neuen Version gewaltig, sodass man auf Smartphones nicht einfach so als Drop-Down-Menü anbringen konnte. [In einem Artikel auf Smashing Magazine werden zwei Fallbeispiele erläutert](http://www.smashingmagazine.com/2013/09/11/responsive-navigation-on-complex-websites/), die sich mit großen Menüs auseinandersetzen mussten. Diese waren bisher immer mein Vorbild bei der Entwicklung von großen Menüpunkte, doch diesmal ging dies hier nicht. [Im letzten Abschnitt aber kam der entsprechende hilfreiche Hinweis: Ein responsive Multi-Level-Menü](http://tympanus.net/Development/ResponsiveMultiLevelMenu/index.html), welches sich seitlich immer aufklappt. Daraus ist dann das Menü entstanden, welches man auf dem Bild sieht.
 
-![Menü der Website auf dem Smartphone](/images/blog//tus-haltern-redesign-menue.png)
+![Menü der Website auf dem Smartphone](../../images/blog//tus-haltern-redesign-menue.png)
 
 In der Desktop-Version kann das Menü ganz einfach mit einem Drop-Down-Menü umgesetzt werden. In der Galerie findet ihr eine Möglichkeit zu dieser.
 
@@ -85,6 +86,6 @@ Außerdem muss man sich überlegen wie man das Ganze umsetzen will. Die aktuelle
 
 Was denkt ihr zu meinem Entwurf? Gut, das ist nur eine Startseite und die ist auch nicht ganz fertig, aber wie findet ihr den Ansatz? Bin gespannt was ihr so denkt.
 
-![Redesign TuS Haltern: Startseite auf dem Desktop](/images/blog/tushaltern-redesign-index-desktop.jpg)
+![Redesign TuS Haltern: Startseite auf dem Desktop](../../images/blog/tushaltern-redesign-index-desktop.jpg)
 
 [_Klick hier für die mobile Ansicht_](/images/blog/tus-haltern-redesign-index-mobile.jpg)

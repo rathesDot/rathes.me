@@ -15,7 +15,8 @@ tags:
 description: Was ist das JSON Web Token, wie funktioniert es und welche Vorteile hat man mit JSON Web Token im Vergleich zu Cookies. Und es geht um die Anwendung in PHP.
 locale: de_DE
 ---
-REST API’s, die im Web immer wieder Verwendung finden, sind zustandslos. Das bedeutet, dass bei jeder Anfrage vom Client an den Server diese mit allen Informationen bestückt sein muss, die für die Verarbeitung der Anfrage benötigt wird. Um diese Zustandslosigkeit auch beim Login und dem Status des Logins beizubehalten braucht man eine andere Methode als das gute $_SESSION in PHP. An dieser Stelle kommt das JSON Web Token zum Einsatz.
+
+REST API’s, die im Web immer wieder Verwendung finden, sind zustandslos. Das bedeutet, dass bei jeder Anfrage vom Client an den Server diese mit allen Informationen bestückt sein muss, die für die Verarbeitung der Anfrage benötigt wird. Um diese Zustandslosigkeit auch beim Login und dem Status des Logins beizubehalten braucht man eine andere Methode als das gute \$\_SESSION in PHP. An dieser Stelle kommt das JSON Web Token zum Einsatz.
 
 In diesem Beitrag erkläre ich euch was das JSON Web Token ist, wie es funktioniert und welche Vorteile man mit JSON Web Token im Vergleich zu Cookies hat. Außerdem erfahrt ihr wie es zusammen mit einer in PHP geschriebenen API benutzt werden könnte.
 
@@ -75,7 +76,7 @@ Ein vollständiger Payload kann dann wie folgt aussehen:
   "iss": "rathes.de",
   "exp": 1431061608,
   "http://rathes.de/jwt/role": "admin",
-  "user" : 342
+  "user": 342
 }
 ```
 
@@ -109,8 +110,7 @@ Verbindet man nun alle drei Teile erneut mit einem Punkt, dann erhält man das k
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJyYXRoZXMuZGUiLCJleHAiOjE0MzEwNjE2MDgsImh0dHA6Ly9yYXRoZXMuZGUvand0L3JvbGUiOiJhZG1pbiIsInVzZXIiOjM0Mn0=.ae449a3bf3174ce688e72811d1ff63e87614004cbd67e6241bfa6d7adabe859d
 ```
 
-
-![Das JSON Web Token besteht aus den drei Teilen Header, Payload und Signature](/images/blog/json-web-token.png)
+![Das JSON Web Token besteht aus den drei Teilen Header, Payload und Signature](../../images/blog/json-web-token.png)
 
 ## Einsatz von JSON Web Token in PHP und Laravel 5
 
@@ -120,7 +120,7 @@ In PHP existieren zahlreiche Implementierungen. [Auf GitHub findet man hier eine
 
 Für das von mit fast immer eingesetzte und meiner Meinung nach beste PHP-Framework Laravel gibt es natürlich auch spezifischere Implementierungen. Ich empfehle [JWT-Auth von Tymon, zu finden im Packagist Archiv und somit auch ganz einfach via composer zu installieren.](https://packagist.org/packages/tymon/jwt-auth)
 
-Version 0.5.* ist auf Laravel 5 zugeschnitten, die älteren Versionen funktionieren mit Laravel 4. Wenn ihr eine noch ältere Version von Laravel benutzt, dann einfach mal das Framework updaten – lohnt sich in jeden Fall.
+Version 0.5.\* ist auf Laravel 5 zugeschnitten, die älteren Versionen funktionieren mit Laravel 4. Wenn ihr eine noch ältere Version von Laravel benutzt, dann einfach mal das Framework updaten – lohnt sich in jeden Fall.
 
 Installation, Konfiguration und Einsatz ist verdammt einfach und im GitHub Wiki anhand von Beispielen verdammt simpel erklärt. Es ist so eingerichtet, dass man mithilfe des Laravel User Objekts die JSON Web Token erstellen kann. Auch die Authentifikation und Autorisierung ist erläutert und verdammt einfach zu benutzen.
 
