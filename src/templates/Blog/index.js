@@ -10,24 +10,24 @@ export default ({ data }) => {
     ? [
         {
           name: `twitter:image`,
-          value:
+          content:
             data.site.siteMetadata.siteUrl + post.frontmatter.image.publicURL,
         },
         {
           name: `og:url`,
-          value: data.site.siteMetadata.siteUrl + post.fields.slug,
+          content: data.site.siteMetadata.siteUrl + post.fields.slug,
         },
         {
           name: `og:type`,
-          value: `article`,
+          content: `article`,
         },
         {
           name: `og:locale`,
-          value: post.frontmatter.locale,
+          content: post.frontmatter.locale,
         },
         {
           name: `og:image`,
-          value:
+          content:
             data.site.siteMetadata.siteUrl + post.frontmatter.image.publicURL,
         },
       ]
