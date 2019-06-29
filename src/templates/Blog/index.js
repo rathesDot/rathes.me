@@ -6,9 +6,23 @@ import Img from "gatsby-image"
 
 export default ({ data }) => {
   const post = data.markdownRemark
+  const meta = post.frontmatter.image
+    ? [
+        {
+          name: `twitter:image`,
+          value:
+            data.site.siteMetadata.siteUrl + post.frontmatter.image.publicURL,
+        },
+      ]
+    : []
+
   return (
     <Layout className="p-4">
-      <SEO title={post.frontmatter.title} />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.excerpt}
+        meta={meta}
+      />
       <div>
         <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
           {post.frontmatter.title}
@@ -27,11 +41,18 @@ export default ({ data }) => {
 
 export const query = graphql`
   query($slug: String!) {
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt(format: PLAIN)
       frontmatter {
         title
         image {
+          publicURL
           childImageSharp {
             fluid(maxWidth: 300) {
               ...GatsbyImageSharpFluid
