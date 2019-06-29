@@ -6,7 +6,25 @@ import Img from "gatsby-image"
 
 export default ({ data }) => {
   const post = data.markdownRemark
-  const meta = post.frontmatter.image
+  const meta = [
+    {
+      name: `og:url`,
+      content: data.site.siteMetadata.siteUrl + post.fields.slug,
+    },
+    {
+      name: `og:type`,
+      content: `article`,
+    },
+    {
+      name: `og:locale`,
+      content: post.frontmatter.locale,
+    },
+    {
+      name: `article:author`,
+      content: `https://www.facebook.com/rathes.de`,
+    },
+  ]
+  const imageMeta = post.frontmatter.image
     ? [
         {
           name: `twitter:image`,
@@ -14,19 +32,12 @@ export default ({ data }) => {
             data.site.siteMetadata.siteUrl + post.frontmatter.image.publicURL,
         },
         {
-          name: `og:url`,
-          content: data.site.siteMetadata.siteUrl + post.fields.slug,
-        },
-        {
-          name: `og:type`,
-          content: `article`,
-        },
-        {
-          name: `og:locale`,
-          content: post.frontmatter.locale,
-        },
-        {
           name: `og:image`,
+          content:
+            data.site.siteMetadata.siteUrl + post.frontmatter.image.publicURL,
+        },
+        {
+          name: `og:image:secure_url`,
           content:
             data.site.siteMetadata.siteUrl + post.frontmatter.image.publicURL,
         },
@@ -38,7 +49,7 @@ export default ({ data }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.excerpt}
-        meta={meta}
+        meta={[...meta, ...imageMeta]}
       />
       <div>
         <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
