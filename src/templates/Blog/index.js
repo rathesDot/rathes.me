@@ -53,7 +53,7 @@ export default ({ data }) => {
         description={post.excerpt}
         meta={[...meta, ...imageMeta]}
       />
-      <div>
+      <div className="blog-post">
         <h1 className="text-3xl font-bold leading-tight mb-6 text-white break-words xs:text-4xl">
           {post.frontmatter.title}
         </h1>
