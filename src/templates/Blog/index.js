@@ -4,6 +4,8 @@ import Layout from "../../components/Layout"
 import SEO from "../../components/SEO"
 import Img from "gatsby-image"
 
+import "./styles.css"
+
 export default ({ data }) => {
   const post = data.markdownRemark
   const meta = [
