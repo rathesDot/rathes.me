@@ -52,7 +52,7 @@ export default ({ data }) => {
         meta={[...meta, ...imageMeta]}
       />
       <div>
-        <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
+        <h1 className="text-3xl font-bold leading-tight mb-6 text-white break-words xs:text-4xl">
           {post.frontmatter.title}
         </h1>
         {post.frontmatter.image && (
