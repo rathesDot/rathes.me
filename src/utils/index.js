@@ -23,3 +23,7 @@ export const groupPostsByYear = posts => {
       return list
     }, {})
 }
+
+export const getSortedGroups = groups => {
+  return Object.entries(groups).sort((a, b) => (a < b ? 1 : b < a ? -1 : 0))
+}
