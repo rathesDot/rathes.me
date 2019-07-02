@@ -1,8 +1,10 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../../components/Layout"
 import SEO from "../../components/SEO"
 import Img from "gatsby-image"
+
+import "./styles.css"
 
 export default ({ data }) => {
   const post = data.markdownRemark
@@ -51,18 +53,23 @@ export default ({ data }) => {
         description={post.excerpt}
         meta={[...meta, ...imageMeta]}
       />
-      <div>
-        <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
+      <div className="blog-post">
+        <h1 className="text-3xl font-bold leading-tight mb-6 text-white break-words xs:text-4xl">
           {post.frontmatter.title}
         </h1>
         {post.frontmatter.image && (
           <Img
-            className="w-full"
+            className="-mx-4 block my-6"
             fluid={post.frontmatter.image.childImageSharp.fluid}
           />
         )}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
+      <footer>
+        <Link className="font-bold text-white mt-16 mb-4 block" to="/writings">
+          ← <span className="underline">back to articles</span>
+        </Link>
+      </footer>
     </Layout>
   )
 }
