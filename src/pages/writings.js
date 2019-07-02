@@ -5,9 +5,12 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
 import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
+import externalLinks from "../content/articles/externalLinks"
 
 const Writings = ({ data }) => {
-  const blogPosts = getSortedGroups(groupPostsByYear(extractBlogPosts(data)))
+  const blogPosts = getSortedGroups(
+    groupPostsByYear(extractBlogPosts(data).concat(externalLinks))
+  )
 
   return (
     <Layout className="p-4">
