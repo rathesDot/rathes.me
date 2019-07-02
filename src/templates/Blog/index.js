@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../../components/Layout"
 import SEO from "../../components/SEO"
 import Img from "gatsby-image"
@@ -65,6 +65,11 @@ export default ({ data }) => {
         )}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
+      <footer>
+        <Link className="font-bold text-white mt-16 mb-4 block" to="/writings">
+          ← <span className="underline">back to articles</span>
+        </Link>
+      </footer>
     </Layout>
   )
 }
