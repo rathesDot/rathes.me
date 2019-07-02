@@ -40,6 +40,17 @@ const Writings = ({ data }) => {
         </a>
       </p>
       <div className="mt-12">
+        <div className="mb-10">
+          <h2 className="text-silver-darker tracking-wider text-sm mb-2">
+            Books & Whitepapers
+          </h2>
+          <a
+            className="block text-white text-lg mb-2"
+            href="https://learn-tamil.com"
+          >
+            A Guide To Basic Tamil Grammar
+          </a>
+        </div>
         {blogPosts.map(([key, posts]) => {
           return (
             <div key={key} className="mb-10">
