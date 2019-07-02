@@ -57,7 +57,7 @@ export default ({ data }) => {
         </h1>
         {post.frontmatter.image && (
           <Img
-            className="w-full"
+            className="-mx-4 block my-6"
             fluid={post.frontmatter.image.childImageSharp.fluid}
           />
         )}
