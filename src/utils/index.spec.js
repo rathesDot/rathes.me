@@ -1,4 +1,4 @@
-import { extractBlogPosts } from "./index"
+import { extractBlogPosts, groupPostsByYear } from "./index"
 
 describe("utils", () => {
   it("extracts the internal blog posts from graphql data", () => {
@@ -62,5 +62,57 @@ describe("utils", () => {
         link: "/blog/en/managing-time/",
       },
     ])
+  })
+
+  it("groups posts by year", () => {
+    const posts = [
+      {
+        title: "The latest posts.",
+        date: "18 July, 2019",
+        link: "/blog/en/customer-experience-instead-of-features/",
+      },
+      {
+        title: "Stop thinking in features.",
+        date: "18 February, 2019",
+        link: "/blog/en/customer-experience-instead-of-features/",
+      },
+      {
+        title: "From Ghent with love",
+        date: "02 June, 2018",
+        link: "/blog/en/from-ghent-with-love/",
+      },
+      {
+        title: "Managing time",
+        date: "08 April, 2019",
+        link: "/blog/en/managing-time/",
+      },
+    ]
+
+    expect(groupPostsByYear(posts)).toEqual({
+      2019: [
+        {
+          title: "The latest posts.",
+          date: "18 July, 2019",
+          link: "/blog/en/customer-experience-instead-of-features/",
+        },
+        {
+          title: "Managing time",
+          date: "08 April, 2019",
+          link: "/blog/en/managing-time/",
+        },
+        {
+          title: "Stop thinking in features.",
+          date: "18 February, 2019",
+          link: "/blog/en/customer-experience-instead-of-features/",
+        },
+      ],
+      2018: [
+        {
+          title: "From Ghent with love",
+          date: "02 June, 2018",
+          link: "/blog/en/from-ghent-with-love/",
+        },
+      ],
+    })
   })
 })
