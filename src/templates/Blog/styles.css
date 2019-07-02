@@ -10,6 +10,20 @@ blockquote p {
   @apply .text-2xl .leading-tight .text-white;
 }
 
+ol {
+  @apply .px-8;
+  list-style-type: decimal-leading-zero;
+}
+
+ul {
+  @apply .px-8;
+  list-style-type: square;
+}
+
+li {
+  @apply .my-4;
+}
+
 .gatsby-highlight {
   @apply .-mx-4;
 }
