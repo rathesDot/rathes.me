@@ -18,6 +18,10 @@ h2 + p {
   @apply mt-2;
 }
 
+h3 + p {
+  @apply mt-1;
+}
+
 @tailwind components;
 
 @tailwind utilities;
