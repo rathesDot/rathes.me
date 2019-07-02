@@ -57,15 +57,25 @@ const Writings = ({ data }) => {
               <h2 className="text-silver-darker tracking-wider text-sm mb-2">
                 {key}
               </h2>
-              {posts.map((post, index) => (
-                <Link
-                  to={post.link}
-                  key={index}
-                  className="block text-white text-lg mb-2"
-                >
-                  {post.title}
-                </Link>
-              ))}
+              {posts.map((post, index) =>
+                post.link.startsWith("http") ? (
+                  <a
+                    href={post.link}
+                    key={index}
+                    className="block text-white text-lg mb-2"
+                  >
+                    {post.title}
+                  </a>
+                ) : (
+                  <Link
+                    to={post.link}
+                    key={index}
+                    className="block text-white text-lg mb-2"
+                  >
+                    {post.title}
+                  </Link>
+                )
+              )}
             </div>
           )
         })}
