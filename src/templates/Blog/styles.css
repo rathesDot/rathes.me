@@ -31,3 +31,7 @@ li {
 :not(pre) > code[class*="language-"] {
   @apply .border-0 .rounded-none .text-white;
 }
+
+.twitter-tweet {
+  @apply .my-8 !important;
+}
