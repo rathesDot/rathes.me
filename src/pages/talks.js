@@ -27,11 +27,7 @@ const Talks = ({ data }) => (
       </h2>
       <ul>
         <li className="mb-4 leading-tight">
-          <a
-            className="block text-white text-lg"
-            target="_blank"
-            href={data.rdd.publicURL}
-          >
+          <a className="block text-white text-lg" href={data.rdd.publicURL}>
             Introduction to Readme Driven Development
           </a>
           <span>
@@ -39,11 +35,7 @@ const Talks = ({ data }) => (
           </span>
         </li>
         <li className="mb-4 leading-tight">
-          <a
-            className="block text-white text-lg"
-            target="_blank"
-            href={data.rddUk.publicURL}
-          >
+          <a className="block text-white text-lg" href={data.rddUk.publicURL}>
             Introduction to Readme Driven Development
           </a>
           <span>
