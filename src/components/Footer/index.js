@@ -6,7 +6,7 @@ class Footer extends PureComponent {
     return (
       <div className="flex justify-between text-silver-darker mt-4">
         <span className="text-xs">&copy; 2019 — Rathes Sachchithananthan</span>
-        <Link className="text-xs" to="/page-2/">
+        <Link className="text-xs" to="/legal">
           Legal Information
         </Link>
       </div>
