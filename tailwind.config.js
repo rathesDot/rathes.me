@@ -7,6 +7,7 @@ module.exports = {
       silver: {
         default: "#CFD3DC",
         darker: "#CCC",
+        darkest: "#AAA",
       },
       white: "#FFF",
     },
@@ -16,6 +17,10 @@ module.exports = {
       },
       screens: {
         xs: "375px",
+      },
+      inset: {
+        4: "12px",
+        "1/2": "50%",
       },
     },
   },
