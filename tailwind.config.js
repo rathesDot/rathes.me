@@ -17,6 +17,10 @@ module.exports = {
       screens: {
         xs: "375px",
       },
+      inset: {
+        4: "12px",
+        "1/2": "50%",
+      },
     },
   },
   variants: {},
