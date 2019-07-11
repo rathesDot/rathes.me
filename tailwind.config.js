@@ -7,6 +7,7 @@ module.exports = {
       silver: {
         default: "#CFD3DC",
         darker: "#CCC",
+        darkest: "#AAA",
       },
       white: "#FFF",
     },
