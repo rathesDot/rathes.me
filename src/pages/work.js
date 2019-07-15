@@ -57,31 +57,31 @@ const Work = ({ data }) => {
       </p>
       <ul className="my-10">
         <li className="my-6">
-          <a
-            className="block font-bold text-white text-xl leading-tight"
+          <button
+            className="block font-bold text-white text-xl leading-tight text-left"
             href="#"
             onClick={openModal}
           >
             A Guide To Basic Tamil Grammar
-          </a>
+          </button>
         </li>
         <li className="my-6">
-          <a
-            className="block font-bold text-white text-xl leading-tight"
+          <button
+            className="block font-bold text-white text-xl leading-tight text-left"
             href="#"
             onClick={openModal}
           >
             Localization as a Service for products
-          </a>
+          </button>
         </li>
         <li className="my-6">
-          <a
-            className="block font-bold text-white text-xl leading-tight"
+          <button
+            className="block font-bold text-white text-xl leading-tight text-left"
             href="#"
             onClick={openModal}
           >
             Track the progress of your fitness
-          </a>
+          </button>
         </li>
       </ul>
       <p>
