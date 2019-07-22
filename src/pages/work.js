@@ -15,7 +15,7 @@ const Work = ({ data }) => {
   }
 
   return (
-    <Layout className="p-4 relative">
+    <Layout className="p-4 relative md:p-8">
       {isModalOpen && (
         <div className="bg-white text-black fixed inset-x-4 top-1/2 flex flex-col rounded -translateY-1/2">
           <button

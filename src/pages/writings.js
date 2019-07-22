@@ -13,7 +13,7 @@ const Writings = ({ data }) => {
   )
 
   return (
-    <Layout className="p-4">
+    <Layout className="p-4 md:p-8">
       <SEO title="Writings" />
       <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
         My writings
