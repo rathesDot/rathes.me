@@ -58,7 +58,7 @@ const Work = ({ data }) => {
       <ul className="my-10">
         <li className="my-6">
           <button
-            className="block font-bold text-white text-xl leading-tight text-left"
+            className="block text-white text-lg leading-tight text-left"
             href="#"
             onClick={openModal}
           >
@@ -67,7 +67,7 @@ const Work = ({ data }) => {
         </li>
         <li className="my-6">
           <button
-            className="block font-bold text-white text-xl leading-tight text-left"
+            className="block text-white text-lg leading-tight text-left"
             href="#"
             onClick={openModal}
           >
@@ -76,7 +76,7 @@ const Work = ({ data }) => {
         </li>
         <li className="my-6">
           <button
-            className="block font-bold text-white text-xl leading-tight text-left"
+            className="block text-white text-lg leading-tight text-left"
             href="#"
             onClick={openModal}
           >
