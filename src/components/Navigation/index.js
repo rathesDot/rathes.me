@@ -39,26 +39,29 @@ class Navigation extends PureComponent {
             <div
               className={cx("text-right", { hidden: !isNavOpen }, "md:block")}
             >
-              <Link to="/about" className="font-bold mr-2">
+              <Link to="/about" className="font-bold mr-2 text-white">
                 About
               </Link>
-              <a href={data.resume.publicURL} className="font-bold mr-2">
+              <a
+                href={data.resume.publicURL}
+                className="font-bold mr-2 text-white"
+              >
                 <span
-                  className="font-normal text-xl mr-2"
+                  className="font-normal text-xl mr-2 text-silver"
                   dangerouslySetInnerHTML={{ __html: "&sol;" }}
                 ></span>
                 Resume
               </a>
-              <Link to="/work" className="font-bold mr-2">
+              <Link to="/work" className="font-bold mr-2 text-white">
                 <span
-                  className="font-normal text-xl mr-2"
+                  className="font-normal text-xl mr-2 text-silver"
                   dangerouslySetInnerHTML={{ __html: "&sol;" }}
                 ></span>
                 Work
               </Link>
-              <Link to="/writings" className="font-bold">
+              <Link to="/writings" className="font-bold text-white">
                 <span
-                  className="font-normal text-xl mr-2"
+                  className="font-normal text-xl mr-2 text-silver"
                   dangerouslySetInnerHTML={{ __html: "&sol;" }}
                 ></span>
                 Writings
