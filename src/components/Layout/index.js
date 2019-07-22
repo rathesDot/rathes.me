@@ -9,7 +9,7 @@ import Footer from "../Footer"
 
 class Layout extends React.PureComponent {
   render() {
-    const { children, className, ...props } = this.props
+    const { children, className, contentClassName, ...props } = this.props
 
     return (
       <main
@@ -17,7 +17,9 @@ class Layout extends React.PureComponent {
         className={cx(className, "flex flex-col justify-between min-h-screen")}
       >
         <Navigation />
-        <section className="flex-grow">{children}</section>
+        <section className={cx(contentClassName, "flex-grow")}>
+          {children}
+        </section>
         <Footer />
       </main>
     )
@@ -26,6 +28,11 @@ class Layout extends React.PureComponent {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  contentClassName: PropTypes.string,
+}
+
+Layout.defaultProps = {
+  contentClassName: "",
 }
 
 export default Layout
