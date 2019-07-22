@@ -6,6 +6,7 @@ class OverviewInfo extends PureComponent {
     return (
       <ul className="flex justify-between my-20 overview-info md:max-w-sm">
         <li>
+          <span className="block w-8 bg-white border-t border-white my-2" />
           <span className="block tracking-wide text-xs text-silver leading-none">
             Working at
           </span>
@@ -17,6 +18,7 @@ class OverviewInfo extends PureComponent {
           </a>
         </li>
         <li>
+          <span className="block w-8 bg-white border-t border-white my-2" />
           <span className="block tracking-wide text-xs text-silver leading-none">
             Living in
           </span>
@@ -28,6 +30,7 @@ class OverviewInfo extends PureComponent {
           </a>
         </li>
         <li>
+          <span className="block w-8 bg-white border-t border-white my-2" />
           <span className="block tracking-wide text-xs text-silver leading-none">
             Follow me
           </span>
