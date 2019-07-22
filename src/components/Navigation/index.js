@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react"
-import { Link } from "gatsby"
+import { Link, StaticQuery, graphql } from "gatsby"
 import cx from "classnames"
 
 import Toggle from "../Toggle"
@@ -20,44 +20,53 @@ class Navigation extends PureComponent {
     const { isNavOpen } = this.state
 
     return (
-      <div className="mb-20 md:flex md:items-center md:justify-between">
-        <div className="flex items-center justify-between mb-4 md:mb-0">
-          <Link to="/">
-            <Logo />
-          </Link>
-          <Toggle className="md:hidden" onClick={this.toggleNavigation} />
-        </div>
-        <div className={cx("text-right", { hidden: !isNavOpen }, "md:block")}>
-          <Link to="/about" className="font-bold mr-2">
-            <span
-              className="font-normal mr-2"
-              dangerouslySetInnerHTML={{ __html: "&sol;&sol;" }}
-            ></span>
-            About
-          </Link>
-          <Link to="/work" className="font-bold mr-2">
-            <span
-              className="font-normal mr-2"
-              dangerouslySetInnerHTML={{ __html: "&sol;&sol;" }}
-            ></span>
-            Work
-          </Link>
-          <Link to="/writings" className="font-bold mr-2">
-            <span
-              className="font-normal mr-2"
-              dangerouslySetInnerHTML={{ __html: "&sol;&sol;" }}
-            ></span>
-            Writings
-          </Link>
-          <Link to="/talks" className="font-bold">
-            <span
-              className="font-normal mr-2"
-              dangerouslySetInnerHTML={{ __html: "&sol;&sol;" }}
-            ></span>
-            Talks
-          </Link>
-        </div>
-      </div>
+      <StaticQuery
+        query={graphql`
+          query {
+            resume: file(relativePath: { eq: "files/resume.pdf" }) {
+              publicURL
+            }
+          }
+        `}
+        render={data => (
+          <div className="mb-20 md:flex md:items-center md:justify-between">
+            <div className="flex items-center justify-between mb-4 md:mb-0">
+              <Link to="/">
+                <Logo />
+              </Link>
+              <Toggle className="md:hidden" onClick={this.toggleNavigation} />
+            </div>
+            <div
+              className={cx("text-right", { hidden: !isNavOpen }, "md:block")}
+            >
+              <Link to="/about" className="font-bold mr-2">
+                About
+              </Link>
+              <a href={data.resume.publicURL} className="font-bold mr-2">
+                <span
+                  className="font-normal text-xl mr-2"
+                  dangerouslySetInnerHTML={{ __html: "&sol;" }}
+                ></span>
+                Resume
+              </a>
+              <Link to="/work" className="font-bold mr-2">
+                <span
+                  className="font-normal text-xl mr-2"
+                  dangerouslySetInnerHTML={{ __html: "&sol;" }}
+                ></span>
+                Work
+              </Link>
+              <Link to="/writings" className="font-bold">
+                <span
+                  className="font-normal text-xl mr-2"
+                  dangerouslySetInnerHTML={{ __html: "&sol;" }}
+                ></span>
+                Writings
+              </Link>
+            </div>
+          </div>
+        )}
+      />
     )
   }
 }
