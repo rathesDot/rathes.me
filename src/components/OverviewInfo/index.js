@@ -4,7 +4,7 @@ import "./styles.css"
 class OverviewInfo extends PureComponent {
   render() {
     return (
-      <ul className="flex justify-between my-20 overview-info md:max-w-sm">
+      <ul className="flex justify-between my-16 overview-info md:max-w-sm">
         <li>
           <span className="block w-8 bg-white border-t border-white my-2" />
           <span className="block tracking-wide text-xs text-silver leading-none">
