@@ -49,13 +49,6 @@ class Navigation extends PureComponent {
             ></span>
             Writings
           </Link>
-          <Link to="/talks" className="font-bold">
-            <span
-              className="font-normal mr-2"
-              dangerouslySetInnerHTML={{ __html: "&sol;&sol;" }}
-            ></span>
-            Talks
-          </Link>
         </div>
       </div>
     )
