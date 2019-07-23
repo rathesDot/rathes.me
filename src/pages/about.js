@@ -9,7 +9,7 @@ const AboutMe = ({ data }) => (
   <Layout className="p-4 md:p-8">
     <SEO title="About me" />
     <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
-      /rðiːs/
+      /raðiːs/
     </h1>
     <p>
       I’m Rathes Sachchithananthan, a web developer with not only interests in
