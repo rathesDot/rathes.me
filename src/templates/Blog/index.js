@@ -47,7 +47,7 @@ export default ({ data }) => {
     : []
 
   return (
-    <Layout className="p-4">
+    <Layout className="p-4 md:p-8">
       <SEO
         title={post.frontmatter.title}
         description={post.excerpt}
