@@ -10,6 +10,16 @@
   @apply .text-2xl .leading-tight .text-white;
 }
 
+@screen md {
+  .blog-post blockquote {
+    @apply .my-12;
+  }
+
+  .blog-post blockquote p {
+    @apply .leading-normal;
+  }
+}
+
 .blog-post ol {
   @apply .px-8;
   list-style-type: decimal-leading-zero;
