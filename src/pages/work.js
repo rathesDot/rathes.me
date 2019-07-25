@@ -17,7 +17,7 @@ const Work = ({ data }) => {
   return (
     <Layout className="p-4 relative md:p-8">
       {isModalOpen && (
-        <div className="bg-white text-black fixed inset-x-4 top-1/2 flex flex-col rounded -translateY-1/2">
+        <div className="bg-white text-black fixed inset-x-4 top-1/2 flex flex-col rounded -translateY-1/2 md:w-2/3 md:left-0 md:right-0 md:mx-auto">
           <button
             className="text-silver-darkest px-4 pt-4 pb-1 tracking-wider text-sm uppercase self-end"
             onClick={closeModal}
