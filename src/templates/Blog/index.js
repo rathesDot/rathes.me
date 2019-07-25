@@ -66,7 +66,10 @@ export default ({ data }) => {
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </div>
       <footer>
-        <Link className="font-bold text-white mt-16 mb-4 block" to="/writings">
+        <Link
+          className="font-bold text-white mt-16 mb-4 block md:mb-8"
+          to="/writings"
+        >
           ← <span className="underline">back to articles</span>
         </Link>
       </footer>
