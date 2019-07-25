@@ -62,22 +62,24 @@ const AboutMe = ({ data }) => (
         Actually, I dream to have my own library one where I can invite
         everybody to pick up a nice book and read.
       </p>
-      <div className="flex my-4">
-        <Img
-          className="w-1/2 mr-4"
-          fluid={data.companyOfOne.childImageSharp.fluid}
-        />
-        <Img className="w-1/2" fluid={data.carrie.childImageSharp.fluid} />
-      </div>
-      <div className="flex my-4">
-        <Img
-          className="w-1/2 mr-4"
-          fluid={data.crookedKingdom.childImageSharp.fluid}
-        />
-        <Img
-          className="w-1/2"
-          fluid={data.knotsAndCrosses.childImageSharp.fluid}
-        />
+      <div className="flex w-full">
+        <div className="flex my-4 md:w-1/2">
+          <Img
+            className="w-1/2 mr-4"
+            fluid={data.companyOfOne.childImageSharp.fluid}
+          />
+          <Img className="w-1/2" fluid={data.carrie.childImageSharp.fluid} />
+        </div>
+        <div className="flex my-4 md:w-1/2">
+          <Img
+            className="w-1/2 mr-4"
+            fluid={data.crookedKingdom.childImageSharp.fluid}
+          />
+          <Img
+            className="w-1/2"
+            fluid={data.knotsAndCrosses.childImageSharp.fluid}
+          />
+        </div>
       </div>
       <h2 className="text-3xl mt-12 font-bold leading-none text-white break-words xs:text-4xl">
         What I write
