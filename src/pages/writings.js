@@ -15,7 +15,7 @@ const Writings = ({ data }) => {
   return (
     <Layout className="p-4 md:p-8">
       <SEO title="Writings" />
-      <section className="md:max-w-570px">
+      <section className="md:max-w-570px md:text-lg">
         <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
           My writings
         </h1>
