@@ -8,7 +8,7 @@ import SEO from "../components/SEO"
 const AboutMe = ({ data }) => (
   <Layout className="p-4 md:p-8">
     <SEO title="About me" />
-    <section className="md:max-w-570px">
+    <section className="md:max-w-570px md:text-lg">
       <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
         /raðiːs/
       </h1>
