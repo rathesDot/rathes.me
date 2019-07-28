@@ -29,7 +29,7 @@ class Navigation extends PureComponent {
           }
         `}
         render={data => (
-          <div className="mb-20 md:flex md:items-center md:justify-between">
+          <div className="mb-20 md:flex md:items-center md:justify-between lg:mt-8 lg:max-w-4xl">
             <div className="flex items-center justify-between mb-4 md:mb-0">
               <Link to="/">
                 <Logo />
