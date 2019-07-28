@@ -106,7 +106,7 @@ const Work = ({ data }) => {
           <h2 className="text-silver-darker tracking-wider text-sm mb-4">
             Tech Talks
           </h2>
-          <ul>
+          <ul className="mt-0">
             <li className="mb-4 leading-tight">
               <a className="block text-white text-lg" href={data.rdd.publicURL}>
                 Introduction to Readme Driven Development
