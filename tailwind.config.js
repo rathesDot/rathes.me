@@ -15,6 +15,9 @@ module.exports = {
       fontFamily: {
         sans: ["Source Sans Pro", ...defaultTheme.fontFamily.sans],
       },
+      margin: {
+        "110px": "110px",
+      },
       maxWidth: {
         "570px": "570px",
       },
