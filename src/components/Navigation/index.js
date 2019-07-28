@@ -31,10 +31,14 @@ class Navigation extends PureComponent {
         render={data => (
           <div className="mb-20 md:flex md:items-center md:justify-between lg:mt-8 lg:max-w-4xl">
             <div className="flex items-center justify-between mb-4 md:mb-0">
-              <Link to="/">
+              <Link to="/" aria-label="Home">
                 <Logo />
               </Link>
-              <Toggle className="md:hidden" onClick={this.toggleNavigation} />
+              <Toggle
+                className="md:hidden"
+                aria-label="Toggle Navigation"
+                onClick={this.toggleNavigation}
+              />
             </div>
             <div
               className={cx("text-right", { hidden: !isNavOpen }, "md:block")}
@@ -48,6 +52,7 @@ class Navigation extends PureComponent {
               <a
                 href={data.resume.publicURL}
                 className="font-bold mr-2 text-white lg:text-2xl lg:leading-none"
+                aria-label="Resume"
               >
                 <span
                   className="font-normal text-xl mr-2 text-silver lg:text-3xl"
