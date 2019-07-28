@@ -6,6 +6,7 @@ import SEO from "../components/SEO"
 
 import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
 import externalLinks from "../content/articles/externalLinks"
+import SayHi from "../components/SayHi"
 
 const Writings = ({ data }) => {
   const blogPosts = getSortedGroups(
@@ -82,6 +83,7 @@ const Writings = ({ data }) => {
           })}
         </div>
       </section>
+      <SayHi />
     </Layout>
   )
 }

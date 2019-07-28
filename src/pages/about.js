@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import SayHi from "../components/SayHi"
 
 const AboutMe = ({ data }) => (
   <Layout className="p-4 md:p-8">
@@ -100,6 +101,7 @@ const AboutMe = ({ data }) => (
         for my learning platform.
       </p>
     </section>
+    <SayHi />
   </Layout>
 )
 

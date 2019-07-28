@@ -2,6 +2,7 @@ import React, { useState } from "react"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import SayHi from "../components/SayHi"
 
 const Work = ({ data }) => {
   const [isModalOpen, setModalState] = useState(false)
@@ -133,6 +134,7 @@ const Work = ({ data }) => {
           </ul>
         </div>
       </section>
+      <SayHi />
     </Layout>
   )
 }
