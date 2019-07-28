@@ -21,6 +21,9 @@ module.exports = {
       screens: {
         xs: "375px",
       },
+      width: {
+        "700px": "700px",
+      },
       inset: {
         4: "12px",
         "1/2": "50%",
