@@ -38,6 +38,12 @@
   @apply .-mx-4;
 }
 
+@screen md {
+  .blog-post .gatsby-highlight {
+    @apply .mx-0 .w-700px;
+  }
+}
+
 .blog-post :not(pre) > code[class*="language-"] {
   @apply .border-0 .rounded-none .text-white;
 }
