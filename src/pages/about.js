@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import SayHi from "../components/SayHi"
 
 const AboutMe = ({ data }) => (
   <Layout className="p-4 md:p-8">
@@ -62,7 +63,7 @@ const AboutMe = ({ data }) => (
         Actually, I dream to have my own library one where I can invite
         everybody to pick up a nice book and read.
       </p>
-      <div className="flex w-700px">
+      <div className="md:flex md:w-700px">
         <div className="flex my-4 md:w-1/2">
           <Img
             className="w-1/2 mr-4"
@@ -100,6 +101,7 @@ const AboutMe = ({ data }) => (
         for my learning platform.
       </p>
     </section>
+    <SayHi />
   </Layout>
 )
 

@@ -2,6 +2,7 @@ import React, { useState } from "react"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import SayHi from "../components/SayHi"
 
 const Work = ({ data }) => {
   const [isModalOpen, setModalState] = useState(false)
@@ -106,7 +107,7 @@ const Work = ({ data }) => {
           <h2 className="text-silver-darker tracking-wider text-sm mb-4">
             Tech Talks
           </h2>
-          <ul>
+          <ul className="mt-0">
             <li className="mb-4 leading-tight">
               <a className="block text-white text-lg" href={data.rdd.publicURL}>
                 Introduction to Readme Driven Development
@@ -133,6 +134,7 @@ const Work = ({ data }) => {
           </ul>
         </div>
       </section>
+      <SayHi />
     </Layout>
   )
 }
