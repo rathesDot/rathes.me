@@ -31,6 +31,10 @@ h3 + p {
   @apply mt-1;
 }
 
+.gatsby-highlight {
+  @apply .my-6;
+}
+
 .-translateY-1\/2 {
   transform: translateY(-50%);
 }
