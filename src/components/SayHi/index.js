@@ -5,7 +5,11 @@ class SayHi extends PureComponent {
     return (
       <div className="text-4xl xs:text-5xl font-bold text-white max-w-345px leading-none mt-16 mb-8 lg:max-w-480px lg:my-16">
         Work inquiry, question or something else?{" "}
-        <a className="underline" href="mailto:sachchi@rathes.de">
+        <a
+          aria-label="Send an E-Mail to sachchi@rathes.de"
+          className="underline"
+          href="mailto:sachchi@rathes.de"
+        >
           Say hi!
         </a>
       </div>
