@@ -14,8 +14,9 @@ const Legal = ({ data }) => (
         Pursuant to § 5 TMG:
       </h2>
       <p>
-        Rathes Sachchithananthan <br /> Arminiusstraße 6 <br />
-        45721 Haltern am See
+        Rathes Sachchithananthan <br />
+        Braderijstraat 5 <br />
+        9000 Gent, Belgium
       </p>
       <h2 className="mt-8 font-bold leading-none text-white">Contact</h2>
       <p>
