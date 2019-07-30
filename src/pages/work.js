@@ -58,38 +58,30 @@ const Work = ({ data }) => {
           .
         </p>
         <p>
-          Below you can find my current side projects that are all still work in
-          progress.
+          The side project I am working on right now is to provide a platform
+          for people that want to learn my mother language Tamil.
         </p>
-        <ul className="my-10">
-          <li className="my-6">
-            <button
-              className="block text-white text-lg leading-tight text-left"
-              href="#"
-              onClick={openModal}
-            >
-              A Guide To Basic Tamil Grammar
-            </button>
-          </li>
-          <li className="my-6">
-            <button
-              className="block text-white text-lg leading-tight text-left"
-              href="#"
-              onClick={openModal}
-            >
-              Localization as a Service for products
-            </button>
-          </li>
-          <li className="my-6">
-            <button
-              className="block text-white text-lg leading-tight text-left"
-              href="#"
-              onClick={openModal}
-            >
-              Track the progress of your fitness
-            </button>
-          </li>
-        </ul>
+        <p>
+          <a
+            className="text-white font-bold text-xl"
+            href="https://learn-tamil.com"
+          >
+            https://learn-tamil.com
+          </a>
+        </p>
+        <p>
+          In a first step, I'm working on a small book that I will use as the
+          foundation to build an app and a community around learning the
+          language Tamil and also learning about the Tamil culture and history.
+        </p>
+        <p>
+          <button
+            className="font-bold text-white block md:mb-8"
+            onClick={openModal}
+          >
+            → <span className="underline">Read more about the project</span>
+          </button>
+        </p>
         <h2 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
           Talks
         </h2>
@@ -111,10 +103,10 @@ const Work = ({ data }) => {
             <li className="mb-4 leading-tight">
               <a className="block text-white text-lg" href={data.rdd.publicURL}>
                 Introduction to Readme Driven Development
+                <span className="text-sm block text-silver">
+                  (January 2019 at <a href="https://php.gent">PHP Gent</a>)
+                </span>
               </a>
-              <span>
-                (January 2019 at <a href="https://php.gent">PHP Gent</a>)
-              </span>
             </li>
             <li className="mb-4 leading-tight">
               <a
@@ -122,14 +114,14 @@ const Work = ({ data }) => {
                 href={data.rddUk.publicURL}
               >
                 Introduction to Readme Driven Development
+                <span className="text-sm block text-silver">
+                  (February 2019 at{" "}
+                  <a href="https://www.phpconference.co.uk/">
+                    PHP UK Unconference
+                  </a>
+                  )
+                </span>
               </a>
-              <span>
-                (February 2019 at{" "}
-                <a href="https://www.phpconference.co.uk/">
-                  PHP UK Unconference
-                </a>
-                )
-              </span>
             </li>
           </ul>
         </div>
