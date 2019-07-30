@@ -103,10 +103,10 @@ const Work = ({ data }) => {
             <li className="mb-4 leading-tight">
               <a className="block text-white text-lg" href={data.rdd.publicURL}>
                 Introduction to Readme Driven Development
+                <span className="text-sm block text-silver">
+                  (January 2019 at <a href="https://php.gent">PHP Gent</a>)
+                </span>
               </a>
-              <span>
-                (January 2019 at <a href="https://php.gent">PHP Gent</a>)
-              </span>
             </li>
             <li className="mb-4 leading-tight">
               <a
@@ -114,14 +114,14 @@ const Work = ({ data }) => {
                 href={data.rddUk.publicURL}
               >
                 Introduction to Readme Driven Development
+                <span className="text-sm block text-silver">
+                  (February 2019 at{" "}
+                  <a href="https://www.phpconference.co.uk/">
+                    PHP UK Unconference
+                  </a>
+                  )
+                </span>
               </a>
-              <span>
-                (February 2019 at{" "}
-                <a href="https://www.phpconference.co.uk/">
-                  PHP UK Unconference
-                </a>
-                )
-              </span>
             </li>
           </ul>
         </div>
