@@ -3,7 +3,7 @@
   "private": true,
   "description": "This is the website how it is shown on rathes.me",
   "version": "0.1.0",
-  "author": "Rathes Sachchithananthan <sachchi@rathes.de>",
+  "author": "Rathes Sachchithananthan <sachchi@rathes.me>",
   "dependencies": {
     "classnames": "^2.2.6",
     "gatsby": "^2.11.3",
