@@ -21,7 +21,7 @@ const Legal = ({ data }) => (
       <h2 className="mt-8 font-bold leading-none text-white">Contact</h2>
       <p>
         Phone: +32 483 463 944 <br />
-        E-Mail: sachchi@rathes.de
+        E-Mail: sachchi@rathes.me
       </p>
       <h2 className="mt-8 text-xl font-bold leading-normal text-white">
         Disclaimer
