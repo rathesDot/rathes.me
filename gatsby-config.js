@@ -62,6 +62,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`,
   ],
 }
