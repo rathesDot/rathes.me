@@ -14,6 +14,7 @@
     "gatsby-plugin-postcss": "^2.1.0",
     "gatsby-plugin-react-helmet": "^3.1.0",
     "gatsby-plugin-sharp": "^2.2.1",
+    "gatsby-plugin-sitemap": "^2.2.9",
     "gatsby-plugin-twitter": "^2.1.0",
     "gatsby-remark-images": "^3.1.2",
     "gatsby-remark-prismjs": "^3.3.0",
