@@ -25,5 +25,3 @@ to run the tests.
 ## Deployment
 
 This site is deployed on [netflify](https://www.netlify.com/), so whenever code is pushed to master in this repository, the changed are deployed continuously.
-
-_— More information will follow soon —_
