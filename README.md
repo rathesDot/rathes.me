@@ -12,4 +12,8 @@ This website uses [Gatsby](https://www.gatsbyjs.org), an open source framework b
 
 For the styling part, this website makes use of [Tailwind](https://tailwindcss.com/), a utility-first CSS framework.
 
+## Deployment
+
+This site is deployed on [netflify](https://www.netlify.com/), so whenever code is pushed to master in this repository, the changed are deployed continuously.
+
 _— More information will follow soon —_
