@@ -1,12 +1,10 @@
 import React from "react"
-import { graphql } from "gatsby"
-import Img from "gatsby-image"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
 
-const AboutMe = ({ data }) => (
+const AboutMe = () => (
   <Layout className="p-4 md:p-8">
     <SEO title="About me" />
     <section className="md:max-w-570px md:text-lg">
@@ -134,44 +132,5 @@ const AboutMe = ({ data }) => (
     <SayHi />
   </Layout>
 )
-
-export const query = graphql`
-  query {
-    companyOfOne: file(
-      relativePath: { eq: "images/company-of-one-paul-jarvis.png" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    carrie: file(relativePath: { eq: "images/stephen-king-carrie.png" }) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    knotsAndCrosses: file(
-      relativePath: { eq: "images/knots-and-crosses-ian-rankin.png" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-    crookedKingdom: file(
-      relativePath: { eq: "images/crooked-kingdom-leigh-bardugo.png" }
-    ) {
-      childImageSharp {
-        fluid(maxWidth: 300) {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`
 
 export default AboutMe
