@@ -155,6 +155,30 @@ const AboutMe = () => (
             Dramatic Storytelling
           </a>
         </li>
+        <li className="mb-3 leading-normal">
+          <span className="my-8 block w-10 border-t border-silver-darkest" />
+          <a
+            className="text-white text-lg"
+            href="https://www.amazon.de/Eye-Collector-Sebastian-Fitzek/dp/0857893718/ref=as_li_ss_tl?_encoding=UTF8&qid=1569785773&sr=8-2&linkCode=sl1&tag=aheenam-21&linkId=9c0eee4ede2677230d7f3dd92cd7d8c2&language=de_DE"
+          >
+            <span className="block text-silver-darker tracking-wider text-sm mt-2">
+              Sebastian Fitzek
+            </span>
+            The Eye Collector (Currently Reading)
+          </a>
+        </li>
+        <li className="mb-3 leading-normal">
+          <a
+            className="text-white text-lg"
+            href="https://www.amazon.de/gp/product/9350291770/ref=as_li_ss_tl?ie=UTF8&psc=1&linkCode=sl1&tag=aheenam-21&linkId=c63e2d759691bd90defd148ce310c6ae&language=de_DE"
+          >
+            <span className="block text-silver-darker tracking-wider text-sm mt-2">
+              Sunila Galappatti
+            </span>
+            A Long Watch: War, Captivity and Return in Sri Lanka (Currently
+            Reading)
+          </a>
+        </li>
       </ul>
       <h2 className="text-3xl mt-12 font-bold leading-none text-white break-words xs:text-4xl">
         What I write
