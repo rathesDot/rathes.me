@@ -109,6 +109,52 @@ const AboutMe = () => (
             Knots and Crosses
           </a>
         </li>
+        <li className="mb-3 leading-normal">
+          <a
+            className="text-white text-lg"
+            href="https://www.amazon.de/Fluent-Forever-Learn-Language-Forget/dp/0385348118/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=392R9S4R0TJ8R&keywords=fluent+forever&qid=1569785112&s=gateway&sprefix=fluent+fo,aps,147&sr=8-1&linkCode=sl1&tag=aheenam-21&linkId=fe5e639e9481ed1c10eb8d7ffa99fe74&language=de_DE"
+          >
+            <span className="block text-silver-darker tracking-wider text-sm mt-2">
+              Gabriel Wyner
+            </span>
+            Fluent Forever: How to Learn Any Language Fast and Never Forget It
+          </a>
+        </li>
+        <li className="mb-3 leading-normal">
+          <a
+            className="text-white text-lg"
+            href="https://www.amazon.de/gp/product/1848549253/ref=as_li_ss_tl?ie=UTF8&psc=1&linkCode=sl1&tag=aheenam-21&linkId=e41b389168ba6de0b9361ee200cdb4c0&language=de_DE"
+          >
+            <span className="block text-silver-darker tracking-wider text-sm mt-2">
+              Gary Keller, Jay Papasan
+            </span>
+            The One Thing: The Surprisingly Simple Truth Behind Extraordinary
+            Results
+          </a>
+        </li>
+        <li className="mb-3 leading-normal">
+          <a
+            className="text-white text-lg"
+            href="https://www.amazon.de/Doesnt-Have-Be-Crazy-Work/dp/0062874780/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1VTWBPPJBMM4G&keywords=it+doesnt+have+to+be+crazy+at+work&qid=1569784737&s=books-intl-de&sprefix=It+doe,english-books,144&sr=1-1&linkCode=sl1&tag=aheenam-21&linkId=e3d47d2ed74d92f7b76169f166aa9602&language=de_DE"
+          >
+            <span className="block text-silver-darker tracking-wider text-sm mt-2">
+              Jason Fried, David Heinemeier Hansson
+            </span>
+            It Doesn't Have to Be Crazy at Work
+          </a>
+        </li>
+        <li className="mb-3 leading-normal">
+          <a
+            className="text-white text-lg"
+            href="https://www.amazon.de/Write-Damn-Novel-Step-Step/dp/0312010443/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=GFH4GODP9KJQ&keywords=how+to+write+a+damn+good+novel&qid=1569784848&s=books-intl-de&sprefix=How+to+write+a+dam,english-books,149&sr=1-1&linkCode=sl1&tag=aheenam-21&linkId=b097480b152cdddfa4a7819ea4eb6762&language=de_DE"
+          >
+            <span className="block text-silver-darker tracking-wider text-sm mt-2">
+              James N. Frey
+            </span>
+            How to Write a Damn Good Novel: A Step-By-Step No Nonsense Guide to
+            Dramatic Storytelling
+          </a>
+        </li>
       </ul>
       <h2 className="text-3xl mt-12 font-bold leading-none text-white break-words xs:text-4xl">
         What I write
