@@ -63,25 +63,55 @@ const AboutMe = ({ data }) => (
         Actually, I dream to have my own library one where I can invite
         everybody to pick up a nice book and read.
       </p>
-      <div className="md:flex md:w-700px">
-        <div className="flex my-4 md:w-1/2">
-          <Img
-            className="w-1/2 mr-4"
-            fluid={data.companyOfOne.childImageSharp.fluid}
-          />
-          <Img className="w-1/2" fluid={data.carrie.childImageSharp.fluid} />
-        </div>
-        <div className="flex my-4 md:w-1/2">
-          <Img
-            className="w-1/2 mr-4"
-            fluid={data.crookedKingdom.childImageSharp.fluid}
-          />
-          <Img
-            className="w-1/2"
-            fluid={data.knotsAndCrosses.childImageSharp.fluid}
-          />
-        </div>
-      </div>
+      <h3 className="text-xl mt-12 font-bold leading-none text-white break-words xs:text-2xl">
+        Reading List 2019
+      </h3>
+      <ul>
+        <li className="mb-3 leading-normal">
+          <a
+            className="text-white text-lg mb-2 "
+            href="https://www.amazon.de/Company-One-Staying-Small-Business/dp/0241380227/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=30Q5H7258RS6N&keywords=company+of+one&qid=1569783760&s=gateway&sprefix=Company+,aps,156&sr=8-1&linkCode=sl1&tag=aheenam-21&linkId=64b51b5b329ae16ef1a79cf782d2e1c0&language=de_DE"
+          >
+            <span className="block text-silver-darker tracking-wider text-sm">
+              Paul Jarvis
+            </span>
+            Company of One: Why Staying Small is the Next Big Thing for Business
+          </a>
+        </li>
+        <li className="mb-3 leading-normal">
+          <a
+            className="text-white text-lg"
+            href="https://www.amazon.de/Six-Crows-Crooked-Kingdom-Book/dp/1780622317/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=172EZFM0NO73E&keywords=crooked+kingdom&qid=1569783979&s=gateway&sprefix=Crooked+King,aps,146&sr=8-1&linkCode=sl1&tag=aheenam-21&linkId=1f9016fab24cfba12a2e409bac0f5d11&language=de_DE"
+          >
+            <span className="block text-silver-darker tracking-wider text-sm mt-2">
+              Leigh Bardugo
+            </span>
+            Crooked Kingdom
+          </a>
+        </li>
+        <li className="mb-3 leading-normal">
+          <a
+            className="text-white text-lg"
+            href="https://www.amazon.de/Carrie-Stephen-King/dp/0450018628/ref=as_li_ss_tl?_encoding=UTF8&qid=1569784151&sr=1-1&linkCode=sl1&tag=aheenam-21&linkId=19d572bb5e3ca68dbfb3d580b89c3a5e&language=de_DE"
+          >
+            <span className="block text-silver-darker tracking-wider text-sm mt-2">
+              Stephen King
+            </span>
+            Carrie
+          </a>
+        </li>
+        <li className="mb-3 leading-normal">
+          <a
+            className="text-white text-lg"
+            href="https://www.amazon.de/Knots-Crosses-Rebus-Novel-Rankin/dp/0752883534/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=WDIWI3I22Z6Q&keywords=knots+and+crosses&qid=1569784300&s=books-intl-de&sprefix=Knots+,english-books,198&sr=1-1&linkCode=sl1&tag=aheenam-21&linkId=6e77b3898028ea0cf2eee8c9e2fb5714&language=de_DE"
+          >
+            <span className="block text-silver-darker tracking-wider text-sm mt-2">
+              Ian Rankin
+            </span>
+            Knots and Crosses
+          </a>
+        </li>
+      </ul>
       <h2 className="text-3xl mt-12 font-bold leading-none text-white break-words xs:text-4xl">
         What I write
       </h2>
