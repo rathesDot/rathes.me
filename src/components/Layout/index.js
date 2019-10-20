@@ -3,9 +3,9 @@ import PropTypes from "prop-types"
 import cx from "classnames"
 
 import Navigation from "../Navigation"
+import Footer from "../Footer"
 
 import "./styles.css"
-import Footer from "../Footer"
 
 const Layout = ({ children, className, contentClassName, ...props }) => (
   <main
