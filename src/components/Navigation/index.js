@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, StaticQuery, graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import cx from "classnames"
 
 import Toggle from "../Toggle"
