@@ -7,9 +7,8 @@ import Footer from "../Footer"
 
 import "./styles.css"
 
-const Layout = ({ children, ...props }) => (
+const Layout = ({ children }) => (
   <main
-    {...props}
     className={cx(
       "font-sans",
       "bg-black",
