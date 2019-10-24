@@ -21,7 +21,7 @@ const Layout = ({ children, contentClassName, ...props }) => (
       "flex-col",
       "justify-between",
       "min-h-screen",
-      "lg:pl-110px"
+      "lg:pl-142px"
     )}
   >
     <Navigation />

@@ -16,7 +16,7 @@ module.exports = {
         sans: ["Source Sans Pro", ...defaultTheme.fontFamily.sans],
       },
       padding: {
-        "110px": "110px",
+        "142px": "142px",
       },
       maxWidth: {
         "345px": "345px",
