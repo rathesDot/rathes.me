@@ -7,7 +7,7 @@ import Footer from "../Footer"
 
 import "./styles.css"
 
-const Layout = ({ children, contentClassName, ...props }) => (
+const Layout = ({ children, ...props }) => (
   <main
     {...props}
     className={cx(
