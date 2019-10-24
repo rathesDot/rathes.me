@@ -7,11 +7,10 @@ import Footer from "../Footer"
 
 import "./styles.css"
 
-const Layout = ({ children, className, contentClassName, ...props }) => (
+const Layout = ({ children, contentClassName, ...props }) => (
   <main
     {...props}
     className={cx(
-      className,
       "p-4",
       "md:p-8",
       "flex",
