@@ -12,6 +12,8 @@ const Layout = ({ children, className, contentClassName, ...props }) => (
     {...props}
     className={cx(
       className,
+      "p-4",
+      "md:p-8",
       "flex",
       "flex-col",
       "justify-between",

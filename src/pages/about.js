@@ -5,7 +5,7 @@ import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
 
 const AboutMe = () => (
-  <Layout className="p-4 md:p-8">
+  <Layout>
     <SEO title="About me" />
     <section className="md:max-w-570px md:text-lg">
       <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
