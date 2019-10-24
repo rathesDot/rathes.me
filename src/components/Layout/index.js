@@ -11,6 +11,10 @@ const Layout = ({ children, contentClassName, ...props }) => (
   <main
     {...props}
     className={cx(
+      "font-sans",
+      "bg-black",
+      "text-silver",
+      "text-base",
       "p-4",
       "md:p-8",
       "flex",
