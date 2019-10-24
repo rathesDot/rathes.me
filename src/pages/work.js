@@ -18,7 +18,7 @@ const Work = ({ data }) => {
 
   return (
     <Layout>
-      <div className="relative">
+      <div className="relative flex-grow">
         {isModalOpen && (
           <div className="bg-white text-black fixed inset-x-4 top-1/2 flex flex-col rounded -translateY-1/2 md:w-2/3 md:left-0 md:right-0 md:mx-auto">
             <button

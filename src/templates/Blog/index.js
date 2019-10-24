@@ -53,26 +53,28 @@ export default ({ data }) => {
         description={post.excerpt}
         meta={[...meta, ...imageMeta]}
       />
-      <div className="blog-post md:max-w-570px md:text-lg">
-        <h1 className="text-3xl font-bold leading-tight mb-6 text-white break-words xs:text-4xl">
-          {post.frontmatter.title}
-        </h1>
-        {post.frontmatter.image && (
-          <Img
-            className="-mx-4 block my-6 md:mx-0"
-            fluid={post.frontmatter.image.childImageSharp.fluid}
-          />
-        )}
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
-      <footer>
-        <Link
-          className="font-bold text-white mt-16 mb-4 block md:mb-8"
-          to="/writings"
-        >
-          ← <span className="underline">back to articles</span>
-        </Link>
-      </footer>
+      <section className="flex-grow">
+        <div className="blog-post md:max-w-570px md:text-lg">
+          <h1 className="text-3xl font-bold leading-tight mb-6 text-white break-words xs:text-4xl">
+            {post.frontmatter.title}
+          </h1>
+          {post.frontmatter.image && (
+            <Img
+              className="-mx-4 block my-6 md:mx-0"
+              fluid={post.frontmatter.image.childImageSharp.fluid}
+            />
+          )}
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </div>
+        <footer>
+          <Link
+            className="font-bold text-white mt-16 mb-4 block md:mb-8"
+            to="/writings"
+          >
+            ← <span className="underline">back to articles</span>
+          </Link>
+        </footer>
+      </section>
     </Layout>
   )
 }

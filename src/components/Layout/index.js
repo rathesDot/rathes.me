@@ -25,7 +25,7 @@ const Layout = ({ children, contentClassName, ...props }) => (
     )}
   >
     <Navigation />
-    <section className={cx(contentClassName, "flex-grow")}>{children}</section>
+    {children}
     <Footer />
   </main>
 )
