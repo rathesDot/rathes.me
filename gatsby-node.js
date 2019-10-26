@@ -35,6 +35,16 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allMdx {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+          }
+        }
+      }
     }
   `)
 
