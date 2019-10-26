@@ -26,7 +26,12 @@ module.exports = {
     siteUrl: `https://rathes.me`,
   },
   plugins: [
-    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        gatsbyRemarkPlugins: markdownPlugins,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
