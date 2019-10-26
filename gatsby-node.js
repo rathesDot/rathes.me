@@ -7,7 +7,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   } = node
   const { createNodeField } = actions
 
-  if (type === "MarkdownRemark") {
+  if (["MarkdownRemark", "Mdx"].includes(type)) {
     const filePath = createFilePath({ node, getNode, basePath: `pages` })
     createNodeField({
       node,
@@ -17,10 +17,12 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 }
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  return graphql(`
+  const {
+    data: { allMarkdownRemark, allMdx },
+  } = await graphql(`
     {
       allMarkdownRemark {
         edges {
@@ -31,16 +33,36 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+      allMdx {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+          }
+        }
+      }
     }
-  `).then(result => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-      createPage({
-        path: node.fields.slug,
-        component: path.resolve(`./src/templates/Blog/index.js`),
-        context: {
-          slug: node.fields.slug,
-        },
-      })
+  `)
+
+  allMdx.edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve(`./src/templates/Blog/mdx.js`),
+      context: {
+        slug: node.fields.slug,
+      },
+    })
+  })
+
+  allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve(`./src/templates/Blog/remark.js`),
+      context: {
+        slug: node.fields.slug,
+      },
     })
   })
 }

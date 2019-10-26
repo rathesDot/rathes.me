@@ -1,3 +1,23 @@
+const markdownPlugins = [
+  `gatsby-plugin-twitter`,
+  {
+    resolve: `gatsby-remark-prismjs`,
+    options: {
+      aliases: {},
+      showLineNumbers: false,
+    },
+  },
+  {
+    resolve: `gatsby-remark-images`,
+    options: {
+      // It's important to specify the maxWidth (in pixels) of
+      // the content container as this plugin uses this as the
+      // base for generating different widths of each image.
+      maxWidth: 590,
+    },
+  },
+]
+
 module.exports = {
   siteMetadata: {
     title: `Web Developer — Rathes Sachchithananthan`,
@@ -6,6 +26,12 @@ module.exports = {
     siteUrl: `https://rathes.me`,
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        gatsbyRemarkPlugins: markdownPlugins,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -19,25 +45,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          `gatsby-plugin-twitter`,
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              aliases: {},
-              showLineNumbers: false,
-            },
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 590,
-            },
-          },
-        ],
+        plugins: markdownPlugins,
       },
     },
     {
