@@ -22,7 +22,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const {
     result: {
-      data: { allMarkdownRemark },
+      data: { allMarkdownRemark, allMdx },
     },
   } = await graphql(`
     {
@@ -47,6 +47,16 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+
+  allMdx.edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve(`./src/templates/Blog/mdx.js`),
+      context: {
+        slug: node.fields.slug,
+      },
+    })
+  })
 
   allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
