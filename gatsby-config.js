@@ -6,6 +6,7 @@ module.exports = {
     siteUrl: `https://rathes.me`,
   },
   plugins: [
+    "gatsby-plugin-mdx",
     {
       resolve: `gatsby-source-filesystem`,
       options: {
