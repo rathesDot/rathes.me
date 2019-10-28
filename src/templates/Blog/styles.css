@@ -29,6 +29,15 @@
   list-style-type: decimal-leading-zero;
 }
 
+.blog-post > ol ol {
+  @apply .my-0;
+  list-style-type: decimal;
+}
+
+.blog-post > ol ol li {
+  @apply .my-0;
+}
+
 .blog-post ul {
   @apply .px-8;
   list-style-type: square;
