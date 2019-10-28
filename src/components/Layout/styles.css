@@ -27,6 +27,10 @@ h3 + p {
   @apply mt-1;
 }
 
+h4 + p {
+  @apply mt-1;
+}
+
 .gatsby-highlight {
   @apply .my-6;
 }

@@ -6,6 +6,10 @@
   @apply .text-xl .font-bold .text-white .leading-none;
 }
 
+.blog-post h4 {
+  @apply .text-lg .font-bold .text-white .leading-none;
+}
+
 .blog-post blockquote p {
   @apply .text-2xl .leading-tight .text-white;
 }
