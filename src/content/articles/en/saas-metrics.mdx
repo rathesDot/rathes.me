@@ -13,6 +13,7 @@ locale: en_US
 ---
 
 import Note from "../../../components/Note"
+import Calculation from "../../../components/Calculation"
 
 One of the important jobs that you have to take care of as a founder of a company is to know at any stage what the health of your company is.
 
@@ -73,7 +74,7 @@ You keep track of that, the ARR/MRR is not enough anymore. That is when the next
 
 The Net New MRR is the sum of the MRR that came from new customers and new MRR generated from existing customers (expansion) minus the Churned and Downgrade MRR:
 
-NEW MRR + EXPANSION MRR - CHURNED MRR = NET NEW MRR
+<Calculation>NEW MRR + EXPANSION MRR - CHURNED MRR = NET NEW MRR</Calculation>
 
 Looking at that number you can figure out how healthy your company and at the same time have an indication of what part of your business is the reason for the current trend.
 
@@ -99,9 +100,10 @@ How many of the email sign-ups actual click on the call-to-action in the e-mail?
 
 In the end, you also want to know what the size of the deal is that you close in the end.
 
-100 leads x 50% overall conversion x 10€ deal size = 500€
-
-100 leads x 5% overall conversion x 100€ deal size = 500€
+<Calculation>
+  100 leads x 50% conversion x 10€ deal size = 500€ <br />
+  100 leads x 5% conversion x 100€ deal size = 500€
+</Calculation>
 
 If you compare the two calculations above you will notice that the deal size covers up the lower conversion rate. The numbers rely on your field of business and model but once you start comparing your own numbers you will notice if things change that should be taken care of.
 
@@ -135,7 +137,7 @@ The lifetime value of a customer is calculated out of 3 components:
 
 ARPA, the average revenue per account (or customer), the gross margin and then the churn rate:
 
-LTV = ARPA x Gross Margin / Churn Rate
+<Calculation>LTV = ARPA x Gross Margin / Churn Rate</Calculation>
 
 You see that the Churn Rate is extremely important for the result of the LTV.
 
