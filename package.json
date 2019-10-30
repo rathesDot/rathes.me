@@ -11,7 +11,7 @@
     "gatsby": "^2.17.4",
     "gatsby-image": "^2.2.30",
     "gatsby-plugin-google-gtag": "^1.1.14",
-    "gatsby-plugin-manifest": "^2.2.23",
+    "gatsby-plugin-manifest": "^2.2.25",
     "gatsby-plugin-mdx": "^1.0.53",
     "gatsby-plugin-offline": "^3.0.16",
     "gatsby-plugin-postcss": "^2.1.13",
