@@ -6,6 +6,10 @@
   @apply .text-xl .font-bold .text-white .leading-none;
 }
 
+.blog-post h4 {
+  @apply .text-lg .font-bold .text-white .leading-none;
+}
+
 .blog-post blockquote p {
   @apply .text-2xl .leading-tight .text-white;
 }
@@ -23,6 +27,15 @@
 .blog-post ol {
   @apply .px-8;
   list-style-type: decimal-leading-zero;
+}
+
+.blog-post > ol ol {
+  @apply .my-0;
+  list-style-type: decimal;
+}
+
+.blog-post > ol ol li {
+  @apply .my-0;
 }
 
 .blog-post ul {

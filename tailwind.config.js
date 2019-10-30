@@ -3,7 +3,10 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 module.exports = {
   theme: {
     colors: {
-      black: "#111",
+      black: {
+        lighter: "#252525",
+        default: "#111",
+      },
       silver: {
         default: "#CFD3DC",
         darker: "#CCC",
