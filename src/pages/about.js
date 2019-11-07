@@ -166,7 +166,7 @@ const AboutMe = () => (
               <span className="block text-silver-darker tracking-wider text-sm mt-2">
                 Sebastian Fitzek
               </span>
-              The Eye Collector (Currently Reading)
+              The Eye Collector
             </a>
           </li>
           <li className="mb-3 leading-normal">
@@ -177,8 +177,7 @@ const AboutMe = () => (
               <span className="block text-silver-darker tracking-wider text-sm mt-2">
                 Sunila Galappatti
               </span>
-              A Long Watch: War, Captivity and Return in Sri Lanka (Currently
-              Reading)
+              A Long Watch: War, Captivity and Return in Sri Lanka
             </a>
           </li>
           <li className="mb-3 leading-normal">
