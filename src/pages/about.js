@@ -159,7 +159,6 @@ const AboutMe = () => (
             </a>
           </li>
           <li className="mb-3 leading-normal">
-            <span className="my-8 block w-10 border-t border-silver-darkest" />
             <a
               className="text-white text-lg"
               href="https://www.amazon.de/Eye-Collector-Sebastian-Fitzek/dp/0857893718/ref=as_li_ss_tl?_encoding=UTF8&qid=1569785773&sr=8-2&linkCode=sl1&tag=aheenam-21&linkId=9c0eee4ede2677230d7f3dd92cd7d8c2&language=de_DE"
@@ -183,6 +182,7 @@ const AboutMe = () => (
             </a>
           </li>
           <li className="mb-3 leading-normal">
+            <span className="my-8 block w-10 border-t border-silver-darkest" />
             <a
               className="text-white text-lg"
               href="https://designsystemfoundations.com/"
