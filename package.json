@@ -9,7 +9,7 @@
     "@mdx-js/react": "^1.5.1",
     "classnames": "^2.2.6",
     "gatsby": "^2.17.13",
-    "gatsby-image": "^2.2.31",
+    "gatsby-image": "^2.2.32",
     "gatsby-plugin-google-gtag": "^1.1.15",
     "gatsby-plugin-manifest": "^2.2.27",
     "gatsby-plugin-mdx": "^1.0.56",
