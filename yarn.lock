@@ -6181,10 +6181,10 @@ gatsby-page-utils@^0.0.30:
     micromatch "^3.1.10"
     slash "^3.0.0"
 
-gatsby-plugin-google-gtag@^1.1.15:
-  version "1.1.15"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-1.1.15.tgz#69b355102e9243eef258c86e61b8ae20512a0d46"
-  integrity sha512-/wxH4kI/2SrgpbccCPeWvjOV2R7pgiorvjXwOTjVRrensXN6osmoyvnR3viHC7ca3Y1YValiUE+ApZ/MGcESQg==
+gatsby-plugin-google-gtag@^1.1.16:
+  version "1.1.16"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-1.1.16.tgz#83e9ba8a14fcbd77c58f9bdbb5b0540eeef57867"
+  integrity sha512-0Bv5U4EEL+mgLJ+24iv01Ee88VEmP19a53kWg5xEjPhnf7UuOSa9ri+4GDFOVIQQBCCm53qVM4SdksZiwVYIlg==
   dependencies:
     "@babel/runtime" "^7.7.2"
     minimatch "^3.0.4"
