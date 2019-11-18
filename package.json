@@ -18,7 +18,7 @@
     "gatsby-plugin-react-helmet": "^3.1.15",
     "gatsby-plugin-sharp": "^2.3.0",
     "gatsby-plugin-sitemap": "^2.2.21",
-    "gatsby-plugin-twitter": "^2.1.13",
+    "gatsby-plugin-twitter": "^2.1.14",
     "gatsby-remark-images": "^3.1.30",
     "gatsby-remark-prismjs": "^3.3.23",
     "gatsby-source-filesystem": "^2.1.37",
