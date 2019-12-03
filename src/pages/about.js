@@ -181,7 +181,6 @@ const AboutMe = () => (
             </a>
           </li>
           <li className="mb-3 leading-normal">
-            <span className="my-8 block w-10 border-t border-silver-darkest" />
             <a
               className="text-white text-lg"
               href="https://designsystemfoundations.com/"
@@ -189,11 +188,11 @@ const AboutMe = () => (
               <span className="block text-silver-darker tracking-wider text-sm mt-2">
                 Andrew Couldwell
               </span>
-              Laying the Foundations — A book about design systems (Currently
-              Reading)
+              Laying the Foundations — A book about design systems
             </a>
           </li>
           <li className="mb-3 leading-normal">
+            <span className="my-8 block w-10 border-t border-silver-darkest" />
             <a className="text-white text-lg" href="https://amzn.to/2sIwXsT">
               <span className="block text-silver-darker tracking-wider text-sm mt-2">
                 Agatha Christie
