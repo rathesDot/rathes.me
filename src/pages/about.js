@@ -193,6 +193,14 @@ const AboutMe = () => (
               Reading)
             </a>
           </li>
+          <li className="mb-3 leading-normal">
+            <a className="text-white text-lg" href="https://amzn.to/2sIwXsT">
+              <span className="block text-silver-darker tracking-wider text-sm mt-2">
+                Agatha Christie
+              </span>
+              Death on the Nile (Currently Reading)
+            </a>
+          </li>
         </ul>
         <h2 className="text-3xl mt-12 font-bold leading-none text-white break-words xs:text-4xl">
           What I write
