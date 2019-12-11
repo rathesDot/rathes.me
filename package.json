@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "babel-jest": "^24.9.0",
-    "babel-preset-gatsby": "^0.2.20",
+    "babel-preset-gatsby": "^0.2.26",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "tailwindcss": "^1.1.4"
