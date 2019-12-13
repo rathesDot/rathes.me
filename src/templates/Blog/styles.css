@@ -38,7 +38,7 @@
   @apply .my-0;
 }
 
-.blog-post ul {
+.blog-post ul:not(.list-none) {
   @apply .px-8;
   list-style-type: square;
 }
