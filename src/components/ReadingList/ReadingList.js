@@ -1,6 +1,6 @@
 import React from "react"
 
-const ReadingList = ({ children }) => <ul>{children}</ul>
+const ReadingList = ({ children }) => <ul className="list-none">{children}</ul>
 
 export const Book = ({ author, title, link }) => (
   <li className="mb-3 leading-normal">
