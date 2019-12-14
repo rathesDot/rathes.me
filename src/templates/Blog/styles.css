@@ -14,6 +14,10 @@
   @apply .text-2xl .leading-tight .text-white;
 }
 
+.blog-post hr {
+  @apply .my-8 .border-black-lightest;
+}
+
 @screen md {
   .blog-post blockquote {
     @apply .my-12;
@@ -38,7 +42,7 @@
   @apply .my-0;
 }
 
-.blog-post ul {
+.blog-post ul:not(.list-none) {
   @apply .px-8;
   list-style-type: square;
 }
