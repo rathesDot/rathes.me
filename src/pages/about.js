@@ -3,6 +3,7 @@ import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
+import ReadingList from "../components/ReadingList"
 
 const AboutMe = () => (
   <Layout>
@@ -66,149 +67,76 @@ const AboutMe = () => (
         <h3 className="text-xl mt-12 font-bold leading-none text-white break-words xs:text-2xl">
           Reading List 2019
         </h3>
-        <ul>
-          <li className="mb-3 leading-normal">
-            <a
-              className="text-white text-lg mb-2 "
-              href="https://www.amazon.de/Company-One-Staying-Small-Business/dp/0241380227/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=30Q5H7258RS6N&keywords=company+of+one&qid=1569783760&s=gateway&sprefix=Company+,aps,156&sr=8-1&linkCode=sl1&tag=aheenam-21&linkId=64b51b5b329ae16ef1a79cf782d2e1c0&language=de_DE"
-            >
-              <span className="block text-silver-darker tracking-wider text-sm">
-                Paul Jarvis
-              </span>
-              Company of One: Why Staying Small is the Next Big Thing for
-              Business
-            </a>
-          </li>
-          <li className="mb-3 leading-normal">
-            <a
-              className="text-white text-lg"
-              href="https://www.amazon.de/Six-Crows-Crooked-Kingdom-Book/dp/1780622317/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=172EZFM0NO73E&keywords=crooked+kingdom&qid=1569783979&s=gateway&sprefix=Crooked+King,aps,146&sr=8-1&linkCode=sl1&tag=aheenam-21&linkId=1f9016fab24cfba12a2e409bac0f5d11&language=de_DE"
-            >
-              <span className="block text-silver-darker tracking-wider text-sm mt-2">
-                Leigh Bardugo
-              </span>
-              Crooked Kingdom
-            </a>
-          </li>
-          <li className="mb-3 leading-normal">
-            <a
-              className="text-white text-lg"
-              href="https://www.amazon.de/Carrie-Stephen-King/dp/0450018628/ref=as_li_ss_tl?_encoding=UTF8&qid=1569784151&sr=1-1&linkCode=sl1&tag=aheenam-21&linkId=19d572bb5e3ca68dbfb3d580b89c3a5e&language=de_DE"
-            >
-              <span className="block text-silver-darker tracking-wider text-sm mt-2">
-                Stephen King
-              </span>
-              Carrie
-            </a>
-          </li>
-          <li className="mb-3 leading-normal">
-            <a
-              className="text-white text-lg"
-              href="https://www.amazon.de/Knots-Crosses-Rebus-Novel-Rankin/dp/0752883534/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=WDIWI3I22Z6Q&keywords=knots+and+crosses&qid=1569784300&s=books-intl-de&sprefix=Knots+,english-books,198&sr=1-1&linkCode=sl1&tag=aheenam-21&linkId=6e77b3898028ea0cf2eee8c9e2fb5714&language=de_DE"
-            >
-              <span className="block text-silver-darker tracking-wider text-sm mt-2">
-                Ian Rankin
-              </span>
-              Knots and Crosses
-            </a>
-          </li>
-          <li className="mb-3 leading-normal">
-            <a
-              className="text-white text-lg"
-              href="https://www.amazon.de/Fluent-Forever-Learn-Language-Forget/dp/0385348118/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=392R9S4R0TJ8R&keywords=fluent+forever&qid=1569785112&s=gateway&sprefix=fluent+fo,aps,147&sr=8-1&linkCode=sl1&tag=aheenam-21&linkId=fe5e639e9481ed1c10eb8d7ffa99fe74&language=de_DE"
-            >
-              <span className="block text-silver-darker tracking-wider text-sm mt-2">
-                Gabriel Wyner
-              </span>
-              Fluent Forever: How to Learn Any Language Fast and Never Forget It
-            </a>
-          </li>
-          <li className="mb-3 leading-normal">
-            <a
-              className="text-white text-lg"
-              href="https://www.amazon.de/gp/product/1848549253/ref=as_li_ss_tl?ie=UTF8&psc=1&linkCode=sl1&tag=aheenam-21&linkId=e41b389168ba6de0b9361ee200cdb4c0&language=de_DE"
-            >
-              <span className="block text-silver-darker tracking-wider text-sm mt-2">
-                Gary Keller, Jay Papasan
-              </span>
-              The One Thing: The Surprisingly Simple Truth Behind Extraordinary
-              Results
-            </a>
-          </li>
-          <li className="mb-3 leading-normal">
-            <a
-              className="text-white text-lg"
-              href="https://www.amazon.de/Doesnt-Have-Be-Crazy-Work/dp/0062874780/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1VTWBPPJBMM4G&keywords=it+doesnt+have+to+be+crazy+at+work&qid=1569784737&s=books-intl-de&sprefix=It+doe,english-books,144&sr=1-1&linkCode=sl1&tag=aheenam-21&linkId=e3d47d2ed74d92f7b76169f166aa9602&language=de_DE"
-            >
-              <span className="block text-silver-darker tracking-wider text-sm mt-2">
-                Jason Fried, David Heinemeier Hansson
-              </span>
-              It Doesn't Have to Be Crazy at Work
-            </a>
-          </li>
-          <li className="mb-3 leading-normal">
-            <a
-              className="text-white text-lg"
-              href="https://www.amazon.de/Write-Damn-Novel-Step-Step/dp/0312010443/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=GFH4GODP9KJQ&keywords=how+to+write+a+damn+good+novel&qid=1569784848&s=books-intl-de&sprefix=How+to+write+a+dam,english-books,149&sr=1-1&linkCode=sl1&tag=aheenam-21&linkId=b097480b152cdddfa4a7819ea4eb6762&language=de_DE"
-            >
-              <span className="block text-silver-darker tracking-wider text-sm mt-2">
-                James N. Frey
-              </span>
-              How to Write a Damn Good Novel: A Step-By-Step No Nonsense Guide
-              to Dramatic Storytelling
-            </a>
-          </li>
-          <li className="mb-3 leading-normal">
-            <a
-              className="text-white text-lg"
-              href="https://www.amazon.de/Eye-Collector-Sebastian-Fitzek/dp/0857893718/ref=as_li_ss_tl?_encoding=UTF8&qid=1569785773&sr=8-2&linkCode=sl1&tag=aheenam-21&linkId=9c0eee4ede2677230d7f3dd92cd7d8c2&language=de_DE"
-            >
-              <span className="block text-silver-darker tracking-wider text-sm mt-2">
-                Sebastian Fitzek
-              </span>
-              The Eye Collector
-            </a>
-          </li>
-          <li className="mb-3 leading-normal">
-            <a
-              className="text-white text-lg"
-              href="https://www.amazon.de/gp/product/9350291770/ref=as_li_ss_tl?ie=UTF8&psc=1&linkCode=sl1&tag=aheenam-21&linkId=c63e2d759691bd90defd148ce310c6ae&language=de_DE"
-            >
-              <span className="block text-silver-darker tracking-wider text-sm mt-2">
-                Sunila Galappatti
-              </span>
-              A Long Watch: War, Captivity and Return in Sri Lanka
-            </a>
-          </li>
-          <li className="mb-3 leading-normal">
-            <a
-              className="text-white text-lg"
-              href="https://designsystemfoundations.com/"
-            >
-              <span className="block text-silver-darker tracking-wider text-sm mt-2">
-                Andrew Couldwell
-              </span>
-              Laying the Foundations — A book about design systems
-            </a>
-          </li>
-          <li className="mb-3 leading-normal">
-            <span className="my-8 block w-10 border-t border-silver-darkest" />
-            <a className="text-white text-lg" href="https://amzn.to/2sIwXsT">
-              <span className="block text-silver-darker tracking-wider text-sm mt-2">
-                Agatha Christie
-              </span>
-              Death on the Nile (Currently Reading)
-            </a>
-          </li>
-          <li className="mb-3 leading-normal">
-            <a className="text-white text-lg" href="https://amzn.to/2Rngm82">
-              <span className="block text-silver-darker tracking-wider text-sm mt-2">
-                George R. R. Martin
-              </span>
-              A Game of Thrones: A Song of Ice and Fire (Currently Reading)
-            </a>
-          </li>
-        </ul>
+        <ReadingList>
+          <ReadingList.Book
+            author="Paul Jarvis"
+            link="https://www.amazon.de/Company-One-Staying-Small-Business/dp/0241380227/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=30Q5H7258RS6N&keywords=company+of+one&qid=1569783760&s=gateway&sprefix=Company+,aps,156&sr=8-1&linkCode=sl1&tag=aheenam-21&linkId=64b51b5b329ae16ef1a79cf782d2e1c0&language=de_DE) [Company of One: Why Staying Small is the Next Big Thing for Business](https://www.amazon.de/Company-One-Staying-Small-Business/dp/0241380227/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=30Q5H7258RS6N&keywords=company+of+one&qid=1569783760&s=gateway&sprefix=Company+,aps,156&sr=8-1&linkCode=sl1&tag=aheenam-21&linkId=64b51b5b329ae16ef1a79cf782d2e1c0&language=de_DE"
+            title="Company of One"
+          />
+          <ReadingList.Book
+            author="Leigh Bardugo"
+            link="https://www.amazon.de/Six-Crows-Crooked-Kingdom-Book/dp/1780622317/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=172EZFM0NO73E&keywords=crooked+kingdom&qid=1569783979&s=gateway&sprefix=Crooked+King,aps,146&sr=8-1&linkCode=sl1&tag=aheenam-21&linkId=1f9016fab24cfba12a2e409bac0f5d11&language=de_DE) [Crooked Kingdom](https://www.amazon.de/Six-Crows-Crooked-Kingdom-Book/dp/1780622317/ref=as_li_ss_tl?__mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=172EZFM0NO73E&keywords=crooked+kingdom&qid=1569783979&s=gateway&sprefix=Crooked+King,aps,146&sr=8-1&linkCode=sl1&tag=aheenam-21&linkId=1f9016fab24cfba12a2e409bac0f5d11&language=de_DE"
+            title="Crooked Kingdom"
+          />
+          <ReadingList.Book
+            author="Stephen King"
+            link="https://www.amazon.de/Carrie-Stephen-King/dp/0450018628/ref=as_li_ss_tl?_encoding=UTF8&qid=1569784151&sr=1-1&linkCode=sl1&tag=aheenam-21&linkId=19d572bb5e3ca68dbfb3d580b89c3a5e&language=de_DE"
+            title="Carrie"
+          />
+          <ReadingList.Book
+            author="Ian Rankin"
+            link="https://www.amazon.de/Knots-Crosses-Rebus-Novel-Rankin/dp/0752883534/ref=as_li_ss_tl?\_\_mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=WDIWI3I22Z6Q&keywords=knots+and+crosses&qid=1569784300&s=books-intl-de&sprefix=Knots+,english-books,198&sr=1-1&linkCode=sl1&tag=aheenam-21&linkId=6e77b3898028ea0cf2eee8c9e2fb5714&language=de_DE"
+            title="Knots and Crosses"
+          />
+          <ReadingList.Book
+            author="Gabriel Wyner"
+            link="https://www.amazon.de/Fluent-Forever-Learn-Language-Forget/dp/0385348118/ref=as_li_ss_tl?\_\_mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=392R9S4R0TJ8R&keywords=fluent+forever&qid=1569785112&s=gateway&sprefix=fluent+fo,aps,147&sr=8-1&linkCode=sl1&tag=aheenam-21&linkId=fe5e639e9481ed1c10eb8d7ffa99fe74&language=de_DE"
+            title="Fluent Forever: How to Learn Any Language Fast and Never Forget It"
+          />
+          <ReadingList.Book
+            author="Gary Keller, Jay Papasan"
+            link="https://www.amazon.de/gp/product/1848549253/ref=as_li_ss_tl?ie=UTF8&psc=1&linkCode=sl1&tag=aheenam-21&linkId=e41b389168ba6de0b9361ee200cdb4c0&language=de_DE"
+            title="The One Thing: The Surprisingly Simple Truth Behind Extraordinary Results"
+          />
+          <ReadingList.Book
+            author="Jason Fried, David Heinemeier Hansson"
+            link="https://www.amazon.de/Doesnt-Have-Be-Crazy-Work/dp/0062874780/ref=as_li_ss_tl?\_\_mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1VTWBPPJBMM4G&keywords=it+doesnt+have+to+be+crazy+at+work&qid=1569784737&s=books-intl-de&sprefix=It+doe,english-books,144&sr=1-1&linkCode=sl1&tag=aheenam-21&linkId=e3d47d2ed74d92f7b76169f166aa9602&language=de_DE"
+            title="It Doesn't Have to Be Crazy at Work"
+          />
+          <ReadingList.Book
+            author="James N. Frey"
+            link="https://www.amazon.de/Write-Damn-Novel-Step-Step/dp/0312010443/ref=as_li_ss_tl?\_\_mk_de_DE=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=GFH4GODP9KJQ&keywords=how+to+write+a+damn+good+novel&qid=1569784848&s=books-intl-de&sprefix=How+to+write+a+dam,english-books,149&sr=1-1&linkCode=sl1&tag=aheenam-21&linkId=b097480b152cdddfa4a7819ea4eb6762&language=de_DE"
+            title="How to Write a Damn Good Novel: A Step-By-Step No Nonsense Guide to Dramatic Storytelling"
+          />
+          <ReadingList.Book
+            author="Sebastian Fitzek"
+            link="https://www.amazon.de/Eye-Collector-Sebastian-Fitzek/dp/0857893718/ref=as_li_ss_tl?\_encoding=UTF8&qid=1569785773&sr=8-2&linkCode=sl1&tag=aheenam-21&linkId=9c0eee4ede2677230d7f3dd92cd7d8c2&language=de_DE"
+            title="The Eye Collector"
+          />
+          <ReadingList.Book
+            author="Sunila Galappatti"
+            link="https://www.amazon.de/gp/product/9350291770/ref=as_li_ss_tl?ie=UTF8&psc=1&linkCode=sl1&tag=aheenam-21&linkId=c63e2d759691bd90defd148ce310c6ae&language=de_DE"
+            title="A Long Watch: War, Captivity and Return in Sri Lanka"
+          />
+          <ReadingList.Book
+            author="Andrew Couldwell"
+            link="https://designsystemfoundations.com/"
+            title="Laying the Foundations — A book about design systems"
+          />
+        </ReadingList>
+        <hr className="my-8 block w-10 border-t border-silver-darkest" />
+        <ReadingList>
+          <ReadingList.Book
+            author="Agatha Christie"
+            link="https://amzn.to/2sIwXsT"
+            title="Death on the Nile (Currently Reading)"
+          />
+          <ReadingList.Book
+            author="George R. R. Martin"
+            link="https://amzn.to/2Rngm82"
+            title="A Game of Thrones: A Song of Ice and Fire (Currently Reading)"
+          />
+        </ReadingList>
         <h2 className="text-3xl mt-12 font-bold leading-none text-white break-words xs:text-4xl">
           What I write
         </h2>
