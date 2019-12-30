@@ -123,14 +123,14 @@ const AboutMe = () => (
             link="https://designsystemfoundations.com/"
             title="Laying the Foundations — A book about design systems"
           />
-        </ReadingList>
-        <hr className="my-8 block w-10 border-t border-silver-darkest" />
-        <ReadingList>
           <ReadingList.Book
             author="Agatha Christie"
             link="https://amzn.to/2sIwXsT"
-            title="Death on the Nile (Currently Reading)"
+            title="Death on the Nile"
           />
+        </ReadingList>
+        <hr className="my-8 block w-10 border-t border-silver-darkest" />
+        <ReadingList>
           <ReadingList.Book
             author="George R. R. Martin"
             link="https://amzn.to/2Rngm82"
