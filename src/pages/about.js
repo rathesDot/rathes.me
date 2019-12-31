@@ -128,6 +128,11 @@ const AboutMe = () => (
             link="https://amzn.to/2sIwXsT"
             title="Death on the Nile"
           />
+          <ReadingList.Book
+            author="Dan Brown"
+            link="https://amzn.to/2tkH9bm"
+            title="Origin (Robert Langdon 5)"
+          />
         </ReadingList>
         <hr className="my-8 block w-10 border-t border-silver-darkest" />
         <ReadingList>
@@ -135,11 +140,6 @@ const AboutMe = () => (
             author="George R. R. Martin"
             link="https://amzn.to/2Rngm82"
             title="A Game of Thrones: A Song of Ice and Fire (Currently Reading)"
-          />
-          <ReadingList.Book
-            author="Dan Brown"
-            link="https://amzn.to/2tkH9bm"
-            title="Origin (Robert Langdon 5)"
           />
         </ReadingList>
         <h2 className="text-3xl mt-12 font-bold leading-none text-white break-words xs:text-4xl">
