@@ -9,6 +9,20 @@ const BlogListTitle = styled.h2`
   margin-bottom: 0.5rem;
 `
 
+const InternalLink = styled(Link)`
+  color: white;
+  display: block;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+`
+
+const ExternalLink = styled.a`
+  color: white;
+  display: block;
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+`
+
 const BlogList = ({ children, title, ...rest }) => (
   <div {...rest}>
     {title && <BlogListTitle>{title}</BlogListTitle>}
@@ -20,18 +34,10 @@ BlogList.Article = ({ title, link }) => {
   const isExternal = link.startsWith("http")
 
   if (isExternal) {
-    return (
-      <a className="block text-white text-lg mb-2" href={link}>
-        {title}
-      </a>
-    )
+    return <ExternalLink href={link}>{title}</ExternalLink>
   }
 
-  return (
-    <Link className="block text-white text-lg mb-2" to={link}>
-      {title}
-    </Link>
-  )
+  return <InternalLink to={link}>{title}</InternalLink>
 }
 
 export default BlogList
