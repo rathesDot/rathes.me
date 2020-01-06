@@ -48,10 +48,7 @@ const Writings = ({ data }) => {
           </p>
           <div className="mt-12">
             <div className="mb-10">
-              <h2 className="text-silver-darker tracking-wider text-sm mb-2">
-                Books & Whitepapers
-              </h2>
-              <BlogList>
+              <BlogList title="Books & Whitepapers">
                 <BlogList.Article
                   link="https://learn-tamil.com"
                   title="A Guide To Basic Tamil Grammar"
@@ -61,10 +58,7 @@ const Writings = ({ data }) => {
             {blogPosts.map(([key, posts]) => {
               return (
                 <div key={key} className="mb-10">
-                  <h2 className="text-silver-darker tracking-wider text-sm mb-2">
-                    {key}
-                  </h2>
-                  <BlogList>
+                  <BlogList title={key}>
                     {posts.map((post, index) => (
                       <BlogList.Article
                         link={post.link}
