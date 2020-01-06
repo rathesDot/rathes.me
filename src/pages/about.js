@@ -77,6 +77,11 @@ const AboutMe = () => (
         <hr className="my-8 block w-10 border-t border-silver-darkest" />
         <ReadingList>
           <ReadingList.Book
+            author="Ransom Riggs"
+            link="https://amzn.to/2MYAfj6"
+            title="Library of Souls: The Third Novel of Miss Peregrine's Peculiar Children (Currently Reading)"
+          />
+          <ReadingList.Book
             author="George R. R. Martin"
             link="https://amzn.to/2Rngm82"
             title="A Game of Thrones: A Song of Ice and Fire (Currently Reading)"
