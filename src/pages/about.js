@@ -65,7 +65,7 @@ const AboutMe = () => (
           everybody to pick up a nice book and read.
         </p>
         <h3 className="text-xl mt-12 font-bold leading-none text-white break-words xs:text-2xl">
-          Reading List 2019
+          Reading List 2020
         </h3>
         <ReadingList>
           <ReadingList.Book
