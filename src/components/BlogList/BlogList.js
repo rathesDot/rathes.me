@@ -1,6 +1,15 @@
 import React from "react"
 
-const BlogList = ({ children }) => <div>{children}</div>
+const BlogList = ({ children, title }) => (
+  <div>
+    {title && (
+      <h2 className="text-silver-darker tracking-wider text-sm mb-2">
+        {title}
+      </h2>
+    )}
+    {children}
+  </div>
+)
 
 BlogList.Article = ({ title, link, linkElement }) => {
   const Link = linkElement ?? `a`
