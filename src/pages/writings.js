@@ -65,23 +65,14 @@ const Writings = ({ data }) => {
                     {key}
                   </h2>
                   <BlogList>
-                    {posts.map((post, index) =>
-                      post.link.startsWith("http") ? (
-                        <BlogList.Article
-                          link={post.link}
-                          title={post.title}
-                          key={index}
-                        />
-                      ) : (
-                        <Link
-                          to={post.link}
-                          key={index}
-                          className="block text-white text-lg mb-2"
-                        >
-                          {post.title}
-                        </Link>
-                      )
-                    )}
+                    {posts.map((post, index) => (
+                      <BlogList.Article
+                        link={post.link}
+                        title={post.title}
+                        key={index}
+                        linkElement={post.link.startsWith("http") ? "a" : Link}
+                      />
+                    ))}
                   </BlogList>
                 </div>
               )
