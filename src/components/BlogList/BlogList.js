@@ -1,12 +1,16 @@
 import React from "react"
+import styled from "styled-components"
+
+const BlogListTitle = styled.h2`
+  color: #ccc;
+  letter-spacing: 0.05em;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+`
 
 const BlogList = ({ children, title, ...rest }) => (
   <div {...rest}>
-    {title && (
-      <h2 className="text-silver-darker tracking-wider text-sm mb-2">
-        {title}
-      </h2>
-    )}
+    {title && <BlogListTitle>{title}</BlogListTitle>}
     {children}
   </div>
 )
