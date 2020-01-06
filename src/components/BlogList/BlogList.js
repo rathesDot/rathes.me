@@ -1,7 +1,7 @@
 import React from "react"
 
-const BlogList = ({ children, title }) => (
-  <div>
+const BlogList = ({ children, title, ...rest }) => (
+  <div {...rest}>
     {title && (
       <h2 className="text-silver-darker tracking-wider text-sm mb-2">
         {title}
