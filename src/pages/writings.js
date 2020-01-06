@@ -47,28 +47,24 @@ const Writings = ({ data }) => {
             </a>
           </p>
           <div className="mt-12">
-            <div className="mb-10">
-              <BlogList title="Books & Whitepapers">
-                <BlogList.Article
-                  link="https://learn-tamil.com"
-                  title="A Guide To Basic Tamil Grammar"
-                />
-              </BlogList>
-            </div>
+            <BlogList title="Books & Whitepapers" className="mb-10">
+              <BlogList.Article
+                link="https://learn-tamil.com"
+                title="A Guide To Basic Tamil Grammar"
+              />
+            </BlogList>
             {blogPosts.map(([key, posts]) => {
               return (
-                <div key={key} className="mb-10">
-                  <BlogList title={key}>
-                    {posts.map((post, index) => (
-                      <BlogList.Article
-                        link={post.link}
-                        title={post.title}
-                        key={index}
-                        linkElement={post.link.startsWith("http") ? "a" : Link}
-                      />
-                    ))}
-                  </BlogList>
-                </div>
+                <BlogList title={key} key={key} className="mb-10">
+                  {posts.map((post, index) => (
+                    <BlogList.Article
+                      link={post.link}
+                      title={post.title}
+                      key={index}
+                      linkElement={post.link.startsWith("http") ? "a" : Link}
+                    />
+                  ))}
+                </BlogList>
               )
             })}
           </div>
