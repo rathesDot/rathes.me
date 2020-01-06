@@ -7,6 +7,7 @@ import SEO from "../components/SEO"
 import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
 import externalLinks from "../content/articles/externalLinks"
 import SayHi from "../components/SayHi"
+import BlogList from "../components/BlogList/BlogList"
 
 const Writings = ({ data }) => {
   const blogPosts = getSortedGroups(
@@ -46,43 +47,24 @@ const Writings = ({ data }) => {
             </a>
           </p>
           <div className="mt-12">
-            <div className="mb-10">
-              <h2 className="text-silver-darker tracking-wider text-sm mb-2">
-                Books & Whitepapers
-              </h2>
-              <a
-                className="block text-white text-lg mb-2"
-                href="https://learn-tamil.com"
-              >
-                A Guide To Basic Tamil Grammar
-              </a>
-            </div>
+            <BlogList title="Books & Whitepapers" className="mb-10">
+              <BlogList.Article
+                link="https://learn-tamil.com"
+                title="A Guide To Basic Tamil Grammar"
+              />
+            </BlogList>
             {blogPosts.map(([key, posts]) => {
               return (
-                <div key={key} className="mb-10">
-                  <h2 className="text-silver-darker tracking-wider text-sm mb-2">
-                    {key}
-                  </h2>
-                  {posts.map((post, index) =>
-                    post.link.startsWith("http") ? (
-                      <a
-                        href={post.link}
-                        key={index}
-                        className="block text-white text-lg mb-2"
-                      >
-                        {post.title}
-                      </a>
-                    ) : (
-                      <Link
-                        to={post.link}
-                        key={index}
-                        className="block text-white text-lg mb-2"
-                      >
-                        {post.title}
-                      </Link>
-                    )
-                  )}
-                </div>
+                <BlogList title={key} key={key} className="mb-10">
+                  {posts.map((post, index) => (
+                    <BlogList.Article
+                      link={post.link}
+                      title={post.title}
+                      key={index}
+                      linkElement={post.link.startsWith("http") ? "a" : Link}
+                    />
+                  ))}
+                </BlogList>
               )
             })}
           </div>
