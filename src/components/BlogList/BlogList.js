@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 const BlogListTitle = styled.h2`
   color: #ccc;
@@ -15,10 +16,19 @@ const BlogList = ({ children, title, ...rest }) => (
   </div>
 )
 
-BlogList.Article = ({ title, link, linkElement }) => {
-  const Link = linkElement ?? `a`
+BlogList.Article = ({ title, link }) => {
+  const isExternal = link.startsWith("http")
+
+  if (isExternal) {
+    return (
+      <a className="block text-white text-lg mb-2" href={link}>
+        {title}
+      </a>
+    )
+  }
+
   return (
-    <Link className="block text-white text-lg mb-2" href={link}>
+    <Link className="block text-white text-lg mb-2" to={link}>
       {title}
     </Link>
   )

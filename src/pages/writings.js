@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
@@ -61,7 +61,6 @@ const Writings = ({ data }) => {
                       link={post.link}
                       title={post.title}
                       key={index}
-                      linkElement={post.link.startsWith("http") ? "a" : Link}
                     />
                   ))}
                 </BlogList>
