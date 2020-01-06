@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "author": "Rathes Sachchithananthan <hello@rathes.me>",
   "dependencies": {
-    "@mdx-js/mdx": "^1.5.1",
+    "@mdx-js/mdx": "^1.5.3",
     "@mdx-js/react": "^1.5.3",
     "classnames": "^2.2.6",
     "gatsby": "^2.18.18",
