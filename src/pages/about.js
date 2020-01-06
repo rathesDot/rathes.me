@@ -69,6 +69,14 @@ const AboutMe = () => (
         </h3>
         <ReadingList>
           <ReadingList.Book
+            author="Cody McFadyen"
+            link="https://amzn.to/2tw7Zxp"
+            title="Shadow Man (Smoky Barrett, Band 1)"
+          />
+        </ReadingList>
+        <hr className="my-8 block w-10 border-t border-silver-darkest" />
+        <ReadingList>
+          <ReadingList.Book
             author="George R. R. Martin"
             link="https://amzn.to/2Rngm82"
             title="A Game of Thrones: A Song of Ice and Fire (Currently Reading)"
