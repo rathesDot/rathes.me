@@ -3,24 +3,24 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 const BlogListTitle = styled.h2`
-  color: #ccc;
-  letter-spacing: 0.05em;
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
+  color: ${props => props.theme.colors.silver.darker};
+  letter-spacing: ${props => props.theme.letterSpacing.wider};
+  font-size: ${props => props.theme.fontSize.sm};
+  margin-bottom: ${props => props.theme.spacing[2]};
 `
 
 const InternalLink = styled(Link)`
-  color: white;
+  color: ${props => props.theme.colors.white};
   display: block;
-  font-size: 1.125rem;
-  margin-bottom: 0.5rem;
+  font-size: ${props => props.theme.fontSize.lg};
+  margin-bottom: ${props => props.theme.spacing[2]};
 `
 
 const ExternalLink = styled.a`
-  color: white;
+  color: ${props => props.theme.colors.white};
   display: block;
-  font-size: 1.125rem;
-  margin-bottom: 0.5rem;
+  font-size: ${props => props.theme.fontSize.lg};
+  margin-bottom: ${props => props.theme.spacing[2]};
 `
 
 const BlogList = ({ children, title, ...rest }) => (
