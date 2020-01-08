@@ -1,9 +1,11 @@
 import React, { useState } from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { Link as RouterLink, graphql, useStaticQuery } from "gatsby"
 import cx from "classnames"
 
 import Toggle from "../Toggle"
 import Logo from "../Logo"
+
+import Link from "../Link"
 
 const Navigation = () => {
   const [isNavOpen, toggleNavigation] = useState(false)
@@ -18,7 +20,7 @@ const Navigation = () => {
   return (
     <div className="mb-20 md:flex md:items-center md:justify-between lg:mt-8 lg:max-w-4xl">
       <div className="flex items-center justify-between mb-4 md:mb-0">
-        <Link to="/" aria-label="Home">
+        <Link element={RouterLink} to="/" aria-label="Home">
           <Logo />
         </Link>
         <Toggle
@@ -29,25 +31,30 @@ const Navigation = () => {
       </div>
       <div className={cx("text-right", { hidden: !isNavOpen }, "md:block")}>
         <Link
+          element={RouterLink}
           to="/about"
-          className="font-bold mr-2 text-white lg:text-2xl lg:leading-none"
+          className="font-bold mr-2 lg:text-2xl lg:leading-none"
+          color="white"
         >
           About
         </Link>
-        <a
+        <Link
           href={data.resume.publicURL}
-          className="font-bold mr-2 text-white lg:text-2xl lg:leading-none"
+          className="font-bold mr-2 lg:text-2xl lg:leading-none"
           aria-label="Resume"
+          color="white"
         >
           <span
             className="font-normal text-xl mr-2 text-silver lg:text-3xl"
             dangerouslySetInnerHTML={{ __html: "&sol;" }}
           ></span>
           Resume
-        </a>
+        </Link>
         <Link
+          element={RouterLink}
           to="/work"
-          className="font-bold mr-2 text-white lg:text-2xl lg:leading-none"
+          className="font-bold mr-2 lg:text-2xl lg:leading-none"
+          color="white"
         >
           <span
             className="font-normal text-xl mr-2 text-silver lg:text-3xl"
@@ -56,8 +63,10 @@ const Navigation = () => {
           Work
         </Link>
         <Link
+          element={RouterLink}
           to="/writings"
-          className="font-bold text-white lg:text-2xl lg:leading-none"
+          className="font-bold lg:text-2xl lg:leading-none"
+          color="white"
         >
           <span
             className="font-normal text-xl mr-2 text-silver lg:text-3xl"
