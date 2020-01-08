@@ -1,7 +1,7 @@
-const Link = ({ children, element }) => {
+const Link = ({ children, element, ...props }) => {
   const Element = element || "a"
 
-  return <Element>{children}</Element>
+  return <Element {...props}>{children}</Element>
 }
 
 export default Link
