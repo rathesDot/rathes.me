@@ -1,3 +1,3 @@
-const Link = () => null
+const Link = ({ children }) => children
 
 export default Link
