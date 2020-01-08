@@ -2,7 +2,10 @@ import React from "react"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
-import { Link } from "gatsby"
+
+import Link from "../components/Link"
+
+import { Link as RouterLink } from "gatsby"
 
 const NotFoundPage = () => (
   <Layout>
@@ -14,13 +17,28 @@ const NotFoundPage = () => (
         </h1>
         <p>Here are some things that you might have been looking for:</p>
         <p>
-          <Link to="/" className="block text-white text-lg mb-2">
+          <Link
+            element={RouterLink}
+            color="white"
+            to="/"
+            className="block text-lg mb-2"
+          >
             The homepage
           </Link>
-          <Link to="/writings" className="block text-white text-lg mb-2">
+          <Link
+            element={RouterLink}
+            color="white"
+            to="/writings"
+            className="block text-lg mb-2"
+          >
             Things I write about
           </Link>
-          <Link to="/about" className="block text-white text-lg mb-2">
+          <Link
+            element={RouterLink}
+            color="white"
+            to="/about"
+            className="block text-lg mb-2"
+          >
             Information about myself
           </Link>
         </p>
