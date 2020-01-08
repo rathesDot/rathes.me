@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
+import { Link as RouterLink } from "gatsby"
+
+import Link from "../Link"
 
 const BlogListTitle = styled.h2`
   color: ${props => props.theme.colors.silver.darker};
@@ -9,15 +11,7 @@ const BlogListTitle = styled.h2`
   margin-bottom: ${props => props.theme.spacing[2]};
 `
 
-const InternalLink = styled(Link)`
-  color: ${props => props.theme.colors.white.default};
-  display: block;
-  font-size: ${props => props.theme.fontSize.lg};
-  margin-bottom: ${props => props.theme.spacing[2]};
-`
-
-const ExternalLink = styled.a`
-  color: ${props => props.theme.colors.white.default};
+const BlogLink = styled(Link)`
   display: block;
   font-size: ${props => props.theme.fontSize.lg};
   margin-bottom: ${props => props.theme.spacing[2]};
@@ -34,10 +28,18 @@ BlogList.Article = ({ title, link }) => {
   const isExternal = link.startsWith("http")
 
   if (isExternal) {
-    return <ExternalLink href={link}>{title}</ExternalLink>
+    return (
+      <BlogLink color="white" href={link}>
+        {title}
+      </BlogLink>
+    )
   }
 
-  return <InternalLink to={link}>{title}</InternalLink>
+  return (
+    <BlogLink element={RouterLink} color="white" to={link}>
+      {title}
+    </BlogLink>
+  )
 }
 
 export default BlogList
