@@ -1,7 +1,8 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, Link as RouterLink } from "gatsby"
 import Layout from "../../components/Layout"
 import SEO from "../../components/SEO"
+import Link from "../../components/Link"
 import Img from "gatsby-image"
 
 import "./styles.css"
@@ -68,7 +69,9 @@ export default ({ data }) => {
         </div>
         <footer>
           <Link
-            className="font-bold text-white mt-16 mb-4 block md:mb-8"
+            element={RouterLink}
+            color="white"
+            className="font-bold mt-16 mb-4 block md:mb-8"
             to="/writings"
           >
             ← <span className="underline">back to articles</span>

@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import Link from "../components/Link"
 
 import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
 import externalLinks from "../content/articles/externalLinks"
@@ -25,12 +26,13 @@ const Writings = ({ data }) => {
           <p>
             From time to time, I do write. Sometime on my blog, but also on
             other blogs such as on{" "}
-            <a
-              className="text-white underline"
+            <Link
+              color="white"
+              className="underline"
               href="https://medium.com/@rathes"
             >
               Medium
-            </a>
+            </Link>
             . The topics, I write about are diverse. Obviously, I write about
             the web, but also about non-web topics like my mother tongue Tamil
             or even about movies or anime.
@@ -39,12 +41,13 @@ const Writings = ({ data }) => {
             I do write in English, German and Tamil. So if you do not understand
             the title, it may be that you do not speak the language. If you want
             me to translate a specific article, just drop a message{" "}
-            <a
-              className="text-white underline"
+            <Link
+              color="white"
+              className="underline"
               href="https://twitter.com/rswebdesigner"
             >
               @rswebdesigner
-            </a>
+            </Link>
           </p>
           <div className="mt-12">
             <BlogList title="Books & Whitepapers" className="mb-10">

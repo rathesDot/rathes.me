@@ -2,6 +2,7 @@ import React from "react"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import Link from "../components/Link"
 
 const Legal = ({ data }) => (
   <Layout>
@@ -62,12 +63,13 @@ const Legal = ({ data }) => (
           also opt-out from being tracked by Google Analytics with effect for
           the future by downloading and installing Google Analytics Opt-out
           Browser Addon for your current web browser:{" "}
-          <a
-            className="text-white underline"
+          <Link
+            color="white"
+            className="underline"
             href="http://tools.google.com/dlpage/gaoptout?hl=en"
           >
             http://tools.google.com/dlpage/gaoptout?hl=en
-          </a>
+          </Link>
           .
         </p>
         <h2 className="mt-8 text-xl font-bold leading-normal text-white">
@@ -139,12 +141,13 @@ const Legal = ({ data }) => (
         </p>
         <p className="text-sm mt-12">
           Source:{" "}
-          <a
-            className="text-white underline"
+          <Link
+            color="white"
+            className="underline"
             href="http://www.mustervorlage.net/disclaimer-muster#Englisch"
           >
             English Disclaimer on Mustervorlage.net
-          </a>
+          </Link>
         </p>
       </section>
     </section>
