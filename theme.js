@@ -10,7 +10,9 @@ export default {
       darker: "#CCC",
       darkest: "#AAA",
     },
-    white: "#FFF",
+    white: {
+      default: "#FFF",
+    },
   },
   fontFamily: {
     default: [

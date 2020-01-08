@@ -10,14 +10,14 @@ const BlogListTitle = styled.h2`
 `
 
 const InternalLink = styled(Link)`
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.white.default};
   display: block;
   font-size: ${props => props.theme.fontSize.lg};
   margin-bottom: ${props => props.theme.spacing[2]};
 `
 
 const ExternalLink = styled.a`
-  color: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.white.default};
   display: block;
   font-size: ${props => props.theme.fontSize.lg};
   margin-bottom: ${props => props.theme.spacing[2]};
