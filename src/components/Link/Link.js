@@ -1,3 +1,5 @@
+import React from "react"
+
 const Link = ({ children, element, ...props }) => {
   const Element = element || "a"
 
