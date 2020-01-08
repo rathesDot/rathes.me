@@ -1,6 +1,8 @@
 import React from "react"
-import "./styles.css"
+
 import TextSmall from "../Typography/TextSmall"
+
+import "./styles.css"
 
 const OverviewInfo = () => (
   <ul className="flex justify-between my-16 overview-info md:max-w-sm">
