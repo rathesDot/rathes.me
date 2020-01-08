@@ -1,6 +1,7 @@
 import React from "react"
 
 import TextSmall from "../Typography/TextSmall"
+import Link from "../Link"
 
 import "./styles.css"
 
@@ -11,36 +12,39 @@ const OverviewInfo = () => (
       <TextSmall color="silver" className="block tracking-wide leading-none">
         Working at
       </TextSmall>
-      <a
-        className="text-white text-base font-bold xs:text-lg"
+      <Link
+        color="white"
+        className=" text-base font-bold xs:text-lg"
         href="https://www.teamleader.eu/"
       >
         Teamleader
-      </a>
+      </Link>
     </li>
     <li>
       <span className="block w-8 bg-white border-t border-white my-2" />
       <TextSmall color="silver" className="block tracking-wide leading-none">
         Living in
       </TextSmall>
-      <a
-        className="text-white text-base font-bold xs:text-lg"
+      <Link
+        color="white"
+        className="text-base font-bold xs:text-lg"
         href="https://goo.gl/maps/9kKByTYJhSz"
       >
         Ghent, BE
-      </a>
+      </Link>
     </li>
     <li>
       <span className="block w-8 bg-white border-t border-white my-2" />
       <TextSmall color="silver" className="block tracking-wide leading-none">
         Follow me
       </TextSmall>
-      <a
-        className="text-white text-base font-bold xs:text-lg"
+      <Link
+        color="white"
+        className="text-base font-bold xs:text-lg"
         href="https://twitter.com/rswebdesigner"
       >
         @rswebdesigner
-      </a>
+      </Link>
     </li>
   </ul>
 )
