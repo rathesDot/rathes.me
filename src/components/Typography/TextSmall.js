@@ -1,3 +1,3 @@
-const TextSmall = () => null
+const TextSmall = ({ children }) => children
 
 export default TextSmall
