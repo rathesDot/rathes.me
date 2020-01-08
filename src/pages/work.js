@@ -4,6 +4,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
+import Link from "../components/Link"
 
 const Work = ({ data }) => {
   const [isModalOpen, setModalState] = useState(false)
@@ -51,12 +52,13 @@ const Work = ({ data }) => {
             on other side projects that are not only development related. If you
             want to see my development related things, I recommend that you
             visit my{" "}
-            <a
-              className="text-white underline"
+            <Link
+              color="white"
+              className="underline"
               href="https://github.com/rathesDot"
             >
               Github profile
-            </a>
+            </Link>
             .
           </p>
           <p>
@@ -64,12 +66,13 @@ const Work = ({ data }) => {
             for people that want to learn my mother language Tamil.
           </p>
           <p>
-            <a
-              className="text-white font-bold text-xl"
+            <Link
+              color="white"
+              className="font-bold text-xl"
               href="https://learn-tamil.com"
             >
               https://learn-tamil.com
-            </a>
+            </Link>
           </p>
           <p>
             In a first step, I'm working on a small book that I will use as the
@@ -104,28 +107,31 @@ const Work = ({ data }) => {
             </h2>
             <ul className="mt-0">
               <li className="mb-4 leading-tight">
-                <a
-                  className="block text-white text-lg"
+                <Link
+                  color="white"
+                  className="block text-lg"
                   href={data.rdd.publicURL}
                 >
                   Introduction to Readme Driven Development
-                </a>
+                </Link>
                 <span className="text-sm block text-silver">
-                  (January 2019 at <a href="https://php.gent">PHP Gent</a>)
+                  (January 2019 at <Link href="https://php.gent">PHP Gent</Link>
+                  )
                 </span>
               </li>
               <li className="mb-4 leading-tight">
-                <a
-                  className="block text-white text-lg"
+                <Link
+                  color="white"
+                  className="block text-lg"
                   href={data.rddUk.publicURL}
                 >
                   Introduction to Readme Driven Development
-                </a>
+                </Link>
                 <span className="text-sm block text-silver">
                   (February 2019 at{" "}
-                  <a href="https://www.phpconference.co.uk/">
+                  <Link href="https://www.phpconference.co.uk/">
                     PHP UK Unconference
-                  </a>
+                  </Link>
                   )
                 </span>
               </li>
