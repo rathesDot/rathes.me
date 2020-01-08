@@ -1,7 +1,7 @@
 import React from "react"
 
 const TextSmall = ({ children, element }) => {
-  const Element = element
+  const Element = element || "span"
 
   return <Element>{children}</Element>
 }
