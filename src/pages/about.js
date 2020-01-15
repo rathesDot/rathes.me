@@ -40,7 +40,8 @@ const AboutMe = () => (
         </p>
         <p>
           Nowadays, I work as a web developer at Teamleader in Ghent, Belgium
-          building things using PHP in the back-end and React in the front-end.
+          building things using PHP in the back-end and React in the front-end
+          with the best team in the world, team ONE.
         </p>
         <p>
           Apart from that, I spent most of my time working smaller side projects
