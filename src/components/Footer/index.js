@@ -5,7 +5,7 @@ import TextSmall from "../Typography/TextSmall"
 
 const Footer = () => (
   <div className="flex justify-between text-silver-darker mt-4 lg:max-w-4xl">
-    <TextSmall>&copy; 2019 — Rathes Sachchithananthan</TextSmall>
+    <TextSmall>&copy; 2020 — Rathes Sachchithananthan</TextSmall>
     <TextSmall element={Link} to="/legal">
       Legal Information
     </TextSmall>
