@@ -48,10 +48,10 @@ const Work = ({ data }) => {
             My work
           </h1>
           <p>
-            I do work as a web developer at Teamleader right now but I also work
-            on other side projects that are not only development related. If you
-            want to see my development related things, I recommend that you
-            visit my{" "}
+            I do work as a front-end engineer at Hussle right now but I also
+            work on other side projects that are not only development related.
+            If you want to see my development related things, I recommend that
+            you visit my{" "}
             <Link
               color="white"
               className="underline"
