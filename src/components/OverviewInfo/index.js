@@ -15,9 +15,9 @@ const OverviewInfo = () => (
       <Link
         color="white"
         className=" text-base font-bold xs:text-lg"
-        href="https://www.teamleader.eu/"
+        href="https://www.hussle.com/"
       >
-        Teamleader
+        Hussle
       </Link>
     </li>
     <li>
