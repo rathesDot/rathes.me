@@ -1,9 +1,20 @@
 import React from "react"
 import { Link as RouterLink, graphql, useStaticQuery } from "gatsby"
+import styled from "styled-components"
 
 import Logo from "../Logo"
 
 import Link from "../Link"
+
+const Separator = styled.span`
+  display: inline-block;
+  margin: 0 4px;
+  font-size: ${props => props.theme.fontSize.base};
+
+  &:before {
+    content: "/";
+  }
+`
 
 const Navigation = () => {
   const data = useStaticQuery(graphql`
