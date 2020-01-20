@@ -9,7 +9,9 @@ import Link from "../Link"
 const Separator = styled.span`
   display: inline-block;
   margin: 0 4px;
-  font-size: ${props => props.theme.fontSize.base};
+  color: ${props => props.theme.colors.silver.default};
+  font-size: ${props => props.theme.fontSize.lg};
+  font-family: ${props => props.theme.fontFamily.default};
 
   &:before {
     content: "/";
