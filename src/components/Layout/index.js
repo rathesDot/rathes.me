@@ -30,11 +30,11 @@ const MainContainer = styled.main`
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
-    <main className="font-sans bg-black text-silver text-base p-4 md:p-8 flex flex-col justify-between min-h-screen lg:pl-142px">
+    <MainContainer>
       <Navigation />
       {children}
       <Footer />
-    </main>
+    </MainContainer>
   </ThemeProvider>
 )
 
