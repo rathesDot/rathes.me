@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import TextSmall from "../Typography/TextSmall"
+import { TextBody, TextSmall } from "../Typography"
 import Link from "../Link"
 
 import "./styles.css"
@@ -18,6 +18,13 @@ const Title = styled(TextSmall)`
   display: block;
   letter-spacing: ${props => props.theme.letterSpacing.wide};
   line-height: 1.166666666;
+`
+
+const Info = styled(Link)`
+  font-weight: 600;
+  line-height: 1.1875;
+  display: block;
+  margin-top: 5px;
 `
 
 const OverviewInfo = () => (
