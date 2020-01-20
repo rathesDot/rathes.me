@@ -14,6 +14,12 @@ const Separator = styled.span`
   background-color: ${props => props.theme.colors.black.lighter};
 `
 
+const Title = styled(TextSmall)`
+  display: block;
+  letter-spacing: ${props => props.theme.letterSpacing.wide};
+  line-height: 1, 166666666;
+`
+
 const OverviewInfo = () => (
   <ul className="flex justify-between my-16 overview-info md:max-w-sm">
     <li>
