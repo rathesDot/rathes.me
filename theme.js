@@ -2,7 +2,7 @@ export default {
   colors: {
     black: {
       lightest: "#454545",
-      lighter: "#252525",
+      lighter: "#2a2a2a",
       default: "#111",
     },
     silver: {
