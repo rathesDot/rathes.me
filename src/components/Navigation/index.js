@@ -35,7 +35,7 @@ const Navigation = () => {
         <Link
           element={RouterLink}
           to="/about"
-          className="font-bold mr-2 lg:text-2xl lg:leading-none"
+          className="font-bold lg:text-2xl lg:leading-none"
           color="white"
         >
           About
@@ -43,7 +43,7 @@ const Navigation = () => {
         <Separator />
         <Link
           href={data.resume.publicURL}
-          className="font-bold mr-2 lg:text-2xl lg:leading-none"
+          className="font-bold lg:text-2xl lg:leading-none"
           aria-label="Resume"
           color="white"
         >
@@ -53,7 +53,7 @@ const Navigation = () => {
         <Link
           element={RouterLink}
           to="/work"
-          className="font-bold mr-2 lg:text-2xl lg:leading-none"
+          className="font-bold lg:text-2xl lg:leading-none"
           color="white"
         >
           Work
