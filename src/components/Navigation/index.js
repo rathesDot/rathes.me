@@ -18,6 +18,16 @@ const Separator = styled.span`
   }
 `
 
+const MenuItem = styled(Link)`
+  color: ${props =>
+    props.isActive
+      ? props.theme.colors.white.default
+      : props.theme.colors.silver.default};
+  font-size: ${props => props.theme.fontSize.lg};
+  font-family: ${props => props.theme.fontFamily.default};
+  font-weight: 600;
+`
+
 const Navigation = () => {
   const data = useStaticQuery(graphql`
     query {
