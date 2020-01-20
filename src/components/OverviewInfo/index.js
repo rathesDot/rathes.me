@@ -32,35 +32,31 @@ const OverviewInfo = () => (
     <li>
       <Separator />
       <Title color="silver">Working at</Title>
-      <Link
-        color="white"
-        className=" text-base font-bold xs:text-lg"
-        href="https://www.teamleader.eu/"
-      >
+      <Info color="white" href="https://www.teamleader.eu/" element={TextBody}>
         Teamleader
-      </Link>
+      </Info>
     </li>
     <li>
       <Separator />
       <Title color="silver">Living in</Title>
-      <Link
+      <Info
         color="white"
-        className="text-base font-bold xs:text-lg"
+        element={TextBody}
         href="https://goo.gl/maps/9kKByTYJhSz"
       >
         Ghent, BE
-      </Link>
+      </Info>
     </li>
     <li>
       <Separator />
       <Title color="silver">Follow me</Title>
-      <Link
+      <Info
         color="white"
-        className="text-base font-bold xs:text-lg"
+        element={TextBody}
         href="https://twitter.com/rswebdesigner"
       >
         @rswebdesigner
-      </Link>
+      </Info>
     </li>
   </ul>
 )
