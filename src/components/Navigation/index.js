@@ -29,10 +29,7 @@ const NavigationContainer = styled.nav`
 `
 
 const MenuItem = styled(Link)`
-  color: ${props =>
-    props.isCurrent
-      ? props.theme.colors.white.default
-      : props.theme.colors.silver.default};
+  color: ${props => props.theme.colors.silver.default};
   font-size: ${props => props.theme.fontSize.lg};
   font-family: ${props => props.theme.fontFamily.default};
   font-weight: 600;
@@ -55,18 +52,17 @@ const Navigation = () => {
 
   return (
     <NavigationContainer>
-      <Link element={RouterLink} to="/" aria-label="Home">
-        <Logo
-          color={
-            window.location.pathname === "/"
-              ? theme.colors.white.default
-              : theme.colors.silver.default
-          }
-        />
-      </Link>
+      <MenuItem
+        element={RouterLink}
+        to="/"
+        aria-label="Home"
+        activeStyle={{ color: theme.colors.white.default }}
+      >
+        <Logo />
+      </MenuItem>
       <Separator />
       <MenuItem
-        isCurrent={window.location.pathname === "/about"}
+        activeStyle={{ color: theme.colors.white.default }}
         element={RouterLink}
         to="/about"
       >
@@ -74,7 +70,7 @@ const Navigation = () => {
       </MenuItem>
       <Separator />
       <MenuItem
-        isCurrent={window.location.pathname === "/resume"}
+        activeStyle={{ color: theme.colors.white.default }}
         href={data.resume.publicURL}
         aria-label="Resume"
       >
@@ -82,7 +78,7 @@ const Navigation = () => {
       </MenuItem>
       <Separator />
       <MenuItem
-        isCurrent={window.location.pathname === "/work"}
+        activeStyle={{ color: theme.colors.white.default }}
         element={RouterLink}
         to="/work"
       >
@@ -90,7 +86,7 @@ const Navigation = () => {
       </MenuItem>
       <Separator />
       <MenuItem
-        isCurrent={window.location.pathname === "/writings"}
+        activeStyle={{ color: theme.colors.white.default }}
         element={RouterLink}
         to="/writings"
       >
