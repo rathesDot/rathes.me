@@ -1,14 +1,11 @@
 import React, { useState } from "react"
 import { Link as RouterLink, graphql, useStaticQuery } from "gatsby"
-import cx from "classnames"
 
-import Toggle from "../Toggle"
 import Logo from "../Logo"
 
 import Link from "../Link"
 
 const Navigation = () => {
-  const [isNavOpen, toggleNavigation] = useState(false)
   const data = useStaticQuery(graphql`
     query {
       resume: file(relativePath: { eq: "files/resume.pdf" }) {
@@ -23,13 +20,6 @@ const Navigation = () => {
         <Link element={RouterLink} to="/" aria-label="Home">
           <Logo />
         </Link>
-        <Toggle
-          className="md:hidden"
-          aria-label="Toggle Navigation"
-          onClick={() => toggleNavigation(!isNavOpen)}
-        />
-      </div>
-      <div className={cx("text-right", { hidden: !isNavOpen }, "md:block")}>
         <Link
           element={RouterLink}
           to="/about"
