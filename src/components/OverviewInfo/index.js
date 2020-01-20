@@ -6,6 +6,13 @@ import Link from "../Link"
 
 import "./styles.css"
 
+const OverviewInfoContainer = styled.div`
+  display: flex;
+  margin-top: 16px;
+  justify-content: space-between;
+  max-width: 375px;
+`
+
 const Separator = styled.span`
   width: 24px;
   display: block;
@@ -28,15 +35,15 @@ const Info = styled(Link)`
 `
 
 const OverviewInfo = () => (
-  <ul className="flex justify-between my-16 overview-info md:max-w-sm">
-    <li>
+  <OverviewInfoContainer>
+    <div>
       <Separator />
       <Title color="silver">Working at</Title>
       <Info color="white" href="https://www.teamleader.eu/" element={TextBody}>
         Teamleader
       </Info>
-    </li>
-    <li>
+    </div>
+    <div>
       <Separator />
       <Title color="silver">Living in</Title>
       <Info
@@ -46,8 +53,8 @@ const OverviewInfo = () => (
       >
         Ghent, BE
       </Info>
-    </li>
-    <li>
+    </div>
+    <div>
       <Separator />
       <Title color="silver">Follow me</Title>
       <Info
@@ -57,8 +64,8 @@ const OverviewInfo = () => (
       >
         @rswebdesigner
       </Info>
-    </li>
-  </ul>
+    </div>
+  </OverviewInfoContainer>
 )
 
 export default OverviewInfo
