@@ -1,17 +1,28 @@
 import React from "react"
+import styled from "styled-components"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import OverviewInfo from "../components/OverviewInfo"
 
+const Introduction = styled.h1`
+  color: ${props => props.theme.colors.white.default};
+  font-family: ${props => props.theme.fontFamily.default};
+  font-size: ${props => props.theme.fontSize["4xl"]};
+  font-weight: 600;
+  line-height: 1.333333;
+  overflow-wrap: break-word;
+  max-width: 640px;
+`
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <section className="flex flex-col justify-center flex-grow">
-      <h1 className="text-4xl font-bold leading-none text-white break-words xs:text-5xl md:max-w-570px md:leading-tight">
+      <Introduction>
         Hi there, I’m Rathes Sachchithananthan and I’m a web developer currently
         living in Belgium
-      </h1>
+      </Introduction>
       <OverviewInfo />
     </section>
   </Layout>
