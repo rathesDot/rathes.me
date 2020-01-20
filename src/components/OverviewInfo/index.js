@@ -17,7 +17,7 @@ const Separator = styled.span`
 const Title = styled(TextSmall)`
   display: block;
   letter-spacing: ${props => props.theme.letterSpacing.wide};
-  line-height: 1, 166666666;
+  line-height: 1.166666666;
 `
 
 const OverviewInfo = () => (
