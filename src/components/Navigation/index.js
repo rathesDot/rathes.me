@@ -31,6 +31,7 @@ const Navigation = () => {
         <Link element={RouterLink} to="/" aria-label="Home">
           <Logo />
         </Link>
+        <Separator />
         <Link
           element={RouterLink}
           to="/about"
@@ -39,40 +40,31 @@ const Navigation = () => {
         >
           About
         </Link>
+        <Separator />
         <Link
           href={data.resume.publicURL}
           className="font-bold mr-2 lg:text-2xl lg:leading-none"
           aria-label="Resume"
           color="white"
         >
-          <span
-            className="font-normal text-xl mr-2 text-silver lg:text-3xl"
-            dangerouslySetInnerHTML={{ __html: "&sol;" }}
-          ></span>
           Resume
         </Link>
+        <Separator />
         <Link
           element={RouterLink}
           to="/work"
           className="font-bold mr-2 lg:text-2xl lg:leading-none"
           color="white"
         >
-          <span
-            className="font-normal text-xl mr-2 text-silver lg:text-3xl"
-            dangerouslySetInnerHTML={{ __html: "&sol;" }}
-          ></span>
           Work
         </Link>
+        <Separator />
         <Link
           element={RouterLink}
           to="/writings"
           className="font-bold lg:text-2xl lg:leading-none"
           color="white"
         >
-          <span
-            className="font-normal text-xl mr-2 text-silver lg:text-3xl"
-            dangerouslySetInnerHTML={{ __html: "&sol;" }}
-          ></span>
           Writings
         </Link>
       </div>
