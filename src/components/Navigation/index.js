@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link as RouterLink, graphql, useStaticQuery } from "gatsby"
 
 import Logo from "../Logo"
