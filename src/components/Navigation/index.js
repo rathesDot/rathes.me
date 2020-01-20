@@ -23,6 +23,11 @@ const Separator = styled.span`
   }
 `
 
+const NavigationContainer = styled.nav`
+  display: flex;
+  align-items: center;
+`
+
 const MenuItem = styled(Link)`
   color: ${props =>
     props.isCurrent
@@ -49,7 +54,7 @@ const Navigation = () => {
   const theme = useTheme()
 
   return (
-    <div className="mb-20 flex items-center md:justify-between lg:mt-8 lg:max-w-4xl">
+    <NavigationContainer>
       <Link element={RouterLink} to="/" aria-label="Home">
         <Logo
           color={
@@ -91,7 +96,7 @@ const Navigation = () => {
       >
         Writings
       </MenuItem>
-    </div>
+    </NavigationContainer>
   )
 }
 
