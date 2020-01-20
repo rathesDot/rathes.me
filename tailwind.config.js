@@ -17,7 +17,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["Source Sans Pro", ...defaultTheme.fontFamily.sans],
+        sans: ["Lato", ...defaultTheme.fontFamily.sans],
       },
       padding: {
         "142px": "142px",

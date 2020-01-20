@@ -16,6 +16,7 @@ export default {
   },
   fontFamily: {
     default: [
+      "Lato",
       "-apple-system",
       "BlinkMacSystemFont",
       '"Segoe UI"',
@@ -28,7 +29,7 @@ export default {
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
       '"Noto Color Emoji"',
-    ].concat(" "),
+    ].join(","),
   },
   fontSize: {
     xs: "0.75rem",
