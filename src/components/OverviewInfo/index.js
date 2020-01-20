@@ -4,8 +4,6 @@ import styled from "styled-components"
 import { TextBody, TextSmall } from "../Typography"
 import Link from "../Link"
 
-import "./styles.css"
-
 const OverviewInfoContainer = styled.div`
   display: flex;
   margin-top: 16px;
