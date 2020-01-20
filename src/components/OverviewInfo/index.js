@@ -1,9 +1,18 @@
 import React from "react"
+import styled from "styled-components"
 
 import TextSmall from "../Typography/TextSmall"
 import Link from "../Link"
 
 import "./styles.css"
+
+const Separator = styled.span`
+  width: 24px;
+  display: block;
+  margin: 16px 0;
+  height: 2px;
+  background-color: ${props => props.theme.colors.black.lighter};
+`
 
 const OverviewInfo = () => (
   <ul className="flex justify-between my-16 overview-info md:max-w-sm">
