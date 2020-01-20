@@ -44,41 +44,21 @@ const Navigation = () => {
           <Logo />
         </Link>
         <Separator />
-        <Link
-          element={RouterLink}
-          to="/about"
-          className="font-bold lg:text-2xl lg:leading-none"
-          color="white"
-        >
+        <MenuItem element={RouterLink} to="/about">
           About
-        </Link>
+        </MenuItem>
         <Separator />
-        <Link
-          href={data.resume.publicURL}
-          className="font-bold lg:text-2xl lg:leading-none"
-          aria-label="Resume"
-          color="white"
-        >
+        <MenuItem href={data.resume.publicURL} aria-label="Resume">
           Resume
-        </Link>
+        </MenuItem>
         <Separator />
-        <Link
-          element={RouterLink}
-          to="/work"
-          className="font-bold lg:text-2xl lg:leading-none"
-          color="white"
-        >
+        <MenuItem element={RouterLink} to="/work">
           Work
-        </Link>
+        </MenuItem>
         <Separator />
-        <Link
-          element={RouterLink}
-          to="/writings"
-          className="font-bold lg:text-2xl lg:leading-none"
-          color="white"
-        >
+        <MenuItem element={RouterLink} to="/writings">
           Writings
-        </Link>
+        </MenuItem>
       </div>
     </div>
   )
