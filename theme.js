@@ -6,7 +6,7 @@ export default {
       default: "#111",
     },
     silver: {
-      default: "#CFD3DC",
+      default: "#878787",
       darker: "#CCC",
       darkest: "#AAA",
     },
