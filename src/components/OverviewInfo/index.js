@@ -17,7 +17,7 @@ const Separator = styled.span`
 const OverviewInfo = () => (
   <ul className="flex justify-between my-16 overview-info md:max-w-sm">
     <li>
-      <span className="block w-8 bg-white border-t border-white my-2" />
+      <Separator />
       <TextSmall color="silver" className="block tracking-wide leading-none">
         Working at
       </TextSmall>
@@ -30,7 +30,7 @@ const OverviewInfo = () => (
       </Link>
     </li>
     <li>
-      <span className="block w-8 bg-white border-t border-white my-2" />
+      <Separator />
       <TextSmall color="silver" className="block tracking-wide leading-none">
         Living in
       </TextSmall>
@@ -43,7 +43,7 @@ const OverviewInfo = () => (
       </Link>
     </li>
     <li>
-      <span className="block w-8 bg-white border-t border-white my-2" />
+      <Separator />
       <TextSmall color="silver" className="block tracking-wide leading-none">
         Follow me
       </TextSmall>
