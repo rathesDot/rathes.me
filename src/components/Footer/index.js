@@ -17,9 +17,10 @@ const Separator = styled.span`
 `
 
 const Footer = () => (
-  <div className="flex justify-between text-silver-darker mt-4 lg:max-w-4xl">
-    <TextSmall>&copy; 2019 — Rathes Sachchithananthan</TextSmall>
-    <TextSmall element={Link} to="/legal">
+  <div>
+    <TextSmall color="silver">&copy; 2019 — Rathes Sachchithananthan</TextSmall>
+    <Separator />
+    <TextSmall color="silver" element={Link} to="/legal">
       Legal Information
     </TextSmall>
   </div>
