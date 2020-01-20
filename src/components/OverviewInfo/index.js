@@ -24,9 +24,7 @@ const OverviewInfo = () => (
   <ul className="flex justify-between my-16 overview-info md:max-w-sm">
     <li>
       <Separator />
-      <TextSmall color="silver" className="block tracking-wide leading-none">
-        Working at
-      </TextSmall>
+      <Title color="silver">Working at</Title>
       <Link
         color="white"
         className=" text-base font-bold xs:text-lg"
@@ -37,9 +35,7 @@ const OverviewInfo = () => (
     </li>
     <li>
       <Separator />
-      <TextSmall color="silver" className="block tracking-wide leading-none">
-        Living in
-      </TextSmall>
+      <Title color="silver">Living in</Title>
       <Link
         color="white"
         className="text-base font-bold xs:text-lg"
@@ -50,9 +46,7 @@ const OverviewInfo = () => (
     </li>
     <li>
       <Separator />
-      <TextSmall color="silver" className="block tracking-wide leading-none">
-        Follow me
-      </TextSmall>
+      <Title color="silver">Follow me</Title>
       <Link
         color="white"
         className="text-base font-bold xs:text-lg"
