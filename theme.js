@@ -7,7 +7,7 @@ export default {
     },
     silver: {
       default: "#878787",
-      darker: "#CCC",
+      darker: "#676767",
       darkest: "#AAA",
     },
     white: {
