@@ -12,9 +12,6 @@ const Work = ({ data }) => {
     <Layout>
       <Box maxWidth="640px" marginTop={32} element="section">
         <SEO title="Work" />
-        <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
-          My work
-        </h1>
         <p>
           I do work as a web developer at Teamleader right now but I also work
           on other side projects that are not only development related. If you
