@@ -3,6 +3,7 @@ export default {
     black: {
       lightest: "#454545",
       lighter: "#2a2a2a",
+      light: "#161616",
       default: "#111",
     },
     silver: {
