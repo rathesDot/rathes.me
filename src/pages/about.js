@@ -11,12 +11,6 @@ import { Box } from "../components/Box"
 import List from "../components/List/List"
 import Link from "../components/Link"
 
-const Container = styled.section`
-  flex-grow: 1;
-  margin-top: 100px;
-  max-width: 640px;
-`
-
 const Separator = styled.hr`
   border-width: 2px;
   color: ${props => props.theme.colors.black.lighter};
@@ -27,7 +21,7 @@ const Separator = styled.hr`
 const AboutMe = () => (
   <Layout>
     <SEO title="About me" />
-    <Container>
+    <Box maxWidth="640px" marginTop={32}>
       <Heading1>/raðiːs/</Heading1>
       <Paragraph>
         I’m Rathes Sachchithananthan, a web developer with not only interests in
@@ -132,7 +126,7 @@ const AboutMe = () => (
       <Box element="section" marginTop={32} marginBottom={32}>
         <SayHi />
       </Box>
-    </Container>
+    </Box>
   </Layout>
 )
 
