@@ -1,20 +1,17 @@
 import React from "react"
-import styled from "styled-components"
 
 import Link from "../Link"
 import { Box } from "../Box"
 
-const Container = styled(Box)`
-  font-family: ${props => props.theme.fontFamily.default};
-  font-size: ${props => props.theme.fontSize["4xl"]};
-  color: ${props => props.theme.colors.white.default};
-  font-weight: 600;
-  max-width: 520px;
-  line-height: 1.194444444444;
-`
-
 const SayHi = () => (
-  <Container>
+  <Box
+    maxWidth="520px"
+    fontFamily="default"
+    fontSize="4xl"
+    fontWeight={600}
+    lineHeight={1.194444444444}
+    textColor="white"
+  >
     Work inquiry, question or something else?{" "}
     <Link
       aria-label="Send an E-Mail to hello@rathes.me"
@@ -23,7 +20,7 @@ const SayHi = () => (
     >
       Say hi!
     </Link>
-  </Container>
+  </Box>
 )
 
 export default SayHi
