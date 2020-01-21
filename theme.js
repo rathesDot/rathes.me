@@ -2,12 +2,13 @@ export default {
   colors: {
     black: {
       lightest: "#454545",
-      lighter: "#252525",
+      lighter: "#2a2a2a",
+      light: "#161616",
       default: "#111",
     },
     silver: {
-      default: "#CFD3DC",
-      darker: "#CCC",
+      default: "#878787",
+      darker: "#676767",
       darkest: "#AAA",
     },
     white: {
@@ -16,6 +17,7 @@ export default {
   },
   fontFamily: {
     default: [
+      "Lato",
       "-apple-system",
       "BlinkMacSystemFont",
       '"Segoe UI"',
@@ -28,7 +30,15 @@ export default {
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
       '"Noto Color Emoji"',
-    ].concat(" "),
+    ].join(","),
+    mono: [
+      "Menlo",
+      "Monaco",
+      "Consolas",
+      '"Liberation Mono"',
+      '"Courier New"',
+      "monospace",
+    ].join(","),
   },
   fontSize: {
     xs: "0.75rem",
@@ -46,6 +56,7 @@ export default {
     normal: "0",
     wide: "0.025em",
     wider: "0.05em",
+    widest: "0.1em",
   },
   spacing: {
     px: "1px",

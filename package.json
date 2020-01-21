@@ -19,7 +19,7 @@
     "gatsby-plugin-react-helmet": "^3.1.18",
     "gatsby-plugin-sharp": "^2.3.10",
     "gatsby-plugin-sitemap": "^2.2.24",
-    "gatsby-plugin-styled-components": "^3.1.16",
+    "gatsby-plugin-styled-components": "^3.1.18",
     "gatsby-plugin-twitter": "^2.1.17",
     "gatsby-remark-images": "^3.1.42",
     "gatsby-remark-prismjs": "^3.3.29",
@@ -32,7 +32,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "styled-components": "^5.0.0-rc.3"
+    "styled-components": "^5.0.0"
   },
   "devDependencies": {
     "babel-jest": "^24.9.0",

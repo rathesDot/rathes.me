@@ -14,9 +14,21 @@ locale: de_DE
 description: So realisierst du die Authentifizierung in einer Web App, die auf VueJS basiert.
 ---
 
-Authentifizierung ist ein Thema, mit dem man sich fast immer beschäftigen muss, wenn man eine größere Webanwendung entwickelt. Anders als bei der klassischen Authentifizierung bei serverseitigen Anwendungen, kann man bei der Entwicklung einer Webapp, die auf eine API zugreift, nicht mit Sessions arbeiten. REST API’s, die im Web immer wieder Verwendung finden, sind zustandslos. Daher muss bei jeder Anfrage eine die Information der Authentifizierung immer mitgeschickt werden.
+import Note from "../../../components/Note"
 
-<!--more-->
+<Note>
+  Vorsicht! Dieser Artikel ist von 2017 und is sehr wahrscheinlich nicht mehr
+  aktuell. Wenn du Interesse daran hast, dass der Artikel aktualisiert wird,
+  dann melde dich gerne bei{" "}
+  <a
+    style="text-decoration: underline"
+    href="https://twitter.com/rswebdesigner"
+  >
+    @rswebdesigner
+  </a>
+</Note>
+
+Authentifizierung ist ein Thema, mit dem man sich fast immer beschäftigen muss, wenn man eine größere Webanwendung entwickelt. Anders als bei der klassischen Authentifizierung bei serverseitigen Anwendungen, kann man bei der Entwicklung einer Webapp, die auf eine API zugreift, nicht mit Sessions arbeiten. REST API’s, die im Web immer wieder Verwendung finden, sind zustandslos. Daher muss bei jeder Anfrage eine die Information der Authentifizierung immer mitgeschickt werden.
 
 Diese Information ist in der Regel ein Token, das von der API geliefert bei Login wird. Du kannst dafür zum Beispiel das [JSON Webtoken](/blog/json-web-token) verwenden. Dieses Token musst du also immer mitschicken. Wie dieses Token erzeugt wird, ist aber nicht die Aufgabe der Webapp. Das ist der Job der API.
 

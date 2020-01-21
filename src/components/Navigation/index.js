@@ -1,14 +1,41 @@
-import React, { useState } from "react"
+import React from "react"
 import { Link as RouterLink, graphql, useStaticQuery } from "gatsby"
-import cx from "classnames"
+import styled, { useTheme } from "styled-components"
 
-import Toggle from "../Toggle"
 import Logo from "../Logo"
 
 import Link from "../Link"
+import { Box } from "../Box"
+
+const Separator = styled.span`
+  display: inline-block;
+  margin: 0 8px;
+  color: ${props => props.theme.colors.silver.default};
+  font-size: ${props => props.theme.fontSize.lg};
+  font-family: ${props => props.theme.fontFamily.default};
+
+  @media (max-width: 374px) {
+    margin: 0 4px;
+    font-size: ${props => props.theme.fontSize.base};
+  }
+
+  &:before {
+    content: "/";
+  }
+`
+
+const MenuItem = styled(Link)`
+  color: ${props => props.theme.colors.silver.default};
+  font-size: ${props => props.theme.fontSize.lg};
+  font-family: ${props => props.theme.fontFamily.default};
+  font-weight: 600;
+
+  @media (max-width: 374px) {
+    font-size: ${props => props.theme.fontSize.base};
+  }
+`
 
 const Navigation = () => {
-  const [isNavOpen, toggleNavigation] = useState(false)
   const data = useStaticQuery(graphql`
     query {
       resume: file(relativePath: { eq: "files/resume.pdf" }) {
@@ -17,65 +44,51 @@ const Navigation = () => {
     }
   `)
 
+  const theme = useTheme()
+
   return (
-    <div className="mb-20 md:flex md:items-center md:justify-between lg:mt-8 lg:max-w-4xl">
-      <div className="flex items-center justify-between mb-4 md:mb-0">
-        <Link element={RouterLink} to="/" aria-label="Home">
-          <Logo />
-        </Link>
-        <Toggle
-          className="md:hidden"
-          aria-label="Toggle Navigation"
-          onClick={() => toggleNavigation(!isNavOpen)}
-        />
-      </div>
-      <div className={cx("text-right", { hidden: !isNavOpen }, "md:block")}>
-        <Link
-          element={RouterLink}
-          to="/about"
-          className="font-bold mr-2 lg:text-2xl lg:leading-none"
-          color="white"
-        >
-          About
-        </Link>
-        <Link
-          href={data.resume.publicURL}
-          className="font-bold mr-2 lg:text-2xl lg:leading-none"
-          aria-label="Resume"
-          color="white"
-        >
-          <span
-            className="font-normal text-xl mr-2 text-silver lg:text-3xl"
-            dangerouslySetInnerHTML={{ __html: "&sol;" }}
-          ></span>
-          Resume
-        </Link>
-        <Link
-          element={RouterLink}
-          to="/work"
-          className="font-bold mr-2 lg:text-2xl lg:leading-none"
-          color="white"
-        >
-          <span
-            className="font-normal text-xl mr-2 text-silver lg:text-3xl"
-            dangerouslySetInnerHTML={{ __html: "&sol;" }}
-          ></span>
-          Work
-        </Link>
-        <Link
-          element={RouterLink}
-          to="/writings"
-          className="font-bold lg:text-2xl lg:leading-none"
-          color="white"
-        >
-          <span
-            className="font-normal text-xl mr-2 text-silver lg:text-3xl"
-            dangerouslySetInnerHTML={{ __html: "&sol;" }}
-          ></span>
-          Writings
-        </Link>
-      </div>
-    </div>
+    <Box display="flex" alignItems="center" element="nav">
+      <MenuItem
+        element={RouterLink}
+        to="/"
+        aria-label="Home"
+        activeStyle={{ color: theme.colors.white.default }}
+      >
+        <Logo />
+      </MenuItem>
+      <Separator />
+      <MenuItem
+        activeStyle={{ color: theme.colors.white.default }}
+        element={RouterLink}
+        to="/about"
+      >
+        About
+      </MenuItem>
+      <Separator />
+      <MenuItem
+        activeStyle={{ color: theme.colors.white.default }}
+        href={data.resume.publicURL}
+        aria-label="Resume"
+      >
+        Resume
+      </MenuItem>
+      <Separator />
+      <MenuItem
+        activeStyle={{ color: theme.colors.white.default }}
+        element={RouterLink}
+        to="/work"
+      >
+        Work
+      </MenuItem>
+      <Separator />
+      <MenuItem
+        activeStyle={{ color: theme.colors.white.default }}
+        element={RouterLink}
+        to="/writings"
+      >
+        Writings
+      </MenuItem>
+    </Box>
   )
 }
 

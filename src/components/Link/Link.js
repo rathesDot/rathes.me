@@ -1,12 +1,32 @@
 import React from "react"
 import styled from "styled-components"
 
-const Link = ({ children, element, color, tint = "default", ...props }) => {
-  const Element = styled(element || "a")`
-    color: ${props => (color ? props.theme.colors[color][tint] : undefined)};
-  `
+const StyledLink = styled.a`
+  color: ${props =>
+    props.color ? props.theme.colors[props.color][props.tint] : undefined};
+  text-decoration: ${props => (props.underlined ? "underline" : "none")};
+`
 
-  return <Element {...props}>{children}</Element>
+const Link = ({
+  children,
+  element,
+  color,
+  tint = "default",
+  isCurrent,
+  underlined,
+  ...props
+}) => {
+  return (
+    <StyledLink
+      as={element || "a"}
+      color={color}
+      tint={tint}
+      underlined={underlined}
+      {...props}
+    >
+      {children}
+    </StyledLink>
+  )
 }
 
 export default Link

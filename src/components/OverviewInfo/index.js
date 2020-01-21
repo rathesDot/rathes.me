@@ -1,52 +1,68 @@
 import React from "react"
+import styled from "styled-components"
 
-import TextSmall from "../Typography/TextSmall"
+import { TextBody, TextSmall } from "../Typography"
 import Link from "../Link"
+import { Box } from "../Box"
 
-import "./styles.css"
+const Separator = styled.span`
+  width: 24px;
+  display: block;
+  margin: 16px 0;
+  height: 2px;
+  background-color: ${props => props.theme.colors.black.lighter};
+`
+
+const Title = styled(TextSmall)`
+  display: block;
+  letter-spacing: ${props => props.theme.letterSpacing.wide};
+  line-height: 1.166666666;
+`
+
+const Info = styled(Link)`
+  font-weight: 600;
+  line-height: 1.1875;
+  display: block;
+  margin-top: 5px;
+`
 
 const OverviewInfo = () => (
-  <ul className="flex justify-between my-16 overview-info md:max-w-sm">
-    <li>
-      <span className="block w-8 bg-white border-t border-white my-2" />
-      <TextSmall color="silver" className="block tracking-wide leading-none">
-        Working at
-      </TextSmall>
-      <Link
-        color="white"
-        className=" text-base font-bold xs:text-lg"
-        href="https://www.teamleader.eu/"
-      >
+  <Box
+    display="flex"
+    justifyContent="space-between"
+    marginTop={4}
+    maxWidth="375px"
+  >
+    <Box>
+      <Separator />
+      <Title color="silver">Working at</Title>
+      <Info color="white" href="https://www.teamleader.eu/" element={TextBody}>
         Teamleader
-      </Link>
-    </li>
-    <li>
-      <span className="block w-8 bg-white border-t border-white my-2" />
-      <TextSmall color="silver" className="block tracking-wide leading-none">
-        Living in
-      </TextSmall>
-      <Link
+      </Info>
+    </Box>
+    <Box>
+      <Separator />
+      <Title color="silver">Living in</Title>
+      <Info
         color="white"
-        className="text-base font-bold xs:text-lg"
+        element={TextBody}
         href="https://goo.gl/maps/9kKByTYJhSz"
       >
         Ghent, BE
-      </Link>
-    </li>
-    <li>
-      <span className="block w-8 bg-white border-t border-white my-2" />
-      <TextSmall color="silver" className="block tracking-wide leading-none">
-        Follow me
-      </TextSmall>
-      <Link
+      </Info>
+    </Box>
+    <Box>
+      <Separator />
+      <Title color="silver">Follow me</Title>
+      <Info
         color="white"
-        className="text-base font-bold xs:text-lg"
+        element={TextBody}
         href="https://twitter.com/rswebdesigner"
       >
         @rswebdesigner
-      </Link>
-    </li>
-  </ul>
+      </Info>
+    </Box>
+  </Box>
 )
 
 export default OverviewInfo

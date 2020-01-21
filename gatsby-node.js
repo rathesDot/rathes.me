@@ -21,18 +21,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const {
-    data: { allMarkdownRemark, allMdx },
+    data: { allMdx },
   } = await graphql(`
     {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
-          }
-        }
-      }
       allMdx {
         edges {
           node {
@@ -50,16 +41,6 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: node.fields.slug,
       component: path.resolve(`./src/templates/Blog/mdx.js`),
-      context: {
-        slug: node.fields.slug,
-      },
-    })
-  })
-
-  allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/templates/Blog/remark.js`),
       context: {
         slug: node.fields.slug,
       },

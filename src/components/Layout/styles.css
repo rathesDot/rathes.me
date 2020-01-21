@@ -1,19 +1,6 @@
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,600&display=swap");
 
 @tailwind base;
-
-p {
-  @apply .leading-loose .my-6;
-}
-
-ol,
-ul {
-  @apply .my-8;
-}
-
-li {
-  @apply .leading-loose;
-}
 
 h1 + p {
   @apply mt-3;
