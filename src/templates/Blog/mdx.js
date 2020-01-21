@@ -5,6 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Layout from "../../components/Layout"
 import SEO from "../../components/SEO"
 import Link from "../../components/Link"
+import { Box } from "../../components/Box"
 
 import Img from "gatsby-image"
 
@@ -57,20 +58,18 @@ export default ({ data }) => {
         description={post.excerpt}
         meta={[...meta, ...imageMeta]}
       />
-      <section className="flex-grow">
-        <div className="blog-post md:max-w-570px md:text-lg">
-          <h1 className="text-3xl font-bold leading-tight mb-6 text-white break-words xs:text-4xl">
-            {post.frontmatter.title}
-          </h1>
-          {post.frontmatter.image && (
-            <Img
-              className="-mx-4 block my-6 md:mx-0"
-              fluid={post.frontmatter.image.childImageSharp.fluid}
-            />
-          )}
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-          <MDXRenderer>{post.body}</MDXRenderer>
-        </div>
+      <Box maxWidth="640px" marginTop={32} className="blog-post">
+        <h1 className="text-3xl font-bold leading-tight mb-6 text-white break-words xs:text-4xl">
+          {post.frontmatter.title}
+        </h1>
+        {post.frontmatter.image && (
+          <Img
+            className="-mx-4 block my-6 md:mx-0"
+            fluid={post.frontmatter.image.childImageSharp.fluid}
+          />
+        )}
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <MDXRenderer>{post.body}</MDXRenderer>
         <footer>
           <Link
             element={RouterLink}
@@ -81,7 +80,7 @@ export default ({ data }) => {
             ← <span className="underline">back to articles</span>
           </Link>
         </footer>
-      </section>
+      </Box>
     </Layout>
   )
 }
