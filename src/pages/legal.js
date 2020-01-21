@@ -4,7 +4,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import Link from "../components/Link"
 import { Box } from "../components/Box"
-import { Heading1, Heading2 } from "../components/Typography"
+import { Heading1, Heading2, Heading4 } from "../components/Typography"
 
 const Legal = () => (
   <Layout>
@@ -23,9 +23,7 @@ const Legal = () => (
         E-Mail: hello@rathes.me
       </p>
       <Heading2>Disclaimer</Heading2>
-      <h3 className="mt-4 text-sm font-bold leading-none text-white">
-        Google Analytics
-      </h3>
+      <Heading4 element="h3">Google Analytics</Heading4>
       <p className="mt-2">
         This website uses Google Analytics, a web analytics service provided by
         Google, Inc. (“Google”). Google Analytics uses “cookies”, which are text
@@ -83,9 +81,9 @@ const Legal = () => (
         concerning this matter can only be assumed from the point in time at
         which the infringement becomes known to us.
       </p>
-      <h3 className="mt-4 text-sm font-bold leading-none text-white">
+      <Heading4 element="h3">
         Limitation of liability for external links
-      </h3>
+      </Heading4>
       <p>
         Our website contains links to the websites of third parties (“external
         links”). As the content of these websites is not under our control, we
@@ -96,18 +94,14 @@ const Legal = () => (
         As soon as an infringement of the law becomes known to us, we will
         immediately remove the link in question.
       </p>
-      <h3 className="mt-4 text-sm font-bold leading-none text-white">
-        Copyright
-      </h3>
+      <Heading4 element="h3">Copyright</Heading4>
       <p>
         The content and works published on this website are governed by the
         copyright laws of Germany. Any duplication, processing, distribution or
         any form of utilisation beyond the scope of copyright law shall require
         the prior written consent of the author or authors in question.
       </p>
-      <h3 className="mt-4 text-sm font-bold leading-none text-white">
-        Data protection
-      </h3>
+      <Heading4 element="h3">Data protection</Heading4>
       <p>
         A visit to our website can result in the storage on our server of
         information about the access (date, time, page accessed). This does not
