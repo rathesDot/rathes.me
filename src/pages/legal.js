@@ -3,11 +3,12 @@ import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import Link from "../components/Link"
+import { Box } from "../components/Box"
 
 const Legal = ({ data }) => (
   <Layout>
     <SEO title="Legal Information" />
-    <section className="flex-grow">
+    <Box maxWidth="640px" marginTop={32}>
       <section className="md:max-w-570px md:text-lg">
         <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
           Legal Information
@@ -150,7 +151,7 @@ const Legal = ({ data }) => (
           </Link>
         </p>
       </section>
-    </section>
+    </Box>
   </Layout>
 )
 
