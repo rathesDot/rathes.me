@@ -8,41 +8,9 @@ import Link from "../components/Link"
 import { Box } from "../components/Box"
 
 const Work = ({ data }) => {
-  const [isModalOpen, setModalState] = useState(false)
-
-  const openModal = () => {
-    setModalState(true)
-  }
-
-  const closeModal = () => {
-    setModalState(false)
-  }
-
   return (
     <Layout>
       <Box maxWidth="640px" marginTop={32}>
-        {isModalOpen && (
-          <div className="bg-white text-black fixed inset-x-4 top-1/2 flex flex-col rounded -translateY-1/2 md:w-2/3 md:left-0 md:right-0 md:mx-auto">
-            <button
-              className="text-silver-darkest px-4 pt-4 pb-1 tracking-wider text-sm uppercase self-end"
-              onClick={closeModal}
-            >
-              Close
-            </button>
-            <div className="p-4">
-              <h1 className="text-xl leading-none">Sorry!</h1>
-              <p className="leading-normal">
-                Unfortunately, I haven't managed to finish all pages on this
-                website. But I'm doing my best to get all pages online as soon
-                as possible!
-              </p>
-              <p className="leading-normal">
-                I you want to get information on this project, feel free to
-                reach out to me!
-              </p>
-            </div>
-          </div>
-        )}
         <SEO title="Work" />
         <section className="md:max-w-570px md:text-lg">
           <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
@@ -84,7 +52,7 @@ const Work = ({ data }) => {
           <p>
             <button
               className="font-bold text-white block md:mb-8"
-              onClick={openModal}
+              onClick={() => {}}
             >
               → <span className="underline">Read more about the project</span>
             </button>
