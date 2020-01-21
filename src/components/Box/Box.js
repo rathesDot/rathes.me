@@ -5,6 +5,7 @@ const Box = ({
   children,
   element,
   fontFamily,
+  fontSize,
   marginTop,
   marginBottom,
   maxWidth,
@@ -14,7 +15,9 @@ const Box = ({
     ${props =>
       fontFamily
         ? `font-family: ${props.theme.fontFamily[fontFamily]};`
-        : undefined}
+        : undefined};
+    ${props =>
+      fontSize ? `font-size: ${props.theme.fontSize[fontSize]};` : undefined}
     margin-bottom: ${props => props.theme.spacing[marginBottom]};
     margin-top: ${props => props.theme.spacing[marginTop]};
     ${maxWidth ? `max-width: ${maxWidth}` : undefined};
