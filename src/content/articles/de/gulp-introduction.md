@@ -1,6 +1,6 @@
 ---
 id: 1036
-title: "Gulp &#8211; Wie du dank Taskrunner besser durchstartest"
+title: "Gulp — Wie du dank Taskrunner besser durchstartest"
 date: 2015-11-01T16:40:52+00:00
 author: Rathes Sachchithananthan
 template: post
