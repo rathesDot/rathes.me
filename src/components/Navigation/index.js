@@ -5,6 +5,7 @@ import styled, { useTheme } from "styled-components"
 import Logo from "../Logo"
 
 import Link from "../Link"
+import { Box } from "../Box"
 
 const Separator = styled.span`
   display: inline-block;
@@ -21,11 +22,6 @@ const Separator = styled.span`
   &:before {
     content: "/";
   }
-`
-
-const NavigationContainer = styled.nav`
-  display: flex;
-  align-items: center;
 `
 
 const MenuItem = styled(Link)`
@@ -51,7 +47,7 @@ const Navigation = () => {
   const theme = useTheme()
 
   return (
-    <NavigationContainer>
+    <Box display="flex" alignItems="center" element="nav">
       <MenuItem
         element={RouterLink}
         to="/"
@@ -92,7 +88,7 @@ const Navigation = () => {
       >
         Writings
       </MenuItem>
-    </NavigationContainer>
+    </Box>
   )
 }
 
