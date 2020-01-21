@@ -9,6 +9,8 @@ const Box = ({
   marginTop,
   marginBottom,
   maxWidth,
+  textColor,
+  textTint = "default",
   ...props
 }) => {
   const Element = styled(element || "div")`
@@ -18,6 +20,10 @@ const Box = ({
         : undefined};
     ${props =>
       fontSize ? `font-size: ${props.theme.fontSize[fontSize]};` : undefined}
+    ${props =>
+      textColor
+        ? `color: ${props.theme.colors[textColor][textTint]};`
+        : undefined}
     margin-bottom: ${props => props.theme.spacing[marginBottom]};
     margin-top: ${props => props.theme.spacing[marginTop]};
     ${maxWidth ? `max-width: ${maxWidth}` : undefined};
