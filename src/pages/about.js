@@ -4,6 +4,12 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
 import ReadingList from "../components/ReadingList"
+import styled from "styled-components"
+
+const Container = styled.section`
+  flex-grow: 1;
+  margin-top: 100px;
+`
 
 const AboutMe = () => (
   <Layout>
