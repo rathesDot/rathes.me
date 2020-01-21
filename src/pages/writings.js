@@ -43,7 +43,8 @@ const Writings = ({ data }) => {
             @rswebdesigner
           </Link>
         </Paragraph>
-        <div className="mt-12">
+
+        <Box marginTop={32} element="section">
           <BlogList title="Books & Whitepapers" className="mb-10">
             <BlogList.Article
               link="https://learn-tamil.com"
@@ -63,8 +64,10 @@ const Writings = ({ data }) => {
               </BlogList>
             )
           })}
-        </div>
-        <SayHi />
+        </Box>
+        <Box marginTop={32} marginBottom={32} element="section">
+          <SayHi />
+        </Box>
       </Box>
     </Layout>
   )
