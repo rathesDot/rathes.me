@@ -12,6 +12,7 @@ import {
   Heading4,
 } from "../components/Typography"
 import { Box } from "../components/Box"
+import List from "../components/List/List"
 
 const Container = styled.section`
   flex-grow: 1;
@@ -81,28 +82,24 @@ const AboutMe = () => (
           Actually, I dream to have my own library one where I can invite
           everybody to pick up a nice book and read.
         </Paragraph>
-        <Heading4 element="h3">Reading List 2020</Heading4>
-        <ReadingList>
-          <ReadingList.Book
-            author="Cody McFadyen"
-            link="https://amzn.to/2tw7Zxp"
-            title="Shadow Man (Smoky Barrett, Band 1)"
-          />
-        </ReadingList>
+        <List title="Reading List 2020">
+          <List.Item subtitle="by Cody McFadyen" link="https://amzn.to/2tw7Zxp">
+            Shadow Man (Smoky Barrett, Band 1)
+          </List.Item>
+        </List>
         <Separator />
-        <Heading4 element="h3">Currently reading</Heading4>
-        <ReadingList>
-          <ReadingList.Book
-            author="Ransom Riggs"
-            link="https://amzn.to/2MYAfj6"
-            title="Library of Souls: The Third Novel of Miss Peregrine's Peculiar Children (Currently Reading)"
-          />
-          <ReadingList.Book
-            author="George R. R. Martin"
+        <List title="Currently reading">
+          <List.Item subtitle="by Ransom Riggs" link="https://amzn.to/2MYAfj6">
+            Library of Souls: The Third Novel of Miss Peregrine's Peculiar
+            Children
+          </List.Item>
+          <List.Item
+            subtitle="by George R. R. Martin"
             link="https://amzn.to/2Rngm82"
-            title="A Game of Thrones: A Song of Ice and Fire (Currently Reading)"
-          />
-        </ReadingList>
+          >
+            A Game of Thrones: A Song of Ice and Fire
+          </List.Item>
+        </List>
       </Box>
 
       <Box marginTop={32} element="section">
