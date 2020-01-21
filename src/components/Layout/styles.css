@@ -2,10 +2,6 @@
 
 @tailwind base;
 
-p {
-  @apply .leading-loose .my-6;
-}
-
 ol,
 ul {
   @apply .my-8;
