@@ -5,6 +5,7 @@ const Box = ({
   backgroundColor,
   backgroundTint = "default",
   children,
+  display,
   element,
   fontFamily,
   fontSize,
@@ -35,6 +36,7 @@ const Box = ({
       backgroundColor
         ? `background-color: ${props.theme.colors[backgroundColor][backgroundTint]};`
         : undefined}
+    display: ${display ? `${display};` : "block"};
     margin-bottom: ${props => props.theme.spacing[marginBottom]};
     margin-top: ${props => props.theme.spacing[marginTop]};
     ${maxWidth ? `max-width: ${maxWidth}` : undefined};
