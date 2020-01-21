@@ -14,7 +14,7 @@ const Container = styled.section`
 const AboutMe = () => (
   <Layout>
     <SEO title="About me" />
-    <section className="flex-grow">
+    <Container>
       <section className="md:max-w-570px md:text-lg">
         <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
           /raðiːs/
@@ -114,7 +114,7 @@ const AboutMe = () => (
         </p>
       </section>
       <SayHi />
-    </section>
+    </Container>
   </Layout>
 )
 
