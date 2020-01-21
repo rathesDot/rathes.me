@@ -47,6 +47,7 @@ export default {
     normal: "0",
     wide: "0.025em",
     wider: "0.05em",
+    widest: "0.1em",
   },
   spacing: {
     px: "1px",
