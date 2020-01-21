@@ -19,6 +19,13 @@ const Container = styled.section`
   max-width: 640px;
 `
 
+const Separator = styled.hr`
+  border-width: 2px;
+  color: ${props => props.theme.colors.black.lighter};
+  width: 24px;
+  margin: ${props => props.theme.spacing[8]} 0;
+`
+
 const AboutMe = () => (
   <Layout>
     <SEO title="About me" />
