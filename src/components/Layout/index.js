@@ -11,7 +11,7 @@ import theme from "../../../theme"
 import "./styles.css"
 
 const MainContainer = styled(Box)`
-  padding: ${props => props.theme.spacing["4"]};
+  padding: 40px ${props => props.theme.spacing["4"]};
 
   @media (min-width: 768px) {
     padding: 60px 0 32px 60px;
