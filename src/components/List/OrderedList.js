@@ -12,6 +12,9 @@ const OrderedListWrapper = styled(Box)`
 
   p {
     margin: 0;
+    font-size: ${props => props.theme.fontSize["sm"]};
+    line-height: 1.45;
+    color: ${props => props.theme.colors.silver.darker};
   }
 `
 
