@@ -8,6 +8,7 @@ import {
   Heading3,
   Heading4,
 } from "./src/components/Typography"
+import { Separator } from "./src/components/Separator"
 
 import "prism-themes/themes/prism-atom-dark.css"
 
@@ -16,6 +17,7 @@ const components = {
   h2: Heading2,
   h3: Heading3,
   h4: Heading4,
+  hr: Separator,
   p: Paragraph,
 }
 
