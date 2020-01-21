@@ -61,12 +61,12 @@ export default ({ data }) => {
       />
       <Box maxWidth="640px" marginTop={32} className="blog-post">
         <Heading1>{post.frontmatter.title}</Heading1>
-        {post.frontmatter.image && (
-          <Img
-            className="-mx-4 block my-6 md:mx-0"
-            fluid={post.frontmatter.image.childImageSharp.fluid}
-          />
-        )}
+        <Box marginBottom={4} marginTop={4}>
+          {post.frontmatter.image && (
+            <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
+          )}
+        </Box>
+
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <MDXRenderer>{post.body}</MDXRenderer>
         <footer>
