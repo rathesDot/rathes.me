@@ -33,14 +33,14 @@ const OverviewInfo = () => (
     marginTop={4}
     maxWidth="375px"
   >
-    <div>
+    <Box>
       <Separator />
       <Title color="silver">Working at</Title>
       <Info color="white" href="https://www.teamleader.eu/" element={TextBody}>
         Teamleader
       </Info>
-    </div>
-    <div>
+    </Box>
+    <Box>
       <Separator />
       <Title color="silver">Living in</Title>
       <Info
@@ -50,8 +50,8 @@ const OverviewInfo = () => (
       >
         Ghent, BE
       </Info>
-    </div>
-    <div>
+    </Box>
+    <Box>
       <Separator />
       <Title color="silver">Follow me</Title>
       <Info
@@ -61,7 +61,7 @@ const OverviewInfo = () => (
       >
         @rswebdesigner
       </Info>
-    </div>
+    </Box>
   </Box>
 )
 

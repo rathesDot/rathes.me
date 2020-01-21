@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 
 import TextSmall from "../Typography/TextSmall"
+import { Box } from "../Box"
 
 const Separator = styled.span`
   display: inline-block;
@@ -17,13 +18,13 @@ const Separator = styled.span`
 `
 
 const Footer = () => (
-  <div>
+  <Box>
     <TextSmall color="silver">&copy; 2019 — Rathes Sachchithananthan</TextSmall>
     <Separator />
     <TextSmall color="silver" element={Link} to="/legal">
       Legal Information
     </TextSmall>
-  </div>
+  </Box>
 )
 
 export default Footer
