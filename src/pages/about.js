@@ -5,7 +5,12 @@ import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
 import ReadingList from "../components/ReadingList"
 import styled from "styled-components"
-import { Heading1, Paragraph, Heading2 } from "../components/Typography"
+import {
+  Heading1,
+  Paragraph,
+  Heading2,
+  Heading4,
+} from "../components/Typography"
 import { Box } from "../components/Box"
 
 const Container = styled.section`
@@ -69,9 +74,7 @@ const AboutMe = () => (
           Actually, I dream to have my own library one where I can invite
           everybody to pick up a nice book and read.
         </Paragraph>
-        <h3 className="text-xl mt-12 font-bold leading-none text-white break-words xs:text-2xl">
-          Reading List 2020
-        </h3>
+        <Heading4 element="h3">Reading List 2020</Heading4>
         <ReadingList>
           <ReadingList.Book
             author="Cody McFadyen"
