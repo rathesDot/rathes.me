@@ -8,7 +8,9 @@ import Link from "../Link"
 
 const Item = ({ children, subtitle, link }) => {
   const Title = styled(TextBody)`
-    margin: ${props => props.theme.spacing[2]} 0;
+    margin: ${props =>
+        subtitle ? props.theme.spacing[4] : props.theme.spacing[2]}
+      0;
   `
 
   const Subtitle = styled(TextSmall)`
