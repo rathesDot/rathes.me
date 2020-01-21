@@ -89,7 +89,7 @@ const AboutMe = () => (
             title="Shadow Man (Smoky Barrett, Band 1)"
           />
         </ReadingList>
-        <hr className="my-8 block w-10 border-t border-silver-darkest" />
+        <Separator />
         <Heading4 element="h3">Currently reading</Heading4>
         <ReadingList>
           <ReadingList.Book
