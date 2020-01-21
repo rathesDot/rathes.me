@@ -11,7 +11,7 @@ const Heading4 = ({ children, element, color, tint = "default", ...props }) => {
     color: ${props =>
       color
         ? props.theme.colors[color][tint]
-        : props.theme.colors.silver.default};
+        : props.theme.colors.white.default};
   `
 
   return <Element {...props}>{children}</Element>

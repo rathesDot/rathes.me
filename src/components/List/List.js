@@ -34,7 +34,7 @@ const Item = ({ children, subtitle, link }) => {
 
 const List = ({ title, children, ...props }) => (
   <Box {...props}>
-    <Heading4>{title}</Heading4>
+    <Heading4 color="silver">{title}</Heading4>
     <Box element="ul">{children}</Box>
   </Box>
 )
