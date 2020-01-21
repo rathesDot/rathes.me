@@ -77,24 +77,32 @@ const AboutMe = () => (
           Actually, I dream to have my own library one where I can invite
           everybody to pick up a nice book and read.
         </Paragraph>
-        <List title="Reading List 2020">
-          <List.Item subtitle="by Cody McFadyen" link="https://amzn.to/2tw7Zxp">
-            Shadow Man (Smoky Barrett, Band 1)
-          </List.Item>
-        </List>
-        <Separator />
-        <List title="Currently reading">
-          <List.Item subtitle="by Ransom Riggs" link="https://amzn.to/2MYAfj6">
-            Library of Souls: The Third Novel of Miss Peregrine's Peculiar
-            Children
-          </List.Item>
-          <List.Item
-            subtitle="by George R. R. Martin"
-            link="https://amzn.to/2Rngm82"
-          >
-            A Game of Thrones: A Song of Ice and Fire
-          </List.Item>
-        </List>
+        <Box marginTop={12}>
+          <List title="Reading List 2020">
+            <List.Item
+              subtitle="by Cody McFadyen"
+              link="https://amzn.to/2tw7Zxp"
+            >
+              Shadow Man (Smoky Barrett, Band 1)
+            </List.Item>
+          </List>
+          <Separator />
+          <List title="Currently reading">
+            <List.Item
+              subtitle="by Ransom Riggs"
+              link="https://amzn.to/2MYAfj6"
+            >
+              Library of Souls: The Third Novel of Miss Peregrine's Peculiar
+              Children
+            </List.Item>
+            <List.Item
+              subtitle="by George R. R. Martin"
+              link="https://amzn.to/2Rngm82"
+            >
+              A Game of Thrones: A Song of Ice and Fire
+            </List.Item>
+          </List>
+        </Box>
       </Box>
 
       <Box marginTop={32} element="section">
@@ -115,7 +123,7 @@ const AboutMe = () => (
           point for my learning platform.
         </Paragraph>
       </Box>
-      <Box marginTop={32}>
+      <Box element="section" marginTop={32} marginBottom={32}>
         <SayHi />
       </Box>
     </Container>
