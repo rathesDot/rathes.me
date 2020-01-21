@@ -10,8 +10,6 @@ import { Heading1 } from "../../components/Typography"
 
 import Img from "gatsby-image"
 
-import "./styles.css"
-
 export default ({ data }) => {
   const post = data.mdx
   const meta = [
@@ -59,7 +57,7 @@ export default ({ data }) => {
         description={post.excerpt}
         meta={[...meta, ...imageMeta]}
       />
-      <Box maxWidth="640px" marginTop={32} className="blog-post">
+      <Box maxWidth="640px" marginTop={32}>
         <Heading1>{post.frontmatter.title}</Heading1>
         <Box marginBottom={4} marginTop={4}>
           {post.frontmatter.image && (
