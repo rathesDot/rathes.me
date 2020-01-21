@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 const Box = ({
+  alignItems,
   backgroundColor,
   backgroundTint = "default",
   children,
@@ -45,6 +46,7 @@ const Box = ({
     ${minHeight ? `min-height: ${minHeight}` : undefined};
     ${flexDirection ? `flex-direction: ${flexDirection}` : undefined};
     ${justifyContent ? `justify-content: ${justifyContent}` : undefined};
+    ${alignItems ? `align-items: ${alignItems}` : undefined};
   `
 
   return <Element {...props}>{children}</Element>
