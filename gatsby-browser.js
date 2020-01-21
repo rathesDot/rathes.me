@@ -10,6 +10,7 @@ import {
 } from "./src/components/Typography"
 import { Separator } from "./src/components/Separator"
 import { OrderedList } from "./src/components/List"
+import { Quote } from "./src/components/Quote"
 
 import "prism-themes/themes/prism-atom-dark.css"
 
@@ -21,6 +22,7 @@ const components = {
   hr: Separator,
   p: Paragraph,
   ol: OrderedList,
+  blockquote: Quote,
 }
 
 export const wrapRootElement = ({ element }) => (
