@@ -4,13 +4,8 @@ import styled from "styled-components"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
-import ReadingList from "../components/ReadingList"
-import {
-  Heading1,
-  Paragraph,
-  Heading2,
-  Heading4,
-} from "../components/Typography"
+
+import { Heading1, Paragraph, Heading2 } from "../components/Typography"
 import { Box } from "../components/Box"
 import List from "../components/List/List"
 
