@@ -16,7 +16,7 @@ const Item = ({ children, subtitle }) => {
   return (
     <Title element="li" color="white">
       {children}
-      <Subtitle color="silver">{subtitle}</Subtitle>
+      {subtitle && <Subtitle color="silver">{subtitle}</Subtitle>}
     </Title>
   )
 }
