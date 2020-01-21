@@ -12,7 +12,7 @@ const Link = ({
 }) => {
   const Element = styled(element || "a")`
     color: ${props => (color ? props.theme.colors[color][tint] : undefined)};
-    text-decoration: ${underlined ? "underline" : "none"};
+    text-decoration: ${underlined ? "underline" : undefined};
   `
 
   return <Element {...props}>{children}</Element>
