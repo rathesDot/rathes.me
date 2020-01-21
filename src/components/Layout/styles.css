@@ -2,15 +2,6 @@
 
 @tailwind base;
 
-ol,
-ul {
-  @apply .my-8;
-}
-
-li {
-  @apply .leading-loose;
-}
-
 h1 + p {
   @apply mt-3;
 }
