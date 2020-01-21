@@ -20,9 +20,6 @@ const Writings = ({ data }) => {
     <Layout>
       <Box maxWidth="640px" marginTop={32} element="section">
         <SEO title="Writings" />
-        <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
-          My writings
-        </h1>
         <p>
           From time to time, I do write. Sometime on my blog, but also on other
           blogs such as on{" "}
