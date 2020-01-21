@@ -24,11 +24,7 @@ const Writings = ({ data }) => {
         <Paragraph>
           From time to time, I do write. Sometime on my blog, but also on other
           blogs such as on{" "}
-          <Link
-            color="white"
-            className="underline"
-            href="https://medium.com/@rathes"
-          >
+          <Link color="white" href="https://medium.com/@rathes" underlined>
             Medium
           </Link>
           . The topics, I write about are diverse. Obviously, I write about the
@@ -41,8 +37,8 @@ const Writings = ({ data }) => {
           me to translate a specific article, just drop a message{" "}
           <Link
             color="white"
-            className="underline"
             href="https://twitter.com/rswebdesigner"
+            underlined
           >
             @rswebdesigner
           </Link>
