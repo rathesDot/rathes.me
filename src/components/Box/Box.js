@@ -13,6 +13,7 @@ const Box = ({
   marginTop,
   marginBottom,
   maxWidth,
+  minHeight,
   textColor,
   textTint = "default",
   ...props
@@ -37,6 +38,7 @@ const Box = ({
     margin-bottom: ${props => props.theme.spacing[marginBottom]};
     margin-top: ${props => props.theme.spacing[marginTop]};
     ${maxWidth ? `max-width: ${maxWidth}` : undefined};
+    ${minHeight ? `min-height: ${minHeight}` : undefined};
   `
 
   return <Element {...props}>{children}</Element>
