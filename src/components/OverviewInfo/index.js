@@ -3,13 +3,7 @@ import styled from "styled-components"
 
 import { TextBody, TextSmall } from "../Typography"
 import Link from "../Link"
-
-const OverviewInfoContainer = styled.div`
-  display: flex;
-  margin-top: 16px;
-  justify-content: space-between;
-  max-width: 375px;
-`
+import { Box } from "../Box"
 
 const Separator = styled.span`
   width: 24px;
@@ -33,7 +27,12 @@ const Info = styled(Link)`
 `
 
 const OverviewInfo = () => (
-  <OverviewInfoContainer>
+  <Box
+    display="flex"
+    justifyContent="space-between"
+    marginTop={4}
+    maxWidth="375px"
+  >
     <div>
       <Separator />
       <Title color="silver">Working at</Title>
@@ -63,7 +62,7 @@ const OverviewInfo = () => (
         @rswebdesigner
       </Info>
     </div>
-  </OverviewInfoContainer>
+  </Box>
 )
 
 export default OverviewInfo
