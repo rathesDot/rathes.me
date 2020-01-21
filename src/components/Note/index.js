@@ -1,9 +1,23 @@
 import React from "react"
 
-const Note = ({ element, children }) => {
-  const Element = element || "p"
+import { Box } from "../Box"
 
-  return <Element className="bg-black-lighter p-4 -mx-4">{children}</Element>
+const Note = ({ element, children }) => {
+  return (
+    <Box
+      element={element || "p"}
+      backgroundColor="black"
+      backgroundTint="light"
+      marginTop={8}
+      marginBottom={8}
+      padding={4}
+      textColor="silver"
+      textTint="darker"
+      fontSize="sm"
+    >
+      {children}
+    </Box>
+  )
 }
 
 export default Note
