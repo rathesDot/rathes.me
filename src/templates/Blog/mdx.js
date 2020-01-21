@@ -6,6 +6,7 @@ import Layout from "../../components/Layout"
 import SEO from "../../components/SEO"
 import Link from "../../components/Link"
 import { Box } from "../../components/Box"
+import { Heading1 } from "../../components/Typography"
 
 import Img from "gatsby-image"
 
@@ -59,9 +60,7 @@ export default ({ data }) => {
         meta={[...meta, ...imageMeta]}
       />
       <Box maxWidth="640px" marginTop={32} className="blog-post">
-        <h1 className="text-3xl font-bold leading-tight mb-6 text-white break-words xs:text-4xl">
-          {post.frontmatter.title}
-        </h1>
+        <Heading1>{post.frontmatter.title}</Heading1>
         {post.frontmatter.image && (
           <Img
             className="-mx-4 block my-6 md:mx-0"
