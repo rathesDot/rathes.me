@@ -9,6 +9,7 @@ import {
   Heading4,
 } from "./src/components/Typography"
 import { Separator } from "./src/components/Separator"
+import { OrderedList } from "./src/components/OrderedList"
 
 import "prism-themes/themes/prism-atom-dark.css"
 
@@ -19,6 +20,7 @@ const components = {
   h4: Heading4,
   hr: Separator,
   p: Paragraph,
+  ol: OrderedList,
 }
 
 export const wrapRootElement = ({ element }) => (
