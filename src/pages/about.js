@@ -1,10 +1,10 @@
 import React from "react"
+import styled from "styled-components"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
 import ReadingList from "../components/ReadingList"
-import styled from "styled-components"
 import {
   Heading1,
   Paragraph,
