@@ -41,7 +41,7 @@ const Box = ({
       backgroundColor
         ? `background-color: ${props.theme.colors[backgroundColor][backgroundTint]};`
         : undefined}
-    display: ${display ? `${display};` : "block"};
+    display: ${display ? `${display};` : undefined};
     margin-bottom: ${props => props.theme.spacing[marginBottom]};
     margin-top: ${props => props.theme.spacing[marginTop]};
     ${maxWidth ? `max-width: ${maxWidth}` : undefined};
