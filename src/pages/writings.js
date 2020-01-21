@@ -9,6 +9,7 @@ import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
 import externalLinks from "../content/articles/externalLinks"
 import SayHi from "../components/SayHi"
 import BlogList from "../components/BlogList/BlogList"
+import { Box } from "../components/Box"
 
 const Writings = ({ data }) => {
   const blogPosts = getSortedGroups(
@@ -17,7 +18,7 @@ const Writings = ({ data }) => {
 
   return (
     <Layout>
-      <section className="flex-grow">
+      <Box maxWidth="640px" marginTop={32} element="section">
         <SEO title="Writings" />
         <section className="md:max-w-570px md:text-lg">
           <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
@@ -72,7 +73,7 @@ const Writings = ({ data }) => {
           </div>
         </section>
         <SayHi />
-      </section>
+      </Box>
     </Layout>
   )
 }
