@@ -6,21 +6,21 @@ import { Heading4, TextBody, TextSmall } from "../Typography"
 import { Box } from "../Box"
 import Link from "../Link"
 
+const Title = styled(TextBody)`
+  margin: ${props =>
+      props.subtitle ? props.theme.spacing[4] : props.theme.spacing[2]}
+    0;
+`
+
+const Subtitle = styled(TextSmall)`
+  display: block;
+`
+
 const Item = ({ children, subtitle, link }) => {
-  const Title = styled(TextBody)`
-    margin: ${props =>
-        subtitle ? props.theme.spacing[4] : props.theme.spacing[2]}
-      0;
-  `
-
-  const Subtitle = styled(TextSmall)`
-    display: block;
-  `
-
   const isExternalLink = link && link.startsWith("http")
 
   return (
-    <Title element="li" color="white">
+    <Title element="li" color="white" subtitle={subtitle}>
       <Link
         {...(isExternalLink ? { href: link } : { to: link })}
         element={isExternalLink ? "a" : RouterLink}
