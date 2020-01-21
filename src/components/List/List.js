@@ -5,8 +5,8 @@ import { Box } from "../Box"
 
 const Item = () => null
 
-const List = ({ title, children }) => (
-  <Box>
+const List = ({ title, children, ...props }) => (
+  <Box {...props}>
     <Heading4>{title}</Heading4>
     {children}
   </Box>
