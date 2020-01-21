@@ -20,58 +20,56 @@ const Writings = ({ data }) => {
     <Layout>
       <Box maxWidth="640px" marginTop={32} element="section">
         <SEO title="Writings" />
-        <section className="md:max-w-570px md:text-lg">
-          <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
-            My writings
-          </h1>
-          <p>
-            From time to time, I do write. Sometime on my blog, but also on
-            other blogs such as on{" "}
-            <Link
-              color="white"
-              className="underline"
-              href="https://medium.com/@rathes"
-            >
-              Medium
-            </Link>
-            . The topics, I write about are diverse. Obviously, I write about
-            the web, but also about non-web topics like my mother tongue Tamil
-            or even about movies or anime.
-          </p>
-          <p>
-            I do write in English, German and Tamil. So if you do not understand
-            the title, it may be that you do not speak the language. If you want
-            me to translate a specific article, just drop a message{" "}
-            <Link
-              color="white"
-              className="underline"
-              href="https://twitter.com/rswebdesigner"
-            >
-              @rswebdesigner
-            </Link>
-          </p>
-          <div className="mt-12">
-            <BlogList title="Books & Whitepapers" className="mb-10">
-              <BlogList.Article
-                link="https://learn-tamil.com"
-                title="A Guide To Basic Tamil Grammar"
-              />
-            </BlogList>
-            {blogPosts.map(([key, posts]) => {
-              return (
-                <BlogList title={key} key={key} className="mb-10">
-                  {posts.map((post, index) => (
-                    <BlogList.Article
-                      link={post.link}
-                      title={post.title}
-                      key={index}
-                    />
-                  ))}
-                </BlogList>
-              )
-            })}
-          </div>
-        </section>
+        <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
+          My writings
+        </h1>
+        <p>
+          From time to time, I do write. Sometime on my blog, but also on other
+          blogs such as on{" "}
+          <Link
+            color="white"
+            className="underline"
+            href="https://medium.com/@rathes"
+          >
+            Medium
+          </Link>
+          . The topics, I write about are diverse. Obviously, I write about the
+          web, but also about non-web topics like my mother tongue Tamil or even
+          about movies or anime.
+        </p>
+        <p>
+          I do write in English, German and Tamil. So if you do not understand
+          the title, it may be that you do not speak the language. If you want
+          me to translate a specific article, just drop a message{" "}
+          <Link
+            color="white"
+            className="underline"
+            href="https://twitter.com/rswebdesigner"
+          >
+            @rswebdesigner
+          </Link>
+        </p>
+        <div className="mt-12">
+          <BlogList title="Books & Whitepapers" className="mb-10">
+            <BlogList.Article
+              link="https://learn-tamil.com"
+              title="A Guide To Basic Tamil Grammar"
+            />
+          </BlogList>
+          {blogPosts.map(([key, posts]) => {
+            return (
+              <BlogList title={key} key={key} className="mb-10">
+                {posts.map((post, index) => (
+                  <BlogList.Article
+                    link={post.link}
+                    title={post.title}
+                    key={index}
+                  />
+                ))}
+              </BlogList>
+            )
+          })}
+        </div>
         <SayHi />
       </Box>
     </Layout>
