@@ -5,7 +5,7 @@ import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
 import ReadingList from "../components/ReadingList"
 import styled from "styled-components"
-import { Heading1, Paragraph } from "../components/Typography"
+import { Heading1, Paragraph, Heading2 } from "../components/Typography"
 
 const Container = styled.section`
   flex-grow: 1;
@@ -53,9 +53,7 @@ const AboutMe = () => (
         learn my mother language Tamil.
       </Paragraph>
 
-      <h2 className="text-3xl mt-12 font-bold leading-none text-white break-words xs:text-4xl">
-        What I read
-      </h2>
+      <Heading2>What I read</Heading2>
       <Paragraph>
         Books play an important part in my life. Just sitting my couch or bed
         and reading a novel can be really inspiring.
@@ -92,9 +90,7 @@ const AboutMe = () => (
           title="A Game of Thrones: A Song of Ice and Fire (Currently Reading)"
         />
       </ReadingList>
-      <h2 className="text-3xl mt-12 font-bold leading-none text-white break-words xs:text-4xl">
-        What I write
-      </h2>
+      <Heading2>What I write</Heading2>
       <Paragraph>
         From time to time I also write. It can be work related topics that I
         share in the writing section of this website but I also write to empty
