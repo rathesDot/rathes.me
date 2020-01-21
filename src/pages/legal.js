@@ -4,29 +4,25 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import Link from "../components/Link"
 import { Box } from "../components/Box"
-import { Heading1 } from "../components/Typography"
+import { Heading1, Heading2 } from "../components/Typography"
 
 const Legal = () => (
   <Layout>
     <SEO title="Legal Information" />
     <Box maxWidth="640px" marginTop={32}>
       <Heading1>Legal Information</Heading1>
-      <h2 className="mt-8 font-bold leading-none text-white">
-        Pursuant to § 5 TMG:
-      </h2>
+      <Heading2>Pursuant to § 5 TMG:</Heading2>
       <p>
         Rathes Sachchithananthan <br />
         Braderijstraat 5 <br />
         9000 Gent, Belgium
       </p>
-      <h2 className="mt-8 font-bold leading-none text-white">Contact</h2>
+      <Heading2>Contact</Heading2>
       <p>
         Phone: +32 483 463 944 <br />
         E-Mail: hello@rathes.me
       </p>
-      <h2 className="mt-8 text-xl font-bold leading-normal text-white">
-        Disclaimer
-      </h2>
+      <Heading2>Disclaimer</Heading2>
       <h3 className="mt-4 text-sm font-bold leading-none text-white">
         Google Analytics
       </h3>
@@ -70,9 +66,7 @@ const Legal = () => (
         </Link>
         .
       </p>
-      <h2 className="mt-8 text-xl font-bold leading-normal text-white">
-        Limitation of liability for internal content
-      </h2>
+      <Heading2>Limitation of liability for internal content</Heading2>
       <p>
         The content of our website has been compiled with meticulous care and to
         the best of our knowledge. However, we cannot assume any liability for
