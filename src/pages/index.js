@@ -13,6 +13,10 @@ const Introduction = styled.h1`
   line-height: 1.333333;
   overflow-wrap: break-word;
   max-width: 640px;
+
+  @media (max-width: 375px) {
+    font-size: ${props => props.theme.fontSize["3xl"]};
+  }
 `
 
 const IndexPage = () => (
