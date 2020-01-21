@@ -31,6 +31,14 @@ export default {
       '"Segoe UI Symbol"',
       '"Noto Color Emoji"',
     ].join(","),
+    mono: [
+      "Menlo",
+      "Monaco",
+      "Consolas",
+      '"Liberation Mono"',
+      '"Courier New"',
+      "monospace",
+    ].join(","),
   },
   fontSize: {
     xs: "0.75rem",
