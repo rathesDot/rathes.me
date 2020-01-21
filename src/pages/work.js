@@ -5,6 +5,7 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
 import Link from "../components/Link"
+import { Box } from "../components/Box"
 
 const Work = ({ data }) => {
   const [isModalOpen, setModalState] = useState(false)
@@ -19,7 +20,7 @@ const Work = ({ data }) => {
 
   return (
     <Layout>
-      <div className="relative flex-grow">
+      <Box maxWidth="640px" marginTop={32}>
         {isModalOpen && (
           <div className="bg-white text-black fixed inset-x-4 top-1/2 flex flex-col rounded -translateY-1/2 md:w-2/3 md:left-0 md:right-0 md:mx-auto">
             <button
@@ -139,7 +140,7 @@ const Work = ({ data }) => {
           </div>
         </section>
         <SayHi />
-      </div>
+      </Box>
     </Layout>
   )
 }
