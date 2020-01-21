@@ -69,16 +69,11 @@ export default ({ data }) => {
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <MDXRenderer>{post.body}</MDXRenderer>
-        <footer>
-          <Link
-            element={RouterLink}
-            color="white"
-            className="font-bold mt-16 mb-4 block md:mb-8"
-            to="/writings"
-          >
-            ← <span className="underline">back to articles</span>
+        <Box element="footer" marginTop={32} marginBottom={32}>
+          <Link element={RouterLink} color="white" underlined to="/writings">
+            back to articles
           </Link>
-        </footer>
+        </Box>
       </Box>
     </Layout>
   )
