@@ -9,12 +9,13 @@ import {
   Heading2,
   Heading4,
   Paragraph,
+  TextSmall,
 } from "../components/Typography"
 
 const Legal = () => (
   <Layout>
     <SEO title="Legal Information" />
-    <Box maxWidth="640px" marginTop={32}>
+    <Box maxWidth="640px" marginTop={32} marginBottom={32}>
       <Heading1>Legal Information</Heading1>
       <Heading2>Pursuant to § 5 TMG:</Heading2>
       <Paragraph>
@@ -129,7 +130,7 @@ const Legal = () => (
         take legal steps in the case of the unsolicited sending of advertising
         information; e.g., by means of spam mail.
       </Paragraph>
-      <Paragraph className="text-sm mt-12">
+      <TextSmall element="p">
         Source:{" "}
         <Link
           color="white"
@@ -138,7 +139,7 @@ const Legal = () => (
         >
           English Disclaimer on Mustervorlage.net
         </Link>
-      </Paragraph>
+      </TextSmall>
     </Box>
   </Layout>
 )
