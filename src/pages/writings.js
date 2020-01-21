@@ -10,6 +10,7 @@ import externalLinks from "../content/articles/externalLinks"
 import SayHi from "../components/SayHi"
 import BlogList from "../components/BlogList/BlogList"
 import { Box } from "../components/Box"
+import { Paragraph } from "../components/Typography"
 
 const Writings = ({ data }) => {
   const blogPosts = getSortedGroups(
@@ -20,7 +21,7 @@ const Writings = ({ data }) => {
     <Layout>
       <Box maxWidth="640px" marginTop={32} element="section">
         <SEO title="Writings" />
-        <p>
+        <Paragraph>
           From time to time, I do write. Sometime on my blog, but also on other
           blogs such as on{" "}
           <Link
@@ -33,8 +34,8 @@ const Writings = ({ data }) => {
           . The topics, I write about are diverse. Obviously, I write about the
           web, but also about non-web topics like my mother tongue Tamil or even
           about movies or anime.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           I do write in English, German and Tamil. So if you do not understand
           the title, it may be that you do not speak the language. If you want
           me to translate a specific article, just drop a message{" "}
@@ -45,7 +46,7 @@ const Writings = ({ data }) => {
           >
             @rswebdesigner
           </Link>
-        </p>
+        </Paragraph>
         <div className="mt-12">
           <BlogList title="Books & Whitepapers" className="mb-10">
             <BlogList.Article
