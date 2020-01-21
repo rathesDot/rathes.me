@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Link as RouterLink } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
@@ -8,6 +9,7 @@ import SayHi from "../components/SayHi"
 import { Heading1, Paragraph, Heading2 } from "../components/Typography"
 import { Box } from "../components/Box"
 import List from "../components/List/List"
+import Link from "../components/Link"
 
 const Container = styled.section`
   flex-grow: 1;
@@ -109,8 +111,12 @@ const AboutMe = () => (
         <Heading2>What I write</Heading2>
         <Paragraph>
           From time to time I also write. It can be work related topics that I
-          share in the writing section of this website but I also write to empty
-          my mind and eternalize ideas.
+          share in the{" "}
+          <Link element={RouterLink} to="/writings" underlined color="white">
+            writing section
+          </Link>{" "}
+          of this website but I also write to empty my mind and eternalize
+          ideas.
         </Paragraph>
         <Paragraph>
           I have several ideas for some crime novel and I even developed my
