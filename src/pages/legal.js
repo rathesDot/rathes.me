@@ -4,15 +4,14 @@ import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import Link from "../components/Link"
 import { Box } from "../components/Box"
+import { Heading1 } from "../components/Typography"
 
 const Legal = ({ data }) => (
   <Layout>
     <SEO title="Legal Information" />
     <Box maxWidth="640px" marginTop={32}>
       <section className="md:max-w-570px md:text-lg">
-        <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
-          Legal Information
-        </h1>
+        <Heading1>Legal Information</Heading1>
         <h2 className="mt-8 font-bold leading-none text-white">
           Pursuant to § 5 TMG:
         </h2>
