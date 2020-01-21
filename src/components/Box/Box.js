@@ -19,6 +19,7 @@ const Box = ({
   maxWidth,
   minHeight,
   padding,
+  paddingLeft,
   textColor,
   textTint = "default",
   ...props
@@ -46,6 +47,7 @@ const Box = ({
     ${maxWidth ? `max-width: ${maxWidth}` : undefined};
     ${minHeight ? `min-height: ${minHeight}` : undefined};
     padding: ${props => props.theme.spacing[padding]};
+    padding-left: ${props => props.theme.spacing[paddingLeft]};
     ${flexDirection ? `flex-direction: ${flexDirection}` : undefined};
     ${justifyContent ? `justify-content: ${justifyContent}` : undefined};
     ${alignItems ? `align-items: ${alignItems}` : undefined};
