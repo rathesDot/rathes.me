@@ -6,11 +6,12 @@ import SEO from "../components/SEO"
 import Link from "../components/Link"
 
 import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
+
 import externalLinks from "../content/articles/externalLinks"
 import SayHi from "../components/SayHi"
-import BlogList from "../components/BlogList/BlogList"
 import { Box } from "../components/Box"
 import { Paragraph } from "../components/Typography"
+import List from "../components/List/List"
 
 const Writings = ({ data }) => {
   const blogPosts = getSortedGroups(
@@ -45,23 +46,25 @@ const Writings = ({ data }) => {
         </Paragraph>
 
         <Box marginTop={32} element="section">
-          <BlogList title="Books & Whitepapers" className="mb-10">
-            <BlogList.Article
-              link="https://learn-tamil.com"
-              title="A Guide To Basic Tamil Grammar"
-            />
-          </BlogList>
+          <Box marginTop={12}>
+            <List title="Books & Whitepapers">
+              <List.Item link="https://learn-tamil.com">
+                A Guide To Basic Tamil Grammar
+              </List.Item>
+            </List>
+          </Box>
+
           {blogPosts.map(([key, posts]) => {
             return (
-              <BlogList title={key} key={key} className="mb-10">
-                {posts.map((post, index) => (
-                  <BlogList.Article
-                    link={post.link}
-                    title={post.title}
-                    key={index}
-                  />
-                ))}
-              </BlogList>
+              <Box marginTop={12}>
+                <List title={key} key={key}>
+                  {posts.map((post, index) => (
+                    <List.Item link={post.link} key={index}>
+                      {post.title}
+                    </List.Item>
+                  ))}
+                </List>
+              </Box>
             )
           })}
         </Box>
