@@ -6,7 +6,7 @@ import Link from "../components/Link"
 import { Box } from "../components/Box"
 import { Heading1 } from "../components/Typography"
 
-const Legal = ({ data }) => (
+const Legal = () => (
   <Layout>
     <SEO title="Legal Information" />
     <Box maxWidth="640px" marginTop={32}>
