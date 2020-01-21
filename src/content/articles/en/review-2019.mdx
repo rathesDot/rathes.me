@@ -13,7 +13,6 @@ tags:
 locale: en_US
 ---
 
-import BlogList from "../../../components/BlogList"
 import { List } from "../../../components/List"
 import { Box } from "../../../components/Box"
 
@@ -156,21 +155,18 @@ In 2018, I did not manage to read as much as I wanted. This year went better, I 
 
 While I did not manage to publish my book, I actually finished writing the first draft of it. Additionally, I also published a few blog posts that I'm really proud of.
 
-<BlogList>
-  <BlogList.Article
-    title="Developing a meeting culture that your employees will love"
-    link="/blog/en/developing-meeting-culture-employees-love/"
-  />
-  <BlogList.Article title="Managing Time" link="/blog/en/managing-time/" />
-  <BlogList.Article
-    title="Stop thinking in features. Start thinking in customer experience."
-    link="/blog/en/customer-experience-instead-of-features/"
-  />
-  <BlogList.Article
-    title="Names and User Experience"
-    link="/blog/en/user-experience-names/"
-  />
-</BlogList>
+<List>
+  <List.Item link="/blog/en/developing-meeting-culture-employees-love">
+    Developing a meeting culture that your employees will love
+  </List.Item>
+  <List.Item link="/blog/en/managing-time">Managing Time</List.Item>
+  <List.Item link="/blog/en/customer-experience-instead-of-features">
+    Stop thinking in features. Start thinking in customer experience.
+  </List.Item>
+  <List.Item link="/blog/en/user-experience-names">
+    Names and User Experience
+  </List.Item>
+</List>
 
 ---
 
