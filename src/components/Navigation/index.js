@@ -30,8 +30,12 @@ const MenuItem = styled(Link)`
   font-family: ${props => props.theme.fontFamily.default};
   font-weight: 600;
 
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
     font-size: ${props => props.theme.fontSize.base};
+  }
+
+  @media (max-width: 320px) {
+    font-size: ${props => props.theme.fontSize.sm};
   }
 `
 
