@@ -7,10 +7,12 @@ const Link = ({
   color,
   tint = "default",
   isCurrent,
+  underlined,
   ...props
 }) => {
   const Element = styled(element || "a")`
     color: ${props => (color ? props.theme.colors[color][tint] : undefined)};
+    text-decoration: ${underlined ? "underlined" : "none"};
   `
 
   return <Element {...props}>{children}</Element>
