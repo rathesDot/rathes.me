@@ -5,6 +5,7 @@ import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
 import ReadingList from "../components/ReadingList"
 import styled from "styled-components"
+import { Heading1 } from "../components/Typography"
 
 const Container = styled.section`
   flex-grow: 1;
@@ -16,9 +17,7 @@ const AboutMe = () => (
   <Layout>
     <SEO title="About me" />
     <Container>
-      <h1 className="text-3xl font-bold leading-none text-white break-words xs:text-4xl">
-        /raðiːs/
-      </h1>
+      <Heading1>/raðiːs/</Heading1>
       <p>
         I’m Rathes Sachchithananthan, a web developer with not only interests in
         engineering but also product development & design, user & customer
