@@ -1,5 +1,4 @@
 import React from "react"
-import styled from "styled-components"
 import { Link as RouterLink } from "gatsby"
 
 import Layout from "../components/Layout"
@@ -10,13 +9,7 @@ import { Heading1, Paragraph, Heading2 } from "../components/Typography"
 import { Box } from "../components/Box"
 import List from "../components/List/List"
 import Link from "../components/Link"
-
-const Separator = styled.hr`
-  border-width: 2px;
-  color: ${props => props.theme.colors.black.lighter};
-  width: 24px;
-  margin: ${props => props.theme.spacing[8]} 0;
-`
+import { Separator } from "../components/Separator"
 
 const AboutMe = () => (
   <Layout>
