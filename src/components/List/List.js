@@ -1,10 +1,12 @@
 import React from "react"
 import styled from "styled-components"
+import { Link as RouterLink } from "gatsby"
 
 import { Heading4, TextBody, TextSmall } from "../Typography"
 import { Box } from "../Box"
+import Link from "../Link"
 
-const Item = ({ children, subtitle }) => {
+const Item = ({ children, subtitle, link }) => {
   const Title = styled(TextBody)`
     margin: ${props => props.theme.spacing[2]} 0;
   `
@@ -13,10 +15,17 @@ const Item = ({ children, subtitle }) => {
     display: block;
   `
 
+  const isExternalLink = link && link.startsWith("http")
+
   return (
     <Title element="li" color="white">
-      {children}
-      {subtitle && <Subtitle color="silver">{subtitle}</Subtitle>}
+      <Link
+        {...(isExternalLink ? { href: link } : { to: link })}
+        element={isExternalLink ? "a" : RouterLink}
+      >
+        {children}
+        {subtitle && <Subtitle color="silver">{subtitle}</Subtitle>}
+      </Link>
     </Title>
   )
 }
