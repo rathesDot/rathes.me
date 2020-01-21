@@ -62,7 +62,7 @@ const Legal = () => (
         your current web browser:{" "}
         <Link
           color="white"
-          className="underline"
+          underlined
           href="http://tools.google.com/dlpage/gaoptout?hl=en"
         >
           http://tools.google.com/dlpage/gaoptout?hl=en
@@ -133,7 +133,7 @@ const Legal = () => (
         Source:{" "}
         <Link
           color="white"
-          className="underline"
+          underlined
           href="http://www.mustervorlage.net/disclaimer-muster#Englisch"
         >
           English Disclaimer on Mustervorlage.net
