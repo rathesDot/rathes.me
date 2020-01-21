@@ -66,8 +66,6 @@ export default ({ data }) => {
             <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
           )}
         </Box>
-
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <MDXRenderer>{post.body}</MDXRenderer>
         <Box element="footer" marginTop={32} marginBottom={32}>
           <Link element={RouterLink} color="white" underlined to="/writings">
