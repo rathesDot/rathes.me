@@ -6,6 +6,7 @@ const Box = ({
   element,
   fontFamily,
   fontSize,
+  fontWeight,
   marginTop,
   marginBottom,
   maxWidth,
@@ -20,6 +21,7 @@ const Box = ({
         : undefined};
     ${props =>
       fontSize ? `font-size: ${props.theme.fontSize[fontSize]};` : undefined}
+    ${fontWeight ? `font-weight: ${fontWeight};` : undefined}
     ${props =>
       textColor
         ? `color: ${props.theme.colors[textColor][textTint]};`
