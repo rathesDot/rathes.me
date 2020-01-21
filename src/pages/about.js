@@ -9,6 +9,7 @@ import styled from "styled-components"
 const Container = styled.section`
   flex-grow: 1;
   margin-top: 100px;
+  max-width: 640px;
 `
 
 const AboutMe = () => (
