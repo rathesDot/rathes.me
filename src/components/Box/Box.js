@@ -10,6 +10,8 @@ const Box = ({
   fontFamily,
   fontSize,
   fontWeight,
+  flexDirection,
+  justifyContent,
   lineHeight,
   marginTop,
   marginBottom,
@@ -41,6 +43,8 @@ const Box = ({
     margin-top: ${props => props.theme.spacing[marginTop]};
     ${maxWidth ? `max-width: ${maxWidth}` : undefined};
     ${minHeight ? `min-height: ${minHeight}` : undefined};
+    ${flexDirection ? `flex-direction: ${flexDirection}` : undefined};
+    ${justifyContent ? `justify-content: ${justifyContent}` : undefined};
   `
 
   return <Element {...props}>{children}</Element>
