@@ -2,6 +2,8 @@ import React from "react"
 import styled from "styled-components"
 
 const Box = ({
+  backgroundColor,
+  backgroundTint = "default",
   children,
   element,
   fontFamily,
@@ -27,6 +29,10 @@ const Box = ({
     ${props =>
       textColor
         ? `color: ${props.theme.colors[textColor][textTint]};`
+        : undefined}
+    ${props =>
+      backgroundColor
+        ? `background-color: ${props.theme.colors[backgroundColor][backgroundTint]};`
         : undefined}
     margin-bottom: ${props => props.theme.spacing[marginBottom]};
     margin-top: ${props => props.theme.spacing[marginTop]};
