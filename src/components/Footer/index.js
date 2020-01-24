@@ -19,7 +19,7 @@ const Separator = styled.span`
 
 const Footer = () => (
   <Box>
-    <TextSmall color="silver">&copy; 2019 — Rathes Sachchithananthan</TextSmall>
+    <TextSmall color="silver">&copy; 2020 — Rathes Sachchithananthan</TextSmall>
     <Separator />
     <TextSmall color="silver" element={Link} to="/legal">
       Legal Information
