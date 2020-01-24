@@ -3,7 +3,7 @@ import { extractBlogPosts, groupPostsByYear, getSortedGroups } from "./index"
 describe("utils", () => {
   it("extracts the internal blog posts from graphql data", () => {
     const data = {
-      allMarkdownRemark: {
+      allMdx: {
         edges: [
           {
             node: {
