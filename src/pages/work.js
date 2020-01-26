@@ -8,6 +8,7 @@ import Link from "../components/Link"
 import { Box } from "../components/Box"
 import { Paragraph, Heading2 } from "../components/Typography"
 import List from "../components/List/List"
+import { Separator } from "../components/Separator"
 
 const Work = ({ data }) => {
   return (
@@ -72,6 +73,21 @@ const Work = ({ data }) => {
               subtitle="January 2019 at PHP Gent"
             >
               Introduction to Readme Driven Development
+            </List.Item>
+          </List>
+          <Separator />
+          <List title="Abstracts">
+            <List.Item
+              link="/talks/meetings"
+              subtitle="Developing a meeting culture that employees will love"
+            >
+              You probably don’t need that meeting
+            </List.Item>
+            <List.Item
+              link="/talks/managing-time"
+              subtitle="A talk about what people call time management"
+            >
+              You can't manage time
             </List.Item>
           </List>
         </Box>
