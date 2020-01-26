@@ -3,13 +3,23 @@ import React from "react"
 import Layout from "../../components/Layout"
 import SEO from "../../components/SEO"
 import { Box } from "../../components/Box"
-import { Heading1, Paragraph, TextSmall } from "../../components/Typography"
+import {
+  Heading1,
+  Paragraph,
+  TextSmall,
+  TextBody,
+} from "../../components/Typography"
 
 const Meetings = () => (
   <Layout>
-    <SEO title="You probably don't need that meeting | Talk"></SEO>
+    <SEO title="You probably don't need that meeting - Developing a meeting culture that employees will love"></SEO>
     <Box maxWidth="640px">
-      <Heading1>You probably don't need that meeting</Heading1>
+      <Heading1>
+        You probably don't need that meeting
+        <Box element={TextBody} lineHeight={1.8} color="silver" display="block">
+          Developing a meeting culture that employees will love
+        </Box>
+      </Heading1>
       <Paragraph>
         Be honest with yourself. How many of your meetings do you think were
         useful? And how many of them were productive? In this talk, we will talk
