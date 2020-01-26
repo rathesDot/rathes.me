@@ -58,8 +58,10 @@ const Work = ({ data }) => {
             related things as I did a few times in the past already.
           </Paragraph>
           <Paragraph>
-            If you want me to give a talk at your meetup, conference or even
-            private events, feel free to message me.
+            If you want me to give a talk at your meetup, conference, or even
+            private events, feel free to message me. You can find the abstracts
+            of my current talks below. Each of them is possible as a 20-, 30-,
+            and 45-minutes talk.
           </Paragraph>
           <List title="Tech Talks">
             <List.Item
