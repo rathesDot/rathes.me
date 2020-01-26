@@ -74,9 +74,6 @@ const AboutMe = () => (
             >
               Shadow Man (Smoky Barrett, Band 1)
             </List.Item>
-          </List>
-          <Separator />
-          <List title="Currently reading">
             <List.Item
               subtitle="by Ransom Riggs"
               link="https://amzn.to/2MYAfj6"
@@ -84,6 +81,9 @@ const AboutMe = () => (
               Library of Souls: The Third Novel of Miss Peregrine's Peculiar
               Children
             </List.Item>
+          </List>
+          <Separator />
+          <List title="Currently reading">
             <List.Item
               subtitle="by George R. R. Martin"
               link="https://amzn.to/2Rngm82"
