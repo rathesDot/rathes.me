@@ -3,12 +3,7 @@ import React from "react"
 import Layout from "../../components/Layout"
 import SEO from "../../components/SEO"
 import { Box } from "../../components/Box"
-import {
-  Heading1,
-  Paragraph,
-  TextSmall,
-  TextBody,
-} from "../../components/Typography"
+import { Heading1, Paragraph, TextBody } from "../../components/Typography"
 
 const Meetings = () => (
   <Layout>
