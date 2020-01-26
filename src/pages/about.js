@@ -85,6 +85,12 @@ const AboutMe = () => (
           <Separator />
           <List title="Currently reading">
             <List.Item
+              subtitle="by Sir Arthur Conan Doyle"
+              link="https://amzn.to/37vaKhk"
+            >
+              Sherlock Holmes: A Study in Scarlet
+            </List.Item>
+            <List.Item
               subtitle="by George R. R. Martin"
               link="https://amzn.to/2Rngm82"
             >
