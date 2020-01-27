@@ -5,7 +5,3 @@
 .gatsby-highlight {
   @apply .my-6;
 }
-
-.-translateY-1\/2 {
-  transform: translateY(-50%);
-}
