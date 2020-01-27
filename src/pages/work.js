@@ -20,12 +20,7 @@ const Work = ({ data }) => {
           on other side projects that are not only development related. If you
           want to see my development related things, I recommend that you visit
           my{" "}
-          <Link
-            color="white"
-            className="underline"
-            href="https://github.com/rathesDot"
-            underlined
-          >
+          <Link color="white" href="https://github.com/rathesDot" underlined>
             Github profile
           </Link>
           .
