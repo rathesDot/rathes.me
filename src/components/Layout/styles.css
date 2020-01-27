@@ -2,22 +2,6 @@
 
 @tailwind base;
 
-h1 + p {
-  @apply mt-3;
-}
-
-h2 + p {
-  @apply mt-2;
-}
-
-h3 + p {
-  @apply mt-1;
-}
-
-h4 + p {
-  @apply mt-1;
-}
-
 .gatsby-highlight {
   @apply .my-6;
 }
