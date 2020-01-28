@@ -6,9 +6,8 @@ import Navigation from "../Navigation"
 import Footer from "../Footer"
 import { Box } from "../Box"
 
+import Global from "./global"
 import theme from "../../../theme"
-
-import "./styles.css"
 
 const MainContainer = styled(Box)`
   padding: 40px ${props => props.theme.spacing["4"]};
@@ -24,6 +23,7 @@ const MainContainer = styled(Box)`
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
+    <Global />
     <MainContainer
       backgroundColor="black"
       display="flex"

@@ -27,6 +27,17 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Lato`,
+            variants: [`400`, `600`],
+          },
+        ],
+      },
+    },
+    {
       resolve: "gatsby-plugin-mdx",
       options: {
         gatsbyRemarkPlugins: markdownPlugins,
@@ -69,7 +80,6 @@ module.exports = {
         icon: `src/content/images/icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-postcss`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`,
