@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components"
 
 export const Global = createGlobalStyle`
-@import url("https://fonts.googleapis.com/css?family=Lato:400,600&display=swap");
-
 html {
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
