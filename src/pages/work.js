@@ -8,6 +8,7 @@ import Link from "../components/Link"
 import { Box } from "../components/Box"
 import { Paragraph, Heading2 } from "../components/Typography"
 import List from "../components/List/List"
+import { Separator } from "../components/Separator"
 
 const Work = ({ data }) => {
   return (
@@ -18,12 +19,7 @@ const Work = ({ data }) => {
           I work as a front-end engineer at Hussle right now but I also work on
           other side projects that are not only development related. If you want
           to see my development related things, I recommend that you visit my{" "}
-          <Link
-            color="white"
-            className="underline"
-            href="https://github.com/rathesDot"
-            underlined
-          >
+          <Link color="white" href="https://github.com/rathesDot" underlined>
             Github profile
           </Link>
           .
@@ -56,8 +52,10 @@ const Work = ({ data }) => {
             related things as I did a few times in the past already.
           </Paragraph>
           <Paragraph>
-            If you want me to give a talk at your meetup, conference or even
-            private events, feel free to message me.
+            If you want me to give a talk at your meetup, conference, or even
+            private events, feel free to message me. You can find the abstracts
+            of my current talks below. Each of them is possible as a 20-, 30-,
+            and 45-minutes talk.
           </Paragraph>
           <List title="Tech Talks">
             <List.Item
@@ -71,6 +69,21 @@ const Work = ({ data }) => {
               subtitle="January 2019 at PHP Gent"
             >
               Introduction to Readme Driven Development
+            </List.Item>
+          </List>
+          <Separator />
+          <List title="Abstracts">
+            <List.Item
+              link="/talks/meetings"
+              subtitle="Developing a meeting culture that employees will love"
+            >
+              You probably don’t need that meeting
+            </List.Item>
+            <List.Item
+              link="/talks/managing-time"
+              subtitle="A talk about what people call time management"
+            >
+              You can't manage time
             </List.Item>
           </List>
         </Box>

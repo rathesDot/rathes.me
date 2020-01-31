@@ -4,6 +4,7 @@ import styled from "styled-components"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import OverviewInfo from "../components/OverviewInfo"
+import { Box } from "../components/Box"
 
 const Introduction = styled.h1`
   color: ${props => props.theme.colors.white.default};
@@ -22,13 +23,18 @@ const Introduction = styled.h1`
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <section className="flex flex-col justify-center flex-grow">
+    <Box
+      element="section"
+      display="flex"
+      flexDirection="column"
+      justifyContent="center"
+    >
       <Introduction>
         Hi there, I’m Rathes Sachchithananthan and I’m a web developer currently
         living in Belgium
       </Introduction>
       <OverviewInfo />
-    </section>
+    </Box>
   </Layout>
 )
 
