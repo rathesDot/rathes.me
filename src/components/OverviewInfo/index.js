@@ -36,8 +36,8 @@ const OverviewInfo = () => (
     <Box>
       <Separator />
       <Title color="silver">Working at</Title>
-      <Info color="white" href="https://www.teamleader.eu/" element={TextBody}>
-        Teamleader
+      <Info color="white" href="https://www.hussle.com" element={TextBody}>
+        Hussle
       </Info>
     </Box>
     <Box>

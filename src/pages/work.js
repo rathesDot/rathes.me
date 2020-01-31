@@ -16,10 +16,9 @@ const Work = ({ data }) => {
       <Box maxWidth="640px" marginTop={32} element="section">
         <SEO title="Work" />
         <Paragraph>
-          I do work as a web developer at Teamleader right now but I also work
-          on other side projects that are not only development related. If you
-          want to see my development related things, I recommend that you visit
-          my{" "}
+          I work as a front-end engineer at Hussle right now but I also work on
+          other side projects that are not only development related. If you want
+          to see my development related things, I recommend that you visit my{" "}
           <Link color="white" href="https://github.com/rathesDot" underlined>
             Github profile
           </Link>

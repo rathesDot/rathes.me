@@ -41,9 +41,8 @@ const AboutMe = () => (
         languages and cultures.
       </Paragraph>
       <Paragraph>
-        Nowadays, I work as a web developer at Teamleader in Ghent, Belgium
-        building things using PHP in the back-end and React in the front-end
-        with the best team in the world, team ONE.
+        Nowadays, I work as a front-end engineer at Hussle in London building
+        web applications using React.
       </Paragraph>
       <Paragraph>
         Apart from that, I spent most of my time working on smaller side
