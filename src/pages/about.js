@@ -80,15 +80,15 @@ const AboutMe = () => (
               Library of Souls: The Third Novel of Miss Peregrine's Peculiar
               Children
             </List.Item>
-          </List>
-          <Separator />
-          <List title="Currently reading">
             <List.Item
               subtitle="by Sir Arthur Conan Doyle"
               link="https://amzn.to/37vaKhk"
             >
               Sherlock Holmes: A Study in Scarlet
             </List.Item>
+          </List>
+          <Separator />
+          <List title="Currently reading">
             <List.Item
               subtitle="by George R. R. Martin"
               link="https://amzn.to/2Rngm82"
