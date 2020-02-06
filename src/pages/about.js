@@ -80,14 +80,18 @@ const AboutMe = () => (
               Library of Souls: The Third Novel of Miss Peregrine's Peculiar
               Children
             </List.Item>
-          </List>
-          <Separator />
-          <List title="Currently reading">
             <List.Item
               subtitle="by Sir Arthur Conan Doyle"
               link="https://amzn.to/37vaKhk"
             >
               Sherlock Holmes: A Study in Scarlet
+            </List.Item>
+          </List>
+          <Separator />
+          <List title="Currently reading">
+            <List.Item subtitle="by Eric Ries" link="https://amzn.to/2uresu3">
+              The Lean Startup: How Today's Entrepreneurs Use Continuous
+              Innovation to Create Radically Successful Businesses
             </List.Item>
             <List.Item
               subtitle="by George R. R. Martin"
