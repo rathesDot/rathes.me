@@ -42,7 +42,9 @@ const AboutMe = () => (
       </Paragraph>
       <Paragraph>
         Nowadays, I work as a front-end engineer at Hussle in London building
-        web applications using React.
+        web applications using React, but I still miss my colleagues at
+        Teamleader every day. Team One was actually the best thing that ever
+        happened to me!
       </Paragraph>
       <Paragraph>
         Apart from that, I spent most of my time working on smaller side
