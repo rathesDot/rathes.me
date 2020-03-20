@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "babel-jest": "^25.0.0",
-    "babel-preset-gatsby": "^0.2.36",
+    "babel-preset-gatsby": "^0.3.0",
     "jest": "^25.0.0",
     "prettier": "^1.19.1"
   },
