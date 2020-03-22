@@ -86,6 +86,12 @@ const AboutMe = () => (
             >
               Sherlock Holmes: A Study in Scarlet
             </List.Item>
+            <List.Item
+              subtitle="by Charlotte Link"
+              link="https://amzn.to/2U8dFbw"
+            >
+              Die letzte Spur (The last track)
+            </List.Item>
           </List>
           <Separator />
           <List title="Currently reading">
