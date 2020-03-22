@@ -7,16 +7,16 @@ import OverviewInfo from "../components/OverviewInfo"
 import { Box } from "../components/Box"
 
 const Introduction = styled.h1`
-  color: ${props => props.theme.colors.white.default};
-  font-family: ${props => props.theme.fontFamily.default};
-  font-size: ${props => props.theme.fontSize["4xl"]};
+  color: ${(props) => props.theme.colors.white.default};
+  font-family: ${(props) => props.theme.fontFamily.default};
+  font-size: ${(props) => props.theme.fontSize["4xl"]};
   font-weight: 600;
   line-height: 1.333333;
   overflow-wrap: break-word;
   max-width: 640px;
 
   @media (max-width: 375px) {
-    font-size: ${props => props.theme.fontSize["3xl"]};
+    font-size: ${(props) => props.theme.fontSize["3xl"]};
   }
 `
 
