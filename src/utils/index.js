@@ -1,4 +1,4 @@
-export const extractBlogPosts = data => {
+export const extractBlogPosts = (data) => {
   return [
     ...data.allMdx.edges.map(({ node: post }) => {
       return {
@@ -10,7 +10,7 @@ export const extractBlogPosts = data => {
   ]
 }
 
-export const groupPostsByYear = posts => {
+export const groupPostsByYear = (posts) => {
   return posts
     .sort((a, b) =>
       Date.parse(a.date) < Date.parse(b.date)
@@ -26,6 +26,6 @@ export const groupPostsByYear = posts => {
     }, {})
 }
 
-export const getSortedGroups = groups => {
+export const getSortedGroups = (groups) => {
   return Object.entries(groups).sort((a, b) => (a < b ? 1 : b < a ? -1 : 0))
 }
