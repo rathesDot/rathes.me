@@ -3,6 +3,7 @@ import {
   BodyText,
   Heading1,
   Heading2,
+  Heading3,
   Layout,
   Title,
 } from "../components/fitness"
@@ -78,6 +79,20 @@ const WorkoutView = ({ onReturn }) => (
     <Layout.Main>
       <Heading1>WOD 01/04</Heading1>
       <BodyText>Monday, May 14 at 10:00am</BodyText>
+      <ExercisesList>
+        <Exercise>
+          <Heading3>Dumbbell Clean</Heading3>
+          <BodyText>15 Reps | 10kg</BodyText>
+        </Exercise>
+        <Exercise>
+          <Heading3>Burpees</Heading3>
+          <BodyText>25 Reps</BodyText>
+        </Exercise>
+        <Exercise>
+          <Heading3>Russian Twists</Heading3>
+          <BodyText>50 Reps</BodyText>
+        </Exercise>
+      </ExercisesList>
     </Layout.Main>
   </Layout>
 )
