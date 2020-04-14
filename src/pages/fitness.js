@@ -96,7 +96,7 @@ const Exercise = styled.li`
     content: "";
     display: inline-block;
     left: 0;
-    height: 11px;
+    height: ${(props) => (props.rest ? "8.5px" : "11px")};
     position: absolute;
     width: 14px;
   }
@@ -124,6 +124,13 @@ const WorkoutView = ({ onReturn }) => (
         <Exercise>
           <Heading3>Russian Twists</Heading3>
           <BodyText>50 Reps</BodyText>
+        </Exercise>
+        <Exercise rest>
+          <BodyText>5 min rest</BodyText>
+        </Exercise>
+        <Exercise>
+          <Heading3>Russian Twists</Heading3>
+          <BodyText>100 Reps</BodyText>
         </Exercise>
       </ExercisesList>
     </Layout.Main>
