@@ -29,34 +29,41 @@ const WeekList = ({ onWorkoutSelect }) => (
     </Layout.Header>
     <Layout.Main>
       <Schedule title="This week">
-        <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
-          <Heading2>WOD — 01/04</Heading2>
-          <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </ScheduleEntry>
-        <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
-          <Heading2>WOD — 02/04</Heading2>
-          <ActiveDate>Today</ActiveDate>
-        </ScheduleEntry>
-        <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
-          <Heading2>Run Day</Heading2>
-          <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </ScheduleEntry>
-        <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
-          <Heading2>Active Regeneration</Heading2>
-          <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </ScheduleEntry>
-        <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
-          <Heading2>5x5 Strength</Heading2>
-          <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </ScheduleEntry>
-        <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
-          <Heading2>Rest Day</Heading2>
-          <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </ScheduleEntry>
-        <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
-          <Heading2>Rest Day</Heading2>
-          <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </ScheduleEntry>
+        <Schedule.Entry
+          title="WOD — 13/04"
+          date="2020-04-13"
+          onClick={() => onWorkoutSelect("WOD")}
+        />
+        <Schedule.Entry
+          title="WOD — 14/04"
+          date="2020-04-14"
+          onClick={() => onWorkoutSelect("WOD")}
+        />
+        <Schedule.Entry
+          title="Run Day"
+          date="2020-04-15"
+          onClick={() => onWorkoutSelect("WOD")}
+        />
+        <Schedule.Entry
+          title="Active Regeneration"
+          date="2020-04-16"
+          onClick={() => onWorkoutSelect("WOD")}
+        />
+        <Schedule.Entry
+          title="5x5 Strength"
+          date="2020-04-17"
+          onClick={() => onWorkoutSelect("WOD")}
+        />
+        <Schedule.Entry
+          title="Rest Day"
+          date="2020-04-18"
+          onClick={() => onWorkoutSelect("WOD")}
+        />
+        <Schedule.Entry
+          title="Rest Day"
+          date="2020-04-19"
+          onClick={() => onWorkoutSelect("WOD")}
+        />
       </Schedule>
     </Layout.Main>
   </Layout>
