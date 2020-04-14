@@ -25,13 +25,12 @@ const Layout = styled(({ children, ...otherProps }) => (
 `
 
 const Header = styled.header`
-  margin-bottom: 58px;
-  padding: 38px 33px;
+  padding: 58px 33px 38px 33px;
 `
 
 const Main = styled.section`
   flex-grow: 1;
-  padding: 0 33px;
+  padding: 20px 33px 38px 33px;
 `
 
 Layout.Header = Header
