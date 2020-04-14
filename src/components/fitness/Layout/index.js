@@ -18,7 +18,9 @@ const Layout = styled(({ children, ...otherProps }) => (
   font-family: Inter, Lato, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 14px;
   height: 100vh;
+  line-height: 17px;
   overflow-y: auto;
   padding: 32px;
 `
