@@ -27,18 +27,11 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        fonts: [
-          {
-            family: `Lato`,
-            variants: [`400`, `600`],
-          },
-          {
-            family: `Inter`,
-            variants: [`400`, `500`, `700`],
-          },
-        ],
+        google: {
+          families: ["Lato:400,600", "Inter:400,500,700"],
+        },
       },
     },
     {
