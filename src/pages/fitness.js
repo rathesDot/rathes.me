@@ -9,7 +9,7 @@ import {
   Title,
 } from "../components/fitness"
 import { ChevronLeft } from "../components/fitness/icons/ChevronLeft"
-import { RestTime, Workout } from "../components/fitness/patterns"
+import { RestTime, Workout, Schedule } from "../components/fitness/patterns"
 
 const ScheduleEntry = styled.button`
   color: ${(props) => (props.active ? "#FAF089" : "#FFF")};
@@ -28,35 +28,36 @@ const WeekList = ({ onWorkoutSelect }) => (
       <a href="https://github.com/rathesDot/rathes.me">Add Workout</a>
     </Layout.Header>
     <Layout.Main>
-      <Title>This week</Title>
-      <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
-        <Heading2>WOD — 01/04</Heading2>
-        <BodyText>Monday, May 14 at 10:00am</BodyText>
-      </ScheduleEntry>
-      <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
-        <Heading2>WOD — 02/04</Heading2>
-        <ActiveDate>Today</ActiveDate>
-      </ScheduleEntry>
-      <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
-        <Heading2>Run Day</Heading2>
-        <BodyText>Monday, May 14 at 10:00am</BodyText>
-      </ScheduleEntry>
-      <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
-        <Heading2>Active Regeneration</Heading2>
-        <BodyText>Monday, May 14 at 10:00am</BodyText>
-      </ScheduleEntry>
-      <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
-        <Heading2>5x5 Strength</Heading2>
-        <BodyText>Monday, May 14 at 10:00am</BodyText>
-      </ScheduleEntry>
-      <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
-        <Heading2>Rest Day</Heading2>
-        <BodyText>Monday, May 14 at 10:00am</BodyText>
-      </ScheduleEntry>
-      <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
-        <Heading2>Rest Day</Heading2>
-        <BodyText>Monday, May 14 at 10:00am</BodyText>
-      </ScheduleEntry>
+      <Schedule title="This week">
+        <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
+          <Heading2>WOD — 01/04</Heading2>
+          <BodyText>Monday, May 14 at 10:00am</BodyText>
+        </ScheduleEntry>
+        <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
+          <Heading2>WOD — 02/04</Heading2>
+          <ActiveDate>Today</ActiveDate>
+        </ScheduleEntry>
+        <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
+          <Heading2>Run Day</Heading2>
+          <BodyText>Monday, May 14 at 10:00am</BodyText>
+        </ScheduleEntry>
+        <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
+          <Heading2>Active Regeneration</Heading2>
+          <BodyText>Monday, May 14 at 10:00am</BodyText>
+        </ScheduleEntry>
+        <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
+          <Heading2>5x5 Strength</Heading2>
+          <BodyText>Monday, May 14 at 10:00am</BodyText>
+        </ScheduleEntry>
+        <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
+          <Heading2>Rest Day</Heading2>
+          <BodyText>Monday, May 14 at 10:00am</BodyText>
+        </ScheduleEntry>
+        <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
+          <Heading2>Rest Day</Heading2>
+          <BodyText>Monday, May 14 at 10:00am</BodyText>
+        </ScheduleEntry>
+      </Schedule>
     </Layout.Main>
   </Layout>
 )
