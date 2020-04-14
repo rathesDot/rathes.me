@@ -61,12 +61,45 @@ const WeekList = ({ onWorkoutSelect }) => (
   </Layout>
 )
 
-const ExercisesList = styled.div`
-  margin-top: 32px;
+const ExercisesList = styled.ul`
+  margin: 32px 0 0 4px;
 `
 
-const Exercise = styled.div`
-  margin-top: 27px;
+const Exercise = styled.li`
+  border-left: 1px solid #4a5568;
+  padding: 27px 23px 0 23px;
+  position: relative;
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-left: none;
+
+    &:after {
+      border-left: 1px solid #4a5568;
+      color: white;
+      content: "";
+      display: inline-block;
+      left: 0;
+      height: 38px;
+      position: absolute;
+      top: 0;
+      width: 14px;
+    }
+  }
+
+  &:before {
+    border-bottom: 1px solid #4a5568;
+    color: white;
+    content: "";
+    display: inline-block;
+    left: 0;
+    height: 11px;
+    position: absolute;
+    width: 14px;
+  }
 `
 
 const WorkoutView = ({ onReturn }) => (
