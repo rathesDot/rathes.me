@@ -1,5 +1,11 @@
 import React, { useState } from "react"
-import { BodyText, Heading2, Layout, Title } from "../components/fitness"
+import {
+  BodyText,
+  Heading1,
+  Heading2,
+  Layout,
+  Title,
+} from "../components/fitness"
 import styled from "styled-components"
 import { ChevronLeft } from "../components/fitness/icons/ChevronLeft"
 
@@ -61,7 +67,10 @@ const WorkoutView = ({ onReturn }) => (
         <ChevronLeft />
       </button>
     </Layout.Header>
-    <Layout.Main></Layout.Main>
+    <Layout.Main>
+      <Heading1>WOD 01/04</Heading1>
+      <BodyText>Monday, May 14 at 10:00am</BodyText>
+    </Layout.Main>
   </Layout>
 )
 
