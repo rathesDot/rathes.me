@@ -60,17 +60,24 @@ const WeekList = ({ onWorkoutSelect }) => (
   </Layout>
 )
 
-const ExercisesList = styled.ul`
+const Mode = styled(BodyText)`
+  font-weight: 700;
+  color: #4a5568;
+`
+
+const ExercisesList = styled.div`
   margin: 32px 0 0 4px;
 `
 
-const Exercise = styled.li`
+const Exercise = styled.div`
   border-left: 1px solid #4a5568;
+  margin-left: 8px;
   padding: 27px 23px 0 23px;
   position: relative;
 
-  &:first-child {
-    padding-top: 0;
+  &:first-of-type {
+    margin-top: 12px;
+    padding-top: 10px;
   }
 
   &:last-child {
@@ -112,6 +119,7 @@ const WorkoutView = ({ onReturn }) => (
       <Heading1>WOD 01/04</Heading1>
       <BodyText>Monday, May 14 at 10:00am</BodyText>
       <ExercisesList>
+        <Mode>FOR TIME</Mode>
         <Exercise>
           <Heading3>Dumbbell Clean</Heading3>
           <BodyText>15 Reps | 10kg</BodyText>
