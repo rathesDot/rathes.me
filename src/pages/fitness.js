@@ -5,11 +5,11 @@ import {
   BodyText,
   Heading1,
   Heading2,
-  Heading3,
   Layout,
   Title,
 } from "../components/fitness"
 import { ChevronLeft } from "../components/fitness/icons/ChevronLeft"
+import { Workout } from "../components/fitness/patterns/Workout"
 
 const ScheduleEntry = styled.button`
   color: ${(props) => (props.active ? "#FAF089" : "#FFF")};
@@ -61,75 +61,9 @@ const WeekList = ({ onWorkoutSelect }) => (
   </Layout>
 )
 
-const Mode = styled(BodyText)`
-  font-weight: 700;
-  color: #4a5568;
-`
-
 const RestTime = styled(BodyText)`
   color: #4a5568;
   margin: 27px 0;
-`
-
-const ExercisesList = styled.div`
-  margin: 32px 0 0 4px;
-`
-
-const Exercise = styled.div`
-  border-left: 1px solid #4a5568;
-  margin-left: 8px;
-  padding: ${(props) =>
-    props.rest ? "33px 23px 6px 23px" : "27px 23px 0 23px"};
-  position: relative;
-
-  &:first-of-type {
-    margin-top: 12px;
-    padding-top: 10px;
-  }
-
-  &:first-of-type:last-child {
-    padding-top: 18px;
-    border-left: none;
-
-    &:after {
-      border-left: 1px solid #4a5568;
-      color: white;
-      content: "";
-      display: inline-block;
-      left: 0;
-      height: 29px;
-      position: absolute;
-      top: 0;
-      width: 14px;
-    }
-  }
-
-  &:not(:first-of-type):last-child {
-    border-left: none;
-
-    &:after {
-      border-left: 1px solid #4a5568;
-      color: white;
-      content: "";
-      display: inline-block;
-      left: 0;
-      height: 38px;
-      position: absolute;
-      top: 0;
-      width: 14px;
-    }
-  }
-
-  &:before {
-    border-bottom: 1px solid #4a5568;
-    color: white;
-    content: "";
-    display: inline-block;
-    left: 0;
-    height: ${(props) => (props.rest ? "8.5px" : "11px")};
-    position: absolute;
-    width: 14px;
-  }
 `
 
 const WorkoutView = ({ onReturn }) => (
@@ -142,35 +76,18 @@ const WorkoutView = ({ onReturn }) => (
     <Layout.Main>
       <Heading1>WOD 01/04</Heading1>
       <BodyText>Monday, May 14 at 10:00am</BodyText>
-      <ExercisesList>
-        <Mode>FOR TIME</Mode>
-        <Exercise>
-          <Heading3>Dumbbell Clean</Heading3>
-          <BodyText>15 Reps | 10kg</BodyText>
-        </Exercise>
-        <Exercise>
-          <Heading3>Burpees</Heading3>
-          <BodyText>25 Reps</BodyText>
-        </Exercise>
-        <Exercise>
-          <Heading3>Russian Twists</Heading3>
-          <BodyText>50 Reps</BodyText>
-        </Exercise>
-        <Exercise rest>
-          <BodyText>5 min rest</BodyText>
-        </Exercise>
-        <Exercise>
-          <Heading3>Russian Twists</Heading3>
-          <BodyText>100 Reps</BodyText>
-        </Exercise>
-      </ExercisesList>
+      <Workout>
+        <Workout.Mode>FOR TIME</Workout.Mode>
+        <Workout.Exercise name="Dumbbell Clean" details="15 Reps | 10kg" />
+        <Workout.Exercise name="Burpees" details="25 Reps" />
+        <Workout.Exercise name="Russian Twists" details="50 Reps" />
+        <Workout.Rest value="5 min rest" />
+        <Workout.Exercise name="Russian Twists" details="100 Reps" />
+      </Workout>
       <RestTime>5 min rest</RestTime>
-      <ExercisesList>
-        <Exercise>
-          <Heading3>Run</Heading3>
-          <BodyText>1mi</BodyText>
-        </Exercise>
-      </ExercisesList>
+      <Workout>
+        <Workout.Exercise name="Run" details="1mi" />
+      </Workout>
     </Layout.Main>
   </Layout>
 )
