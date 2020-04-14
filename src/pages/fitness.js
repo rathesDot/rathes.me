@@ -12,7 +12,7 @@ const ActiveDate = styled(BodyText)`
   color: #faf089;
 `
 
-const WeekList = () => (
+const WeekList = ({ onWorkoutSelect }) => (
   <Layout>
     <Layout.Header>
       <a href="https://github.com/rathesDot/rathes.me">Add Workout</a>
@@ -20,31 +20,31 @@ const WeekList = () => (
     <Layout.Main>
       <div>
         <Title>This week</Title>
-        <Workout>
+        <Workout onClick={() => onWorkoutSelect("WOD")}>
           <Heading2>WOD — 01/04</Heading2>
           <BodyText>Monday, May 14 at 10:00am</BodyText>
         </Workout>
-        <Workout>
+        <Workout onClick={() => onWorkoutSelect("WOD")}>
           <Heading2>WOD — 02/04</Heading2>
           <ActiveDate>Today</ActiveDate>
         </Workout>
-        <Workout>
+        <Workout onClick={() => onWorkoutSelect("WOD")}>
           <Heading2>Run Day</Heading2>
           <BodyText>Monday, May 14 at 10:00am</BodyText>
         </Workout>
-        <Workout>
+        <Workout onClick={() => onWorkoutSelect("WOD")}>
           <Heading2>Active Regeneration</Heading2>
           <BodyText>Monday, May 14 at 10:00am</BodyText>
         </Workout>
-        <Workout>
+        <Workout onClick={() => onWorkoutSelect("WOD")}>
           <Heading2>5x5 Strength</Heading2>
           <BodyText>Monday, May 14 at 10:00am</BodyText>
         </Workout>
-        <Workout>
+        <Workout onClick={() => onWorkoutSelect("WOD")}>
           <Heading2>Rest Day</Heading2>
           <BodyText>Monday, May 14 at 10:00am</BodyText>
         </Workout>
-        <Workout>
+        <Workout onClick={() => onWorkoutSelect("WOD")}>
           <Heading2>Rest Day</Heading2>
           <BodyText>Monday, May 14 at 10:00am</BodyText>
         </Workout>
@@ -64,7 +64,7 @@ const Fitness = () => {
   const [selectedWorkout, selectWorkout] = useState(null)
 
   if (selectedWorkout === null) {
-    return <WeekList />
+    return <WeekList onWorkoutSelect={(workout) => selectWorkout(workout)} />
   }
 
   return <WorkoutView />
