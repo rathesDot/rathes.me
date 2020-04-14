@@ -10,7 +10,7 @@ import {
 import styled from "styled-components"
 import { ChevronLeft } from "../components/fitness/icons/ChevronLeft"
 
-const Workout = styled.button`
+const ScheduleEntry = styled.button`
   color: ${(props) => (props.active ? "#FAF089" : "#FFF")};
   display: block;
   margin-top: 29px;
@@ -28,34 +28,34 @@ const WeekList = ({ onWorkoutSelect }) => (
     </Layout.Header>
     <Layout.Main>
       <Title>This week</Title>
-      <Workout onClick={() => onWorkoutSelect("WOD")}>
+      <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
         <Heading2>WOD — 01/04</Heading2>
         <BodyText>Monday, May 14 at 10:00am</BodyText>
-      </Workout>
-      <Workout onClick={() => onWorkoutSelect("WOD")}>
+      </ScheduleEntry>
+      <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
         <Heading2>WOD — 02/04</Heading2>
         <ActiveDate>Today</ActiveDate>
-      </Workout>
-      <Workout onClick={() => onWorkoutSelect("WOD")}>
+      </ScheduleEntry>
+      <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
         <Heading2>Run Day</Heading2>
         <BodyText>Monday, May 14 at 10:00am</BodyText>
-      </Workout>
-      <Workout onClick={() => onWorkoutSelect("WOD")}>
+      </ScheduleEntry>
+      <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
         <Heading2>Active Regeneration</Heading2>
         <BodyText>Monday, May 14 at 10:00am</BodyText>
-      </Workout>
-      <Workout onClick={() => onWorkoutSelect("WOD")}>
+      </ScheduleEntry>
+      <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
         <Heading2>5x5 Strength</Heading2>
         <BodyText>Monday, May 14 at 10:00am</BodyText>
-      </Workout>
-      <Workout onClick={() => onWorkoutSelect("WOD")}>
+      </ScheduleEntry>
+      <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
         <Heading2>Rest Day</Heading2>
         <BodyText>Monday, May 14 at 10:00am</BodyText>
-      </Workout>
-      <Workout onClick={() => onWorkoutSelect("WOD")}>
+      </ScheduleEntry>
+      <ScheduleEntry onClick={() => onWorkoutSelect("WOD")}>
         <Heading2>Rest Day</Heading2>
         <BodyText>Monday, May 14 at 10:00am</BodyText>
-      </Workout>
+      </ScheduleEntry>
     </Layout.Main>
   </Layout>
 )
