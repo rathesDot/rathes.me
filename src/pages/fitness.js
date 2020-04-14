@@ -26,37 +26,35 @@ const WeekList = ({ onWorkoutSelect }) => (
       <a href="https://github.com/rathesDot/rathes.me">Add Workout</a>
     </Layout.Header>
     <Layout.Main>
-      <div>
-        <Title>This week</Title>
-        <Workout onClick={() => onWorkoutSelect("WOD")}>
-          <Heading2>WOD — 01/04</Heading2>
-          <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </Workout>
-        <Workout onClick={() => onWorkoutSelect("WOD")}>
-          <Heading2>WOD — 02/04</Heading2>
-          <ActiveDate>Today</ActiveDate>
-        </Workout>
-        <Workout onClick={() => onWorkoutSelect("WOD")}>
-          <Heading2>Run Day</Heading2>
-          <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </Workout>
-        <Workout onClick={() => onWorkoutSelect("WOD")}>
-          <Heading2>Active Regeneration</Heading2>
-          <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </Workout>
-        <Workout onClick={() => onWorkoutSelect("WOD")}>
-          <Heading2>5x5 Strength</Heading2>
-          <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </Workout>
-        <Workout onClick={() => onWorkoutSelect("WOD")}>
-          <Heading2>Rest Day</Heading2>
-          <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </Workout>
-        <Workout onClick={() => onWorkoutSelect("WOD")}>
-          <Heading2>Rest Day</Heading2>
-          <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </Workout>
-      </div>
+      <Title>This week</Title>
+      <Workout onClick={() => onWorkoutSelect("WOD")}>
+        <Heading2>WOD — 01/04</Heading2>
+        <BodyText>Monday, May 14 at 10:00am</BodyText>
+      </Workout>
+      <Workout onClick={() => onWorkoutSelect("WOD")}>
+        <Heading2>WOD — 02/04</Heading2>
+        <ActiveDate>Today</ActiveDate>
+      </Workout>
+      <Workout onClick={() => onWorkoutSelect("WOD")}>
+        <Heading2>Run Day</Heading2>
+        <BodyText>Monday, May 14 at 10:00am</BodyText>
+      </Workout>
+      <Workout onClick={() => onWorkoutSelect("WOD")}>
+        <Heading2>Active Regeneration</Heading2>
+        <BodyText>Monday, May 14 at 10:00am</BodyText>
+      </Workout>
+      <Workout onClick={() => onWorkoutSelect("WOD")}>
+        <Heading2>5x5 Strength</Heading2>
+        <BodyText>Monday, May 14 at 10:00am</BodyText>
+      </Workout>
+      <Workout onClick={() => onWorkoutSelect("WOD")}>
+        <Heading2>Rest Day</Heading2>
+        <BodyText>Monday, May 14 at 10:00am</BodyText>
+      </Workout>
+      <Workout onClick={() => onWorkoutSelect("WOD")}>
+        <Heading2>Rest Day</Heading2>
+        <BodyText>Monday, May 14 at 10:00am</BodyText>
+      </Workout>
     </Layout.Main>
   </Layout>
 )
