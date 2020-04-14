@@ -78,18 +78,46 @@ const WorkoutView = ({ onReturn, workout }) => (
           day: "numeric",
         })}
       </BodyText>
-      <Workout>
-        <Workout.Mode>FOR TIME</Workout.Mode>
-        <Workout.Exercise name="Dumbbell Clean" details="15 Reps | 10kg" />
-        <Workout.Exercise name="Burpees" details="25 Reps" />
-        <Workout.Exercise name="Russian Twists" details="50 Reps" />
-        <Workout.Rest value="5 min rest" />
-        <Workout.Exercise name="Russian Twists" details="100 Reps" />
-      </Workout>
-      <RestTime value="5 min rest" />
-      <Workout>
-        <Workout.Exercise name="Run" details="1mi" />
-      </Workout>
+      {workout.workout.map((workoutPart, partIndex) => {
+        if (workoutPart.type === "rest") {
+          return (
+            <RestTime
+              key={`rest-${partIndex}`}
+              value={`${workoutPart.time} rest`}
+            />
+          )
+        }
+
+        return (
+          <Workout key={`workout-${partIndex}`}>
+            {workoutPart.mode && <Workout.Mode value={workoutPart.mode} />}
+            {workoutPart.exercises.map((exercise, exerciseIndex) => {
+              if (exercise.name === "rest") {
+                return (
+                  <Workout.Rest
+                    key={`workout-${partIndex}-rest-${exerciseIndex}`}
+                    value={`${exercise.time} rest`}
+                  />
+                )
+              }
+
+              return (
+                <Workout.Exercise
+                  key={`workout-${partIndex}-exercise-${exerciseIndex}`}
+                  name={exercise.name}
+                  details={[
+                    exercise.sets && `${exercise.sets} sets`,
+                    exercise.reps && `${exercise.reps} reps`,
+                    exercise.distance && `${exercise.distance}`,
+                  ]
+                    .filter((e) => !!e)
+                    .join(" | ")}
+                />
+              )
+            })}
+          </Workout>
+        )
+      })}
     </Layout.Main>
   </Layout>
 )
