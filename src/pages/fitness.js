@@ -1,4 +1,6 @@
 import React, { useState } from "react"
+import styled from "styled-components"
+
 import {
   BodyText,
   Heading1,
@@ -7,7 +9,6 @@ import {
   Layout,
   Title,
 } from "../components/fitness"
-import styled from "styled-components"
 import { ChevronLeft } from "../components/fitness/icons/ChevronLeft"
 
 const ScheduleEntry = styled.button`
