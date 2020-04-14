@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import isThisWeek from "date-fns/isThisWeek"
 
 import data from "../content/fitness/data.json"
 
@@ -6,25 +7,31 @@ import { BodyText, Heading1, Layout } from "../components/fitness"
 import { ChevronLeft } from "../components/fitness/icons/ChevronLeft"
 import { RestTime, Workout, Schedule } from "../components/fitness/patterns"
 
-const WeekList = ({ onWorkoutSelect }) => (
-  <Layout>
-    <Layout.Header>
-      <a href="https://github.com/rathesDot/rathes.me">Add Workout</a>
-    </Layout.Header>
-    <Layout.Main>
-      <Schedule title="This week">
-        {data.map((entry, index) => (
-          <Schedule.Entry
-            title={entry.title}
-            date={entry.date}
-            key={`${entry.date}-${index}`}
-            onClick={() => onWorkoutSelect(entry)}
-          />
-        ))}
-      </Schedule>
-    </Layout.Main>
-  </Layout>
-)
+const WeekList = ({ onWorkoutSelect }) => {
+  return (
+    <Layout>
+      <Layout.Header>
+        <a href="https://github.com/rathesDot/rathes.me">Add Workout</a>
+      </Layout.Header>
+      <Layout.Main>
+        <Schedule title="This week">
+          {data
+            .filter((entry) => {
+              return isThisWeek(new Date(entry.date), { weekStartsOn: 1 })
+            })
+            .map((entry, index) => (
+              <Schedule.Entry
+                title={entry.title}
+                date={entry.date}
+                key={`${entry.date}-${index}`}
+                onClick={() => onWorkoutSelect(entry)}
+              />
+            ))}
+        </Schedule>
+      </Layout.Main>
+    </Layout>
+  )
+}
 
 const WorkoutView = ({ onReturn, workout }) => (
   <Layout>
