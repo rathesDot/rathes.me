@@ -1,9 +1,52 @@
 import React from "react"
-import { Layout } from "../components/fitness"
+import { BodyText, Heading2, Layout, Title } from "../components/fitness"
+import styled from "styled-components"
+
+const Day = styled.div`
+  color: ${(props) => (props.active ? "#FAF089" : "#FFF")};
+  margin-top: 29px;
+`
+
+const ActiveDate = styled(BodyText)`
+  color: #faf089;
+`
 
 const Fitness = () => (
   <Layout>
     <Layout.Header>Add Workout</Layout.Header>
+    <Layout.Main>
+      <div>
+        <Title>This week</Title>
+        <Day>
+          <Heading2>WOD — 01/04</Heading2>
+          <BodyText>Monday, May 14 at 10:00am</BodyText>
+        </Day>
+        <Day>
+          <Heading2>WOD — 02/04</Heading2>
+          <ActiveDate>Today</ActiveDate>
+        </Day>
+        <Day>
+          <Heading2>Run Day</Heading2>
+          <BodyText>Monday, May 14 at 10:00am</BodyText>
+        </Day>
+        <Day>
+          <Heading2>Active Regeneration</Heading2>
+          <BodyText>Monday, May 14 at 10:00am</BodyText>
+        </Day>
+        <Day>
+          <Heading2>5x5 Strength</Heading2>
+          <BodyText>Monday, May 14 at 10:00am</BodyText>
+        </Day>
+        <Day>
+          <Heading2>Rest Day</Heading2>
+          <BodyText>Monday, May 14 at 10:00am</BodyText>
+        </Day>
+        <Day>
+          <Heading2>Rest Day</Heading2>
+          <BodyText>Monday, May 14 at 10:00am</BodyText>
+        </Day>
+      </div>
+    </Layout.Main>
   </Layout>
 )
 
