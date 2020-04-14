@@ -61,7 +61,7 @@ const WeekList = ({ onWorkoutSelect }) => (
   </Layout>
 )
 
-const WorkoutView = ({ onReturn }) => (
+const WorkoutView = ({ onReturn, workout }) => (
   <Layout>
     <Layout.Header>
       <button onClick={onReturn}>
@@ -69,8 +69,15 @@ const WorkoutView = ({ onReturn }) => (
       </button>
     </Layout.Header>
     <Layout.Main>
-      <Heading1>WOD 01/04</Heading1>
-      <BodyText>Monday, May 14 at 10:00am</BodyText>
+      <Heading1>{workout.title}</Heading1>
+      <BodyText>
+        {new Date(workout.date).toLocaleDateString(undefined, {
+          weekday: "long",
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+        })}
+      </BodyText>
       <Workout>
         <Workout.Mode>FOR TIME</Workout.Mode>
         <Workout.Exercise name="Dumbbell Clean" details="15 Reps | 10kg" />
@@ -94,7 +101,12 @@ const Fitness = () => {
     return <WeekList onWorkoutSelect={(workout) => selectWorkout(workout)} />
   }
 
-  return <WorkoutView onReturn={() => selectWorkout(null)} />
+  return (
+    <WorkoutView
+      workout={selectedWorkout}
+      onReturn={() => selectWorkout(null)}
+    />
+  )
 }
 
 export default Fitness
