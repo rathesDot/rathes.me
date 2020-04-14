@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { BodyText, Heading2, Layout, Title } from "../components/fitness"
 import styled from "styled-components"
 
-const Day = styled.button`
+const Workout = styled.button`
   color: ${(props) => (props.active ? "#FAF089" : "#FFF")};
   margin-top: 29px;
   text-align: left;
@@ -20,34 +20,34 @@ const WeekList = () => (
     <Layout.Main>
       <div>
         <Title>This week</Title>
-        <Day>
+        <Workout>
           <Heading2>WOD — 01/04</Heading2>
           <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </Day>
-        <Day>
+        </Workout>
+        <Workout>
           <Heading2>WOD — 02/04</Heading2>
           <ActiveDate>Today</ActiveDate>
-        </Day>
-        <Day>
+        </Workout>
+        <Workout>
           <Heading2>Run Day</Heading2>
           <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </Day>
-        <Day>
+        </Workout>
+        <Workout>
           <Heading2>Active Regeneration</Heading2>
           <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </Day>
-        <Day>
+        </Workout>
+        <Workout>
           <Heading2>5x5 Strength</Heading2>
           <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </Day>
-        <Day>
+        </Workout>
+        <Workout>
           <Heading2>Rest Day</Heading2>
           <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </Day>
-        <Day>
+        </Workout>
+        <Workout>
           <Heading2>Rest Day</Heading2>
           <BodyText>Monday, May 14 at 10:00am</BodyText>
-        </Day>
+        </Workout>
       </div>
     </Layout.Main>
   </Layout>
