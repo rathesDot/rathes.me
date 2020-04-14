@@ -1,13 +1,7 @@
 import React, { useState } from "react"
 import styled from "styled-components"
 
-import {
-  BodyText,
-  Heading1,
-  Heading2,
-  Layout,
-  Title,
-} from "../components/fitness"
+import { BodyText, Heading1, Layout } from "../components/fitness"
 import { ChevronLeft } from "../components/fitness/icons/ChevronLeft"
 import { RestTime, Workout, Schedule } from "../components/fitness/patterns"
 
