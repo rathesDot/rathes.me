@@ -9,6 +9,8 @@ const Layout = styled(({ children, ...otherProps }) => (
     {children}
   </main>
 ))`
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
   background-color: #1a202c;
   color: #fff;
   display: flex;
