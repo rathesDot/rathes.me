@@ -52,6 +52,13 @@ const WeekList = () => (
   </Layout>
 )
 
+const WorkoutView = () => (
+  <Layout>
+    <Layout.Header></Layout.Header>
+    <Layout.Main></Layout.Main>
+  </Layout>
+)
+
 const Fitness = () => {
   const [selectedWorkout, selectWorkout] = useState(null)
 
@@ -59,7 +66,7 @@ const Fitness = () => {
     return <WeekList />
   }
 
-  return null
+  return <WorkoutView />
 }
 
 export default Fitness
