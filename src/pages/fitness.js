@@ -77,7 +77,8 @@ const ExercisesList = styled.div`
 const Exercise = styled.div`
   border-left: 1px solid #4a5568;
   margin-left: 8px;
-  padding: 27px 23px 0 23px;
+  padding: ${(props) =>
+    props.rest ? "33px 23px 6px 23px" : "27px 23px 0 23px"};
   position: relative;
 
   &:first-of-type {
