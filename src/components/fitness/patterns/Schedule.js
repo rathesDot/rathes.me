@@ -27,7 +27,14 @@ Schedule.Entry = ({ title, date, onClick }) => (
     {new Date(date).toDateString() === new Date().toDateString() ? (
       <ActiveDate>Today</ActiveDate>
     ) : (
-      <BodyText>{date}</BodyText>
+      <BodyText>
+        {new Date(date).toLocaleDateString(undefined, {
+          weekday: "long",
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+        })}
+      </BodyText>
     )}
   </Entry>
 )
