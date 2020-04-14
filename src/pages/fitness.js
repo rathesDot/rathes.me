@@ -13,7 +13,9 @@ const ActiveDate = styled(BodyText)`
 
 const Fitness = () => (
   <Layout>
-    <Layout.Header>Add Workout</Layout.Header>
+    <Layout.Header>
+      <a href="https://github.com/rathesDot/rathes.me">Add Workout</a>
+    </Layout.Header>
     <Layout.Main>
       <div>
         <Title>This week</Title>
