@@ -22,15 +22,16 @@ const Layout = styled(({ children, ...otherProps }) => (
   height: 100vh;
   line-height: 17px;
   overflow-y: auto;
-  padding: 32px;
 `
 
 const Header = styled.header`
-  margin-bottom: 48px;
+  margin-bottom: 58px;
+  padding: 38px 33px;
 `
 
 const Main = styled.section`
   flex-grow: 1;
+  padding: 0 33px;
 `
 
 Layout.Header = Header
