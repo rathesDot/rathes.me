@@ -9,7 +9,7 @@ import {
   Title,
 } from "../components/fitness"
 import { ChevronLeft } from "../components/fitness/icons/ChevronLeft"
-import { Workout } from "../components/fitness/patterns/Workout"
+import { RestTime, Workout } from "../components/fitness/patterns"
 
 const ScheduleEntry = styled.button`
   color: ${(props) => (props.active ? "#FAF089" : "#FFF")};
@@ -61,11 +61,6 @@ const WeekList = ({ onWorkoutSelect }) => (
   </Layout>
 )
 
-const RestTime = styled(BodyText)`
-  color: #4a5568;
-  margin: 27px 0;
-`
-
 const WorkoutView = ({ onReturn }) => (
   <Layout>
     <Layout.Header>
@@ -84,7 +79,7 @@ const WorkoutView = ({ onReturn }) => (
         <Workout.Rest value="5 min rest" />
         <Workout.Exercise name="Russian Twists" details="100 Reps" />
       </Workout>
-      <RestTime>5 min rest</RestTime>
+      <RestTime value="5 min rest" />
       <Workout>
         <Workout.Exercise name="Run" details="1mi" />
       </Workout>
