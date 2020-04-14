@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { BodyText, Heading2, Layout, Title } from "../components/fitness"
 import styled from "styled-components"
 
@@ -11,7 +11,7 @@ const ActiveDate = styled(BodyText)`
   color: #faf089;
 `
 
-const Fitness = () => (
+const WeekList = () => (
   <Layout>
     <Layout.Header>
       <a href="https://github.com/rathesDot/rathes.me">Add Workout</a>
@@ -51,5 +51,15 @@ const Fitness = () => (
     </Layout.Main>
   </Layout>
 )
+
+const Fitness = () => {
+  const [selectedWorkout, selectWorkout] = useState(null)
+
+  if (selectedWorkout === null) {
+    return <WeekList />
+  }
+
+  return null
+}
 
 export default Fitness
