@@ -17,10 +17,18 @@ const Entry = styled.button`
   text-align: left;
 `
 
+const ActiveDate = styled(BodyText)`
+  color: #faf089;
+`
+
 Schedule.Entry = ({ title, date, onClick }) => (
   <Entry onClick={onClick}>
     <Heading2>{title}</Heading2>
-    <BodyText>{date}</BodyText>
+    {new Date(date).toDateString() === new Date().toDateString() ? (
+      <ActiveDate>Today</ActiveDate>
+    ) : (
+      <BodyText>{date}</BodyText>
+    )}
   </Entry>
 )
 
