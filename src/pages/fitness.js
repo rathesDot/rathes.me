@@ -21,41 +21,6 @@ const WeekList = ({ onWorkoutSelect }) => (
             onClick={() => onWorkoutSelect(entry)}
           />
         ))}
-        <Schedule.Entry
-          title="WOD — 13/04"
-          date="2020-04-13"
-          onClick={() => onWorkoutSelect("WOD")}
-        />
-        <Schedule.Entry
-          title="WOD — 14/04"
-          date="2020-04-14"
-          onClick={() => onWorkoutSelect("WOD")}
-        />
-        <Schedule.Entry
-          title="Run Day"
-          date="2020-04-15"
-          onClick={() => onWorkoutSelect("WOD")}
-        />
-        <Schedule.Entry
-          title="Active Regeneration"
-          date="2020-04-16"
-          onClick={() => onWorkoutSelect("WOD")}
-        />
-        <Schedule.Entry
-          title="5x5 Strength"
-          date="2020-04-17"
-          onClick={() => onWorkoutSelect("WOD")}
-        />
-        <Schedule.Entry
-          title="Rest Day"
-          date="2020-04-18"
-          onClick={() => onWorkoutSelect("WOD")}
-        />
-        <Schedule.Entry
-          title="Rest Day"
-          date="2020-04-19"
-          onClick={() => onWorkoutSelect("WOD")}
-        />
       </Schedule>
     </Layout.Main>
   </Layout>
