@@ -60,6 +60,14 @@ const WeekList = ({ onWorkoutSelect }) => (
   </Layout>
 )
 
+const ExercisesList = styled.div`
+  margin-top: 32px;
+`
+
+const Exercise = styled.div`
+  margin-top: 27px;
+`
+
 const WorkoutView = ({ onReturn }) => (
   <Layout>
     <Layout.Header>
