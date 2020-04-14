@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 
+import data from "../content/fitness/data.json"
+
 import { BodyText, Heading1, Layout } from "../components/fitness"
 import { ChevronLeft } from "../components/fitness/icons/ChevronLeft"
 import { RestTime, Workout, Schedule } from "../components/fitness/patterns"
@@ -11,6 +13,14 @@ const WeekList = ({ onWorkoutSelect }) => (
     </Layout.Header>
     <Layout.Main>
       <Schedule title="This week">
+        {data.map((entry, index) => (
+          <Schedule.Entry
+            title={entry.title}
+            date={entry.date}
+            key={`${entry.date}-${index}`}
+            onClick={() => onWorkoutSelect(entry)}
+          />
+        ))}
         <Schedule.Entry
           title="WOD — 13/04"
           date="2020-04-13"
