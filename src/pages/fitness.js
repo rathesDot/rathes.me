@@ -65,6 +65,11 @@ const Mode = styled(BodyText)`
   color: #4a5568;
 `
 
+const RestTime = styled(BodyText)`
+  color: #4a5568;
+  margin: 27px 0;
+`
+
 const ExercisesList = styled.div`
   margin: 32px 0 0 4px;
 `
@@ -138,6 +143,13 @@ const WorkoutView = ({ onReturn }) => (
         <Exercise>
           <Heading3>Russian Twists</Heading3>
           <BodyText>100 Reps</BodyText>
+        </Exercise>
+      </ExercisesList>
+      <RestTime>5 min rest</RestTime>
+      <ExercisesList>
+        <Exercise>
+          <Heading3>Run</Heading3>
+          <BodyText>1mi</BodyText>
         </Exercise>
       </ExercisesList>
     </Layout.Main>
