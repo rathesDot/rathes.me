@@ -2,9 +2,10 @@ import React, { useState } from "react"
 import { BodyText, Heading2, Layout, Title } from "../components/fitness"
 import styled from "styled-components"
 
-const Day = styled.div`
+const Day = styled.button`
   color: ${(props) => (props.active ? "#FAF089" : "#FFF")};
   margin-top: 29px;
+  text-align: left;
 `
 
 const ActiveDate = styled(BodyText)`
