@@ -1,20 +1,8 @@
 import React, { useState } from "react"
-import styled from "styled-components"
 
 import { BodyText, Heading1, Layout } from "../components/fitness"
 import { ChevronLeft } from "../components/fitness/icons/ChevronLeft"
 import { RestTime, Workout, Schedule } from "../components/fitness/patterns"
-
-const ScheduleEntry = styled.button`
-  color: ${(props) => (props.active ? "#FAF089" : "#FFF")};
-  display: block;
-  margin-top: 29px;
-  text-align: left;
-`
-
-const ActiveDate = styled(BodyText)`
-  color: #faf089;
-`
 
 const WeekList = ({ onWorkoutSelect }) => (
   <Layout>
