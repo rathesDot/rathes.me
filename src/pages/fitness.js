@@ -85,7 +85,23 @@ const Exercise = styled.div`
     padding-top: 10px;
   }
 
-  &:last-child {
+  &:first-of-type:last-child {
+    border-left: none;
+
+    &:after {
+      border-left: 1px solid #4a5568;
+      color: white;
+      content: "";
+      display: inline-block;
+      left: 0;
+      height: 21px;
+      position: absolute;
+      top: 0;
+      width: 14px;
+    }
+  }
+
+  &:not(:first-of-type):last-child {
     border-left: none;
 
     &:after {
