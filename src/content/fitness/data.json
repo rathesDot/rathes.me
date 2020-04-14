@@ -1,5 +1,25 @@
 [
   {
+    "title": "WOD - 15/04",
+    "date": "2020-04-15",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "RFT 5",
+        "exercises": [
+          { "name": "Burpees", "reps": 20 },
+          { "name": "Dumbbell Curls", "reps": 12, "weight": "10kg" },
+          { "name": "Triceps Kickbacks", "reps": 24, "weight": "5kg" }
+        ]
+      },
+      { "type": "rest", "time": "5 min" },
+      {
+        "type": "exercise",
+        "exercises": [{ "name": "Run", "distance": "1mi" }]
+      }
+    ]
+  },
+  {
     "title": "WOD - 14/04",
     "date": "2020-04-14",
     "workout": [
