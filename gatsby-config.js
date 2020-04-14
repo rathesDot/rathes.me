@@ -34,6 +34,10 @@ module.exports = {
             family: `Lato`,
             variants: [`400`, `600`],
           },
+          {
+            family: `Inter`,
+            variants: [`400`, `500`, `700`],
+          },
         ],
       },
     },

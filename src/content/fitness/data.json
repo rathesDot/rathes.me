@@ -1,0 +1,158 @@
+[
+  {
+    "title": "WOD - 15/04",
+    "date": "2020-04-15",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "RFT 5",
+        "exercises": [
+          { "name": "Burpees", "reps": 20 },
+          { "name": "Dumbbell Curls", "reps": 12, "weight": "10kg" },
+          { "name": "Triceps Kickbacks", "reps": 24, "weight": "5kg" }
+        ]
+      },
+      { "type": "rest", "time": "5 min" },
+      {
+        "type": "exercise",
+        "exercises": [{ "name": "Run", "distance": "1mi" }]
+      }
+    ]
+  },
+  {
+    "title": "WOD - 14/04",
+    "date": "2020-04-14",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "For Time",
+        "exercises": [
+          {
+            "name": "Burpees",
+            "reps": 5
+          },
+          {
+            "name": "Dumbbell Clean",
+            "reps": 10
+          },
+          {
+            "name": "Burpees",
+            "reps": 10
+          },
+          {
+            "name": "Goblet Squats",
+            "reps": 25
+          },
+          {
+            "name": "Burpees",
+            "reps": 20
+          },
+          {
+            "name": "Russian Twists",
+            "reps": 50
+          },
+          {
+            "name": "Burpees",
+            "reps": 30
+          },
+          {
+            "name": "Russian Twists",
+            "reps": 50
+          },
+          {
+            "name": "Burpees",
+            "reps": 20
+          },
+          {
+            "name": "Goblet Squats",
+            "reps": 25
+          },
+          {
+            "name": "Burpees",
+            "reps": 10
+          },
+          {
+            "name": "Dumbbell Clean",
+            "reps": 10
+          },
+          {
+            "name": "Burpees",
+            "reps": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "WOD - 13/04",
+    "date": "2020-04-13",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "For Time",
+        "exercises": [
+          {
+            "name": "Burpees",
+            "reps": 100
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "WOD - 12/04",
+    "date": "2020-04-12",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "RFT 10",
+        "exercises": [
+          {
+            "name": "Burpees",
+            "reps": 10
+          },
+          {
+            "name": "Dumbbell Swings",
+            "reps": 10
+          }
+        ]
+      },
+      { "type": "rest", "time": "5 min" },
+      {
+        "type": "exercise",
+        "exercises": [
+          {
+            "name": "Run",
+            "distance": "1mi"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "WOD - 11/04",
+    "date": "2020-04-11",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "For Time",
+        "exercises": [
+          {
+            "name": "Burpees",
+            "reps": 100
+          }
+        ]
+      },
+      { "type": "rest", "time": "5 min" },
+      {
+        "type": "exercise",
+        "exercises": [
+          {
+            "name": "Run",
+            "distance": "5k"
+          }
+        ]
+      }
+    ]
+  }
+]
