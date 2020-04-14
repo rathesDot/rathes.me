@@ -12,6 +12,7 @@ import { ChevronLeft } from "../components/fitness/icons/ChevronLeft"
 
 const Workout = styled.button`
   color: ${(props) => (props.active ? "#FAF089" : "#FFF")};
+  display: block;
   margin-top: 29px;
   text-align: left;
 `
