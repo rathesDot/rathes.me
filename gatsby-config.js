@@ -36,7 +36,7 @@ module.exports = {
           },
           {
             family: `Inter`,
-            variants: [`400`, `700`],
+            variants: [`400`, `500`, `700`],
           },
         ],
       },
