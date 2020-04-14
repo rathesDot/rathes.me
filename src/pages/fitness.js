@@ -19,6 +19,7 @@ const WeekList = ({ onWorkoutSelect }) => {
             .filter((entry) => {
               return isThisWeek(new Date(entry.date), { weekStartsOn: 1 })
             })
+            .sort((a, b) => new Date(a.date) - new Date(b.date))
             .map((entry, index) => (
               <Schedule.Entry
                 title={entry.title}
