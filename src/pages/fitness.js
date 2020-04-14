@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { BodyText, Heading2, Layout, Title } from "../components/fitness"
 import styled from "styled-components"
+import { ChevronLeft } from "../components/fitness/icons/ChevronLeft"
 
 const Workout = styled.button`
   color: ${(props) => (props.active ? "#FAF089" : "#FFF")};
@@ -53,9 +54,13 @@ const WeekList = ({ onWorkoutSelect }) => (
   </Layout>
 )
 
-const WorkoutView = () => (
+const WorkoutView = ({ onReturn }) => (
   <Layout>
-    <Layout.Header></Layout.Header>
+    <Layout.Header>
+      <button onClick={onReturn}>
+        <ChevronLeft />
+      </button>
+    </Layout.Header>
     <Layout.Main></Layout.Main>
   </Layout>
 )
@@ -67,7 +72,7 @@ const Fitness = () => {
     return <WeekList onWorkoutSelect={(workout) => selectWorkout(workout)} />
   }
 
-  return <WorkoutView />
+  return <WorkoutView onReturn={() => selectWorkout(null)} />
 }
 
 export default Fitness
