@@ -86,6 +86,7 @@ const Exercise = styled.div`
   }
 
   &:first-of-type:last-child {
+    padding-top: 18px;
     border-left: none;
 
     &:after {
@@ -94,7 +95,7 @@ const Exercise = styled.div`
       content: "";
       display: inline-block;
       left: 0;
-      height: 21px;
+      height: 27px;
       position: absolute;
       top: 0;
       width: 14px;
