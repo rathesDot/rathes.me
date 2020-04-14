@@ -1,0 +1,46 @@
+[
+  {
+    "title": "WOD - 01/04",
+    "date": "2020-04-01",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "For Time",
+        "exercises": [
+          {
+            "name": "Dumbbell Clean",
+            "reps": 15,
+            "sets": 3,
+            "weight": "10kg"
+          },
+          {
+            "name": "Burpees",
+            "reps": 25
+          },
+          {
+            "name": "Russian Twists",
+            "reps": 50
+          },
+          {
+            "name": "rest",
+            "time": "5 min"
+          },
+          {
+            "name": "Russian Twists",
+            "reps": 100
+          }
+        ]
+      },
+      { "type": "rest", "time": "5 min" },
+      {
+        "type": "exercise",
+        "exercises": [
+          {
+            "name": "Run",
+            "distance": "1mi"
+          }
+        ]
+      }
+    ]
+  }
+]
