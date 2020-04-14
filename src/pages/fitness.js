@@ -96,7 +96,7 @@ const Exercise = styled.div`
       content: "";
       display: inline-block;
       left: 0;
-      height: 27px;
+      height: 29px;
       position: absolute;
       top: 0;
       width: 14px;
