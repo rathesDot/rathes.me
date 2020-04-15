@@ -1,5 +1,20 @@
 [
   {
+    "title": "WOD - 16/04",
+    "date": "2020-04-16",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "RFT 4",
+        "exercises": [
+          { "name": "Burpees", "reps": 25 },
+          { "name": "Prone Lat Pulldowns", "reps": 25 },
+          { "name": "Air Squats", "reps": 25 }
+        ]
+      }
+    ]
+  },
+  {
     "title": "WOD - 15/04",
     "date": "2020-04-15",
     "workout": [
