@@ -82,6 +82,7 @@ const WorkoutView = ({ onReturn, workout }) => (
                     exercise.sets && `${exercise.sets} sets`,
                     exercise.reps && `${exercise.reps} reps`,
                     exercise.distance && `${exercise.distance}`,
+                    exercise.time && `${exercise.time}`,
                     exercise.weight && `${exercise.weight}`,
                   ]
                     .filter((e) => !!e)
