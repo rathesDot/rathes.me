@@ -1,5 +1,24 @@
 [
   {
+    "title": "WOD - 17/04",
+    "date": "2020-04-17",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "For Time",
+        "exercises": [
+          { "name": "Burpees", "reps": 25 },
+          { "name": "Pistol Box Squats", "reps": 20 },
+          { "name": "Burpees", "reps": 25 },
+          { "name": "Bridge Hold", "time": "30s" },
+          { "name": "Burpees", "reps": 25 },
+          { "name": "Pistol Box Squats", "reps": 20 },
+          { "name": "Burpees", "reps": 25 }
+        ]
+      }
+    ]
+  },
+  {
     "title": "WOD - 16/04",
     "date": "2020-04-16",
     "workout": [
