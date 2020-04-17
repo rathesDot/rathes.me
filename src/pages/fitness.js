@@ -16,6 +16,8 @@ const ArchiveButton = styled.button`
 `
 
 const WeekList = ({ onWorkoutSelect }) => {
+  const [mode, setMode] = useState("week")
+
   return (
     <Layout>
       <Layout.Header>
