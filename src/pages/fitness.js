@@ -1,34 +1,64 @@
 import React, { useState } from "react"
 import isThisWeek from "date-fns/isThisWeek"
+import styled from "styled-components"
 
 import data from "../content/fitness/data.json"
 
 import { BodyText, Heading1, Layout } from "../components/fitness"
-import { ChevronLeft } from "../components/fitness/icons/ChevronLeft"
+import { ChevronLeft, BackArrowClock } from "../components/fitness/icons"
 import { RestTime, Workout, Schedule } from "../components/fitness/patterns"
 
-const WeekList = ({ onWorkoutSelect }) => {
+const ArchiveButton = styled.button`
+  color: #718096;
+  display: flex;
+  align-items: center;
+  margin-top: 58px;
+`
+
+const WeekList = ({ onWorkoutSelect, initialMode }) => {
+  const [mode, setMode] = useState(initialMode)
+
   return (
     <Layout>
       <Layout.Header>
-        <a href="https://github.com/rathesDot/rathes.me">Add Workout</a>
+        {mode === "week" && (
+          <a href="https://github.com/rathesDot/rathes.me">Add Workout</a>
+        )}
+        {mode === "archive" && (
+          <button onClick={() => setMode("week")}>
+            <ChevronLeft />
+          </button>
+        )}
       </Layout.Header>
       <Layout.Main>
-        <Schedule title="This week">
+        <Schedule title={mode === "week" ? "This week" : "Archive"}>
           {data
             .filter((entry) => {
-              return isThisWeek(new Date(entry.date), { weekStartsOn: 1 })
+              return (
+                mode === "archive" ||
+                isThisWeek(new Date(entry.date), { weekStartsOn: 1 })
+              )
             })
-            .sort((a, b) => new Date(a.date) - new Date(b.date))
+            .sort((a, b) =>
+              mode === "week"
+                ? new Date(a.date) - new Date(b.date)
+                : new Date(b.date) - new Date(a.date)
+            )
             .map((entry, index) => (
               <Schedule.Entry
                 title={entry.title}
                 date={entry.date}
                 key={`${entry.date}-${index}`}
-                onClick={() => onWorkoutSelect(entry)}
+                onClick={() => onWorkoutSelect(entry, mode)}
               />
             ))}
         </Schedule>
+        {mode !== "archive" && (
+          <ArchiveButton onClick={() => setMode("archive")}>
+            <BackArrowClock width="14px" />
+            <span>See past workouts</span>
+          </ArchiveButton>
+        )}
       </Layout.Main>
     </Layout>
   )
@@ -99,9 +129,18 @@ const WorkoutView = ({ onReturn, workout }) => (
 
 const Fitness = () => {
   const [selectedWorkout, selectWorkout] = useState(null)
+  const [initialMode, setMode] = useState("week")
 
   if (selectedWorkout === null) {
-    return <WeekList onWorkoutSelect={(workout) => selectWorkout(workout)} />
+    return (
+      <WeekList
+        initialMode={initialMode}
+        onWorkoutSelect={(workout, mode) => {
+          setMode(mode)
+          selectWorkout(workout)
+        }}
+      />
+    )
   }
 
   return (
