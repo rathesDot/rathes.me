@@ -190,6 +190,21 @@
     ]
   },
   {
+    "title": "WOD - 02/04",
+    "date": "2020-04-02",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "RFT 5",
+        "exercises": [
+          { "name": "Burpees", "reps": 20 },
+          { "name": "Goblet Squats", "reps": 12, "weight": "10kg" },
+          { "name": "Crunches", "reps": 20 }
+        ]
+      }
+    ]
+  },
+  {
     "title": "WOD - 01/04",
     "date": "2020-04-01",
     "workout": [
