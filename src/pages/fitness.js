@@ -31,7 +31,7 @@ const WeekList = ({ onWorkoutSelect }) => {
         )}
       </Layout.Header>
       <Layout.Main>
-        <Schedule title="This week">
+        <Schedule title={mode === "week" ? "This week" : "Archive"}>
           {data
             .filter((entry) => {
               return isThisWeek(new Date(entry.date), { weekStartsOn: 1 })
