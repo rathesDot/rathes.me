@@ -188,5 +188,24 @@
         ]
       }
     ]
+  },
+  {
+    "title": "WOD - 01/04",
+    "date": "2020-04-01",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "For Time",
+        "exercises": [
+          { "name": "Burpees", "reps": 100 },
+          { "name": "Dumbbell Snatches", "reps": 30, "weight": "10kg" }
+        ]
+      },
+      { "type": "rest", "time": "5 min" },
+      {
+        "type": "exercise",
+        "exercises": [{ "name": "Run", "distance": "1mi" }]
+      }
+    ]
   }
 ]
