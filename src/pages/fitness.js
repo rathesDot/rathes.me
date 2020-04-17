@@ -15,8 +15,8 @@ const ArchiveButton = styled.button`
   margin-top: 58px;
 `
 
-const WeekList = ({ onWorkoutSelect }) => {
-  const [mode, setMode] = useState("week")
+const WeekList = ({ onWorkoutSelect, initialMode }) => {
+  const [mode, setMode] = useState(initialMode)
 
   return (
     <Layout>
@@ -49,7 +49,7 @@ const WeekList = ({ onWorkoutSelect }) => {
                 title={entry.title}
                 date={entry.date}
                 key={`${entry.date}-${index}`}
-                onClick={() => onWorkoutSelect(entry)}
+                onClick={() => onWorkoutSelect(entry, mode)}
               />
             ))}
         </Schedule>
@@ -129,9 +129,18 @@ const WorkoutView = ({ onReturn, workout }) => (
 
 const Fitness = () => {
   const [selectedWorkout, selectWorkout] = useState(null)
+  const [initialMode, setMode] = useState("week")
 
   if (selectedWorkout === null) {
-    return <WeekList onWorkoutSelect={(workout) => selectWorkout(workout)} />
+    return (
+      <WeekList
+        initialMode={initialMode}
+        onWorkoutSelect={(workout, mode) => {
+          setMode(mode)
+          selectWorkout(workout)
+        }}
+      />
+    )
   }
 
   return (
