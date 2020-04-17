@@ -190,6 +190,29 @@
     ]
   },
   {
+    "title": "WOD - 03/04",
+    "date": "2020-04-03",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "EMOM 15",
+        "exercises": [
+          { "name": "Burpees", "reps": 5 },
+          { "name": "Plank Hold", "time": "15s" }
+        ]
+      },
+      { "type": "rest", "time": "5 min" },
+      {
+        "type": "exercise",
+        "mode": "For Time",
+        "exercises": [
+          { "name": "Burpees", "reps": 25 },
+          { "name": "Run", "distance": "1mi" }
+        ]
+      }
+    ]
+  },
+  {
     "title": "WOD - 02/04",
     "date": "2020-04-02",
     "workout": [
