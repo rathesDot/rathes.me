@@ -1,11 +1,19 @@
 import React, { useState } from "react"
 import isThisWeek from "date-fns/isThisWeek"
+import styled from "styled-components"
 
 import data from "../content/fitness/data.json"
 
 import { BodyText, Heading1, Layout } from "../components/fitness"
-import { ChevronLeft } from "../components/fitness/icons/ChevronLeft"
+import { ChevronLeft, BackArrowClock } from "../components/fitness/icons"
 import { RestTime, Workout, Schedule } from "../components/fitness/patterns"
+
+const ArchiveButton = styled.button`
+  color: #718096;
+  display: flex;
+  align-items: center;
+  margin-top: 58px;
+`
 
 const WeekList = ({ onWorkoutSelect }) => {
   return (
@@ -29,6 +37,10 @@ const WeekList = ({ onWorkoutSelect }) => {
               />
             ))}
         </Schedule>
+        <ArchiveButton>
+          <BackArrowClock width="14px" />
+          <span>See past workouts</span>
+        </ArchiveButton>
       </Layout.Main>
     </Layout>
   )
