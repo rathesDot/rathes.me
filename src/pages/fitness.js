@@ -21,7 +21,14 @@ const WeekList = ({ onWorkoutSelect }) => {
   return (
     <Layout>
       <Layout.Header>
-        <a href="https://github.com/rathesDot/rathes.me">Add Workout</a>
+        {mode === "week" && (
+          <a href="https://github.com/rathesDot/rathes.me">Add Workout</a>
+        )}
+        {mode === "archive" && (
+          <button onClick={() => setMode("week")}>
+            <ChevronLeft />
+          </button>
+        )}
       </Layout.Header>
       <Layout.Main>
         <Schedule title="This week">
