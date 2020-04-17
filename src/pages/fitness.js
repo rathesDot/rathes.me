@@ -39,7 +39,7 @@ const WeekList = ({ onWorkoutSelect }) => {
               />
             ))}
         </Schedule>
-        <ArchiveButton>
+        <ArchiveButton onClick={() => setMode("archive")}>
           <BackArrowClock width="14px" />
           <span>See past workouts</span>
         </ArchiveButton>
