@@ -1,5 +1,20 @@
 [
   {
+    "title": "WOD - 18/04",
+    "date": "2020-04-18",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "RFQ 4",
+        "exercises": [
+          { "name": "Burpees", "reps": 25 },
+          { "name": "Assisted L-Sit Holds", "time": "20s" },
+          { "name": "Triceps Kickbacks", "reps": 20 }
+        ]
+      }
+    ]
+  },
+  {
     "title": "WOD - 17/04",
     "date": "2020-04-17",
     "workout": [
