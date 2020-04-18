@@ -5,7 +5,7 @@
     "workout": [
       {
         "type": "exercise",
-        "mode": "RFT 4",
+        "mode": "RFQ 4",
         "exercises": [
           { "name": "Burpees", "reps": 25 },
           { "name": "Assisted L-Sit Holds", "time": "20s" },
