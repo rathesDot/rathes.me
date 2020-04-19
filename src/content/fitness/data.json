@@ -1,5 +1,16 @@
 [
   {
+    "title": "WOD - 19/04",
+    "date": "2020-04-19",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "AMRAP 15",
+        "exercises": [{ "name": "Burpees", "reps": 10 }]
+      }
+    ]
+  },
+  {
     "title": "WOD - 18/04",
     "date": "2020-04-18",
     "workout": [
