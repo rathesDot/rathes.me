@@ -1,5 +1,20 @@
 [
   {
+    "title": "WOD - 20/04",
+    "date": "2020-04-20",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "RFT 5",
+        "exercises": [
+          { "name": "burpees", "reps": 20 },
+          { "name": "Russian Twists", "reps": 50 },
+          { "name": "Plank Hold", "time": "30s" }
+        ]
+      }
+    ]
+  },
+  {
     "title": "WOD - 19/04",
     "date": "2020-04-19",
     "workout": [
