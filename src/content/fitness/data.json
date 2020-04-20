@@ -7,7 +7,7 @@
         "type": "exercise",
         "mode": "RFT 5",
         "exercises": [
-          { "name": "burpees", "reps": 20 },
+          { "name": "Burpees", "reps": 20 },
           { "name": "Russian Twists", "reps": 50 },
           { "name": "Plank Hold", "time": "30s" }
         ]
