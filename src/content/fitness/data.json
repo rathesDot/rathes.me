@@ -1,5 +1,30 @@
 [
   {
+    "title": "WOD - 22/04",
+    "date": "2020-04-22",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "EMOM 15",
+        "exercises": [
+          { "name": "Burpees", "reps": 6 },
+          { "name": "Push Ups", "reps": 6 },
+          { "name": "Superman", "reps": 6 }
+        ]
+      },
+      { "type": "rest", "time": "1 min" },
+      {
+        "type": "exercise",
+        "mode": "For Time",
+        "exercises": [
+          { "name": "Burpees", "reps": 10 },
+          { "name": "Push Ups", "reps": 10 },
+          { "name": "Superman", "reps": 10 }
+        ]
+      }
+    ]
+  },
+  {
     "title": "WOD - 21/04",
     "date": "2020-04-21",
     "workout": [
