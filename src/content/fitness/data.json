@@ -1,5 +1,21 @@
 [
   {
+    "title": "WOD - 23/04",
+    "date": "2020-04-23",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "For Time",
+        "exercises": [{ "name": "Burpees", "reps": 100 }]
+      },
+      { "type": "rest", "time": "5 min" },
+      {
+        "type": "exercise",
+        "exercises": [{ "name": "Run", "distance": "3k" }]
+      }
+    ]
+  },
+  {
     "title": "WOD - 22/04",
     "date": "2020-04-22",
     "workout": [
