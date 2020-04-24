@@ -44,7 +44,8 @@ const The100 = () => (
       <Box flex="180px 0 0" marginRight={4}>
         {data
           .find((e) => e.status === "Dreaming of")
-          .items.map((item, index) => (
+          .items.slice(0, 25)
+          .map((item, index) => (
             <Card key={`dreaming-of-${index}`} marginBottom={2}>
               {item}
             </Card>
@@ -53,7 +54,8 @@ const The100 = () => (
       <Box flex="180px 0 0" marginRight={4}>
         {data
           .find((e) => e.status === "Working On")
-          .items.map((item, index) => (
+          .items.slice(0, 25)
+          .map((item, index) => (
             <Card key={`dreaming-of-${index}`} marginBottom={2}>
               {item}
             </Card>
@@ -62,7 +64,8 @@ const The100 = () => (
       <Box flex="180px 0 0">
         {data
           .find((e) => e.status === "Achieved")
-          .items.map((item, index) => (
+          .items.slice(0, 25)
+          .map((item, index) => (
             <Card key={`dreaming-of-${index}`} marginBottom={2}>
               {item}
             </Card>
