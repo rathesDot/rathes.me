@@ -40,13 +40,7 @@ const The100 = () => (
         identity.
       </Paragraph>
     </Box>
-    <Box
-      element="section"
-      marginTop={32}
-      marginBottom={32}
-      display="flex"
-      overflowX="auto"
-    >
+    <Box element="section" marginTop={16} display="flex" overflowX="auto">
       <Box flex="180px 0 0" marginRight={4}>
         {data
           .find((e) => e.status === "Dreaming of")
