@@ -1,5 +1,20 @@
 [
   {
+    "title": "WOD - 24/04",
+    "date": "2020-04-24",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "EMOM 20",
+        "exercises": [
+          { "name": "Burpees", "reps": 5 },
+          { "name": "Push Ups", "reps": 5 },
+          { "name": "Air squats", "reps": 5 }
+        ]
+      }
+    ]
+  },
+  {
     "title": "WOD - 23/04",
     "date": "2020-04-23",
     "workout": [
