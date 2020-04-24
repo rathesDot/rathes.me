@@ -31,6 +31,7 @@ const Element = styled.div`
   margin-left: ${(props) => props.theme.spacing[props.marginLeft]};
   margin-right: ${(props) => props.theme.spacing[props.marginRight]};
   margin-top: ${(props) => props.theme.spacing[props.marginTop]};
+  overflow-x: ${(props) => props.overflowX};
   ${(props) => (props.maxWidth ? `max-width: ${props.maxWidth}` : undefined)};
   ${(props) =>
     props.minHeight ? `min-height: ${props.minHeight}` : undefined};
@@ -68,6 +69,7 @@ const Box = ({
   minHeight,
   padding,
   paddingLeft,
+  overflowX,
   textColor,
   textTint = "default",
   ...props
@@ -93,6 +95,7 @@ const Box = ({
       marginBottom={marginBottom}
       maxWidth={maxWidth}
       minHeight={minHeight}
+      overflowX={overflowX}
       padding={padding}
       paddingLeft={paddingLeft}
       textColor={textColor}
