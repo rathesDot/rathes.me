@@ -5,7 +5,7 @@ import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
 
 import { Box } from "../components/Box"
-import { Paragraph } from "../components/Typography"
+import { Paragraph, Heading4 } from "../components/Typography"
 import Card from "../components/Card/Card"
 
 import data from "../content/100.json"
@@ -42,6 +42,7 @@ const The100 = () => (
     </Box>
     <Box element="section" marginTop={16} display="flex" overflowX="auto">
       <Box flex="180px 0 0" marginRight={4}>
+        <Heading4>Dreaming of</Heading4>
         {data
           .find((e) => e.status === "Dreaming of")
           .items.slice(0, 25)
@@ -52,6 +53,7 @@ const The100 = () => (
           ))}
       </Box>
       <Box flex="180px 0 0" marginRight={4}>
+        <Heading4>Working on</Heading4>
         {data
           .find((e) => e.status === "Working On")
           .items.slice(0, 25)
@@ -62,6 +64,7 @@ const The100 = () => (
           ))}
       </Box>
       <Box flex="180px 0 0">
+        <Heading4>Achieved</Heading4>
         {data
           .find((e) => e.status === "Achieved")
           .items.slice(0, 25)
