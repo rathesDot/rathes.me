@@ -11,7 +11,8 @@ const Element = styled.div`
       ? `font-size: ${props.theme.fontSize[props.fontSize]};`
       : undefined}
   ${(props) =>
-    props.fontWeight ? `font-weight: ${props.fontWeight};` : undefined}
+    props.fontWeight ? `font-weight: ${props.fontWeight};` : undefined};
+  ${(props) => (props.flex ? `flex: ${props.flex};` : undefined)};
   ${(props) =>
     props.lineHeight ? `line-Height: ${props.lineHeight};` : undefined}
   ${(props) =>
@@ -54,6 +55,7 @@ const Box = ({
   fontSize,
   fontWeight,
   flexDirection,
+  flex,
   justifyContent,
   lineHeight,
   marginTop,
@@ -78,6 +80,7 @@ const Box = ({
       fontSize={fontSize}
       fontWeight={fontWeight}
       flexDirection={flexDirection}
+      flex={flex}
       justifyContent={justifyContent}
       lineHeight={lineHeight}
       marginTop={marginTop}
