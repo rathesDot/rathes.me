@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react"
+import React, { useState } from "react"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
@@ -15,17 +15,9 @@ const The100 = () => {
   const [workingOnPartition, setWorkingOnPartition] = useState(15)
   const [achievedPartition, setAchievedPartition] = useState(15)
 
-  const dreamingOfCards = useMemo(() => {
-    return data.find((e) => e.status === "Dreaming of").items
-  }, [data])
-
-  const workingOnCards = useMemo(() => {
-    return data.find((e) => e.status === "Working On").items
-  }, [data])
-
-  const achievedCards = useMemo(() => {
-    return data.find((e) => e.status === "Achieved").items
-  }, [data])
+  const dreamingOfCards = data.find((e) => e.status === "Dreaming of").items
+  const workingOnCards = data.find((e) => e.status === "Working On").items
+  const achievedCards = data.find((e) => e.status === "Achieved").items
 
   return (
     <Layout>
