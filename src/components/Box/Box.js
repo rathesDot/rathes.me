@@ -28,6 +28,8 @@ const Element = styled.div`
   display: ${(props) =>
     props.displayElement ? `${props.displayElement};` : undefined};
   margin-bottom: ${(props) => props.theme.spacing[props.marginBottom]};
+  margin-left: ${(props) => props.theme.spacing[props.marginLeft]};
+  margin-right: ${(props) => props.theme.spacing[props.marginRight]};
   margin-top: ${(props) => props.theme.spacing[props.marginTop]};
   ${(props) => (props.maxWidth ? `max-width: ${props.maxWidth}` : undefined)};
   ${(props) =>
@@ -59,6 +61,8 @@ const Box = ({
   justifyContent,
   lineHeight,
   marginTop,
+  marginLeft,
+  marginRight,
   marginBottom,
   maxWidth,
   minHeight,
@@ -84,6 +88,8 @@ const Box = ({
       justifyContent={justifyContent}
       lineHeight={lineHeight}
       marginTop={marginTop}
+      marginLeft={marginLeft}
+      marginRight={marginRight}
       marginBottom={marginBottom}
       maxWidth={maxWidth}
       minHeight={minHeight}
