@@ -2,43 +2,48 @@ import React from "react"
 import styled from "styled-components"
 
 const Element = styled.div`
-  ${props =>
+  ${(props) =>
     props.fontFamily
       ? `font-family: ${props.theme.fontFamily[props.fontFamily]};`
       : undefined};
-  ${props =>
+  ${(props) =>
     props.fontSize
       ? `font-size: ${props.theme.fontSize[props.fontSize]};`
       : undefined}
-  ${props =>
-    props.fontWeight ? `font-weight: ${props.fontWeight};` : undefined}
-  ${props =>
+  ${(props) =>
+    props.fontWeight ? `font-weight: ${props.fontWeight};` : undefined};
+  ${(props) => (props.flex ? `flex: ${props.flex};` : undefined)};
+  ${(props) =>
     props.lineHeight ? `line-Height: ${props.lineHeight};` : undefined}
-  ${props =>
+  ${(props) =>
     props.textColor
       ? `color: ${props.theme.colors[props.textColor][props.textTint]};`
       : undefined}
-  ${props =>
+  ${(props) =>
     props.backgroundColor
       ? `background-color: ${
           props.theme.colors[props.backgroundColor][props.backgroundTint]
         };`
       : undefined}
-  display: ${props =>
+  display: ${(props) =>
     props.displayElement ? `${props.displayElement};` : undefined};
-  margin-bottom: ${props => props.theme.spacing[props.marginBottom]};
-  margin-top: ${props => props.theme.spacing[props.marginTop]};
-  ${props => (props.maxWidth ? `max-width: ${props.maxWidth}` : undefined)};
-  ${props => (props.minHeight ? `min-height: ${props.minHeight}` : undefined)};
-  padding: ${props => props.theme.spacing[props.padding]};
-  padding-left: ${props => props.theme.spacing[props.paddingLeft]};
-  ${props =>
+  margin-bottom: ${(props) => props.theme.spacing[props.marginBottom]};
+  margin-left: ${(props) => props.theme.spacing[props.marginLeft]};
+  margin-right: ${(props) => props.theme.spacing[props.marginRight]};
+  margin-top: ${(props) => props.theme.spacing[props.marginTop]};
+  overflow-x: ${(props) => props.overflowX};
+  ${(props) => (props.maxWidth ? `max-width: ${props.maxWidth}` : undefined)};
+  ${(props) =>
+    props.minHeight ? `min-height: ${props.minHeight}` : undefined};
+  padding: ${(props) => props.theme.spacing[props.padding]};
+  padding-left: ${(props) => props.theme.spacing[props.paddingLeft]};
+  ${(props) =>
     props.flexDirection ? `flex-direction: ${props.flexDirection}` : undefined};
-  ${props =>
+  ${(props) =>
     props.justifyContent
       ? `justify-content: ${props.justifyContent}`
       : undefined};
-  ${props =>
+  ${(props) =>
     props.alignItems ? `align-items: ${props.alignItems}` : undefined};
 `
 
@@ -53,14 +58,18 @@ const Box = ({
   fontSize,
   fontWeight,
   flexDirection,
+  flex,
   justifyContent,
   lineHeight,
   marginTop,
+  marginLeft,
+  marginRight,
   marginBottom,
   maxWidth,
   minHeight,
   padding,
   paddingLeft,
+  overflowX,
   textColor,
   textTint = "default",
   ...props
@@ -77,12 +86,16 @@ const Box = ({
       fontSize={fontSize}
       fontWeight={fontWeight}
       flexDirection={flexDirection}
+      flex={flex}
       justifyContent={justifyContent}
       lineHeight={lineHeight}
       marginTop={marginTop}
+      marginLeft={marginLeft}
+      marginRight={marginRight}
       marginBottom={marginBottom}
       maxWidth={maxWidth}
       minHeight={minHeight}
+      overflowX={overflowX}
       padding={padding}
       paddingLeft={paddingLeft}
       textColor={textColor}
