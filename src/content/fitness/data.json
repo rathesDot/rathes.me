@@ -1,5 +1,32 @@
 [
   {
+    "title": "WOD - 26/04",
+    "date": "2020-04-26",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "For Time",
+        "exercises": [
+          { "name": "Burpees", "reps": 20 },
+          { "name": "Boat Hold", "time": "60s" },
+          { "name": "Burpees", "reps": 15 },
+          { "name": "Plie squat calf raises", "reps": 15 },
+          { "name": "Burpees", "reps": 10 },
+          { "name": "High plank to low plank", "reps": 10 },
+          { "name": "Burpees", "reps": 5 },
+          { "name": "Russian Twists", "reps": 50 },
+          { "name": "Burpees", "reps": 5 },
+          { "name": "High plank to low plank", "reps": 10 },
+          { "name": "Burpees", "reps": 10 },
+          { "name": "Plie squat calf raises", "reps": 15 },
+          { "name": "Burpees", "reps": 15 },
+          { "name": "Boat Hold", "time": "60s" },
+          { "name": "Burpees", "reps": 20 }
+        ]
+      }
+    ]
+  },
+  {
     "title": "WOD - 25/04",
     "date": "2020-04-25",
     "workout": [
