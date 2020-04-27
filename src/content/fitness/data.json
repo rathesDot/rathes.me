@@ -1,5 +1,20 @@
 [
   {
+    "title": "WOD - 27/04",
+    "date": "2020-04-27",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "For Time",
+        "exercises": [
+          { "name": "Burpees", "reps": 100 },
+          { "name": "Prone Lat Pulldowns", "reps": 50 },
+          { "name": "Air Squats", "reps": 150 }
+        ]
+      }
+    ]
+  },
+  {
     "title": "WOD - 26/04",
     "date": "2020-04-26",
     "workout": [
