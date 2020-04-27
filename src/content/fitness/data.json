@@ -7,9 +7,10 @@
         "type": "exercise",
         "mode": "For Time",
         "exercises": [
+          { "name": "Pull Ups", "reps": 20 },
           { "name": "Burpees", "reps": 100 },
-          { "name": "Prone Lat Pulldowns", "reps": 50 },
-          { "name": "Air Squats", "reps": 150 }
+          { "name": "Air Squats", "reps": 150 },
+          { "name": "Pull Ups", "reps": 10 }
         ]
       }
     ]
