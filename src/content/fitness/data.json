@@ -1,5 +1,19 @@
 [
   {
+    "title": "WOD - 28/04",
+    "date": "2020-04-28",
+    "workout": [
+      {
+        "type": "exercise",
+        "mode": "RFT 10",
+        "exercises": [
+          { "name": "Burpees", "reps": 10 },
+          { "name": "Pull Ups", "reps": 2 }
+        ]
+      }
+    ]
+  },
+  {
     "title": "WOD - 27/04",
     "date": "2020-04-27",
     "workout": [
