@@ -1,5 +1,28 @@
 [
   {
+    "title": "WOD - 29/04",
+    "date": "2020-04-29",
+    "workout": [
+      {
+        "type": "exercise",
+        "exercises": [{ "name": "Pull Ups", "reps": 20 }]
+      },
+      { "type": "rest", "time": "5 min" },
+      {
+        "type": "exercise",
+        "mode": "RFT 4",
+        "exercises": [
+          { "name": "Burpees", "reps": 10 },
+          { "name": "Single Leg Bridge", "reps": 10 },
+          { "name": "Burpees", "reps": 10 },
+          { "name": "Glute Bridge March", "reps": 10 },
+          { "name": "Burpees", "reps": 5 },
+          { "name": "Side Lying Straight Leg Raise", "reps": 10 }
+        ]
+      }
+    ]
+  },
+  {
     "title": "WOD - 28/04",
     "date": "2020-04-28",
     "workout": [
