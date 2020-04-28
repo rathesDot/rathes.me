@@ -10,7 +10,7 @@
       { "type": "rest", "time": "5 min" },
       {
         "type": "exercise",
-        "mode": "RFT 4",
+        "mode": "RFQ 4",
         "exercises": [
           { "name": "Burpees", "reps": 10 },
           { "name": "Single Leg Bridge", "reps": 10 },
