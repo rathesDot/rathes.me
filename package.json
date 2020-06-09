@@ -19,7 +19,7 @@
     "gatsby-plugin-sharp": "^2.6.10",
     "gatsby-plugin-sitemap": "^2.4.4",
     "gatsby-plugin-styled-components": "^3.3.3",
-    "gatsby-plugin-twitter": "^2.2.2",
+    "gatsby-plugin-twitter": "^2.3.3",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-images": "^3.3.8",
     "gatsby-remark-prismjs": "^3.4.1",
