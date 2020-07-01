@@ -36,6 +36,7 @@
   },
   "devDependencies": {
     "babel-jest": "^26.0.1",
+    "babel-plugin-apply-mdx-type-prop": "^1.6.6",
     "babel-preset-gatsby": "^0.4.8",
     "jest": "^26.0.1",
     "prettier": "^2.0.5"
