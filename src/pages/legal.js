@@ -130,7 +130,7 @@ const Legal = () => (
         take legal steps in the case of the unsolicited sending of advertising
         information; e.g., by means of spam mail.
       </Paragraph>
-      <TextSmall element="p">
+      <TextSmall as="p">
         Source:{" "}
         <Link
           color="white"

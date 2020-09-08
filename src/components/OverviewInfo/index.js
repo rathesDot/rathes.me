@@ -1,25 +1,27 @@
 import React from "react"
-import styled from "styled-components"
+import styledComponent from "styled-components"
+
+import { styled } from "../../../stitches.config"
 
 import { TextBody, TextSmall } from "../Typography"
 import Link from "../Link"
 import { Box } from "../Box"
 
-const Separator = styled.span`
+const Separator = styledComponent.span`
   width: 24px;
   display: block;
   margin: 16px 0;
   height: 2px;
-  background-color: ${props => props.theme.colors.black.lighter};
+  background-color: ${(props) => props.theme.colors.black.lighter};
 `
 
-const Title = styled(TextSmall)`
-  display: block;
-  letter-spacing: ${props => props.theme.letterSpacing.wide};
-  line-height: 1.166666666;
-`
+const Title = styled(TextSmall, {
+  display: "block",
+  letterSpacing: "$wide",
+  lineHeight: 1.66666666,
+})
 
-const Info = styled(Link)`
+const Info = styledComponent(Link)`
   font-weight: 600;
   line-height: 1.1875;
   display: block;

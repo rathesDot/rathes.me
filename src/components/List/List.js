@@ -1,20 +1,21 @@
 import React from "react"
-import styled from "styled-components"
+import styledComponent from "styled-components"
 import { Link as RouterLink } from "gatsby"
+import { styled } from "../../../stitches.config"
 
 import { Heading4, TextBody, TextSmall } from "../Typography"
 import { Box } from "../Box"
 import Link from "../Link"
 
-const Title = styled(TextBody)`
-  margin: ${props =>
-      props.subtitle ? props.theme.spacing[4] : props.theme.spacing[2]}
+const Title = styledComponent(TextBody)`
+  margin: ${(props) =>
+    props.subtitle ? props.theme.spacing[4] : props.theme.spacing[2]}
     0;
 `
 
-const Subtitle = styled(TextSmall)`
-  display: block;
-`
+const Subtitle = styled(TextSmall, {
+  display: "block",
+})
 
 const Item = ({ children, subtitle, link }) => {
   const isExternalLink = link && link.startsWith("http")
