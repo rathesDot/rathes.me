@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { styled } from "../../../stitches.config"
 
-import { TextSmall } from "../Typography/TextSmall"
+import { TextSmall } from "../Typography"
 
 const Separator = styled("span", {
   display: "inline-block",
@@ -23,9 +23,9 @@ const Footer = () => (
       &copy; 2020 — Rathes Sachchithananthan
     </TextSmall>
     <Separator />
-    <TextSmall css={{ color: "$gray600" }} as={Link} to="/legal">
-      Legal Information
-    </TextSmall>
+    <Link to="/legal">
+      <TextSmall css={{ color: "$gray600" }}>Legal Information</TextSmall>
+    </Link>
   </div>
 )
 
