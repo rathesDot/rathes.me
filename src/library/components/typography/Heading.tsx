@@ -20,6 +20,19 @@ export const Heading1 = styled(BaseHeading, {
   lineHeight: "$default",
 })
 
+export const Heading4 = styled(BaseHeading, {
+  fontSize: "$xs",
+  fontWeight: "$normal",
+  lineHeight: "$2.5",
+  textTransform: "uppercase",
+  letterSpacing: "$widest",
+})
+
+Heading4.defaultProps = {
+  as: "h4",
+  color: "white",
+}
+
 Heading1.defaultProps = {
   as: "h1",
 }
