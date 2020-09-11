@@ -12,3 +12,13 @@ export const Text = styled("span", {
     },
   },
 })
+
+export const TextBody = Text
+TextBody.defaultProps = {
+  size: "body",
+}
+
+export const TextSmall = Text
+TextBody.defaultProps = {
+  size: "small",
+}
