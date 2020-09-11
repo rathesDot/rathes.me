@@ -1,17 +1,22 @@
 import React from "react"
+import { Link } from "gatsby"
+import { styled } from "../../stitches.config"
 
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import { Box } from "../components/Box"
-import { Paragraph } from "../components/Typography"
-import { List } from "../components/List"
 
+import SEO from "../library/components/SEO"
 import { Heading1 } from "../library/components/typography/Heading"
+import { Paragraph } from "../library/components/typography/Paragraph"
+import { List, Item } from "../library/components/List"
+
+const Box = styled("div", {
+  maxWidth: 640,
+})
 
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
-    <Box maxWidth="640px">
+    <Box>
       <Heading1>
         Looks like you are looking for a page that does not exist.
       </Heading1>
@@ -22,9 +27,15 @@ const NotFoundPage = () => (
       </Paragraph>
       <Paragraph>
         <List>
-          <List.Item link="/">The homepage</List.Item>
-          <List.Item link="/writings">My blog posts</List.Item>
-          <List.Item link="/about">Information about myself</List.Item>
+          <Item>
+            <Link to="/">The homepage</Link>
+          </Item>
+          <Item>
+            <Link to="/writings">My blog posts</Link>
+          </Item>
+          <Item link="/about">
+            <Link to="/about">Information about myself</Link>
+          </Item>
         </List>
       </Paragraph>
     </Box>
