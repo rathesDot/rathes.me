@@ -72,10 +72,12 @@ export const { styled, css } = createStyled({
       ].join(","),
     },
     fontWeights: {
+      $normal: "400",
       $bold: "600",
     },
     lineHeights: {
       $default: "1.35",
+      $loose: "2",
     },
     letterSpacings: {
       $normal: "0",
