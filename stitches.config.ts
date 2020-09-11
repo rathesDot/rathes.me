@@ -78,6 +78,7 @@ export const { styled, css } = createStyled({
     lineHeights: {
       $default: "1.35",
       $loose: "2",
+      "$2.5": "2.5",
     },
     letterSpacings: {
       $normal: "0",
