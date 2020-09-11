@@ -19,6 +19,6 @@ TextBody.defaultProps = {
 }
 
 export const TextSmall = Text
-TextBody.defaultProps = {
+TextSmall.defaultProps = {
   size: "small",
 }
