@@ -3,16 +3,18 @@ import React from "react"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import { Box } from "../components/Box"
-import { Heading1, Paragraph } from "../components/Typography"
+import { Paragraph } from "../components/Typography"
 import { List } from "../components/List"
+
+import { Heading } from "../library/components/typography/Heading"
 
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
     <Box maxWidth="640px">
-      <Heading1>
+      <Heading>
         Looks like you are looking for a page that does not exist.
-      </Heading1>
+      </Heading>
       <Paragraph>
         If you came here from a Google Search, feel free to go back and try a
         different search term. Otherwise, here are some things that you might
