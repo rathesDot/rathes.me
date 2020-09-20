@@ -4,7 +4,7 @@ import { styled } from "../../stitches.config"
 
 import Layout from "../components/Layout"
 
-import SEO from "../library/components/SEO"
+import { SEO } from "../library/components/SEO"
 import { Heading1 } from "../library/components/typography/Heading"
 import { Paragraph } from "../library/components/typography/Paragraph"
 import { List, Item } from "../library/components/List"
