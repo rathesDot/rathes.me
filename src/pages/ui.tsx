@@ -1,6 +1,13 @@
 import React from "react"
 import { PageProps } from "gatsby"
+import { reset } from "stitches-reset"
 
-const Ui: React.FC<PageProps> = () => null
+import { css } from "../../stitches.config"
+
+const Ui: React.FC<PageProps> = () => {
+  css.global(reset)
+
+  return null
+}
 
 export default Ui
