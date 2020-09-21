@@ -4,6 +4,8 @@ import { reset } from "stitches-reset"
 
 import { styled, css } from "../../stitches.config"
 
+import { Title } from "../library/components/typography/Title"
+
 const Container = styled("main", {
   backgroundColor: "$black",
   display: "flex",
@@ -26,7 +28,11 @@ const Container = styled("main", {
 const Ui: React.FC<PageProps> = () => {
   css.global(reset)
 
-  return <Container></Container>
+  return (
+    <Container>
+      <Title>The UI library</Title>
+    </Container>
+  )
 }
 
 export default Ui
