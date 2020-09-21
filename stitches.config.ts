@@ -1,6 +1,10 @@
 import { createStyled } from "@stitches/react"
 
 export const { styled, css } = createStyled({
+  breakpoints: {
+    tablet: (rule) => `@media (min-width: 768px) { ${rule} }`,
+    desktop: (rule) => `@media (min-width: 1200px) { ${rule} }`,
+  },
   tokens: {
     colors: {
       $black: "#111",
