@@ -82,6 +82,7 @@ export const { styled, css } = createStyled({
     },
     lineHeights: {
       $default: "1.35",
+      "$1.45": "1.45",
       "$1.66": "1.66",
       $loose: "2",
       "$2.5": "2.5",
