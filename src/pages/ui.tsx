@@ -162,7 +162,7 @@ const Ui: React.FC<PageProps> = () => {
         The basic <code className="language-text">&lt;Paragraph /&gt;</code>{" "}
         component that is used as the body text is using the default font size.
       </Paragraph>
-      <Heading3>Headings</Heading3>
+      <Heading2>Headings</Heading2>
       <Paragraph>
         This website makes use of 4 different Heading levels from{" "}
         <code className="language-text">Heading1</code> being the largest to{" "}
