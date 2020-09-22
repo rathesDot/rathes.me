@@ -6,7 +6,7 @@ import { styled, css } from "../../stitches.config"
 
 import { Title } from "../library/components/typography/Title"
 import { Paragraph } from "../library/components/typography/Paragraph"
-import { Heading1 } from "../library/components/typography/Heading"
+import { Heading1, Heading2 } from "../library/components/typography/Heading"
 
 const Container = styled("main", {
   backgroundColor: "$black",
@@ -136,6 +136,12 @@ const Ui: React.FC<PageProps> = () => {
           Black
           <span>#111111</span>
         </Color>
+      </Paragraph>
+      <Heading2>Dark Theme</Heading2>
+      <Paragraph>
+        The website is using a dark theme by default. Currently, there is no
+        light theme available but there are plans to add them as soon as the
+        component library reaches a stable version.
       </Paragraph>
     </Container>
   )
