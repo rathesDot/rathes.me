@@ -26,6 +26,12 @@ export const Heading2 = styled(BaseHeading, {
   lineHeight: "$1.66",
 })
 
+export const Heading3 = styled(BaseHeading, {
+  fontSize: "$sm",
+  fontWeight: "$bold",
+  lineHeight: "$1.45",
+})
+
 export const Heading4 = styled(BaseHeading, {
   fontSize: "$xs",
   fontWeight: "$normal",
@@ -40,6 +46,10 @@ Heading1.defaultProps = {
 
 Heading2.defaultProps = {
   as: "h2",
+}
+
+Heading3.defaultProps = {
+  as: "h3",
 }
 
 Heading4.defaultProps = {
