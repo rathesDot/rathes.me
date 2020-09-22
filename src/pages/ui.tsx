@@ -6,7 +6,12 @@ import { styled, css } from "../../stitches.config"
 
 import { Title } from "../library/components/typography/Title"
 import { Paragraph } from "../library/components/typography/Paragraph"
-import { Heading1, Heading2 } from "../library/components/typography/Heading"
+import {
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+} from "../library/components/typography/Heading"
 
 const Container = styled("main", {
   backgroundColor: "$black",
@@ -142,6 +147,36 @@ const Ui: React.FC<PageProps> = () => {
         The website is using a dark theme by default. Currently, there is no
         light theme available but there are plans to add them as soon as the
         component library reaches a stable version.
+      </Paragraph>
+      <Heading1>Typography</Heading1>
+      <Paragraph>
+        The primary typeface of rathes.me is the Google font "Lato" — a free but
+        still strong typeface that can be used a different sizes.
+      </Paragraph>
+      <Heading2>Font Sizes</Heading2>
+      <Paragraph>
+        Using "1rem" (16px) as the base, there are 10 different font sizes
+        ranging from 0.75rem as the smallest to 4rem as the largest.
+      </Paragraph>
+      <Paragraph>
+        The basic <code className="language-text">&lt;Paragraph /&gt;</code>{" "}
+        component that is used as the body text is using the default font size.
+      </Paragraph>
+      <Heading3>Headings</Heading3>
+      <Paragraph>
+        This website makes use of 4 different Heading levels from{" "}
+        <code className="language-text">Heading1</code> being the largest to{" "}
+        <code className="language-text">Heading4</code> being the smallest
+        Heading.
+      </Paragraph>
+      <Heading1>This is a Heading 1</Heading1>
+      <Heading2>This is a Heading 2</Heading2>
+      <Heading3>This is a Heading 3</Heading3>
+      <Heading4>This is a Heading 4</Heading4>
+      <Paragraph>
+        While the first three heading levels are mostly used as headings of
+        content blocks and paragraphs, the Heading 4 is meant to be used as a
+        title for components such as lists, cards or image galleries.
       </Paragraph>
     </Container>
   )
