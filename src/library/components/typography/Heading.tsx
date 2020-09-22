@@ -20,6 +20,12 @@ export const Heading1 = styled(BaseHeading, {
   lineHeight: "$default",
 })
 
+export const Heading2 = styled(BaseHeading, {
+  fontSize: "$lg",
+  fontWeight: "$bold",
+  lineHeight: "$1.66",
+})
+
 export const Heading4 = styled(BaseHeading, {
   fontSize: "$xs",
   fontWeight: "$normal",
@@ -28,11 +34,15 @@ export const Heading4 = styled(BaseHeading, {
   letterSpacing: "$widest",
 })
 
+Heading1.defaultProps = {
+  as: "h1",
+}
+
+Heading2.defaultProps = {
+  as: "h2",
+}
+
 Heading4.defaultProps = {
   as: "h4",
   color: "white",
-}
-
-Heading1.defaultProps = {
-  as: "h1",
 }
