@@ -89,6 +89,13 @@ const Color = styled("span", {
   },
 })
 
+const Example = styled("div", {
+  backgroundColor: "$gray900",
+  margin: "$2 0",
+  maxWidth: "640px",
+  padding: "$4",
+})
+
 const Ui: React.FC<PageProps> = () => {
   css.global(reset)
 
@@ -169,10 +176,18 @@ const Ui: React.FC<PageProps> = () => {
         <code className="language-text">Heading4</code> being the smallest
         Heading.
       </Paragraph>
-      <Heading1>This is a Heading 1</Heading1>
-      <Heading2>This is a Heading 2</Heading2>
-      <Heading3>This is a Heading 3</Heading3>
-      <Heading4>This is a Heading 4</Heading4>
+      <Example>
+        <Heading1>This is a Heading 1</Heading1>
+      </Example>
+      <Example>
+        <Heading2>This is a Heading 2</Heading2>
+      </Example>
+      <Example>
+        <Heading3>This is a Heading 3</Heading3>
+      </Example>
+      <Example>
+        <Heading4>This is a Heading 4</Heading4>
+      </Example>
       <Paragraph>
         While the first three heading levels are mostly used as headings of
         content blocks and paragraphs, the Heading 4 is meant to be used as a
