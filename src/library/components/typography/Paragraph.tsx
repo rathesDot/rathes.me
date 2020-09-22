@@ -7,4 +7,5 @@ export const Paragraph = styled("p", {
   lineHeight: "$loose",
   marginTop: "$3",
   marginBottom: "$6",
+  maxWidth: "640px",
 })
