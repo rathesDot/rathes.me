@@ -114,6 +114,9 @@ const AboutMe = () => (
             <List.Item subtitle="by Joel Levy" link="https://amzn.to/30cRK5C">
               Psychology for Busy People: Everything You Really Should Know
             </List.Item>
+            <List.Item subtitle="by Amish" link="https://amzn.to/3j86ASh">
+              Immortals of Meluha
+            </List.Item>
           </List>
         </Box>
       </Box>
