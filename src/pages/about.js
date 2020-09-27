@@ -92,18 +92,30 @@ const AboutMe = () => (
             >
               Die letzte Spur (The last track)
             </List.Item>
-          </List>
-          <Separator />
-          <List title="Currently reading">
             <List.Item subtitle="by Eric Ries" link="https://amzn.to/2uresu3">
               The Lean Startup: How Today's Entrepreneurs Use Continuous
               Innovation to Create Radically Successful Businesses
             </List.Item>
             <List.Item
+              subtitle="by Richard Osman"
+              link="https://amzn.to/343YBzt"
+            >
+              The Thursday Murder Club
+            </List.Item>
+          </List>
+          <Separator />
+          <List title="Currently reading">
+            <List.Item
               subtitle="by George R. R. Martin"
               link="https://amzn.to/2Rngm82"
             >
               A Game of Thrones: A Song of Ice and Fire
+            </List.Item>
+            <List.Item subtitle="by Joel Levy" link="https://amzn.to/30cRK5C">
+              Psychology for Busy People: Everything You Really Should Know
+            </List.Item>
+            <List.Item subtitle="by Amish" link="https://amzn.to/3j86ASh">
+              Immortals of Meluha
             </List.Item>
           </List>
         </Box>
