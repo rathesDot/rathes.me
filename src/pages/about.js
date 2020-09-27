@@ -92,13 +92,13 @@ const AboutMe = () => (
             >
               Die letzte Spur (The last track)
             </List.Item>
-          </List>
-          <Separator />
-          <List title="Currently reading">
             <List.Item subtitle="by Eric Ries" link="https://amzn.to/2uresu3">
               The Lean Startup: How Today's Entrepreneurs Use Continuous
               Innovation to Create Radically Successful Businesses
             </List.Item>
+          </List>
+          <Separator />
+          <List title="Currently reading">
             <List.Item
               subtitle="by George R. R. Martin"
               link="https://amzn.to/2Rngm82"
