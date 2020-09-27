@@ -96,6 +96,12 @@ const AboutMe = () => (
               The Lean Startup: How Today's Entrepreneurs Use Continuous
               Innovation to Create Radically Successful Businesses
             </List.Item>
+            <List.Item
+              subtitle="by Richard Osman"
+              link="https://amzn.to/343YBzt"
+            >
+              The Thursday Murder Club
+            </List.Item>
           </List>
           <Separator />
           <List title="Currently reading">
