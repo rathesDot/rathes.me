@@ -6,6 +6,7 @@ import { styled, css } from "../../stitches.config"
 
 import { Title } from "../library/components/typography/Title"
 import { Paragraph } from "../library/components/typography/Paragraph"
+import { TextSmall, TextBody } from "../library/components/typography/Text"
 import {
   Heading1,
   Heading2,
@@ -176,6 +177,24 @@ const Ui: React.FC<PageProps> = () => {
           than just a single line and then it demonstrates how a paragraph
           actually looks like in this UI.
         </Paragraph>
+      </Example>
+      <Paragraph>
+        Besides the paragraphs, if you need some sort of text, you can always
+        fallback to the Text components. As mentioned above, there is a{" "}
+        <code className="language-text">&lt;TextBody /&gt;</code> component with
+        the base font-size but also a{" "}
+        <code className="language-text">&lt;TextSmall /&gt;</code> to be used
+        for smaller size.
+      </Paragraph>
+      <Paragraph>
+        These components are supposed to be used to compose other components so
+        try to not use them directly in your pages.
+      </Paragraph>
+      <Example>
+        <TextBody>This is body text size</TextBody>
+      </Example>
+      <Example>
+        <TextSmall>This is small text size</TextSmall>
       </Example>
       <Heading2>Headings</Heading2>
       <Paragraph>
