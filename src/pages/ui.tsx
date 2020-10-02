@@ -169,6 +169,14 @@ const Ui: React.FC<PageProps> = () => {
         The basic <code className="language-text">&lt;Paragraph /&gt;</code>{" "}
         component that is used as the body text is using the default font size.
       </Paragraph>
+      <Example>
+        <Paragraph>
+          This is a small paragraph. This paragraph can have multiple lines and
+          more than a just a few words and phrases. This will then lead to more
+          than just a single line and then it demonstrates how a paragraph
+          actually looks like in this UI.
+        </Paragraph>
+      </Example>
       <Heading2>Headings</Heading2>
       <Paragraph>
         This website makes use of 4 different Heading levels from{" "}
