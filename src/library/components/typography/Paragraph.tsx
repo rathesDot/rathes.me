@@ -1,11 +1,18 @@
 import { styled } from "../../../../stitches.config"
 
-export const Paragraph = styled("p", {
+import { TextBody } from "./Text"
+
+const Paragraph = styled(TextBody, {
   color: "$gray600",
-  fontSize: "$base",
   fontWeight: "$normal",
   lineHeight: "$loose",
   marginTop: "$3",
   marginBottom: "$6",
   maxWidth: "640px",
 })
+
+Paragraph.defaultProps = {
+  as: "p",
+}
+
+export { Paragraph }
