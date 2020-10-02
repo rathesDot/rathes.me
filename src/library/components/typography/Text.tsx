@@ -1,6 +1,7 @@
 import { styled } from "../../../../stitches.config"
 
 export const Text = styled("span", {
+  color: "$gray600",
   variants: {
     size: {
       body: {
