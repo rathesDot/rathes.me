@@ -3,12 +3,21 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 
 import { styled } from "../../../stitches.config"
 
-const MenuItem = styled("span", {
+export const MenuItem = styled("a", {
   display: "inline-block",
   color: "$gray600",
-  fontSize: "$lg",
+  fontSize: "$sm",
   fontFamily: "$base",
-  margin: "0 $8",
+  fontWeight: "$bold",
+  padding: "$1 $4",
+
+  mini: {
+    fontSize: "$base",
+  },
+
+  mobile: {
+    fontSize: "$lg",
+  },
 })
 
 export const Navigation = () => {
