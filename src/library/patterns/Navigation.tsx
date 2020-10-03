@@ -10,6 +10,7 @@ export const MenuItem = styled("a", {
   fontFamily: "$base",
   fontWeight: "$bold",
   padding: "$1 $4",
+  textDecoration: "none",
 
   mini: {
     fontSize: "$base",
