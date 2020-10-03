@@ -2,6 +2,7 @@ import { createStyled } from "@stitches/react"
 
 export const { styled, css } = createStyled({
   breakpoints: {
+    mini: (rule) => `@media (min-width: 320px) { ${rule} }`,
     mobile: (rule) => `@media (min-width: 375px) { ${rule} }`,
     tablet: (rule) => `@media (min-width: 768px) { ${rule} }`,
     desktop: (rule) => `@media (min-width: 1200px) { ${rule} }`,
