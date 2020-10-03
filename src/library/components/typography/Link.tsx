@@ -13,8 +13,4 @@ const Link = styled("a", {
   },
 })
 
-Link.defaultProps = {
-  as: "a",
-}
-
 export { Link }
