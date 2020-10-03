@@ -1,12 +1,19 @@
 import React from "react"
-import styled from "styled-components"
+import styledLegacy from "styled-components"
+
+import { styled } from "../../stitches.config"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import OverviewInfo from "../components/OverviewInfo"
-import { Box } from "../components/Box"
 
-const Introduction = styled.h1`
+const Container = styled("section", {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+})
+
+const Introduction = styledLegacy.h1`
   color: ${(props) => props.theme.colors.white.default};
   font-family: ${(props) => props.theme.fontFamily.default};
   font-size: ${(props) => props.theme.fontSize["4xl"]};
@@ -23,18 +30,13 @@ const Introduction = styled.h1`
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Box
-      element="section"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-    >
+    <Container>
       <Introduction>
         Hi there, I’m Rathes Sachchithananthan and I’m a web developer currently
         living in Belgium
       </Introduction>
       <OverviewInfo />
-    </Box>
+    </Container>
   </Layout>
 )
 
