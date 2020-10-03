@@ -15,6 +15,8 @@ import {
   Heading4,
 } from "../library/components/typography/Heading"
 
+import { MenuItem } from "../library/patterns/Navigation"
+
 const Container = styled("main", {
   backgroundColor: "$black",
   display: "flex",
@@ -228,6 +230,29 @@ const Ui: React.FC<PageProps> = () => {
       </Paragraph>
       <Example>
         <Link href="https://aheenam.com">Link to Aheenam</Link>
+      </Example>
+      <Heading1>Pattern</Heading1>
+      <Paragraph>
+        The UI only needs really few more complex pattern composed of the
+        existing primitive components.
+      </Paragraph>
+      <Heading2>The Navigation</Heading2>
+      <Paragraph>
+        The Navigation is what the use will use as the main anchor to navigate
+        through each of the websites pages. Whenever they run deep into the
+        website, they can always rely on the Navigation to bring them back to a
+        point of the website that are familar with.
+      </Paragraph>
+      <Paragraph>
+        The Navigation consist of two different elements: A{" "}
+        <TextBody color="white">MenuItem</TextBody> or the{" "}
+        <TextBody color="white">Logo</TextBody>. Both of those elements always
+        link to an internal page of the website.
+      </Paragraph>
+      <Example>
+        <MenuItem as={Link} to="/">
+          This is a menu item
+        </MenuItem>
       </Example>
     </Container>
   )
