@@ -7,6 +7,7 @@ import { styled, css } from "../../stitches.config"
 import { Title } from "../library/components/typography/Title"
 import { Paragraph } from "../library/components/typography/Paragraph"
 import { TextSmall, TextBody } from "../library/components/typography/Text"
+import { Link } from "../library/components/typography/Link"
 import {
   Heading1,
   Heading2,
@@ -220,6 +221,14 @@ const Ui: React.FC<PageProps> = () => {
         content blocks and paragraphs, the Heading 4 is meant to be used as a
         title for components such as lists, cards or image galleries.
       </Paragraph>
+      <Heading2>Link</Heading2>
+      <Paragraph>
+        The Link component is the default way to navigate the user from one page
+        to another.
+      </Paragraph>
+      <Example>
+        <Link href="https://aheenam.com">Link to Aheenam</Link>
+      </Example>
     </Container>
   )
 }
