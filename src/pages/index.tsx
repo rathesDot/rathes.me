@@ -1,5 +1,4 @@
 import React from "react"
-import styledLegacy from "styled-components"
 
 import { styled } from "../../stitches.config"
 
@@ -13,28 +12,28 @@ const Container = styled("section", {
   justifyContent: "center",
 })
 
-const Introduction = styledLegacy.h1`
-  color: ${(props) => props.theme.colors.white.default};
-  font-family: ${(props) => props.theme.fontFamily.default};
-  font-size: ${(props) => props.theme.fontSize["4xl"]};
-  font-weight: 600;
-  line-height: 1.333333;
-  overflow-wrap: break-word;
-  max-width: 640px;
+const LargeTitle = styled("h1", {
+  color: "$white",
+  fontFamily: "$default",
+  fontSize: "$3xl",
+  fontWeight: "$bold",
+  lineHeight: "$1.35",
+  overflowWrap: "break-word",
+  maxWidth: 640,
 
-  @media (max-width: 375px) {
-    font-size: ${(props) => props.theme.fontSize["3xl"]};
-  }
-`
+  mobile: {
+    fontSize: "$4xl",
+  },
+})
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Container>
-      <Introduction>
+      <LargeTitle>
         Hi there, I’m Rathes Sachchithananthan and I’m a web developer currently
         living in Belgium
-      </Introduction>
+      </LargeTitle>
       <OverviewInfo />
     </Container>
   </Layout>
