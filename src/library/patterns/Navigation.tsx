@@ -1,16 +1,17 @@
 import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 
 import { styled } from "../../../stitches.config"
 
-export const MenuItem = styled("a", {
+import { Link } from "../components/typography/Link"
+
+export const MenuItem = styled(Link, {
   display: "inline-block",
   color: "$gray600",
   fontSize: "$sm",
   fontFamily: "$base",
   fontWeight: "$bold",
   padding: "$1 $4",
-  textDecoration: "none",
 
   mini: {
     fontSize: "$base",
@@ -20,6 +21,11 @@ export const MenuItem = styled("a", {
     fontSize: "$lg",
   },
 })
+
+MenuItem.defaultProps = {
+  underlined: false,
+  as: "span",
+}
 
 export const Navigation = () => {
   const data = useStaticQuery(graphql`

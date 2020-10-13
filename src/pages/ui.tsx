@@ -247,12 +247,11 @@ const Ui: React.FC<PageProps> = () => {
         The Navigation consist of two different elements: A{" "}
         <TextBody color="white">MenuItem</TextBody> or the{" "}
         <TextBody color="white">Logo</TextBody>. Both of those elements always
-        link to an internal page of the website.
+        link to an internal page of the website by using Gatsby's{" "}
+        <TextBody color="white">Link</TextBody> component.
       </Paragraph>
       <Example>
-        <MenuItem as={Link} to="/">
-          This is a menu item
-        </MenuItem>
+        <MenuItem>This is a menu item</MenuItem>
       </Example>
     </Container>
   )
