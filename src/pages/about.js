@@ -117,6 +117,12 @@ const AboutMe = () => (
             <List.Item subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
             </List.Item>
+            <List.Item
+              subtitle="by Paula Hawkins"
+              link="https://amzn.to/2T4pQ8d"
+            >
+              The Girl on the Train
+            </List.Item>
           </List>
         </Box>
       </Box>
