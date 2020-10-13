@@ -14,6 +14,7 @@ import {
   Heading3,
   Heading4,
 } from "../library/components/typography/Heading"
+import { Logo } from "../library/components/Logo"
 
 import { MenuItem } from "../library/patterns/Navigation"
 
@@ -252,6 +253,11 @@ const Ui: React.FC<PageProps> = () => {
       </Paragraph>
       <Example>
         <MenuItem>This is a menu item</MenuItem>
+      </Example>
+      <Example>
+        <MenuItem>
+          <Logo />
+        </MenuItem>
       </Example>
     </Container>
   )
