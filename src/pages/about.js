@@ -102,6 +102,9 @@ const AboutMe = () => (
             >
               The Thursday Murder Club
             </List.Item>
+            <List.Item subtitle="by Joel Levy" link="https://amzn.to/30cRK5C">
+              Psychology for Busy People: Everything You Really Should Know
+            </List.Item>
           </List>
           <Separator />
           <List title="Currently reading">
@@ -110,9 +113,6 @@ const AboutMe = () => (
               link="https://amzn.to/2Rngm82"
             >
               A Game of Thrones: A Song of Ice and Fire
-            </List.Item>
-            <List.Item subtitle="by Joel Levy" link="https://amzn.to/30cRK5C">
-              Psychology for Busy People: Everything You Really Should Know
             </List.Item>
             <List.Item subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
