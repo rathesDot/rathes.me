@@ -5,12 +5,17 @@ import { styled } from "../../../stitches.config"
 
 import { Link } from "../components/typography/Link"
 
-export const MenuItem = styled(Link, {
-  display: "inline-block",
+export const MenuItem = styled("div", {
+  display: "block",
   color: "$gray600",
   fontSize: "$sm",
   fontFamily: "$base",
   fontWeight: "$bold",
+
+  "> a": {
+    color: "$gray600",
+    textDecoration: "none",
+  },
 
   mini: {
     fontSize: "$base",
@@ -20,11 +25,6 @@ export const MenuItem = styled(Link, {
     fontSize: "$lg",
   },
 })
-
-MenuItem.defaultProps = {
-  underlined: false,
-  as: "span",
-}
 
 const MenuBar = styled("nav", {
   alignItems: "center",
