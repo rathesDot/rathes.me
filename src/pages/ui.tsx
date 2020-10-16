@@ -17,6 +17,7 @@ import {
 import { Logo } from "../library/components/Logo"
 
 import { MenuItem, Navigation } from "../library/patterns/Navigation"
+import { Footer } from "../library/patterns/Footer"
 
 const Container = styled("main", {
   backgroundColor: "$black",
@@ -279,6 +280,14 @@ const Ui: React.FC<PageProps> = () => {
             { title: "UI", path: "/ui" },
           ]}
         />
+      </Example>
+      <Heading2>The Footer</Heading2>
+      <Paragraph>
+        The Footer is kept simple. It contains the copy right note and a single
+        link to the legal stuff for this website.
+      </Paragraph>
+      <Example>
+        <Footer />
       </Example>
     </Container>
   )
