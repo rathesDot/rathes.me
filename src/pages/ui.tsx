@@ -16,7 +16,7 @@ import {
 } from "../library/components/typography/Heading"
 import { Logo } from "../library/components/Logo"
 
-import { MenuItem } from "../library/patterns/Navigation"
+import { MenuItem, Navigation } from "../library/patterns/Navigation"
 
 const Container = styled("main", {
   backgroundColor: "$black",
@@ -258,6 +258,27 @@ const Ui: React.FC<PageProps> = () => {
         <MenuItem>
           <Logo />
         </MenuItem>
+      </Example>
+      <Paragraph>
+        The <TextBody color="white">Navigation</TextBody> component accepts an
+        array of menu items with their title and path. Based on those items, it
+        builds the entire navigation.
+      </Paragraph>
+      <Paragraph>
+        Keep in mind that this navigation is does not collapse on smaller
+        viewports, so you have to control and limit the amount of menu items in
+        such a navigation.
+      </Paragraph>
+      <Example>
+        <Navigation
+          items={[
+            { title: "About", path: "/about" },
+            { title: "Resume", path: "/resume" },
+            { title: "Work", path: "/work" },
+            { title: "Writings", path: "/writings" },
+            { title: "UI", path: "/ui" },
+          ]}
+        />
       </Example>
     </Container>
   )
