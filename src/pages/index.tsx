@@ -2,7 +2,7 @@ import React from "react"
 
 import { styled } from "../../stitches.config"
 
-import Layout from "../components/Layout"
+import { BaseLayout } from "../library/layouts/BaseLayout"
 import SEO from "../components/SEO"
 import { Overview } from "../library/patterns/Overview"
 
@@ -27,7 +27,7 @@ const LargeTitle = styled("h1", {
 })
 
 const IndexPage = () => (
-  <Layout>
+  <BaseLayout>
     <SEO title="Home" />
     <Container>
       <LargeTitle>
@@ -54,7 +54,7 @@ const IndexPage = () => (
         ]}
       />
     </Container>
-  </Layout>
+  </BaseLayout>
 )
 
 export default IndexPage
