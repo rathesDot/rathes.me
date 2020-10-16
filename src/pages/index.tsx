@@ -4,7 +4,7 @@ import { styled } from "../../stitches.config"
 
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
-import OverviewInfo from "../components/OverviewInfo"
+import { Overview } from "../library/patterns/Overview"
 
 const Container = styled("section", {
   display: "flex",
@@ -34,7 +34,25 @@ const IndexPage = () => (
         Hi there, I’m Rathes Sachchithananthan and I’m a web developer currently
         living in Belgium
       </LargeTitle>
-      <OverviewInfo />
+      <Overview
+        items={[
+          {
+            title: "Working at",
+            value: "Hussle",
+            path: "https://www.hussle.com",
+          },
+          {
+            title: "Living in",
+            value: "London, UK",
+            path: "https://goo.gl/maps/gHAMGW4z3WZ2REe96",
+          },
+          {
+            title: "Follow me",
+            value: "@rswebdesigner",
+            path: "https://twitter.com/rswebdesigner",
+          },
+        ]}
+      />
     </Container>
   </Layout>
 )
