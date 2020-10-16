@@ -56,7 +56,7 @@ export const Navigation: React.FC<NavigationProps> = ({ items }) => {
   return (
     <MenuBar>
       <MenuItem>
-        <Link to="/">
+        <Link to="/" activeStyle={{ color: "white" }}>
           <Logo />
         </Link>
       </MenuItem>
