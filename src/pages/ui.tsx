@@ -103,7 +103,7 @@ const Example = styled("div", {
 })
 
 const Ui: React.FC<PageProps> = () => {
-  css.global(reset)
+  css.global(reset)()
 
   return (
     <Container>
