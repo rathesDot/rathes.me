@@ -17,14 +17,29 @@ const Separator = styled("span", {
   },
 })
 
+const FooterLink = styled(TextSmall, {
+  color: "$gray600",
+
+  "> a": {
+    color: "$gray600",
+    textDecoration: "none",
+  },
+
+  "a.active": {
+    color: "$white",
+  },
+})
+
 export const Footer: React.FC = () => (
   <div>
     <TextSmall css={{ color: "$gray600" }}>
       &copy; 2020 — Rathes Sachchithananthan
     </TextSmall>
     <Separator />
-    <Link to="/legal">
-      <TextSmall css={{ color: "$gray600" }}>Legal Information</TextSmall>
-    </Link>
+    <FooterLink>
+      <Link to="/ui" activeClassName="active">
+        Legal Information
+      </Link>
+    </FooterLink>
   </div>
 )
