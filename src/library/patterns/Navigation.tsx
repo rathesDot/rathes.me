@@ -11,7 +11,6 @@ export const MenuItem = styled(Link, {
   fontSize: "$sm",
   fontFamily: "$base",
   fontWeight: "$bold",
-  padding: "$1 $4",
 
   mini: {
     fontSize: "$base",
