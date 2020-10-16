@@ -51,7 +51,6 @@ const BaseLayout: React.FC = ({ children }) => {
           { title: "Resume", path: data.resume.publicURL, isFile: true },
           { title: "Work", path: "/work" },
           { title: "Writings", path: "/writings" },
-          { title: "UI", path: "/ui" },
         ]}
       />
       {children}
