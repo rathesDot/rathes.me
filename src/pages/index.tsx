@@ -19,6 +19,7 @@ const LargeTitle = styled("h1", {
   fontWeight: "$bold",
   lineHeight: "$1.35",
   overflowWrap: "break-word",
+  marginBottom: "$8",
   maxWidth: 640,
 
   mobile: {
