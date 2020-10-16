@@ -37,7 +37,7 @@ export const Footer: React.FC = () => (
     </TextSmall>
     <Separator />
     <FooterLink>
-      <Link to="/ui" activeClassName="active">
+      <Link to="/legal" activeClassName="active">
         Legal Information
       </Link>
     </FooterLink>
