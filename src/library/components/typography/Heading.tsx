@@ -1,6 +1,8 @@
 import { styled } from "../../../../stitches.config"
 
 export const BaseHeading = styled("h3", {
+  color: "$white",
+
   variants: {
     color: {
       white: {
@@ -9,10 +11,6 @@ export const BaseHeading = styled("h3", {
     },
   },
 })
-
-BaseHeading.defaultProps = {
-  color: "white",
-}
 
 export const Heading1 = styled(BaseHeading, {
   fontSize: "$2xl",
