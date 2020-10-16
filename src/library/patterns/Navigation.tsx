@@ -48,6 +48,29 @@ const Separator = styled("span", {
   },
 })
 
+const NavigationItem: React.FC<{
+  title: string
+  path: string
+  isFile?: boolean
+  showSeparator: boolean
+}> = ({ title, path, isFile, showSeparator }) => (
+  <>
+    <MenuItem aria-label={title}>
+      {isFile && (
+        <a href={path} aria-label={title}>
+          {title}
+        </a>
+      )}
+      {!isFile && (
+        <Link to={path} activeStyle={{ color: "white" }} aria-label={title}>
+          {title}
+        </Link>
+      )}
+    </MenuItem>
+    {showSeparator && <Separator />}
+  </>
+)
+
 export type NavigationProps = {
   items: Array<{ title: string; path: string; isFile?: boolean }>
 }
@@ -63,25 +86,13 @@ export const Navigation: React.FC<NavigationProps> = ({ items }) => {
       <Separator />
       {items.map((item, index, menuItems) => {
         return (
-          <>
-            <MenuItem aria-label={item.title}>
-              {item.isFile && (
-                <a href={item.path} aria-label={item.title}>
-                  {item.title}
-                </a>
-              )}
-              {!item.isFile && (
-                <Link
-                  to={item.path}
-                  activeStyle={{ color: "white" }}
-                  aria-label={item.title}
-                >
-                  {item.title}
-                </Link>
-              )}
-            </MenuItem>
-            {menuItems.length - 1 !== index && <Separator />}
-          </>
+          <NavigationItem
+            key={`navigation-item-${index}`}
+            title={item.title}
+            path={item.path}
+            isFile={item.isFile}
+            showSeparator={menuItems.length - 1 !== index}
+          />
         )
       })}
     </MenuBar>
