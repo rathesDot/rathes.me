@@ -27,6 +27,11 @@ MenuItem.defaultProps = {
   as: "span",
 }
 
+const MenuBar = styled("nav", {
+  alignItems: "center",
+  display: "flex",
+})
+
 export const Navigation = () => {
   const data = useStaticQuery(graphql`
     query {
