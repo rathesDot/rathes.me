@@ -2,6 +2,7 @@ import { styled } from "../../../../stitches.config"
 
 const Link = styled("a", {
   color: "$white",
+  textDecoration: "underline",
 
   variants: {
     color: {
@@ -19,9 +20,5 @@ const Link = styled("a", {
     },
   },
 })
-
-Link.defaultProps = {
-  underlined: true,
-}
 
 export { Link }

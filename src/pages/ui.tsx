@@ -234,6 +234,11 @@ const Ui: React.FC<PageProps> = () => {
       <Example>
         <Link href="https://aheenam.com">Link to Aheenam</Link>
       </Example>
+      <Example>
+        <Link underlined={false} href="https://aheenam.com">
+          Link to Aheenam without underline
+        </Link>
+      </Example>
       <Heading1>Pattern</Heading1>
       <Paragraph>
         The UI only needs really few more complex pattern composed of the
