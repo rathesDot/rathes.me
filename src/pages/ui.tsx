@@ -18,6 +18,7 @@ import { Logo } from "../library/components/Logo"
 
 import { MenuItem, Navigation } from "../library/patterns/Navigation"
 import { Footer } from "../library/patterns/Footer"
+import { Overview } from "../library/patterns/Overview"
 
 const Container = styled("main", {
   backgroundColor: "$black",
@@ -289,6 +290,57 @@ const Ui: React.FC<PageProps> = () => {
       <Example>
         <Footer />
       </Example>
+      <Heading2>Overview</Heading2>
+      <Paragraph>
+        To give a quick overview about the topic, use the Overview pattern.
+      </Paragraph>
+      <Example>
+        <Overview
+          items={[
+            {
+              title: "Working at",
+              value: "Hussle",
+              path: "https://www.hussle.com",
+            },
+            {
+              title: "Living in",
+              value: "London",
+              path: "https://goo.gl/maps/gHAMGW4z3WZ2REe96",
+            },
+            {
+              title: "Follow me",
+              value: "@rswebdesigner",
+              path: "https://twitter.com/rswebdesigner",
+            },
+          ]}
+        />
+      </Example>
+      <Example>
+        <Overview
+          items={[
+            {
+              title: "Difficulty",
+              value: "Simple",
+            },
+            {
+              title: "Working Time",
+              value: "45 min",
+            },
+            {
+              title: "Waiting Time",
+              value: "90 min",
+            },
+            {
+              title: "Cost",
+              value: "$",
+            },
+          ]}
+        />
+      </Example>
+      <Paragraph>
+        The entire container has a max width of 375px so make sure that you only
+        add up to four items in a Overview component.
+      </Paragraph>
     </Container>
   )
 }
