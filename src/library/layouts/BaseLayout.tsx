@@ -29,7 +29,12 @@ const MainContainer = styled("main", {
 })
 
 const BaseLayout: React.FC = ({ children }) => {
-  css.global(reset)()
+  css.global({
+    ...reset,
+    "*": {
+      boxSizing: "border-box",
+    },
+  })()
   const data = useStaticQuery(graphql`
     query {
       resume: file(relativePath: { eq: "files/resume.pdf" }) {
