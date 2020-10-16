@@ -1,9 +1,9 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
+import { Link } from "gatsby"
 
 import { styled } from "../../../stitches.config"
 
-import { Link } from "../components/typography/Link"
+import { Logo } from "../components/Logo"
 
 export const MenuItem = styled("div", {
   display: "block",
@@ -31,14 +31,48 @@ const MenuBar = styled("nav", {
   display: "flex",
 })
 
-export const Navigation = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      resume: file(relativePath: { eq: "files/resume.pdf" }) {
-        publicURL
-      }
-    }
-  `)
+const Separator = styled("span", {
+  display: "block",
+  margin: "0 $1",
+  color: "$gray600",
+  fontSize: "$base",
+  fontFamily: "$default",
 
-  return null
+  "::before": {
+    content: `"/"`,
+  },
+
+  mobile: {
+    margin: "0 $2",
+    fontSize: "$lg",
+  },
+})
+
+export type NavigationProps = {
+  items: Array<{ title: string; path: string }>
+}
+
+export const Navigation: React.FC<NavigationProps> = ({ items }) => {
+  return (
+    <MenuBar>
+      <MenuItem>
+        <Link to="/">
+          <Logo />
+        </Link>
+      </MenuItem>
+      <Separator />
+      {items.map((item, index, menuItems) => {
+        return (
+          <>
+            <MenuItem aria-label={item.title}>
+              <Link to={item.path} activeStyle={{ color: "white" }}>
+                {item.title}
+              </Link>
+            </MenuItem>
+            {menuItems.length - 1 !== index && <Separator />}
+          </>
+        )
+      })}
+    </MenuBar>
+  )
 }
