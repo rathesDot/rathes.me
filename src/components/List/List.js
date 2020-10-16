@@ -14,6 +14,7 @@ const Title = styledComponent(TextBody)`
 `
 
 const Subtitle = styled(TextSmall, {
+  color: "$gray600",
   display: "block",
 })
 
@@ -27,7 +28,7 @@ const Item = ({ children, subtitle, link }) => {
         element={isExternalLink ? "a" : RouterLink}
       >
         {children}
-        {subtitle && <Subtitle color="silver">{subtitle}</Subtitle>}
+        {subtitle && <Subtitle>{subtitle}</Subtitle>}
       </Link>
     </Title>
   )
