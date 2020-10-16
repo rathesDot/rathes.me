@@ -49,7 +49,7 @@ const Separator = styled("span", {
 })
 
 export type NavigationProps = {
-  items: Array<{ title: string; path: string }>
+  items: Array<{ title: string; path: string; isFile?: boolean }>
 }
 
 export const Navigation: React.FC<NavigationProps> = ({ items }) => {
@@ -65,13 +65,20 @@ export const Navigation: React.FC<NavigationProps> = ({ items }) => {
         return (
           <>
             <MenuItem aria-label={item.title}>
-              <Link
-                to={item.path}
-                activeStyle={{ color: "white" }}
-                aria-label={item.title}
-              >
-                {item.title}
-              </Link>
+              {item.isFile && (
+                <a href={item.path} aria-label={item.title}>
+                  {item.title}
+                </a>
+              )}
+              {!item.isFile && (
+                <Link
+                  to={item.path}
+                  activeStyle={{ color: "white" }}
+                  aria-label={item.title}
+                >
+                  {item.title}
+                </Link>
+              )}
             </MenuItem>
             {menuItems.length - 1 !== index && <Separator />}
           </>
