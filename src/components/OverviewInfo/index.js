@@ -48,9 +48,9 @@ const OverviewInfo = () => (
       <Info
         color="white"
         element={TextBody}
-        href="https://goo.gl/maps/9kKByTYJhSz"
+        href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9"
       >
-        Ghent, BE
+        London
       </Info>
     </Box>
     <Box>
