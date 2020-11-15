@@ -31,7 +31,7 @@ const IndexPage = () => (
     >
       <Introduction>
         Hi there, I’m Rathes Sachchithananthan and I’m a web developer currently
-        living in Belgium
+        living in London
       </Introduction>
       <OverviewInfo />
     </Box>
