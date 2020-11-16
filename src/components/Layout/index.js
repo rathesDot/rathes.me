@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import styled, { ThemeProvider } from "styled-components"
 
 import Navigation from "../Navigation"
-import Footer from "../Footer"
+import Footer from "../Footer/Footer"
 import { Box } from "../Box"
 
 import Global from "./global"
