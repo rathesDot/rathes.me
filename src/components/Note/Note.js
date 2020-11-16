@@ -1,8 +1,8 @@
 import React from "react"
 
-import { Box } from "../Box"
+import { Box } from "../Box/Box"
 
-const Note = ({ element, children, ...props }) => (
+export const Note = ({ element, children, ...props }) => (
   <Box
     element={element || "p"}
     backgroundColor="black"
@@ -18,5 +18,3 @@ const Note = ({ element, children, ...props }) => (
     {children}
   </Box>
 )
-
-export default Note

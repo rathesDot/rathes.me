@@ -1,18 +1,18 @@
 import React from "react"
 
-import { Box } from "../Box"
+import { Box } from "../Box/Box"
 import styled from "styled-components"
 
 const QuoteContainer = styled(Box)`
   p {
     margin: 0;
-    color: ${props => props.theme.colors.white.default};
-    font-size: ${props => props.theme.fontSize["2xl"]};
+    color: ${(props) => props.theme.colors.white.default};
+    font-size: ${(props) => props.theme.fontSize["2xl"]};
     line-height: 1.35;
   }
 `
 
-const Quote = ({ children }) => (
+export const Quote = ({ children }) => (
   <QuoteContainer
     element="blockquote"
     backgroundColor="black"

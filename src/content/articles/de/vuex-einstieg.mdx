@@ -14,7 +14,7 @@ locale: de_DE
 description: Mit Vuex wirst du Herr der Lage, wenn es um die ganzen Mengen an Daten geht, die sich in einer Web App, die auf VueJS basiert, ansammeln.
 ---
 
-import Note from "../../../components/Note"
+import { Note } from "../../../components"
 
 <Note>
   Vorsicht! Dieser Artikel ist von 2017 und is sehr wahrscheinlich nicht mehr
@@ -37,24 +37,24 @@ import axios from "axios"
 
 export default {
   name: "exercises",
-  data: function() {
+  data: function () {
     return {
       exercises: [],
     }
   },
   methods: {
-    getAllExercises: function() {
+    getAllExercises: function () {
       axios.get("/api/v1/exercises").then(
-        response => {
+        (response) => {
           this.exercises = response.data
         },
-        err => {
+        (err) => {
           // @todo handle this error
         }
       )
     },
   },
-  mounted: function() {
+  mounted: function () {
     this.getAllExercises()
   },
 }
@@ -188,12 +188,12 @@ const store = new Vuex.Store({
     currentUnit: null,
   },
   actions: {
-    GET_ALL_EXERCISES: function({ commit }) {
+    GET_ALL_EXERCISES: function ({ commit }) {
       axios.get("/api/v1/exercises").then(
-        response => {
+        (response) => {
           commit("SET_EXERCISES", { exercises: response.data })
         },
-        err => {
+        (err) => {
           // @todo handle this error
         }
       )

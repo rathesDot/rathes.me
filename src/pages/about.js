@@ -1,18 +1,23 @@
 import React from "react"
 import { Link as RouterLink } from "gatsby"
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import SayHi from "../components/SayHi"
+import { PageLayout } from "../layouts"
 
-import { Heading1, Paragraph, Heading2 } from "../components/Typography"
-import { Box } from "../components/Box"
-import List from "../components/List/List"
-import Link from "../components/Link"
-import { Separator } from "../components/Separator"
+import {
+  Box,
+  Heading1,
+  Heading2,
+  Link,
+  List,
+  Paragraph,
+  SEO,
+  Separator,
+} from "../components"
+
+import { SayHi } from "../patterns"
 
 const AboutMe = () => (
-  <Layout>
+  <PageLayout>
     <SEO title="About me" />
     <Box maxWidth="640px" marginTop={32}>
       <Heading1>/raðiːs/</Heading1>
@@ -153,7 +158,7 @@ const AboutMe = () => (
         <SayHi />
       </Box>
     </Box>
-  </Layout>
+  </PageLayout>
 )
 
 export default AboutMe

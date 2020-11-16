@@ -47,7 +47,7 @@ const Element = styled.div`
     props.alignItems ? `align-items: ${props.alignItems}` : undefined};
 `
 
-const Box = ({
+export const Box = ({
   alignItems,
   backgroundColor,
   backgroundTint = "default",
@@ -106,5 +106,3 @@ const Box = ({
     </Element>
   )
 }
-
-export default Box

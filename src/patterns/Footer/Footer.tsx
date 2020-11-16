@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { styled } from "../../../stitches.config"
 
-import { TextSmall } from "../Typography"
+import { TextSmall } from "../../components"
 
 const Separator = styled("span", {
   display: "inline-block",
@@ -29,4 +29,4 @@ const Footer = () => (
   </div>
 )
 
-export default Footer
+export { Footer }

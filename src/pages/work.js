@@ -1,18 +1,22 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import SayHi from "../components/SayHi"
-import Link from "../components/Link"
-import { Box } from "../components/Box"
-import { Paragraph, Heading2 } from "../components/Typography"
-import List from "../components/List/List"
-import { Separator } from "../components/Separator"
+import { PageLayout } from "../layouts"
+import {
+  Box,
+  Heading2,
+  Link,
+  List,
+  Paragraph,
+  SEO,
+  Separator,
+} from "../components"
+
+import { SayHi } from "../patterns"
 
 const Work = ({ data }) => {
   return (
-    <Layout>
+    <PageLayout>
       <Box maxWidth="640px" marginTop={32} element="section">
         <SEO title="Work" />
         <Paragraph>
@@ -91,7 +95,7 @@ const Work = ({ data }) => {
           <SayHi />
         </Box>
       </Box>
-    </Layout>
+    </PageLayout>
   )
 }
 

@@ -14,7 +14,7 @@ locale: de_DE
 description: So realisierst du die Authentifizierung in einer Web App, die auf VueJS basiert.
 ---
 
-import Note from "../../../components/Note"
+import { Note } from "../../../components"
 
 <Note>
   Vorsicht! Dieser Artikel ist von 2017 und is sehr wahrscheinlich nicht mehr
@@ -72,20 +72,20 @@ export default {
   login(creds, redirect) {
     window.axios
       .post(API_ENDPOINT + "/auth", creds)
-      .then(response => {
+      .then((response) => {
         localStorage.setItem("user", JSON.stringify(response))
         // Redirect to a specified route
         if (redirect) {
           router.go(redirect)
         }
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error)
       })
   },
 
   // To log out
-  logout: function() {
+  logout: function () {
     localStorage.removeItem("user")
     router.go("/login")
   },

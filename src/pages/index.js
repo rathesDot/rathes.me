@@ -1,10 +1,10 @@
 import React from "react"
 import styled from "styled-components"
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import OverviewInfo from "../components/OverviewInfo"
-import { Box } from "../components/Box"
+import { PageLayout } from "../layouts"
+import { Box, SEO } from "../components"
+
+import { OverviewInfo } from "../patterns"
 
 const Introduction = styled.h1`
   color: ${(props) => props.theme.colors.white.default};
@@ -21,7 +21,7 @@ const Introduction = styled.h1`
 `
 
 const IndexPage = () => (
-  <Layout>
+  <PageLayout>
     <SEO title="Home" />
     <Box
       element="section"
@@ -35,7 +35,7 @@ const IndexPage = () => (
       </Introduction>
       <OverviewInfo />
     </Box>
-  </Layout>
+  </PageLayout>
 )
 
 export default IndexPage

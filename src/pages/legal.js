@@ -1,19 +1,19 @@
 import React from "react"
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import Link from "../components/Link"
-import { Box } from "../components/Box"
+import { PageLayout } from "../layouts"
 import {
+  Box,
   Heading1,
   Heading2,
   Heading4,
+  Link,
   Paragraph,
+  SEO,
   TextSmall,
-} from "../components/Typography"
+} from "../components"
 
 const Legal = () => (
-  <Layout>
+  <PageLayout>
     <SEO title="Legal Information" />
     <Box maxWidth="640px" marginTop={32} marginBottom={32}>
       <Heading1>Legal Information</Heading1>
@@ -141,7 +141,7 @@ const Legal = () => (
         </Link>
       </TextSmall>
     </Box>
-  </Layout>
+  </PageLayout>
 )
 
 export default Legal

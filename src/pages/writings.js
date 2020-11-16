@@ -1,17 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/Layout"
-import SEO from "../components/SEO"
-import Link from "../components/Link"
+import { Box, Link, List, Paragraph, SEO } from "../components"
+import { SayHi } from "../patterns"
+import { PageLayout } from "../layouts"
 
 import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
-
 import externalLinks from "../content/articles/externalLinks"
-import SayHi from "../components/SayHi"
-import { Box } from "../components/Box"
-import { Paragraph } from "../components/Typography"
-import List from "../components/List/List"
 
 const Writings = ({ data }) => {
   const blogPosts = getSortedGroups(
@@ -19,7 +14,7 @@ const Writings = ({ data }) => {
   )
 
   return (
-    <Layout>
+    <PageLayout>
       <Box maxWidth="640px" marginTop={32} element="section">
         <SEO title="Writings" />
         <Paragraph>
@@ -72,7 +67,7 @@ const Writings = ({ data }) => {
           <SayHi />
         </Box>
       </Box>
-    </Layout>
+    </PageLayout>
   )
 }
 

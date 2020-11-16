@@ -2,15 +2,12 @@ import React from "react"
 import { graphql, Link as RouterLink } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import Layout from "../../components/Layout"
-import SEO from "../../components/SEO"
-import Link from "../../components/Link"
-import { Box } from "../../components/Box"
-import { Heading1 } from "../../components/Typography"
+import { PageLayout } from "../"
+import { Box, Heading1, Link, SEO } from "../../components"
 
 import Img from "gatsby-image"
 
-export default ({ data }) => {
+export const BlogLayout = ({ data }) => {
   const post = data.mdx
   const meta = [
     {
@@ -51,7 +48,7 @@ export default ({ data }) => {
     : []
 
   return (
-    <Layout>
+    <PageLayout>
       <SEO
         title={post.frontmatter.title}
         description={post.excerpt}
@@ -71,7 +68,7 @@ export default ({ data }) => {
           </Link>
         </Box>
       </Box>
-    </Layout>
+    </PageLayout>
   )
 }
 
@@ -102,3 +99,5 @@ export const query = graphql`
     }
   }
 `
+
+export { BlogLayout as default }

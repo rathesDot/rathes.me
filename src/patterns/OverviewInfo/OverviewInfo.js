@@ -3,9 +3,7 @@ import styledComponent from "styled-components"
 
 import { styled } from "../../../stitches.config"
 
-import { TextBody, TextSmall } from "../Typography"
-import Link from "../Link"
-import { Box } from "../Box"
+import { Box, Link, TextBody, TextSmall } from "../../components"
 
 const Separator = styledComponent.span`
   width: 24px;
@@ -28,7 +26,7 @@ const Info = styledComponent(Link)`
   margin-top: 5px;
 `
 
-const OverviewInfo = () => (
+export const OverviewInfo = () => (
   <Box
     display="flex"
     justifyContent="space-between"
@@ -66,5 +64,3 @@ const OverviewInfo = () => (
     </Box>
   </Box>
 )
-
-export default OverviewInfo

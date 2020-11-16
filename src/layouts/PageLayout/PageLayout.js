@@ -2,15 +2,15 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { ThemeProvider } from "styled-components"
 
-import Navigation from "../Navigation"
-import Footer from "../Footer"
-import { Box } from "../Box"
+import { Box } from "../../components"
+
+import { Footer, Navigation } from "../../patterns"
 
 import Global from "./global"
 import theme from "../../../theme"
 
 const MainContainer = styled(Box)`
-  padding: 40px ${props => props.theme.spacing["4"]};
+  padding: 40px ${(props) => props.theme.spacing["4"]};
 
   @media (min-width: 768px) {
     padding: 60px 0 32px 60px;
@@ -21,7 +21,7 @@ const MainContainer = styled(Box)`
   }
 `
 
-const Layout = ({ children }) => (
+const PageLayout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <Global />
     <MainContainer
@@ -41,8 +41,8 @@ const Layout = ({ children }) => (
   </ThemeProvider>
 )
 
-Layout.propTypes = {
+PageLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export { PageLayout }
