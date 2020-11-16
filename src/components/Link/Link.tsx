@@ -7,7 +7,22 @@ const StyledLink = styled.a`
   text-decoration: ${(props) => (props.underlined ? "underline" : "none")};
 `
 
-export const Link = ({
+export type LinkProps = {
+  element?: React.ReactElement
+  color: "black" | "silver" | "white"
+  tint:
+    | "lightest"
+    | "lighter"
+    | "light"
+    | "default"
+    | "dark"
+    | "darker"
+    | "darkest"
+  isCurrent: boolean
+  underlined: boolean
+}
+
+export const Link: React.FC<LinkProps> = ({
   children,
   element,
   color,
