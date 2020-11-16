@@ -8,8 +8,7 @@ import {
   Heading3,
   Heading4,
 } from "./src/components/Typography"
-import { Separator } from "./src/components/Separator/Separator"
-import { Link, OrderedList, Quote } from "./src/components"
+import { Link, OrderedList, Quote, Separator } from "./src/components"
 
 import "prism-themes/themes/prism-atom-dark.css"
 

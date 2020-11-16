@@ -5,8 +5,7 @@ import { PageLayout } from "../layouts"
 import SEO from "../components/SEO"
 
 import { Heading1, Paragraph, Heading2 } from "../components/Typography"
-import { Box, Link, List } from "../components"
-import { Separator } from "../components/Separator/Separator"
+import { Box, Link, List, Separator } from "../components"
 
 import { SayHi } from "../patterns"
 
