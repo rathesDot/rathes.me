@@ -32,13 +32,17 @@ const Item = ({ children, subtitle, link }) => {
 
   return (
     <Title>
-      <Link
-        {...(isExternalLink ? { href: link } : { to: link })}
-        element={isExternalLink ? "a" : RouterLink}
-      >
-        {children}
-        {subtitle && <Subtitle color="silver">{subtitle}</Subtitle>}
-      </Link>
+      {isExternalLink ? (
+        <Link href={link}>
+          {children}
+          {subtitle && <Subtitle color="silver">{subtitle}</Subtitle>}
+        </Link>
+      ) : (
+        <RouterLink to={link}>
+          {children}
+          {subtitle && <Subtitle color="silver">{subtitle}</Subtitle>}
+        </RouterLink>
+      )}
     </Title>
   )
 }
