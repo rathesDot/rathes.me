@@ -3,7 +3,7 @@ import styledComponent from "styled-components"
 import { Link as RouterLink } from "gatsby"
 import { styled } from "../../../stitches.config"
 
-import { Box, Heading4, Link } from "../"
+import { Heading4, Link } from "../"
 
 const Title = styledComponent.li`
   font-size: ${(props) => props.theme.fontSize.base};
@@ -17,6 +17,10 @@ const Subtitle = styled("span", {
   color: "$gray600",
   display: "block",
   fontSize: "$xs",
+})
+
+const Container = styled("div", {
+  display: "block",
 })
 
 const ListContent = styled("ul", {
@@ -40,10 +44,10 @@ const Item = ({ children, subtitle, link }) => {
 }
 
 export const List = ({ title, children, ...props }) => (
-  <Box {...props}>
+  <Container {...props}>
     <Heading4 color="silver">{title}</Heading4>
     <ListContent>{children}</ListContent>
-  </Box>
+  </Container>
 )
 
 List.Item = Item
