@@ -5,6 +5,7 @@ const Element = styled.span`
   font-size: ${(props) => props.theme.fontSize.base};
   color: ${(props) =>
     props.color ? props.theme.colors[props.color][props.tint] : undefined};
+  text-decoration: ${(props) => (props.underlined ? "underline" : "none")};
 `
 
 export const TextBody = ({
@@ -12,10 +13,17 @@ export const TextBody = ({
   element,
   color,
   tint = "default",
+  underlined = false,
   ...props
 }) => {
   return (
-    <Element as={element || "span"} color={color} tint={tint} {...props}>
+    <Element
+      as={element || "span"}
+      color={color}
+      tint={tint}
+      underlined={underlined}
+      {...props}
+    >
       {children}
     </Element>
   )
