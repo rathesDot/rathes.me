@@ -2,7 +2,7 @@ import React from "react"
 import { Link as RouterLink } from "gatsby"
 
 import { PageLayout } from "../layouts"
-import SEO from "../components/SEO"
+import SEO from "../components/SEO/SEO"
 
 import {
   Box,

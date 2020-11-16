@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { PageLayout } from "../layouts"
-import SEO from "../components/SEO"
+import SEO from "../components/SEO/SEO"
 import { Box } from "../components"
 
 import { OverviewInfo } from "../patterns"

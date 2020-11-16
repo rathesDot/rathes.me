@@ -2,7 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import { PageLayout } from "../layouts"
-import SEO from "../components/SEO"
+import SEO from "../components/SEO/SEO"
 import { Link } from "../components"
 
 import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"

@@ -1,7 +1,7 @@
 import React from "react"
 
 import { PageLayout } from "../../layouts"
-import SEO from "../../components/SEO"
+import SEO from "../../components/SEO/SEO"
 import { Box, Heading1, Paragraph, TextBody } from "../../components"
 
 const ManagingTime = () => (
