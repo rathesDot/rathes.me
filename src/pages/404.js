@@ -1,8 +1,7 @@
 import React from "react"
 
 import { PageLayout } from "../layouts"
-import { SEO } from "../components/SEO/SEO"
-import { Box, Heading1, List, Paragraph } from "../components"
+import { Box, Heading1, List, Paragraph, SEO } from "../components"
 
 const NotFoundPage = () => (
   <PageLayout>

@@ -1,16 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import { Box, Link, List, Paragraph, SEO } from "../components"
+import { SayHi } from "../patterns"
 import { PageLayout } from "../layouts"
-import { SEO } from "../components/SEO/SEO"
-import { Link } from "../components"
 
 import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
-
 import externalLinks from "../content/articles/externalLinks"
-import { Box, List, Paragraph } from "../components"
-
-import { SayHi } from "../patterns"
 
 const Writings = ({ data }) => {
   const blogPosts = getSortedGroups(

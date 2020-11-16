@@ -2,8 +2,15 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import { PageLayout } from "../layouts"
-import { SEO } from "../components/SEO/SEO"
-import { Box, Heading2, Link, List, Paragraph, Separator } from "../components"
+import {
+  Box,
+  Heading2,
+  Link,
+  List,
+  Paragraph,
+  SEO,
+  Separator,
+} from "../components"
 
 import { SayHi } from "../patterns"
 

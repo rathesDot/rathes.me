@@ -1,7 +1,6 @@
 import React from "react"
 
 import { PageLayout } from "../layouts"
-import { SEO } from "../components/SEO/SEO"
 import {
   Box,
   Heading1,
@@ -9,6 +8,7 @@ import {
   Heading4,
   Link,
   Paragraph,
+  SEO,
   TextSmall,
 } from "../components"
 

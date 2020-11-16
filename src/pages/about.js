@@ -2,7 +2,6 @@ import React from "react"
 import { Link as RouterLink } from "gatsby"
 
 import { PageLayout } from "../layouts"
-import { SEO } from "../components/SEO/SEO"
 
 import {
   Box,
@@ -11,6 +10,7 @@ import {
   Link,
   List,
   Paragraph,
+  SEO,
   Separator,
 } from "../components"
 

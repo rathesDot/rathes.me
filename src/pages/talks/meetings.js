@@ -1,8 +1,7 @@
 import React from "react"
 
 import { PageLayout } from "../../layouts"
-import { SEO } from "../../components/SEO/SEO"
-import { Box, Heading1, Paragraph, TextBody } from "../../components"
+import { Box, Heading1, Paragraph, SEO, TextBody } from "../../components"
 
 const Meetings = () => (
   <PageLayout>
