@@ -9,7 +9,6 @@ const StyledLink = styled.a`
 
 export const Link = ({
   children,
-  element = "a",
   color = undefined,
   tint = "default",
   isCurrent = false,
@@ -17,13 +16,7 @@ export const Link = ({
   ...props
 }) => {
   return (
-    <StyledLink
-      as={element || "a"}
-      color={color}
-      tint={tint}
-      underlined={underlined}
-      {...props}
-    >
+    <StyledLink color={color} tint={tint} underlined={underlined} {...props}>
       {children}
     </StyledLink>
   )
