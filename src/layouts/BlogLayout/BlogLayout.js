@@ -1,11 +1,17 @@
 import React from "react"
 import { graphql, Link as RouterLink } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import Img from "gatsby-image"
 
 import { PageLayout } from "../"
-import { Box, Heading1, Link, Meta } from "../../components"
+import { Box, Heading1, Meta } from "../../components"
 
-import Img from "gatsby-image"
+import { styled } from "../../../stitches.config"
+
+const BackLink = styled("span", {
+  color: "$white",
+  textDecoration: "underline",
+})
 
 export const BlogLayout = ({ data }) => {
   const post = data.mdx
@@ -63,9 +69,9 @@ export const BlogLayout = ({ data }) => {
         </Box>
         <MDXRenderer>{post.body}</MDXRenderer>
         <Box element="footer" marginTop={32} marginBottom={32}>
-          <Link element={RouterLink} color="white" underlined to="/writings">
-            back to articles
-          </Link>
+          <RouterLink to="/writings">
+            <BackLink>back to articles</BackLink>
+          </RouterLink>
         </Box>
       </Box>
     </PageLayout>
