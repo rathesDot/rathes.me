@@ -1,20 +1,18 @@
-import React from "react"
+import { styled } from "../../../stitches.config"
 
-import { Box } from "../Box/Box"
+export const Note = styled("p", {
+  backgroundColor: "$gray900",
+  color: "$gray500",
+  marginBottom: "$8",
+  marginTop: "$8",
+  padding: "$4",
+  fontSize: "$sm",
 
-export const Note = ({ children, ...props }) => (
-  <Box
-    element={"p"}
-    backgroundColor="black"
-    backgroundTint="light"
-    marginTop={8}
-    marginBottom={8}
-    padding={4}
-    textColor="silver"
-    textTint="darker"
-    fontSize="sm"
-    {...props}
-  >
-    {children}
-  </Box>
-)
+  variants: {
+    fontFamily: {
+      mono: {
+        fontFamily: "$mono",
+      },
+    },
+  },
+})
