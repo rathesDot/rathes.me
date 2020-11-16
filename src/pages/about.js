@@ -3,13 +3,14 @@ import { Link as RouterLink } from "gatsby"
 
 import { PageLayout } from "../layouts"
 import SEO from "../components/SEO"
-import { SayHi } from "../components/SayHi/SayHi"
 
 import { Heading1, Paragraph, Heading2 } from "../components/Typography"
 import { Box } from "../components/Box"
 import List from "../components/List/List"
 import Link from "../components/Link"
 import { Separator } from "../components/Separator"
+
+import { SayHi } from "../patterns"
 
 const AboutMe = () => (
   <PageLayout>
