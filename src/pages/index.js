@@ -3,8 +3,9 @@ import styled from "styled-components"
 
 import { PageLayout } from "../layouts"
 import SEO from "../components/SEO"
-import { OverviewInfo } from "../components/OverviewInfo/OverviewInfo"
 import { Box } from "../components/Box"
+
+import { OverviewInfo } from "../patterns"
 
 const Introduction = styled.h1`
   color: ${(props) => props.theme.colors.white.default};
