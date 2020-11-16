@@ -7,6 +7,7 @@ import { Box, Heading1, Paragraph, Meta } from "../../components"
 const HelpText = styled("span", {
   color: "$gray600",
   display: "block",
+  fontSize: "$base",
   lineHeight: "$1.8",
 })
 
