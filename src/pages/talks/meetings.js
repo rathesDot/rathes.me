@@ -1,7 +1,14 @@
 import React from "react"
+import { styled } from "../../../stitches.config"
 
 import { PageLayout } from "../../layouts"
-import { Box, Heading1, Paragraph, Meta, TextBody } from "../../components"
+import { Box, Heading1, Paragraph, Meta } from "../../components"
+
+const HelpText = styled("span", {
+  color: "$gray600",
+  display: "block",
+  lineHeight: "$1.8",
+})
 
 const Meetings = () => (
   <PageLayout>
@@ -9,9 +16,9 @@ const Meetings = () => (
     <Box maxWidth="640px">
       <Heading1>
         You probably don't need that meeting
-        <Box element={TextBody} lineHeight={1.8} color="silver" display="block">
+        <HelpText>
           Developing a meeting culture that employees will love
-        </Box>
+        </HelpText>
       </Heading1>
       <Paragraph>
         Be honest with yourself. How many of your meetings do you think were

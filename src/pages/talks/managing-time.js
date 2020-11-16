@@ -1,7 +1,14 @@
 import React from "react"
+import { styled } from "../../../stitches.config"
 
 import { PageLayout } from "../../layouts"
-import { Box, Heading1, Paragraph, Meta, TextBody } from "../../components"
+import { Box, Heading1, Paragraph, Meta } from "../../components"
+
+const HelpText = styled("span", {
+  color: "$gray600",
+  display: "block",
+  lineHeight: "$1.8",
+})
 
 const ManagingTime = () => (
   <PageLayout>
@@ -9,9 +16,7 @@ const ManagingTime = () => (
     <Box maxWidth="640px">
       <Heading1>
         You can't manage time
-        <Box element={TextBody} lineHeight={1.8} color="silver" display="block">
-          A talk about what people call time management
-        </Box>
+        <HelpText>A talk about what people call time management</HelpText>
       </Heading1>
       <Paragraph>
         How many different things did you already try out to be more productive
