@@ -40,5 +40,3 @@ export const List = ({ title, children, ...props }) => (
 )
 
 List.Item = Item
-
-export default List
