@@ -12,9 +12,9 @@ export type MetaProps = {
 }
 
 export const Meta: React.FC<MetaProps> = ({
-  description,
-  lang,
-  meta,
+  description = "",
+  lang = `en`,
+  meta = [],
   title,
 }) => {
   const data = useStaticQuery(graphql`
@@ -78,10 +78,4 @@ export const Meta: React.FC<MetaProps> = ({
       ].concat(meta)}
     />
   )
-}
-
-Meta.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
 }
