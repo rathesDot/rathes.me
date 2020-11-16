@@ -10,20 +10,13 @@ const Element = styled.span`
 
 export const TextBody = ({
   children,
-  element,
   color,
   tint = "default",
   underlined = false,
   ...props
 }) => {
   return (
-    <Element
-      as={element || "span"}
-      color={color}
-      tint={tint}
-      underlined={underlined}
-      {...props}
-    >
+    <Element color={color} tint={tint} underlined={underlined} {...props}>
       {children}
     </Element>
   )
