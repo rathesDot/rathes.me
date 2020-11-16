@@ -19,6 +19,10 @@ const Subtitle = styled("span", {
   fontSize: "$xs",
 })
 
+const ListContent = styled("ul", {
+  display: "block",
+})
+
 const Item = ({ children, subtitle, link }) => {
   const isExternalLink = link && link.startsWith("http")
 
@@ -38,7 +42,7 @@ const Item = ({ children, subtitle, link }) => {
 export const List = ({ title, children, ...props }) => (
   <Box {...props}>
     <Heading4 color="silver">{title}</Heading4>
-    <Box element="ul">{children}</Box>
+    <ListContent>{children}</ListContent>
   </Box>
 )
 
