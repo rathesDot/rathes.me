@@ -4,7 +4,7 @@ import { Link as RouterLink } from "gatsby"
 import { styled } from "../../../stitches.config"
 
 import { Heading4, TextBody, TextSmall } from "../Typography"
-import { Box } from "../Box"
+import { Box } from "../Box/Box"
 import Link from "../Link"
 
 const Title = styledComponent(TextBody)`
