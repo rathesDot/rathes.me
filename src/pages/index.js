@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { PageLayout } from "../layouts"
 import SEO from "../components/SEO"
-import OverviewInfo from "../components/OverviewInfo/OverviewInfo"
+import { OverviewInfo } from "../components/OverviewInfo/OverviewInfo"
 import { Box } from "../components/Box"
 
 const Introduction = styled.h1`

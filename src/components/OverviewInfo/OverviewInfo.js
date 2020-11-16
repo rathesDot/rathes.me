@@ -28,7 +28,7 @@ const Info = styledComponent(Link)`
   margin-top: 5px;
 `
 
-const OverviewInfo = () => (
+export const OverviewInfo = () => (
   <Box
     display="flex"
     justifyContent="space-between"
@@ -66,5 +66,3 @@ const OverviewInfo = () => (
     </Box>
   </Box>
 )
-
-export default OverviewInfo
