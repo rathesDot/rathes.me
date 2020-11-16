@@ -16,6 +16,8 @@ export type TextBodyProps = {
 export const TextBody = styled.span<TextBodyProps>`
   font-size: ${(props) => props.theme.fontSize.base};
   color: ${(props) =>
-    props.color ? props.theme.colors[props.color][props.tint] : undefined};
+    props.color
+      ? props.theme.colors[props.color][props.tint || "default"]
+      : undefined};
   text-decoration: ${(props) => (props.underlined ? "underline" : "none")};
 `
