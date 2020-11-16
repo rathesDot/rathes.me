@@ -9,9 +9,7 @@ import {
   Heading4,
 } from "./src/components/Typography"
 import { Separator } from "./src/components/Separator"
-import { OrderedList } from "./src/components/List/OrderedList"
-import { Quote } from "./src/components/Quote/Quote"
-import { Link } from "./src/components"
+import { Link, OrderedList, Quote } from "./src/components"
 
 import "prism-themes/themes/prism-atom-dark.css"
 
