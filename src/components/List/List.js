@@ -3,23 +3,27 @@ import styledComponent from "styled-components"
 import { Link as RouterLink } from "gatsby"
 import { styled } from "../../../stitches.config"
 
-import { Box, Heading4, Link, TextBody, TextSmall } from "../"
+import { Box, Heading4, Link } from "../"
 
-const Title = styledComponent(TextBody)`
+const Title = styledComponent.li`
+  font-size: ${(props) => props.theme.fontSize.base};
+  color: ${(props) => props.theme.colors.white.default};
   margin: ${(props) =>
     props.subtitle ? props.theme.spacing[4] : props.theme.spacing[2]}
     0;
 `
 
-const Subtitle = styled(TextSmall, {
+const Subtitle = styled("span", {
+  color: "$gray600",
   display: "block",
+  fontSize: "$xs",
 })
 
 const Item = ({ children, subtitle, link }) => {
   const isExternalLink = link && link.startsWith("http")
 
   return (
-    <Title element="li" color="white" subtitle={subtitle}>
+    <Title>
       <Link
         {...(isExternalLink ? { href: link } : { to: link })}
         element={isExternalLink ? "a" : RouterLink}
