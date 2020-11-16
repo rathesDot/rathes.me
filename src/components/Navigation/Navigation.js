@@ -10,13 +10,13 @@ import { Box } from "../Box"
 const Separator = styled.span`
   display: inline-block;
   margin: 0 8px;
-  color: ${props => props.theme.colors.silver.default};
-  font-size: ${props => props.theme.fontSize.lg};
-  font-family: ${props => props.theme.fontFamily.default};
+  color: ${(props) => props.theme.colors.silver.default};
+  font-size: ${(props) => props.theme.fontSize.lg};
+  font-family: ${(props) => props.theme.fontFamily.default};
 
   @media (max-width: 374px) {
     margin: 0 4px;
-    font-size: ${props => props.theme.fontSize.base};
+    font-size: ${(props) => props.theme.fontSize.base};
   }
 
   &:before {
@@ -25,17 +25,17 @@ const Separator = styled.span`
 `
 
 const MenuItem = styled(Link)`
-  color: ${props => props.theme.colors.silver.default};
-  font-size: ${props => props.theme.fontSize.lg};
-  font-family: ${props => props.theme.fontFamily.default};
+  color: ${(props) => props.theme.colors.silver.default};
+  font-size: ${(props) => props.theme.fontSize.lg};
+  font-family: ${(props) => props.theme.fontFamily.default};
   font-weight: 600;
 
   @media (max-width: 375px) {
-    font-size: ${props => props.theme.fontSize.base};
+    font-size: ${(props) => props.theme.fontSize.base};
   }
 
   @media (max-width: 320px) {
-    font-size: ${props => props.theme.fontSize.sm};
+    font-size: ${(props) => props.theme.fontSize.sm};
   }
 `
 
@@ -96,4 +96,4 @@ const Navigation = () => {
   )
 }
 
-export default Navigation
+export { Navigation }
