@@ -7,11 +7,11 @@ import {
   Box,
   Heading1,
   Heading2,
-  Link,
   List,
   Paragraph,
   Meta,
   Separator,
+  TextBody,
 } from "../components"
 
 import { SayHi } from "../patterns"
@@ -137,9 +137,11 @@ const AboutMe = () => (
         <Paragraph>
           From time to time I also write. It can be work related topics that I
           share in the{" "}
-          <Link element={RouterLink} to="/writings" underlined color="white">
-            writing section
-          </Link>{" "}
+          <RouterLink to="/writings">
+            <TextBody color="white" underlined>
+              writing section
+            </TextBody>
+          </RouterLink>{" "}
           of this website but I also write to empty my mind and eternalize
           ideas.
         </Paragraph>
