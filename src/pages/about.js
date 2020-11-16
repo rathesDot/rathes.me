@@ -6,7 +6,7 @@ import SEO from "../components/SEO"
 
 import { Heading1, Paragraph, Heading2 } from "../components/Typography"
 import { Box, Link, List } from "../components"
-import { Separator } from "../components/Separator"
+import { Separator } from "../components/Separator/Separator"
 
 import { SayHi } from "../patterns"
 
