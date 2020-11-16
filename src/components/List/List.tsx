@@ -8,9 +8,7 @@ import { Heading4, Link } from ".."
 const Title = styledComponent.li`
   font-size: ${(props) => props.theme.fontSize.base};
   color: ${(props) => props.theme.colors.white.default};
-  margin: ${(props) =>
-    props.subtitle ? props.theme.spacing[4] : props.theme.spacing[2]}
-    0;
+  margin: ${(props) => props.theme.spacing[2]} 0;
 `
 
 const Subtitle = styled("span", {
