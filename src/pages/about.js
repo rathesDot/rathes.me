@@ -3,7 +3,7 @@ import { Link as RouterLink } from "gatsby"
 
 import { PageLayout } from "../layouts"
 import SEO from "../components/SEO"
-import SayHi from "../components/SayHi/SayHi"
+import { SayHi } from "../components/SayHi/SayHi"
 
 import { Heading1, Paragraph, Heading2 } from "../components/Typography"
 import { Box } from "../components/Box"

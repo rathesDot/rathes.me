@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import { PageLayout } from "../layouts"
 import SEO from "../components/SEO"
-import SayHi from "../components/SayHi/SayHi"
+import { SayHi } from "../components/SayHi/SayHi"
 import Link from "../components/Link"
 import { Box } from "../components/Box"
 import { Paragraph, Heading2 } from "../components/Typography"

@@ -3,7 +3,7 @@ import React from "react"
 import Link from "../Link"
 import { Box } from "../Box"
 
-const SayHi = () => (
+export const SayHi = () => (
   <Box
     maxWidth="520px"
     fontFamily="default"
@@ -22,5 +22,3 @@ const SayHi = () => (
     </Link>
   </Box>
 )
-
-export default SayHi
