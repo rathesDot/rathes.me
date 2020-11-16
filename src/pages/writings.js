@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { PageLayout } from "../components/Layout/PageLayout"
+import { PageLayout } from "../components/PageLayout/PageLayout"
 import SEO from "../components/SEO"
 import Link from "../components/Link"
 

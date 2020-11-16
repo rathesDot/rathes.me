@@ -1,6 +1,6 @@
 import React from "react"
 
-import { PageLayout } from "../../components/Layout/PageLayout"
+import { PageLayout } from "../../components/PageLayout/PageLayout"
 import SEO from "../../components/SEO"
 import { Box } from "../../components/Box"
 import { Heading1, Paragraph, TextBody } from "../../components/Typography"
