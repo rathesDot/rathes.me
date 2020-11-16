@@ -4,7 +4,7 @@ import styled, { useTheme } from "styled-components"
 
 import Logo from "../../components/Logo"
 
-import Link from "../../components/Link"
+import Link from "../../components/Link/Link"
 import { Box } from "../../components"
 
 const Separator = styled.span`
