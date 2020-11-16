@@ -4,7 +4,7 @@ import { PageLayout } from "../layouts"
 import SEO from "../components/SEO"
 import { Box } from "../components"
 import { Heading1, Paragraph } from "../components/Typography"
-import { List } from "../components/List"
+import { List } from "../components/List/List"
 
 const NotFoundPage = () => (
   <PageLayout>

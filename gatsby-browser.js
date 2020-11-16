@@ -9,7 +9,7 @@ import {
   Heading4,
 } from "./src/components/Typography"
 import { Separator } from "./src/components/Separator"
-import { OrderedList } from "./src/components/List"
+import { OrderedList } from "./src/components/List/OrderedList"
 import { Quote } from "./src/components/Quote"
 import { Link } from "./src/components"
 
