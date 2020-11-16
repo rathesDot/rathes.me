@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { ThemeProvider } from "styled-components"
 
-import { Box } from "../Box"
+import { Box } from "../../components/Box"
 
 import { Footer, Navigation } from "../../patterns"
 

@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link as RouterLink } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import { PageLayout } from "../../components/PageLayout/PageLayout"
+import { PageLayout } from "../../layouts/PageLayout/PageLayout"
 import SEO from "../../components/SEO"
 import Link from "../../components/Link"
 import { Box } from "../../components/Box"
