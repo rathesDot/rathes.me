@@ -1,9 +1,22 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 
-export const Meta = ({ description, lang, meta, title }) => {
+export type MetaProps = {
+  description?: string
+  lang?: string
+  meta?: Array<
+    { name: string; content: string } | { property: string; content: string }
+  >
+  title: string
+}
+
+export const Meta: React.FC<MetaProps> = ({
+  description,
+  lang,
+  meta,
+  title,
+}) => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -71,11 +84,4 @@ Meta.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
-}
-
-Meta.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
