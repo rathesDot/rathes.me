@@ -9,8 +9,8 @@ const StyledLink = styled.a`
 
 export type LinkProps = {
   element?: React.ReactElement
-  color?: "black" | "silver" | "white"
-  tint?:
+  color: "black" | "silver" | "white"
+  tint:
     | "lightest"
     | "lighter"
     | "light"
@@ -18,8 +18,8 @@ export type LinkProps = {
     | "dark"
     | "darker"
     | "darkest"
-  isCurrent?: boolean
-  underlined?: boolean
+  isCurrent: boolean
+  underlined: boolean
 }
 
 export const Link: React.FC<LinkProps> = ({
