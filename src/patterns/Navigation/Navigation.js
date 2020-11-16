@@ -2,10 +2,10 @@ import React from "react"
 import { Link as RouterLink, graphql, useStaticQuery } from "gatsby"
 import styled, { useTheme } from "styled-components"
 
-import Logo from "../Logo"
+import Logo from "../../components/Logo"
 
-import Link from "../Link"
-import { Box } from "../Box"
+import Link from "../../components/Link"
+import { Box } from "../../components/Box"
 
 const Separator = styled.span`
   display: inline-block;

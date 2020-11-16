@@ -2,10 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled, { ThemeProvider } from "styled-components"
 
-import { Navigation } from "../Navigation/Navigation"
 import { Box } from "../Box"
 
-import { Footer } from "../../patterns"
+import { Footer, Navigation } from "../../patterns"
 
 import Global from "./global"
 import theme from "../../../theme"
