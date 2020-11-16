@@ -24,7 +24,7 @@ export type LinkProps = {
 
 export const Link: React.FC<LinkProps> = ({
   children,
-  element,
+  element = "a",
   color,
   tint = "default",
   isCurrent,
@@ -33,7 +33,7 @@ export const Link: React.FC<LinkProps> = ({
 }) => {
   return (
     <StyledLink
-      as={element || "a"}
+      as={element}
       color={color}
       tint={tint}
       underlined={underlined}
