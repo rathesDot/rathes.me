@@ -1,6 +1,6 @@
 import React from "react"
 
-import Layout from "../components/Layout"
+import Layout from "../components/Layout/PageLayout"
 import SEO from "../components/SEO"
 import Link from "../components/Link"
 import { Box } from "../components/Box"

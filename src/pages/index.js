@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import Layout from "../components/Layout"
+import Layout from "../components/Layout/PageLayout"
 import SEO from "../components/SEO"
 import OverviewInfo from "../components/OverviewInfo"
 import { Box } from "../components/Box"

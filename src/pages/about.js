@@ -1,7 +1,7 @@
 import React from "react"
 import { Link as RouterLink } from "gatsby"
 
-import Layout from "../components/Layout"
+import Layout from "../components/Layout/PageLayout"
 import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
 
