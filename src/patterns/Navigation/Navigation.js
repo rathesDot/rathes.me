@@ -2,7 +2,7 @@ import React from "react"
 import { Link as RouterLink, graphql, useStaticQuery } from "gatsby"
 import styled, { useTheme } from "styled-components"
 
-import { Box, Link, Logo } from "../../components"
+import { Link, Logo } from "../../components"
 
 const Separator = styled.span`
   display: inline-block;
@@ -36,6 +36,11 @@ const MenuItem = styled(Link)`
   }
 `
 
+const Container = styled.nav`
+  align-items: center;
+  display: flex;
+`
+
 const Navigation = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -48,7 +53,7 @@ const Navigation = () => {
   const theme = useTheme()
 
   return (
-    <Box display="flex" alignItems="center" element="nav">
+    <Container>
       <MenuItem
         element={RouterLink}
         to="/"
@@ -89,7 +94,7 @@ const Navigation = () => {
       >
         Writings
       </MenuItem>
-    </Box>
+    </Container>
   )
 }
 
