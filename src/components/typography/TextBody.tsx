@@ -1,6 +1,19 @@
 import styled from "styled-components"
 
-export const TextBody = styled.span`
+export type TextBodyProps = {
+  color?: "white" | "black" | "silver"
+  tint?:
+    | "default"
+    | "light"
+    | "lighter"
+    | "lightest"
+    | "dark"
+    | "darker"
+    | "darkest"
+  underlined: boolean
+}
+
+export const TextBody = styled.span<TextBodyProps>`
   font-size: ${(props) => props.theme.fontSize.base};
   color: ${(props) =>
     props.color ? props.theme.colors[props.color][props.tint] : undefined};
