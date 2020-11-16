@@ -1,11 +1,11 @@
 import React from "react"
 
 import { PageLayout } from "../layouts"
-import { Box, Heading1, List, Paragraph, SEO } from "../components"
+import { Box, Heading1, List, Paragraph, Meta } from "../components"
 
 const NotFoundPage = () => (
   <PageLayout>
-    <SEO title="404: Not found" />
+    <Meta title="404: Not found" />
     <Box maxWidth="640px">
       <Heading1>
         Looks like you are looking for a page that does not exist.

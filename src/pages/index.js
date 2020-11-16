@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 
 import { PageLayout } from "../layouts"
-import { Box, SEO } from "../components"
+import { Box, Meta } from "../components"
 
 import { OverviewInfo } from "../patterns"
 
@@ -22,7 +22,7 @@ const Introduction = styled.h1`
 
 const IndexPage = () => (
   <PageLayout>
-    <SEO title="Home" />
+    <Meta title="Home" />
     <Box
       element="section"
       display="flex"

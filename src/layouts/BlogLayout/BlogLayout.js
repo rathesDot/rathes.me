@@ -3,7 +3,7 @@ import { graphql, Link as RouterLink } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import { PageLayout } from "../"
-import { Box, Heading1, Link, SEO } from "../../components"
+import { Box, Heading1, Link, Meta } from "../../components"
 
 import Img from "gatsby-image"
 
@@ -49,7 +49,7 @@ export const BlogLayout = ({ data }) => {
 
   return (
     <PageLayout>
-      <SEO
+      <Meta
         title={post.frontmatter.title}
         description={post.excerpt}
         meta={[...meta, ...imageMeta]}

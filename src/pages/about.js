@@ -10,7 +10,7 @@ import {
   Link,
   List,
   Paragraph,
-  SEO,
+  Meta,
   Separator,
 } from "../components"
 
@@ -18,7 +18,7 @@ import { SayHi } from "../patterns"
 
 const AboutMe = () => (
   <PageLayout>
-    <SEO title="About me" />
+    <Meta title="About me" />
     <Box maxWidth="640px" marginTop={32}>
       <Heading1>/raðiːs/</Heading1>
       <Paragraph>

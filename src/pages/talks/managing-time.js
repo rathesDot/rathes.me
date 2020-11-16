@@ -1,11 +1,11 @@
 import React from "react"
 
 import { PageLayout } from "../../layouts"
-import { Box, Heading1, Paragraph, SEO, TextBody } from "../../components"
+import { Box, Heading1, Paragraph, Meta, TextBody } from "../../components"
 
 const ManagingTime = () => (
   <PageLayout>
-    <SEO title="You can't manage time - A talk about what people call time management"></SEO>
+    <Meta title="You can't manage time - A talk about what people call time management"></Meta>
     <Box maxWidth="640px">
       <Heading1>
         You can't manage time

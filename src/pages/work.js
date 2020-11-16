@@ -8,7 +8,7 @@ import {
   Link,
   List,
   Paragraph,
-  SEO,
+  Meta,
   Separator,
 } from "../components"
 
@@ -18,7 +18,7 @@ const Work = ({ data }) => {
   return (
     <PageLayout>
       <Box maxWidth="640px" marginTop={32} element="section">
-        <SEO title="Work" />
+        <Meta title="Work" />
         <Paragraph>
           I work as a front-end engineer at Hussle right now but I also work on
           other side projects that are not only development related. If you want

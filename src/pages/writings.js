@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { Box, Link, List, Paragraph, SEO } from "../components"
+import { Box, Link, List, Paragraph, Meta } from "../components"
 import { SayHi } from "../patterns"
 import { PageLayout } from "../layouts"
 
@@ -16,7 +16,7 @@ const Writings = ({ data }) => {
   return (
     <PageLayout>
       <Box maxWidth="640px" marginTop={32} element="section">
-        <SEO title="Writings" />
+        <Meta title="Writings" />
         <Paragraph>
           From time to time, I do write. Sometime on my blog, but also on other
           blogs such as on{" "}

@@ -1,11 +1,11 @@
 import React from "react"
 
 import { PageLayout } from "../../layouts"
-import { Box, Heading1, Paragraph, SEO, TextBody } from "../../components"
+import { Box, Heading1, Paragraph, Meta, TextBody } from "../../components"
 
 const Meetings = () => (
   <PageLayout>
-    <SEO title="You probably don't need that meeting - Developing a meeting culture that employees will love"></SEO>
+    <Meta title="You probably don't need that meeting - Developing a meeting culture that employees will love"></Meta>
     <Box maxWidth="640px">
       <Heading1>
         You probably don't need that meeting

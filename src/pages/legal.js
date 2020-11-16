@@ -8,13 +8,13 @@ import {
   Heading4,
   Link,
   Paragraph,
-  SEO,
+  Meta,
   TextSmall,
 } from "../components"
 
 const Legal = () => (
   <PageLayout>
-    <SEO title="Legal Information" />
+    <Meta title="Legal Information" />
     <Box maxWidth="640px" marginTop={32} marginBottom={32}>
       <Heading1>Legal Information</Heading1>
       <Heading2>Pursuant to § 5 TMG:</Heading2>
