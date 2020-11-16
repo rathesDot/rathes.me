@@ -12,7 +12,7 @@ const QuoteContainer = styled(Box)`
   }
 `
 
-const Quote = ({ children }) => (
+export const Quote = ({ children }) => (
   <QuoteContainer
     element="blockquote"
     backgroundColor="black"
