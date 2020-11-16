@@ -3,7 +3,7 @@ import styledComponent from "styled-components"
 import { Link as RouterLink } from "gatsby"
 import { styled } from "../../../stitches.config"
 
-import { Heading4, Link } from "../"
+import { Heading4, Link } from ".."
 
 const Title = styledComponent.li`
   font-size: ${(props) => props.theme.fontSize.base};
