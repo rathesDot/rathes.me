@@ -3,7 +3,7 @@ import styledComponent from "styled-components"
 
 import { styled } from "../../../stitches.config"
 
-import { Box, Link, TextBody, TextSmall } from "../../components"
+import { Box, Link, TextSmall } from "../../components"
 
 const Separator = styledComponent.span`
   width: 24px;
@@ -36,29 +36,21 @@ export const OverviewInfo = () => (
     <Box>
       <Separator />
       <Title color="silver">Working at</Title>
-      <Info color="white" href="https://www.hussle.com" element={TextBody}>
+      <Info color="white" href="https://www.hussle.com">
         Hussle
       </Info>
     </Box>
     <Box>
       <Separator />
       <Title color="silver">Living in</Title>
-      <Info
-        color="white"
-        element={TextBody}
-        href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9"
-      >
+      <Info color="white" href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9">
         London
       </Info>
     </Box>
     <Box>
       <Separator />
       <Title color="silver">Follow me</Title>
-      <Info
-        color="white"
-        element={TextBody}
-        href="https://twitter.com/rswebdesigner"
-      >
+      <Info color="white" href="https://twitter.com/rswebdesigner">
         @rswebdesigner
       </Info>
     </Box>
