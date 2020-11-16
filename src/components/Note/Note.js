@@ -2,9 +2,9 @@ import React from "react"
 
 import { Box } from "../Box/Box"
 
-export const Note = ({ element, children, ...props }) => (
+export const Note = ({ children, ...props }) => (
   <Box
-    element={element || "p"}
+    element={"p"}
     backgroundColor="black"
     backgroundTint="light"
     marginTop={8}
