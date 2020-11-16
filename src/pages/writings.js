@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 
 import { PageLayout } from "../layouts"
 import SEO from "../components/SEO"
-import { Link } from "../components/Link/Link"
+import { Link } from "../components"
 
 import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
 

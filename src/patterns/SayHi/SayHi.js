@@ -1,7 +1,6 @@
 import React from "react"
 
-import { Link } from "../../components/Link/Link"
-import { Box } from "../../components"
+import { Box, Link } from "../../components"
 
 export const SayHi = () => (
   <Box

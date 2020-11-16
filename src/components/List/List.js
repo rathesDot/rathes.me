@@ -4,8 +4,7 @@ import { Link as RouterLink } from "gatsby"
 import { styled } from "../../../stitches.config"
 
 import { Heading4, TextBody, TextSmall } from "../Typography"
-import { Box } from "../Box/Box"
-import { Link } from "../Link/Link"
+import { Box, Link } from "../"
 
 const Title = styledComponent(TextBody)`
   margin: ${(props) =>
