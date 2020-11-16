@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styled, { ThemeProvider } from "styled-components"
 
 import { Box } from "../../components"
@@ -21,7 +20,7 @@ const MainContainer = styled(Box)`
   }
 `
 
-const PageLayout = ({ children }) => (
+const PageLayout: React.FC = ({ children }) => (
   <ThemeProvider theme={theme}>
     <Global />
     <MainContainer
@@ -40,9 +39,5 @@ const PageLayout = ({ children }) => (
     </MainContainer>
   </ThemeProvider>
 )
-
-PageLayout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
 
 export { PageLayout }
