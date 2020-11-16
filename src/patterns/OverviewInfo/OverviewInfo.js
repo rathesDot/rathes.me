@@ -5,7 +5,7 @@ import { styled } from "../../../stitches.config"
 
 import { TextBody, TextSmall } from "../../components/Typography"
 import Link from "../../components/Link"
-import { Box } from "../../components/Box"
+import { Box } from "../../components"
 
 const Separator = styledComponent.span`
   width: 24px;

@@ -5,7 +5,7 @@ import styled, { useTheme } from "styled-components"
 import Logo from "../../components/Logo"
 
 import Link from "../../components/Link"
-import { Box } from "../../components/Box"
+import { Box } from "../../components"
 
 const Separator = styled.span`
   display: inline-block;

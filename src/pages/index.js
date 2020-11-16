@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 import { PageLayout } from "../layouts"
 import SEO from "../components/SEO"
-import { Box } from "../components/Box"
+import { Box } from "../components"
 
 import { OverviewInfo } from "../patterns"
 

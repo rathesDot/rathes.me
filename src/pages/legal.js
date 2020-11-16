@@ -3,7 +3,7 @@ import React from "react"
 import { PageLayout } from "../layouts"
 import SEO from "../components/SEO"
 import Link from "../components/Link"
-import { Box } from "../components/Box"
+import { Box } from "../components"
 import {
   Heading1,
   Heading2,
