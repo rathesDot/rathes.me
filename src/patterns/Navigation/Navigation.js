@@ -1,8 +1,8 @@
 import React from "react"
-import { Link as RouterLink, graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import styled, { useTheme } from "styled-components"
 
-import { Link, Logo } from "../../components"
+import { Logo } from "../../components"
 
 const Separator = styled.span`
   display: inline-block;
@@ -21,7 +21,7 @@ const Separator = styled.span`
   }
 `
 
-const MenuItem = styled(Link)`
+const MenuItem = styled.span`
   font-size: ${(props) => props.theme.fontSize.lg};
   font-family: ${(props) => props.theme.fontFamily.default};
   font-weight: 600;
@@ -54,46 +54,31 @@ const Navigation = () => {
 
   return (
     <Container>
-      <MenuItem
-        element={RouterLink}
+      <Link
         to="/"
         aria-label="Home"
         activeStyle={{ color: theme.colors.white.default }}
       >
-        <Logo />
-      </MenuItem>
+        <MenuItem>
+          <Logo />
+        </MenuItem>
+      </Link>
       <Separator />
-      <MenuItem
-        activeStyle={{ color: theme.colors.white.default }}
-        element={RouterLink}
-        to="/about"
-      >
-        About
-      </MenuItem>
+      <Link activeStyle={{ color: theme.colors.white.default }} to="/about">
+        <MenuItem>About</MenuItem>
+      </Link>
       <Separator />
-      <MenuItem
-        activeStyle={{ color: theme.colors.white.default }}
-        href={data.resume.publicURL}
-        aria-label="Resume"
-      >
-        Resume
-      </MenuItem>
+      <a href={data.resume.publicURL} aria-label="Resume">
+        <MenuItem>Resume</MenuItem>
+      </a>
       <Separator />
-      <MenuItem
-        activeStyle={{ color: theme.colors.white.default }}
-        element={RouterLink}
-        to="/work"
-      >
-        Work
-      </MenuItem>
+      <Link activeStyle={{ color: theme.colors.white.default }} to="/work">
+        <MenuItem>Work</MenuItem>
+      </Link>
       <Separator />
-      <MenuItem
-        activeStyle={{ color: theme.colors.white.default }}
-        element={RouterLink}
-        to="/writings"
-      >
-        Writings
-      </MenuItem>
+      <Link activeStyle={{ color: theme.colors.white.default }} to="/writings">
+        <MenuItem>Writings</MenuItem>
+      </Link>
     </Container>
   )
 }
