@@ -27,7 +27,12 @@ const ListContent = styled("ul", {
   display: "block",
 })
 
-const Item = ({ children, subtitle, link }) => {
+export type ItemProps = {
+  subtitle?: string
+  link: string
+}
+
+const Item: React.FC<ItemProps> = ({ children, subtitle, link }) => {
   const isExternalLink = link && link.startsWith("http")
 
   return (
