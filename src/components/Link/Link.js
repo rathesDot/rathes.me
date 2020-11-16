@@ -9,11 +9,11 @@ const StyledLink = styled.a`
 
 export const Link = ({
   children,
-  element,
-  color,
+  element = "a",
+  color = undefined,
   tint = "default",
-  isCurrent,
-  underlined,
+  isCurrent = false,
+  underlined = false,
   ...props
 }) => {
   return (

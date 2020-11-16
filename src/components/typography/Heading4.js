@@ -15,7 +15,7 @@ const Element = styled.h4`
 
 export const Heading4 = ({
   children,
-  element,
+  element = "h4",
   color,
   tint = "default",
   ...props
