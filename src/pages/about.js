@@ -4,8 +4,15 @@ import { Link as RouterLink } from "gatsby"
 import { PageLayout } from "../layouts"
 import SEO from "../components/SEO"
 
-import { Heading1, Paragraph, Heading2 } from "../components/Typography"
-import { Box, Link, List, Separator } from "../components"
+import {
+  Box,
+  Heading1,
+  Heading2,
+  Link,
+  List,
+  Paragraph,
+  Separator,
+} from "../components"
 
 import { SayHi } from "../patterns"
 

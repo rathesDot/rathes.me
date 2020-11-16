@@ -1,14 +1,17 @@
 import React from "react"
-
 import { MDXProvider } from "@mdx-js/react"
+
 import {
   Heading1,
   Heading2,
-  Paragraph,
   Heading3,
   Heading4,
-} from "./src/components/Typography"
-import { Link, OrderedList, Quote, Separator } from "./src/components"
+  Link,
+  OrderedList,
+  Paragraph,
+  Quote,
+  Separator,
+} from "./src/components"
 
 import "prism-themes/themes/prism-atom-dark.css"
 

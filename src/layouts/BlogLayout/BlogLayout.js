@@ -4,8 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import { PageLayout } from "../"
 import SEO from "../../components/SEO"
-import { Box, Link } from "../../components"
-import { Heading1 } from "../../components/Typography"
+import { Box, Heading1, Link } from "../../components"
 
 import Img from "gatsby-image"
 

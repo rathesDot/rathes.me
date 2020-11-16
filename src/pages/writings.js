@@ -8,8 +8,7 @@ import { Link } from "../components"
 import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
 
 import externalLinks from "../content/articles/externalLinks"
-import { Box, List } from "../components"
-import { Paragraph } from "../components/Typography"
+import { Box, List, Paragraph } from "../components"
 
 import { SayHi } from "../patterns"
 

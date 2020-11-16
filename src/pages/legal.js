@@ -2,14 +2,15 @@ import React from "react"
 
 import { PageLayout } from "../layouts"
 import SEO from "../components/SEO"
-import { Box, Link } from "../components"
 import {
+  Box,
   Heading1,
   Heading2,
   Heading4,
+  Link,
   Paragraph,
   TextSmall,
-} from "../components/Typography"
+} from "../components"
 
 const Legal = () => (
   <PageLayout>
