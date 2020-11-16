@@ -1,7 +1,7 @@
 import React from "react"
 
 import { PageLayout } from "../layouts"
-import SEO from "../components/SEO/SEO"
+import { SEO } from "../components/SEO/SEO"
 import {
   Box,
   Heading1,

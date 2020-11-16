@@ -3,7 +3,7 @@ import { graphql, Link as RouterLink } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import { PageLayout } from "../"
-import SEO from "../../components/SEO/SEO"
+import { SEO } from "../../components/SEO/SEO"
 import { Box, Heading1, Link } from "../../components"
 
 import Img from "gatsby-image"
