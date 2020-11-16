@@ -11,7 +11,7 @@ import {
 import { Separator } from "./src/components/Separator"
 import { OrderedList } from "./src/components/List"
 import { Quote } from "./src/components/Quote"
-import Link from "./src/components/Link/Link"
+import { Link } from "./src/components/Link/Link"
 
 import "prism-themes/themes/prism-atom-dark.css"
 

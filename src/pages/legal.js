@@ -2,7 +2,7 @@ import React from "react"
 
 import { PageLayout } from "../layouts"
 import SEO from "../components/SEO"
-import Link from "../components/Link/Link"
+import { Link } from "../components/Link/Link"
 import { Box } from "../components"
 import {
   Heading1,

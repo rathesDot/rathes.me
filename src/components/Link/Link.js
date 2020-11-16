@@ -2,12 +2,12 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledLink = styled.a`
-  color: ${props =>
+  color: ${(props) =>
     props.color ? props.theme.colors[props.color][props.tint] : undefined};
-  text-decoration: ${props => (props.underlined ? "underline" : "none")};
+  text-decoration: ${(props) => (props.underlined ? "underline" : "none")};
 `
 
-const Link = ({
+export const Link = ({
   children,
   element,
   color,
@@ -28,5 +28,3 @@ const Link = ({
     </StyledLink>
   )
 }
-
-export default Link

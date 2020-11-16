@@ -5,7 +5,7 @@ import { styled } from "../../../stitches.config"
 
 import { Heading4, TextBody, TextSmall } from "../Typography"
 import { Box } from "../Box/Box"
-import Link from "../Link/Link"
+import { Link } from "../Link/Link"
 
 const Title = styledComponent(TextBody)`
   margin: ${(props) =>
