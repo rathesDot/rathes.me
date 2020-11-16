@@ -21,7 +21,7 @@ const MainContainer = styled(Box)`
   }
 `
 
-const Layout = ({ children }) => (
+const PageLayout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <Global />
     <MainContainer
@@ -41,8 +41,8 @@ const Layout = ({ children }) => (
   </ThemeProvider>
 )
 
-Layout.propTypes = {
+PageLayout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-export default Layout
+export { PageLayout }

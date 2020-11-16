@@ -1,13 +1,13 @@
 import React from "react"
 
-import Layout from "../components/Layout/PageLayout"
+import { PageLayout } from "../components/Layout/PageLayout"
 import SEO from "../components/SEO"
 import { Box } from "../components/Box"
 import { Heading1, Paragraph } from "../components/Typography"
 import { List } from "../components/List"
 
 const NotFoundPage = () => (
-  <Layout>
+  <PageLayout>
     <SEO title="404: Not found" />
     <Box maxWidth="640px">
       <Heading1>
@@ -26,7 +26,7 @@ const NotFoundPage = () => (
         </List>
       </Paragraph>
     </Box>
-  </Layout>
+  </PageLayout>
 )
 
 export default NotFoundPage

@@ -1,12 +1,12 @@
 import React from "react"
 
-import Layout from "../../components/Layout/PageLayout"
+import { PageLayout } from "../../components/Layout/PageLayout"
 import SEO from "../../components/SEO"
 import { Box } from "../../components/Box"
 import { Heading1, Paragraph, TextBody } from "../../components/Typography"
 
 const Meetings = () => (
-  <Layout>
+  <PageLayout>
     <SEO title="You probably don't need that meeting - Developing a meeting culture that employees will love"></SEO>
     <Box maxWidth="640px">
       <Heading1>
@@ -32,7 +32,7 @@ const Meetings = () => (
         necessary meetings more productive.
       </Paragraph>
     </Box>
-  </Layout>
+  </PageLayout>
 )
 
 export default Meetings

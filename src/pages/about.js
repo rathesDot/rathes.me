@@ -1,7 +1,7 @@
 import React from "react"
 import { Link as RouterLink } from "gatsby"
 
-import Layout from "../components/Layout/PageLayout"
+import { PageLayout } from "../components/Layout/PageLayout"
 import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
 
@@ -12,7 +12,7 @@ import Link from "../components/Link"
 import { Separator } from "../components/Separator"
 
 const AboutMe = () => (
-  <Layout>
+  <PageLayout>
     <SEO title="About me" />
     <Box maxWidth="640px" marginTop={32}>
       <Heading1>/raðiːs/</Heading1>
@@ -153,7 +153,7 @@ const AboutMe = () => (
         <SayHi />
       </Box>
     </Box>
-  </Layout>
+  </PageLayout>
 )
 
 export default AboutMe

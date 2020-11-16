@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-import Layout from "../components/Layout/PageLayout"
+import { PageLayout } from "../components/Layout/PageLayout"
 import SEO from "../components/SEO"
 import OverviewInfo from "../components/OverviewInfo"
 import { Box } from "../components/Box"
@@ -21,7 +21,7 @@ const Introduction = styled.h1`
 `
 
 const IndexPage = () => (
-  <Layout>
+  <PageLayout>
     <SEO title="Home" />
     <Box
       element="section"
@@ -35,7 +35,7 @@ const IndexPage = () => (
       </Introduction>
       <OverviewInfo />
     </Box>
-  </Layout>
+  </PageLayout>
 )
 
 export default IndexPage

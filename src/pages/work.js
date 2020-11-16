@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import Layout from "../components/Layout/PageLayout"
+import { PageLayout } from "../components/Layout/PageLayout"
 import SEO from "../components/SEO"
 import SayHi from "../components/SayHi"
 import Link from "../components/Link"
@@ -12,7 +12,7 @@ import { Separator } from "../components/Separator"
 
 const Work = ({ data }) => {
   return (
-    <Layout>
+    <PageLayout>
       <Box maxWidth="640px" marginTop={32} element="section">
         <SEO title="Work" />
         <Paragraph>
@@ -91,7 +91,7 @@ const Work = ({ data }) => {
           <SayHi />
         </Box>
       </Box>
-    </Layout>
+    </PageLayout>
   )
 }
 

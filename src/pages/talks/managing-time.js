@@ -1,12 +1,12 @@
 import React from "react"
 
-import Layout from "../../components/Layout/PageLayout"
+import { PageLayout } from "../../components/Layout/PageLayout"
 import SEO from "../../components/SEO"
 import { Box } from "../../components/Box"
 import { Heading1, Paragraph, TextBody } from "../../components/Typography"
 
 const ManagingTime = () => (
-  <Layout>
+  <PageLayout>
     <SEO title="You can't manage time - A talk about what people call time management"></SEO>
     <Box maxWidth="640px">
       <Heading1>
@@ -32,7 +32,7 @@ const ManagingTime = () => (
         management means.
       </Paragraph>
     </Box>
-  </Layout>
+  </PageLayout>
 )
 
 export default ManagingTime

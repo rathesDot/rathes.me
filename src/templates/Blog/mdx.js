@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link as RouterLink } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import Layout from "../../components/Layout/PageLayout"
+import { PageLayout } from "../../components/Layout/PageLayout"
 import SEO from "../../components/SEO"
 import Link from "../../components/Link"
 import { Box } from "../../components/Box"
@@ -51,7 +51,7 @@ export default ({ data }) => {
     : []
 
   return (
-    <Layout>
+    <PageLayout>
       <SEO
         title={post.frontmatter.title}
         description={post.excerpt}
@@ -71,7 +71,7 @@ export default ({ data }) => {
           </Link>
         </Box>
       </Box>
-    </Layout>
+    </PageLayout>
   )
 }
 
