@@ -2,7 +2,7 @@ import React from "react"
 import { Link as RouterLink, graphql, useStaticQuery } from "gatsby"
 import styled, { useTheme } from "styled-components"
 
-import Logo from "../../components/Logo"
+import Logo from "../../components/Logo/Logo"
 
 import { Box, Link } from "../../components"
 
