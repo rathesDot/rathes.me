@@ -87,9 +87,7 @@ const Legal = () => (
         concerning this matter can only be assumed from the point in time at
         which the infringement becomes known to us.
       </Paragraph>
-      <Heading4 element="h3">
-        Limitation of liability for external links
-      </Heading4>
+      <Heading4 as="h3">Limitation of liability for external links</Heading4>
       <Paragraph>
         Our website contains links to the websites of third parties (“external
         links”). As the content of these websites is not under our control, we
@@ -100,14 +98,14 @@ const Legal = () => (
         As soon as an infringement of the law becomes known to us, we will
         immediately remove the link in question.
       </Paragraph>
-      <Heading4 element="h3">Copyright</Heading4>
+      <Heading4 as="h3">Copyright</Heading4>
       <Paragraph>
         The content and works published on this website are governed by the
         copyright laws of Germany. Any duplication, processing, distribution or
         any form of utilisation beyond the scope of copyright law shall require
         the prior written consent of the author or authors in question.
       </Paragraph>
-      <Heading4 element="h3">Data protection</Heading4>
+      <Heading4 as="h3">Data protection</Heading4>
       <Paragraph>
         A visit to our website can result in the storage on our server of
         information about the access (date, time, page accessed). This does not
