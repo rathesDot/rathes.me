@@ -71,7 +71,9 @@ export const { styled, css } = createStyled({
         "monospace",
       ].join(","),
     },
-    lineHeights: {},
+    lineHeights: {
+      "$1.35": "1.35",
+    },
     letterSpacings: {
       $normal: "0",
       $wide: "0.025em",
