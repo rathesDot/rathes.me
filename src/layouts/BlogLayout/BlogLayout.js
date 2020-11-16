@@ -10,7 +10,7 @@ import { Heading1 } from "../../components/Typography"
 
 import Img from "gatsby-image"
 
-export default ({ data }) => {
+export const BlogLayout = ({ data }) => {
   const post = data.mdx
   const meta = [
     {
@@ -102,3 +102,5 @@ export const query = graphql`
     }
   }
 `
+
+export { BlogLayout as default }
