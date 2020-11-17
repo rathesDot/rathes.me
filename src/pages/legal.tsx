@@ -1,4 +1,5 @@
 import React from "react"
+import { PageProps } from "gatsby"
 
 import { styled } from "../../stitches.config"
 
@@ -19,7 +20,7 @@ const Container = styled("div", {
   maxWidth: 640,
 })
 
-const Legal = () => (
+const Legal: React.FC<PageProps> = () => (
   <PageLayout>
     <Meta title="Legal Information" />
     <Container>
