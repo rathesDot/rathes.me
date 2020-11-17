@@ -64,5 +64,3 @@ export const List: React.FC<ListProps> = ({ title, children, ...props }) => (
     <ListContent>{children}</ListContent>
   </Container>
 )
-
-List.Item = ListItem
