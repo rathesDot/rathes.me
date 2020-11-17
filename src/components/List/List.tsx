@@ -25,12 +25,12 @@ const ListContent = styled("ul", {
   display: "block",
 })
 
-export type ItemProps = {
+export type ListItemProps = {
   subtitle?: string
   link: string
 }
 
-const Item: React.FC<ItemProps> = ({ children, subtitle, link }) => {
+const ListItem: React.FC<ListItemProps> = ({ children, subtitle, link }) => {
   const isExternalLink = link && link.startsWith("http")
 
   return (
@@ -61,4 +61,4 @@ export const List: React.FC<ListProps> = ({ title, children, ...props }) => (
   </Container>
 )
 
-List.Item = Item
+List.Item = ListItem
