@@ -9,6 +9,12 @@ export const Note = styled("p", {
   fontSize: "$sm",
 
   variants: {
+    nested: {
+      true: {
+        margin: 0,
+        padding: "0 0 0 $4",
+      },
+    },
     fontFamily: {
       mono: {
         fontFamily: "$mono",
