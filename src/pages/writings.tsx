@@ -28,7 +28,21 @@ const BlogList = styled("div", {
   marginTop: "$12",
 })
 
-const Writings: React.FC<PageProps> = ({ data }) => {
+type MdxQuery = {
+  allMdx: {
+    edges: Array<{
+      id: number
+      node: {
+        frontmatter: { title: string; date: string }
+        fields: {
+          slug: string
+        }
+      }
+    }>
+  }
+}
+
+const Writings: React.FC<PageProps<MdxQuery>> = ({ data }) => {
   const blogPosts = getSortedGroups(
     groupPostsByYear(extractBlogPosts(data).concat(externalLinks))
   )
