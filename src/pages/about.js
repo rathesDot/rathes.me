@@ -2,9 +2,9 @@ import React from "react"
 import { Link as RouterLink } from "gatsby"
 
 import { PageLayout } from "../layouts"
+import { styled } from "../../stitches.config"
 
 import {
-  Box,
   Heading1,
   Heading2,
   List,
@@ -16,11 +16,23 @@ import {
 } from "../components"
 
 import { SayHi } from "../patterns"
-import { styled } from "../../stitches.config"
 
 const Container = styled("div", {
   marginTop: "$32",
   maxWidth: 640,
+})
+
+const Section = styled("div", {
+  marginTop: "$32",
+})
+
+const SayHiContainer = styled("div", {
+  marginBottom: "$32",
+  marginTop: "$32",
+})
+
+const ReadingList = styled("div", {
+  marginTop: "$12",
 })
 
 const AboutMe = () => (
@@ -62,7 +74,7 @@ const AboutMe = () => (
         people to learn my mother language Tamil.
       </Paragraph>
 
-      <Box marginTop={32} element="section">
+      <Section>
         <Heading2>What I read</Heading2>
         <Paragraph>
           Books play an important part in my life. Just sitting on my couch or
@@ -77,7 +89,7 @@ const AboutMe = () => (
           Actually, I dream of having my own library one day where I can invite
           everybody to pick up a nice book and read.
         </Paragraph>
-        <Box marginTop={12}>
+        <ReadingList>
           <List title="Reading List 2020">
             <ListItem
               subtitle="by Cody McFadyen"
@@ -133,10 +145,10 @@ const AboutMe = () => (
               The Girl on the Train
             </ListItem>
           </List>
-        </Box>
-      </Box>
+        </ReadingList>
+      </Section>
 
-      <Box marginTop={32} element="section">
+      <Section>
         <Heading2>What I write</Heading2>
         <Paragraph>
           From time to time I also write. It can be work related topics that I
@@ -159,10 +171,10 @@ const AboutMe = () => (
           “A guide to basic Tamil Grammar”. I’m writing that book as an entry
           point for my learning platform.
         </Paragraph>
-      </Box>
-      <Box element="section" marginTop={32} marginBottom={32}>
+      </Section>
+      <SayHiContainer>
         <SayHi />
-      </Box>
+      </SayHiContainer>
     </Container>
   </PageLayout>
 )
