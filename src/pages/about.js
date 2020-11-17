@@ -16,11 +16,17 @@ import {
 } from "../components"
 
 import { SayHi } from "../patterns"
+import { styled } from "../../stitches.config"
+
+const Container = styled("div", {
+  marginTop: "$32",
+  maxWidth: 640,
+})
 
 const AboutMe = () => (
   <PageLayout>
     <Meta title="About me" />
-    <Box maxWidth="640px" marginTop={32}>
+    <Container>
       <Heading1>/raðiːs/</Heading1>
       <Paragraph>
         I’m Rathes Sachchithananthan, a web developer with interests not only in
@@ -157,7 +163,7 @@ const AboutMe = () => (
       <Box element="section" marginTop={32} marginBottom={32}>
         <SayHi />
       </Box>
-    </Box>
+    </Container>
   </PageLayout>
 )
 
