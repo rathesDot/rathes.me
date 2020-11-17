@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link as RouterLink } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import Img from "gatsby-image"
+import Img, { FluidObject } from "gatsby-image"
 
 import { PageLayout } from ".."
 import { Heading1, Meta } from "../../components"
@@ -28,7 +28,32 @@ const Footer = styled("footer", {
   marginTop: "$32",
 })
 
-export const BlogLayout = ({ data }) => {
+type BlogData = {
+  site: {
+    siteMetadata: {
+      siteUrl: string
+    }
+  }
+  mdx: {
+    body: string
+    excerpt?: string
+    fields: {
+      slug: string
+    }
+    frontmatter: {
+      title: string
+      locale: string
+      image: {
+        publicURL: string
+        childImageSharp: {
+          fluid: FluidObject | FluidObject[]
+        }
+      }
+    }
+  }
+}
+
+export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
   const post = data.mdx
   const meta = [
     {
