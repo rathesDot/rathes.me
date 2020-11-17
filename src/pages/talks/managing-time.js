@@ -2,7 +2,11 @@ import React from "react"
 import { styled } from "../../../stitches.config"
 
 import { PageLayout } from "../../layouts"
-import { Box, Heading1, Paragraph, Meta } from "../../components"
+import { Heading1, Paragraph, Meta } from "../../components"
+
+const Container = styled("section", {
+  maxWidth: 640,
+})
 
 const HelpText = styled("span", {
   color: "$gray600",
@@ -14,7 +18,7 @@ const HelpText = styled("span", {
 const ManagingTime = () => (
   <PageLayout>
     <Meta title="You can't manage time - A talk about what people call time management"></Meta>
-    <Box maxWidth="640px">
+    <Container>
       <Heading1>
         You can't manage time
         <HelpText>A talk about what people call time management</HelpText>
@@ -35,7 +39,7 @@ const ManagingTime = () => (
         want to get more things done. And you will understand what time
         management means.
       </Paragraph>
-    </Box>
+    </Container>
   </PageLayout>
 )
 

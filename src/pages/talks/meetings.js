@@ -2,7 +2,11 @@ import React from "react"
 import { styled } from "../../../stitches.config"
 
 import { PageLayout } from "../../layouts"
-import { Box, Heading1, Paragraph, Meta } from "../../components"
+import { Heading1, Paragraph, Meta } from "../../components"
+
+const Container = styled("section", {
+  maxWidth: 640,
+})
 
 const HelpText = styled("span", {
   color: "$gray600",
@@ -14,7 +18,7 @@ const HelpText = styled("span", {
 const Meetings = () => (
   <PageLayout>
     <Meta title="You probably don't need that meeting - Developing a meeting culture that employees will love"></Meta>
-    <Box maxWidth="640px">
+    <Container>
       <Heading1>
         You probably don't need that meeting
         <HelpText>
@@ -37,7 +41,7 @@ const Meetings = () => (
         After this talk, you will be able to avoid useless meetings and make the
         necessary meetings more productive.
       </Paragraph>
-    </Box>
+    </Container>
   </PageLayout>
 )
 
