@@ -4,7 +4,7 @@ import { renderToString } from "react-dom/server"
 import { css } from "./stitches.config"
 
 export const setup = ({ element }) => {
-  renderBody = () => renderToString(element)
+  const renderBody = () => renderToString(element)
 
   const collect = () => {
     const { styles, result: bodyHTML } = css.getStyles(renderBody)
