@@ -12,7 +12,7 @@ const Container = styled("div", {
   maxWidth: 520,
 })
 
-export const SayHi = () => (
+export const SayHi: React.FC = () => (
   <Container>
     Work inquiry, question or something else?{" "}
     <Link
