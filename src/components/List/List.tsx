@@ -50,7 +50,11 @@ const Item: React.FC<ItemProps> = ({ children, subtitle, link }) => {
   )
 }
 
-export const List = ({ title, children, ...props }) => (
+export type ListProps = {
+  title?: StringConstructor
+}
+
+export const List: React.FC<ListProps> = ({ title, children, ...props }) => (
   <Container {...props}>
     <Heading4 color="silver">{title}</Heading4>
     <ListContent>{children}</ListContent>
