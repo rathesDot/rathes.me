@@ -1,7 +1,7 @@
 import React from "react"
 
 import { PageLayout } from "../layouts"
-import { Heading1, List, Paragraph, Meta } from "../components"
+import { Heading1, List, ListItem, Paragraph, Meta } from "../components"
 import { styled } from "../../stitches.config"
 
 const Container = styled("div", {
@@ -22,9 +22,9 @@ const NotFoundPage = () => (
       </Paragraph>
       <Paragraph>
         <List>
-          <List.Item link="/">The homepage</List.Item>
-          <List.Item link="/writings">My blog posts</List.Item>
-          <List.Item link="/about">Information about myself</List.Item>
+          <ListItem link="/">The homepage</ListItem>
+          <ListItem link="/writings">My blog posts</ListItem>
+          <ListItem link="/about">Information about myself</ListItem>
         </List>
       </Paragraph>
     </Container>

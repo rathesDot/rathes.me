@@ -7,6 +7,7 @@ import {
   Heading2,
   Link,
   List,
+  ListItem,
   Paragraph,
   Meta,
   Separator,
@@ -62,33 +63,33 @@ const Work = ({ data }) => {
             and 45-minutes talk.
           </Paragraph>
           <List title="Tech Talks">
-            <List.Item
+            <ListItem
               link={data.rddUk.publicURL}
               subtitle="February 2019 at PHP UK Unconference"
             >
               Introduction to Readme Driven Development
-            </List.Item>
-            <List.Item
+            </ListItem>
+            <ListItem
               link={data.rdd.publicURL}
               subtitle="January 2019 at PHP Gent"
             >
               Introduction to Readme Driven Development
-            </List.Item>
+            </ListItem>
           </List>
           <Separator />
           <List title="Abstracts">
-            <List.Item
+            <ListItem
               link="/talks/meetings"
               subtitle="Developing a meeting culture that employees will love"
             >
               You probably don’t need that meeting
-            </List.Item>
-            <List.Item
+            </ListItem>
+            <ListItem
               link="/talks/managing-time"
               subtitle="A talk about what people call time management"
             >
               You can't manage time
-            </List.Item>
+            </ListItem>
           </List>
         </Box>
         <Box element="section" marginTop={32} marginBottom={32}>

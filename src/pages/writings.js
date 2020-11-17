@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 
-import { Box, Link, List, Paragraph, Meta } from "../components"
+import { Box, Link, List, ListItem, Paragraph, Meta } from "../components"
 import { SayHi } from "../patterns"
 import { PageLayout } from "../layouts"
 
@@ -43,9 +43,9 @@ const Writings = ({ data }) => {
         <Box marginTop={32} element="section">
           <Box marginTop={12}>
             <List title="Books & Whitepapers">
-              <List.Item link="https://learn-tamil.com">
+              <ListItem link="https://learn-tamil.com">
                 A Guide To Basic Tamil Grammar
-              </List.Item>
+              </ListItem>
             </List>
           </Box>
 
@@ -54,9 +54,9 @@ const Writings = ({ data }) => {
               <Box marginTop={12}>
                 <List title={key} key={key}>
                   {posts.map((post, index) => (
-                    <List.Item link={post.link} key={index}>
+                    <ListItem link={post.link} key={index}>
                       {post.title}
-                    </List.Item>
+                    </ListItem>
                   ))}
                 </List>
               </Box>

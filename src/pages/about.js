@@ -8,6 +8,7 @@ import {
   Heading1,
   Heading2,
   List,
+  ListItem,
   Paragraph,
   Meta,
   Separator,
@@ -72,62 +73,59 @@ const AboutMe = () => (
         </Paragraph>
         <Box marginTop={12}>
           <List title="Reading List 2020">
-            <List.Item
+            <ListItem
               subtitle="by Cody McFadyen"
               link="https://amzn.to/2tw7Zxp"
             >
               Shadow Man (Smoky Barrett, Band 1)
-            </List.Item>
-            <List.Item
-              subtitle="by Ransom Riggs"
-              link="https://amzn.to/2MYAfj6"
-            >
+            </ListItem>
+            <ListItem subtitle="by Ransom Riggs" link="https://amzn.to/2MYAfj6">
               Library of Souls: The Third Novel of Miss Peregrine's Peculiar
               Children
-            </List.Item>
-            <List.Item
+            </ListItem>
+            <ListItem
               subtitle="by Sir Arthur Conan Doyle"
               link="https://amzn.to/37vaKhk"
             >
               Sherlock Holmes: A Study in Scarlet
-            </List.Item>
-            <List.Item
+            </ListItem>
+            <ListItem
               subtitle="by Charlotte Link"
               link="https://amzn.to/2U8dFbw"
             >
               Die letzte Spur (The last track)
-            </List.Item>
-            <List.Item subtitle="by Eric Ries" link="https://amzn.to/2uresu3">
+            </ListItem>
+            <ListItem subtitle="by Eric Ries" link="https://amzn.to/2uresu3">
               The Lean Startup: How Today's Entrepreneurs Use Continuous
               Innovation to Create Radically Successful Businesses
-            </List.Item>
-            <List.Item
+            </ListItem>
+            <ListItem
               subtitle="by Richard Osman"
               link="https://amzn.to/343YBzt"
             >
               The Thursday Murder Club
-            </List.Item>
-            <List.Item subtitle="by Joel Levy" link="https://amzn.to/30cRK5C">
+            </ListItem>
+            <ListItem subtitle="by Joel Levy" link="https://amzn.to/30cRK5C">
               Psychology for Busy People: Everything You Really Should Know
-            </List.Item>
+            </ListItem>
           </List>
           <Separator />
           <List title="Currently reading">
-            <List.Item
+            <ListItem
               subtitle="by George R. R. Martin"
               link="https://amzn.to/2Rngm82"
             >
               A Game of Thrones: A Song of Ice and Fire
-            </List.Item>
-            <List.Item subtitle="by Amish" link="https://amzn.to/3j86ASh">
+            </ListItem>
+            <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
-            </List.Item>
-            <List.Item
+            </ListItem>
+            <ListItem
               subtitle="by Paula Hawkins"
               link="https://amzn.to/2T4pQ8d"
             >
               The Girl on the Train
-            </List.Item>
+            </ListItem>
           </List>
         </Box>
       </Box>
