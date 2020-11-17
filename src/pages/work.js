@@ -1,9 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 
+import { styled } from "../../stitches.config"
+
 import { PageLayout } from "../layouts"
 import {
-  Box,
   Heading2,
   Link,
   List,
@@ -15,10 +16,24 @@ import {
 
 import { SayHi } from "../patterns"
 
+const Container = styled("section", {
+  marginTop: "$32",
+  maxWidth: 640,
+})
+
+const Section = styled("section", {
+  marginTop: "$32",
+})
+
+const SayHiContainer = styled("section", {
+  marginBottom: "$32",
+  marginTop: "$32",
+})
+
 const Work = ({ data }) => {
   return (
     <PageLayout>
-      <Box maxWidth="640px" marginTop={32} element="section">
+      <Container>
         <Meta title="Work" />
         <Paragraph>
           I work as a front-end engineer at Hussle right now but I also work on
@@ -29,7 +44,7 @@ const Work = ({ data }) => {
           </Link>
           .
         </Paragraph>
-        <Box marginTop={32} element="section">
+        <Section>
           <Heading2>Learn Tamil Online</Heading2>
           <Paragraph>
             The side project I am working on right now is to provide a platform
@@ -47,8 +62,8 @@ const Work = ({ data }) => {
               https://learn-tamil.com
             </Link>
           </Paragraph>
-        </Box>
-        <Box marginTop={32} element="section">
+        </Section>
+        <Section>
           <Heading2>Public Speaking</Heading2>
           <Paragraph>
             In January 2019, I gave my first tech-related talk. Since it was an
@@ -91,11 +106,11 @@ const Work = ({ data }) => {
               You can't manage time
             </ListItem>
           </List>
-        </Box>
-        <Box element="section" marginTop={32} marginBottom={32}>
+        </Section>
+        <SayHiContainer>
           <SayHi />
-        </Box>
-      </Box>
+        </SayHiContainer>
+      </Container>
     </PageLayout>
   )
 }
