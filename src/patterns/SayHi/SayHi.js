@@ -1,16 +1,19 @@
 import React from "react"
+import { styled } from "../../../stitches.config"
 
-import { Box, Link } from "../../components"
+import { Link } from "../../components"
+
+const Container = styled("div", {
+  color: "$white",
+  fontFamily: "$default",
+  fontSize: "$4xl",
+  fontWeight: 600,
+  lineHeight: "1.194444",
+  maxWidth: 520,
+})
 
 export const SayHi = () => (
-  <Box
-    maxWidth="520px"
-    fontFamily="default"
-    fontSize="4xl"
-    fontWeight={600}
-    lineHeight={1.194444444444}
-    textColor="white"
-  >
+  <Container>
     Work inquiry, question or something else?{" "}
     <Link
       aria-label="Send an E-Mail to hello@rathes.me"
@@ -19,5 +22,5 @@ export const SayHi = () => (
     >
       Say hi!
     </Link>
-  </Box>
+  </Container>
 )
