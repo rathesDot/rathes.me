@@ -30,7 +30,11 @@ export type ListItemProps = {
   link: string
 }
 
-const ListItem: React.FC<ListItemProps> = ({ children, subtitle, link }) => {
+export const ListItem: React.FC<ListItemProps> = ({
+  children,
+  subtitle,
+  link,
+}) => {
   const isExternalLink = link && link.startsWith("http")
 
   return (
