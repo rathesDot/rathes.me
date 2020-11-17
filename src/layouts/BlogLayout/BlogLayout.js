@@ -4,13 +4,28 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
 
 import { PageLayout } from "../"
-import { Box, Heading1, Meta } from "../../components"
+import { Heading1, Meta } from "../../components"
 
 import { styled } from "../../../stitches.config"
 
 const BackLink = styled("span", {
   color: "$white",
   textDecoration: "underline",
+})
+
+const Container = styled("div", {
+  marginTop: "$32",
+  maxWidth: 640,
+})
+
+const FeatureImage = styled("div", {
+  marginBottom: "$4",
+  marginTop: "$4",
+})
+
+const Footer = styled("footer", {
+  marginBottom: "$32",
+  marginTop: "$32",
 })
 
 export const BlogLayout = ({ data }) => {
@@ -60,20 +75,20 @@ export const BlogLayout = ({ data }) => {
         description={post.excerpt}
         meta={[...meta, ...imageMeta]}
       />
-      <Box maxWidth="640px" marginTop={32}>
+      <Container>
         <Heading1>{post.frontmatter.title}</Heading1>
-        <Box marginBottom={4} marginTop={4}>
+        <FeatureImage>
           {post.frontmatter.image && (
             <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
           )}
-        </Box>
+        </FeatureImage>
         <MDXRenderer>{post.body}</MDXRenderer>
-        <Box element="footer" marginTop={32} marginBottom={32}>
+        <Footer>
           <RouterLink to="/writings">
             <BackLink>back to articles</BackLink>
           </RouterLink>
-        </Box>
-      </Box>
+        </Footer>
+      </Container>
     </PageLayout>
   )
 }
