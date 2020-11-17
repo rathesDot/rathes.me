@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, PageProps, StaticQueryProps } from "gatsby"
 
 import { styled } from "../../stitches.config"
 
@@ -30,7 +30,11 @@ const SayHiContainer = styled("section", {
   marginTop: "$32",
 })
 
-const Work = ({ data }) => {
+type TalksProps = {
+  data: { rdd: { publicURL: string }; rddUk: { publicURL: string } }
+}
+
+const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
   return (
     <PageLayout>
       <Container>
