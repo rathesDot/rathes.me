@@ -36,6 +36,7 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@types/react-helmet": "^6.1.0",
     "@types/styled-components": "^5.1.4",
     "babel-jest": "^26.0.1",
     "babel-plugin-apply-mdx-type-prop": "^1.6.16",
