@@ -3,7 +3,7 @@ import { graphql, Link as RouterLink } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img from "gatsby-image"
 
-import { PageLayout } from "../"
+import { PageLayout } from ".."
 import { Heading1, Meta } from "../../components"
 
 import { styled } from "../../../stitches.config"
