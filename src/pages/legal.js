@@ -1,8 +1,9 @@
 import React from "react"
 
+import { styled } from "../../stitches.config"
+
 import { PageLayout } from "../layouts"
 import {
-  Box,
   Heading1,
   Heading2,
   Heading4,
@@ -12,10 +13,16 @@ import {
   TextSmall,
 } from "../components"
 
+const Container = styled("div", {
+  marginBottom: "$32",
+  marginTop: "$32",
+  maxWidth: 640,
+})
+
 const Legal = () => (
   <PageLayout>
     <Meta title="Legal Information" />
-    <Box maxWidth="640px" marginTop={32} marginBottom={32}>
+    <Container>
       <Heading1>Legal Information</Heading1>
       <Heading2>Pursuant to § 5 TMG:</Heading2>
       <Paragraph>
@@ -138,7 +145,7 @@ const Legal = () => (
           English Disclaimer on Mustervorlage.net
         </Link>
       </TextSmall>
-    </Box>
+    </Container>
   </PageLayout>
 )
 
