@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import styled, { useTheme } from "styled-components"
+import styled from "styled-components"
 
 import { Logo } from "../../components"
 
@@ -50,21 +50,15 @@ const Navigation = () => {
     }
   `)
 
-  const theme = useTheme()
-
   return (
     <Container>
-      <Link
-        to="/"
-        aria-label="Home"
-        activeStyle={{ color: theme.colors.white.default }}
-      >
+      <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
         <MenuItem>
           <Logo />
         </MenuItem>
       </Link>
       <Separator />
-      <Link activeStyle={{ color: theme.colors.white.default }} to="/about">
+      <Link activeStyle={{ color: "#FFF" }} to="/about">
         <MenuItem>About</MenuItem>
       </Link>
       <Separator />
@@ -72,11 +66,11 @@ const Navigation = () => {
         <MenuItem>Resume</MenuItem>
       </a>
       <Separator />
-      <Link activeStyle={{ color: theme.colors.white.default }} to="/work">
+      <Link activeStyle={{ color: "#FFF" }} to="/work">
         <MenuItem>Work</MenuItem>
       </Link>
       <Separator />
-      <Link activeStyle={{ color: theme.colors.white.default }} to="/writings">
+      <Link activeStyle={{ color: "#FFF" }} to="/writings">
         <MenuItem>Writings</MenuItem>
       </Link>
     </Container>
