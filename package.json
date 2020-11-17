@@ -36,6 +36,8 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@types/react": "^16.9.56",
+    "@types/react-dom": "^16.9.9",
     "@types/react-helmet": "^6.1.0",
     "@types/styled-components": "^5.1.4",
     "babel-jest": "^26.0.1",
