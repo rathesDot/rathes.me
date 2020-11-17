@@ -55,7 +55,7 @@ export const ListItem: React.FC<ListItemProps> = ({
 }
 
 export type ListProps = {
-  title?: StringConstructor
+  title?: string
 }
 
 export const List: React.FC<ListProps> = ({ title, children, ...props }) => (
