@@ -1,5 +1,5 @@
 import React from "react"
-import { Link as RouterLink } from "gatsby"
+import { Link as RouterLink, PageProps } from "gatsby"
 
 import { PageLayout } from "../layouts"
 import { styled } from "../../stitches.config"
@@ -35,7 +35,7 @@ const ReadingList = styled("div", {
   marginTop: "$12",
 })
 
-const AboutMe = () => (
+const AboutMe: React.FC<PageProps> = () => (
   <PageLayout>
     <Meta title="About me" />
     <Container>
