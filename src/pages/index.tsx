@@ -1,4 +1,5 @@
 import React from "react"
+import { PageProps } from "gatsby"
 import styled from "styled-components"
 
 import { Meta } from "../components"
@@ -25,7 +26,7 @@ const Introduction = styled.h1`
   }
 `
 
-const IndexPage = () => (
+const IndexPage: React.FC<PageProps> = () => (
   <PageLayout>
     <Meta title="Home" />
     <Container>
