@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 
 import { styled } from "../../stitches.config"
 
@@ -28,7 +28,7 @@ const BlogList = styled("div", {
   marginTop: "$12",
 })
 
-const Writings = ({ data }) => {
+const Writings: React.FC<PageProps> = ({ data }) => {
   const blogPosts = getSortedGroups(
     groupPostsByYear(extractBlogPosts(data).concat(externalLinks))
   )
@@ -71,7 +71,7 @@ const Writings = ({ data }) => {
 
           {blogPosts.map(([key, posts]) => {
             return (
-              <BlogList marginTop={12}>
+              <BlogList>
                 <List title={key} key={key}>
                   {posts.map((post, index) => (
                     <ListItem link={post.link} key={index}>
