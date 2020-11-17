@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Paragraph = styled.p<{ underlined: boolean }>`
+export const Paragraph = styled.p<{ underlined?: boolean }>`
   color: ${(props) => props.theme.colors.silver.default};
   font-size: ${(props) => props.theme.fontSize.base};
   font-weight: 400;
