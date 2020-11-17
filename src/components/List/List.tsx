@@ -60,7 +60,7 @@ export type ListProps = {
 
 export const List: React.FC<ListProps> = ({ title, children, ...props }) => (
   <Container {...props}>
-    <Heading4 color="silver">{title}</Heading4>
+    {title && <Heading4 color="silver">{title}</Heading4>}
     <ListContent>{children}</ListContent>
   </Container>
 )
