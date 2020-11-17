@@ -3,7 +3,14 @@ import styledComponent from "styled-components"
 
 import { styled } from "../../../stitches.config"
 
-import { Box, Link, TextSmall } from "../../components"
+import { Link, TextSmall } from "../../components"
+
+const Container = styled("div", {
+  display: "flex",
+  justifyContent: "space-between",
+  marginTop: "$4",
+  maxWidth: 375,
+})
 
 const Separator = styledComponent.span`
   width: 24px;
@@ -27,32 +34,27 @@ const Info = styledComponent(Link)`
 `
 
 export const OverviewInfo = () => (
-  <Box
-    display="flex"
-    justifyContent="space-between"
-    marginTop={4}
-    maxWidth="375px"
-  >
-    <Box>
+  <Container>
+    <div>
       <Separator />
       <Title color="silver">Working at</Title>
       <Info color="white" href="https://www.hussle.com">
         Hussle
       </Info>
-    </Box>
-    <Box>
+    </div>
+    <div>
       <Separator />
       <Title color="silver">Living in</Title>
       <Info color="white" href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9">
         London
       </Info>
-    </Box>
-    <Box>
+    </div>
+    <div>
       <Separator />
       <Title color="silver">Follow me</Title>
       <Info color="white" href="https://twitter.com/rswebdesigner">
         @rswebdesigner
       </Info>
-    </Box>
-  </Box>
+    </div>
+  </Container>
 )
