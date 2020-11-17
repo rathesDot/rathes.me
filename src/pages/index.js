@@ -2,9 +2,15 @@ import React from "react"
 import styled from "styled-components"
 
 import { PageLayout } from "../layouts"
-import { Box, Meta } from "../components"
+import { Meta } from "../components"
 
 import { OverviewInfo } from "../patterns"
+
+const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`
 
 const Introduction = styled.h1`
   color: ${(props) => props.theme.colors.white.default};
@@ -23,18 +29,13 @@ const Introduction = styled.h1`
 const IndexPage = () => (
   <PageLayout>
     <Meta title="Home" />
-    <Box
-      element="section"
-      display="flex"
-      flexDirection="column"
-      justifyContent="center"
-    >
+    <Container>
       <Introduction>
         Hi there, I’m Rathes Sachchithananthan and I’m a web developer currently
         living in London
       </Introduction>
       <OverviewInfo />
-    </Box>
+    </Container>
   </PageLayout>
 )
 
