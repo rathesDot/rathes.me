@@ -37,7 +37,7 @@ const Legal: React.FC<PageProps> = () => (
         E-Mail: hello@rathes.me
       </Paragraph>
       <Heading2>Disclaimer</Heading2>
-      <Heading4 element="h3">Google Analytics</Heading4>
+      <Heading4 as="h3">Google Analytics</Heading4>
       <Paragraph>
         This website uses Google Analytics, a web analytics service provided by
         Google, Inc. (“Google”). Google Analytics uses “cookies”, which are text
