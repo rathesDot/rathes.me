@@ -3,27 +3,13 @@ import { renderToString } from "react-dom/server"
 
 import { css } from "./stitches.config"
 
-export const setup = ({ element }) => {
-  const renderBody = () => renderToString(element)
-
-  const collect = () => {
-    const { styles, result: bodyHTML } = css.getStyles(renderBody)
-    return { styles, bodyHTML }
-  }
-
-  return { collect }
-}
-
 export const replaceRenderer = ({
   bodyComponent,
   setHeadComponents,
   replaceBodyHTMLString,
 }) => {
-  const instance = setup({
-    element: bodyComponent,
-  })
-
-  const { styles, bodyHTML } = instance.collect()
+  const renderBody = () => renderToString(bodyComponent)
+  const { styles, result: bodyHTML } = css.getStyles(renderBody)
 
   setHeadComponents(
     styles.map((sheet, i) => (
