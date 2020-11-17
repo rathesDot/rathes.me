@@ -17,16 +17,16 @@ import {
 
 import { SayHi } from "../patterns"
 
-const Container = styled("div", {
+const Container = styled("section", {
   marginTop: "$32",
   maxWidth: 640,
 })
 
-const Section = styled("div", {
+const Section = styled("section", {
   marginTop: "$32",
 })
 
-const SayHiContainer = styled("div", {
+const SayHiContainer = styled("section", {
   marginBottom: "$32",
   marginTop: "$32",
 })
