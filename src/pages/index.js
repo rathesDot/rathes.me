@@ -1,10 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 
-import { PageLayout } from "../layouts"
 import { Meta } from "../components"
-
 import { OverviewInfo } from "../patterns"
+import { PageLayout } from "../layouts"
 
 const Container = styled.section`
   display: flex;
