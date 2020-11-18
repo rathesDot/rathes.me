@@ -6,5 +6,3 @@ export const Separator = styled.hr`
   margin: ${(props) => props.theme.spacing[8]} 0;
   width: 24px;
 `
-
-export default Separator

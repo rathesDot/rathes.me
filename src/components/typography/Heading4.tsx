@@ -1,7 +1,18 @@
-import React from "react"
 import styled from "styled-components"
 
-const Element = styled.h4`
+export type Heading4Props = {
+  color?: "white" | "black" | "silver"
+  tint?:
+    | "default"
+    | "light"
+    | "lighter"
+    | "lightest"
+    | "dark"
+    | "darker"
+    | "darkest"
+}
+
+export const Heading4 = styled.h4<Heading4Props>`
   font-size: ${(props) => props.theme.fontSize.xs};
   font-weight: 400;
   line-height: 2.5;
@@ -12,17 +23,3 @@ const Element = styled.h4`
       ? props.theme.colors[props.color][props.tint]
       : props.theme.colors.white.default};
 `
-
-export const Heading4 = ({
-  children,
-  element,
-  color,
-  tint = "default",
-  ...props
-}) => (
-  <Element as={element || "h4"} color={color} tint={tint} {...props}>
-    {children}
-  </Element>
-)
-
-export default Heading4

@@ -1,7 +1,18 @@
-import React from "react"
 import styled from "styled-components"
 
-const Element = styled.h2`
+export type Heading2Props = {
+  color?: "white" | "black" | "silver"
+  tint?:
+    | "default"
+    | "light"
+    | "lighter"
+    | "lightest"
+    | "dark"
+    | "darker"
+    | "darkest"
+}
+
+export const Heading2 = styled.h2<Heading2Props>`
   font-size: ${(props) => props.theme.fontSize["lg"]};
   font-weight: 600;
   line-height: 1.66666666666;
@@ -10,17 +21,3 @@ const Element = styled.h2`
       ? props.theme.colors[props.color][props.tint]
       : props.theme.colors.white.default};
 `
-
-export const Heading2 = ({
-  children,
-  element,
-  color,
-  tint = "default",
-  ...props
-}) => (
-  <Element as={element || "h2"} color={color} tint={tint} {...props}>
-    {children}
-  </Element>
-)
-
-export default Heading2

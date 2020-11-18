@@ -1,22 +1,56 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 
-import { Box, Link, List, Paragraph, SEO } from "../components"
+import { styled } from "../../stitches.config"
+
+import { Link, List, ListItem, Paragraph, Meta } from "../components"
 import { SayHi } from "../patterns"
 import { PageLayout } from "../layouts"
 
 import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
 import externalLinks from "../content/articles/externalLinks"
 
-const Writings = ({ data }) => {
+const Container = styled("section", {
+  marginTop: "$32",
+  maxWidth: 640,
+})
+
+const Section = styled("section", {
+  marginTop: "$32",
+})
+
+const SayHiContainer = styled("section", {
+  marginBottom: "$32",
+  marginTop: "$32",
+})
+
+const BlogList = styled("div", {
+  marginTop: "$12",
+})
+
+type MdxQuery = {
+  allMdx: {
+    edges: Array<{
+      id: number
+      node: {
+        frontmatter: { title: string; date: string }
+        fields: {
+          slug: string
+        }
+      }
+    }>
+  }
+}
+
+const Writings: React.FC<PageProps<MdxQuery>> = ({ data }) => {
   const blogPosts = getSortedGroups(
     groupPostsByYear(extractBlogPosts(data).concat(externalLinks))
   )
 
   return (
     <PageLayout>
-      <Box maxWidth="640px" marginTop={32} element="section">
-        <SEO title="Writings" />
+      <Container>
+        <Meta title="Writings" />
         <Paragraph>
           From time to time, I do write. Sometime on my blog, but also on other
           blogs such as on{" "}
@@ -40,33 +74,33 @@ const Writings = ({ data }) => {
           </Link>
         </Paragraph>
 
-        <Box marginTop={32} element="section">
-          <Box marginTop={12}>
+        <Section>
+          <BlogList>
             <List title="Books & Whitepapers">
-              <List.Item link="https://learn-tamil.com">
+              <ListItem link="https://learn-tamil.com">
                 A Guide To Basic Tamil Grammar
-              </List.Item>
+              </ListItem>
             </List>
-          </Box>
+          </BlogList>
 
           {blogPosts.map(([key, posts]) => {
             return (
-              <Box marginTop={12}>
+              <BlogList>
                 <List title={key} key={key}>
                   {posts.map((post, index) => (
-                    <List.Item link={post.link} key={index}>
+                    <ListItem link={post.link} key={index}>
                       {post.title}
-                    </List.Item>
+                    </ListItem>
                   ))}
                 </List>
-              </Box>
+              </BlogList>
             )
           })}
-        </Box>
-        <Box marginTop={32} marginBottom={32} element="section">
+        </Section>
+        <SayHiContainer>
           <SayHi />
-        </Box>
-      </Box>
+        </SayHiContainer>
+      </Container>
     </PageLayout>
   )
 }

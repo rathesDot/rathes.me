@@ -1,17 +1,31 @@
 import React from "react"
+import { PageProps } from "gatsby"
+
+import { styled } from "../../../stitches.config"
 
 import { PageLayout } from "../../layouts"
-import { Box, Heading1, Paragraph, SEO, TextBody } from "../../components"
+import { Heading1, Paragraph, Meta } from "../../components"
 
-const Meetings = () => (
+const Container = styled("section", {
+  maxWidth: 640,
+})
+
+const HelpText = styled("span", {
+  color: "$gray600",
+  display: "block",
+  fontSize: "$base",
+  lineHeight: "$1.8",
+})
+
+const Meetings: React.FC<PageProps> = () => (
   <PageLayout>
-    <SEO title="You probably don't need that meeting - Developing a meeting culture that employees will love"></SEO>
-    <Box maxWidth="640px">
+    <Meta title="You probably don't need that meeting - Developing a meeting culture that employees will love"></Meta>
+    <Container>
       <Heading1>
         You probably don't need that meeting
-        <Box element={TextBody} lineHeight={1.8} color="silver" display="block">
+        <HelpText>
           Developing a meeting culture that employees will love
-        </Box>
+        </HelpText>
       </Heading1>
       <Paragraph>
         Be honest with yourself. How many of your meetings do you think were
@@ -29,7 +43,7 @@ const Meetings = () => (
         After this talk, you will be able to avoid useless meetings and make the
         necessary meetings more productive.
       </Paragraph>
-    </Box>
+    </Container>
   </PageLayout>
 )
 

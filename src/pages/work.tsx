@@ -1,24 +1,44 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, PageProps, StaticQueryProps } from "gatsby"
+
+import { styled } from "../../stitches.config"
 
 import { PageLayout } from "../layouts"
 import {
-  Box,
   Heading2,
   Link,
   List,
+  ListItem,
   Paragraph,
-  SEO,
+  Meta,
   Separator,
 } from "../components"
 
 import { SayHi } from "../patterns"
 
-const Work = ({ data }) => {
+const Container = styled("section", {
+  marginTop: "$32",
+  maxWidth: 640,
+})
+
+const Section = styled("section", {
+  marginTop: "$32",
+})
+
+const SayHiContainer = styled("section", {
+  marginBottom: "$32",
+  marginTop: "$32",
+})
+
+type TalksProps = {
+  data: { rdd: { publicURL: string }; rddUk: { publicURL: string } }
+}
+
+const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
   return (
     <PageLayout>
-      <Box maxWidth="640px" marginTop={32} element="section">
-        <SEO title="Work" />
+      <Container>
+        <Meta title="Work" />
         <Paragraph>
           I work as a front-end engineer at Hussle right now but I also work on
           other side projects that are not only development related. If you want
@@ -28,7 +48,7 @@ const Work = ({ data }) => {
           </Link>
           .
         </Paragraph>
-        <Box marginTop={32} element="section">
+        <Section>
           <Heading2>Learn Tamil Online</Heading2>
           <Paragraph>
             The side project I am working on right now is to provide a platform
@@ -46,8 +66,8 @@ const Work = ({ data }) => {
               https://learn-tamil.com
             </Link>
           </Paragraph>
-        </Box>
-        <Box marginTop={32} element="section">
+        </Section>
+        <Section>
           <Heading2>Public Speaking</Heading2>
           <Paragraph>
             In January 2019, I gave my first tech-related talk. Since it was an
@@ -62,39 +82,39 @@ const Work = ({ data }) => {
             and 45-minutes talk.
           </Paragraph>
           <List title="Tech Talks">
-            <List.Item
+            <ListItem
               link={data.rddUk.publicURL}
               subtitle="February 2019 at PHP UK Unconference"
             >
               Introduction to Readme Driven Development
-            </List.Item>
-            <List.Item
+            </ListItem>
+            <ListItem
               link={data.rdd.publicURL}
               subtitle="January 2019 at PHP Gent"
             >
               Introduction to Readme Driven Development
-            </List.Item>
+            </ListItem>
           </List>
           <Separator />
           <List title="Abstracts">
-            <List.Item
+            <ListItem
               link="/talks/meetings"
               subtitle="Developing a meeting culture that employees will love"
             >
               You probably don’t need that meeting
-            </List.Item>
-            <List.Item
+            </ListItem>
+            <ListItem
               link="/talks/managing-time"
               subtitle="A talk about what people call time management"
             >
               You can't manage time
-            </List.Item>
+            </ListItem>
           </List>
-        </Box>
-        <Box element="section" marginTop={32} marginBottom={32}>
+        </Section>
+        <SayHiContainer>
           <SayHi />
-        </Box>
-      </Box>
+        </SayHiContainer>
+      </Container>
     </PageLayout>
   )
 }

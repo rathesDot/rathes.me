@@ -1,17 +1,29 @@
 import React from "react"
+import { PageProps } from "gatsby"
+
+import { styled } from "../../../stitches.config"
 
 import { PageLayout } from "../../layouts"
-import { Box, Heading1, Paragraph, SEO, TextBody } from "../../components"
+import { Heading1, Paragraph, Meta } from "../../components"
 
-const ManagingTime = () => (
+const Container = styled("section", {
+  maxWidth: 640,
+})
+
+const HelpText = styled("span", {
+  color: "$gray600",
+  display: "block",
+  fontSize: "$base",
+  lineHeight: "$1.8",
+})
+
+const ManagingTime: React.FC<PageProps> = () => (
   <PageLayout>
-    <SEO title="You can't manage time - A talk about what people call time management"></SEO>
-    <Box maxWidth="640px">
+    <Meta title="You can't manage time - A talk about what people call time management"></Meta>
+    <Container>
       <Heading1>
         You can't manage time
-        <Box element={TextBody} lineHeight={1.8} color="silver" display="block">
-          A talk about what people call time management
-        </Box>
+        <HelpText>A talk about what people call time management</HelpText>
       </Heading1>
       <Paragraph>
         How many different things did you already try out to be more productive
@@ -29,7 +41,7 @@ const ManagingTime = () => (
         want to get more things done. And you will understand what time
         management means.
       </Paragraph>
-    </Box>
+    </Container>
   </PageLayout>
 )
 

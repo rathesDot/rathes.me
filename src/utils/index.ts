@@ -1,4 +1,23 @@
-export const extractBlogPosts = (data) => {
+type MdxQuery = {
+  allMdx: {
+    edges: Array<{
+      node: {
+        frontmatter: { title: string; date: string }
+        fields: {
+          slug: string
+        }
+      }
+    }>
+  }
+}
+
+type Post = {
+  title: string
+  date: string
+  link: string
+}
+
+export const extractBlogPosts = (data: MdxQuery): Post[] => {
   return [
     ...data.allMdx.edges.map(({ node: post }) => {
       return {
@@ -10,7 +29,7 @@ export const extractBlogPosts = (data) => {
   ]
 }
 
-export const groupPostsByYear = (posts) => {
+export const groupPostsByYear = (posts: Post[]): { [key: number]: Post[] } => {
   return posts
     .sort((a, b) =>
       Date.parse(a.date) < Date.parse(b.date)
@@ -26,6 +45,6 @@ export const groupPostsByYear = (posts) => {
     }, {})
 }
 
-export const getSortedGroups = (groups) => {
+export const getSortedGroups = (groups: { [key: number]: Post[] }) => {
   return Object.entries(groups).sort((a, b) => (a < b ? 1 : b < a ? -1 : 0))
 }

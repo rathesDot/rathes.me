@@ -1,7 +1,25 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import React from "react"
+import { renderToString } from "react-dom/server"
 
-// You can delete this file if you're not using it
+import { css } from "./stitches.config"
+
+export const replaceRenderer = ({
+  bodyComponent,
+  setHeadComponents,
+  replaceBodyHTMLString,
+}) => {
+  const renderBody = () => renderToString(bodyComponent)
+  const { styles, result: bodyHTML } = css.getStyles(renderBody)
+
+  setHeadComponents(
+    styles.map((sheet, i) => (
+      <style
+        key={i}
+        data-stitches
+        dangerouslySetInnerHTML={{ __html: sheet }}
+      />
+    ))
+  )
+
+  replaceBodyHTMLString(bodyHTML)
+}

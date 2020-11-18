@@ -1,13 +1,59 @@
 import React from "react"
 import { graphql, Link as RouterLink } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import Img, { FluidObject } from "gatsby-image"
 
-import { PageLayout } from "../"
-import { Box, Heading1, Link, SEO } from "../../components"
+import { PageLayout } from ".."
+import { Heading1, Meta } from "../../components"
 
-import Img from "gatsby-image"
+import { styled } from "../../../stitches.config"
 
-export const BlogLayout = ({ data }) => {
+const BackLink = styled("span", {
+  color: "$white",
+  textDecoration: "underline",
+})
+
+const Container = styled("div", {
+  marginTop: "$32",
+  maxWidth: 640,
+})
+
+const FeatureImage = styled("div", {
+  marginBottom: "$4",
+  marginTop: "$4",
+})
+
+const Footer = styled("footer", {
+  marginBottom: "$32",
+  marginTop: "$32",
+})
+
+type BlogData = {
+  site: {
+    siteMetadata: {
+      siteUrl: string
+    }
+  }
+  mdx: {
+    body: string
+    excerpt?: string
+    fields: {
+      slug: string
+    }
+    frontmatter: {
+      title: string
+      locale: string
+      image: {
+        publicURL: string
+        childImageSharp: {
+          fluid: FluidObject | FluidObject[]
+        }
+      }
+    }
+  }
+}
+
+export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
   const post = data.mdx
   const meta = [
     {
@@ -49,25 +95,25 @@ export const BlogLayout = ({ data }) => {
 
   return (
     <PageLayout>
-      <SEO
+      <Meta
         title={post.frontmatter.title}
         description={post.excerpt}
         meta={[...meta, ...imageMeta]}
       />
-      <Box maxWidth="640px" marginTop={32}>
+      <Container>
         <Heading1>{post.frontmatter.title}</Heading1>
-        <Box marginBottom={4} marginTop={4}>
+        <FeatureImage>
           {post.frontmatter.image && (
             <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
           )}
-        </Box>
+        </FeatureImage>
         <MDXRenderer>{post.body}</MDXRenderer>
-        <Box element="footer" marginTop={32} marginBottom={32}>
-          <Link element={RouterLink} color="white" underlined to="/writings">
-            back to articles
-          </Link>
-        </Box>
-      </Box>
+        <Footer>
+          <RouterLink to="/writings">
+            <BackLink>back to articles</BackLink>
+          </RouterLink>
+        </Footer>
+      </Container>
     </PageLayout>
   )
 }

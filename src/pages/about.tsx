@@ -1,25 +1,44 @@
 import React from "react"
-import { Link as RouterLink } from "gatsby"
+import { Link as RouterLink, PageProps } from "gatsby"
 
 import { PageLayout } from "../layouts"
+import { styled } from "../../stitches.config"
 
 import {
-  Box,
   Heading1,
   Heading2,
-  Link,
   List,
+  ListItem,
   Paragraph,
-  SEO,
+  Meta,
   Separator,
+  TextBody,
 } from "../components"
 
 import { SayHi } from "../patterns"
 
-const AboutMe = () => (
+const Container = styled("section", {
+  marginTop: "$32",
+  maxWidth: 640,
+})
+
+const Section = styled("section", {
+  marginTop: "$32",
+})
+
+const SayHiContainer = styled("section", {
+  marginBottom: "$32",
+  marginTop: "$32",
+})
+
+const ReadingList = styled("div", {
+  marginTop: "$12",
+})
+
+const AboutMe: React.FC<PageProps> = () => (
   <PageLayout>
-    <SEO title="About me" />
-    <Box maxWidth="640px" marginTop={32}>
+    <Meta title="About me" />
+    <Container>
       <Heading1>/raðiːs/</Heading1>
       <Paragraph>
         I’m Rathes Sachchithananthan, a web developer with interests not only in
@@ -55,7 +74,7 @@ const AboutMe = () => (
         people to learn my mother language Tamil.
       </Paragraph>
 
-      <Box marginTop={32} element="section">
+      <Section>
         <Heading2>What I read</Heading2>
         <Paragraph>
           Books play an important part in my life. Just sitting on my couch or
@@ -70,76 +89,75 @@ const AboutMe = () => (
           Actually, I dream of having my own library one day where I can invite
           everybody to pick up a nice book and read.
         </Paragraph>
-        <Box marginTop={12}>
+        <ReadingList>
           <List title="Reading List 2020">
-            <List.Item
+            <ListItem
               subtitle="by Cody McFadyen"
               link="https://amzn.to/2tw7Zxp"
             >
               Shadow Man (Smoky Barrett, Band 1)
-            </List.Item>
-            <List.Item
-              subtitle="by Ransom Riggs"
-              link="https://amzn.to/2MYAfj6"
-            >
+            </ListItem>
+            <ListItem subtitle="by Ransom Riggs" link="https://amzn.to/2MYAfj6">
               Library of Souls: The Third Novel of Miss Peregrine's Peculiar
               Children
-            </List.Item>
-            <List.Item
+            </ListItem>
+            <ListItem
               subtitle="by Sir Arthur Conan Doyle"
               link="https://amzn.to/37vaKhk"
             >
               Sherlock Holmes: A Study in Scarlet
-            </List.Item>
-            <List.Item
+            </ListItem>
+            <ListItem
               subtitle="by Charlotte Link"
               link="https://amzn.to/2U8dFbw"
             >
               Die letzte Spur (The last track)
-            </List.Item>
-            <List.Item subtitle="by Eric Ries" link="https://amzn.to/2uresu3">
+            </ListItem>
+            <ListItem subtitle="by Eric Ries" link="https://amzn.to/2uresu3">
               The Lean Startup: How Today's Entrepreneurs Use Continuous
               Innovation to Create Radically Successful Businesses
-            </List.Item>
-            <List.Item
+            </ListItem>
+            <ListItem
               subtitle="by Richard Osman"
               link="https://amzn.to/343YBzt"
             >
               The Thursday Murder Club
-            </List.Item>
-            <List.Item subtitle="by Joel Levy" link="https://amzn.to/30cRK5C">
+            </ListItem>
+            <ListItem subtitle="by Joel Levy" link="https://amzn.to/30cRK5C">
               Psychology for Busy People: Everything You Really Should Know
-            </List.Item>
+            </ListItem>
           </List>
           <Separator />
           <List title="Currently reading">
-            <List.Item
+            <ListItem
               subtitle="by George R. R. Martin"
               link="https://amzn.to/2Rngm82"
             >
               A Game of Thrones: A Song of Ice and Fire
-            </List.Item>
-            <List.Item subtitle="by Amish" link="https://amzn.to/3j86ASh">
+            </ListItem>
+            <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
-            </List.Item>
-            <List.Item
+            </ListItem>
+            <ListItem
               subtitle="by Paula Hawkins"
               link="https://amzn.to/2T4pQ8d"
             >
               The Girl on the Train
-            </List.Item>
+            </ListItem>
           </List>
-        </Box>
-      </Box>
+        </ReadingList>
+      </Section>
 
-      <Box marginTop={32} element="section">
+      <Section>
         <Heading2>What I write</Heading2>
         <Paragraph>
           From time to time I also write. It can be work related topics that I
           share in the{" "}
-          <Link element={RouterLink} to="/writings" underlined color="white">
-            writing section
-          </Link>{" "}
+          <RouterLink to="/writings">
+            <TextBody color="white" underlined>
+              writing section
+            </TextBody>
+          </RouterLink>{" "}
           of this website but I also write to empty my mind and eternalize
           ideas.
         </Paragraph>
@@ -153,11 +171,11 @@ const AboutMe = () => (
           “A guide to basic Tamil Grammar”. I’m writing that book as an entry
           point for my learning platform.
         </Paragraph>
-      </Box>
-      <Box element="section" marginTop={32} marginBottom={32}>
+      </Section>
+      <SayHiContainer>
         <SayHi />
-      </Box>
-    </Box>
+      </SayHiContainer>
+    </Container>
   </PageLayout>
 )
 
