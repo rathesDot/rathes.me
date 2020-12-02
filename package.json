@@ -24,7 +24,7 @@
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-images": "^3.3.24",
     "gatsby-remark-prismjs": "^3.5.15",
-    "gatsby-source-filesystem": "^2.3.14",
+    "gatsby-source-filesystem": "^2.6.1",
     "gatsby-transformer-remark": "^2.8.14",
     "gatsby-transformer-sharp": "^2.5.4",
     "prism-themes": "^1.4.0",
