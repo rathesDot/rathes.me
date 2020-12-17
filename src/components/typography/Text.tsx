@@ -7,6 +7,11 @@ export const Text = styled("span", {
 
   variants: {
     color: colors,
+    size: {
+      body: {
+        fontSize: "$base",
+      },
+    },
     underlined: {
       true: {
         textDecoration: "underline",
