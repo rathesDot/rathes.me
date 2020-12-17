@@ -5,7 +5,7 @@ import { PageLayout } from "../layouts"
 import { styled } from "../../stitches.config"
 
 import {
-  Heading1,
+  Heading,
   Heading2,
   List,
   ListItem,
@@ -39,7 +39,7 @@ const AboutMe: React.FC<PageProps> = () => (
   <PageLayout>
     <Meta title="About me" />
     <Container>
-      <Heading1>/raðiːs/</Heading1>
+      <Heading level="heading1">/raðiːs/</Heading>
       <Paragraph>
         I’m Rathes Sachchithananthan, a web developer with interests not only in
         engineering but also in product development & design, user & customer

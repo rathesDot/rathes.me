@@ -4,7 +4,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import Img, { FluidObject } from "gatsby-image"
 
 import { PageLayout } from ".."
-import { Heading1, Meta } from "../../components"
+import { Heading, Meta } from "../../components"
 
 import { styled } from "../../../stitches.config"
 
@@ -101,7 +101,7 @@ export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
         meta={[...meta, ...imageMeta]}
       />
       <Container>
-        <Heading1>{post.frontmatter.title}</Heading1>
+        <Heading level="heading1">{post.frontmatter.title}</Heading>
         <FeatureImage>
           {post.frontmatter.image && (
             <Img fluid={post.frontmatter.image.childImageSharp.fluid} />

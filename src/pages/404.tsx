@@ -1,7 +1,7 @@
 import React from "react"
 
 import { PageLayout } from "../layouts"
-import { Heading1, List, ListItem, Paragraph, Meta } from "../components"
+import { List, ListItem, Paragraph, Meta, Heading } from "../components"
 import { styled } from "../../stitches.config"
 
 const Container = styled("div", {
@@ -12,9 +12,9 @@ const NotFoundPage = () => (
   <PageLayout>
     <Meta title="404: Not found" />
     <Container>
-      <Heading1>
+      <Heading level="heading1">
         Looks like you are looking for a page that does not exist.
-      </Heading1>
+      </Heading>
       <Paragraph>
         If you came here from a Google Search, feel free to go back and try a
         different search term. Otherwise, here are some things that you might

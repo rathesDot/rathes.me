@@ -5,7 +5,7 @@ import { styled } from "../../stitches.config"
 
 import { PageLayout } from "../layouts"
 import {
-  Heading1,
+  Heading,
   Heading2,
   Heading4,
   Link,
@@ -24,7 +24,7 @@ const Legal: React.FC<PageProps> = () => (
   <PageLayout>
     <Meta title="Legal Information" />
     <Container>
-      <Heading1>Legal Information</Heading1>
+      <Heading level="heading1">Legal Information</Heading>
       <Heading2>Pursuant to § 5 TMG:</Heading2>
       <Paragraph>
         Rathes Sachchithananthan <br />

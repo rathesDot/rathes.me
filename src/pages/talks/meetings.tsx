@@ -4,7 +4,7 @@ import { PageProps } from "gatsby"
 import { styled } from "../../../stitches.config"
 
 import { PageLayout } from "../../layouts"
-import { Heading1, Paragraph, Meta } from "../../components"
+import { Heading, Paragraph, Meta } from "../../components"
 
 const Container = styled("section", {
   maxWidth: 640,
@@ -21,12 +21,12 @@ const Meetings: React.FC<PageProps> = () => (
   <PageLayout>
     <Meta title="You probably don't need that meeting - Developing a meeting culture that employees will love"></Meta>
     <Container>
-      <Heading1>
+      <Heading level="heading1">
         You probably don't need that meeting
         <HelpText>
           Developing a meeting culture that employees will love
         </HelpText>
-      </Heading1>
+      </Heading>
       <Paragraph>
         Be honest with yourself. How many of your meetings do you think were
         useful? And how many of them were productive? In this talk, we will talk
