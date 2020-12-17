@@ -32,5 +32,13 @@ export const Heading = styled("h1", {
         color: "$gray900",
       },
     },
+
+    level: {
+      heading1: {
+        fontSize: "$2xl",
+        fontWeight: 600,
+        lineHeight: "$1.35",
+      },
+    },
   },
 })
