@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { styled } from "../../../stitches.config"
 
-import { TextSmall } from "../../components"
+import { Text } from "../../components"
 
 const Separator = styled("span", {
   display: "inline-block",
@@ -19,12 +19,14 @@ const Separator = styled("span", {
 
 const Footer = () => (
   <div>
-    <TextSmall css={{ color: "$gray600" }}>
+    <Text color="gray600" size="small">
       &copy; 2020 — Rathes Sachchithananthan
-    </TextSmall>
+    </Text>
     <Separator />
     <Link to="/legal">
-      <TextSmall css={{ color: "$gray600" }}>Legal Information</TextSmall>
+      <Text color="gray600" size="small">
+        Legal Information
+      </Text>
     </Link>
   </div>
 )
