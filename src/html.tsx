@@ -20,6 +20,12 @@ export default function HTML(props: HTMLProps) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
+        <script
+          src="https://cdn.usefathom.com/script.js"
+          data-spa="auto"
+          data-site="ZYWCGBNZ"
+          defer
+        />
       </head>
       <body {...props.bodyAttributes}>
         {props.preBodyComponents}
