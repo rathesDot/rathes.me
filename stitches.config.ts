@@ -73,6 +73,7 @@ export const { styled, css } = createStyled({
     },
     lineHeights: {
       "$1.35": "1.35",
+      "$1.66": "1.6666",
       "$1.8": "1.8",
     },
     letterSpacings: {
