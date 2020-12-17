@@ -6,7 +6,6 @@ import { styled } from "../../stitches.config"
 
 import {
   Heading,
-  Heading2,
   List,
   ListItem,
   Paragraph,
@@ -75,7 +74,7 @@ const AboutMe: React.FC<PageProps> = () => (
       </Paragraph>
 
       <Section>
-        <Heading2>What I read</Heading2>
+        <Heading level="heading2">What I read</Heading>
         <Paragraph>
           Books play an important part in my life. Just sitting on my couch or
           bed and reading a novel can be really inspiring.
@@ -149,7 +148,7 @@ const AboutMe: React.FC<PageProps> = () => (
       </Section>
 
       <Section>
-        <Heading2>What I write</Heading2>
+        <Heading level="heading2">What I write</Heading>
         <Paragraph>
           From time to time I also write. It can be work related topics that I
           share in the{" "}

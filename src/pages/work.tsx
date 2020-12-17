@@ -5,7 +5,7 @@ import { styled } from "../../stitches.config"
 
 import { PageLayout } from "../layouts"
 import {
-  Heading2,
+  Heading,
   Link,
   List,
   ListItem,
@@ -49,7 +49,7 @@ const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
           .
         </Paragraph>
         <Section>
-          <Heading2>Learn Tamil Online</Heading2>
+          <Heading level="heading2">Learn Tamil Online</Heading>
           <Paragraph>
             The side project I am working on right now is to provide a platform
             for people that want to learn my mother language Tamil.
@@ -68,7 +68,7 @@ const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
           </Paragraph>
         </Section>
         <Section>
-          <Heading2>Public Speaking</Heading2>
+          <Heading level="heading2">Public Speaking</Heading>
           <Paragraph>
             In January 2019, I gave my first tech-related talk. Since it was an
             exciting experience, I will hopefully fill up this list with a few

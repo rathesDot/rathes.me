@@ -6,7 +6,6 @@ import { styled } from "../../stitches.config"
 import { PageLayout } from "../layouts"
 import {
   Heading,
-  Heading2,
   Heading4,
   Link,
   Paragraph,
@@ -25,18 +24,18 @@ const Legal: React.FC<PageProps> = () => (
     <Meta title="Legal Information" />
     <Container>
       <Heading level="heading1">Legal Information</Heading>
-      <Heading2>Pursuant to § 5 TMG:</Heading2>
+      <Heading level="heading2">Pursuant to § 5 TMG:</Heading>
       <Paragraph>
         Rathes Sachchithananthan <br />
         Braderijstraat 5 <br />
         9000 Gent, Belgium
       </Paragraph>
-      <Heading2>Contact</Heading2>
+      <Heading level="heading2">Contact</Heading>
       <Paragraph>
         Phone: +32 483 463 944 <br />
         E-Mail: hello@rathes.me
       </Paragraph>
-      <Heading2>Disclaimer</Heading2>
+      <Heading level="heading2">Disclaimer</Heading>
       <Heading4 as="h3">Google Analytics</Heading4>
       <Paragraph>
         This website uses Google Analytics, a web analytics service provided by
@@ -78,7 +77,9 @@ const Legal: React.FC<PageProps> = () => (
         </Link>
         .
       </Paragraph>
-      <Heading2>Limitation of liability for internal content</Heading2>
+      <Heading level="heading2">
+        Limitation of liability for internal content
+      </Heading>
       <Paragraph>
         The content of our website has been compiled with meticulous care and to
         the best of our knowledge. However, we cannot assume any liability for
