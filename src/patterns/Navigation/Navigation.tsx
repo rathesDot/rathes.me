@@ -31,19 +31,22 @@ const Separator = styled("span", {
   },
 })
 
-const MenuItem = sc.span`
-  font-size: ${(props) => props.theme.fontSize.lg};
-  font-family: ${(props) => props.theme.fontFamily.default};
-  font-weight: 600;
+const MenuItem = styled("span", {
+  fontFamily: "$default",
+  fontSize: "$sm",
+  fontWeight: 600,
 
-  @media (max-width: 375px) {
-    font-size: ${(props) => props.theme.fontSize.base};
-  }
-
-  @media (max-width: 320px) {
-    font-size: ${(props) => props.theme.fontSize.sm};
-  }
-`
+  variants: {
+    size: {
+      default: {
+        fontSize: "$base",
+      },
+      lg: {
+        fontSize: "$lg",
+      },
+    },
+  },
+})
 
 const Container = sc.nav`
   align-items: center;
@@ -63,25 +66,25 @@ const Navigation = () => {
   return (
     <Container>
       <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
-        <MenuItem>
+        <MenuItem size={{ xs: "default", sm: "lg" }}>
           <Logo />
         </MenuItem>
       </Link>
       <Separator size={{ initial: "default", xs: "large" }} />
       <Link activeStyle={{ color: "#FFF" }} to="/about">
-        <MenuItem>About</MenuItem>
+        <MenuItem size={{ xs: "default", sm: "lg" }}>About</MenuItem>
       </Link>
       <Separator size={{ initial: "default", xs: "large" }} />
       <a href={data.resume.publicURL} aria-label="Resume">
-        <MenuItem>Resume</MenuItem>
+        <MenuItem size={{ xs: "default", sm: "lg" }}>Resume</MenuItem>
       </a>
       <Separator size={{ initial: "default", xs: "large" }} />
       <Link activeStyle={{ color: "#FFF" }} to="/work">
-        <MenuItem>Work</MenuItem>
+        <MenuItem size={{ xs: "default", sm: "lg" }}>Work</MenuItem>
       </Link>
       <Separator size={{ initial: "default", xs: "large" }} />
       <Link activeStyle={{ color: "#FFF" }} to="/writings">
-        <MenuItem>Writings</MenuItem>
+        <MenuItem size={{ xs: "default", sm: "lg" }}>Writings</MenuItem>
       </Link>
     </Container>
   )
