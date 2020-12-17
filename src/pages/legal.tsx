@@ -4,15 +4,7 @@ import { PageProps } from "gatsby"
 import { styled } from "../../stitches.config"
 
 import { PageLayout } from "../layouts"
-import {
-  Heading1,
-  Heading2,
-  Heading4,
-  Link,
-  Paragraph,
-  Meta,
-  TextSmall,
-} from "../components"
+import { Heading, Link, Paragraph, Meta, TextSmall } from "../components"
 
 const Container = styled("div", {
   marginBottom: "$32",
@@ -24,20 +16,22 @@ const Legal: React.FC<PageProps> = () => (
   <PageLayout>
     <Meta title="Legal Information" />
     <Container>
-      <Heading1>Legal Information</Heading1>
-      <Heading2>Pursuant to § 5 TMG:</Heading2>
+      <Heading level="heading1">Legal Information</Heading>
+      <Heading level="heading2">Pursuant to § 5 TMG:</Heading>
       <Paragraph>
         Rathes Sachchithananthan <br />
         Braderijstraat 5 <br />
         9000 Gent, Belgium
       </Paragraph>
-      <Heading2>Contact</Heading2>
+      <Heading level="heading2">Contact</Heading>
       <Paragraph>
         Phone: +32 483 463 944 <br />
         E-Mail: hello@rathes.me
       </Paragraph>
-      <Heading2>Disclaimer</Heading2>
-      <Heading4 as="h3">Google Analytics</Heading4>
+      <Heading level="heading2">Disclaimer</Heading>
+      <Heading level="heading4" as="h3">
+        Google Analytics
+      </Heading>
       <Paragraph>
         This website uses Google Analytics, a web analytics service provided by
         Google, Inc. (“Google”). Google Analytics uses “cookies”, which are text
@@ -78,7 +72,9 @@ const Legal: React.FC<PageProps> = () => (
         </Link>
         .
       </Paragraph>
-      <Heading2>Limitation of liability for internal content</Heading2>
+      <Heading level="heading2">
+        Limitation of liability for internal content
+      </Heading>
       <Paragraph>
         The content of our website has been compiled with meticulous care and to
         the best of our knowledge. However, we cannot assume any liability for
@@ -95,7 +91,9 @@ const Legal: React.FC<PageProps> = () => (
         concerning this matter can only be assumed from the point in time at
         which the infringement becomes known to us.
       </Paragraph>
-      <Heading4 as="h3">Limitation of liability for external links</Heading4>
+      <Heading level="heading4" as="h3">
+        Limitation of liability for external links
+      </Heading>
       <Paragraph>
         Our website contains links to the websites of third parties (“external
         links”). As the content of these websites is not under our control, we
@@ -106,14 +104,18 @@ const Legal: React.FC<PageProps> = () => (
         As soon as an infringement of the law becomes known to us, we will
         immediately remove the link in question.
       </Paragraph>
-      <Heading4 as="h3">Copyright</Heading4>
+      <Heading level="heading4" as="h3">
+        Copyright
+      </Heading>
       <Paragraph>
         The content and works published on this website are governed by the
         copyright laws of Germany. Any duplication, processing, distribution or
         any form of utilisation beyond the scope of copyright law shall require
         the prior written consent of the author or authors in question.
       </Paragraph>
-      <Heading4 as="h3">Data protection</Heading4>
+      <Heading level="heading4" as="h3">
+        Data protection
+      </Heading>
       <Paragraph>
         A visit to our website can result in the storage on our server of
         information about the access (date, time, page accessed). This does not

@@ -4,7 +4,7 @@ import { PageProps } from "gatsby"
 import { styled } from "../../../stitches.config"
 
 import { PageLayout } from "../../layouts"
-import { Heading1, Paragraph, Meta } from "../../components"
+import { Heading, Paragraph, Meta } from "../../components"
 
 const Container = styled("section", {
   maxWidth: 640,
@@ -21,10 +21,10 @@ const ManagingTime: React.FC<PageProps> = () => (
   <PageLayout>
     <Meta title="You can't manage time - A talk about what people call time management"></Meta>
     <Container>
-      <Heading1>
+      <Heading level="heading1">
         You can't manage time
         <HelpText>A talk about what people call time management</HelpText>
-      </Heading1>
+      </Heading>
       <Paragraph>
         How many different things did you already try out to be more productive
         and get more things done? How many tools do you own to accomplish more?
