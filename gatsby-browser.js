@@ -3,7 +3,6 @@ import { MDXProvider } from "@mdx-js/react"
 
 import {
   Heading,
-  Heading3,
   Heading4,
   Link,
   OrderedList,
@@ -16,11 +15,12 @@ import "prism-themes/themes/prism-atom-dark.css"
 
 const H1 = ({ children }) => <Heading level="heading1">{children}</Heading>
 const H2 = ({ children }) => <Heading level="heading2">{children}</Heading>
+const H3 = ({ children }) => <Heading level="heading3">{children}</Heading>
 
 const components = {
   h1: H1,
   h2: H2,
-  h3: Heading3,
+  h3: H3,
   h4: Heading4,
   hr: Separator,
   p: Paragraph,
