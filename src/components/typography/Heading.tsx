@@ -42,3 +42,7 @@ export const Heading = styled("h1", {
     },
   },
 })
+
+Heading.defaultProps = {
+  color: "white",
+}
