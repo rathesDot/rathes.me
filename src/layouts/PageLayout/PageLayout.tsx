@@ -1,11 +1,8 @@
 import React from "react"
-import { ThemeProvider } from "styled-components"
 
 import { styled, css } from "../../../stitches.config"
 
 import { Footer, Navigation } from "../../patterns"
-
-import theme from "../../../theme"
 
 const MainContainer = styled("main", {
   backgroundColor: "$black",
@@ -209,13 +206,11 @@ const PageLayout: React.FC = ({ children }) => {
     },
   })
   return (
-    <ThemeProvider theme={theme}>
-      <MainContainer padding={{ md: "md", lg: "lg" }}>
-        <Navigation />
-        {children}
-        <Footer />
-      </MainContainer>
-    </ThemeProvider>
+    <MainContainer padding={{ md: "md", lg: "lg" }}>
+      <Navigation />
+      {children}
+      <Footer />
+    </MainContainer>
   )
 }
 
