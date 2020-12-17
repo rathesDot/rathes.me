@@ -1,15 +1,14 @@
 import React from "react"
-import styledComponent from "styled-components"
 import { Link as RouterLink } from "gatsby"
 import { styled } from "../../../stitches.config"
 
 import { Heading, Link } from ".."
 
-const Title = styledComponent.li`
-  font-size: ${(props) => props.theme.fontSize.base};
-  color: ${(props) => props.theme.colors.white.default};
-  margin: ${(props) => props.theme.spacing[2]} 0;
-`
+const Title = styled("li", {
+  fontSize: "$base",
+  color: "$white",
+  margin: "$2 0",
+})
 
 const Subtitle = styled("span", {
   color: "$gray600",

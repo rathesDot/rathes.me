@@ -1,45 +1,57 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import styled from "styled-components"
+
+import { styled } from "../../../stitches.config"
 
 import { Logo } from "../../components"
 
-const Separator = styled.span`
-  display: inline-block;
-  margin: 0 8px;
-  color: ${(props) => props.theme.colors.silver.default};
-  font-size: ${(props) => props.theme.fontSize.lg};
-  font-family: ${(props) => props.theme.fontFamily.default};
+const Separator = styled("span", {
+  color: "$gray600",
+  display: "inline-block",
+  fontFamily: "$default",
+  fontSize: "$base",
+  margin: "0 $2",
 
-  @media (max-width: 374px) {
-    margin: 0 4px;
-    font-size: ${(props) => props.theme.fontSize.base};
-  }
+  variants: {
+    size: {
+      default: {
+        margin: "0 $1",
+        fontSize: "$base",
+      },
+      large: {
+        margin: "0 $2",
+        fontSize: "$lg",
+      },
+    },
+  },
 
-  &:before {
-    content: "/";
-  }
-`
+  "::before": {
+    content: "'/'",
+  },
+})
 
-const MenuItem = styled.span`
-  font-size: ${(props) => props.theme.fontSize.lg};
-  font-family: ${(props) => props.theme.fontFamily.default};
-  font-weight: 600;
+const MenuItem = styled("span", {
+  fontFamily: "$default",
+  fontSize: "$sm",
+  fontWeight: 600,
 
-  @media (max-width: 375px) {
-    font-size: ${(props) => props.theme.fontSize.base};
-  }
+  variants: {
+    size: {
+      default: {
+        fontSize: "$base",
+      },
+      lg: {
+        fontSize: "$lg",
+      },
+    },
+  },
+})
 
-  @media (max-width: 320px) {
-    font-size: ${(props) => props.theme.fontSize.sm};
-  }
-`
-
-const Container = styled.nav`
-  align-items: center;
-  color: ${(props) => props.theme.colors.silver.default};
-  display: flex;
-`
+const Container = styled("nav", {
+  alignItems: "center",
+  color: "$gray600",
+  display: "flex",
+})
 
 const Navigation = () => {
   const data = useStaticQuery(graphql`
@@ -53,25 +65,25 @@ const Navigation = () => {
   return (
     <Container>
       <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
-        <MenuItem>
+        <MenuItem size={{ xs: "default", sm: "lg" }}>
           <Logo />
         </MenuItem>
       </Link>
-      <Separator />
+      <Separator size={{ initial: "default", xs: "large" }} />
       <Link activeStyle={{ color: "#FFF" }} to="/about">
-        <MenuItem>About</MenuItem>
+        <MenuItem size={{ xs: "default", sm: "lg" }}>About</MenuItem>
       </Link>
-      <Separator />
+      <Separator size={{ initial: "default", xs: "large" }} />
       <a href={data.resume.publicURL} aria-label="Resume">
-        <MenuItem>Resume</MenuItem>
+        <MenuItem size={{ xs: "default", sm: "lg" }}>Resume</MenuItem>
       </a>
-      <Separator />
+      <Separator size={{ initial: "default", xs: "large" }} />
       <Link activeStyle={{ color: "#FFF" }} to="/work">
-        <MenuItem>Work</MenuItem>
+        <MenuItem size={{ xs: "default", sm: "lg" }}>Work</MenuItem>
       </Link>
-      <Separator />
+      <Separator size={{ initial: "default", xs: "large" }} />
       <Link activeStyle={{ color: "#FFF" }} to="/writings">
-        <MenuItem>Writings</MenuItem>
+        <MenuItem size={{ xs: "default", sm: "lg" }}>Writings</MenuItem>
       </Link>
     </Container>
   )

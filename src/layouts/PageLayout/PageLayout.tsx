@@ -1,34 +1,39 @@
 import React from "react"
-import styled, { ThemeProvider } from "styled-components"
+import { ThemeProvider } from "styled-components"
+
+import { styled } from "../../../stitches.config"
 
 import { Footer, Navigation } from "../../patterns"
 
 import Global from "./global"
 import theme from "../../../theme"
 
-const MainContainer = styled.main`
-  background-color: ${(props) => props.theme.colors["black"]["default"]};
-  color: ${(props) => props.theme.colors["silver"]["default"]};
-  display: flex;
-  flex-direction: column;
-  font-family: ${(props) => props.theme.fontFamily["default"]};
-  justify-content: space-between;
-  min-height: 100vh;
-  padding: 40px ${(props) => props.theme.spacing["4"]};
+const MainContainer = styled("main", {
+  backgroundColor: "$black",
+  color: "$gray600",
+  display: "flex",
+  flexDirection: "column",
+  fontFamily: "$default",
+  justifyContent: "space-between",
+  minHeight: "100vh",
+  padding: "40px $4",
 
-  @media (min-width: 768px) {
-    padding: 60px 0 32px 60px;
-  }
-
-  @media (min-width: 1200px) {
-    padding: 110px 0 32px 110px;
-  }
-`
+  variants: {
+    padding: {
+      md: {
+        padding: "60px 0 32px 60px",
+      },
+      lg: {
+        padding: "110px 0 32px 110px",
+      },
+    },
+  },
+})
 
 const PageLayout: React.FC = ({ children }) => (
   <ThemeProvider theme={theme}>
     <Global />
-    <MainContainer>
+    <MainContainer padding={{ md: "md", lg: "lg" }}>
       <Navigation />
       {children}
       <Footer />

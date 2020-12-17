@@ -1,5 +1,4 @@
 import React from "react"
-import styledComponent from "styled-components"
 
 import { styled } from "../../../stitches.config"
 
@@ -12,13 +11,13 @@ const Container = styled("div", {
   maxWidth: 375,
 })
 
-const Separator = styledComponent.span`
-  width: 24px;
-  display: block;
-  margin: 16px 0;
-  height: 2px;
-  background-color: ${(props) => props.theme.colors.black.lighter};
-`
+const Separator = styled("span", {
+  backgroundColor: "$gray800",
+  display: "block",
+  height: 2,
+  margin: "$4 0",
+  width: 24,
+})
 
 const Title = styled(Text, {
   display: "block",
@@ -26,12 +25,12 @@ const Title = styled(Text, {
   lineHeight: 1.66666666,
 })
 
-const Info = styledComponent(Link)`
-  font-weight: 600;
-  line-height: 1.1875;
-  display: block;
-  margin-top: 5px;
-`
+const Info = styled(Link, {
+  display: "block",
+  fontWeight: 600,
+  lineHeight: "1.1875",
+  marginTop: 5,
+})
 
 export const OverviewInfo = () => (
   <Container>

@@ -1,4 +1,3 @@
-export * from "./Link/Link"
 export * from "./List/List"
 export * from "./List/OrderedList"
 export * from "./Logo/Logo"
