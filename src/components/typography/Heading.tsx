@@ -44,6 +44,11 @@ export const Heading = styled("h1", {
         fontWeight: 600,
         lineHeight: "$1.66",
       },
+      heading3: {
+        fontSize: "$sm",
+        fontWeight: 600,
+        lineHeight: "$1.45",
+      },
     },
   },
 })
