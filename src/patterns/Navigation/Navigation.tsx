@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
-import sc from "styled-components"
 
 import { styled } from "../../../stitches.config"
 
@@ -48,11 +47,11 @@ const MenuItem = styled("span", {
   },
 })
 
-const Container = sc.nav`
-  align-items: center;
-  color: ${(props) => props.theme.colors.silver.default};
-  display: flex;
-`
+const Container = styled("nav", {
+  alignItems: "center",
+  color: "$gray600",
+  display: "flex",
+})
 
 const Navigation = () => {
   const data = useStaticQuery(graphql`
