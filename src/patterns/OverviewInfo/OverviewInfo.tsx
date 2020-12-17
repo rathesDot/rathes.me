@@ -3,7 +3,7 @@ import styledComponent from "styled-components"
 
 import { styled } from "../../../stitches.config"
 
-import { Link, TextSmall } from "../../components"
+import { Link, Text } from "../../components"
 
 const Container = styled("div", {
   display: "flex",
@@ -20,7 +20,7 @@ const Separator = styledComponent.span`
   background-color: ${(props) => props.theme.colors.black.lighter};
 `
 
-const Title = styled(TextSmall, {
+const Title = styled(Text, {
   display: "block",
   letterSpacing: "$wide",
   lineHeight: 1.66666666,
@@ -37,21 +37,27 @@ export const OverviewInfo = () => (
   <Container>
     <div>
       <Separator />
-      <Title color="silver">Working at</Title>
+      <Title size="small" color="gray600">
+        Working at
+      </Title>
       <Info color="white" href="https://www.hussle.com">
         Hussle
       </Info>
     </div>
     <div>
       <Separator />
-      <Title color="silver">Living in</Title>
+      <Title size="small" color="gray600">
+        Living in
+      </Title>
       <Info color="white" href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9">
         London
       </Info>
     </div>
     <div>
       <Separator />
-      <Title color="silver">Follow me</Title>
+      <Title size="small" color="gray600">
+        Follow me
+      </Title>
       <Info color="white" href="https://twitter.com/rswebdesigner">
         @rswebdesigner
       </Info>

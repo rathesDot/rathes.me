@@ -4,7 +4,7 @@ import { PageProps } from "gatsby"
 import { styled } from "../../stitches.config"
 
 import { PageLayout } from "../layouts"
-import { Heading, Link, Paragraph, Meta, TextSmall } from "../components"
+import { Heading, Link, Paragraph, Meta, Text } from "../components"
 
 const Container = styled("div", {
   marginBottom: "$32",
@@ -138,7 +138,7 @@ const Legal: React.FC<PageProps> = () => (
         take legal steps in the case of the unsolicited sending of advertising
         information; e.g., by means of spam mail.
       </Paragraph>
-      <TextSmall as="p">
+      <Text as="p" size="small">
         Source:{" "}
         <Link
           color="white"
@@ -147,7 +147,7 @@ const Legal: React.FC<PageProps> = () => (
         >
           English Disclaimer on Mustervorlage.net
         </Link>
-      </TextSmall>
+      </Text>
     </Container>
   </PageLayout>
 )

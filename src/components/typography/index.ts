@@ -1,4 +1,3 @@
-export * from "./TextSmall"
-export * from "./TextBody"
+export * from "./Text"
 export * from "./Heading"
 export * from "./Paragraph"
