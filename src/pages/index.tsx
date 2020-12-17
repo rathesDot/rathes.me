@@ -1,36 +1,43 @@
 import React from "react"
 import { PageProps } from "gatsby"
-import styled from "styled-components"
 
 import { Meta } from "../components"
 import { OverviewInfo } from "../patterns"
 import { PageLayout } from "../layouts"
+import { styled } from "../../stitches.config"
 
-const Container = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-`
+const Container = styled("section", {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+})
 
-const Introduction = styled.h1`
-  color: ${(props) => props.theme.colors.white.default};
-  font-family: ${(props) => props.theme.fontFamily.default};
-  font-size: ${(props) => props.theme.fontSize["4xl"]};
-  font-weight: 600;
-  line-height: 1.333333;
-  overflow-wrap: break-word;
-  max-width: 640px;
+const Introduction = styled("h1", {
+  color: "$white",
+  fontFamily: "$default",
+  fontSize: "$3xl",
+  fontWeight: 600,
+  lineHeight: "$1.35",
+  overflowWrap: "break-word",
+  maxWidth: 640,
 
-  @media (max-width: 375px) {
-    font-size: ${(props) => props.theme.fontSize["3xl"]};
-  }
-`
+  variants: {
+    size: {
+      default: {
+        fontSize: "$3xl",
+      },
+      large: {
+        fontSize: "$4xl",
+      },
+    },
+  },
+})
 
 const IndexPage: React.FC<PageProps> = () => (
   <PageLayout>
     <Meta title="Home" />
     <Container>
-      <Introduction>
+      <Introduction size={{ initial: "default", xs: "large" }}>
         Hi there, I’m Rathes Sachchithananthan and I’m a web developer currently
         living in London
       </Introduction>
