@@ -3,7 +3,7 @@ import styledComponent from "styled-components"
 import { Link as RouterLink } from "gatsby"
 import { styled } from "../../../stitches.config"
 
-import { Heading4, Link } from ".."
+import { Heading, Link } from ".."
 
 const Title = styledComponent.li`
   font-size: ${(props) => props.theme.fontSize.base};
@@ -60,7 +60,11 @@ export type ListProps = {
 
 export const List: React.FC<ListProps> = ({ title, children, ...props }) => (
   <Container {...props}>
-    {title && <Heading4 color="silver">{title}</Heading4>}
+    {title && (
+      <Heading level="heading4" color="gray600">
+        {title}
+      </Heading>
+    )}
     <ListContent>{children}</ListContent>
   </Container>
 )

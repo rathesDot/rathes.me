@@ -4,14 +4,7 @@ import { PageProps } from "gatsby"
 import { styled } from "../../stitches.config"
 
 import { PageLayout } from "../layouts"
-import {
-  Heading,
-  Heading4,
-  Link,
-  Paragraph,
-  Meta,
-  TextSmall,
-} from "../components"
+import { Heading, Link, Paragraph, Meta, TextSmall } from "../components"
 
 const Container = styled("div", {
   marginBottom: "$32",
@@ -36,7 +29,9 @@ const Legal: React.FC<PageProps> = () => (
         E-Mail: hello@rathes.me
       </Paragraph>
       <Heading level="heading2">Disclaimer</Heading>
-      <Heading4 as="h3">Google Analytics</Heading4>
+      <Heading level="heading4" as="h3">
+        Google Analytics
+      </Heading>
       <Paragraph>
         This website uses Google Analytics, a web analytics service provided by
         Google, Inc. (“Google”). Google Analytics uses “cookies”, which are text
@@ -96,7 +91,9 @@ const Legal: React.FC<PageProps> = () => (
         concerning this matter can only be assumed from the point in time at
         which the infringement becomes known to us.
       </Paragraph>
-      <Heading4 as="h3">Limitation of liability for external links</Heading4>
+      <Heading level="heading4" as="h3">
+        Limitation of liability for external links
+      </Heading>
       <Paragraph>
         Our website contains links to the websites of third parties (“external
         links”). As the content of these websites is not under our control, we
@@ -107,14 +104,18 @@ const Legal: React.FC<PageProps> = () => (
         As soon as an infringement of the law becomes known to us, we will
         immediately remove the link in question.
       </Paragraph>
-      <Heading4 as="h3">Copyright</Heading4>
+      <Heading level="heading4" as="h3">
+        Copyright
+      </Heading>
       <Paragraph>
         The content and works published on this website are governed by the
         copyright laws of Germany. Any duplication, processing, distribution or
         any form of utilisation beyond the scope of copyright law shall require
         the prior written consent of the author or authors in question.
       </Paragraph>
-      <Heading4 as="h3">Data protection</Heading4>
+      <Heading level="heading4" as="h3">
+        Data protection
+      </Heading>
       <Paragraph>
         A visit to our website can result in the storage on our server of
         information about the access (date, time, page accessed). This does not
