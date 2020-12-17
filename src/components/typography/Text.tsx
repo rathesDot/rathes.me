@@ -6,6 +6,6 @@ export const Text = styled("span", {
   fontSize: "$base",
 
   variants: {
-    colors: colors,
+    color: colors,
   },
 })
