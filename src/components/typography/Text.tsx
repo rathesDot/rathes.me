@@ -11,6 +11,9 @@ export const Text = styled("span", {
       body: {
         fontSize: "$base",
       },
+      small: {
+        fontSize: "$xs",
+      },
     },
     underlined: {
       true: {
