@@ -11,7 +11,7 @@ import {
   Paragraph,
   Meta,
   Separator,
-  TextBody,
+  Text,
 } from "../components"
 
 import { SayHi } from "../patterns"
@@ -153,9 +153,9 @@ const AboutMe: React.FC<PageProps> = () => (
           From time to time I also write. It can be work related topics that I
           share in the{" "}
           <RouterLink to="/writings">
-            <TextBody color="white" underlined>
+            <Text color="white" underlined>
               writing section
-            </TextBody>
+            </Text>
           </RouterLink>{" "}
           of this website but I also write to empty my mind and eternalize
           ideas.
