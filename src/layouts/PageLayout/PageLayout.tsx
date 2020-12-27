@@ -29,6 +29,8 @@ const MainContainer = styled("main", {
 const PageLayout: React.FC = ({ children }) => {
   css.global({
     html: {
+      "-webkit-font-smoothing": "antialiased",
+      "-moz-osx-font-smoothing": "grayscale",
       "-webkit-text-size-adjust": "100%",
       boxSizing: "border-box",
       fontFamily: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
