@@ -71,9 +71,9 @@ const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
         <Section>
           <Heading level="heading2">Maxout</Heading>
           <Paragraph>
-            During pandemic in 2020, I started working on a small fitness app.
-            It aims to help users reaching their fitness goals by making the
-            planning and tracking of workouts easier.
+            During the pandemic in 2020, I started working on a small fitness
+            app. It aims to help users reaching their fitness goals by making
+            the planning and tracking of workouts easier.
           </Paragraph>
           <Paragraph>
             Compared to other apps on the market, my vision for Maxout is
