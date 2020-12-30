@@ -68,6 +68,33 @@ const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
           </Paragraph>
         </Section>
         <Section>
+          <Heading level="heading2">Maxout</Heading>
+          <Paragraph>
+            During pandemic in 2020, I started working on a small fitness app.
+            It aims to help users reaching their fitness goals by making the
+            planning and tracking of workouts easier.
+          </Paragraph>
+          <Paragraph>
+            Compared to other apps on the market, my vision for Maxout is
+            focussing on simplicity and beauty. You can read the full story
+            about Maxout in this article{" "}
+            <Link
+              color="white"
+              underlined
+              href="https://getmaxout.app/blog/introducing-maxout/"
+            >
+              Introducing Maxout
+            </Link>
+            .
+          </Paragraph>
+          <Paragraph>
+            Sign up for Maxout on{" "}
+            <Link color="white" underlined href="https://getmaxout.app">
+              https://getmaxout.app
+            </Link>
+          </Paragraph>
+        </Section>
+        <Section>
           <Heading level="heading2">Public Speaking</Heading>
           <Paragraph>
             In January 2019, I gave my first tech-related talk. Since it was an
