@@ -40,9 +40,10 @@ const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
       <Container>
         <Meta title="Work" />
         <Paragraph>
-          I work as a front-end engineer at Hussle right now but I also work on
-          other side projects that are not only development related. If you want
-          to see my development related things, I recommend that you visit my{" "}
+          I work as a front-end engineer at Hussle right now, but I also love to
+          work on side projects. They do not necessarily have to be development
+          related. If you want to see my software engineering related things, I
+          recommend you visit my{" "}
           <Link color="white" href="https://github.com/rathesDot" underlined>
             Github profile
           </Link>
@@ -51,14 +52,14 @@ const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
         <Section>
           <Heading level="heading2">Learn Tamil Online</Heading>
           <Paragraph>
-            The side project I am working on right now is to provide a platform
-            for people that want to learn my mother language Tamil.
+            The first side project I am working on right now is to provide a
+            platform for people that want to learn my mother language Tamil.
           </Paragraph>
           <Paragraph>
-            In a first step, I'm working on a small book that I will use as the
-            foundation to build an app and a community around learning the
-            language Tamil and also learning about the Tamil culture and
-            history.
+            In a first step, I'm working on a small book. I am then going to use
+            that book as the foundation to build an app. My long term idea is to
+            create a community around learning the language Tamil and the Tamil
+            culture and history.
           </Paragraph>
           <Paragraph>
             Learn more about the project on{" "}
@@ -68,18 +69,46 @@ const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
           </Paragraph>
         </Section>
         <Section>
+          <Heading level="heading2">Maxout</Heading>
+          <Paragraph>
+            During pandemic in 2020, I started working on a small fitness app.
+            It aims to help users reaching their fitness goals by making the
+            planning and tracking of workouts easier.
+          </Paragraph>
+          <Paragraph>
+            Compared to other apps on the market, my vision for Maxout is
+            focussing on simplicity and beauty. You can read the full story
+            about Maxout in this article{" "}
+            <Link
+              color="white"
+              underlined
+              href="https://getmaxout.app/blog/introducing-maxout/"
+            >
+              Introducing Maxout
+            </Link>
+            .
+          </Paragraph>
+          <Paragraph>
+            Sign up for Maxout on{" "}
+            <Link color="white" underlined href="https://getmaxout.app">
+              https://getmaxout.app
+            </Link>
+          </Paragraph>
+        </Section>
+        <Section>
           <Heading level="heading2">Public Speaking</Heading>
           <Paragraph>
             In January 2019, I gave my first tech-related talk. Since it was an
             exciting experience, I will hopefully fill up this list with a few
-            more talks, not only about tech-related stuff but also about society
-            related things as I did a few times in the past already.
+            more of them. They do not only have to be about tech-related stuff
+            but also about society related things as I did a few times in the
+            past already.
           </Paragraph>
           <Paragraph>
             If you want me to give a talk at your meetup, conference, or even
             private events, feel free to message me. You can find the abstracts
-            of my current talks below. Each of them is possible as a 20-, 30-,
-            and 45-minutes talk.
+            of my current ones below. Each of them is possible as a 20-, 30-,
+            and 45-minutes version.
           </Paragraph>
           <List title="Tech Talks">
             <ListItem
