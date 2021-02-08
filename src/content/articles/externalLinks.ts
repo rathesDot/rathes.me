@@ -1,5 +1,15 @@
 export default [
   {
+    title: "Building Maxout",
+    date: "Feb 7, 2021",
+    link: "https://getmaxout.app/blog/introducing-maxout/",
+  },
+  {
+    title: "Introducing Maxout",
+    date: "Dec 5, 2020",
+    link: "https://getmaxout.app/blog/introducing-maxout/",
+  },
+  {
     title: "12 books in 12 months",
     date: "Dec 10, 2017",
     link: "https://medium.com/@rathes/12-books-in-12-months-54db49d8aaec",
