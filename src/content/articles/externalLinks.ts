@@ -1,5 +1,10 @@
 export default [
   {
+    title: "Building Maxout",
+    date: "Feb 7, 2021",
+    link: "https://getmaxout.app/blog/introducing-maxout/",
+  },
+  {
     title: "Introducing Maxout",
     date: "Dec 5, 2020",
     link: "https://getmaxout.app/blog/introducing-maxout/",
