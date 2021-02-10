@@ -89,6 +89,40 @@ const AboutMe: React.FC<PageProps> = () => (
           everybody to pick up a nice book and read.
         </Paragraph>
         <ReadingList>
+          <List title="Currently reading">
+            <ListItem
+              subtitle="by Barack Obama"
+              link="https://uk.bookshop.org/a/6216/9780241491515"
+            >
+              A Promised Land
+            </ListItem>
+            <ListItem
+              subtitle="by George R. R. Martin"
+              link="https://amzn.to/2Rngm82"
+            >
+              A Game of Thrones: A Song of Ice and Fire
+            </ListItem>
+            <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
+              Immortals of Meluha
+            </ListItem>
+          </List>
+          <Separator />
+          <List title="Reading List 2021">
+            <ListItem
+              subtitle="by Nir Eyal"
+              link="https://uk.bookshop.org/a/6216/9780241184837"
+            >
+              Hooked: How to Build Habit-Forming Products
+            </ListItem>
+            <ListItem
+              subtitle="by Alice Hasters"
+              link="https://amzn.to/3jzyjfW"
+            >
+              Was weiße Menschen nicht über Rassismus hören wollen aber wissen
+              sollten
+            </ListItem>
+          </List>
+          <Separator />
           <List title="Reading List 2020">
             <ListItem
               subtitle="by Cody McFadyen"
@@ -124,18 +158,6 @@ const AboutMe: React.FC<PageProps> = () => (
             </ListItem>
             <ListItem subtitle="by Joel Levy" link="https://amzn.to/30cRK5C">
               Psychology for Busy People: Everything You Really Should Know
-            </ListItem>
-          </List>
-          <Separator />
-          <List title="Currently reading">
-            <ListItem
-              subtitle="by George R. R. Martin"
-              link="https://amzn.to/2Rngm82"
-            >
-              A Game of Thrones: A Song of Ice and Fire
-            </ListItem>
-            <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
-              Immortals of Meluha
             </ListItem>
             <ListItem
               subtitle="by Paula Hawkins"
