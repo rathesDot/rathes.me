@@ -114,6 +114,13 @@ const AboutMe: React.FC<PageProps> = () => (
             >
               Hooked: How to Build Habit-Forming Products
             </ListItem>
+            <ListItem
+              subtitle="by Alice Hasters"
+              link="https://amzn.to/3jzyjfW"
+            >
+              Was weiße Menschen nicht über Rassismus hören wollen aber wissen
+              sollten
+            </ListItem>
           </List>
           <Separator />
           <List title="Reading List 2020">
