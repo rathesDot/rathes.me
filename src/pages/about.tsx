@@ -125,6 +125,12 @@ const AboutMe: React.FC<PageProps> = () => (
             <ListItem subtitle="by Joel Levy" link="https://amzn.to/30cRK5C">
               Psychology for Busy People: Everything You Really Should Know
             </ListItem>
+            <ListItem
+              subtitle="by Paula Hawkins"
+              link="https://amzn.to/2T4pQ8d"
+            >
+              The Girl on the Train
+            </ListItem>
           </List>
           <Separator />
           <List title="Currently reading">
@@ -136,12 +142,6 @@ const AboutMe: React.FC<PageProps> = () => (
             </ListItem>
             <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
-            </ListItem>
-            <ListItem
-              subtitle="by Paula Hawkins"
-              link="https://amzn.to/2T4pQ8d"
-            >
-              The Girl on the Train
             </ListItem>
           </List>
         </ReadingList>
