@@ -107,7 +107,14 @@ const AboutMe: React.FC<PageProps> = () => (
             </ListItem>
           </List>
           <Separator />
-          <List title="Reading List 2021"></List>
+          <List title="Reading List 2021">
+            <ListItem
+              subtitle="by Nir Eyal"
+              link="https://uk.bookshop.org/a/6216/9780241184837"
+            >
+              Hooked: How to Build Habit-Forming Products
+            </ListItem>
+          </List>
           <Separator />
           <List title="Reading List 2020">
             <ListItem
