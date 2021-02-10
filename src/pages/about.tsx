@@ -89,6 +89,18 @@ const AboutMe: React.FC<PageProps> = () => (
           everybody to pick up a nice book and read.
         </Paragraph>
         <ReadingList>
+          <List title="Currently reading">
+            <ListItem
+              subtitle="by George R. R. Martin"
+              link="https://amzn.to/2Rngm82"
+            >
+              A Game of Thrones: A Song of Ice and Fire
+            </ListItem>
+            <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
+              Immortals of Meluha
+            </ListItem>
+          </List>
+          <Separator />
           <List title="Reading List 2020">
             <ListItem
               subtitle="by Cody McFadyen"
@@ -130,18 +142,6 @@ const AboutMe: React.FC<PageProps> = () => (
               link="https://amzn.to/2T4pQ8d"
             >
               The Girl on the Train
-            </ListItem>
-          </List>
-          <Separator />
-          <List title="Currently reading">
-            <ListItem
-              subtitle="by George R. R. Martin"
-              link="https://amzn.to/2Rngm82"
-            >
-              A Game of Thrones: A Song of Ice and Fire
-            </ListItem>
-            <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
-              Immortals of Meluha
             </ListItem>
           </List>
         </ReadingList>
