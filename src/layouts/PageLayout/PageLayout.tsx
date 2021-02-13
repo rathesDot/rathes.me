@@ -1,6 +1,6 @@
 import React from "react"
 
-import { styled, css } from "../../../stitches.config"
+import { styled, global } from "../../../stitches.config"
 
 import { Footer, Navigation } from "../../patterns"
 
@@ -27,7 +27,7 @@ const MainContainer = styled("main", {
 })
 
 const PageLayout: React.FC = ({ children }) => {
-  css.global({
+  global({
     html: {
       "-webkit-font-smoothing": "antialiased",
       "-moz-osx-font-smoothing": "grayscale",
