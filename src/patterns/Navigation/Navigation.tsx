@@ -25,7 +25,7 @@ const Separator = styled("span", {
     },
   },
 
-  "::before": {
+  "&::before": {
     content: "'/'",
   },
 })

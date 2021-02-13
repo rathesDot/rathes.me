@@ -132,7 +132,7 @@ const PageLayout: React.FC = ({ children }) => {
     [`[type="search"]::-webkit-search-decoration`]: {
       "-webkit-appearance": "none",
     },
-    "::-webkit-file-upload-button": {
+    "&::-webkit-file-upload-button": {
       "-webkit-appearance": "button",
       font: "inherit",
     },
