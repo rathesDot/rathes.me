@@ -206,7 +206,7 @@ const PageLayout: React.FC = ({ children }) => {
       marginBottom: "$6",
       marginTop: "$6",
     },
-  })
+  })()
   return (
     <MainContainer padding={{ md: "md", lg: "lg" }}>
       <Navigation />
