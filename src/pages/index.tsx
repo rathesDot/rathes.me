@@ -17,7 +17,7 @@ const Introduction = styled("h1", {
   fontFamily: "$default",
   fontSize: "$3xl",
   fontWeight: 600,
-  lineHeight: "$1.35",
+  lineHeight: "$400",
   overflowWrap: "break-word",
   maxWidth: 640,
 
