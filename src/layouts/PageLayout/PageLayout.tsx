@@ -1,6 +1,6 @@
 import React from "react"
 
-import { styled, css } from "../../../stitches.config"
+import { styled, global } from "../../../stitches.config"
 
 import { Footer, Navigation } from "../../patterns"
 
@@ -27,7 +27,7 @@ const MainContainer = styled("main", {
 })
 
 const PageLayout: React.FC = ({ children }) => {
-  css.global({
+  global({
     html: {
       "-webkit-font-smoothing": "antialiased",
       "-moz-osx-font-smoothing": "grayscale",
@@ -132,7 +132,7 @@ const PageLayout: React.FC = ({ children }) => {
     [`[type="search"]::-webkit-search-decoration`]: {
       "-webkit-appearance": "none",
     },
-    "::-webkit-file-upload-button": {
+    "&::-webkit-file-upload-button": {
       "-webkit-appearance": "button",
       font: "inherit",
     },
@@ -206,7 +206,7 @@ const PageLayout: React.FC = ({ children }) => {
       marginBottom: "$6",
       marginTop: "$6",
     },
-  })
+  })()
   return (
     <MainContainer padding={{ md: "md", lg: "lg" }}>
       <Navigation />

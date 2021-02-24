@@ -14,7 +14,7 @@ const HelpText = styled("span", {
   color: "$gray600",
   display: "block",
   fontSize: "$base",
-  lineHeight: "$1.8",
+  lineHeight: "$600",
 })
 
 const Meetings: React.FC<PageProps> = () => (

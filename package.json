@@ -7,7 +7,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "@stitches/react": "^0.0.2",
+    "@stitches/react": "0.1.0-canary.12",
     "date-fns": "^2.16.1",
     "gatsby": "^2.31.1",
     "gatsby-image": "^2.10.0",
@@ -49,7 +49,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",

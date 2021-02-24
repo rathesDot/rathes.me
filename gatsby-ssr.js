@@ -1,29 +1,18 @@
 import React from "react"
-import { renderToString } from "react-dom/server"
 import postcss from "postcss"
 import autoprefixer from "autoprefixer"
 
-import { css } from "./stitches.config"
+import { getCssString } from "./stitches.config"
 
-export const replaceRenderer = ({
-  bodyComponent,
-  setHeadComponents,
-  replaceBodyHTMLString,
-}) => {
-  const renderBody = () => renderToString(bodyComponent)
-  const { styles, result: bodyHTML } = css.getStyles(renderBody)
+export const replaceRenderer = ({ setHeadComponents }) => {
+  const styles = getCssString()
 
-  setHeadComponents(
-    styles
-      .map((style) => postcss([autoprefixer()]).process(style))
-      .map((sheet, i) => (
-        <style
-          key={i}
-          data-stitches
-          dangerouslySetInnerHTML={{ __html: sheet }}
-        />
-      ))
-  )
-
-  replaceBodyHTMLString(bodyHTML)
+  setHeadComponents([
+    <style
+      data-stitches
+      dangerouslySetInnerHTML={{
+        __html: postcss([autoprefixer()]).process(styles),
+      }}
+    />,
+  ])
 }

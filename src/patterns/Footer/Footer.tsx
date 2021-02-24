@@ -12,7 +12,7 @@ const Separator = styled("span", {
   fontSize: "$xs",
   fontFamily: "$default",
 
-  ":before": {
+  "&::before": {
     content: `"/"`,
   },
 })
