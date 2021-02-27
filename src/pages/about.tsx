@@ -91,10 +91,10 @@ const AboutMe: React.FC<PageProps> = () => (
         <ReadingList>
           <List title="Currently reading">
             <ListItem
-              subtitle="by Barack Obama"
-              link="https://uk.bookshop.org/a/6216/9780241491515"
+              subtitle="by Zach Berwick"
+              link="https://www.linkedin.com/in/zach-berwick-b29a6892"
             >
-              A Promised Land
+              Become the best version of yourself
             </ListItem>
             <ListItem
               subtitle="by George R. R. Martin"
@@ -108,6 +108,12 @@ const AboutMe: React.FC<PageProps> = () => (
           </List>
           <Separator />
           <List title="Reading List 2021">
+            <ListItem
+              subtitle="by Barack Obama"
+              link="https://uk.bookshop.org/a/6216/9780241491515"
+            >
+              A Promised Land
+            </ListItem>
             <ListItem
               subtitle="by Nir Eyal"
               link="https://uk.bookshop.org/a/6216/9780241184837"
