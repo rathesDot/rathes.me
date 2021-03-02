@@ -9,7 +9,7 @@
     "@mdx-js/react": "^1.6.22",
     "@stitches/react": "0.1.0-canary.12",
     "date-fns": "^2.18.0",
-    "gatsby": "^2.32.8",
+    "gatsby": "^2.32.9",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-manifest": "^2.12.1",
     "gatsby-plugin-mdx": "^1.10.1",
