@@ -56,6 +56,30 @@ const IndexPage: React.FC<PageProps> = () => (
           @rswebdesigner
         </ListItem>
       </List>
+      <List title="Current Projects">
+        <ListItem
+          subtitle="A simple and beautiful way to plan, schedule and track your workouts"
+          link="https://getmaxout.app/"
+        >
+          Maxout
+        </ListItem>
+        <ListItem
+          subtitle="Book and App to make learning the Tamil language easier"
+          link="https://learn-tamil.com/"
+        >
+          Learn Tamil Online
+        </ListItem>
+      </List>
+      <List title="My Writing">
+        <ListItem link="https://getmaxout.app/blog/introducing-maxout/">
+          Building Maxout
+        </ListItem>
+        <ListItem link="/blog/en/review-2020/">Looking back at 2020</ListItem>
+        <ListItem link="https://getmaxout.app/blog/introducing-maxout/">
+          Introducing Maxout
+        </ListItem>
+        <ListItem link="/blog/en/how-to-slack/">How-To Slack</ListItem>
+      </List>
     </Container>
   </PageLayout>
 )
