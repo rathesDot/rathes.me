@@ -27,12 +27,14 @@ const ListContent = styled("ul", {
 export type ListItemProps = {
   subtitle?: string
   link: string
+  subtitlePosition?: "above" | "under"
 }
 
 export const ListItem: React.FC<ListItemProps> = ({
   children,
   subtitle,
   link,
+  subtitlePosition = "under",
 }) => {
   const isExternalLink = link && link.startsWith("http")
 
@@ -40,13 +42,23 @@ export const ListItem: React.FC<ListItemProps> = ({
     <Title>
       {isExternalLink ? (
         <Link href={link}>
+          {subtitle && subtitlePosition == "above" && (
+            <Subtitle color="silver">{subtitle}</Subtitle>
+          )}
           {children}
-          {subtitle && <Subtitle color="silver">{subtitle}</Subtitle>}
+          {subtitle && subtitlePosition == "under" && (
+            <Subtitle color="silver">{subtitle}</Subtitle>
+          )}
         </Link>
       ) : (
         <RouterLink to={link}>
+          {subtitle && subtitlePosition == "above" && (
+            <Subtitle color="silver">{subtitle}</Subtitle>
+          )}
           {children}
-          {subtitle && <Subtitle color="silver">{subtitle}</Subtitle>}
+          {subtitle && subtitlePosition == "under" && (
+            <Subtitle color="silver">{subtitle}</Subtitle>
+          )}
         </RouterLink>
       )}
     </Title>
