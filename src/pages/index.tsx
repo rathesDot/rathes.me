@@ -56,16 +56,22 @@ const IndexPage: React.FC<PageProps> = () => (
       </Introduction>
       <Lists>
         <ListContainer title="About Me">
-          <ListItem subtitle="Working at" link="https://www.hussle.com">
+          <ListItem
+            subtitlePosition="above"
+            subtitle="Working at"
+            link="https://www.hussle.com"
+          >
             Hussle
           </ListItem>
           <ListItem
+            subtitlePosition="above"
             subtitle="Living In"
             link="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9"
           >
             London
           </ListItem>
           <ListItem
+            subtitlePosition="above"
             subtitle="Working at"
             link="https://twitter.com/rswebdesigner"
           >
