@@ -31,6 +31,10 @@ const Introduction = styled("h1", {
   },
 })
 
+const ListContainer = styled(List, {
+  margin: "$8 0",
+})
+
 const IndexPage: React.FC<PageProps> = () => (
   <PageLayout>
     <Meta title="Home" />
@@ -39,7 +43,7 @@ const IndexPage: React.FC<PageProps> = () => (
         Hi there, I’m Rathes Sachchithananthan and I’m a web developer currently
         living in London
       </Introduction>
-      <List title="About Me">
+      <ListContainer title="About Me">
         <ListItem subtitle="Working at" link="https://www.hussle.com">
           Hussle
         </ListItem>
@@ -55,8 +59,8 @@ const IndexPage: React.FC<PageProps> = () => (
         >
           @rswebdesigner
         </ListItem>
-      </List>
-      <List title="Current Projects">
+      </ListContainer>
+      <ListContainer title="Current Projects">
         <ListItem
           subtitle="A simple and beautiful way to plan, schedule and track your workouts"
           link="https://getmaxout.app/"
@@ -69,8 +73,8 @@ const IndexPage: React.FC<PageProps> = () => (
         >
           Learn Tamil Online
         </ListItem>
-      </List>
-      <List title="My Writing">
+      </ListContainer>
+      <ListContainer title="My Writing">
         <ListItem link="https://getmaxout.app/blog/introducing-maxout/">
           Building Maxout
         </ListItem>
@@ -79,7 +83,7 @@ const IndexPage: React.FC<PageProps> = () => (
           Introducing Maxout
         </ListItem>
         <ListItem link="/blog/en/how-to-slack/">How-To Slack</ListItem>
-      </List>
+      </ListContainer>
     </Container>
   </PageLayout>
 )
