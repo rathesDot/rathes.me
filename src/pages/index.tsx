@@ -33,13 +33,17 @@ const Introduction = styled("h1", {
 
 const Lists = styled("div", {
   marginTop: "$8",
+  marginBottom: "$8",
   display: "flex",
   flexWrap: "wrap",
+  justifyContent: "space-between",
+  maxWidth: 640,
 })
 
 const ListContainer = styled(List, {
-  margin: "$8 $4",
-  width: 180,
+  margin: "$8 10px $8 0",
+  minWidth: 150,
+  maxWidth: 200,
 })
 
 const IndexPage: React.FC<PageProps> = () => (
