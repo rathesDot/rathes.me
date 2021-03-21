@@ -1,6 +1,7 @@
 import React from "react"
 import postcss from "postcss"
 import autoprefixer from "autoprefixer"
+import { renderToString } from "react-dom/server"
 
 import { getCssString } from "./stitches.config"
 
