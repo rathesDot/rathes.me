@@ -1,10 +1,16 @@
 import React from "react"
 import postcss from "postcss"
 import autoprefixer from "autoprefixer"
+import { renderToString } from "react-dom/server"
 
 import { getCssString } from "./stitches.config"
 
-export const replaceRenderer = ({ setHeadComponents }) => {
+export const replaceRenderer = ({
+  bodyComponent,
+  setHeadComponents,
+  replaceBodyHTMLString,
+}) => {
+  const bodyHTML = renderToString(bodyComponent)
   const styles = getCssString()
 
   setHeadComponents([
@@ -14,5 +20,7 @@ export const replaceRenderer = ({ setHeadComponents }) => {
         __html: postcss([autoprefixer()]).process(styles),
       }}
     />,
+
+    replaceBodyHTMLString(bodyHTML),
   ])
 }
