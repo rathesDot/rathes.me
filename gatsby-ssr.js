@@ -4,7 +4,12 @@ import autoprefixer from "autoprefixer"
 
 import { getCssString } from "./stitches.config"
 
-export const replaceRenderer = ({ setHeadComponents }) => {
+export const replaceRenderer = ({
+  bodyComponent,
+  setHeadComponents,
+  replaceBodyHTMLString,
+}) => {
+  const bodyHTML = renderToString(bodyComponent)
   const styles = getCssString()
 
   setHeadComponents([
@@ -14,5 +19,7 @@ export const replaceRenderer = ({ setHeadComponents }) => {
         __html: postcss([autoprefixer()]).process(styles),
       }}
     />,
+
+    replaceBodyHTMLString(bodyHTML),
   ])
 }
