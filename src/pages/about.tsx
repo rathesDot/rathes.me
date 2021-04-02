@@ -99,12 +99,15 @@ const AboutMe: React.FC<PageProps> = () => (
             <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
             </ListItem>
-            <ListItem subtitle="by David Jackson" link="https://uk.bookshop.org/a/6216/9781785761089">
-              A Tapping at My Door
-            </ListItem>
           </List>
           <Separator />
           <List title="Reading List 2021">
+            <ListItem
+              subtitle="by David Jackson"
+              link="https://uk.bookshop.org/a/6216/9781785761089"
+            >
+              A Tapping at My Door
+            </ListItem>
             <ListItem
               subtitle="by Zach Berwick"
               link="https://www.linkedin.com/in/zach-berwick-b29a6892"
