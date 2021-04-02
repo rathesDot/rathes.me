@@ -50,7 +50,7 @@ const IndexPage: React.FC<PageProps> = () => (
   <PageLayout>
     <Meta title="Home" />
     <Container>
-      <Introduction size={{ initial: "default", xs: "large" }}>
+      <Introduction size={{ initial: "default", "@xs": "large" }}>
         Hi there, I’m Rathes Sachchithananthan and I’m a web developer currently
         living in London
       </Introduction>

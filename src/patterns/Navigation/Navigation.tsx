@@ -65,25 +65,25 @@ const Navigation = () => {
   return (
     <Container>
       <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
-        <MenuItem size={{ xs: "default", sm: "lg" }}>
+        <MenuItem size={{ "@xs": "default", "@sm": "lg" }}>
           <Logo />
         </MenuItem>
       </Link>
-      <Separator size={{ initial: "default", xs: "large" }} />
+      <Separator size={{ initial: "default", "@xs": "large" }} />
       <Link activeStyle={{ color: "#FFF" }} to="/about">
-        <MenuItem size={{ xs: "default", sm: "lg" }}>About</MenuItem>
+        <MenuItem size={{ "@xs": "default", "@sm": "lg" }}>About</MenuItem>
       </Link>
-      <Separator size={{ initial: "default", xs: "large" }} />
+      <Separator size={{ initial: "default", "@xs": "large" }} />
       <a href={data.resume.publicURL} aria-label="Resume">
-        <MenuItem size={{ xs: "default", sm: "lg" }}>Resume</MenuItem>
+        <MenuItem size={{ "@xs": "default", "@sm": "lg" }}>Resume</MenuItem>
       </a>
-      <Separator size={{ initial: "default", xs: "large" }} />
+      <Separator size={{ initial: "default", "@xs": "large" }} />
       <Link activeStyle={{ color: "#FFF" }} to="/work">
-        <MenuItem size={{ xs: "default", sm: "lg" }}>Work</MenuItem>
+        <MenuItem size={{ "@xs": "default", "@sm": "lg" }}>Work</MenuItem>
       </Link>
-      <Separator size={{ initial: "default", xs: "large" }} />
+      <Separator size={{ initial: "default", "@xs": "large" }} />
       <Link activeStyle={{ color: "#FFF" }} to="/writings">
-        <MenuItem size={{ xs: "default", sm: "lg" }}>Writings</MenuItem>
+        <MenuItem size={{ "@xs": "default", "@sm": "lg" }}>Writings</MenuItem>
       </Link>
     </Container>
   )

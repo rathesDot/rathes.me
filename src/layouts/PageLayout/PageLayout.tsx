@@ -208,7 +208,7 @@ const PageLayout: React.FC = ({ children }) => {
     },
   })()
   return (
-    <MainContainer padding={{ md: "md", lg: "lg" }}>
+    <MainContainer padding={{ "@md": "md", "@lg": "lg" }}>
       <Navigation />
       {children}
       <Footer />

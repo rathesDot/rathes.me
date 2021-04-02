@@ -8,12 +8,12 @@ export const {
   keyframes,
   getCssString,
 } = createStyled({
-  conditions: {
-    xs: `@media (min-width: 375px)`,
-    sm: `@media (min-width: 640px)`,
-    md: `@media (min-width: 768px)`,
-    lg: `@media (min-width: 1024px)`,
-    xl: `@media (min-width: 1280px)`,
+  media: {
+    xs: `(min-width: 375px)`,
+    sm: `(min-width: 640px)`,
+    md: `(min-width: 768px)`,
+    lg: `(min-width: 1024px)`,
+    xl: `(min-width: 1280px)`,
   },
   theme: {
     colors: {
