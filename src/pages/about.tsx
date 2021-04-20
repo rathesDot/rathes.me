@@ -99,6 +99,9 @@ const AboutMe: React.FC<PageProps> = () => (
             <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
             </ListItem>
+            <ListItem subtitle="by Rob Fitzpatrick" link="https://amzn.to/3n4Wbtr">
+              The Mom Test
+            </ListItem>
           </List>
           <Separator />
           <List title="Reading List 2021">
