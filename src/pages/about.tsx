@@ -99,12 +99,12 @@ const AboutMe: React.FC<PageProps> = () => (
             <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
             </ListItem>
-            <ListItem subtitle="by Arvid Kahl" link="https://amzn.to/2POo9xh">
-              Zero to Sold: How to Start, Run, and Sell a Bootstrapped Business
-            </ListItem>
           </List>
           <Separator />
           <List title="Reading List 2021">
+            <ListItem subtitle="by Arvid Kahl" link="https://amzn.to/2POo9xh">
+              Zero to Sold: How to Start, Run, and Sell a Bootstrapped Business
+            </ListItem>
             <ListItem
               subtitle="by David Jackson"
               link="https://uk.bookshop.org/a/6216/9781785761089"
