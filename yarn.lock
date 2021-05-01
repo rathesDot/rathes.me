@@ -1898,17 +1898,17 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stitches/core@^0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-0.1.4.tgz#1b33c3ef55c044f006049d8310b784720d669798"
-  integrity sha512-jFZMpw6uD7BRvkPp3n0JsUlLO6d7oRwBgInEHDB1xlsRLqB4yaepyEyJ1CqMx8HidyW5QeLXH6IYPzERxCUM/Q==
+"@stitches/core@^0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@stitches/core/-/core-0.1.9.tgz#6cc42ae6052f6900f9add164232449ff8d62c4ba"
+  integrity sha512-70gVb0uhgV6BOJmloirWEGZmofk/Hzr5yWlub1rtm4CvimD3Xl5xr9fVkjcTu+REC6ILCJCnlEP4WmilTfXNOA==
 
-"@stitches/react@0.1.4":
-  version "0.1.4"
-  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.1.4.tgz#f1a37911683cfc192906b0710c9685bddb316abc"
-  integrity sha512-/YI/cuyd8tCGaq5ewDF2goGVa/LuIQZbb4SKQM/DroluOrZ4W1Pwczk/vkijhP3pH11ssEHtD9/v8VzXb01nvw==
+"@stitches/react@0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@stitches/react/-/react-0.1.9.tgz#b16e05c9ee7e34369bb3b051b92a997ab379863f"
+  integrity sha512-yK4ZAdkuOiOum+bfPYlDNS9UI/Tm9JYsYNMUWLB3uAy+7tvSYfB4cVYkXwFuiKxis03woATTZTe6IlTb+LXm+A==
   dependencies:
-    "@stitches/core" "^0.1.4"
+    "@stitches/core" "^0.1.9"
 
 "@szmarczak/http-timer@^1.1.2":
   version "1.1.2"
