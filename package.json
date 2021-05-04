@@ -31,10 +31,10 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.22",
-    "@types/react": "^17.0.3",
+    "@types/jest": "^26.0.23",
+    "@types/react": "^17.0.4",
     "@types/react-dom": "^17.0.3",
-    "@types/react-helmet": "^6.1.0",
+    "@types/react-helmet": "^6.1.1",
     "autoprefixer": "^10.2.5",
     "babel-jest": "^26.6.3",
     "babel-plugin-apply-mdx-type-prop": "^1.6.22",
