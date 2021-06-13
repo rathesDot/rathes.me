@@ -99,12 +99,22 @@ const AboutMe: React.FC<PageProps> = () => (
             <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
             </ListItem>
-            <ListItem subtitle="by Rob Fitzpatrick" link="https://amzn.to/3n4Wbtr">
-              The Mom Test
-            </ListItem>
           </List>
           <Separator />
           <List title="Reading List 2021">
+            <ListItem subtitle="by Will Storr" link="https://amzn.to/3ggjAXd">
+              The Science of Storytelling: Why Stories Make Us Human, and How to
+              Tell Them Better
+            </ListItem>
+            <ListItem subtitle="by Stephen King" link="https://amzn.to/3giQV3P">
+              The Outsider
+            </ListItem>
+            <ListItem
+              subtitle="by Rob Fitzpatrick"
+              link="https://amzn.to/3n4Wbtr"
+            >
+              The Mom Test
+            </ListItem>
             <ListItem subtitle="by Arvid Kahl" link="https://amzn.to/2POo9xh">
               Zero to Sold: How to Start, Run, and Sell a Bootstrapped Business
             </ListItem>
