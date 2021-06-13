@@ -32,8 +32,8 @@
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
-    "@types/react": "^17.0.9",
-    "@types/react-dom": "^17.0.6",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.7",
     "@types/react-helmet": "^6.1.1",
     "autoprefixer": "^10.2.6",
     "babel-jest": "^27.0.2",
