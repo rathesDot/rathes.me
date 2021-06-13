@@ -102,6 +102,9 @@ const AboutMe: React.FC<PageProps> = () => (
           </List>
           <Separator />
           <List title="Reading List 2021">
+            <ListItem subtitle="by Stephen King" link="https://amzn.to/3giQV3P">
+              The Outsider
+            </ListItem>
             <ListItem subtitle="by Rob Fitzpatrick" link="https://amzn.to/3n4Wbtr">
               The Mom Test
             </ListItem>
