@@ -105,7 +105,10 @@ const AboutMe: React.FC<PageProps> = () => (
             <ListItem subtitle="by Stephen King" link="https://amzn.to/3giQV3P">
               The Outsider
             </ListItem>
-            <ListItem subtitle="by Rob Fitzpatrick" link="https://amzn.to/3n4Wbtr">
+            <ListItem
+              subtitle="by Rob Fitzpatrick"
+              link="https://amzn.to/3n4Wbtr"
+            >
               The Mom Test
             </ListItem>
             <ListItem subtitle="by Arvid Kahl" link="https://amzn.to/2POo9xh">
