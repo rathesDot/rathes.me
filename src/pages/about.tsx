@@ -102,6 +102,10 @@ const AboutMe: React.FC<PageProps> = () => (
           </List>
           <Separator />
           <List title="Reading List 2021">
+            <ListItem subtitle="by Will Storr" link="https://amzn.to/3ggjAXd">
+              The Science of Storytelling: Why Stories Make Us Human, and How to
+              Tell Them Better
+            </ListItem>
             <ListItem subtitle="by Stephen King" link="https://amzn.to/3giQV3P">
               The Outsider
             </ListItem>
