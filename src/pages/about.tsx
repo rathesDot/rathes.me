@@ -99,6 +99,9 @@ const AboutMe: React.FC<PageProps> = () => (
             <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
             </ListItem>
+            <ListItem subtitle="by Dr. Stuart Farrimond" link="https://amzn.to/3h8h58m">
+              The Science of Spice: Understand Flavour Connections and Revolutionize your Cooking
+            </ListItem>
           </List>
           <Separator />
           <List title="Reading List 2021">
