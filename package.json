@@ -9,7 +9,7 @@
     "@mdx-js/react": "^1.6.22",
     "@stitches/react": "0.1.9",
     "date-fns": "^2.22.1",
-    "gatsby": "^3.8.0",
+    "gatsby": "^3.8.1",
     "gatsby-image": "^3.8.0",
     "gatsby-plugin-manifest": "^3.8.0",
     "gatsby-plugin-mdx": "^2.8.0",
@@ -25,23 +25,23 @@
     "gatsby-transformer-remark": "^4.5.0",
     "gatsby-transformer-sharp": "^3.8.0",
     "prism-themes": "^1.7.0",
-    "prismjs": "^1.24.0",
+    "prismjs": "^1.24.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.23",
-    "@types/react": "^17.0.11",
-    "@types/react-dom": "^17.0.7",
+    "@types/react": "^17.0.13",
+    "@types/react-dom": "^17.0.8",
     "@types/react-helmet": "^6.1.1",
     "autoprefixer": "^10.2.6",
-    "babel-jest": "^27.0.2",
+    "babel-jest": "^27.0.6",
     "babel-plugin-apply-mdx-type-prop": "^1.6.22",
     "babel-preset-gatsby": "^1.8.0",
-    "jest": "^27.0.4",
+    "jest": "^27.0.6",
     "postcss": "^8.3.2",
-    "prettier": "^2.3.1"
+    "prettier": "^2.3.2"
   },
   "keywords": [
     "gatsby",
