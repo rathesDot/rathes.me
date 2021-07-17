@@ -1,15 +1,5 @@
 export default [
   {
-    title: "Building Maxout",
-    date: "Feb 7, 2021",
-    link: "https://getmaxout.app/blog/introducing-maxout/",
-  },
-  {
-    title: "Introducing Maxout",
-    date: "Dec 5, 2020",
-    link: "https://getmaxout.app/blog/introducing-maxout/",
-  },
-  {
     title: "12 books in 12 months",
     date: "Dec 10, 2017",
     link: "https://medium.com/@rathes/12-books-in-12-months-54db49d8aaec",
@@ -22,7 +12,6 @@ export default [
   {
     title: "Pivot im Leben — Warum ich mich entschied nach Schleswig zu ziehen",
     date: "Nov 6, 2016",
-    link:
-      "https://medium.com/@rathes/pivot-in-leben-warum-ich-mich-entschied-nach-schleswig-zu-ziehen-dbb268db09a6",
+    link: "https://medium.com/@rathes/pivot-in-leben-warum-ich-mich-entschied-nach-schleswig-zu-ziehen-dbb268db09a6",
   },
 ]
