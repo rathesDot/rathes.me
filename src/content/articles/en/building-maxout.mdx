@@ -1,0 +1,156 @@
+---
+title: Building Maxout
+date: 2021-02-07T18:30:54.930Z
+image: ../../images/blog/building-maxout.png
+author: Rathes Sachchithananthan
+template: post
+description: I'm not only going to build Maxout in public and share as many
+  insights as possible, but I'm also going to work with a different approach.
+  But how does that approach look like?
+categories:
+  - Fitness
+  - Business
+locale: en_US
+---
+
+I started Maxout as a project while I was on furlough for the entire month of April 2020. It began as a small personal project to plan my workouts because I found the other apps on the market overly complicated or just ugly.
+
+Over time, this project showed more and more potential, and by the beginning of January, we started a private beta. Now that the project is not a personal project anymore, it also means that we have to work a bit more structured.
+
+With my experience I've collected in the past, I have a basic understanding of working on side-projects, but this time I wanted to try a different route. I'm not only going to build Maxout in public and share as many insights as possible with you, but I'm also going to work on Maxout with a different approach. I want to build it exactly how I would like to run my own company.
+
+What is that approach?
+
+## Goals
+
+Before we can take a closer look at how we build Maxout, we have to clarify the goals of Maxout. That's going to be the critical factor for you to decide if you could try something similar or not.
+
+As stated above, Maxout has been a personal project. For me, Maxout is fulfilling in many different ways: I love the product as it covers everything I need, I love the programming stack, and it allows me to learn parts of the stack that I couldn't do at other jobs such as product management, design or the basics of marketing.
+
+So compared to other projects, Maxout can't fail. There is no real target. I will keep working on Maxout until it doesn't fulfil me anymore.
+
+However, there is a short-term target. I want to reach an MRR of £100 by the end of 2021 with at least 100 MAU. If I can make this happen, I will see this as a sign that this project is worth to be built for everyone. In case I don't make that target, I will scale it down again and make Maxout a personal app.
+
+## Team
+
+One of the most important reasons for me to work on my projects is freedom. The freedom to work on something that I truly enjoy in a way that I imagine is the best — the freedom to make decisions based on my needs and possibilities.
+
+Some of this freedom needs to be given up when you start hiring. Then you have to think about your employees and their capabilities when making plans for the app. You have to think about your employees and their families when taking financial risks. You don't want to be the reason when the child of your hard-working colleague has to go to bed hungry because you made the wrong bet.
+
+That is why I don't want to hire anyone to work on Maxout. No matter how much this project grows.
+
+Right now, it's me working on it together with my brother. I come with a healthy amount of experience in the start-up world from working at a few of them and having been a co-founder. I'm a backend engineer who turned into a front-end engineer with some necessary skills in everything you need for a tech start-up: Product Management, UI Design, Marketing and Finance.
+
+My brother comes from a mechanical engineering background with an interest in automation and machine learning. As I am, he is a maker. He is good at finding solutions for problems and isn't afraid to learn new skills along the way.
+
+Both of us have regular full-time jobs, and we work on this project on the side after our regular work hours whenever we have the time and feel like working on something (more on this later).
+
+Apart from that, there won't be anyone working on the app itself. For some of the other tasks, my soon-to-be wife might help me out from time to time. She is interested in digital marketing and topics such as content and social media marketing.
+
+### Growing the team
+
+If the project should become more significant than expected, it is apparent that we wouldn't be able to handle all the work on our own.
+
+But I still don't want to hire anyone. So how do we solve that?
+
+When I was working as a freelancer, I was working on my own all the time. But sometimes, I would pick up tasks that required more competencies than I could offer on my own. For those cases, I had built a network of smart friends and colleagues, and I would reach out to them. We would work on that specific project together. I would pay them from my earnings, and that would be it.
+
+For Maxout, I want to go a similar path. Instead of hiring full-time employees, I want to build a network of freelancers and entrepreneurs so that I can work with them. If there is a task that I can't do on my own, I will then reach out to the network, hire someone and work on that specific task together.
+
+This way, I keep my freedom while still getting things done.
+
+## Feature development & prioritization
+
+Maxout has no roadmap of features that we want to build in a given period. Instead, we have that one vision that we are going to work towards:
+
+Maxout makes it possible that you have the best workout schedule for your fitness lifestyle.
+
+Based on that, we will come up with exciting and appealing ideas.
+
+As we are all makers, we have plenty of ideas to build to reach this goal. But we can't work on everything at the same time. Therefore, we need a system that we can use to decide what we are working on next.
+
+In 2018, [Baremetrics founder Josh Pigford posted an article](https://baremetrics.com/blog/feature-framework) that stuck in my mind. In this article, he describes a score which he calls the DIE score.
+
+Based on Demand, Impact and Effort, he will score each feature, and the result would be a good indicator for what one should focus on next.
+
+At Maxout, we follow a modified version of DIE. Modified because the definition of DIE is slightly different:
+
+**Demand** It's the value that describes how many of our existing customers want to have that specific feature.
+
+**Impact** This score does not focus on our primary goal (MRR/MAU). Instead, we think about how many customers' lives the feature would impact — positively and negatively. We target a broad spectrum of customers. They are all interested in an organized fitness lifestyle, but they might practice lots of different sports. A CrossFitters focussing feature might not impact someone who is mainly concentrating on swimming. At the same time, that feature might make the lives for regular gym goers difficult. That is what we capture with this value.
+
+**Effort** When we talk about effort, it most likely means time. How long are we going to be blocked working on this? Do we all have to work on this together, or can we break this apart into chunks? Can this maybe be pulled off by just one of us?
+
+Another thing we do differently to what was described in the blog post is our scoring system. I found it difficult to grasp that the higher the Demand, Impact, Effort, the smaller the score would be and that for the final score, the smallest score would win.
+
+We made it more straightforward: The higher the Demand, Impact and Effort, the higher the values. Also, the higher the score, the higher the priority. To achieve this, we adapted the calculation of the score. Instead of summing up all values, we changed it to Demand + Impact - Effort.
+
+## No meetings
+
+People who know me will tell you: I hate meetings. 99% of all meetings are useless, and you can avoid them. If you have to meet up, make sure that they are effective.
+
+At Maxout, we don't have any meetings. Instead, all our communication happens async. And at the size of our project, we can efficiently deal with it.
+
+But even if we grow more significantly, this is going to work. However, it needs some effort from the entire team: Everyone has to learn to over-communicate.
+
+In an async work environment, you can't expect everyone to be available when you are. You can't just ping your colleagues on Slack and expect them to answer readily. You definitely can't just walk to their desk and ask them.
+
+So you have to make sure that whenever you do something or learn something, everyone else in the team should be available to somehow get that piece of information.
+
+In our case, this requires a lot of writing. We try to write down everything we do, making sure that someone can follow the process at any time. Some other companies solve this with different formats such as videos, but a central knowledge base is our key to success.
+
+The way we communicate also means that we can't just work with everyone. Whenever we ask someone to join us for a specific project, the most important skill we look out for will be writing. Because at least half of the time, they will be writing documentation.
+
+## No deadlines
+
+Another central concept at Maxout is that we don't push work. Instead, everyone pulls the next prepared piece they can pick up and want.
+
+As mentioned in the team section, we work on Maxout after work-hours. We might have had a long and exhausting day spending most of our energy on our day-to-day job, which we both enjoy. So there might be many days when we don't want to work on Maxout or just can't.
+
+These situations shouldn't break anything at Maxout, and we shouldn't feel pressurized to get things done. Tasks done under these circumstances are most likely to be of low quality.
+
+So at Maxout, we dropped the concept of deadlines.
+
+Instead of having a roadmap and pushing deadlines, we work at our most comfortable pace. We work whenever we have the time and pull in the work that we can pick up at the moment.
+
+On certain things, we need to collaborate. But since all our work has proper documentation, it is ok if one of us picks up some work and then it lays around for a while.
+
+The only thing we all keep in mind to motivate ourselves is our vision. We know what we want to achieve and how we want to accomplish that. We want to make Maxout successful, so we will automatically make sure that we don't just cherry-pick work we love.
+
+## Budget & Cost Management
+
+Maxout is a side-project; we recently started it. Currently, it has no paying customers. While we hope to have a recurring income, we can't tell if and when this will happen. Therefore, we have to make sure that we have our costs under control as much as possible.
+
+Since I'm paying this side-project out of my pocket, I had to set myself a budget that made me feel comfortable. Currently, this is $50/month. This number includes every cost for services and tools that we use as well as one-off payments.
+
+It is a small number, and it won't grow until our MRR is not 0 anymore. We are not actively seeking investments, but if someone shows interest and accepts the way we work, we would be ready to talk.
+
+But until then, we will try to keep the costs low. That sometimes means, we have to search for alternatives to pricey, popular services.
+
+### Tools & Services
+
+At the same time, our project can't work without third party services and tools. No project can, so I thought it might be interesting for you if I shared the tools that we use here at Maxout:
+
+1. **[Gatsby](https://www.gatsbyjs.com/)**: Our marketing website, as well as our web app, are based on Gatsby. Alternatively, Next would also be an option, but I chose this option since I am more used to Gatsby.
+2. **[React](https://reactjs.org/)**
+3. **[TypeScript](https://www.typescriptlang.org/)**
+4. **[Styled Components](https://styled-components.com/)** (Slowly migrating away towards Stitches though)
+5. **[Stitches](https://stitches.dev/)** & **[Radix UI](https://radix-ui.com/)**
+6. **[Stoplight](https://stoplight.io/)** & Open API 3.0
+7. **[Python](https://www.python.org/):** Our API is written in Python using Flask. We chose this mainly because my brother had enough initial experience in Python so that he was able to pick the API stuff on his own
+8. **[MongoDB](https://www.mongodb.com/)**
+9. **[Netlify](https://www.netlify.com/):** This is our platform to go to host all our front-end related things.
+10. **[Heroku](https://www.heroku.com/)**: Our production API, as well as our staging API, are hosted on Heroku.
+11. **[GitHub](https://github.com/):** We pay for the "Teams" features here. GitHub is our personal preference, GitLab or Bitbucket might be right for you, too.
+12. **[Email Octopus](https://emailoctopus.com/?urli=2Dd8h)** (_)**:** This is our choice for email marketing. There are other options such as Mailchimp or ConvertKit, but they are not within our budget. Additionally, Email Octopus is another bootstrapped company that we are happy to support. (_ This is a referral link)
+13. **[Namecheap](https://www.namecheap.com/):** We might eventually move to Google Domains for this, but since all other personal domains are here, we stuck with Namecheap for now.
+14. **[Sendgrid](https://sendgrid.com/):** While Email Octopus is in charge of the marketing emails, SendGrid is our transactional email tool.
+15. **[Figma](https://www.figma.com/)**: Our design tool of choice (mostly my personal preference as I do most of the design work)
+16. **[Spark](https://sparkmailapp.com/):** It's my personal choice of an email client. I listed it here as I use it with their template feature to contact customers directly and talk to them and get feedback.
+17. **[Fathom Analytics](https://usefathom.com/ref/P1PPJP)** (\*): Instead of using Google Analytics, we are happily paying for Fathom. It delivers enough data we need, but at the same time, they are privacy-friendly. (\* This is a referral link)
+18. **[Mixpanel](https://mixpanel.com/):** Not implemented yet, but Mixpanel is going to be our tool for product analytics. Right now, we get our data by querying our database and talking to customers directly, but at some point, we need to get some data within the app.
+19. **[Notion](https://www.notion.so/):** This is the most critical service as we use it for our entire communication and knowledge base. We document everything in Notion: Our work, our strategy and insights.
+
+The way we build Maxout might feel strange now, but I'm confident that this will be the future of work. Async work is the next step of remote work, and it will empower companies to build awesome projects more effectively while providing the right balance between work and life to their employees.
+
+Even if Maxout should fail as a side-project, the number of learnings we will have along the way will be a tremendous asset for all of us in the future.
