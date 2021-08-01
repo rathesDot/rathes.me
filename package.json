@@ -20,7 +20,7 @@
     "gatsby-plugin-twitter": "^3.9.0",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-images": "^5.6.0",
-    "gatsby-remark-prismjs": "^5.6.0",
+    "gatsby-remark-prismjs": "^5.7.0",
     "gatsby-source-filesystem": "^3.9.0",
     "gatsby-transformer-remark": "^4.6.0",
     "gatsby-transformer-sharp": "^3.9.0",
