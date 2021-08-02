@@ -35,12 +35,12 @@
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
     "@types/react-helmet": "^6.1.2",
-    "autoprefixer": "^10.2.6",
+    "autoprefixer": "^10.3.1",
     "babel-jest": "^27.0.6",
     "babel-plugin-apply-mdx-type-prop": "^1.6.22",
     "babel-preset-gatsby": "^1.8.0",
     "jest": "^27.0.6",
-    "postcss": "^8.3.2",
+    "postcss": "^8.3.6",
     "prettier": "^2.3.2"
   },
   "keywords": [
