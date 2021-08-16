@@ -99,9 +99,18 @@ const AboutMe: React.FC<PageProps> = () => (
             <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
             </ListItem>
+            <ListItem subtitle="by Michele Hansen" link="https://amzn.to/3ss7rCX">
+              Deploy Empathy: A practical guide to interviewing customers
+            </ListItem>
           </List>
           <Separator />
           <List title="Reading List 2021">
+            <ListItem subtitle="by Agatha Christie" link="https://amzn.to/2VXdSSc">
+              The Mysterious Affair at Styles (Poirot)
+            </ListItem>
+            <ListItem subtitle="by Agatha Christie" link="https://amzn.to/3AFGmPq">
+              The Murder on the Links (Poirot)
+            </ListItem>
             <ListItem subtitle="by Dr. Stuart Farrimond" link="https://amzn.to/3h8h58m">
               The Science of Spice: Understand Flavour Connections and Revolutionize your Cooking
             </ListItem>
