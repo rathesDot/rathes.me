@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, Link as RouterLink } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import Img, { FluidObject } from "gatsby-image"
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 
 import { PageLayout } from ".."
 import { Heading, Meta } from "../../components"
@@ -46,7 +46,7 @@ type BlogData = {
       image: {
         publicURL: string
         childImageSharp: {
-          fluid: FluidObject | FluidObject[]
+          gatsbyImageData: IGatsbyImageData
         }
       }
     }
@@ -104,7 +104,10 @@ export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
         <Heading level="heading1">{post.frontmatter.title}</Heading>
         <FeatureImage>
           {post.frontmatter.image && (
-            <Img fluid={post.frontmatter.image.childImageSharp.fluid} />
+            <GatsbyImage
+              alt={`Feature image for "${post.frontmatter.title}"`}
+              image={post.frontmatter.image.childImageSharp.gatsbyImageData}
+            />
           )}
         </FeatureImage>
         <MDXRenderer>{post.body}</MDXRenderer>
@@ -119,7 +122,7 @@ export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
 }
 
 export const query = graphql`
-  query($slug: String!) {
+  query ($slug: String!) {
     site {
       siteMetadata {
         siteUrl
@@ -136,9 +139,7 @@ export const query = graphql`
         image {
           publicURL
           childImageSharp {
-            fluid(maxWidth: 300) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData
           }
         }
       }

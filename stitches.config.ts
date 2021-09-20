@@ -1,7 +1,7 @@
-import { createCss } from "@stitches/react"
+import { createStitches } from "@stitches/react"
 
-export const { css, styled, global, theme, keyframes, getCssString } =
-  createCss({
+export const { css, styled, globalCss, theme, keyframes, getCssText } =
+  createStitches({
     media: {
       xs: `(min-width: 375px)`,
       sm: `(min-width: 640px)`,
