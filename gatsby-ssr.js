@@ -3,7 +3,7 @@ import postcss from "postcss"
 import autoprefixer from "autoprefixer"
 import { renderToString } from "react-dom/server"
 
-import { getCssString } from "./stitches.config"
+import { getCssText } from "./stitches.config"
 
 export const replaceRenderer = ({
   bodyComponent,
@@ -11,7 +11,7 @@ export const replaceRenderer = ({
   replaceBodyHTMLString,
 }) => {
   const bodyHTML = renderToString(bodyComponent)
-  const styles = getCssString()
+  const styles = getCssText()
 
   setHeadComponents([
     <style

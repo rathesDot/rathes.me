@@ -1,6 +1,6 @@
 import React from "react"
 
-import { styled, global } from "../../../stitches.config"
+import { styled, globalCss } from "../../../stitches.config"
 
 import { Footer, Navigation } from "../../patterns"
 
@@ -27,7 +27,7 @@ const MainContainer = styled("main", {
 })
 
 const PageLayout: React.FC = ({ children }) => {
-  global({
+  globalCss({
     html: {
       "-webkit-font-smoothing": "antialiased",
       "-moz-osx-font-smoothing": "grayscale",
@@ -92,13 +92,15 @@ const PageLayout: React.FC = ({ children }) => {
     [`button, [type="button"], [type="reset"], [type="submit"]`]: {
       "-webkit-appearance": "button",
     },
-    [`button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner`]: {
-      borderStyle: "none",
-      padding: 0,
-    },
-    [`button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring`]: {
-      outline: "1px dotted ButtonText",
-    },
+    [`button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner`]:
+      {
+        borderStyle: "none",
+        padding: 0,
+      },
+    [`button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring`]:
+      {
+        outline: "1px dotted ButtonText",
+      },
     fieldset: {
       margin: 0,
       padding: 0,
@@ -122,9 +124,10 @@ const PageLayout: React.FC = ({ children }) => {
       boxSizing: "border-box",
       padding: 0,
     },
-    [`[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button`]: {
-      height: "auto",
-    },
+    [`[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button`]:
+      {
+        height: "auto",
+      },
     [`[type="search"]`]: {
       "-webkit-appearance": "textfield",
       outlineOffset: "-2px",
@@ -198,9 +201,10 @@ const PageLayout: React.FC = ({ children }) => {
       display: "none",
     },
 
-    "input:-ms-input-placeholder, textarea:-ms-input-placeholder, input::-ms-input-placeholder, textarea::-ms-input-placeholder, input::placeholder, textarea::placeholder": {
-      color: "#a0aec0",
-    },
+    "input:-ms-input-placeholder, textarea:-ms-input-placeholder, input::-ms-input-placeholder, textarea::-ms-input-placeholder, input::placeholder, textarea::placeholder":
+      {
+        color: "#a0aec0",
+      },
 
     ".gatsby-highlight": {
       marginBottom: "$6",
