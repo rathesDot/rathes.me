@@ -1,6 +1,4 @@
 import React from "react"
-import postcss from "postcss"
-import autoprefixer from "autoprefixer"
 import { renderToString } from "react-dom/server"
 
 import { getCssText } from "./stitches.config"
@@ -17,7 +15,7 @@ export const replaceRenderer = ({
     <style
       data-stitches
       dangerouslySetInnerHTML={{
-        __html: postcss([autoprefixer()]).process(styles),
+        __html: styles,
       }}
     />,
 
