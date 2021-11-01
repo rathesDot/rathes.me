@@ -13,7 +13,7 @@ export const replaceRenderer = ({
 
   setHeadComponents([
     <style
-      data-stitches
+      id="stitches"
       dangerouslySetInnerHTML={{
         __html: styles,
       }}
