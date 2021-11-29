@@ -8,7 +8,7 @@ import { SayHi } from "../patterns"
 import { PageLayout } from "../layouts"
 
 import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
-import externalLinks from "../content/articles/externalLinks"
+import externalLinks from "../content/blog/externalLinks"
 
 const Container = styled("section", {
   marginTop: "$32",
