@@ -8,7 +8,7 @@ import { SayHi } from "../patterns"
 import { PageLayout } from "../layouts"
 
 import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
-import externalLinks from "../content/articles/externalLinks"
+import externalLinks from "../content/blog/externalLinks"
 
 const Container = styled("section", {
   marginTop: "$32",
@@ -33,10 +33,8 @@ type MdxQuery = {
     edges: Array<{
       id: number
       node: {
+        parent: { name: string; relativeDirectory: string }
         frontmatter: { title: string; date: string }
-        fields: {
-          slug: string
-        }
       }
     }>
   }
@@ -111,12 +109,16 @@ export const query = graphql`
       edges {
         node {
           id
+          parent {
+            ... on File {
+              id
+              name
+              relativeDirectory
+            }
+          }
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
-          }
-          fields {
-            slug
           }
         }
       }

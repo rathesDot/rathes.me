@@ -2,10 +2,8 @@ type MdxQuery = {
   allMdx: {
     edges: Array<{
       node: {
+        parent: { name: string; relativeDirectory: string }
         frontmatter: { title: string; date: string }
-        fields: {
-          slug: string
-        }
       }
     }>
   }
@@ -23,7 +21,7 @@ export const extractBlogPosts = (data: MdxQuery): Post[] => {
       return {
         title: post.frontmatter.title,
         date: post.frontmatter.date,
-        link: post.fields.slug,
+        link: `/${post.parent.relativeDirectory}/${post.parent.name}`,
       }
     }),
   ]

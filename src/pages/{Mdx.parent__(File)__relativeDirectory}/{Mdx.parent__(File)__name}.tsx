@@ -3,7 +3,7 @@ import { graphql, Link as RouterLink } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 
-import { PageLayout } from ".."
+import { PageLayout } from "../../layouts"
 import { Heading, Meta } from "../../components"
 
 import { styled } from "../../../stitches.config"
@@ -37,9 +37,7 @@ type BlogData = {
   mdx: {
     body: string
     excerpt?: string
-    fields: {
-      slug: string
-    }
+    parent: { name: string; relativeDirectory: string }
     frontmatter: {
       title: string
       locale: string
@@ -58,7 +56,7 @@ export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
   const meta = [
     {
       name: `og:url`,
-      content: data.site.siteMetadata.siteUrl + post.fields.slug,
+      content: `${data.site.siteMetadata.siteUrl}/${post.parent.relativeDirectory}/${post.parent.name}`,
     },
     {
       name: `og:type`,
@@ -122,16 +120,20 @@ export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
 }
 
 export const query = graphql`
-  query ($slug: String!) {
+  query ($id: String!) {
     site {
       siteMetadata {
         siteUrl
       }
     }
-    mdx(fields: { slug: { eq: $slug } }) {
+    mdx(id: { eq: $id }) {
       body
-      fields {
-        slug
+      parent {
+        ... on File {
+          id
+          name
+          relativeDirectory
+        }
       }
       frontmatter {
         title
