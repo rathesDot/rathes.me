@@ -37,9 +37,7 @@ type BlogData = {
   mdx: {
     body: string
     excerpt?: string
-    fields: {
-      slug: string
-    }
+    parent: { name: string; relativeDirectory: string }
     frontmatter: {
       title: string
       locale: string
@@ -58,7 +56,7 @@ export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
   const meta = [
     {
       name: `og:url`,
-      content: data.site.siteMetadata.siteUrl + post.fields.slug,
+      content: `${data.site.siteMetadata.siteUrl}/${post.parent.relativeDirectory}/${post.parent.name}`,
     },
     {
       name: `og:type`,
@@ -130,8 +128,12 @@ export const query = graphql`
     }
     mdx(id: { eq: $id }) {
       body
-      fields {
-        slug
+      parent {
+        ... on File {
+          id
+          name
+          relativeDirectory
+        }
       }
       frontmatter {
         title

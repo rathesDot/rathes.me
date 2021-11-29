@@ -33,10 +33,8 @@ type MdxQuery = {
     edges: Array<{
       id: number
       node: {
+        parent: { name: string; relativeDirectory: string }
         frontmatter: { title: string; date: string }
-        fields: {
-          slug: string
-        }
       }
     }>
   }
@@ -111,12 +109,16 @@ export const query = graphql`
       edges {
         node {
           id
+          parent {
+            ... on File {
+              id
+              name
+              relativeDirectory
+            }
+          }
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
-          }
-          fields {
-            slug
           }
         }
       }
