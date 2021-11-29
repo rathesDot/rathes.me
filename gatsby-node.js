@@ -1,5 +1,4 @@
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const path = require(`path`)
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const {
@@ -15,35 +14,4 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: filePath.replace("/articles/", "/blog/"),
     })
   }
-}
-
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-
-  const {
-    data: { allMdx },
-  } = await graphql(`
-    {
-      allMdx {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-          }
-        }
-      }
-    }
-  `)
-
-  allMdx.edges.forEach(({ node }) => {
-    createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/layouts/BlogLayout/BlogLayout.tsx`),
-      context: {
-        slug: node.fields.slug,
-      },
-    })
-  })
 }
