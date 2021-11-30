@@ -1,4 +1,5 @@
 import { createStitches } from "@stitches/react"
+import { slateDark } from "@radix-ui/colors"
 
 export const { css, styled, globalCss, theme, keyframes, getCssText } =
   createStitches({
@@ -20,6 +21,8 @@ export const { css, styled, globalCss, theme, keyframes, getCssText } =
         gray700: "#454545",
         gray800: "#2A2A2A",
         gray900: "#161616",
+
+        ...slateDark,
       },
       space: {
         px: "1px",
