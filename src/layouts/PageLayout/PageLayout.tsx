@@ -6,7 +6,7 @@ import { Footer, Navigation } from "../../patterns"
 
 const MainContainer = styled("main", {
   backgroundColor: "$slate2",
-  color: "$gray600",
+  color: "$slate11",
   display: "flex",
   flexDirection: "column",
   fontFamily: "$default",

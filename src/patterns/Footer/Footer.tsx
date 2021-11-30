@@ -8,7 +8,7 @@ const Separator = styled("span", {
   display: "inline-block",
   marginLeft: 8,
   marginRight: 8,
-  color: "$gray600",
+  color: "$slate11",
   fontSize: "$xs",
   fontFamily: "$default",
 
@@ -19,12 +19,12 @@ const Separator = styled("span", {
 
 const Footer = () => (
   <div>
-    <Text color="gray600" size="small">
+    <Text color="slate11" size="small">
       &copy; 2020 — Rathes Sachchithananthan
     </Text>
     <Separator />
     <Link to="/legal">
-      <Text color="gray600" size="small">
+      <Text color="slate11" size="small">
         Legal Information
       </Text>
     </Link>

@@ -6,7 +6,7 @@ import { styled } from "../../../stitches.config"
 import { Logo } from "../../components"
 
 const Separator = styled("span", {
-  color: "$gray600",
+  color: "$slate11",
   display: "inline-block",
   fontFamily: "$default",
   fontSize: "$base",
@@ -49,7 +49,7 @@ const MenuItem = styled("span", {
 
 const Container = styled("nav", {
   alignItems: "center",
-  color: "$gray600",
+  color: "$slate11",
   display: "flex",
 })
 

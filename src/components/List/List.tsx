@@ -11,7 +11,7 @@ const Title = styled("li", {
 })
 
 const Subtitle = styled("span", {
-  color: "$gray600",
+  color: "$slate11",
   display: "block",
   fontSize: "$xs",
 })
@@ -22,6 +22,7 @@ const Container = styled("div", {
 
 const ListContent = styled("ul", {
   display: "block",
+  marginTop: "$4",
 })
 
 export type ListItemProps = {
@@ -43,21 +44,21 @@ export const ListItem: React.FC<ListItemProps> = ({
       {isExternalLink ? (
         <Link href={link}>
           {subtitle && subtitlePosition == "above" && (
-            <Subtitle color="silver">{subtitle}</Subtitle>
+            <Subtitle>{subtitle}</Subtitle>
           )}
           {children}
           {subtitle && subtitlePosition == "under" && (
-            <Subtitle color="silver">{subtitle}</Subtitle>
+            <Subtitle>{subtitle}</Subtitle>
           )}
         </Link>
       ) : (
         <RouterLink to={link}>
           {subtitle && subtitlePosition == "above" && (
-            <Subtitle color="silver">{subtitle}</Subtitle>
+            <Subtitle>{subtitle}</Subtitle>
           )}
           {children}
           {subtitle && subtitlePosition == "under" && (
-            <Subtitle color="silver">{subtitle}</Subtitle>
+            <Subtitle>{subtitle}</Subtitle>
           )}
         </RouterLink>
       )}
@@ -72,7 +73,7 @@ export type ListProps = {
 export const List: React.FC<ListProps> = ({ title, children, ...props }) => (
   <Container {...props}>
     {title && (
-      <Heading level="heading4" color="gray600">
+      <Heading level="heading4" color="slate11">
         {title}
       </Heading>
     )}
