@@ -5,7 +5,7 @@ import { styled, globalCss } from "../../../stitches.config"
 import { Footer, Navigation } from "../../patterns"
 
 const MainContainer = styled("main", {
-  backgroundColor: "$black",
+  backgroundColor: "$slate2",
   color: "$gray600",
   display: "flex",
   flexDirection: "column",
