@@ -36,7 +36,7 @@ export const colors = {
     color: "$slate12",
   },
   white: {
-    color: "$white",
+    color: "$slate12",
   },
   gray400: {
     color: "$gray400",

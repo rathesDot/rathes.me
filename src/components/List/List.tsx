@@ -6,7 +6,7 @@ import { Heading, Link } from ".."
 
 const Title = styled("li", {
   fontSize: "$base",
-  color: "$white",
+  color: "$slate12",
   margin: "$2 0",
 })
 

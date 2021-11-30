@@ -99,20 +99,33 @@ const AboutMe: React.FC<PageProps> = () => (
             <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
             </ListItem>
-            <ListItem subtitle="by Michele Hansen" link="https://amzn.to/3ss7rCX">
+            <ListItem
+              subtitle="by Michele Hansen"
+              link="https://amzn.to/3ss7rCX"
+            >
               Deploy Empathy: A practical guide to interviewing customers
             </ListItem>
           </List>
           <Separator />
           <List title="Reading List 2021">
-            <ListItem subtitle="by Agatha Christie" link="https://amzn.to/2VXdSSc">
+            <ListItem
+              subtitle="by Agatha Christie"
+              link="https://amzn.to/2VXdSSc"
+            >
               The Mysterious Affair at Styles (Poirot)
             </ListItem>
-            <ListItem subtitle="by Agatha Christie" link="https://amzn.to/3AFGmPq">
+            <ListItem
+              subtitle="by Agatha Christie"
+              link="https://amzn.to/3AFGmPq"
+            >
               The Murder on the Links (Poirot)
             </ListItem>
-            <ListItem subtitle="by Dr. Stuart Farrimond" link="https://amzn.to/3h8h58m">
-              The Science of Spice: Understand Flavour Connections and Revolutionize your Cooking
+            <ListItem
+              subtitle="by Dr. Stuart Farrimond"
+              link="https://amzn.to/3h8h58m"
+            >
+              The Science of Spice: Understand Flavour Connections and
+              Revolutionize your Cooking
             </ListItem>
             <ListItem subtitle="by Will Storr" link="https://amzn.to/3ggjAXd">
               The Science of Storytelling: Why Stories Make Us Human, and How to
@@ -215,7 +228,7 @@ const AboutMe: React.FC<PageProps> = () => (
           From time to time I also write. It can be work related topics that I
           share in the{" "}
           <RouterLink to="/writings">
-            <Text color="white" underlined>
+            <Text color="slate12" underlined>
               writing section
             </Text>
           </RouterLink>{" "}

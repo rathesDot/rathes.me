@@ -27,7 +27,7 @@ const components = {
   ol: OrderedList,
   blockquote: Quote,
   a: ({ children, ...props }) => (
-    <Link underlined color="white" {...props}>
+    <Link underlined color="slate12" {...props}>
       {children}
     </Link>
   ),

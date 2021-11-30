@@ -64,7 +64,7 @@ const Legal: React.FC<PageProps> = () => (
         downloading and installing Google Analytics Opt-out Browser Addon for
         your current web browser:{" "}
         <Link
-          color="white"
+          color="slate12"
           underlined
           href="http://tools.google.com/dlpage/gaoptout?hl=en"
         >
@@ -141,7 +141,7 @@ const Legal: React.FC<PageProps> = () => (
       <Text as="p" size="small">
         Source:{" "}
         <Link
-          color="white"
+          color="slate12"
           underlined
           href="http://www.mustervorlage.net/disclaimer-muster#Englisch"
         >

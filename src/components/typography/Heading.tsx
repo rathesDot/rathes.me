@@ -36,6 +36,6 @@ export const Heading = styled("h1", {
     },
   },
   defaultVariants: {
-    color: "white",
+    color: "slate12",
   },
 })

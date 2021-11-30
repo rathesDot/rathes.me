@@ -9,7 +9,7 @@ import { Heading, Meta } from "../../components"
 import { styled } from "../../../stitches.config"
 
 const BackLink = styled("span", {
-  color: "$white",
+  color: "$slate12",
   textDecoration: "underline",
 })
 

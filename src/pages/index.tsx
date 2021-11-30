@@ -9,7 +9,7 @@ import { PageLayout } from "../layouts"
 const Container = styled("section", {})
 
 const Introduction = styled("h1", {
-  color: "$white",
+  color: "$slate12",
   fontFamily: "$default",
   fontSize: "$3xl",
   fontWeight: 600,
