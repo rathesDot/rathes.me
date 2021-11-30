@@ -13,7 +13,6 @@ export const { css, styled, globalCss, theme, keyframes, getCssText } =
     theme: {
       colors: {
         gray400: "#AAAAAA",
-        gray500: "#676767",
         gray600: "#878787",
         gray700: "#454545",
         gray800: "#2A2A2A",

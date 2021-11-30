@@ -38,9 +38,6 @@ export const colors = {
   gray400: {
     color: "$gray400",
   },
-  gray500: {
-    color: "$gray500",
-  },
   gray600: {
     color: "$gray600",
   },
