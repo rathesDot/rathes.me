@@ -56,7 +56,7 @@ export const { css, styled, globalCss, theme, keyframes, getCssText } =
       },
       fonts: {
         default: [
-          "Lato",
+          "Inter",
           "-apple-system",
           "BlinkMacSystemFont",
           '"Segoe UI"',
