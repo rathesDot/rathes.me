@@ -1,8 +1,8 @@
 import { styled } from "../../../stitches.config"
 
 export const Note = styled("p", {
-  backgroundColor: "$gray900",
-  color: "$gray500",
+  backgroundColor: "$slate3",
+  color: "$slate11",
   marginBottom: "$8",
   marginTop: "$8",
   padding: "$4",

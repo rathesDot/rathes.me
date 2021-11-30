@@ -1,8 +1,8 @@
 import { styled } from "../../../stitches.config"
 
 export const OrderedList = styled("ol", {
-  backgroundColor: "$gray900",
-  color: "$gray500",
+  backgroundColor: "$slate3",
+  color: "$slate11",
   fontSize: "$sm",
   listStyleType: "decimal",
   marginBottom: "$8",
@@ -17,6 +17,6 @@ export const OrderedList = styled("ol", {
     margin: 0,
     fontSize: "$sm",
     lineLeight: 1.45,
-    color: "$gray500",
+    color: "$slate11",
   },
 })
