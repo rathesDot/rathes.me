@@ -1,16 +1,18 @@
 import { styled } from "../../../stitches.config"
 
 export const Quote = styled("blockquote", {
-  backgroundColor: "$gray900",
-  color: "$slate12",
+  backgroundColor: "$slate4",
+  borderRadius: "10px",
+  color: "$slate11",
+  fontSize: "$lg",
+  lineHeight: "$400",
   marginBottom: "$8",
   marginTop: "$8",
-  padding: "$4",
-  fontSize: "$2xl",
+  padding: "$5",
   p: {
     margin: 0,
-    color: "$slate12",
-    fontSize: "$2xl",
+    color: "$slate11",
+    fontSize: "$lg",
     lineHeight: "$400",
   },
 })
