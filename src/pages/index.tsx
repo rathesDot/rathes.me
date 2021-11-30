@@ -61,7 +61,7 @@ const IndexPage: React.FC<PageProps> = () => (
             subtitle="Working at"
             link="https://www.hussle.com"
           >
-            Hussle
+            —
           </ListItem>
           <ListItem
             subtitlePosition="above"
