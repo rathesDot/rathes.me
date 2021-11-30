@@ -12,8 +12,6 @@ export const { css, styled, globalCss, theme, keyframes, getCssText } =
     },
     theme: {
       colors: {
-        white: "#fff",
-
         gray400: "#AAAAAA",
         gray500: "#676767",
         gray600: "#878787",

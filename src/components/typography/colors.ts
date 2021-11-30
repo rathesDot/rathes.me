@@ -35,9 +35,6 @@ export const colors = {
   slate12: {
     color: "$slate12",
   },
-  white: {
-    color: "$slate12",
-  },
   gray400: {
     color: "$gray400",
   },
