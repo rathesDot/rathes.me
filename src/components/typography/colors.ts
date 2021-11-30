@@ -41,7 +41,4 @@ export const colors = {
   gray800: {
     color: "$gray800",
   },
-  gray900: {
-    color: "$gray900",
-  },
 }

@@ -14,7 +14,6 @@ export const { css, styled, globalCss, theme, keyframes, getCssText } =
       colors: {
         gray700: "#454545",
         gray800: "#2A2A2A",
-        gray900: "#161616",
 
         ...slateDark,
       },
