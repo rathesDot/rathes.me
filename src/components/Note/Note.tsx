@@ -2,11 +2,13 @@ import { styled } from "../../../stitches.config"
 
 export const Note = styled("p", {
   backgroundColor: "$slate3",
+  borderRadius: "10px",
   color: "$slate11",
+  fontSize: "$sm",
+  lineHeight: "$500",
   marginBottom: "$8",
   marginTop: "$8",
-  padding: "$4",
-  fontSize: "$sm",
+  padding: "$5",
 
   variants: {
     nested: {
