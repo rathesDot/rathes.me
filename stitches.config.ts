@@ -12,7 +12,6 @@ export const { css, styled, globalCss, theme, keyframes, getCssText } =
     },
     theme: {
       colors: {
-        gray700: "#454545",
         gray800: "#2A2A2A",
 
         ...slateDark,
