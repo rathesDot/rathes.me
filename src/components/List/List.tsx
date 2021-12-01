@@ -22,7 +22,6 @@ const Container = styled("div", {
 
 const ListContent = styled("ul", {
   display: "block",
-  marginTop: "$4",
 })
 
 export type ListItemProps = {
