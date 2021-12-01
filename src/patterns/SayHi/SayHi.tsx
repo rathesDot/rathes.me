@@ -5,7 +5,7 @@ import { Link } from "../../components"
 
 const Container = styled("div", {
   color: "$slate12",
-  fontFamily: "$default",
+  fontFamily: "$display",
   fontSize: "$4xl",
   fontWeight: 600,
   lineHeight: "1.194444",

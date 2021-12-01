@@ -10,7 +10,7 @@ const Container = styled("section", {})
 
 const Introduction = styled("h1", {
   color: "$slate12",
-  fontFamily: "$default",
+  fontFamily: "$display",
   fontSize: "$3xl",
   fontWeight: 600,
   lineHeight: "$400",
