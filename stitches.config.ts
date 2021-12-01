@@ -49,7 +49,7 @@ export const { css, styled, globalCss, theme, keyframes, getCssText } =
       },
       fonts: {
         default: [
-          "Inter",
+          "Noto Sans",
           "-apple-system",
           "BlinkMacSystemFont",
           '"Segoe UI"',

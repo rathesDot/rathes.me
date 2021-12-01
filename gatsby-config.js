@@ -30,7 +30,7 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Inter:400,500,600,700"],
+          families: ["Noto+Sans:400"],
         },
       },
     },
