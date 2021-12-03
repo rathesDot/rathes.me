@@ -91,6 +91,12 @@ const AboutMe: React.FC<PageProps> = () => (
         <ReadingList>
           <List title="Currently reading">
             <ListItem
+              subtitle="by Kazuo Ishiguro"
+              link="https://amzn.to/31pndoX"
+            >
+              Klara and the Sun
+            </ListItem>
+            <ListItem
               subtitle="by George R. R. Martin"
               link="https://amzn.to/2Rngm82"
             >
