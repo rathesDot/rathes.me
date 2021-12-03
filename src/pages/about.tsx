@@ -91,6 +91,12 @@ const AboutMe: React.FC<PageProps> = () => (
         <ReadingList>
           <List title="Currently reading">
             <ListItem
+              subtitle="by Kazuo Ishiguro"
+              link="https://amzn.to/31pndoX"
+            >
+              Klara and the Sun
+            </ListItem>
+            <ListItem
               subtitle="by George R. R. Martin"
               link="https://amzn.to/2Rngm82"
             >
@@ -99,12 +105,18 @@ const AboutMe: React.FC<PageProps> = () => (
             <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
             </ListItem>
-            <ListItem subtitle="by Michele Hansen" link="https://amzn.to/3ss7rCX">
-              Deploy Empathy: A practical guide to interviewing customers
-            </ListItem>
           </List>
           <Separator />
           <List title="Reading List 2021">
+            <ListItem subtitle="by Sahil Lavingia" link="https://amzn.to/3xTzrCm">
+              The Minimalist Entrepreneur: How Great Founders Do More with Less
+            </ListItem>
+            <ListItem subtitle="by Anuk Arudpragasam" link="https://amzn.to/3DhX9Jh">
+              A Passage North
+            </ListItem>
+            <ListItem subtitle="by Michele Hansen" link="https://amzn.to/3ss7rCX">
+              Deploy Empathy: A practical guide to interviewing customers
+            </ListItem>
             <ListItem subtitle="by Agatha Christie" link="https://amzn.to/2VXdSSc">
               The Mysterious Affair at Styles (Poirot)
             </ListItem>
