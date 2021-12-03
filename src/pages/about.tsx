@@ -102,6 +102,9 @@ const AboutMe: React.FC<PageProps> = () => (
           </List>
           <Separator />
           <List title="Reading List 2021">
+            <ListItem subtitle="by Sahil Lavingia" link="https://amzn.to/3xTzrCm">
+              The Minimalist Entrepreneur: How Great Founders Do More with Less
+            </ListItem>
             <ListItem subtitle="by Anuk Arudpragasam" link="https://amzn.to/3DhX9Jh">
               A Passage North
             </ListItem>
