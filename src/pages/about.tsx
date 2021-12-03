@@ -102,6 +102,9 @@ const AboutMe: React.FC<PageProps> = () => (
           </List>
           <Separator />
           <List title="Reading List 2021">
+            <ListItem subtitle="by Anuk Arudpragasam" link="https://amzn.to/3DhX9Jh">
+              A Passage North
+            </ListItem>
             <ListItem subtitle="by Michele Hansen" link="https://amzn.to/3ss7rCX">
               Deploy Empathy: A practical guide to interviewing customers
             </ListItem>
