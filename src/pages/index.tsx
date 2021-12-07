@@ -59,6 +59,7 @@ const ListContainer = styled(List, {
 })
 
 const Section = styled("section", {
+  marginBottom: "$24",
   marginTop: "$24",
 })
 
@@ -119,22 +120,6 @@ const IndexPage: React.FC<PageProps> = () => (
           </ListItem>
         </List>
       </Section>
-      <Lists spacing={{ "@initial": "small", "@md": "large" }}>
-        <ListContainer title="Current Projects">
-          <ListItem
-            subtitle="A simple and beautiful way to plan, schedule and track your workouts"
-            link="https://getmaxout.app/"
-          >
-            Maxout
-          </ListItem>
-          <ListItem
-            subtitle="Book and App to make learning the Tamil language easier"
-            link="https://learn-tamil.com/"
-          >
-            Learn Tamil Online
-          </ListItem>
-        </ListContainer>
-      </Lists>
     </Container>
   </PageLayout>
 )
