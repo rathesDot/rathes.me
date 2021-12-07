@@ -14,7 +14,6 @@ const BackLink = styled("span", {
 })
 
 const Container = styled("div", {
-  marginTop: "$32",
   maxWidth: 640,
 })
 
