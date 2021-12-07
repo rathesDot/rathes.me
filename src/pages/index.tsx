@@ -58,6 +58,10 @@ const ListContainer = styled(List, {
   maxWidth: 200,
 })
 
+const Section = styled("section", {
+  marginTop: "$24",
+})
+
 const IndexPage: React.FC<PageProps> = () => (
   <PageLayout>
     <Meta title="Home" />
@@ -94,30 +98,28 @@ const IndexPage: React.FC<PageProps> = () => (
           Instagram
         </Link>
       </Introduction>
+
+      <Section>
+        <List title="Featured Posts">
+          <ListItem link="/blog/en/introducing-maxout/">
+            Building Maxout
+          </ListItem>
+          <ListItem link="/blog/en/from-couch-to-5k">
+            From Couch to 5k — A simple way to get into running
+          </ListItem>
+          <ListItem link="/blog/en/how-to-slack/">How-To Slack</ListItem>
+          <ListItem link="/blog/en/customer-experience-instead-of-features">
+            Stop thinking in features. Start thinking in customer experience.
+          </ListItem>
+          <ListItem link="/blog/en/essential-metrics-saas-businesses/">
+            Essential metrics for SaaS businesses
+          </ListItem>
+          <ListItem link="/blog/en/developing-meeting-culture-employees-love">
+            Developing a meeting culture that your employees will love
+          </ListItem>
+        </List>
+      </Section>
       <Lists spacing={{ "@initial": "small", "@md": "large" }}>
-        <ListContainer title="About Me">
-          <ListItem
-            subtitlePosition="above"
-            subtitle="Working at"
-            link="https://www.hussle.com"
-          >
-            —
-          </ListItem>
-          <ListItem
-            subtitlePosition="above"
-            subtitle="Living In"
-            link="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9"
-          >
-            London
-          </ListItem>
-          <ListItem
-            subtitlePosition="above"
-            subtitle="Working at"
-            link="https://twitter.com/rswebdesigner"
-          >
-            @rswebdesigner
-          </ListItem>
-        </ListContainer>
         <ListContainer title="Current Projects">
           <ListItem
             subtitle="A simple and beautiful way to plan, schedule and track your workouts"
@@ -131,16 +133,6 @@ const IndexPage: React.FC<PageProps> = () => (
           >
             Learn Tamil Online
           </ListItem>
-        </ListContainer>
-        <ListContainer title="My Writing">
-          <ListItem link="https://getmaxout.app/blog/introducing-maxout/">
-            Building Maxout
-          </ListItem>
-          <ListItem link="/blog/en/review-2020/">Looking back at 2020</ListItem>
-          <ListItem link="https://getmaxout.app/blog/introducing-maxout/">
-            Introducing Maxout
-          </ListItem>
-          <ListItem link="/blog/en/how-to-slack/">How-To Slack</ListItem>
         </ListContainer>
       </Lists>
     </Container>
