@@ -29,12 +29,23 @@ const Introduction = styled("h1", {
 })
 
 const Lists = styled("div", {
-  marginTop: "$8",
-  marginBottom: "$8",
   display: "flex",
   flexWrap: "wrap",
   justifyContent: "space-between",
   maxWidth: 640,
+
+  variants: {
+    spacing: {
+      small: {
+        marginTop: "$8",
+        marginBottom: "$8",
+      },
+      large: {
+        marginTop: "$20",
+        marginBottom: "$8",
+      },
+    },
+  },
 })
 
 const ListContainer = styled(List, {
@@ -51,7 +62,7 @@ const IndexPage: React.FC<PageProps> = () => (
         Hi there, I’m Rathes Sachchithananthan and I’m a web developer currently
         living in London
       </Introduction>
-      <Lists>
+      <Lists spacing={{ "@initial": "small", "@md": "large" }}>
         <ListContainer title="About Me">
           <ListItem
             subtitlePosition="above"
