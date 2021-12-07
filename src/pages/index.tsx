@@ -19,6 +19,9 @@ const Introduction = styled("h1", {
 
   variants: {
     size: {
+      small: {
+        fontSize: "$lg",
+      },
       default: {
         fontSize: "$xl",
       },
@@ -59,21 +62,29 @@ const IndexPage: React.FC<PageProps> = () => (
   <PageLayout>
     <Meta title="Home" />
     <Container>
-      <Introduction size={{ "@initial": "default", "@xs": "large" }}>
+      <Introduction
+        size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
+      >
         I’m Rathes Sachchithananthan, a front-end engineer living in{" "}
         <Link underlined href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9">
           London
         </Link>{" "}
         interested in fitness, languages, books &amp; cooking.
       </Introduction>
-      <Introduction as="p" size={{ "@initial": "default", "@xs": "large" }}>
+      <Introduction
+        as="p"
+        size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
+      >
         Currently, I work as a product engineer at{" "}
         <Link underlined href="https://www.intercom.com/">
           Intercom
         </Link>{" "}
         helping businesses building better customer relationships.
       </Introduction>
-      <Introduction as="p" size={{ "@initial": "default", "@xs": "large" }}>
+      <Introduction
+        as="p"
+        size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
+      >
         Find out more about me on{" "}
         <Link underlined href="https://twitter.com/rswebdesigner">
           Twitter
