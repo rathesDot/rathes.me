@@ -74,7 +74,7 @@ const Navigation = () => {
   `)
 
   return (
-    <Container spacing={{ "@xs": "default", "@sm": "lg" }}>
+    <Container spacing={{ "@initial": "default", "@sm": "lg" }}>
       <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
         <MenuItem size={{ "@xs": "default", "@sm": "lg" }}>
           <Logo />
