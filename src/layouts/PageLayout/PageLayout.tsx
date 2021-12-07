@@ -12,15 +12,15 @@ const MainContainer = styled("main", {
   fontFamily: "$default",
   justifyContent: "space-between",
   minHeight: "100vh",
-  padding: "40px $4",
+  padding: "$8",
 
   variants: {
     padding: {
       md: {
-        padding: "60px 0 32px 60px",
+        padding: "$16",
       },
       lg: {
-        padding: "110px 0 32px 110px",
+        padding: "$16 $32",
       },
     },
   },
