@@ -11,7 +11,6 @@ const Container = styled("section", {})
 const Introduction = styled("h1", {
   color: "$slate12",
   fontFamily: "$display",
-  fontSize: "$3xl",
   fontWeight: 600,
   lineHeight: "$400",
   overflowWrap: "break-word",
@@ -20,11 +19,11 @@ const Introduction = styled("h1", {
   variants: {
     size: {
       default: {
-        fontSize: "$3xl",
+        fontSize: "$xl",
         margin: "$16 0",
       },
       large: {
-        fontSize: "$4xl",
+        fontSize: "$2xl",
         margin: "$20 0",
       },
     },
