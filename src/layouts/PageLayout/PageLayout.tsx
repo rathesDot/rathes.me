@@ -20,7 +20,7 @@ const MainContainer = styled("main", {
         padding: "$16",
       },
       lg: {
-        padding: "$16 $32",
+        padding: "$24 $32",
       },
     },
   },
