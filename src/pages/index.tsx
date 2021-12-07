@@ -3,7 +3,7 @@ import { PageProps } from "gatsby"
 
 import { styled } from "../../stitches.config"
 
-import { List, ListItem, Meta } from "../components"
+import { Link, List, ListItem, Meta } from "../components"
 import { PageLayout } from "../layouts"
 
 const Container = styled("section", {})
@@ -15,6 +15,7 @@ const Introduction = styled("h1", {
   lineHeight: "$400",
   overflowWrap: "break-word",
   maxWidth: 640,
+  marginBottom: "$8",
 
   variants: {
     size: {
@@ -59,8 +60,28 @@ const IndexPage: React.FC<PageProps> = () => (
     <Meta title="Home" />
     <Container>
       <Introduction size={{ "@initial": "default", "@xs": "large" }}>
-        Hi there, I’m Rathes Sachchithananthan and I’m a web developer currently
-        living in London
+        I’m Rathes Sachchithananthan, a front-end engineer living in{" "}
+        <Link underlined href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9">
+          London
+        </Link>{" "}
+        interested in fitness, languages, books &amp; cooking.
+      </Introduction>
+      <Introduction as="p" size={{ "@initial": "default", "@xs": "large" }}>
+        Currently, I work as a product engineer at{" "}
+        <Link underlined href="https://www.intercom.com/">
+          Intercom
+        </Link>{" "}
+        helping businesses building better customer relationships.
+      </Introduction>
+      <Introduction as="p" size={{ "@initial": "default", "@xs": "large" }}>
+        Find out more about me on{" "}
+        <Link underlined href="https://twitter.com/rswebdesigner">
+          Twitter
+        </Link>{" "}
+        or{" "}
+        <Link underlined href="https://www.instagram.com/tamizhographer/">
+          Instagram
+        </Link>
       </Introduction>
       <Lists spacing={{ "@initial": "small", "@md": "large" }}>
         <ListContainer title="About Me">
