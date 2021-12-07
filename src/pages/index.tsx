@@ -20,11 +20,9 @@ const Introduction = styled("h1", {
     size: {
       default: {
         fontSize: "$xl",
-        margin: "$16 0",
       },
       large: {
         fontSize: "$2xl",
-        margin: "$20 0",
       },
     },
   },

@@ -8,7 +8,6 @@ import { Heading, Link, Paragraph, Meta, Text } from "../components"
 
 const Container = styled("div", {
   marginBottom: "$32",
-  marginTop: "$32",
   maxWidth: 640,
 })
 

@@ -17,7 +17,6 @@ import {
 import { SayHi } from "../patterns"
 
 const Container = styled("section", {
-  marginTop: "$32",
   maxWidth: 640,
 })
 

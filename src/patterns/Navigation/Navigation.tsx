@@ -51,6 +51,17 @@ const Container = styled("nav", {
   alignItems: "center",
   color: "$slate11",
   display: "flex",
+
+  variants: {
+    spacing: {
+      default: {
+        marginBottom: "$16",
+      },
+      lg: {
+        marginBottom: "$32",
+      },
+    },
+  },
 })
 
 const Navigation = () => {
@@ -63,7 +74,7 @@ const Navigation = () => {
   `)
 
   return (
-    <Container>
+    <Container spacing={{ "@xs": "default", "@sm": "lg" }}>
       <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
         <MenuItem size={{ "@xs": "default", "@sm": "lg" }}>
           <Logo />

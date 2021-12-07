@@ -11,7 +11,6 @@ import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
 import externalLinks from "../content/blog/externalLinks"
 
 const Container = styled("section", {
-  marginTop: "$32",
   maxWidth: 640,
 })
 
