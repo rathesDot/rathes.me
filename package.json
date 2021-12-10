@@ -39,7 +39,7 @@
     "babel-plugin-apply-mdx-type-prop": "^1.6.22",
     "babel-preset-gatsby": "^2.3.0",
     "jest": "^27.4.4",
-    "prettier": "^2.5.0"
+    "prettier": "^2.5.1"
   },
   "keywords": [
     "gatsby",
