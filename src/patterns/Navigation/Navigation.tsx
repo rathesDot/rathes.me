@@ -78,8 +78,8 @@ const Hamburger: React.FC<{ isOpen: boolean; onToggle: () => void }> = ({
   const iconPaths = useMemo(
     () =>
       isOpen
-        ? ["M2.5 7.5H17.5", "M2.5 12.5H17.5"]
-        : ["M15 5L5 15", "M5 5L15 15"],
+        ? ["M15 5L5 15", "M5 5L15 15"]
+        : ["M2.5 7.5H17.5", "M2.5 12.5H17.5"],
     [isOpen]
   )
 
