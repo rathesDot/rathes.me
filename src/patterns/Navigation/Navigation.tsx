@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useMemo, useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 import { styled } from "../../../stitches.config"
@@ -48,23 +48,70 @@ const MenuItem = styled("span", {
 })
 
 const Container = styled("nav", {
-  alignItems: "center",
-  color: "$slate11",
-  display: "flex",
-
-  variants: {
-    spacing: {
-      default: {
-        marginBottom: "$16",
-      },
-      lg: {
-        marginBottom: "$32",
-      },
-    },
-  },
+  background: "$slate4",
+  bottom: 0,
+  left: 0,
+  position: "absolute",
+  right: 0,
+  top: 0,
 })
 
+const NavigationBar = styled("div", {
+  color: "$slate12",
+  display: "flex",
+  justifyContent: "space-between",
+  padding: "$8",
+})
+
+const Hamburger = () => {
+  const [isOpen, setOpenState] = useState(false)
+
+  const iconPaths = useMemo(
+    () =>
+      isOpen
+        ? ["M2.5 7.5H17.5", "M2.5 12.5H17.5"]
+        : ["M15 5L5 15", "M5 5L15 15"],
+    [isOpen]
+  )
+
+  return (
+    <button onClick={() => setOpenState(!isOpen)}>
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {iconPaths.map((p) => (
+          <path
+            d={p}
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{ transition: "all 0.2s" }}
+          />
+        ))}
+      </svg>
+    </button>
+  )
+}
+
 const Navigation = () => {
+  return (
+    <Container>
+      <NavigationBar>
+        <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
+          <Logo />
+        </Link>
+        <Hamburger />
+      </NavigationBar>
+    </Container>
+  )
+}
+
+const NavigationOld = () => {
   const data = useStaticQuery(graphql`
     query {
       resume: file(relativePath: { eq: "files/resume.pdf" }) {
@@ -74,7 +121,7 @@ const Navigation = () => {
   `)
 
   return (
-    <Container spacing={{ "@xs": "default", "@sm": "lg" }}>
+    <Container>
       <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
         <MenuItem size={{ "@xs": "default", "@sm": "lg" }}>
           <Logo />
