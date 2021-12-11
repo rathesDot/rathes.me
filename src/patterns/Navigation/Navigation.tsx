@@ -71,9 +71,10 @@ const NavigationBar = styled("div", {
   padding: "$8",
 })
 
-const Hamburger = () => {
-  const [isOpen, setOpenState] = useState(false)
-
+const Hamburger: React.FC<{ isOpen: boolean; onToggle: () => void }> = ({
+  isOpen,
+  onToggle,
+}) => {
   const iconPaths = useMemo(
     () =>
       isOpen
@@ -83,7 +84,7 @@ const Hamburger = () => {
   )
 
   return (
-    <button onClick={() => setOpenState(!isOpen)}>
+    <button onClick={onToggle}>
       <svg
         width="24"
         height="24"
@@ -113,13 +114,15 @@ const Menu = styled("div", {
 })
 
 const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
     <Container>
       <NavigationBar>
         <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
           <Logo />
         </Link>
-        <Hamburger />
+        <Hamburger isOpen={isOpen} onToggle={() => setIsOpen(!open)} />
       </NavigationBar>
       <Menu>
         <Heading level="heading4" color="slate11">
