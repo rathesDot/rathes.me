@@ -123,7 +123,7 @@ const Navigation = () => {
         <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
           <Logo />
         </Link>
-        <Hamburger isOpen={isOpen} onToggle={() => setIsOpen(!open)} />
+        <Hamburger isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />
       </NavigationBar>
       <Menu>
         <Heading level="heading4" color="slate11">
