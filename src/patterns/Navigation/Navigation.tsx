@@ -3,7 +3,7 @@ import { Link, graphql, useStaticQuery } from "gatsby"
 
 import { styled } from "../../../stitches.config"
 
-import { Logo } from "../../components"
+import { Heading, Logo } from "../../components"
 
 const Separator = styled("span", {
   color: "$slate11",
@@ -31,14 +31,22 @@ const Separator = styled("span", {
 })
 
 const MenuItem = styled("span", {
-  fontFamily: "$default",
-  fontSize: "$sm",
-  fontWeight: 600,
+  color: "$slate12",
+  display: "block",
+  padding: "$1 0",
+  fontFamily: "$display",
+  fontWeight: "500",
+
+  [`& ${Separator}`]: {
+    color: "$slate12",
+    fontSize: "$lg",
+    marginLeft: "0",
+  },
 
   variants: {
     size: {
       default: {
-        fontSize: "$base",
+        fontSize: "$lg",
       },
       lg: {
         fontSize: "$lg",
@@ -98,6 +106,12 @@ const Hamburger = () => {
   )
 }
 
+const Menu = styled("div", {
+  paddingLeft: "$8",
+  paddingRight: "$8",
+  marginTop: "$8",
+})
+
 const Navigation = () => {
   return (
     <Container>
@@ -107,6 +121,55 @@ const Navigation = () => {
         </Link>
         <Hamburger />
       </NavigationBar>
+      <Menu>
+        <Heading level="heading4" color="slate11">
+          Navigation
+        </Heading>
+        <Link activeStyle={{ color: "#FFF" }} to="/about">
+          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
+            <Separator size={{ "@initial": "default", "@xs": "large" }} />
+            About
+          </MenuItem>
+        </Link>
+
+        <a href={`/`} aria-label="Resume">
+          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
+            <Separator size={{ "@initial": "default", "@xs": "large" }} />
+            Resume
+          </MenuItem>
+        </a>
+
+        <Link activeStyle={{ color: "#FFF" }} to="/work">
+          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
+            <Separator size={{ "@initial": "default", "@xs": "large" }} />
+            Work
+          </MenuItem>
+        </Link>
+
+        <Link activeStyle={{ color: "#FFF" }} to="/writings">
+          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
+            <Separator size={{ "@initial": "default", "@xs": "large" }} />
+            Writings
+          </MenuItem>
+        </Link>
+      </Menu>
+      <Menu>
+        <Heading level="heading4" color="slate11">
+          Current Projects
+        </Heading>
+        <a href="https://learn-tamil.com">
+          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
+            <Separator size={{ "@initial": "default", "@xs": "large" }} />
+            Learn Tamil
+          </MenuItem>
+        </a>
+        <a href="https://getmaxout.app">
+          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
+            <Separator size={{ "@initial": "default", "@xs": "large" }} />
+            Maxout
+          </MenuItem>
+        </a>
+      </Menu>
     </Container>
   )
 }
