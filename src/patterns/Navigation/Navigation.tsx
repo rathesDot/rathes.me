@@ -77,9 +77,11 @@ const Container = styled("nav", {
 })
 
 const NavigationBar = styled("div", {
+  boxSizing: "content-box",
   color: "$slate12",
   display: "flex",
   justifyContent: "space-between",
+  maxWidth: "640px",
 
   variants: {
     isOpen: {
