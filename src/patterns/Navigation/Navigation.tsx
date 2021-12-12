@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 import { styled } from "../../../stitches.config"
@@ -182,13 +182,29 @@ const Navigation = () => {
   `)
   const [isOpen, setIsOpen] = useState(false)
 
+  const toggleMenu = () => {
+    if (isOpen) {
+      setIsOpen(false)
+      document.body.style.overflow = ""
+    } else {
+      setIsOpen(true)
+      document.body.style.overflow = "hidden"
+    }
+  }
+
+  useEffect(() => {
+    return function cleanup() {
+      document.body.style.overflow = ""
+    }
+  }, [])
+
   return (
     <Container isOpen={isOpen}>
       <NavigationBar isOpen={isOpen}>
         <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
           <Logo />
         </Link>
-        <Hamburger isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />
+        <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
       </NavigationBar>
       <Menu isOpen={isOpen}>
         <Heading level="heading4" color="slate11">
