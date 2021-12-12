@@ -62,13 +62,36 @@ const Container = styled("nav", {
   position: "absolute",
   right: 0,
   top: 0,
+
+  variants: {
+    isOpen: {
+      true: {
+        background: "$slate4",
+      },
+      false: {
+        background: "transparent",
+        position: "relative",
+      },
+    },
+  },
 })
 
 const NavigationBar = styled("div", {
   color: "$slate12",
   display: "flex",
   justifyContent: "space-between",
-  padding: "$8",
+
+  variants: {
+    isOpen: {
+      true: {
+        padding: "$8",
+      },
+      false: {
+        marginBottom: "$16",
+        padding: "0",
+      },
+    },
+  },
 })
 
 const Hamburger: React.FC<{ isOpen: boolean; onToggle: () => void }> = ({
@@ -112,20 +135,31 @@ const Menu = styled("div", {
   paddingLeft: "$8",
   paddingRight: "$8",
   marginTop: "$8",
+
+  variants: {
+    isOpen: {
+      true: {
+        display: "block",
+      },
+      false: {
+        display: "none",
+      },
+    },
+  },
 })
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <Container>
-      <NavigationBar>
+    <Container isOpen={isOpen}>
+      <NavigationBar isOpen={isOpen}>
         <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
           <Logo />
         </Link>
         <Hamburger isOpen={isOpen} onToggle={() => setIsOpen(!isOpen)} />
       </NavigationBar>
-      <Menu>
+      <Menu isOpen={isOpen}>
         <Heading level="heading4" color="slate11">
           Navigation
         </Heading>
@@ -157,7 +191,7 @@ const Navigation = () => {
           </MenuItem>
         </Link>
       </Menu>
-      <Menu>
+      <Menu isOpen={isOpen}>
         <Heading level="heading4" color="slate11">
           Current Projects
         </Heading>
