@@ -85,10 +85,22 @@ const NavigationBar = styled("div", {
     isOpen: {
       true: {
         padding: "$8",
+
+        "@md": {
+          padding: "$16",
+        },
+
+        "@lg": {
+          padding: "$24 $32",
+        },
       },
       false: {
         marginBottom: "$16",
         padding: "0",
+
+        "@lg": {
+          marginBottom: "$32",
+        },
       },
     },
   },
@@ -140,6 +152,16 @@ const Menu = styled("div", {
     isOpen: {
       true: {
         display: "block",
+
+        "@md": {
+          paddingLeft: "$16",
+          paddingRight: "$16",
+        },
+
+        "@lg": {
+          paddingLeft: "$32",
+          paddingRight: "$32",
+        },
       },
       false: {
         display: "none",
