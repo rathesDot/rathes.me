@@ -173,6 +173,13 @@ const Menu = styled("div", {
 })
 
 const Navigation = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      resume: file(relativePath: { eq: "files/resume.pdf" }) {
+        publicURL
+      }
+    }
+  `)
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -194,7 +201,7 @@ const Navigation = () => {
           </MenuItem>
         </Link>
 
-        <a href={`/`} aria-label="Resume">
+        <a href={data.resume.publicURL} aria-label="Resume">
           <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
             <Separator size={{ "@initial": "default", "@xs": "large" }} />
             Resume
