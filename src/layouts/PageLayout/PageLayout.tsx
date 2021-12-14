@@ -210,6 +210,10 @@ const PageLayout: React.FC = ({ children }) => {
       marginBottom: "$6",
       marginTop: "$6",
     },
+
+    ".gatsby-resp-image-wrapper": {
+      margin: "$4 -$8 !important",
+    },
   })()
   return (
     <MainContainer padding={{ "@md": "md", "@lg": "lg" }}>
