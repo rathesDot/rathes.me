@@ -64,7 +64,7 @@ const IndexPage: React.FC<PageProps> = () => (
       <Introduction
         size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
       >
-        I’m Rathes Sachchithananthan, a front-end engineer living in{" "}
+        I'm Rathes Sachchithananthan, a front-end engineer living in{" "}
         <Link underlined href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9">
           London
         </Link>{" "}
