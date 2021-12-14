@@ -4,7 +4,6 @@ export const Note = styled("p", {
   backgroundColor: "$slate3",
   borderRadius: "10px",
   color: "$slate11",
-  fontSize: "$sm",
   lineHeight: "$500",
   marginBottom: "$8",
   marginTop: "$8",
