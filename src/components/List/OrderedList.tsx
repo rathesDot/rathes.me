@@ -11,12 +11,12 @@ export const OrderedList = styled("ol", {
   padding: "$8 $12",
 
   ol: {
-    margin: "$4 0",
-    padding: "0 0 0 $4",
+    margin: "$2 0",
+    padding: "0 0 0 $8",
   },
 
-  "> li:not(:last-child)": {
-    margin: "0 0 $4 0",
+  "> li": {
+    margin: "$2 0",
   },
 
   p: {
