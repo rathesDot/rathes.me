@@ -5,9 +5,8 @@ export const Note = styled("p", {
   borderRadius: "10px",
   color: "$slate11",
   lineHeight: "$500",
-  marginBottom: "$8",
-  marginTop: "$8",
-  padding: "$5",
+  margin: "$8 -$8",
+  padding: "$8",
 
   variants: {
     fontFamily: {
