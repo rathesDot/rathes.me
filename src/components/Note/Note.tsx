@@ -11,12 +11,6 @@ export const Note = styled("p", {
   padding: "$5",
 
   variants: {
-    nested: {
-      true: {
-        margin: 0,
-        padding: "0 0 0 $4",
-      },
-    },
     fontFamily: {
       mono: {
         fontFamily: "$mono",
