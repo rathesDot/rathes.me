@@ -24,7 +24,8 @@ const Title = styled(Heading, {
   lineHeight: "$400",
   overflowWrap: "break-word",
   maxWidth: 640,
-  marginBottom: "$8",
+  marginBottom: "$2",
+  marginTop: "$12",
 
   variants: {
     size: {
@@ -127,12 +128,6 @@ export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
         meta={[...meta, ...imageMeta]}
       />
       <Container>
-        <Title
-          size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
-          level="heading1"
-        >
-          {post.frontmatter.title}
-        </Title>
         <FeatureImage>
           {post.frontmatter.image && (
             <GatsbyImage
@@ -141,6 +136,12 @@ export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
             />
           )}
         </FeatureImage>
+        <Title
+          size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
+          level="heading1"
+        >
+          {post.frontmatter.title}
+        </Title>
         <MDXRenderer>{post.body}</MDXRenderer>
         <Footer>
           <RouterLink to="/writings">
