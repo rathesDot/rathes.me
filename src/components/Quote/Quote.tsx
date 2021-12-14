@@ -13,6 +13,6 @@ export const Quote = styled("blockquote", {
     margin: 0,
     color: "$slate11",
     fontSize: "$lg",
-    lineHeight: "$400",
+    lineHeight: "$500",
   },
 })
