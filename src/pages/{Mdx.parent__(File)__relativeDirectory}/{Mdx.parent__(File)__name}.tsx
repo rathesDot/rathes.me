@@ -43,6 +43,10 @@ const Title = styled(Heading, {
 
 const FeatureImage = styled("div", {
   margin: "$4 -$8",
+
+  "> *": {
+    width: "100%",
+  },
 })
 
 const Footer = styled("footer", {
