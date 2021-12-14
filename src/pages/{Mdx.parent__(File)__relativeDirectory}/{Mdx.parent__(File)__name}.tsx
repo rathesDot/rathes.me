@@ -42,8 +42,7 @@ const Title = styled(Heading, {
 })
 
 const FeatureImage = styled("div", {
-  marginBottom: "$4",
-  marginTop: "$4",
+  margin: "$4 -$8",
 })
 
 const Footer = styled("footer", {
