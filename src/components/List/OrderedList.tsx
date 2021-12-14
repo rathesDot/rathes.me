@@ -7,9 +7,8 @@ export const OrderedList = styled("ol", {
   fontSize: "$sm",
   lineHeight: "$500",
   listStyleType: "decimal",
-  marginBottom: "$8",
-  marginTop: "$8",
-  padding: "$12",
+  margin: "$8 -$8",
+  padding: "$8 $12",
 
   ol: {
     margin: "$4 0",

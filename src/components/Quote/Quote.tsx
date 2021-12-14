@@ -6,9 +6,9 @@ export const Quote = styled("blockquote", {
   color: "$slate11",
   fontSize: "$lg",
   lineHeight: "$400",
-  marginBottom: "$8",
-  marginTop: "$8",
-  padding: "$5",
+  margin: "$8 -$8",
+  padding: "$8",
+
   p: {
     margin: 0,
     color: "$slate11",
