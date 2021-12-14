@@ -32,26 +32,6 @@ const Introduction = styled("h1", {
   },
 })
 
-const Lists = styled("div", {
-  display: "flex",
-  flexWrap: "wrap",
-  justifyContent: "space-between",
-  maxWidth: 640,
-
-  variants: {
-    spacing: {
-      small: {
-        marginTop: "$8",
-        marginBottom: "$8",
-      },
-      large: {
-        marginTop: "$20",
-        marginBottom: "$8",
-      },
-    },
-  },
-})
-
 const Section = styled("section", {
   marginBottom: "$24",
   marginTop: "$24",
