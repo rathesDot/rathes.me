@@ -17,6 +17,30 @@ const Container = styled("div", {
   maxWidth: 640,
 })
 
+const Title = styled(Heading, {
+  color: "$slate12",
+  fontFamily: "$display",
+  fontWeight: 600,
+  lineHeight: "$400",
+  overflowWrap: "break-word",
+  maxWidth: 640,
+  marginBottom: "$8",
+
+  variants: {
+    size: {
+      small: {
+        fontSize: "$lg",
+      },
+      default: {
+        fontSize: "$xl",
+      },
+      large: {
+        fontSize: "$2xl",
+      },
+    },
+  },
+})
+
 const FeatureImage = styled("div", {
   marginBottom: "$4",
   marginTop: "$4",
@@ -98,7 +122,12 @@ export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
         meta={[...meta, ...imageMeta]}
       />
       <Container>
-        <Heading level="heading1">{post.frontmatter.title}</Heading>
+        <Title
+          size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
+          level="heading1"
+        >
+          {post.frontmatter.title}
+        </Title>
         <FeatureImage>
           {post.frontmatter.image && (
             <GatsbyImage
