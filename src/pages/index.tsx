@@ -52,12 +52,6 @@ const Lists = styled("div", {
   },
 })
 
-const ListContainer = styled(List, {
-  margin: "$8 10px $8 0",
-  minWidth: 150,
-  maxWidth: 200,
-})
-
 const Section = styled("section", {
   marginBottom: "$24",
   marginTop: "$24",
