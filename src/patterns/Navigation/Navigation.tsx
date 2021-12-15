@@ -213,28 +213,24 @@ const Navigation = () => {
         </Heading>
         <Link activeStyle={{ color: "#FFF" }} to="/about">
           <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            <Separator size={{ "@initial": "default", "@xs": "large" }} />
             About
           </MenuItem>
         </Link>
 
         <a href={data.resume.publicURL} aria-label="Resume">
           <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            <Separator size={{ "@initial": "default", "@xs": "large" }} />
             Resume
           </MenuItem>
         </a>
 
         <Link activeStyle={{ color: "#FFF" }} to="/work">
           <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            <Separator size={{ "@initial": "default", "@xs": "large" }} />
             Work
           </MenuItem>
         </Link>
 
         <Link activeStyle={{ color: "#FFF" }} to="/writings">
           <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            <Separator size={{ "@initial": "default", "@xs": "large" }} />
             Writings
           </MenuItem>
         </Link>
@@ -245,13 +241,11 @@ const Navigation = () => {
         </Heading>
         <a href="https://learn-tamil.com">
           <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            <Separator size={{ "@initial": "default", "@xs": "large" }} />
             Learn Tamil
           </MenuItem>
         </a>
         <a href="https://getmaxout.app">
           <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            <Separator size={{ "@initial": "default", "@xs": "large" }} />
             Maxout
           </MenuItem>
         </a>
