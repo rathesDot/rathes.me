@@ -206,9 +206,21 @@ const PageLayout: React.FC = ({ children }) => {
         color: "#a0aec0",
       },
 
+    ':not(pre) > code[class*="language-"]': {
+      background: "$slate5 !important",
+      padding: "0.2em $2 !important",
+    },
+
     ".gatsby-highlight": {
       marginBottom: "$6",
       marginTop: "$6",
+
+      '> pre[class*="language-"]': {
+        background: "$slate4 !important",
+        borderRadius: "10px",
+        margin: "$4 -$8 !important",
+        overflow: "hidden",
+      },
     },
 
     ".gatsby-resp-image-wrapper": {
