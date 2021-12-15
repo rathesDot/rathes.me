@@ -212,7 +212,9 @@ const PageLayout: React.FC = ({ children }) => {
     },
 
     ".gatsby-resp-image-wrapper": {
+      borderRadius: "10px",
       margin: "$4 -$8 !important",
+      overflow: "hidden",
     },
   })()
   return (
