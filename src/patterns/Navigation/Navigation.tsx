@@ -5,43 +5,12 @@ import { styled } from "../../../stitches.config"
 
 import { Heading, Logo } from "../../components"
 
-const Separator = styled("span", {
-  color: "$slate11",
-  display: "inline-block",
-  fontFamily: "$default",
-  fontSize: "$base",
-  margin: "0 $2",
-
-  variants: {
-    size: {
-      default: {
-        margin: "0 $1",
-        fontSize: "$base",
-      },
-      large: {
-        margin: "0 $2",
-        fontSize: "$lg",
-      },
-    },
-  },
-
-  "&::before": {
-    content: "'/'",
-  },
-})
-
 const MenuItem = styled("span", {
   color: "$slate12",
   display: "block",
   padding: "$1 0",
   fontFamily: "$display",
   fontWeight: "500",
-
-  [`& ${Separator}`]: {
-    color: "$slate12",
-    fontSize: "$lg",
-    marginLeft: "0",
-  },
 
   variants: {
     size: {
