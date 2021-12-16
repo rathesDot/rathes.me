@@ -1,7 +1,7 @@
 import { styled } from "../../../stitches.config"
 
 export const CodeBlock = styled("pre", {
-  background: "$slate4 !important",
+  background: "$slate3",
   borderRadius: "10px",
   margin: "$4 -$8 !important",
   overflow: "hidden",
@@ -37,7 +37,7 @@ export const CodeBlock = styled("pre", {
 
   /* Inline code */
   ':not(pre) > code[class*="language-"]': {
-    background: "#2b2b2b",
+    background: "$slate3",
     padding: "0.1em",
     borderRadius: "0.3em",
     whiteSpace: "normal",

@@ -1,7 +1,7 @@
 import { styled } from "../../../stitches.config"
 
 export const InlineCode = styled("code", {
-  background: "#2b2b2b",
+  background: "$slate3",
   padding: "0.1em",
   borderRadius: "0.3em",
   whiteSpace: "normal",
