@@ -1,6 +1,16 @@
 import { styled } from "../../../stitches.config"
 
 export const CodeBlock = styled("pre", {
+  $$background: "hsla(206 12% 89.5% / 5%)",
+  $$text: "$colors$slate12",
+  $$syntax1: "$colors$slate9",
+  $$syntax2: "$colors$slate11",
+  $$syntax3: "$colors$slate10",
+  $$syntax4: "$colors$slate8",
+  $$comment: "$colors$slate8",
+  $$removed: "$colors$red10",
+  $$added: "$colors$green10",
+
   background: "$slate3",
   borderRadius: "10px",
   margin: "$4 -$8",
