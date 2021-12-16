@@ -6,7 +6,7 @@ export const CodeBlock = styled("pre", {
   margin: "$4 -$8 !important",
   overflow: "hidden",
   padding: "1em",
-  color: "#f8f8f2",
+  color: "$slate12",
   fontFamily: "$mono",
   textAlign: "left",
   whiteSpace: "pre",
@@ -20,7 +20,7 @@ export const CodeBlock = styled("pre", {
   hyphens: "none",
 
   '> code[class*="language-"]': {
-    color: "#f8f8f2",
+    color: "$slate12",
     background: "none",
     fontFamily: "$mono",
     textAlign: "left",
@@ -60,7 +60,7 @@ export const CodeBlock = styled("pre", {
   },
 
   ".token.punctuation": {
-    color: "#fefefe",
+    color: "$slate12",
   },
 
   ".token.property": {
