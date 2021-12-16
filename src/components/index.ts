@@ -1,4 +1,5 @@
 export * from "./CodeBlock/CodeBlock"
+export * from "./CodeBlock/InlineCode"
 export * from "./List/List"
 export * from "./List/OrderedList"
 export * from "./Logo/Logo"

@@ -7,6 +7,7 @@ import { getCssText } from "./stitches.config"
 import {
   CodeBlock,
   Heading,
+  InlineCode,
   Link,
   OrderedList,
   Paragraph,
@@ -58,6 +59,7 @@ const components = {
     </Link>
   ),
   pre: Pre,
+  code: InlineCode,
 }
 
 export const wrapRootElement = ({ element }) => (

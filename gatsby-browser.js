@@ -3,6 +3,7 @@ import { MDXProvider } from "@mdx-js/react"
 
 import {
   CodeBlock,
+  InlineCode,
   Heading,
   Link,
   OrderedList,
@@ -35,6 +36,7 @@ const components = {
     </Link>
   ),
   pre: Pre,
+  code: InlineCode,
 }
 
 export const wrapRootElement = ({ element }) => (

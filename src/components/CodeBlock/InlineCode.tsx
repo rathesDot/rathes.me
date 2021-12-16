@@ -1,47 +1,10 @@
 import { styled } from "../../../stitches.config"
 
-export const CodeBlock = styled("pre", {
-  background: "$slate4 !important",
-  borderRadius: "10px",
-  margin: "$4 -$8 !important",
-  overflow: "hidden",
-  padding: "1em",
-  color: "#f8f8f2",
-  fontFamily: `Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace`,
-  textAlign: "left",
-  whiteSpace: "pre",
-  wordSpacing: "normal",
-  wordBreak: "normal",
-  wordWrap: "normal",
-  lineHeight: 1.5,
-
-  tabSize: 4,
-
-  hyphens: "none",
-
-  '> code[class*="language-"]': {
-    color: "#f8f8f2",
-    background: "none",
-    fontFamily: `Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace`,
-    textAlign: "left",
-    whiteSpace: "pre",
-    wordSpacing: "normal",
-    wordBreak: "normal",
-    wordWrap: "normal",
-    lineHeight: 1.5,
-
-    tabSize: 4,
-
-    hyphens: "none",
-  },
-
-  /* Inline code */
-  ':not(pre) > code[class*="language-"]': {
-    background: "#2b2b2b",
-    padding: "0.1em",
-    borderRadius: "0.3em",
-    whiteSpace: "normal",
-  },
+export const InlineCode = styled("code", {
+  background: "#2b2b2b",
+  padding: "0.1em",
+  borderRadius: "0.3em",
+  whiteSpace: "normal",
 
   ".token.comment": {
     color: "#d4d0ab",
