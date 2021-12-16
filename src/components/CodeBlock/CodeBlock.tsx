@@ -3,7 +3,7 @@ import { styled } from "../../../stitches.config"
 export const CodeBlock = styled("pre", {
   background: "$slate3",
   borderRadius: "10px",
-  margin: "$4 -$8 !important",
+  margin: "$4 -$8",
   overflow: "hidden",
   padding: "1em",
   color: "$slate12",
