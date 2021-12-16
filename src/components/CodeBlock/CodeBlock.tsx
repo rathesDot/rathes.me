@@ -14,7 +14,7 @@ export const CodeBlock = styled("pre", {
   background: "$$background",
   borderRadius: "10px",
   margin: "$4 -$8",
-  overflow: "hidden",
+  overflowY: "hidden",
   padding: "1em",
   color: "$slate11",
   fontFamily: "$mono",
