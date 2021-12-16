@@ -7,7 +7,7 @@ export const CodeBlock = styled("pre", {
   overflow: "hidden",
   padding: "1em",
   color: "#f8f8f2",
-  fontFamily: `Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace`,
+  fontFamily: "$mono",
   textAlign: "left",
   whiteSpace: "pre",
   wordSpacing: "normal",
@@ -22,7 +22,7 @@ export const CodeBlock = styled("pre", {
   '> code[class*="language-"]': {
     color: "#f8f8f2",
     background: "none",
-    fontFamily: `Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace`,
+    fontFamily: "$mono",
     textAlign: "left",
     whiteSpace: "pre",
     wordSpacing: "normal",
