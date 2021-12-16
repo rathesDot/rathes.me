@@ -79,7 +79,7 @@ export const { css, styled, globalCss, theme, keyframes, getCssText } =
           '"Noto Color Emoji"',
         ].join(","),
         mono: [
-          "Noto+Sans+Mono",
+          "Noto Sans Mono",
           "Menlo",
           "Monaco",
           "Consolas",
