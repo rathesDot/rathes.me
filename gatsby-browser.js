@@ -2,6 +2,7 @@ import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 
 import {
+  CodeBlock,
   Heading,
   Link,
   OrderedList,
@@ -10,12 +11,14 @@ import {
   Separator,
 } from "./src/components"
 
-import "prism-themes/themes/prism-atom-dark.css"
-
 const H1 = ({ children }) => <Heading level="heading1">{children}</Heading>
 const H2 = ({ children }) => <Heading level="heading2">{children}</Heading>
 const H3 = ({ children }) => <Heading level="heading3">{children}</Heading>
 const H4 = ({ children }) => <Heading level="heading4">{children}</Heading>
+
+const Pre = ({ children, className }) => {
+  return <CodeBlock className={className}>{children}</CodeBlock>
+}
 
 const components = {
   h1: H1,
@@ -31,6 +34,7 @@ const components = {
       {children}
     </Link>
   ),
+  pre: Pre,
 }
 
 export const wrapRootElement = ({ element }) => (
