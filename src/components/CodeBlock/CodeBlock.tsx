@@ -11,12 +11,12 @@ export const CodeBlock = styled("pre", {
   $$removed: "$colors$red10",
   $$added: "$colors$green10",
 
-  background: "$slate3",
+  background: "$$background",
   borderRadius: "10px",
   margin: "$4 -$8",
   overflow: "hidden",
   padding: "1em",
-  color: "$slate12",
+  color: "$slate11",
   fontFamily: "$mono",
   textAlign: "left",
   whiteSpace: "pre",
@@ -30,7 +30,7 @@ export const CodeBlock = styled("pre", {
   hyphens: "none",
 
   '> code[class*="language-"]': {
-    color: "$slate12",
+    color: "$slate11",
     background: "none",
     fontFamily: "$mono",
     textAlign: "left",
@@ -45,141 +45,68 @@ export const CodeBlock = styled("pre", {
     hyphens: "none",
   },
 
-  /* Inline code */
-  ':not(pre) > code[class*="language-"]': {
-    background: "$slate3",
-    padding: "0.1em",
-    borderRadius: "0.3em",
-    whiteSpace: "normal",
+  ".token.parameter": {
+    color: "$$text",
   },
 
-  ".token.comment": {
-    color: "#d4d0ab",
-  },
+  ".token.tag, .token.class-name, .token.selector, .token.selector .class, .token.function":
+    {
+      color: "$$syntax1",
+    },
 
-  ".token.prolog": {
-    color: "#d4d0ab",
-  },
+  ".token.attr-value, .token.class, .token.string, .token.number, .token.unit, .token.color":
+    {
+      color: "$$syntax2",
+    },
 
-  ".token.doctype": {
-    color: "#d4d0ab",
-  },
+  ".token.attr-name, .token.keyword, .token.rule, .token.operator, .token.pseudo-class, .token.important":
+    {
+      color: "$$syntax3",
+    },
 
-  ".token.cdata": {
-    color: "#d4d0ab",
-  },
-
-  ".token.punctuation": {
-    color: "$slate12",
+  ".token.punctuation, .token.module": {
+    color: "$$syntax4",
   },
 
   ".token.property": {
-    color: "#ffa07a",
+    color: "$$syntax1",
   },
 
-  ".token.tag": {
-    color: "#ffa07a",
+  ".token.comment": {
+    color: "$$comment",
   },
 
-  ".token.constant": {
-    color: "#ffa07a",
+  ".token.atapply .token:not(.rule):not(.important)": {
+    color: "inherit",
   },
 
-  ".token.symbol": {
-    color: "#ffa07a",
+  ".language-shell .token:not(.comment)": {
+    color: "inherit",
   },
 
-  ".token.deleted": {
-    color: "#ffa07a",
+  ".language-css .token.function": {
+    color: "inherit",
   },
 
-  "..token.boolean": {
-    color: "#00e0e0",
+  ".token.unchanged": {
+    color: "$$syntax1",
   },
 
-  ".token.number": {
-    color: "#00e0e0",
+  ".token.deleted:not(.prefix), .token.inserted:not(.prefix)": {
+    display: "block",
+    px: "$4",
+    mx: "-$4",
   },
 
-  ".token.selector": {
-    color: "#abe338",
+  ".token.deleted:not(.prefix)": {
+    color: "$$removed",
   },
 
-  ".token.attr-name": {
-    color: "#abe338",
+  ".token.inserted:not(.prefix)": {
+    color: "$$added",
   },
 
-  ".token.string": {
-    color: "#abe338",
-  },
-
-  ".token.char": {
-    color: "#abe338",
-  },
-
-  ".token.builtin": {
-    color: "#abe338",
-  },
-
-  ".token.inserted": {
-    color: "#abe338",
-  },
-
-  ".token.operator": {
-    color: "#00e0e0",
-  },
-
-  ".token.entity": {
-    color: "#00e0e0",
-    cursor: "help",
-  },
-
-  ".token.url": {
-    color: "#00e0e0",
-  },
-
-  ".language-css .token.string": {
-    color: "#00e0e0",
-  },
-
-  ".style .token.string": {
-    color: "#00e0e0",
-  },
-
-  ".token.variable": {
-    color: "#00e0e0",
-  },
-
-  ".token.atrule": {
-    color: "#ffd700",
-  },
-
-  ".token.attr-value": {
-    color: "#ffd700",
-  },
-
-  ".token.function": {
-    color: "#ffd700",
-  },
-
-  ".token.keyword": {
-    color: "#00e0e0",
-  },
-
-  ".token.regex": {
-    color: "#ffd700",
-  },
-
-  ".token.important": {
-    color: "#ffd700",
-    fontWeight: "bold",
-  },
-
-  ".token.bold": {
-    fontWeight: "bold",
-  },
-
-  ".token.italic": {
-    fontStyle: "italic",
+  ".token.deleted.prefix, .token.inserted.prefix": {
+    userSelect: "none",
   },
 })
