@@ -1,16 +1,15 @@
-import React, { createContext } from "react"
+import React, { createContext, useState } from "react"
 
-import { styled, globalCss } from "../../../stitches.config"
+import { styled, globalCss, lightTheme } from "../../../stitches.config"
 
 import { Footer, Navigation } from "../../patterns"
 
 type ThemeContextType = {
   theme: "light" | "dark"
+  toggleTheme: () => void
 }
 
-const ThemeContext = createContext<ThemeContextType>({
-  theme: "dark",
-})
+const ThemeContext = createContext<ThemeContextType>({} as ThemeContextType)
 
 const MainContainer = styled("main", {
   backgroundColor: "$slate2",
@@ -35,6 +34,26 @@ const MainContainer = styled("main", {
 })
 
 const PageLayout: React.FC = ({ children }) => {
+  const [theme, setTheme] = useState<"light" | "dark">("dark")
+
+  const themes = {
+    dark: "dark",
+    light: lightTheme.className,
+  }
+
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark")
+      document.documentElement.classList.remove("light")
+      document.documentElement.classList.add(themes["dark"])
+      return
+    }
+
+    setTheme("light")
+    document.documentElement.classList.remove("dark")
+    document.documentElement.classList.add(themes["light"])
+  }
+
   globalCss({
     html: {
       "-webkit-font-smoothing": "antialiased",
@@ -226,11 +245,13 @@ const PageLayout: React.FC = ({ children }) => {
     },
   })()
   return (
-    <MainContainer padding={{ "@md": "md", "@lg": "lg" }}>
-      <Navigation />
-      {children}
-      <Footer />
-    </MainContainer>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <MainContainer padding={{ "@md": "md", "@lg": "lg" }}>
+        <Navigation />
+        {children}
+        <Footer />
+      </MainContainer>
+    </ThemeContext.Provider>
   )
 }
 
