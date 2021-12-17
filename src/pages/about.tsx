@@ -91,12 +91,6 @@ const AboutMe: React.FC<PageProps> = () => (
         <ReadingList>
           <List title="Currently reading">
             <ListItem
-              subtitle="by Kazuo Ishiguro"
-              link="https://amzn.to/31pndoX"
-            >
-              Klara and the Sun
-            </ListItem>
-            <ListItem
               subtitle="by George R. R. Martin"
               link="https://amzn.to/2Rngm82"
             >
@@ -108,6 +102,12 @@ const AboutMe: React.FC<PageProps> = () => (
           </List>
           <Separator />
           <List title="Reading List 2021">
+            <ListItem
+              subtitle="by Kazuo Ishiguro"
+              link="https://amzn.to/31pndoX"
+            >
+              Klara and the Sun
+            </ListItem>
             <ListItem subtitle="by Sahil Lavingia" link="https://amzn.to/3xTzrCm">
               The Minimalist Entrepreneur: How Great Founders Do More with Less
             </ListItem>
