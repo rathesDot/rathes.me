@@ -1,8 +1,16 @@
-import React from "react"
+import React, { createContext } from "react"
 
 import { styled, globalCss } from "../../../stitches.config"
 
 import { Footer, Navigation } from "../../patterns"
+
+type ThemeContextType = {
+  theme: "light" | "dark"
+}
+
+const ThemeContext = createContext<ThemeContextType>({
+  theme: "dark",
+})
 
 const MainContainer = styled("main", {
   backgroundColor: "$slate2",
