@@ -39,7 +39,7 @@ const AboutMe: React.FC<PageProps> = () => (
     <Container>
       <Heading level="heading1">/raðiːs/</Heading>
       <Paragraph>
-        I’m Rathes Sachchithananthan, a web developer with interests not only in
+        I'm Rathes Sachchithananthan, a web developer with interests not only in
         engineering but also in product development & design, user & customer
         experience, and most importantly in languages and cultures.
       </Paragraph>
@@ -57,9 +57,9 @@ const AboutMe: React.FC<PageProps> = () => (
         HTML/CSS and JavaScript.
       </Paragraph>
       <Paragraph>
-        However, my real passion lies beyond software and development. I’m more
+        However, my real passion lies beyond software and development. I'm more
         into solving problems for people, make their lives easier and connecting
-        them with each other. Alongside that, I’m passionate about learning new
+        them with each other. Alongside that, I'm passionate about learning new
         languages and cultures.
       </Paragraph>
       <Paragraph>
@@ -68,7 +68,7 @@ const AboutMe: React.FC<PageProps> = () => (
       </Paragraph>
       <Paragraph>
         Apart from that, I spent most of my time working on smaller side
-        projects at Aheenam. Right now, I’m working on providing a platform for
+        projects at Aheenam. Right now, I'm working on providing a platform for
         people to learn my mother language Tamil.
       </Paragraph>
 
@@ -81,7 +81,7 @@ const AboutMe: React.FC<PageProps> = () => (
         <Paragraph>
           I do fancy crime novels with interesting detective characters from
           good old Sherlock Holmes to Harry Hole. But I read basically any kind
-          of book that can broaden one’s horizons.
+          of book that can broaden one's horizons.
         </Paragraph>
         <Paragraph>
           Actually, I dream of having my own library one day where I can invite
@@ -89,12 +89,6 @@ const AboutMe: React.FC<PageProps> = () => (
         </Paragraph>
         <ReadingList>
           <List title="Currently reading">
-            <ListItem
-              subtitle="by Kazuo Ishiguro"
-              link="https://amzn.to/31pndoX"
-            >
-              Klara and the Sun
-            </ListItem>
             <ListItem
               subtitle="by George R. R. Martin"
               link="https://amzn.to/2Rngm82"
@@ -107,6 +101,12 @@ const AboutMe: React.FC<PageProps> = () => (
           </List>
           <Separator />
           <List title="Reading List 2021">
+            <ListItem
+              subtitle="by Kazuo Ishiguro"
+              link="https://amzn.to/31pndoX"
+            >
+              Klara and the Sun
+            </ListItem>
             <ListItem
               subtitle="by Sahil Lavingia"
               link="https://amzn.to/3xTzrCm"
@@ -259,7 +259,7 @@ const AboutMe: React.FC<PageProps> = () => (
         </Paragraph>
         <Paragraph>
           Before I can do that I have to finish my current book which is called
-          “A guide to basic Tamil Grammar”. I’m writing that book as an entry
+          “A guide to basic Tamil Grammar”. I'm writing that book as an entry
           point for my learning platform.
         </Paragraph>
       </Section>
