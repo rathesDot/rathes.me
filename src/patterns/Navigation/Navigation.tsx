@@ -1,7 +1,9 @@
-import React, { useEffect, useMemo, useState } from "react"
+import React, { useContext, useEffect, useMemo, useState } from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
 import { styled } from "../../../stitches.config"
+
+import { ThemeContext } from "../../layouts/PageLayout/PageLayout"
 
 import { Heading, Logo } from "../../components"
 
@@ -78,6 +80,57 @@ const NavigationBar = styled("div", {
   },
 })
 
+const IconButton = styled("button", {
+  borderRadius: "4px",
+  color: "$slate12",
+  display: "inline-block",
+  padding: "$2",
+
+  "&:hover": {
+    background: "$slate4",
+  },
+})
+
+const ThemeSwitch: React.FC<{
+  theme: "dark" | "light"
+  onToggle: () => void
+}> = ({ onToggle, theme }) => {
+  if (theme === "dark") {
+    return (
+      <IconButton onClick={onToggle}>
+        <svg
+          width={24}
+          height={24}
+          stroke="currentColor"
+          strokeWidth={2}
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx={12} cy={12} r={5} />
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+        </svg>
+      </IconButton>
+    )
+  }
+
+  return (
+    <IconButton onClick={onToggle}>
+      <svg
+        width={24}
+        height={24}
+        stroke="currentColor"
+        strokeWidth={2}
+        fill="none"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+    </IconButton>
+  )
+}
+
 const Hamburger: React.FC<{ isOpen: boolean; onToggle: () => void }> = ({
   isOpen,
   onToggle,
@@ -91,7 +144,7 @@ const Hamburger: React.FC<{ isOpen: boolean; onToggle: () => void }> = ({
   )
 
   return (
-    <button onClick={onToggle}>
+    <IconButton onClick={onToggle}>
       <svg
         width="24"
         height="24"
@@ -111,7 +164,7 @@ const Hamburger: React.FC<{ isOpen: boolean; onToggle: () => void }> = ({
           />
         ))}
       </svg>
-    </button>
+    </IconButton>
   )
 }
 
@@ -152,6 +205,8 @@ const Navigation = () => {
   `)
   const [isOpen, setIsOpen] = useState(false)
 
+  const { toggleTheme, theme } = useContext(ThemeContext)
+
   const toggleMenu = () => {
     if (isOpen) {
       setIsOpen(false)
@@ -172,9 +227,16 @@ const Navigation = () => {
     <Container isOpen={isOpen}>
       <NavigationBar isOpen={isOpen}>
         <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
-          <Logo />
+          <IconButton as="span">
+            <Logo />
+          </IconButton>
         </Link>
-        <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
+        <div>
+          <ThemeSwitch theme={theme} onToggle={toggleTheme}>
+            Toggle
+          </ThemeSwitch>
+          <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
+        </div>
       </NavigationBar>
       <Menu isOpen={isOpen}>
         <Heading level="heading4" color="slate11">

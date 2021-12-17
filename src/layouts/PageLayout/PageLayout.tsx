@@ -9,7 +9,9 @@ type ThemeContextType = {
   toggleTheme: () => void
 }
 
-const ThemeContext = createContext<ThemeContextType>({} as ThemeContextType)
+export const ThemeContext = createContext<ThemeContextType>(
+  {} as ThemeContextType
+)
 
 const MainContainer = styled("main", {
   backgroundColor: "$slate2",
