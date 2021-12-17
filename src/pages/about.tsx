@@ -40,7 +40,7 @@ const AboutMe: React.FC<PageProps> = () => (
     <Container>
       <Heading level="heading1">/raðiːs/</Heading>
       <Paragraph>
-        I’m Rathes Sachchithananthan, a web developer with interests not only in
+        I'm Rathes Sachchithananthan, a web developer with interests not only in
         engineering but also in product development & design, user & customer
         experience, and most importantly in languages and cultures.
       </Paragraph>
@@ -58,9 +58,9 @@ const AboutMe: React.FC<PageProps> = () => (
         HTML/CSS and JavaScript.
       </Paragraph>
       <Paragraph>
-        However, my real passion lies beyond software and development. I’m more
+        However, my real passion lies beyond software and development. I'm more
         into solving problems for people, make their lives easier and connecting
-        them with each other. Alongside that, I’m passionate about learning new
+        them with each other. Alongside that, I'm passionate about learning new
         languages and cultures.
       </Paragraph>
       <Paragraph>
@@ -69,7 +69,7 @@ const AboutMe: React.FC<PageProps> = () => (
       </Paragraph>
       <Paragraph>
         Apart from that, I spent most of my time working on smaller side
-        projects at Aheenam. Right now, I’m working on providing a platform for
+        projects at Aheenam. Right now, I'm working on providing a platform for
         people to learn my mother language Tamil.
       </Paragraph>
 
@@ -82,7 +82,7 @@ const AboutMe: React.FC<PageProps> = () => (
         <Paragraph>
           I do fancy crime novels with interesting detective characters from
           good old Sherlock Holmes to Harry Hole. But I read basically any kind
-          of book that can broaden one’s horizons.
+          of book that can broaden one's horizons.
         </Paragraph>
         <Paragraph>
           Actually, I dream of having my own library one day where I can invite
@@ -108,23 +108,42 @@ const AboutMe: React.FC<PageProps> = () => (
             >
               Klara and the Sun
             </ListItem>
-            <ListItem subtitle="by Sahil Lavingia" link="https://amzn.to/3xTzrCm">
+            <ListItem
+              subtitle="by Sahil Lavingia"
+              link="https://amzn.to/3xTzrCm"
+            >
               The Minimalist Entrepreneur: How Great Founders Do More with Less
             </ListItem>
-            <ListItem subtitle="by Anuk Arudpragasam" link="https://amzn.to/3DhX9Jh">
+            <ListItem
+              subtitle="by Anuk Arudpragasam"
+              link="https://amzn.to/3DhX9Jh"
+            >
               A Passage North
             </ListItem>
-            <ListItem subtitle="by Michele Hansen" link="https://amzn.to/3ss7rCX">
+            <ListItem
+              subtitle="by Michele Hansen"
+              link="https://amzn.to/3ss7rCX"
+            >
               Deploy Empathy: A practical guide to interviewing customers
             </ListItem>
-            <ListItem subtitle="by Agatha Christie" link="https://amzn.to/2VXdSSc">
+            <ListItem
+              subtitle="by Agatha Christie"
+              link="https://amzn.to/2VXdSSc"
+            >
               The Mysterious Affair at Styles (Poirot)
             </ListItem>
-            <ListItem subtitle="by Agatha Christie" link="https://amzn.to/3AFGmPq">
+            <ListItem
+              subtitle="by Agatha Christie"
+              link="https://amzn.to/3AFGmPq"
+            >
               The Murder on the Links (Poirot)
             </ListItem>
-            <ListItem subtitle="by Dr. Stuart Farrimond" link="https://amzn.to/3h8h58m">
-              The Science of Spice: Understand Flavour Connections and Revolutionize your Cooking
+            <ListItem
+              subtitle="by Dr. Stuart Farrimond"
+              link="https://amzn.to/3h8h58m"
+            >
+              The Science of Spice: Understand Flavour Connections and
+              Revolutionize your Cooking
             </ListItem>
             <ListItem subtitle="by Will Storr" link="https://amzn.to/3ggjAXd">
               The Science of Storytelling: Why Stories Make Us Human, and How to
@@ -241,7 +260,7 @@ const AboutMe: React.FC<PageProps> = () => (
         </Paragraph>
         <Paragraph>
           Before I can do that I have to finish my current book which is called
-          “A guide to basic Tamil Grammar”. I’m writing that book as an entry
+          “A guide to basic Tamil Grammar”. I'm writing that book as an entry
           point for my learning platform.
         </Paragraph>
       </Section>
