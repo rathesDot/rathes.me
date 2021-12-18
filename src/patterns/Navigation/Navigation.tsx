@@ -49,6 +49,7 @@ const Container = styled("nav", {
 })
 
 const NavigationBar = styled("div", {
+  alignItems: "center",
   boxSizing: "content-box",
   color: "$slate12",
   display: "flex",
@@ -77,6 +78,14 @@ const NavigationBar = styled("div", {
         },
       },
     },
+  },
+})
+
+const NavigatonBarSection = styled("div", {
+  display: "flex",
+
+  "> a": {
+    display: "flex",
   },
 })
 
@@ -226,17 +235,19 @@ const Navigation = () => {
   return (
     <Container isOpen={isOpen}>
       <NavigationBar isOpen={isOpen}>
-        <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
-          <IconButton as="span">
-            <Logo />
-          </IconButton>
-        </Link>
-        <div>
+        <NavigatonBarSection>
+          <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
+            <IconButton as="span">
+              <Logo />
+            </IconButton>
+          </Link>
+        </NavigatonBarSection>
+        <NavigatonBarSection>
           <ThemeSwitch theme={theme} onToggle={toggleTheme}>
             Toggle
           </ThemeSwitch>
           <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
-        </div>
+        </NavigatonBarSection>
       </NavigationBar>
       <Menu isOpen={isOpen}>
         <Heading level="heading4" color="slate11">
