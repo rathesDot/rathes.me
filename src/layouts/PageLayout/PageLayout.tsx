@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react"
+import React, { createContext, useState, useEffect } from "react"
 
 import { styled, globalCss, lightTheme } from "../../../stitches.config"
 
@@ -16,26 +16,6 @@ export const colorModePersistanceKey = "color-mode"
 export const ThemeContext = createContext<ThemeContextType>(
   {} as ThemeContextType
 )
-
-export const getInitialColorMode = (): ColorMode => {
-  const persistedColorPreference = window.localStorage.getItem(
-    colorModePersistanceKey
-  ) as ColorMode
-  const hasPersistedPreference = typeof persistedColorPreference === "string"
-
-  if (hasPersistedPreference) {
-    return persistedColorPreference
-  }
-
-  const mql = window.matchMedia("(prefers-color-scheme: dark)")
-  const hasMediaQueryPreference = typeof mql.matches === "boolean"
-
-  if (hasMediaQueryPreference) {
-    return mql.matches ? "dark" : "light"
-  }
-
-  return "dark"
-}
 
 const MainContainer = styled("main", {
   backgroundColor: "$slate2",
@@ -60,12 +40,20 @@ const MainContainer = styled("main", {
 })
 
 const PageLayout: React.FC = ({ children }) => {
-  const [theme, setTheme] = useState<ColorMode>(getInitialColorMode)
+  const [theme, setTheme] = useState<ColorMode>("dark")
 
   const themes = {
     dark: "dark",
     light: lightTheme.className,
   }
+
+  useEffect(() => {
+    const root = document.documentElement
+    const initialColorMode = root.classList.contains(themes["light"])
+      ? "light"
+      : "dark"
+    setTheme(initialColorMode)
+  }, [])
 
   const toggleTheme = () => {
     if (theme === "light") {

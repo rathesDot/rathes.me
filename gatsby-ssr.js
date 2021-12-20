@@ -15,29 +15,30 @@ import {
   Separator,
 } from "./src/components"
 
-import {
-  colorModePersistanceKey,
-  getInitialColorMode,
-} from "./src/layouts/PageLayout/PageLayout"
+import { colorModePersistanceKey } from "./src/layouts/PageLayout/PageLayout"
 
-export const replaceRenderer = ({
-  bodyComponent,
-  setHeadComponents,
-  replaceBodyHTMLString,
-}) => {
-  const bodyHTML = renderToString(bodyComponent)
-  const styles = getCssText()
+function getInitialColorMode() {
+  const colorModeKey = "🔑"
+  const lightThemeClassName = "🌙"
 
-  setHeadComponents([
-    <style
-      id="stitches"
-      dangerouslySetInnerHTML={{
-        __html: styles,
-      }}
-    />,
+  const mql = window.matchMedia("(prefers-color-scheme: light)")
+  const prefersLightModefromMq = mql.matches
 
-    replaceBodyHTMLString(bodyHTML),
-  ])
+  const persistedPreference = localStorage.getItem(colorModeKey)
+  const hasPersistedPreference = typeof persistedPreference === "string"
+
+  let colorMode = "dark"
+
+  if (hasPersistedPreference) {
+    colorMode = persistedPreference
+  } else {
+    colorMode = prefersLightModefromMq ? "light" : "dark"
+  }
+
+  let root = document.documentElement
+  if (colorMode === "light") {
+    root.classList.add(lightThemeClassName)
+  }
 }
 
 const H1 = ({ children }) => <Heading level="heading1">{children}</Heading>
@@ -72,25 +73,27 @@ export const wrapRootElement = ({ element }) => (
 )
 
 const ColorMode = () => {
-  const getInitialColorModeString = `const getInitialColorMode = ${String(
-    getInitialColorMode
-  ).replace("colorModePersistanceKey", `"${colorModePersistanceKey}"`)}`
+  const boundFn = String(getInitialColorMode)
+    .replace("🔑", colorModePersistanceKey)
+    .replace("🌙", lightTheme.className)
 
-  const themesString = `const themes = {dark: "dark", light: "${lightTheme.className}"}`
+  let calledFunction = `(${boundFn})()`
 
-  const colorModeScript = `(function() {
-      ${getInitialColorModeString};
-      ${themesString};
-      const colorMode = getInitialColorMode();
-      document.documentElement.classList.remove("dark");
-      document.documentElement.classList.remove("${lightTheme.className}");
-      document.documentElement.classList.add(themes[colorMode]);
-      localStorage.setItem("${colorModePersistanceKey}", colorMode);
-    })()
-  `
-  return <script dangerouslySetInnerHTML={{ __html: colorModeScript }} />
+  return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />
 }
 
-export const onRenderBody = ({ setPreBodyComponents }) => {
-  setPreBodyComponents(<ColorMode />)
+const FallbackStyles = () => {
+  return (
+    <style
+      id="stitches"
+      dangerouslySetInnerHTML={{
+        __html: getCssText(),
+      }}
+    />
+  )
+}
+
+export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
+  setHeadComponents(<FallbackStyles key="fallback-styles" />)
+  setPreBodyComponents(<ColorMode key="magic-script-tag" />)
 }
