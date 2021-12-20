@@ -5,16 +5,20 @@ import { styled, globalCss, lightTheme } from "../../../stitches.config"
 import { Footer, Navigation } from "../../patterns"
 
 type ThemeContextType = {
-  theme: "light" | "dark"
+  theme: ColorMode
   toggleTheme: () => void
 }
+
+type ColorMode = "dark" | "light"
 
 export const ThemeContext = createContext<ThemeContextType>(
   {} as ThemeContextType
 )
 
-const getInitialColorMode = () => {
-  const persistedColorPreference = window.localStorage.getItem("color-mode")
+const getInitialColorMode = (): ColorMode => {
+  const persistedColorPreference = window.localStorage.getItem(
+    "color-mode"
+  ) as ColorMode
   const hasPersistedPreference = typeof persistedColorPreference === "string"
 
   if (hasPersistedPreference) {
@@ -54,7 +58,7 @@ const MainContainer = styled("main", {
 })
 
 const PageLayout: React.FC = ({ children }) => {
-  const [theme, setTheme] = useState<"light" | "dark">("dark")
+  const [theme, setTheme] = useState<ColorMode>("dark")
 
   const themes = {
     dark: "dark",
