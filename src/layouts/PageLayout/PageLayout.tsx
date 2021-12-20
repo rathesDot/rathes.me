@@ -58,7 +58,7 @@ const MainContainer = styled("main", {
 })
 
 const PageLayout: React.FC = ({ children }) => {
-  const [theme, setTheme] = useState<ColorMode>("dark")
+  const [theme, setTheme] = useState<ColorMode>(getInitialColorMode)
 
   const themes = {
     dark: "dark",
