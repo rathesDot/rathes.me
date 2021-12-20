@@ -70,12 +70,14 @@ const PageLayout: React.FC = ({ children }) => {
       setTheme("dark")
       document.documentElement.classList.remove("light")
       document.documentElement.classList.add(themes["dark"])
+      localStorage.setItem("color-mode", "dark")
       return
     }
 
     setTheme("light")
     document.documentElement.classList.remove("dark")
     document.documentElement.classList.add(themes["light"])
+    localStorage.setItem("color-mode", "light")
   }
 
   globalCss({
