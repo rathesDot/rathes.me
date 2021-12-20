@@ -11,13 +11,15 @@ type ThemeContextType = {
 
 type ColorMode = "dark" | "light"
 
+const colorModePersistanceKey = "color-mode"
+
 export const ThemeContext = createContext<ThemeContextType>(
   {} as ThemeContextType
 )
 
 const getInitialColorMode = (): ColorMode => {
   const persistedColorPreference = window.localStorage.getItem(
-    "color-mode"
+    colorModePersistanceKey
   ) as ColorMode
   const hasPersistedPreference = typeof persistedColorPreference === "string"
 
@@ -70,14 +72,14 @@ const PageLayout: React.FC = ({ children }) => {
       setTheme("dark")
       document.documentElement.classList.remove("light")
       document.documentElement.classList.add(themes["dark"])
-      localStorage.setItem("color-mode", "dark")
+      localStorage.setItem(colorModePersistanceKey, "dark")
       return
     }
 
     setTheme("light")
     document.documentElement.classList.remove("dark")
     document.documentElement.classList.add(themes["light"])
-    localStorage.setItem("color-mode", "light")
+    localStorage.setItem(colorModePersistanceKey, "light")
   }
 
   globalCss({
