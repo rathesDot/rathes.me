@@ -11,13 +11,13 @@ type ThemeContextType = {
 
 type ColorMode = "dark" | "light"
 
-const colorModePersistanceKey = "color-mode"
+export const colorModePersistanceKey = "color-mode"
 
 export const ThemeContext = createContext<ThemeContextType>(
   {} as ThemeContextType
 )
 
-const getInitialColorMode = (): ColorMode => {
+export const getInitialColorMode = (): ColorMode => {
   const persistedColorPreference = window.localStorage.getItem(
     colorModePersistanceKey
   ) as ColorMode

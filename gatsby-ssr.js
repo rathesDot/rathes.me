@@ -2,7 +2,7 @@ import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { renderToString } from "react-dom/server"
 
-import { getCssText } from "./stitches.config"
+import { getCssText, lightTheme } from "./stitches.config"
 
 import {
   CodeBlock,
@@ -14,6 +14,11 @@ import {
   Quote,
   Separator,
 } from "./src/components"
+
+import {
+  colorModePersistanceKey,
+  getInitialColorMode,
+} from "./src/layouts/PageLayout/PageLayout"
 
 export const replaceRenderer = ({
   bodyComponent,
@@ -65,3 +70,24 @@ const components = {
 export const wrapRootElement = ({ element }) => (
   <MDXProvider components={components}>{element}</MDXProvider>
 )
+
+const ColorMode = () => {
+  const colorModeScript = `(function() {const getInitialColorMode = ${String(
+    getInitialColorMode
+  ).replace(
+    "colorModePersistanceKey",
+    `"${colorModePersistanceKey}"`
+  )}; const themes = {dark: "dark", light: "${
+    lightTheme.className
+  }"}; const colorMode = getInitialColorMode();
+    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.remove("${lightTheme.className}");
+    document.documentElement.classList.add(themes[colorMode]);
+    localStorage.setItem("${colorModePersistanceKey}", colorMode);})()
+  `
+  return <script dangerouslySetInnerHTML={{ __html: colorModeScript }} />
+}
+
+export const onRenderBody = ({ setPreBodyComponents }) => {
+  setPreBodyComponents(<ColorMode />)
+}
