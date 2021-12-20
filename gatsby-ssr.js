@@ -72,18 +72,21 @@ export const wrapRootElement = ({ element }) => (
 )
 
 const ColorMode = () => {
-  const colorModeScript = `(function() {const getInitialColorMode = ${String(
+  const getInitialColorModeString = `const getInitialColorMode = ${String(
     getInitialColorMode
-  ).replace(
-    "colorModePersistanceKey",
-    `"${colorModePersistanceKey}"`
-  )}; const themes = {dark: "dark", light: "${
-    lightTheme.className
-  }"}; const colorMode = getInitialColorMode();
-    document.documentElement.classList.remove("dark");
-    document.documentElement.classList.remove("${lightTheme.className}");
-    document.documentElement.classList.add(themes[colorMode]);
-    localStorage.setItem("${colorModePersistanceKey}", colorMode);})()
+  ).replace("colorModePersistanceKey", `"${colorModePersistanceKey}"`)}`
+
+  const themesString = `const themes = {dark: "dark", light: "${lightTheme.className}"}`
+
+  const colorModeScript = `(function() {
+      ${getInitialColorModeString};
+      ${themesString};
+      const colorMode = getInitialColorMode();
+      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove("${lightTheme.className}");
+      document.documentElement.classList.add(themes[colorMode]);
+      localStorage.setItem("${colorModePersistanceKey}", colorMode);
+    })()
   `
   return <script dangerouslySetInnerHTML={{ __html: colorModeScript }} />
 }
