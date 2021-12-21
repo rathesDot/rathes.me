@@ -110,7 +110,7 @@ const ThemeSwitch: React.FC<{
 
   if (theme === "dark") {
     return (
-      <IconButton onClick={onToggle}>
+      <IconButton aria-label="Switch to light theme" onClick={onToggle}>
         <svg
           width={24}
           height={24}
@@ -128,7 +128,7 @@ const ThemeSwitch: React.FC<{
   }
 
   return (
-    <IconButton onClick={onToggle}>
+    <IconButton aria-label="Switch to dark theme" onClick={onToggle}>
       <svg
         width={24}
         height={24}
@@ -157,7 +157,10 @@ const Hamburger: React.FC<{ isOpen: boolean; onToggle: () => void }> = ({
   )
 
   return (
-    <IconButton onClick={onToggle}>
+    <IconButton
+      aria-label={isOpen ? "Close Navigation" : "Open Navigation"}
+      onClick={onToggle}
+    >
       <svg
         width="24"
         height="24"
