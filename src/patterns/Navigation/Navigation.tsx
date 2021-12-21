@@ -104,6 +104,10 @@ const ThemeSwitch: React.FC<{
   theme: "dark" | "light"
   onToggle: () => void
 }> = ({ onToggle, theme }) => {
+  if (theme === undefined) {
+    return null
+  }
+
   if (theme === "dark") {
     return (
       <IconButton onClick={onToggle}>
