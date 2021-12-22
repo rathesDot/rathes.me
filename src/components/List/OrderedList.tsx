@@ -1,22 +1,28 @@
 import { styled } from "../../../stitches.config"
 
 export const OrderedList = styled("ol", {
-  backgroundColor: "$gray900",
-  color: "$gray500",
+  backgroundColor: "$slate3",
+  borderRadius: "10px",
+  color: "$slate11",
   fontSize: "$sm",
+  lineHeight: "$500",
   listStyleType: "decimal",
-  marginBottom: "$8",
-  marginTop: "$8",
-  padding: "$6 $6 $6 $8",
+  margin: "$8 -$8",
+  padding: "$8 $12",
 
-  "> li:not(:last-child)": {
-    margin: "0 0 $4 0",
+  ol: {
+    margin: "$2 0",
+    padding: "0 0 0 $8",
+  },
+
+  "> li": {
+    margin: "$2 0",
   },
 
   p: {
     margin: 0,
     fontSize: "$sm",
     lineLeight: 1.45,
-    color: "$gray500",
+    color: "$slate11",
   },
 })

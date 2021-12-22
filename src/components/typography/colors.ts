@@ -1,26 +1,38 @@
 export const colors = {
-  black: {
-    color: "$black",
+  slate1: {
+    color: "$slate1",
   },
-  white: {
-    color: "$white",
+  slate2: {
+    color: "$slate2",
   },
-  gray400: {
-    color: "$gray400",
+  slate3: {
+    color: "$slate3",
   },
-  gray500: {
-    color: "$gray500",
+  slate4: {
+    color: "$slate4",
   },
-  gray600: {
-    color: "$gray600",
+  slate5: {
+    color: "$slate5",
   },
-  gray700: {
-    color: "$gray700",
+  slate6: {
+    color: "$slate6",
   },
-  gray800: {
-    color: "$gray800",
+  slate7: {
+    color: "$slate7",
   },
-  gray900: {
-    color: "$gray900",
+  slate8: {
+    color: "$slate8",
+  },
+  slate9: {
+    color: "$slate9",
+  },
+  slate10: {
+    color: "$slate10",
+  },
+  slate11: {
+    color: "$slate11",
+  },
+  slate12: {
+    color: "$slate12",
   },
 }

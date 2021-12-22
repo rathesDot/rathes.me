@@ -3,6 +3,7 @@ import { styled } from "../../../stitches.config"
 import { colors } from "./colors"
 
 export const Heading = styled("h1", {
+  fontFamily: "$display",
   fontSize: "$2xl",
   fontWeight: 600,
   lineHeight: "$400",
@@ -36,6 +37,6 @@ export const Heading = styled("h1", {
     },
   },
   defaultVariants: {
-    color: "white",
+    color: "slate12",
   },
 })

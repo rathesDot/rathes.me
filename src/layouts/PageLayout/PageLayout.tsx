@@ -1,32 +1,75 @@
-import React from "react"
+import React, { createContext, useState, useEffect } from "react"
 
-import { styled, globalCss } from "../../../stitches.config"
+import { styled, globalCss, lightTheme } from "../../../stitches.config"
 
 import { Footer, Navigation } from "../../patterns"
 
+type ThemeContextType = {
+  theme: ColorMode
+  toggleTheme: () => void
+}
+
+type ColorMode = "dark" | "light"
+
+export const colorModePersistanceKey = "color-mode"
+
+export const ThemeContext = createContext<ThemeContextType>(
+  {} as ThemeContextType
+)
+
 const MainContainer = styled("main", {
-  backgroundColor: "$black",
-  color: "$gray600",
+  backgroundColor: "$slate2",
+  color: "$slate11",
   display: "flex",
   flexDirection: "column",
   fontFamily: "$default",
   justifyContent: "space-between",
   minHeight: "100vh",
-  padding: "40px $4",
+  padding: "$8",
 
   variants: {
     padding: {
       md: {
-        padding: "60px 0 32px 60px",
+        padding: "$16",
       },
       lg: {
-        padding: "110px 0 32px 110px",
+        padding: "$24 $32",
       },
     },
   },
 })
 
 const PageLayout: React.FC = ({ children }) => {
+  const [theme, setTheme] = useState<ColorMode>()
+
+  const themes = {
+    dark: "dark",
+    light: lightTheme.className,
+  }
+
+  useEffect(() => {
+    const root = document.documentElement
+    const initialColorMode = root.classList.contains(themes["light"])
+      ? "light"
+      : "dark"
+    setTheme(initialColorMode)
+  }, [])
+
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark")
+      document.documentElement.classList.remove("light")
+      document.documentElement.classList.add(themes["dark"])
+      localStorage.setItem(colorModePersistanceKey, "dark")
+      return
+    }
+
+    setTheme("light")
+    document.documentElement.classList.remove("dark")
+    document.documentElement.classList.add(themes["light"])
+    localStorage.setItem(colorModePersistanceKey, "light")
+  }
+
   globalCss({
     html: {
       "-webkit-font-smoothing": "antialiased",
@@ -210,13 +253,21 @@ const PageLayout: React.FC = ({ children }) => {
       marginBottom: "$6",
       marginTop: "$6",
     },
+
+    ".gatsby-resp-image-wrapper": {
+      borderRadius: "10px",
+      margin: "$4 -$8 !important",
+      overflow: "hidden",
+    },
   })()
   return (
-    <MainContainer padding={{ "@md": "md", "@lg": "lg" }}>
-      <Navigation />
-      {children}
-      <Footer />
-    </MainContainer>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <MainContainer padding={{ "@md": "md", "@lg": "lg" }}>
+        <Navigation />
+        {children}
+        <Footer />
+      </MainContainer>
+    </ThemeContext.Provider>
   )
 }
 

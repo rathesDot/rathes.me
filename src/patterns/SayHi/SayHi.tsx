@@ -4,8 +4,8 @@ import { styled } from "../../../stitches.config"
 import { Link } from "../../components"
 
 const Container = styled("div", {
-  color: "$white",
-  fontFamily: "$default",
+  color: "$slate12",
+  fontFamily: "$display",
   fontSize: "$4xl",
   fontWeight: 600,
   lineHeight: "1.194444",

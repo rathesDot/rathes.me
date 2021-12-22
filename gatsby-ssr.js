@@ -1,11 +1,12 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
-import { renderToString } from "react-dom/server"
 
-import { getCssText } from "./stitches.config"
+import { getCssText, lightTheme } from "./stitches.config"
 
 import {
+  CodeBlock,
   Heading,
+  InlineCode,
   Link,
   OrderedList,
   Paragraph,
@@ -13,32 +14,40 @@ import {
   Separator,
 } from "./src/components"
 
-import "prism-themes/themes/prism-atom-dark.css"
+import { colorModePersistanceKey } from "./src/layouts/PageLayout/PageLayout"
 
-export const replaceRenderer = ({
-  bodyComponent,
-  setHeadComponents,
-  replaceBodyHTMLString,
-}) => {
-  const bodyHTML = renderToString(bodyComponent)
-  const styles = getCssText()
+function getInitialColorMode() {
+  const colorModeKey = "🔑"
+  const lightThemeClassName = "🌙"
 
-  setHeadComponents([
-    <style
-      id="stitches"
-      dangerouslySetInnerHTML={{
-        __html: styles,
-      }}
-    />,
+  const mql = window.matchMedia("(prefers-color-scheme: light)")
+  const prefersLightModefromMq = mql.matches
 
-    replaceBodyHTMLString(bodyHTML),
-  ])
+  const persistedPreference = localStorage.getItem(colorModeKey)
+  const hasPersistedPreference = typeof persistedPreference === "string"
+
+  let colorMode = "dark"
+
+  if (hasPersistedPreference) {
+    colorMode = persistedPreference
+  } else {
+    colorMode = prefersLightModefromMq ? "light" : "dark"
+  }
+
+  let root = document.documentElement
+  if (colorMode === "light") {
+    root.classList.add(lightThemeClassName)
+  }
 }
 
 const H1 = ({ children }) => <Heading level="heading1">{children}</Heading>
 const H2 = ({ children }) => <Heading level="heading2">{children}</Heading>
 const H3 = ({ children }) => <Heading level="heading3">{children}</Heading>
 const H4 = ({ children }) => <Heading level="heading4">{children}</Heading>
+
+const Pre = ({ children, className }) => {
+  return <CodeBlock className={className}>{children}</CodeBlock>
+}
 
 const components = {
   h1: H1,
@@ -54,8 +63,36 @@ const components = {
       {children}
     </Link>
   ),
+  pre: Pre,
+  code: InlineCode,
 }
 
 export const wrapRootElement = ({ element }) => (
   <MDXProvider components={components}>{element}</MDXProvider>
 )
+
+const ColorMode = () => {
+  const boundFn = String(getInitialColorMode)
+    .replace("🔑", colorModePersistanceKey)
+    .replace("🌙", lightTheme.className)
+
+  let calledFunction = `(${boundFn})()`
+
+  return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />
+}
+
+const FallbackStyles = () => {
+  return (
+    <style
+      id="stitches"
+      dangerouslySetInnerHTML={{
+        __html: getCssText(),
+      }}
+    />
+  )
+}
+
+export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
+  setHeadComponents(<FallbackStyles key="fallback-styles" />)
+  setPreBodyComponents(<ColorMode key="magic-script-tag" />)
+}

@@ -13,7 +13,8 @@ const markdownPlugins = [
       // It's important to specify the maxWidth (in pixels) of
       // the content container as this plugin uses this as the
       // base for generating different widths of each image.
-      maxWidth: 590,
+      maxWidth: 720,
+      linkImagesToOriginal: false,
     },
   },
 ]
@@ -30,7 +31,11 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Lato:400,600", "Inter:400,500,700"],
+          families: [
+            "Noto+Sans+Display:400,500,600",
+            "Noto+Sans:400",
+            "Noto+Sans+Mono&display=swap",
+          ],
         },
       },
     },

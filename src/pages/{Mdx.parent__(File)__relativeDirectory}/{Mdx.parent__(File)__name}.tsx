@@ -9,18 +9,47 @@ import { Heading, Meta } from "../../components"
 import { styled } from "../../../stitches.config"
 
 const BackLink = styled("span", {
-  color: "$white",
+  color: "$slate12",
   textDecoration: "underline",
 })
 
 const Container = styled("div", {
-  marginTop: "$32",
   maxWidth: 640,
 })
 
+const Title = styled(Heading, {
+  color: "$slate12",
+  fontFamily: "$display",
+  fontWeight: 600,
+  lineHeight: "$400",
+  overflowWrap: "break-word",
+  maxWidth: 640,
+  marginBottom: "$2",
+  marginTop: "$12",
+
+  variants: {
+    size: {
+      small: {
+        fontSize: "$lg",
+      },
+      default: {
+        fontSize: "$xl",
+      },
+      large: {
+        fontSize: "$2xl",
+      },
+    },
+  },
+})
+
 const FeatureImage = styled("div", {
-  marginBottom: "$4",
-  marginTop: "$4",
+  borderRadius: "10px",
+  margin: "$4 -$8",
+  overflow: "hidden",
+
+  "> *": {
+    width: "100%",
+  },
 })
 
 const Footer = styled("footer", {
@@ -99,7 +128,6 @@ export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
         meta={[...meta, ...imageMeta]}
       />
       <Container>
-        <Heading level="heading1">{post.frontmatter.title}</Heading>
         <FeatureImage>
           {post.frontmatter.image && (
             <GatsbyImage
@@ -108,6 +136,12 @@ export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
             />
           )}
         </FeatureImage>
+        <Title
+          size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
+          level="heading1"
+        >
+          {post.frontmatter.title}
+        </Title>
         <MDXRenderer>{post.body}</MDXRenderer>
         <Footer>
           <RouterLink to="/writings">

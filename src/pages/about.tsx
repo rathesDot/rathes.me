@@ -17,7 +17,6 @@ import {
 import { SayHi } from "../patterns"
 
 const Container = styled("section", {
-  marginTop: "$32",
   maxWidth: 640,
 })
 
@@ -246,7 +245,7 @@ const AboutMe: React.FC<PageProps> = () => (
           From time to time I also write. It can be work related topics that I
           share in the{" "}
           <RouterLink to="/writings">
-            <Text color="white" underlined>
+            <Text color="slate12" underlined>
               writing section
             </Text>
           </RouterLink>{" "}

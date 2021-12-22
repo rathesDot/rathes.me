@@ -17,7 +17,6 @@ import {
 import { SayHi } from "../patterns"
 
 const Container = styled("section", {
-  marginTop: "$32",
   maxWidth: 640,
 })
 
@@ -44,7 +43,7 @@ const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
           work on side projects. They do not necessarily have to be development
           related. If you want to see my software engineering related things, I
           recommend you visit my{" "}
-          <Link color="white" href="https://github.com/rathesDot" underlined>
+          <Link color="slate12" href="https://github.com/rathesDot" underlined>
             Github profile
           </Link>
           .
@@ -63,7 +62,7 @@ const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
           </Paragraph>
           <Paragraph>
             Learn more about the project on{" "}
-            <Link color="white" underlined href="https://learn-tamil.com">
+            <Link color="slate12" underlined href="https://learn-tamil.com">
               https://learn-tamil.com
             </Link>
           </Paragraph>
@@ -80,7 +79,7 @@ const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
             focussing on simplicity and beauty. You can read the full story
             about Maxout in this article{" "}
             <Link
-              color="white"
+              color="slate12"
               underlined
               href="https://getmaxout.app/blog/introducing-maxout/"
             >
@@ -90,7 +89,7 @@ const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
           </Paragraph>
           <Paragraph>
             Sign up for Maxout on{" "}
-            <Link color="white" underlined href="https://getmaxout.app">
+            <Link color="slate12" underlined href="https://getmaxout.app">
               https://getmaxout.app
             </Link>
           </Paragraph>

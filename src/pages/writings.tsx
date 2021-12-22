@@ -11,7 +11,6 @@ import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
 import externalLinks from "../content/blog/externalLinks"
 
 const Container = styled("section", {
-  marginTop: "$32",
   maxWidth: 640,
 })
 
@@ -52,7 +51,7 @@ const Writings: React.FC<PageProps<MdxQuery>> = ({ data }) => {
         <Paragraph>
           From time to time, I do write. Sometime on my blog, but also on other
           blogs such as on{" "}
-          <Link color="white" href="https://medium.com/@rathes" underlined>
+          <Link color="slate12" href="https://medium.com/@rathes" underlined>
             Medium
           </Link>
           . The topics, I write about are diverse. Obviously, I write about the
@@ -64,7 +63,7 @@ const Writings: React.FC<PageProps<MdxQuery>> = ({ data }) => {
           the title, it may be that you do not speak the language. If you want
           me to translate a specific article, just drop a message{" "}
           <Link
-            color="white"
+            color="slate12"
             href="https://twitter.com/rswebdesigner"
             underlined
           >

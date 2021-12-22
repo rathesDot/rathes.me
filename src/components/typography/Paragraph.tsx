@@ -1,7 +1,7 @@
 import { styled } from "../../../stitches.config"
 
 export const Paragraph = styled("p", {
-  color: "$gray600",
+  color: "$slate11",
   fontSize: "$base",
   fontWeight: 400,
   lineHeight: "$700",

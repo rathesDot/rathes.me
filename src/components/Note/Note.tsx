@@ -1,20 +1,14 @@
 import { styled } from "../../../stitches.config"
 
 export const Note = styled("p", {
-  backgroundColor: "$gray900",
-  color: "$gray500",
-  marginBottom: "$8",
-  marginTop: "$8",
-  padding: "$4",
-  fontSize: "$sm",
+  backgroundColor: "$slate3",
+  borderRadius: "10px",
+  color: "$slate11",
+  lineHeight: "$500",
+  margin: "$8 -$8",
+  padding: "$8",
 
   variants: {
-    nested: {
-      true: {
-        margin: 0,
-        padding: "0 0 0 $4",
-      },
-    },
     fontFamily: {
       mono: {
         fontFamily: "$mono",

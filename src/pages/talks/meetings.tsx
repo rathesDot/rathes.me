@@ -11,7 +11,7 @@ const Container = styled("section", {
 })
 
 const HelpText = styled("span", {
-  color: "$gray600",
+  color: "$slate11",
   display: "block",
   fontSize: "$base",
   lineHeight: "$600",
