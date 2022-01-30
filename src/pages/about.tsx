@@ -95,6 +95,9 @@ const AboutMe: React.FC<PageProps> = () => (
             >
               A Game of Thrones: A Song of Ice and Fire
             </ListItem>
+          </List>
+          <Separator />
+          <List title="Reading List 2022">
             <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
             </ListItem>
