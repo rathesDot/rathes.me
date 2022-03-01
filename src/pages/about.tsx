@@ -88,16 +88,15 @@ const AboutMe: React.FC<PageProps> = () => (
           everybody to pick up a nice book and read.
         </Paragraph>
         <ReadingList>
-          <List title="Currently reading">
+          <List title="Currently reading"></List>
+          <Separator />
+          <List title="Reading List 2022">
             <ListItem
               subtitle="by George R. R. Martin"
               link="https://amzn.to/2Rngm82"
             >
               A Game of Thrones: A Song of Ice and Fire
             </ListItem>
-          </List>
-          <Separator />
-          <List title="Reading List 2022">
             <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
               Immortals of Meluha
             </ListItem>
