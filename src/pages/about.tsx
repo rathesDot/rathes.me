@@ -88,7 +88,14 @@ const AboutMe: React.FC<PageProps> = () => (
           everybody to pick up a nice book and read.
         </Paragraph>
         <ReadingList>
-          <List title="Currently reading"></List>
+          <List title="Currently reading">
+            <ListItem
+              subtitle="by Thomas Erikson"
+              link="https://amzn.to/3hug8bi"
+            >
+              Surrounded by Idiots: The Four Types of Human Behavior
+            </ListItem>
+          </List>
           <Separator />
           <List title="Reading List 2022">
             <ListItem
