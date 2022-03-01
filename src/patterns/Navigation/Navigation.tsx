@@ -1,5 +1,6 @@
+// @todo: Handle navigation active styles
 import React, { useContext, useEffect, useMemo, useState } from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
+import Link from "next/link"
 
 import { styled } from "../../../stitches.config"
 
@@ -212,13 +213,12 @@ const Menu = styled("div", {
 })
 
 const Navigation = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      resume: file(relativePath: { eq: "files/resume.pdf" }) {
-        publicURL
-      }
-    }
-  `)
+  // @todo fetch the correct data for the resume
+  const data = {
+    resume: {
+      publicURL: "",
+    },
+  }
   const [isOpen, setIsOpen] = useState(false)
 
   const { toggleTheme, theme } = useContext(ThemeContext)
@@ -243,7 +243,7 @@ const Navigation = () => {
     <Container isOpen={isOpen}>
       <NavigationBar isOpen={isOpen}>
         <NavigatonBarSection>
-          <Link to="/" aria-label="Home" activeStyle={{ color: "#FFF" }}>
+          <Link href="/" aria-label="Home">
             <IconButton as="span">
               <Logo />
             </IconButton>
@@ -260,10 +260,12 @@ const Navigation = () => {
         <Heading level="heading4" color="slate11">
           Navigation
         </Heading>
-        <Link activeStyle={{ color: "#FFF" }} to="/about">
-          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            About
-          </MenuItem>
+        <Link href="/about">
+          <a>
+            <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
+              About
+            </MenuItem>
+          </a>
         </Link>
 
         <a href={data.resume.publicURL} aria-label="Resume">
@@ -272,16 +274,20 @@ const Navigation = () => {
           </MenuItem>
         </a>
 
-        <Link activeStyle={{ color: "#FFF" }} to="/work">
-          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            Work
-          </MenuItem>
+        <Link href="/work">
+          <a>
+            <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
+              Work
+            </MenuItem>
+          </a>
         </Link>
 
-        <Link activeStyle={{ color: "#FFF" }} to="/writings">
-          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            Writings
-          </MenuItem>
+        <Link href="/writings">
+          <a>
+            <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
+              Writings
+            </MenuItem>
+          </a>
         </Link>
       </Menu>
       <Menu isOpen={isOpen}>

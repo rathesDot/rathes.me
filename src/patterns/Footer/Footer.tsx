@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import Link from "next/link"
 import { styled } from "../../../stitches.config"
 
 import { Text } from "../../components"
@@ -23,10 +23,12 @@ const Footer = () => (
       &copy; 2020 — Rathes Sachchithananthan
     </Text>
     <Separator />
-    <Link to="/legal">
-      <Text color="slate11" size="small">
-        Legal Information
-      </Text>
+    <Link href="/legal">
+      <a>
+        <Text color="slate11" size="small">
+          Legal Information
+        </Text>
+      </a>
     </Link>
   </div>
 )

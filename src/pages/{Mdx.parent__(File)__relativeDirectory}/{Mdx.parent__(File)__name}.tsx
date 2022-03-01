@@ -1,7 +1,5 @@
 import React from "react"
-import { graphql, Link as RouterLink } from "gatsby"
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
+import RouterLink from "next/link"
 
 import { PageLayout } from "../../layouts"
 import { Heading, Meta } from "../../components"
@@ -57,6 +55,7 @@ const Footer = styled("footer", {
   marginTop: "$32",
 })
 
+// @todo fetch the correct data
 type BlogData = {
   site: {
     siteMetadata: {
@@ -73,7 +72,7 @@ type BlogData = {
       image: {
         publicURL: string
         childImageSharp: {
-          gatsbyImageData: IGatsbyImageData
+          // gatsbyImageData: IGatsbyImageData
         }
       }
     }
@@ -129,12 +128,13 @@ export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
       />
       <Container>
         <FeatureImage>
-          {post.frontmatter.image && (
+          {/* @todo: Render Feature Image
+          {post.frontmatter.image &&
             <GatsbyImage
               alt={`Feature image for "${post.frontmatter.title}"`}
               image={post.frontmatter.image.childImageSharp.gatsbyImageData}
-            />
-          )}
+            />}
+            */}
         </FeatureImage>
         <Title
           size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
@@ -142,45 +142,19 @@ export const BlogLayout: React.FC<{ data: BlogData }> = ({ data }) => {
         >
           {post.frontmatter.title}
         </Title>
-        <MDXRenderer>{post.body}</MDXRenderer>
+        {/* @todo Render the correct body
+          <MDXRenderer>{post.body}</MDXRenderer>
+        */}
         <Footer>
-          <RouterLink to="/writings">
-            <BackLink>back to articles</BackLink>
+          <RouterLink href="/writings">
+            <a>
+              <BackLink>back to articles</BackLink>
+            </a>
           </RouterLink>
         </Footer>
       </Container>
     </PageLayout>
   )
 }
-
-export const query = graphql`
-  query ($id: String!) {
-    site {
-      siteMetadata {
-        siteUrl
-      }
-    }
-    mdx(id: { eq: $id }) {
-      body
-      parent {
-        ... on File {
-          id
-          name
-          relativeDirectory
-        }
-      }
-      frontmatter {
-        title
-        locale
-        image {
-          publicURL
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
-      }
-    }
-  }
-`
 
 export { BlogLayout as default }

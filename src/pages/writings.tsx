@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, PageProps } from "gatsby"
+import { NextPage } from "next"
 
 import { styled } from "../../stitches.config"
 
@@ -27,6 +27,7 @@ const BlogList = styled("div", {
   marginTop: "$12",
 })
 
+// @todo Fetch the correct data
 type MdxQuery = {
   allMdx: {
     edges: Array<{
@@ -39,7 +40,7 @@ type MdxQuery = {
   }
 }
 
-const Writings: React.FC<PageProps<MdxQuery>> = ({ data }) => {
+const Writings: React.FC<NextPage> = ({ data }) => {
   const blogPosts = getSortedGroups(
     groupPostsByYear(extractBlogPosts(data).concat(externalLinks))
   )
@@ -101,28 +102,5 @@ const Writings: React.FC<PageProps<MdxQuery>> = ({ data }) => {
     </PageLayout>
   )
 }
-
-export const query = graphql`
-  query {
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          id
-          parent {
-            ... on File {
-              id
-              name
-              relativeDirectory
-            }
-          }
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-          }
-        }
-      }
-    }
-  }
-`
 
 export default Writings

@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, PageProps, StaticQueryProps } from "gatsby"
+import { NextPage } from "next"
 
 import { styled } from "../../stitches.config"
 
@@ -29,11 +29,12 @@ const SayHiContainer = styled("section", {
   marginTop: "$32",
 })
 
+// @todo: Fetch the correct data
 type TalksProps = {
   data: { rdd: { publicURL: string }; rddUk: { publicURL: string } }
 }
 
-const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
+const Work: React.FC<NextPage & TalksProps> = ({ data }) => {
   return (
     <PageLayout>
       <Container>
@@ -146,18 +147,5 @@ const Work: React.FC<PageProps & TalksProps> = ({ data }) => {
     </PageLayout>
   )
 }
-
-export const query = graphql`
-  query {
-    rdd: file(relativePath: { eq: "talks/readme-driven-development.pdf" }) {
-      publicURL
-    }
-    rddUk: file(
-      relativePath: { eq: "talks/readme-driven-development-phpuk.pdf" }
-    ) {
-      publicURL
-    }
-  }
-`
 
 export default Work

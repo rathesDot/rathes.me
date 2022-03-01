@@ -1,6 +1,5 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import { graphql, useStaticQuery } from "gatsby"
 
 export type MetaProps = {
   description?: string
@@ -17,17 +16,16 @@ export const Meta: React.FC<MetaProps> = ({
   meta = [],
   title,
 }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-          description
-          author
-        }
-      }
-    }
-  `)
+  // @todo Fetch correct meta data
+  const data = {
+    site: {
+      siteMetadata: {
+        title: "",
+        description: "",
+        author: "",
+      },
+    },
+  }
 
   const metaDescription = description || data.site.siteMetadata.description
 

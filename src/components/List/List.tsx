@@ -1,5 +1,5 @@
 import React from "react"
-import { Link as RouterLink } from "gatsby"
+import RouterLink from "next/link"
 import { styled } from "../../../stitches.config"
 
 import { Heading, Link } from ".."
@@ -51,14 +51,16 @@ export const ListItem: React.FC<ListItemProps> = ({
           )}
         </Link>
       ) : (
-        <RouterLink to={link}>
-          {subtitle && subtitlePosition == "above" && (
-            <Subtitle>{subtitle}</Subtitle>
-          )}
-          {children}
-          {subtitle && subtitlePosition == "under" && (
-            <Subtitle>{subtitle}</Subtitle>
-          )}
+        <RouterLink href={link}>
+          <a>
+            {subtitle && subtitlePosition == "above" && (
+              <Subtitle>{subtitle}</Subtitle>
+            )}
+            {children}
+            {subtitle && subtitlePosition == "under" && (
+              <Subtitle>{subtitle}</Subtitle>
+            )}
+          </a>
         </RouterLink>
       )}
     </Title>

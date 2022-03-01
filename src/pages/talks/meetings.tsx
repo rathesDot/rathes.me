@@ -1,5 +1,5 @@
 import React from "react"
-import { PageProps } from "gatsby"
+import { NextPage } from "next"
 
 import { styled } from "../../../stitches.config"
 
@@ -17,7 +17,7 @@ const HelpText = styled("span", {
   lineHeight: "$600",
 })
 
-const Meetings: React.FC<PageProps> = () => (
+const Meetings: React.FC<NextPage> = () => (
   <PageLayout>
     <Meta title="You probably don't need that meeting - Developing a meeting culture that employees will love"></Meta>
     <Container>
