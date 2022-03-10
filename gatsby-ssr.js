@@ -1,8 +1,6 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 
-import { getCssText, lightTheme } from "./stitches.config"
-
 import {
   CodeBlock,
   Heading,
@@ -13,32 +11,6 @@ import {
   Quote,
   Separator,
 } from "./src/components"
-
-import { colorModePersistanceKey } from "./src/layouts/PageLayout/PageLayout"
-
-function getInitialColorMode() {
-  const colorModeKey = "🔑"
-  const lightThemeClassName = "🌙"
-
-  const mql = window.matchMedia("(prefers-color-scheme: light)")
-  const prefersLightModefromMq = mql.matches
-
-  const persistedPreference = localStorage.getItem(colorModeKey)
-  const hasPersistedPreference = typeof persistedPreference === "string"
-
-  let colorMode = "dark"
-
-  if (hasPersistedPreference) {
-    colorMode = persistedPreference
-  } else {
-    colorMode = prefersLightModefromMq ? "light" : "dark"
-  }
-
-  let root = document.documentElement
-  if (colorMode === "light") {
-    root.classList.add(lightThemeClassName)
-  }
-}
 
 const H1 = ({ children }) => <Heading level="heading1">{children}</Heading>
 const H2 = ({ children }) => <Heading level="heading2">{children}</Heading>
@@ -70,29 +42,3 @@ const components = {
 export const wrapRootElement = ({ element }) => (
   <MDXProvider components={components}>{element}</MDXProvider>
 )
-
-const ColorMode = () => {
-  const boundFn = String(getInitialColorMode)
-    .replace("🔑", colorModePersistanceKey)
-    .replace("🌙", lightTheme.className)
-
-  let calledFunction = `(${boundFn})()`
-
-  return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />
-}
-
-const FallbackStyles = () => {
-  return (
-    <style
-      id="stitches"
-      dangerouslySetInnerHTML={{
-        __html: getCssText(),
-      }}
-    />
-  )
-}
-
-export const onRenderBody = ({ setPreBodyComponents, setHeadComponents }) => {
-  setHeadComponents(<FallbackStyles key="fallback-styles" />)
-  setPreBodyComponents(<ColorMode key="magic-script-tag" />)
-}
