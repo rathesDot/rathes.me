@@ -29,12 +29,7 @@ const SayHiContainer = styled("section", {
   marginTop: "$32",
 })
 
-// @todo: Fetch the correct data
-type TalksProps = {
-  data: { rdd: { publicURL: string }; rddUk: { publicURL: string } }
-}
-
-const Work: React.FC<NextPage & TalksProps> = ({ data }) => {
+const Work: React.FC<NextPage> = () => {
   return (
     <PageLayout>
       <Container>
@@ -112,13 +107,13 @@ const Work: React.FC<NextPage & TalksProps> = ({ data }) => {
           </Paragraph>
           <List title="Tech Talks">
             <ListItem
-              link={data.rddUk.publicURL}
+              link="/talks/readme-driven-development-phpuk.pdf"
               subtitle="February 2019 at PHP UK Unconference"
             >
               Introduction to Readme Driven Development
             </ListItem>
             <ListItem
-              link={data.rdd.publicURL}
+              link="/talks/readme-driven-development.pdf"
               subtitle="January 2019 at PHP Gent"
             >
               Introduction to Readme Driven Development
