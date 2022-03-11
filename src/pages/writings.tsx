@@ -99,25 +99,25 @@ export const getStaticProps: GetStaticProps<{
   const blogsPath = path.join(process.cwd(), "./src/content/blog")
   const languages = ["en", "de"]
 
-  const posts = []
+  const posts = languages
+    .map((language) => {
+      return fs.readdirSync(path.join(blogsPath, language)).map((entry) => {
+        const { data: frontmatter } = matter(
+          fs
+            .readFileSync(path.join(blogsPath, language, entry), {
+              encoding: "utf-8",
+            })
+            .toString()
+        )
 
-  for (const language of languages) {
-    for (const entry of fs.readdirSync(path.join(blogsPath, language))) {
-      const { data: frontmatter } = matter(
-        fs
-          .readFileSync(path.join(blogsPath, language, entry), {
-            encoding: "utf-8",
-          })
-          .toString()
-      )
-
-      posts.push({
-        link: `/blog/${language}/${path.basename(entry, ".mdx")}`,
-        title: frontmatter.title,
-        date: frontmatter.date.toString(),
+        return {
+          link: `/blog/${language}/${path.basename(entry, ".mdx")}`,
+          title: frontmatter.title,
+          date: frontmatter.date.toString(),
+        }
       })
-    }
-  }
+    })
+    .flat()
 
   return {
     props: {
