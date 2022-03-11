@@ -1,5 +1,9 @@
 import React from "react"
-import { NextPage } from "next"
+import { GetStaticProps, InferGetStaticPropsType } from "next"
+import matter from "gray-matter"
+
+import path from "path"
+import fs from "fs"
 
 import { styled } from "../../stitches.config"
 
@@ -7,7 +11,8 @@ import { Link, List, ListItem, Paragraph, Meta } from "../components"
 import { SayHi } from "../patterns"
 import { PageLayout } from "../layouts"
 
-import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
+import { getSortedGroups, groupPostsByYear, Post } from "../utils"
+
 import externalLinks from "../content/blog/externalLinks"
 
 const Container = styled("section", {
@@ -27,24 +32,9 @@ const BlogList = styled("div", {
   marginTop: "$12",
 })
 
-// @todo Fetch the correct data
-type MdxQuery = {
-  allMdx: {
-    edges: Array<{
-      id: number
-      node: {
-        parent: { name: string; relativeDirectory: string }
-        frontmatter: { title: string; date: string }
-      }
-    }>
-  }
-}
-
-const Writings: React.FC<NextPage> = ({ data }) => {
-  const blogPosts = getSortedGroups(
-    groupPostsByYear(extractBlogPosts(data).concat(externalLinks))
-  )
-
+const Writings: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  blogPosts,
+}) => {
   return (
     <PageLayout>
       <Container>
@@ -101,6 +91,41 @@ const Writings: React.FC<NextPage> = ({ data }) => {
       </Container>
     </PageLayout>
   )
+}
+
+export const getStaticProps: GetStaticProps<{
+  blogPosts: [string, Post[]][]
+}> = async () => {
+  const blogsPath = path.join(process.cwd(), "./src/content/blog")
+  const languages = ["en", "de"]
+
+  const posts = []
+
+  for (const language of languages) {
+    for (const entry of fs.readdirSync(path.join(blogsPath, language))) {
+      const { data: frontmatter } = matter(
+        fs
+          .readFileSync(path.join(blogsPath, language, entry), {
+            encoding: "utf-8",
+          })
+          .toString()
+      )
+
+      posts.push({
+        link: `/blog/${language}/${path.basename(entry, ".mdx")}`,
+        title: frontmatter.title,
+        date: frontmatter.date.toString(),
+      })
+    }
+  }
+
+  return {
+    props: {
+      blogPosts: getSortedGroups(
+        groupPostsByYear([...posts, ...externalLinks])
+      ),
+    },
+  }
 }
 
 export default Writings
