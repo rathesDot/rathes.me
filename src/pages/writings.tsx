@@ -71,19 +71,17 @@ const Writings: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </List>
           </BlogList>
 
-          {blogPosts.map(([key, posts]) => {
-            return (
-              <BlogList>
-                <List title={key} key={key}>
-                  {posts.map((post, index) => (
-                    <ListItem link={post.link} key={index}>
-                      {post.title}
-                    </ListItem>
-                  ))}
-                </List>
-              </BlogList>
-            )
-          })}
+          {blogPosts.map(([key, posts]) => (
+            <BlogList key={key}>
+              <List title={key}>
+                {posts.map((post, index) => (
+                  <ListItem link={post.link} key={index}>
+                    {post.title}
+                  </ListItem>
+                ))}
+              </List>
+            </BlogList>
+          ))}
         </Section>
         <SayHiContainer>
           <SayHi />
