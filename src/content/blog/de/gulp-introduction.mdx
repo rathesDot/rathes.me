@@ -4,7 +4,7 @@ title: "Gulp — Wie du dank Taskrunner besser durchstartest"
 date: 2015-11-01T16:40:52+00:00
 author: Rathes Sachchithananthan
 template: post
-image: ../../images/blog/gulp-logo.jpg
+image: /images/blog/gulp-logo.jpg
 categories:
   - Web
 tags:
@@ -109,18 +109,15 @@ var rename = require("gulp-rename")
 Damit können jetzt alles Tasks benutzt werden. Schreiben wir nun die Aufgabe, um Sass zu kompilieren:
 
 ```javascript
-gulp.task("sass", function() {
-  return gulp
-    .src("scss/*.scss")
-    .pipe(sass())
-    .pipe(gulp.dest("css"))
+gulp.task("sass", function () {
+  return gulp.src("scss/*.scss").pipe(sass()).pipe(gulp.dest("css"))
 })
 ```
 
 `gulp.task()` definiert eine Aufgabe, wobei der erste Parameter der Name der Aufgabe ist und der zweite Parameter eine Funktion ist, die ausgeführt werden soll. In unserem Fall werden alles scss-Dateien im Ordner `scss/` geöffnet, `sass()` wird ausgeführt und im Ordner `css/` gespeichert.
 
 ```javascript
-gulp.task("scripts", function() {
+gulp.task("scripts", function () {
   return gulp
     .src("js/*.js")
     .pipe(concat("all.js"))
@@ -138,7 +135,7 @@ Wenn du ein Grunt-User bist, weißt du wie umständlich diese paar Zeilen Code i
 Folgender Task wird benutzt um Änderungen zu überwachen und dementsprechende Aufgaben auszuführen:
 
 ```javascript
-gulp.task("watch", function() {
+gulp.task("watch", function () {
   gulp.watch("js/*.js", ["scripts"])
   gulp.watch("scss/*.scss", ["sass"])
 })
