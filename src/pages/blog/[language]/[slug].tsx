@@ -22,7 +22,9 @@ import {
   ImageWrapper,
   List,
   ListItem,
+  Meta,
   Note,
+  SITE_URL,
 } from "../../../components"
 
 const Container = styled("div", {
@@ -67,35 +69,54 @@ const BackLink = styled("span", {
 const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   source,
   frontmatter,
-}) => (
-  <PageLayout>
-    {/** @todo Add meta data of blog */}
-    <Container>
-      {/** @todo Improve image sizes */}
-      {frontmatter.image && (
-        <ImageWrapper>
-          <AspectRatio.Root ratio={16 / 9}>
-            <Image src={frontmatter.image} layout="fill" objectFit="cover" />
-          </AspectRatio.Root>
-        </ImageWrapper>
-      )}
-      <Title
-        size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
-        level="heading1"
-      >
-        {frontmatter.title}
-      </Title>
-      <MDXRemote {...source} components={{ List, ListItem, Note }} />
-      <Footer>
-        <Link href="/writings">
-          <a>
-            <BackLink>back to articles</BackLink>
-          </a>
-        </Link>
-      </Footer>
-    </Container>
-  </PageLayout>
-)
+}) => {
+  const meta = [
+    // @todo fetch correct URL
+    { name: `og:url`, content: `${SITE_URL}` },
+    { name: `og:type`, content: `article` },
+    { name: `og:locale`, content: frontmatter.locale },
+  ]
+  const imageMeta = frontmatter.image
+    ? [
+        { name: `twitter:image`, content: SITE_URL + frontmatter.image },
+        { name: `og:image`, content: SITE_URL + frontmatter.image },
+        { name: `og:image:secure_url`, content: SITE_URL + frontmatter.image },
+      ]
+    : []
+
+  return (
+    <PageLayout>
+      <Meta
+        title={frontmatter.title}
+        description={frontmatter.excerpt}
+        meta={[...meta, ...imageMeta]}
+      />
+      <Container>
+        {frontmatter.image && (
+          <ImageWrapper>
+            <AspectRatio.Root ratio={16 / 9}>
+              <Image src={frontmatter.image} layout="fill" objectFit="cover" />
+            </AspectRatio.Root>
+          </ImageWrapper>
+        )}
+        <Title
+          size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
+          level="heading1"
+        >
+          {frontmatter.title}
+        </Title>
+        <MDXRemote {...source} components={{ List, ListItem, Note }} />
+        <Footer>
+          <Link href="/writings">
+            <a>
+              <BackLink>back to articles</BackLink>
+            </a>
+          </Link>
+        </Footer>
+      </Container>
+    </PageLayout>
+  )
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const blogsPath = path.join(process.cwd(), "./src/content/blog")
