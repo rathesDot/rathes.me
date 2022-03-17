@@ -17,14 +17,12 @@
     "prism-themes": "^1.9.0",
     "prismjs": "^1.27.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-helmet": "^6.1.0"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@types/jest": "^27.4.1",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
-    "@types/react-helmet": "^6.1.5",
     "babel-jest": "^27.5.1",
     "babel-plugin-apply-mdx-type-prop": "^1.6.22",
     "jest": "^27.5.1",
