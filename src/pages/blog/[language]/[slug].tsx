@@ -17,7 +17,13 @@ import matter from "gray-matter"
 import { styled } from "../../../../stitches.config"
 
 import { PageLayout } from "../../../layouts"
-import { Heading, List, ListItem, Note } from "../../../components"
+import {
+  Heading,
+  ImageWrapper,
+  List,
+  ListItem,
+  Note,
+} from "../../../components"
 
 const Container = styled("div", {
   maxWidth: 640,
@@ -48,18 +54,6 @@ const Title = styled(Heading, {
   },
 })
 
-const FeatureImage = styled("div", {
-  borderRadius: "10px",
-  margin: "$4 -$8",
-  overflow: "hidden",
-  position: "relative",
-
-  img: {
-    objectFit: "cover",
-    objectPosition: "center center",
-  },
-})
-
 const Footer = styled("footer", {
   marginBottom: "$32",
   marginTop: "$32",
@@ -79,11 +73,11 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     <Container>
       {/** @todo Improve image sizes */}
       {frontmatter.image && (
-        <FeatureImage>
+        <ImageWrapper>
           <AspectRatio.Root ratio={16 / 9}>
             <Image src={frontmatter.image} layout="fill" objectFit="cover" />
           </AspectRatio.Root>
-        </FeatureImage>
+        </ImageWrapper>
       )}
       <Title
         size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
