@@ -490,6 +490,11 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@corex/deepmerge@^2.6.148":
+  version "2.6.148"
+  resolved "https://registry.yarnpkg.com/@corex/deepmerge/-/deepmerge-2.6.148.tgz#8fa825d53ffd1cbcafce1b6a830eefd3dcc09dd5"
+  integrity sha512-6QMz0/2h5C3ua51iAnXMPWFbb1QOU1UvSM4bKBw5mzdT+WtLgjbETBBIQZ+Sh9WvEcGwlAt/DEdRpIC3XlDBMA==
+
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -2657,6 +2662,14 @@ next-mdx-remote@3.0.8:
     "@mdx-js/react" "^1.6.22"
     esbuild "^0.12.9"
     pkg-dir "^5.0.0"
+
+next-sitemap@^2.5.10:
+  version "2.5.10"
+  resolved "https://registry.yarnpkg.com/next-sitemap/-/next-sitemap-2.5.10.tgz#6b4aa7aebb745ef3b3b17dcef859e87043c3b0af"
+  integrity sha512-9jFvViLL2US0obp6NAGlEpE4gWU5NACupHvVFtLhOhgJ33M/vBPqEgCiZQsG9dKDhZXchjrjQrtDvhk/KZBekg==
+  dependencies:
+    "@corex/deepmerge" "^2.6.148"
+    minimist "^1.2.5"
 
 next@^12.1.0:
   version "12.1.0"
