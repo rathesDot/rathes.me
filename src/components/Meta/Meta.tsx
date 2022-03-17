@@ -42,9 +42,10 @@ export const Meta: React.FC<MetaProps> = ({
       <title>
         {title ? `${title} — Rathes Sachchithananthan` : SITE_TITLE}
       </title>
-      {metaData.map((m) => {
-        return <meta {...m} />
-      })}
+      <link rel="icon" href="/images/icon.png" type="image/png" />
+      {metaData.map((m, i) => (
+        <meta key={i} {...m} />
+      ))}
     </Head>
   )
 }
