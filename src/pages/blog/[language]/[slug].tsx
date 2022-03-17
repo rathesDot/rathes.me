@@ -9,6 +9,7 @@ import Link from "next/link"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote"
 import * as AspectRatio from "@radix-ui/react-aspect-ratio"
+import prism from "remark-prism"
 
 import path from "path"
 import fs from "fs"
@@ -158,7 +159,11 @@ export const getStaticProps: GetStaticProps<{
   return {
     props: {
       frontmatter: JSON.parse(JSON.stringify(data)),
-      source: await serialize(content),
+      source: await serialize(content, {
+        mdxOptions: {
+          remarkPlugins: [prism],
+        },
+      }),
     },
   }
 }
