@@ -10,6 +10,7 @@ import {
   Paragraph,
   Quote,
   Separator,
+  ImageWrapper,
 } from "../components"
 
 const H1 = ({ children }) => <Heading level="heading1">{children}</Heading>
@@ -34,6 +35,11 @@ const components = {
     <Link underlined color="slate12" {...props}>
       {children}
     </Link>
+  ),
+  img: ({ children, ...props }) => (
+    <ImageWrapper>
+      <img {...props} />
+    </ImageWrapper>
   ),
   pre: Pre,
   code: InlineCode,
