@@ -1,4 +1,3 @@
-// @todo: Handle navigation active styles
 import React, { useContext, useEffect, useMemo, useState } from "react"
 import Link from "next/link"
 
