@@ -89,6 +89,7 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     <PageLayout>
       <Meta
         title={frontmatter.title}
+        /** @todo Fix exerpt */
         description={frontmatter.excerpt}
         meta={[...meta, ...imageMeta]}
       />
