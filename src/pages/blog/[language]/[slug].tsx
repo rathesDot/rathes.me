@@ -17,7 +17,7 @@ import matter from "gray-matter"
 import { styled } from "../../../../stitches.config"
 
 import { PageLayout } from "../../../layouts"
-import { Heading } from "../../../components"
+import { Heading, List, ListItem, Note } from "../../../components"
 
 const Container = styled("div", {
   maxWidth: 640,
@@ -91,7 +91,7 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       >
         {frontmatter.title}
       </Title>
-      <MDXRemote {...source} />
+      <MDXRemote {...source} components={{ List, ListItem, Note }} />
       <Footer>
         <Link href="/writings">
           <a>
