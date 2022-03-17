@@ -8,6 +8,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote"
+import * as AspectRatio from "@radix-ui/react-aspect-ratio"
 
 import path from "path"
 import fs from "fs"
@@ -52,10 +53,10 @@ const FeatureImage = styled("div", {
   margin: "$4 -$8",
   overflow: "hidden",
   position: "relative",
-  height: 320,
 
   img: {
     objectFit: "cover",
+    objectPosition: "center center",
   },
 })
 
@@ -79,7 +80,9 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       {/** @todo Improve image sizes */}
       {frontmatter.image && (
         <FeatureImage>
-          <Image src={frontmatter.image} layout="fill" />
+          <AspectRatio.Root ratio={16 / 9}>
+            <Image src={frontmatter.image} layout="fill" objectFit="cover" />
+          </AspectRatio.Root>
         </FeatureImage>
       )}
       <Title
