@@ -11,10 +11,10 @@ export type MetaProps = {
   title: string
 }
 
-export const BASE_TITLE = "Web Developer — Rathes Sachchithananthan"
-export const BASE_DESCRIPTION =
+export const SITE_TITLE = "Web Developer — Rathes Sachchithananthan"
+export const SITE_DESCRIPTION =
   "I am a former freelancing Web Designer and Web Developer. Currently you can find me working at Aheenam, the agency I started to provide digital solutions for anyone. Get in touch with me using social media!"
-export const BASE_AUTHOR = "@rswebdesigner"
+export const SITE_AUTHOR = "@rswebdesigner"
 export const SITE_URL = "https://rathes.me"
 
 export const Meta: React.FC<MetaProps> = ({
@@ -23,7 +23,7 @@ export const Meta: React.FC<MetaProps> = ({
   meta = [],
   title,
 }) => {
-  const metaDescription = description || BASE_DESCRIPTION
+  const metaDescription = description || SITE_DESCRIPTION
 
   const metaData = [
     { name: "description", content: metaDescription },
@@ -32,7 +32,7 @@ export const Meta: React.FC<MetaProps> = ({
     { property: `og:description`, content: metaDescription },
     { property: `og:type`, content: `website` },
     { name: `twitter:card`, content: `summary` },
-    { name: `twitter:creator`, content: BASE_AUTHOR },
+    { name: `twitter:creator`, content: SITE_AUTHOR },
     { name: `twitter:title`, content: title },
     { name: `twitter:description`, content: metaDescription },
   ].concat(meta)
@@ -40,7 +40,7 @@ export const Meta: React.FC<MetaProps> = ({
   return (
     <Head>
       <title>
-        {title ? `${title} — Rathes Sachchithananthan` : BASE_TITLE}
+        {title ? `${title} — Rathes Sachchithananthan` : SITE_TITLE}
       </title>
       {metaData.map((m) => {
         return <meta {...m} />
