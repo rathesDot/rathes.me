@@ -36,9 +36,9 @@ const components = {
       {children}
     </Link>
   ),
-  img: ({ children, ...props }) => (
+  img: ({ children, src, alt, ...props }) => (
     <ImageWrapper>
-      <img {...props} />
+      <img src={src} alt={alt} {...props} />
     </ImageWrapper>
   ),
   pre: Pre,

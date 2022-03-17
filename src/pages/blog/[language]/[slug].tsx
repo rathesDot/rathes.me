@@ -96,7 +96,12 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         {frontmatter.image && (
           <ImageWrapper>
             <AspectRatio.Root ratio={16 / 9}>
-              <Image src={frontmatter.image} layout="fill" objectFit="cover" />
+              <Image
+                src={frontmatter.image}
+                layout="fill"
+                objectFit="cover"
+                alt={frontmatter.title}
+              />
             </AspectRatio.Root>
           </ImageWrapper>
         )}
