@@ -213,12 +213,6 @@ const Menu = styled("div", {
 })
 
 const Navigation = () => {
-  // @todo fetch the correct data for the resume
-  const data = {
-    resume: {
-      publicURL: "",
-    },
-  }
   const [isOpen, setIsOpen] = useState(false)
 
   const { toggleTheme, theme } = useContext(ThemeContext)
@@ -268,11 +262,13 @@ const Navigation = () => {
           </a>
         </Link>
 
-        <a href={data.resume.publicURL} aria-label="Resume">
-          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            Resume
-          </MenuItem>
-        </a>
+        <Link href="/files/resume.pdf">
+          <a aria-label="Resume">
+            <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
+              Resume
+            </MenuItem>
+          </a>
+        </Link>
 
         <Link href="/work">
           <a>
