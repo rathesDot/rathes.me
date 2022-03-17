@@ -39,7 +39,9 @@ export const Meta: React.FC<MetaProps> = ({
 
   return (
     <Head>
-      <title>{title || BASE_TITLE}</title>
+      <title>
+        {title ? `${title} — Rathes Sachchithananthan` : BASE_TITLE}
+      </title>
       {metaData.map((m) => {
         return <meta {...m} />
       })}
