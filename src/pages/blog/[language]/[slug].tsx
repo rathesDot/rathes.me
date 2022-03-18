@@ -70,10 +70,10 @@ const BackLink = styled("span", {
 const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   source,
   frontmatter,
+  url,
 }) => {
   const meta = [
-    // @todo fetch correct URL
-    { name: `og:url`, content: `${SITE_URL}` },
+    { name: `og:url`, content: url },
     { name: `og:type`, content: `article` },
     { name: `og:locale`, content: frontmatter.locale },
   ]
@@ -150,6 +150,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<{
   source: MDXRemoteSerializeResult
+  url: string
   frontmatter: { [key: string]: any }
 }> = async ({ params }) => {
   const language = params.language
@@ -165,6 +166,7 @@ export const getStaticProps: GetStaticProps<{
   return {
     props: {
       frontmatter: JSON.parse(JSON.stringify(data)),
+      url: `${SITE_URL}/blog/${language}/${slug}`,
       source: await serialize(content, {
         mdxOptions: {
           remarkPlugins: [prism],
