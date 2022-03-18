@@ -147,7 +147,10 @@ export const getStaticProps: GetStaticProps<{
     "utf-8"
   )
 
-  const { content, data } = matter(source)
+  const { content, data, excerpt } = matter(source, {
+    excerpt: true,
+    excerpt_separator: "{/* more */}",
+  })
 
   const meta = [
     { name: `og:url`, content: `${SITE_URL}/blog/${language}/${slug}` },
@@ -166,7 +169,7 @@ export const getStaticProps: GetStaticProps<{
   return {
     props: {
       title: data.title,
-      excerpt: "",
+      excerpt,
       image: data.image || null,
       meta: [...meta, ...imageMeta],
       url: `${SITE_URL}/blog/${language}/${slug}`,
