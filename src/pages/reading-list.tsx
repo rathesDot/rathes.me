@@ -230,6 +230,60 @@ const ReadingList: NextPage = () => (
             Origin (Robert Langdon 5)
           </ListItem>
         </List>
+        <Separator />
+        <List title="Reading List 2017">
+          <ListItem
+            subtitle="by Mary Higgins Clark"
+            link="https://amzn.to/3ijBSqJ"
+          >
+            Stillwatch
+          </ListItem>
+          <ListItem subtitle="by Ransom Riggs" link="https://amzn.to/3qiAzwE">
+            Miss Peregrine's Home for Peculiar Children
+          </ListItem>
+          <ListItem subtitle="by Elmore Leonard" link="https://amzn.to/3ijBGaZ">
+            Split Images
+          </ListItem>
+          <ListItem subtitle="by Dale Carnegie" link="https://amzn.to/37Iw0W2">
+            How to Win Friends & Influence People
+          </ListItem>
+          <ListItem subtitle="by Jo Nesbø" link="https://amzn.to/3CTAJzv">
+            Flaggermusmannen, The Bat
+          </ListItem>
+          <ListItem subtitle="by Stephen King" link="https://amzn.to/3JisrDP">
+            It
+          </ListItem>
+          <ListItem subtitle="by Tom Peters" link="https://amzn.to/36e1p21">
+            The brandyou50
+          </ListItem>
+          <ListItem
+            subtitle="by Meena Kandasamy"
+            link="https://amzn.to/3utuFu3"
+          >
+            The Gypsy Goddess
+          </ListItem>
+          <ListItem
+            subtitle="by Douglas Preston"
+            link="https://amzn.to/3qlsqaH"
+          >
+            The Kraken Project
+          </ListItem>
+          <ListItem
+            subtitle="by A.Jeyaratnam Wilson"
+            link="https://amzn.to/3Jnv1IQ"
+          >
+            S.J.V.Chelvanayakam and the Crisis of Sri Lankan Tamil Nationalism
+          </ListItem>
+          <ListItem
+            subtitle="by Andreas Eschbach"
+            link="https://amzn.to/3ImoNHN"
+          >
+            Lord of All Things
+          </ListItem>
+          <ListItem subtitle="by Ian Rankin" link="https://amzn.to/3ua11tp">
+            Saints of the Shadow Bible
+          </ListItem>
+        </List>
       </Section>
     </Container>
   </PageLayout>
