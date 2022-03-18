@@ -69,40 +69,24 @@ const BackLink = styled("span", {
 
 const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   source,
-  frontmatter,
-  url,
+  meta,
+  title,
+  excerpt,
+  image,
 }) => {
-  const meta = [
-    { name: `og:url`, content: url },
-    { name: `og:type`, content: `article` },
-    { name: `og:locale`, content: frontmatter.locale },
-  ]
-  const imageMeta = frontmatter.image
-    ? [
-        { name: `twitter:image`, content: SITE_URL + frontmatter.image },
-        { name: `og:image`, content: SITE_URL + frontmatter.image },
-        { name: `og:image:secure_url`, content: SITE_URL + frontmatter.image },
-      ]
-    : []
-
   return (
     <PageLayout>
       <Meta
-        title={frontmatter.title}
+        title={title}
         /** @todo Fix exerpt */
-        description={frontmatter.excerpt}
-        meta={[...meta, ...imageMeta]}
+        description={excerpt}
+        meta={meta}
       />
       <Container>
-        {frontmatter.image && (
+        {image && (
           <ImageWrapper>
             <AspectRatio.Root ratio={16 / 9}>
-              <Image
-                src={frontmatter.image}
-                layout="fill"
-                objectFit="cover"
-                alt={frontmatter.title}
-              />
+              <Image src={image} layout="fill" objectFit="cover" alt={title} />
             </AspectRatio.Root>
           </ImageWrapper>
         )}
@@ -110,7 +94,7 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
           size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
           level="heading1"
         >
-          {frontmatter.title}
+          {title}
         </Title>
         <MDXRemote {...source} components={{ List, ListItem, Note }} />
         <Footer>
@@ -150,8 +134,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps<{
   source: MDXRemoteSerializeResult
-  url: string
-  frontmatter: { [key: string]: any }
+  title: string
+  excerpt: string
+  image?: string
+  meta: { name: string; content: string }[]
 }> = async ({ params }) => {
   const language = params.language
   const slug = params.slug
@@ -163,9 +149,26 @@ export const getStaticProps: GetStaticProps<{
 
   const { content, data } = matter(source)
 
+  const meta = [
+    { name: `og:url`, content: `${SITE_URL}/blog/${language}/${slug}` },
+    { name: `og:type`, content: `article` },
+    { name: `og:locale`, content: data.locale },
+  ]
+
+  const imageMeta = data.image
+    ? [
+        { name: `twitter:image`, content: SITE_URL + data.image },
+        { name: `og:image`, content: SITE_URL + data.image },
+        { name: `og:image:secure_url`, content: SITE_URL + data.image },
+      ]
+    : []
+
   return {
     props: {
-      frontmatter: JSON.parse(JSON.stringify(data)),
+      title: data.title,
+      excerpt: "",
+      image: data.image || null,
+      meta: [...meta, ...imageMeta],
       url: `${SITE_URL}/blog/${language}/${slug}`,
       source: await serialize(content, {
         mdxOptions: {
