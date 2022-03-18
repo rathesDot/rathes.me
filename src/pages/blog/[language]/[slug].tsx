@@ -109,16 +109,14 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const languages = ["en", "de"]
 
   const posts = languages
-    .map((language) => {
-      return fs.readdirSync(path.join(blogsPath, language)).map((entry) => {
-        return {
-          params: {
-            language,
-            slug: `${path.basename(entry, ".mdx")}`,
-          },
-        }
-      })
-    })
+    .map((language) =>
+      fs.readdirSync(path.join(blogsPath, language)).map((entry) => ({
+        params: {
+          language,
+          slug: `${path.basename(entry, ".mdx")}`,
+        },
+      }))
+    )
     .flat()
 
   return {
