@@ -12,6 +12,7 @@ import {
   Separator,
   ImageWrapper,
 } from "../components"
+import Script from "next/script"
 
 const H1 = ({ children }) => <Heading level="heading1">{children}</Heading>
 const H2 = ({ children }) => <Heading level="heading2">{children}</Heading>
@@ -48,6 +49,12 @@ const components = {
 export default function CustomApp({ Component, pageProps }: AppProps) {
   return (
     <MDXProvider components={components}>
+      <Script
+        src="https://cdn.usefathom.com/script.js"
+        data-spa="auto"
+        data-site="ZYWCGBNZ"
+        defer
+      />
       <Component {...pageProps} />
     </MDXProvider>
   )
