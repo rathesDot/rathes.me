@@ -248,17 +248,6 @@ const PageLayout: React.FC = ({ children }) => {
       {
         color: "#a0aec0",
       },
-
-    ".gatsby-highlight": {
-      marginBottom: "$6",
-      marginTop: "$6",
-    },
-
-    ".gatsby-resp-image-wrapper": {
-      borderRadius: "10px",
-      margin: "$4 -$8 !important",
-      overflow: "hidden",
-    },
   })()
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

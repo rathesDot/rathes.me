@@ -1,5 +1,5 @@
 import React from "react"
-import { PageProps } from "gatsby"
+import { NextPage } from "next"
 
 import { styled } from "../../../stitches.config"
 
@@ -17,7 +17,7 @@ const HelpText = styled("span", {
   lineHeight: "$600",
 })
 
-const ManagingTime: React.FC<PageProps> = () => (
+const ManagingTime: React.FC<NextPage> = () => (
   <PageLayout>
     <Meta title="You can't manage time - A talk about what people call time management"></Meta>
     <Container>

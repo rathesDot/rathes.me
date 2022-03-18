@@ -4,7 +4,7 @@ title: Einstieg in Vue mit Vuex
 date: 2017-04-02T13:21:46+00:00
 author: Rathes Sachchithananthan
 template: post
-image: ../../images/blog/einfuehrung-in-vuejs.jpg
+image: /images/blog/einfuehrung-in-vuejs.jpg
 categories:
   - Web
 tags:
@@ -21,7 +21,7 @@ import { Note } from "../../../components"
   aktuell. Wenn du Interesse daran hast, dass der Artikel aktualisiert wird,
   dann melde dich gerne bei{" "}
   <a
-    style="text-decoration: underline"
+    style={{ textDecoration: "underline" }}
     href="https://twitter.com/rswebdesigner"
   >
     @rswebdesigner
@@ -70,7 +70,7 @@ Wenn du noch sehr neu in der Entwicklung mit Frontend-Frameworks bist, dann rate
 
 Mit Vuex will man erreichen, dass die Daten nur in einem bestimmten Muster verändert und bearbeitet werden können, das sogenannte Konzept des "One-Way Data Flow". Unter dem Namen Flux kommt dieses Konzept bei Facebook und React zum Einsatz und unter Vue wird das Konzept als Vuex fertig implementiert geliefert.
 
-[![Flux pattern](../../images/blog/flux-pattern.png)](http://www.youtube.com/watch?v=nYkdrAPrdcw)
+[![Flux pattern](/images/blog/flux-pattern.png)](http://www.youtube.com/watch?v=nYkdrAPrdcw)
 
 Bei dem Konzept von Vuex geht man von einem einzigen Datensatz aus. Anstelle von mehreren kleinen Datensätzen innerhalb einer Komponente, greifen diese nun die Daten eines "Stores" ab, um damit dann die View mit den richtigen Daten zu befüllen.
 
@@ -148,9 +148,9 @@ Die Modules liefern die dir Möglichkeit deinen Store in kleine Substores aufzut
 
 Jetzt, wo du die Grundlagen kennst, ist der nächste Schritt wie man Vuex nun in eine Vue-App intergriert. In der Dokumentation von Vuex zeigt folgende Grafik wie der Workflow aussieht:
 
-![Vuex Workflow](../../images/blog/vuex-workflow.png)
+![Vuex Workflow](/images/blog/vuex-workflow.png)
 
-_Grafische Darstellung vom Datenworkflow mit Vuex (Quelle: <https://vuex.vuejs.org/en/intro.html>)_
+_Grafische Darstellung vom Datenworkflow mit Vuex (Quelle: https://vuex.vuejs.org/en/intro.html)_
 
 Als erstes musst du natürlich Vuex installieren. Das machst du mit npm `npm install --save Vuex`. Dann erstellst du einen Ordner store und darin eine index.js Datei und befüllst diese Datei mit dem Grundaufbau, den du oben bereits findest.
 

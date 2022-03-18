@@ -1,30 +1,7 @@
-type MdxQuery = {
-  allMdx: {
-    edges: Array<{
-      node: {
-        parent: { name: string; relativeDirectory: string }
-        frontmatter: { title: string; date: string }
-      }
-    }>
-  }
-}
-
-type Post = {
+export type Post = {
   title: string
   date: string
   link: string
-}
-
-export const extractBlogPosts = (data: MdxQuery): Post[] => {
-  return [
-    ...data.allMdx.edges.map(({ node: post }) => {
-      return {
-        title: post.frontmatter.title,
-        date: post.frontmatter.date,
-        link: `/${post.parent.relativeDirectory}/${post.parent.name}`,
-      }
-    }),
-  ]
 }
 
 export const groupPostsByYear = (posts: Post[]): { [key: number]: Post[] } => {

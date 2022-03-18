@@ -1,6 +1,6 @@
+// @todo Html lang="en" needs to be fixed
+import Head from "next/head"
 import React from "react"
-import { Helmet } from "react-helmet"
-import { graphql, useStaticQuery } from "gatsby"
 
 export type MetaProps = {
   description?: string
@@ -11,71 +11,41 @@ export type MetaProps = {
   title: string
 }
 
+export const SITE_TITLE = "Web Developer — Rathes Sachchithananthan"
+export const SITE_DESCRIPTION =
+  "I am a former freelancing Web Designer and Web Developer. Currently you can find me working at Aheenam, the agency I started to provide digital solutions for anyone. Get in touch with me using social media!"
+export const SITE_AUTHOR = "@rswebdesigner"
+export const SITE_URL = "https://rathes.me"
+
 export const Meta: React.FC<MetaProps> = ({
   description = "",
   lang = `en`,
   meta = [],
   title,
 }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-          description
-          author
-        }
-      }
-    }
-  `)
+  const metaDescription = description || SITE_DESCRIPTION
 
-  const metaDescription = description || data.site.siteMetadata.description
+  const metaData = [
+    { name: "description", content: metaDescription },
+    { property: `og:title`, content: title },
+    { property: `og:site_name`, content: `rathes.me` },
+    { property: `og:description`, content: metaDescription },
+    { property: `og:type`, content: `website` },
+    { name: `twitter:card`, content: `summary` },
+    { name: `twitter:creator`, content: SITE_AUTHOR },
+    { name: `twitter:title`, content: title },
+    { name: `twitter:description`, content: metaDescription },
+  ].concat(meta)
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:site_name`,
-          content: `rathes.me`,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: data.site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(meta)}
-    />
+    <Head>
+      <title>
+        {title ? `${title} — Rathes Sachchithananthan` : SITE_TITLE}
+      </title>
+      <link rel="icon" href="/images/icon.png" type="image/png" />
+      {metaData.map((m, i) => (
+        <meta key={i} {...m} />
+      ))}
+    </Head>
   )
 }

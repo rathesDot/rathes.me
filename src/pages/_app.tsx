@@ -1,16 +1,18 @@
-import React from "react"
+import type { AppProps } from "next/app"
 import { MDXProvider } from "@mdx-js/react"
 
 import {
   CodeBlock,
-  InlineCode,
   Heading,
+  InlineCode,
   Link,
   OrderedList,
   Paragraph,
   Quote,
   Separator,
-} from "./src/components"
+  ImageWrapper,
+} from "../components"
+import Script from "next/script"
 
 const H1 = ({ children }) => <Heading level="heading1">{children}</Heading>
 const H2 = ({ children }) => <Heading level="heading2">{children}</Heading>
@@ -35,10 +37,25 @@ const components = {
       {children}
     </Link>
   ),
+  img: ({ children, src, alt, ...props }) => (
+    <ImageWrapper>
+      <img src={src} alt={alt} {...props} />
+    </ImageWrapper>
+  ),
   pre: Pre,
   code: InlineCode,
 }
 
-export const wrapRootElement = ({ element }) => (
-  <MDXProvider components={components}>{element}</MDXProvider>
-)
+export default function CustomApp({ Component, pageProps }: AppProps) {
+  return (
+    <MDXProvider components={components}>
+      <Script
+        src="https://cdn.usefathom.com/script.js"
+        data-spa="auto"
+        data-site="ZYWCGBNZ"
+        defer
+      />
+      <Component {...pageProps} />
+    </MDXProvider>
+  )
+}

@@ -1,5 +1,5 @@
 import React from "react"
-import { PageProps } from "gatsby"
+import { NextPage } from "next"
 
 import { styled } from "../../stitches.config"
 
@@ -11,7 +11,7 @@ const Container = styled("div", {
   maxWidth: 640,
 })
 
-const Legal: React.FC<PageProps> = () => (
+const Legal: React.FC<NextPage> = () => (
   <PageLayout>
     <Meta title="Legal Information" />
     <Container>

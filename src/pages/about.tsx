@@ -1,5 +1,6 @@
 import React from "react"
-import { Link as RouterLink, PageProps } from "gatsby"
+import RouterLink from "next/link"
+import { NextPage } from "next"
 
 import { PageLayout } from "../layouts"
 import { styled } from "../../stitches.config"
@@ -33,7 +34,7 @@ const ReadingList = styled("div", {
   marginTop: "$12",
 })
 
-const AboutMe: React.FC<PageProps> = () => (
+const AboutMe: React.FC<NextPage> = () => (
   <PageLayout>
     <Meta title="About me" />
     <Container>
@@ -253,10 +254,12 @@ const AboutMe: React.FC<PageProps> = () => (
         <Paragraph>
           From time to time I also write. It can be work related topics that I
           share in the{" "}
-          <RouterLink to="/writings">
-            <Text color="slate12" underlined>
-              writing section
-            </Text>
+          <RouterLink href="/writings">
+            <a>
+              <Text color="slate12" underlined>
+                writing section
+              </Text>
+            </a>
           </RouterLink>{" "}
           of this website but I also write to empty my mind and eternalize
           ideas.

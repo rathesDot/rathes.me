@@ -1,5 +1,5 @@
 import React from "react"
-import { PageProps } from "gatsby"
+import { NextPage } from "next"
 
 import { styled } from "../../stitches.config"
 
@@ -37,7 +37,7 @@ const Section = styled("section", {
   marginTop: "$24",
 })
 
-const IndexPage: React.FC<PageProps> = () => (
+const IndexPage: React.FC<NextPage> = () => (
   <PageLayout>
     <Meta title="Home" />
     <Container>

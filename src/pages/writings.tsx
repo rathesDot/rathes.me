@@ -1,5 +1,9 @@
 import React from "react"
-import { graphql, PageProps } from "gatsby"
+import { GetStaticProps, InferGetStaticPropsType } from "next"
+import matter from "gray-matter"
+
+import path from "path"
+import fs from "fs"
 
 import { styled } from "../../stitches.config"
 
@@ -7,7 +11,8 @@ import { Link, List, ListItem, Paragraph, Meta } from "../components"
 import { SayHi } from "../patterns"
 import { PageLayout } from "../layouts"
 
-import { extractBlogPosts, getSortedGroups, groupPostsByYear } from "../utils"
+import { getSortedGroups, groupPostsByYear, Post } from "../utils"
+
 import externalLinks from "../content/blog/externalLinks"
 
 const Container = styled("section", {
@@ -27,23 +32,9 @@ const BlogList = styled("div", {
   marginTop: "$12",
 })
 
-type MdxQuery = {
-  allMdx: {
-    edges: Array<{
-      id: number
-      node: {
-        parent: { name: string; relativeDirectory: string }
-        frontmatter: { title: string; date: string }
-      }
-    }>
-  }
-}
-
-const Writings: React.FC<PageProps<MdxQuery>> = ({ data }) => {
-  const blogPosts = getSortedGroups(
-    groupPostsByYear(extractBlogPosts(data).concat(externalLinks))
-  )
-
+const Writings: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  blogPosts,
+}) => {
   return (
     <PageLayout>
       <Container>
@@ -80,19 +71,17 @@ const Writings: React.FC<PageProps<MdxQuery>> = ({ data }) => {
             </List>
           </BlogList>
 
-          {blogPosts.map(([key, posts]) => {
-            return (
-              <BlogList>
-                <List title={key} key={key}>
-                  {posts.map((post, index) => (
-                    <ListItem link={post.link} key={index}>
-                      {post.title}
-                    </ListItem>
-                  ))}
-                </List>
-              </BlogList>
-            )
-          })}
+          {blogPosts.map(([key, posts]) => (
+            <BlogList key={key}>
+              <List title={key}>
+                {posts.map((post, index) => (
+                  <ListItem link={post.link} key={index}>
+                    {post.title}
+                  </ListItem>
+                ))}
+              </List>
+            </BlogList>
+          ))}
         </Section>
         <SayHiContainer>
           <SayHi />
@@ -102,27 +91,39 @@ const Writings: React.FC<PageProps<MdxQuery>> = ({ data }) => {
   )
 }
 
-export const query = graphql`
-  query {
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          id
-          parent {
-            ... on File {
-              id
-              name
-              relativeDirectory
-            }
-          }
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-          }
+export const getStaticProps: GetStaticProps<{
+  blogPosts: [string, Post[]][]
+}> = async () => {
+  const blogsPath = path.join(process.cwd(), "./src/content/blog")
+  const languages = ["en", "de"]
+
+  const posts = languages
+    .map((language) => {
+      return fs.readdirSync(path.join(blogsPath, language)).map((entry) => {
+        const { data: frontmatter } = matter(
+          fs
+            .readFileSync(path.join(blogsPath, language, entry), {
+              encoding: "utf-8",
+            })
+            .toString()
+        )
+
+        return {
+          link: `/blog/${language}/${path.basename(entry, ".mdx")}`,
+          title: frontmatter.title,
+          date: frontmatter.date.toString(),
         }
-      }
-    }
+      })
+    })
+    .flat()
+
+  return {
+    props: {
+      blogPosts: getSortedGroups(
+        groupPostsByYear([...posts, ...externalLinks])
+      ),
+    },
   }
-`
+}
 
 export default Writings
