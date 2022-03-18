@@ -76,9 +76,7 @@ const IndexPage: React.FC<NextPage> = () => (
 
       <Section>
         <List title="Featured Posts">
-          <ListItem link="/blog/en/introducing-maxout/">
-            Building Maxout
-          </ListItem>
+          <ListItem link="/blog/en/building-maxout">Building Maxout</ListItem>
           <ListItem link="/blog/en/from-couch-to-5k">
             From Couch to 5k — A simple way to get into running
           </ListItem>
