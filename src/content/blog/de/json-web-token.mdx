@@ -20,6 +20,8 @@ REST API’s, die im Web immer wieder Verwendung finden, sind zustandslos. Das b
 
 In diesem Beitrag erkläre ich euch was das JSON Web Token ist, wie es funktioniert und welche Vorteile man mit JSON Web Token im Vergleich zu Cookies hat. Außerdem erfahrt ihr wie es zusammen mit einer in PHP geschriebenen API benutzt werden könnte.
 
+<!--more-->
+
 ## Cookies vs. JSON Web Token
 
 Betrachten wir zunächst die traditionelle Variante der Authentifizierung und Autorisierung. Der Client sendet eine POST Anfrage an den Server mit den Daten des Benutzers für die Authentifizierung und bekommt eine Antwort mit einem Cookie welches eine Session beinhaltet, um den Benutzer zu identifizieren. Bei jeder weiteren Anfrage an den Server muss dieser die Session finden, deserialisieren und auswerten.
