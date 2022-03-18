@@ -13,7 +13,7 @@ export type MetaProps = {
 
 export const SITE_TITLE = "Web Developer — Rathes Sachchithananthan"
 export const SITE_DESCRIPTION =
-  "I am a former freelancing Web Designer and Web Developer. Currently you can find me working at Aheenam, the agency I started to provide digital solutions for anyone. Get in touch with me using social media!"
+  "I am a former freelancing Web Designer and Web Developer. Currently, I work as a product engineer at Intercom helping businesses building better customer relationships. Get in touch with me using social media!"
 export const SITE_AUTHOR = "@rswebdesigner"
 export const SITE_URL = "https://rathes.me"
 
