@@ -80,11 +80,11 @@ const IndexPage: React.FC<NextPage> = () => (
           <ListItem link="/blog/en/from-couch-to-5k">
             From Couch to 5k — A simple way to get into running
           </ListItem>
-          <ListItem link="/blog/en/how-to-slack/">How-To Slack</ListItem>
+          <ListItem link="/blog/en/how-to-slack">How-To Slack</ListItem>
           <ListItem link="/blog/en/customer-experience-instead-of-features">
             Stop thinking in features. Start thinking in customer experience.
           </ListItem>
-          <ListItem link="/blog/en/essential-metrics-saas-businesses/">
+          <ListItem link="/blog/en/essential-metrics-saas-businesses">
             Essential metrics for SaaS businesses
           </ListItem>
           <ListItem link="/blog/en/developing-meeting-culture-employees-love">
