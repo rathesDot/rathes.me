@@ -76,12 +76,7 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
 }) => {
   return (
     <PageLayout>
-      <Meta
-        title={title}
-        /** @todo Fix exerpt */
-        description={excerpt}
-        meta={meta}
-      />
+      <Meta title={title} description={excerpt} meta={meta} />
       <Container>
         {image && (
           <ImageWrapper>
