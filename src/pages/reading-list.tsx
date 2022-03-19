@@ -9,6 +9,7 @@ import { PageLayout } from "../layouts"
 import { Heading, Meta, List, ListItem, Separator } from "../components"
 
 const Container = styled("div", {
+  flexGrow: 1,
   marginBottom: "$32",
   maxWidth: 640,
 })
@@ -25,8 +26,10 @@ const ReadingList: NextPage = () => {
     return (Object.entries(data) as [string, Book[]][]).map(([year, books]) => {
       return [
         year,
-        books.filter((book) =>
-          book.title.toLowerCase().includes(searchTerm.toLowerCase())
+        books.filter(
+          (book) =>
+            book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            book.author.toLowerCase().includes(searchTerm.toLowerCase())
         ),
       ]
     })
