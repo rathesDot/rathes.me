@@ -6,7 +6,14 @@ import { styled } from "../../stitches.config"
 import data from "../../data/books.json"
 
 import { PageLayout } from "../layouts"
-import { Heading, Meta, List, ListItem, Separator } from "../components"
+import {
+  Heading,
+  Meta,
+  List,
+  ListItem,
+  Separator,
+  TextField,
+} from "../components"
 
 const Container = styled("div", {
   flexGrow: 1,
@@ -18,10 +25,17 @@ const Section = styled("section", {
   marginTop: "$16",
 })
 
+const Header = styled("section", {
+  display: "flex",
+  flexDirection: "column",
+  gap: "$4",
+  marginBottom: "$16",
+})
+
 type Book = { title: string; url: string; author: string }
 
 const ReadingList: NextPage = () => {
-  const [searchTerm, setFilter] = useState("")
+  const [searchTerm, setSearchTerm] = useState("")
   const filteredList: [string, Book[]][] = useMemo(() => {
     return (Object.entries(data) as [string, Book[]][]).map(([year, books]) => {
       return [
@@ -39,7 +53,15 @@ const ReadingList: NextPage = () => {
     <PageLayout>
       <Meta title="Reading List" />
       <Container>
-        <Heading>Reading List</Heading>
+        <Header>
+          <Heading>Reading List</Heading>
+          <TextField
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            aria-label="Filter list"
+            placeholder="Filter list..."
+          />
+        </Header>
         <Section>
           {filteredList.map(([listTitle, books], index, list) => {
             if (!books.length) {
