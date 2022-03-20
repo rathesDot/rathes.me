@@ -17,6 +17,8 @@ import {
 
 import { SayHi } from "../patterns"
 
+import books from "../../data/books.json"
+
 const Container = styled("section", {
   maxWidth: 640,
 })
@@ -91,24 +93,27 @@ const AboutMe: React.FC<NextPage> = () => (
         </Paragraph>
         <ReadingList>
           <List title="Currently reading">
-            <ListItem
-              subtitle="by Thomas Erikson"
-              link="https://amzn.to/3hug8bi"
-            >
-              Surrounded by Idiots: The Four Types of Human Behavior
-            </ListItem>
+            {books["Currently reading"].map((book, index) => (
+              <ListItem
+                key={`${book.title.replaceAll(" ", "-")}-${index}`}
+                subtitle={`by ${book.author}`}
+                link={book.url}
+              >
+                {book.title}
+              </ListItem>
+            ))}
           </List>
           <Separator />
           <List title="Reading List 2022">
-            <ListItem
-              subtitle="by George R. R. Martin"
-              link="https://amzn.to/2Rngm82"
-            >
-              A Game of Thrones: A Song of Ice and Fire
-            </ListItem>
-            <ListItem subtitle="by Amish" link="https://amzn.to/3j86ASh">
-              Immortals of Meluha
-            </ListItem>
+            {books["Reading List 2022"].map((book, index) => (
+              <ListItem
+                key={`${book.title.replaceAll(" ", "-")}-${index}`}
+                subtitle={`by ${book.author}`}
+                link={book.url}
+              >
+                {book.title}
+              </ListItem>
+            ))}
           </List>
         </ReadingList>
         <Paragraph>
