@@ -17,6 +17,8 @@ import matter from "gray-matter"
 
 import { styled } from "../../../../stitches.config"
 
+import books from "../../../../data/books.json"
+
 import { PageLayout } from "../../../layouts"
 import {
   Heading,
@@ -91,7 +93,11 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         >
           {title}
         </Title>
-        <MDXRemote {...source} components={{ List, ListItem, Note }} />
+        <MDXRemote
+          {...source}
+          components={{ List, ListItem, Note }}
+          scope={{ books }}
+        />
         <Footer>
           <Link href="/writings">
             <a>
