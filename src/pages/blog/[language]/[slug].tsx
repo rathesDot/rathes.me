@@ -141,43 +141,49 @@ export const getStaticProps: GetStaticProps<{
   const language = params.language
   const slug = params.slug
 
-  const source = fs.readFileSync(
-    path.join(process.cwd(), `./src/content/blog/${language}/${slug}.mdx`),
-    "utf-8"
-  )
+  try {
+    const source = fs.readFileSync(
+      path.join(process.cwd(), `./src/content/blog/${language}/${slug}.mdx`),
+      "utf-8"
+    )
 
-  const { content, data, excerpt } = matter(source, {
-    excerpt: true,
-    excerpt_separator: "{/* more */}",
-  })
+    const { content, data, excerpt } = matter(source, {
+      excerpt: true,
+      excerpt_separator: "{/* more */}",
+    })
 
-  const meta = [
-    { name: `og:url`, content: `${SITE_URL}/blog/${language}/${slug}` },
-    { name: `og:type`, content: `article` },
-    { name: `og:locale`, content: data.locale },
-  ]
+    const meta = [
+      { name: `og:url`, content: `${SITE_URL}/blog/${language}/${slug}` },
+      { name: `og:type`, content: `article` },
+      { name: `og:locale`, content: data.locale },
+    ]
 
-  const imageMeta = data.image
-    ? [
-        { name: `twitter:image`, content: SITE_URL + data.image },
-        { name: `og:image`, content: SITE_URL + data.image },
-        { name: `og:image:secure_url`, content: SITE_URL + data.image },
-      ]
-    : []
+    const imageMeta = data.image
+      ? [
+          { name: `twitter:image`, content: SITE_URL + data.image },
+          { name: `og:image`, content: SITE_URL + data.image },
+          { name: `og:image:secure_url`, content: SITE_URL + data.image },
+        ]
+      : []
 
-  return {
-    props: {
-      title: data.title,
-      excerpt,
-      image: data.image || null,
-      meta: [...meta, ...imageMeta],
-      url: `${SITE_URL}/blog/${language}/${slug}`,
-      source: await serialize(content, {
-        mdxOptions: {
-          remarkPlugins: [prism],
-        },
-      }),
-    },
+    return {
+      props: {
+        title: data.title,
+        excerpt,
+        image: data.image || null,
+        meta: [...meta, ...imageMeta],
+        url: `${SITE_URL}/blog/${language}/${slug}`,
+        source: await serialize(content, {
+          mdxOptions: {
+            remarkPlugins: [prism],
+          },
+        }),
+      },
+    }
+  } catch (e) {
+    return {
+      notFound: true,
+    }
   }
 }
 
