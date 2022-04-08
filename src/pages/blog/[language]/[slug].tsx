@@ -28,7 +28,23 @@ import {
   Meta,
   Note,
   SITE_URL,
+  CodeBlock,
+  InlineCode,
+  OrderedList,
+  Paragraph,
+  Quote,
+  Separator,
+  Link as StyleLink,
 } from "../../../components"
+
+const H1 = ({ children }) => <Heading level="heading1">{children}</Heading>
+const H2 = ({ children }) => <Heading level="heading2">{children}</Heading>
+const H3 = ({ children }) => <Heading level="heading3">{children}</Heading>
+const H4 = ({ children }) => <Heading level="heading4">{children}</Heading>
+
+const Pre = ({ children, className }) => {
+  return <CodeBlock className={className}>{children}</CodeBlock>
+}
 
 const Container = styled("div", {
   maxWidth: 640,
@@ -76,6 +92,32 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   excerpt,
   image,
 }) => {
+  const components = {
+    h1: H1,
+    h2: H2,
+    h3: H3,
+    h4: H4,
+    hr: Separator,
+    p: Paragraph,
+    ol: OrderedList,
+    blockquote: Quote,
+    a: ({ children, ...props }) => (
+      <StyleLink underlined color="slate12" {...props}>
+        {children}
+      </StyleLink>
+    ),
+    img: ({ children, src, alt, ...props }) => (
+      <ImageWrapper>
+        <img src={src} alt={alt} {...props} />
+      </ImageWrapper>
+    ),
+    pre: Pre,
+    code: InlineCode,
+    List,
+    ListItem,
+    Note,
+  }
+
   return (
     <PageLayout>
       <Meta title={title} description={excerpt} meta={meta} />
@@ -93,11 +135,7 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         >
           {title}
         </Title>
-        <MDXRemote
-          {...source}
-          components={{ List, ListItem, Note }}
-          scope={{ books }}
-        />
+        <MDXRemote {...source} components={components} scope={{ books }} />
         <Footer>
           <Link href="/writings">
             <a>
