@@ -100,10 +100,10 @@ const IconButton = styled("button", {
   },
 })
 
-const ThemeSwitch: React.FC<{
+const ThemeSwitch: React.FC<React.PropsWithChildren<{
   theme: "dark" | "light"
   onToggle: () => void
-}> = ({ onToggle, theme }) => {
+}>> = ({ onToggle, theme }) => {
   if (theme === undefined) {
     return null
   }
@@ -144,7 +144,7 @@ const ThemeSwitch: React.FC<{
   )
 }
 
-const Hamburger: React.FC<{ isOpen: boolean; onToggle: () => void }> = ({
+const Hamburger: React.FC<React.PropsWithChildren<{ isOpen: boolean; onToggle: () => void }>> = ({
   isOpen,
   onToggle,
 }) => {

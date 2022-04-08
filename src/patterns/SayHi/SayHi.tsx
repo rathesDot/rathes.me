@@ -12,7 +12,7 @@ const Container = styled("div", {
   maxWidth: 520,
 })
 
-export const SayHi: React.FC = () => (
+export const SayHi: React.FC<React.PropsWithChildren<unknown>> = () => (
   <Container>
     Work inquiry, question or something else?{" "}
     <Link

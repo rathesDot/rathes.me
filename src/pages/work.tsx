@@ -29,7 +29,7 @@ const SayHiContainer = styled("section", {
   marginTop: "$32",
 })
 
-const Work: React.FC<NextPage> = () => {
+const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
   return (
     <PageLayout>
       <Container>

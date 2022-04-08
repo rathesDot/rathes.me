@@ -17,7 +17,7 @@ const HelpText = styled("span", {
   lineHeight: "$600",
 })
 
-const ManagingTime: React.FC<NextPage> = () => (
+const ManagingTime: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="You can't manage time - A talk about what people call time management"></Meta>
     <Container>

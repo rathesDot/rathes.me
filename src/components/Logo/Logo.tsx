@@ -1,6 +1,6 @@
 import React from "react"
 
-export const Logo: React.FC = () => (
+export const Logo: React.FC<React.PropsWithChildren<unknown>> = () => (
   <svg
     width="24"
     height="24"

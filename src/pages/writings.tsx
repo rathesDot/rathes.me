@@ -32,7 +32,7 @@ const BlogList = styled("div", {
   marginTop: "$12",
 })
 
-const Writings: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
+const Writings: React.FC<React.PropsWithChildren<InferGetStaticPropsType<typeof getStaticProps>>> = ({
   blogPosts,
 }) => {
   return (

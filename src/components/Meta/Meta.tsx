@@ -17,7 +17,7 @@ export const SITE_DESCRIPTION =
 export const SITE_AUTHOR = "@rswebdesigner"
 export const SITE_URL = "https://rathes.me"
 
-export const Meta: React.FC<MetaProps> = ({
+export const Meta: React.FC<React.PropsWithChildren<MetaProps>> = ({
   description = "",
   lang = `en`,
   meta = [],

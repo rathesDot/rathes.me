@@ -39,7 +39,7 @@ const MainContainer = styled("main", {
   },
 })
 
-const PageLayout: React.FC = ({ children }) => {
+const PageLayout: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   const [theme, setTheme] = useState<ColorMode>()
 
   const themes = {

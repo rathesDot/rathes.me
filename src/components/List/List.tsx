@@ -30,7 +30,7 @@ export type ListItemProps = {
   subtitlePosition?: "above" | "under"
 }
 
-export const ListItem: React.FC<ListItemProps> = ({
+export const ListItem: React.FC<React.PropsWithChildren<ListItemProps>> = ({
   children,
   subtitle,
   link,
@@ -71,7 +71,7 @@ export type ListProps = {
   title?: string
 }
 
-export const List: React.FC<ListProps> = ({ title, children, ...props }) => (
+export const List: React.FC<React.PropsWithChildren<ListProps>> = ({ title, children, ...props }) => (
   <Container {...props}>
     {title && (
       <Heading level="heading4" color="slate11">

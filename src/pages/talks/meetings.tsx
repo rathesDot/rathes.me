@@ -17,7 +17,7 @@ const HelpText = styled("span", {
   lineHeight: "$600",
 })
 
-const Meetings: React.FC<NextPage> = () => (
+const Meetings: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="You probably don't need that meeting - Developing a meeting culture that employees will love"></Meta>
     <Container>

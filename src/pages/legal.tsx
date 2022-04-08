@@ -11,7 +11,7 @@ const Container = styled("div", {
   maxWidth: 640,
 })
 
-const Legal: React.FC<NextPage> = () => (
+const Legal: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="Legal Information" />
     <Container>

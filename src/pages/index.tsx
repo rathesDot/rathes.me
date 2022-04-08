@@ -37,7 +37,7 @@ const Section = styled("section", {
   marginTop: "$24",
 })
 
-const IndexPage: React.FC<NextPage> = () => (
+const IndexPage: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="Home" />
     <Container>

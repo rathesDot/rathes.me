@@ -37,7 +37,7 @@ const ReadingList = styled("div", {
   marginTop: "$12",
 })
 
-const AboutMe: React.FC<NextPage> = () => (
+const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="About me" />
     <Container>
