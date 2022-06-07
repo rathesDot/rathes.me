@@ -5,8 +5,8 @@ import { getCssText, lightTheme } from "../../stitches.config"
 import { colorModePersistanceKey } from "../layouts/PageLayout/PageLayout"
 
 function getInitialColorMode() {
-  const colorModeKey = "🔑"
-  const lightThemeClassName = "🌙"
+  const colorModeKey = "COLOR_MODE_KEY"
+  const lightThemeClassName = "LIGHT_THEME_CLASSNAME"
 
   const mql = window.matchMedia("(prefers-color-scheme: light)")
   const prefersLightModefromMq = mql.matches
@@ -30,8 +30,8 @@ function getInitialColorMode() {
 
 const ColorMode = () => {
   const boundFn = String(getInitialColorMode)
-    .replace("🔑", colorModePersistanceKey)
-    .replace("🌙", lightTheme.className)
+    .replace("COLOR_MODE_KEY", colorModePersistanceKey)
+    .replace("LIGHT_THEME_CLASSNAME", lightTheme.className)
 
   let calledFunction = `(${boundFn})()`
 
