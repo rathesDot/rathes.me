@@ -1,4 +1,4 @@
-export default [
+const links = [
   {
     title: "12 books in 12 months",
     date: "Dec 10, 2017",
@@ -15,3 +15,5 @@ export default [
     link: "https://medium.com/@rathes/pivot-in-leben-warum-ich-mich-entschied-nach-schleswig-zu-ziehen-dbb268db09a6",
   },
 ]
+
+export default links
