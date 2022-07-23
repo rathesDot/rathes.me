@@ -39,13 +39,15 @@ const MainContainer = styled("main", {
   },
 })
 
-const PageLayout: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
-  const [theme, setTheme] = useState<ColorMode>()
+const themes = {
+  dark: "dark",
+  light: lightTheme.className,
+}
 
-  const themes = {
-    dark: "dark",
-    light: lightTheme.className,
-  }
+const PageLayout: React.FC<React.PropsWithChildren<unknown>> = ({
+  children,
+}) => {
+  const [theme, setTheme] = useState<ColorMode>()
 
   useEffect(() => {
     const root = document.documentElement
