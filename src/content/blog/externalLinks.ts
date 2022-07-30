@@ -14,6 +14,11 @@ const links = [
     date: "Nov 6, 2016",
     link: "https://medium.com/@rathes/pivot-in-leben-warum-ich-mich-entschied-nach-schleswig-zu-ziehen-dbb268db09a6",
   },
+  {
+    title: "Is it hard to learn Tamil?",
+    date: "July 29, 2022",
+    link: "https://learn-tamil.com/blog/is-it-hard-to-learn-tamil",
+  },
 ]
 
 export default links
