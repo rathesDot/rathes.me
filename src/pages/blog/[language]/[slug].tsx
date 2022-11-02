@@ -125,7 +125,7 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         {image && (
           <ImageWrapper>
             <AspectRatio.Root ratio={16 / 9}>
-              <Image src={image} layout="fill" objectFit="cover" alt={title} />
+              <Image src={image} fill sizes="704px" priority alt={title} />
             </AspectRatio.Root>
           </ImageWrapper>
         )}
@@ -138,14 +138,12 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <MDXRemote {...source} components={components} scope={{ books }} />
         <Footer>
           <Link href="/writings">
-
             <BackLink>back to articles</BackLink>
-
           </Link>
         </Footer>
       </Container>
     </PageLayout>
-  );
+  )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
