@@ -138,14 +138,14 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <MDXRemote {...source} components={components} scope={{ books }} />
         <Footer>
           <Link href="/writings">
-            <a>
-              <BackLink>back to articles</BackLink>
-            </a>
+
+            <BackLink>back to articles</BackLink>
+
           </Link>
         </Footer>
       </Container>
     </PageLayout>
-  )
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
