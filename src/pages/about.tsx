@@ -119,11 +119,11 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
         <Paragraph>
           I have got an entire{" "}
           <RouterLink href="/reading-list">
-            <a>
-              <Text color="slate12" underlined>
-                Reading List
-              </Text>
-            </a>
+
+            <Text color="slate12" underlined>
+              Reading List
+            </Text>
+
           </RouterLink>{" "}
           with all the books I've read since 2017. Feel free to have a look, you
           might be able to find the next book for yourself.
@@ -136,11 +136,11 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
           From time to time I also write. It can be work related topics that I
           share in the{" "}
           <RouterLink href="/writings">
-            <a>
-              <Text color="slate12" underlined>
-                writing section
-              </Text>
-            </a>
+
+            <Text color="slate12" underlined>
+              writing section
+            </Text>
+
           </RouterLink>{" "}
           of this website but I also write to empty my mind and eternalize
           ideas.

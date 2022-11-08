@@ -100,17 +100,23 @@ const IconButton = styled("button", {
   },
 })
 
-const ThemeSwitch: React.FC<React.PropsWithChildren<{
-  theme: "dark" | "light"
-  onToggle: () => void
-}>> = ({ onToggle, theme }) => {
+const ThemeSwitch: React.FC<
+  React.PropsWithChildren<{
+    theme: "dark" | "light"
+    onToggle: () => void
+  }>
+> = ({ onToggle, theme }) => {
   if (theme === undefined) {
     return null
   }
 
   if (theme === "dark") {
     return (
-      <IconButton aria-label="Switch to light theme" onClick={onToggle}>
+      <IconButton
+        type="button"
+        aria-label="Switch to light theme"
+        onClick={onToggle}
+      >
         <svg
           width={24}
           height={24}
@@ -128,7 +134,11 @@ const ThemeSwitch: React.FC<React.PropsWithChildren<{
   }
 
   return (
-    <IconButton aria-label="Switch to dark theme" onClick={onToggle}>
+    <IconButton
+      type="button"
+      aria-label="Switch to dark theme"
+      onClick={onToggle}
+    >
       <svg
         width={24}
         height={24}
@@ -144,10 +154,9 @@ const ThemeSwitch: React.FC<React.PropsWithChildren<{
   )
 }
 
-const Hamburger: React.FC<React.PropsWithChildren<{ isOpen: boolean; onToggle: () => void }>> = ({
-  isOpen,
-  onToggle,
-}) => {
+const Hamburger: React.FC<
+  React.PropsWithChildren<{ isOpen: boolean; onToggle: () => void }>
+> = ({ isOpen, onToggle }) => {
   const iconPaths = useMemo(
     () =>
       isOpen
@@ -158,6 +167,7 @@ const Hamburger: React.FC<React.PropsWithChildren<{ isOpen: boolean; onToggle: (
 
   return (
     <IconButton
+      type="button"
       aria-label={isOpen ? "Close Navigation" : "Open Navigation"}
       onClick={onToggle}
     >
@@ -254,35 +264,27 @@ const Navigation = () => {
           Navigation
         </Heading>
         <Link href="/about">
-          <a>
-            <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-              About
-            </MenuItem>
-          </a>
+          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
+            About
+          </MenuItem>
         </Link>
 
-        <Link href="/files/resume.pdf">
-          <a aria-label="Resume">
-            <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-              Resume
-            </MenuItem>
-          </a>
+        <Link href="/files/resume.pdf" aria-label="Resume">
+          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
+            Resume
+          </MenuItem>
         </Link>
 
         <Link href="/work">
-          <a>
-            <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-              Work
-            </MenuItem>
-          </a>
+          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
+            Work
+          </MenuItem>
         </Link>
 
         <Link href="/writings">
-          <a>
-            <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-              Writings
-            </MenuItem>
-          </a>
+          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
+            Writings
+          </MenuItem>
         </Link>
       </Menu>
       <Menu isOpen={isOpen}>

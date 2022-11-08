@@ -51,20 +51,20 @@ export const ListItem: React.FC<React.PropsWithChildren<ListItemProps>> = ({
           )}
         </Link>
       ) : (
-        <RouterLink href={link}>
-          <a>
-            {subtitle && subtitlePosition == "above" && (
-              <Subtitle>{subtitle}</Subtitle>
-            )}
-            {children}
-            {subtitle && subtitlePosition == "under" && (
-              <Subtitle>{subtitle}</Subtitle>
-            )}
-          </a>
-        </RouterLink>
+        (<RouterLink href={link}>
+
+          {subtitle && subtitlePosition == "above" && (
+            <Subtitle>{subtitle}</Subtitle>
+          )}
+          {children}
+          {subtitle && subtitlePosition == "under" && (
+            <Subtitle>{subtitle}</Subtitle>
+          )}
+
+        </RouterLink>)
       )}
     </Title>
-  )
+  );
 }
 
 export type ListProps = {

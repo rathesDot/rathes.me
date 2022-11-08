@@ -24,11 +24,11 @@ const Footer = () => (
     </Text>
     <Separator />
     <Link href="/legal">
-      <a>
-        <Text color="slate11" size="small">
-          Legal Information
-        </Text>
-      </a>
+
+      <Text color="slate11" size="small">
+        Legal Information
+      </Text>
+
     </Link>
   </div>
 )
