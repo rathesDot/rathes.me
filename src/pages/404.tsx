@@ -2,16 +2,11 @@ import React from "react"
 
 import { PageLayout } from "../layouts"
 import { List, ListItem, Paragraph, Meta, Heading } from "../components"
-import { styled } from "../../stitches.config"
-
-const Container = styled("div", {
-  maxWidth: 640,
-})
 
 const NotFoundPage = () => (
   <PageLayout>
     <Meta title="404: Not found" />
-    <Container>
+    <div className="max-w-[640px]">
       <Heading level="heading1">
         Looks like you are looking for a page that does not exist.
       </Heading>
@@ -27,7 +22,7 @@ const NotFoundPage = () => (
           <ListItem link="/about">Information about myself</ListItem>
         </List>
       </Paragraph>
-    </Container>
+    </div>
   </PageLayout>
 )
 

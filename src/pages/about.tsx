@@ -3,7 +3,6 @@ import RouterLink from "next/link"
 import { NextPage } from "next"
 
 import { PageLayout } from "../layouts"
-import { styled } from "../../stitches.config"
 
 import {
   Heading,
@@ -19,28 +18,10 @@ import { SayHi } from "../patterns"
 
 import books from "../../data/books.json"
 
-const Container = styled("section", {
-  maxWidth: 640,
-})
-
-const Section = styled("section", {
-  marginTop: "$32",
-})
-
-const SayHiContainer = styled("section", {
-  marginBottom: "$32",
-  marginTop: "$32",
-})
-
-const ReadingList = styled("div", {
-  marginBottom: "$12",
-  marginTop: "$12",
-})
-
 const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="About me" />
-    <Container>
+    <div className="max-w-[640px]">
       <Heading level="heading1">/raðiːs/</Heading>
       <Paragraph>
         I'm Rathes Sachchithananthan, a web developer with interests not only in
@@ -76,7 +57,7 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
         people to learn my mother language Tamil.
       </Paragraph>
 
-      <Section>
+      <div className="mt-32">
         <Heading level="heading2">What I read</Heading>
         <Paragraph>
           Books play an important part in my life. Just sitting on my couch or
@@ -91,7 +72,7 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
           Actually, I dream of having my own library one day where I can invite
           everybody to pick up a nice book and read.
         </Paragraph>
-        <ReadingList>
+        <div className="my-12">
           <List title="Currently reading">
             {books["Currently reading"].map((book, index) => (
               <ListItem
@@ -115,32 +96,28 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
               </ListItem>
             ))}
           </List>
-        </ReadingList>
+        </div>
         <Paragraph>
           I have got an entire{" "}
           <RouterLink href="/reading-list">
-
             <Text color="slate12" underlined>
               Reading List
             </Text>
-
           </RouterLink>{" "}
           with all the books I've read since 2017. Feel free to have a look, you
           might be able to find the next book for yourself.
         </Paragraph>
-      </Section>
+      </div>
 
-      <Section>
+      <div className="mt-32">
         <Heading level="heading2">What I write</Heading>
         <Paragraph>
           From time to time I also write. It can be work related topics that I
           share in the{" "}
           <RouterLink href="/writings">
-
             <Text color="slate12" underlined>
-              writing section
+              writing div
             </Text>
-
           </RouterLink>{" "}
           of this website but I also write to empty my mind and eternalize
           ideas.
@@ -155,11 +132,11 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
           “A guide to basic Tamil Grammar”. I'm writing that book as an entry
           point for my learning platform.
         </Paragraph>
-      </Section>
-      <SayHiContainer>
+      </div>
+      <div className="my-32">
         <SayHi />
-      </SayHiContainer>
-    </Container>
+      </div>
+    </div>
   </PageLayout>
 )
 

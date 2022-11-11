@@ -15,8 +15,6 @@ import path from "path"
 import fs from "fs"
 import matter from "gray-matter"
 
-import { styled } from "../../../../stitches.config"
-
 import books from "../../../../data/books.json"
 
 import { PageLayout } from "../../../layouts"
@@ -45,45 +43,6 @@ const H4 = ({ children }) => <Heading level="heading4">{children}</Heading>
 const Pre = ({ children, className }) => {
   return <CodeBlock className={className}>{children}</CodeBlock>
 }
-
-const Container = styled("div", {
-  maxWidth: 640,
-})
-
-const Title = styled(Heading, {
-  color: "$slate12",
-  fontFamily: "$display",
-  fontWeight: 600,
-  lineHeight: "$400",
-  overflowWrap: "break-word",
-  maxWidth: 640,
-  marginBottom: "$2",
-  marginTop: "$12",
-
-  variants: {
-    size: {
-      small: {
-        fontSize: "$lg",
-      },
-      default: {
-        fontSize: "$xl",
-      },
-      large: {
-        fontSize: "$2xl",
-      },
-    },
-  },
-})
-
-const Footer = styled("footer", {
-  marginBottom: "$32",
-  marginTop: "$32",
-})
-
-const BackLink = styled("span", {
-  color: "$slate12",
-  textDecoration: "underline",
-})
 
 const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   source,
@@ -121,7 +80,7 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <PageLayout>
       <Meta title={title} description={excerpt} meta={meta} />
-      <Container>
+      <div className="max-w-[640px]">
         {image && (
           <ImageWrapper>
             <AspectRatio.Root ratio={16 / 9}>
@@ -129,19 +88,19 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </AspectRatio.Root>
           </ImageWrapper>
         )}
-        <Title
-          size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
-          level="heading1"
-        >
+        <h1 className="text-slate-900 font-sansDisplay font-semibold leading-tight break-words max-w-[640px] mb-2 mt-12 text-xl sm:text-2xl dark:text-slate-50">
           {title}
-        </Title>
+        </h1>
         <MDXRemote {...source} components={components} scope={{ books }} />
-        <Footer>
-          <Link href="/writings">
-            <BackLink>back to articles</BackLink>
+        <footer className="my-32">
+          <Link
+            href="/writings"
+            className="text-slate-900 underline underline-offset-2 dark:text-slate-50"
+          >
+            back to articles
           </Link>
-        </Footer>
-      </Container>
+        </footer>
+      </div>
     </PageLayout>
   )
 }

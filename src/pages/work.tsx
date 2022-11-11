@@ -1,8 +1,6 @@
 import React from "react"
 import { NextPage } from "next"
 
-import { styled } from "../../stitches.config"
-
 import { PageLayout } from "../layouts"
 import {
   Heading,
@@ -16,23 +14,10 @@ import {
 
 import { SayHi } from "../patterns"
 
-const Container = styled("section", {
-  maxWidth: 640,
-})
-
-const Section = styled("section", {
-  marginTop: "$32",
-})
-
-const SayHiContainer = styled("section", {
-  marginBottom: "$32",
-  marginTop: "$32",
-})
-
 const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
   return (
     <PageLayout>
-      <Container>
+      <section className="max-w-[640px]">
         <Meta title="Work" />
         <Paragraph>
           I work as a front-end engineer at Hussle right now, but I also love to
@@ -44,7 +29,7 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
           </Link>
           .
         </Paragraph>
-        <Section>
+        <section className="mt-32">
           <Heading level="heading2">Learn Tamil Online</Heading>
           <Paragraph>
             The first side project I am working on right now is to provide a
@@ -62,8 +47,8 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
               https://learn-tamil.com
             </Link>
           </Paragraph>
-        </Section>
-        <Section>
+        </section>
+        <section className="mt-32">
           <Heading level="heading2">Maxout</Heading>
           <Paragraph>
             During the pandemic in 2020, I started working on a small fitness
@@ -89,8 +74,8 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
               https://getmaxout.app
             </Link>
           </Paragraph>
-        </Section>
-        <Section>
+        </section>
+        <section className="mt-32">
           <Heading level="heading2">Public Speaking</Heading>
           <Paragraph>
             In January 2019, I gave my first tech-related talk. Since it was an
@@ -134,11 +119,11 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
               You can't manage time
             </ListItem>
           </List>
-        </Section>
-        <SayHiContainer>
+        </section>
+        <section className="my-32">
           <SayHi />
-        </SayHiContainer>
-      </Container>
+        </section>
+      </section>
     </PageLayout>
   )
 }

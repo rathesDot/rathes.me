@@ -1,8 +1,6 @@
 import { NextPage } from "next"
 import React, { useMemo, useState } from "react"
 
-import { styled } from "../../stitches.config"
-
 import data from "../../data/books.json"
 
 import { PageLayout } from "../layouts"
@@ -14,23 +12,6 @@ import {
   Separator,
   TextField,
 } from "../components"
-
-const Container = styled("div", {
-  flexGrow: 1,
-  marginBottom: "$32",
-  maxWidth: 640,
-})
-
-const Section = styled("section", {
-  marginTop: "$16",
-})
-
-const Header = styled("section", {
-  display: "flex",
-  flexDirection: "column",
-  gap: "$4",
-  marginBottom: "$16",
-})
 
 type Book = { title: string; url: string; author: string }
 
@@ -52,8 +33,8 @@ const ReadingList: NextPage = () => {
   return (
     <PageLayout>
       <Meta title="Reading List" />
-      <Container>
-        <Header>
+      <div className="flex-grow mb-32 max-w-[640px]">
+        <section className="flex flex-col gap-4 mb-16">
           <Heading>Reading List</Heading>
           <TextField
             value={searchTerm}
@@ -61,8 +42,8 @@ const ReadingList: NextPage = () => {
             aria-label="Filter list"
             placeholder="Filter list..."
           />
-        </Header>
-        <Section>
+        </section>
+        <section className="mt-16">
           {filteredList.map(([listTitle, books], index, list) => {
             if (!books.length) {
               return
@@ -85,8 +66,8 @@ const ReadingList: NextPage = () => {
               </React.Fragment>
             )
           })}
-        </Section>
-      </Container>
+        </section>
+      </div>
     </PageLayout>
   )
 }
