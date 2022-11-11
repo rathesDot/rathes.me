@@ -23,13 +23,6 @@ const Footer = () => (
       &copy; 2020 — Rathes Sachchithananthan
     </Text>
     <Separator />
-    <Link href="/legal">
-
-      <Text color="slate11" size="small">
-        Legal Information
-      </Text>
-
-    </Link>
   </div>
 )
 
