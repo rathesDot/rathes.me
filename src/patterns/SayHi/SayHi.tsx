@@ -1,19 +1,9 @@
 import React from "react"
-import { styled } from "../../../stitches.config"
 
 import { Link } from "../../components"
 
-const Container = styled("div", {
-  color: "$slate12",
-  fontFamily: "$display",
-  fontSize: "$4xl",
-  fontWeight: 600,
-  lineHeight: "1.194444",
-  maxWidth: 520,
-})
-
 export const SayHi: React.FC<React.PropsWithChildren<unknown>> = () => (
-  <Container>
+  <div className="max-w-lg font-sansDisplay text-4xl font-semibold text-neutral-900 dark:text-neutral-50">
     Work inquiry, question or something else?{" "}
     <Link
       aria-label="Send an E-Mail to hello@rathes.me"
@@ -22,5 +12,5 @@ export const SayHi: React.FC<React.PropsWithChildren<unknown>> = () => (
     >
       Say hi!
     </Link>
-  </Container>
+  </div>
 )

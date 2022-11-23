@@ -1,104 +1,43 @@
-import React, { useContext, useEffect, useMemo, useState } from "react"
-import Link from "next/link"
+import React, {
+  HTMLProps,
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react"
+import Link, { LinkProps } from "next/link"
 
-import { styled } from "../../../stitches.config"
+import cx from "clsx"
 
 import { ThemeContext } from "../../layouts/PageLayout/PageLayout"
 
 import { Heading, Logo } from "../../components"
 
-const MenuItem = styled("span", {
-  color: "$slate12",
-  display: "block",
-  padding: "$1 0",
-  fontFamily: "$display",
-  fontWeight: "500",
+const MenuItem: React.FC<PropsWithChildren<LinkProps>> = ({
+  children,
+  ...props
+}) => (
+  <Link
+    {...props}
+    className="block py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
+  >
+    {children}
+  </Link>
+)
 
-  variants: {
-    size: {
-      default: {
-        fontSize: "$lg",
-      },
-      lg: {
-        fontSize: "$lg",
-      },
-    },
-  },
-})
-
-const Container = styled("nav", {
-  background: "$slate4",
-  bottom: 0,
-  left: 0,
-  position: "fixed",
-  right: 0,
-  top: 0,
-  zIndex: 99,
-
-  variants: {
-    isOpen: {
-      true: {
-        background: "$slate4",
-      },
-      false: {
-        background: "transparent",
-        position: "relative",
-      },
-    },
-  },
-})
-
-const NavigationBar = styled("div", {
-  alignItems: "center",
-  boxSizing: "content-box",
-  color: "$slate12",
-  display: "flex",
-  justifyContent: "space-between",
-  maxWidth: "640px",
-
-  variants: {
-    isOpen: {
-      true: {
-        padding: "$8",
-
-        "@md": {
-          padding: "$16",
-        },
-
-        "@lg": {
-          padding: "$24 $32",
-        },
-      },
-      false: {
-        marginBottom: "$16",
-        padding: "0",
-
-        "@lg": {
-          marginBottom: "$32",
-        },
-      },
-    },
-  },
-})
-
-const NavigatonBarSection = styled("div", {
-  display: "flex",
-
-  "> a": {
-    display: "flex",
-  },
-})
-
-const IconButton = styled("button", {
-  borderRadius: "4px",
-  color: "$slate12",
-  display: "inline-block",
-  padding: "$2",
-
-  "&:hover": {
-    background: "$slate4",
-  },
-})
+const IconButton: React.FC<HTMLProps<HTMLButtonElement>> = ({
+  children,
+  ...props
+}) => (
+  <button
+    {...props}
+    type="button"
+    className="inline-block rounded p-2 text-neutral-900 hover:bg-neutral-100 dark:text-neutral-50 dark:hover:bg-neutral-800"
+  >
+    {children}
+  </button>
+)
 
 const ThemeSwitch: React.FC<
   React.PropsWithChildren<{
@@ -112,11 +51,7 @@ const ThemeSwitch: React.FC<
 
   if (theme === "dark") {
     return (
-      <IconButton
-        type="button"
-        aria-label="Switch to light theme"
-        onClick={onToggle}
-      >
+      <IconButton aria-label="Switch to light theme" onClick={onToggle}>
         <svg
           width={24}
           height={24}
@@ -167,7 +102,6 @@ const Hamburger: React.FC<
 
   return (
     <IconButton
-      type="button"
       aria-label={isOpen ? "Close Navigation" : "Open Navigation"}
       onClick={onToggle}
     >
@@ -194,33 +128,6 @@ const Hamburger: React.FC<
   )
 }
 
-const Menu = styled("div", {
-  paddingLeft: "$8",
-  paddingRight: "$8",
-  marginTop: "$8",
-
-  variants: {
-    isOpen: {
-      true: {
-        display: "block",
-
-        "@md": {
-          paddingLeft: "$16",
-          paddingRight: "$16",
-        },
-
-        "@lg": {
-          paddingLeft: "$32",
-          paddingRight: "$32",
-        },
-      },
-      false: {
-        display: "none",
-      },
-    },
-  },
-})
-
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -243,66 +150,81 @@ const Navigation = () => {
   }, [])
 
   return (
-    <Container isOpen={isOpen}>
-      <NavigationBar isOpen={isOpen}>
-        <NavigatonBarSection>
-          <Link href="/" aria-label="Home">
+    <nav
+      className={cx("inset-0 z-50", {
+        "fixed bg-neutral-50 dark:bg-neutral-900": isOpen,
+        "relative bg-transparent": !isOpen,
+      })}
+    >
+      <div
+        className={cx(
+          "box-content flex max-w-xl items-center justify-between text-neutral-900 dark:text-neutral-50",
+          {
+            "p-8 md:p-16 lg:py-24 lg:px-32": isOpen,
+            "mb-16 p-0 lg:mb-32": !isOpen,
+          }
+        )}
+      >
+        <div className="flex">
+          <Link
+            className="flex py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
+            href="/"
+            aria-label="Home"
+          >
             <IconButton as="span">
               <Logo />
             </IconButton>
           </Link>
-        </NavigatonBarSection>
-        <NavigatonBarSection>
+        </div>
+        <div className="flex">
           <ThemeSwitch theme={theme} onToggle={toggleTheme}>
             Toggle
           </ThemeSwitch>
           <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
-        </NavigatonBarSection>
-      </NavigationBar>
-      <Menu isOpen={isOpen}>
+        </div>
+      </div>
+      <div
+        className={cx("mt-8 px-8 md:px-16 lg:px-32", {
+          block: isOpen,
+          hidden: !isOpen,
+        })}
+      >
         <Heading level="heading4" color="slate11">
           Navigation
         </Heading>
-        <Link href="/about">
-          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            About
-          </MenuItem>
-        </Link>
+        <MenuItem href="/about">About</MenuItem>
 
-        <Link href="/files/resume.pdf" aria-label="Resume">
-          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            Resume
-          </MenuItem>
-        </Link>
+        <MenuItem href="/files/resume.pdf" aria-label="Resume">
+          Resume
+        </MenuItem>
 
-        <Link href="/work">
-          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            Work
-          </MenuItem>
-        </Link>
+        <MenuItem href="/work">Work</MenuItem>
 
-        <Link href="/writings">
-          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            Writings
-          </MenuItem>
-        </Link>
-      </Menu>
-      <Menu isOpen={isOpen}>
+        <MenuItem href="/writings">Writings</MenuItem>
+      </div>
+      <div
+        className={cx("mt-8 px-8 md:px-16 lg:px-32", {
+          block: isOpen,
+          hidden: !isOpen,
+        })}
+      >
         <Heading level="heading4" color="slate11">
           Current Projects
         </Heading>
-        <a href="https://learn-tamil.com">
-          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            Learn Tamil
-          </MenuItem>
+        <a
+          className="block py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
+          href="https://learn-tamil.com"
+        >
+          Learn Tamil
         </a>
-        <a href="https://getmaxout.app">
-          <MenuItem size={{ "@initial": "default", "@sm": "lg" }}>
-            Maxout
-          </MenuItem>
+        <a
+          className="block py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
+          href="https://getmaxout.app"
+        >
+          Maxout
         </a>
-      </Menu>
-    </Container>
+      </div>
+    </nav>
   )
 }
 
