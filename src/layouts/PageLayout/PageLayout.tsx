@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react"
 
-import { styled, lightTheme } from "../../../stitches.config"
+import { lightTheme } from "../../../stitches.config"
 
 import { Footer, Navigation } from "../../patterns"
 
@@ -16,28 +16,6 @@ export const colorModePersistanceKey = "color-mode"
 export const ThemeContext = createContext<ThemeContextType>(
   {} as ThemeContextType
 )
-
-const MainContainer = styled("main", {
-  backgroundColor: "$slate2",
-  color: "$slate11",
-  display: "flex",
-  flexDirection: "column",
-  fontFamily: "$default",
-  justifyContent: "space-between",
-  minHeight: "100vh",
-  padding: "$8",
-
-  variants: {
-    padding: {
-      md: {
-        padding: "$16",
-      },
-      lg: {
-        padding: "$24 $32",
-      },
-    },
-  },
-})
 
 const themes = {
   dark: "dark",
@@ -74,11 +52,11 @@ const PageLayout: React.FC<React.PropsWithChildren<unknown>> = ({
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <MainContainer padding={{ "@md": "md", "@lg": "lg" }}>
+      <main className="flex min-h-screen flex-col justify-between bg-neutral-50 p-8 font-sans text-neutral-900 dark:bg-neutral-900 dark:text-neutral-50 md:p-16 lg:py-24 lg:px-32">
         <Navigation />
         {children}
         <Footer />
-      </MainContainer>
+      </main>
     </ThemeContext.Provider>
   )
 }
