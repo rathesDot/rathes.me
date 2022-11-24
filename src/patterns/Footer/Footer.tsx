@@ -1,13 +1,9 @@
 import React from "react"
 
-import { Text } from "../../components"
-
 const Footer = () => (
-  <div>
-    <Text color="slate11" size="small">
-      &copy; 2020 — Rathes Sachchithananthan
-    </Text>
-  </div>
+  <footer className="text-xs text-neutral-400 dark:text-neutral-600">
+    &copy; 2020 — Rathes Sachchithananthan
+  </footer>
 )
 
 export { Footer }

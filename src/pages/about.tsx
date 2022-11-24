@@ -11,7 +11,6 @@ import {
   Paragraph,
   Meta,
   Separator,
-  Text,
 } from "../components"
 
 import { SayHi } from "../patterns"
@@ -99,10 +98,11 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
         </div>
         <Paragraph>
           I have got an entire{" "}
-          <RouterLink href="/reading-list">
-            <Text color="slate12" underlined>
-              Reading List
-            </Text>
+          <RouterLink
+            href="/reading-list"
+            className="text-neutral-900 underline underline-offset-2 hover:no-underline dark:text-neutral-50"
+          >
+            Reading List
           </RouterLink>{" "}
           with all the books I've read since 2017. Feel free to have a look, you
           might be able to find the next book for yourself.
@@ -114,10 +114,11 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
         <Paragraph>
           From time to time I also write. It can be work related topics that I
           share in the{" "}
-          <RouterLink href="/writings">
-            <Text color="slate12" underlined>
-              writing div
-            </Text>
+          <RouterLink
+            href="/writings"
+            className="text-neutral-900 underline underline-offset-2 hover:no-underline dark:text-neutral-50"
+          >
+            writing section
           </RouterLink>{" "}
           of this website but I also write to empty my mind and eternalize
           ideas.
