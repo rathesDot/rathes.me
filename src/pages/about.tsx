@@ -5,7 +5,8 @@ import { NextPage } from "next"
 import { PageLayout } from "../layouts"
 
 import {
-  Heading,
+  Heading1,
+  Heading2,
   List,
   ListItem,
   Paragraph,
@@ -21,7 +22,7 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="About me" />
     <div className="max-w-[640px]">
-      <Heading level="heading1">/raðiːs/</Heading>
+      <Heading1>/raðiːs/</Heading1>
       <Paragraph>
         I'm Rathes Sachchithananthan, a web developer with interests not only in
         engineering but also in product development & design, user & customer
@@ -57,7 +58,7 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
       </Paragraph>
 
       <div className="mt-32">
-        <Heading level="heading2">What I read</Heading>
+        <Heading2>What I read</Heading2>
         <Paragraph>
           Books play an important part in my life. Just sitting on my couch or
           bed and reading a novel can be really inspiring.
@@ -110,7 +111,7 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
       </div>
 
       <div className="mt-32">
-        <Heading level="heading2">What I write</Heading>
+        <Heading2>What I write</Heading2>
         <Paragraph>
           From time to time I also write. It can be work related topics that I
           share in the{" "}

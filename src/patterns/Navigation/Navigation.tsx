@@ -12,7 +12,7 @@ import cx from "clsx"
 
 import { ThemeContext } from "../../layouts/PageLayout/PageLayout"
 
-import { Heading, Logo } from "../../components"
+import { Heading4, Logo } from "../../components"
 
 const MenuItem: React.FC<PropsWithChildren<LinkProps>> = ({
   children,
@@ -189,9 +189,7 @@ const Navigation = () => {
           hidden: !isOpen,
         })}
       >
-        <Heading level="heading4" color="slate11">
-          Navigation
-        </Heading>
+        <Heading4 className="text-neutral-500">Navigation</Heading4>
         <MenuItem href="/about">About</MenuItem>
 
         <MenuItem href="/files/resume.pdf" aria-label="Resume">
@@ -208,9 +206,7 @@ const Navigation = () => {
           hidden: !isOpen,
         })}
       >
-        <Heading level="heading4" color="slate11">
-          Current Projects
-        </Heading>
+        <Heading4 className="text-neutral-500">Current Projects</Heading4>
         <a
           className="block py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
           href="https://learn-tamil.com"

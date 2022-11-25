@@ -1,18 +1,19 @@
-import { styled } from "../../../stitches.config"
+import { HTMLAttributes } from "react"
 
-export const Quote = styled("blockquote", {
-  backgroundColor: "$slate4",
-  borderRadius: "10px",
-  color: "$slate11",
-  fontSize: "$lg",
-  lineHeight: "$400",
-  margin: "$8 -$8",
-  padding: "$8",
+import cx from "clsx"
 
-  p: {
-    margin: 0,
-    color: "$slate11",
-    fontSize: "$lg",
-    lineHeight: "$500",
-  },
-})
+export const Quote: React.FC<HTMLAttributes<HTMLQuoteElement>> = ({
+  className,
+  children,
+  ...props
+}) => (
+  <blockquote
+    className={cx(
+      "my-8 -mx-8 rounded-lg bg-neutral-200 p-8 text-lg text-neutral-800 dark:bg-neutral-800 [&_p]:m-0 [&_p]:text-neutral-800 dark:[&_p]:text-neutral-500",
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </blockquote>
+)

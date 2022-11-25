@@ -1,28 +1,21 @@
-import { styled } from "../../../stitches.config"
+import { HTMLAttributes } from "react"
 
-export const OrderedList = styled("ol", {
-  backgroundColor: "$slate3",
-  borderRadius: "10px",
-  color: "$slate11",
-  fontSize: "$sm",
-  lineHeight: "$500",
-  listStyleType: "decimal",
-  margin: "$8 -$8",
-  padding: "$8 $12",
+import cx from "clsx"
 
-  ol: {
-    margin: "$2 0",
-    padding: "0 0 0 $8",
-  },
-
-  "> li": {
-    margin: "$2 0",
-  },
-
-  p: {
-    margin: 0,
-    fontSize: "$sm",
-    lineLeight: 1.45,
-    color: "$slate11",
-  },
-})
+export const OrderedList: React.FC<
+  HTMLAttributes<HTMLOListElement> & { fontFamily?: "mono" }
+> = ({ className, children, fontFamily, ...props }) => (
+  <ol
+    className={cx(
+      "my-8 -mx-8 list-inside list-decimal rounded-lg bg-neutral-200 py-8 px-12 text-neutral-800 dark:bg-neutral-800 dark:text-neutral-500",
+      "[&_ol]:mx-0 [&_ol]:my-2 [&_ol]:mb-4 [&_ol]:py-0 [&_ol]:pl-6",
+      "[&_li]:my-2 [&_li]:mx-0",
+      "[&_p]:m-0  [&_p]:text-sm [&_p]:text-neutral-800 [&_p]:dark:text-neutral-500",
+      { "font-mono": fontFamily === "mono" },
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </ol>
+)

@@ -5,7 +5,7 @@ import data from "../../data/books.json"
 
 import { PageLayout } from "../layouts"
 import {
-  Heading,
+  Heading1,
   Meta,
   List,
   ListItem,
@@ -35,7 +35,7 @@ const ReadingList: NextPage = () => {
       <Meta title="Reading List" />
       <div className="mb-32 max-w-[640px] flex-grow">
         <section className="mb-16 flex flex-col gap-4">
-          <Heading>Reading List</Heading>
+          <Heading1>Reading List</Heading1>
           <TextField
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}

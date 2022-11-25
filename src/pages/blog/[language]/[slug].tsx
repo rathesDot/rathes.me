@@ -19,7 +19,6 @@ import books from "../../../../data/books.json"
 
 import { PageLayout } from "../../../layouts"
 import {
-  Heading,
   ImageWrapper,
   List,
   ListItem,
@@ -33,12 +32,11 @@ import {
   Quote,
   Separator,
   Link as StyleLink,
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
 } from "../../../components"
-
-const H1 = ({ children }) => <Heading level="heading1">{children}</Heading>
-const H2 = ({ children }) => <Heading level="heading2">{children}</Heading>
-const H3 = ({ children }) => <Heading level="heading3">{children}</Heading>
-const H4 = ({ children }) => <Heading level="heading4">{children}</Heading>
 
 const Pre = ({ children, className }) => {
   return <CodeBlock className={className}>{children}</CodeBlock>
@@ -52,18 +50,20 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   image,
 }) => {
   const components = {
-    h1: H1,
-    h2: H2,
-    h3: H3,
-    h4: H4,
+    h1: Heading1,
+    h2: Heading2,
+    h3: Heading3,
+    h4: Heading4,
     hr: Separator,
     p: Paragraph,
     ol: OrderedList,
     blockquote: Quote,
-    a: ({ children, ...props }) => (
-      <StyleLink underlined color="slate12" {...props}>
-        {children}
-      </StyleLink>
+    a: ({ ...props }) => (
+      <StyleLink
+        underlined
+        className="text-neutral-900 dark:text-neutral-50"
+        {...props}
+      />
     ),
     img: ({ children, src, alt, ...props }) => (
       <ImageWrapper>
@@ -88,7 +88,7 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </AspectRatio.Root>
           </ImageWrapper>
         )}
-        <h1 className="text-slate-900 font-sansDisplay font-semibold leading-tight break-words max-w-[640px] mb-2 mt-12 text-xl sm:text-2xl dark:text-slate-50">
+        <h1 className="mb-2 mt-12 max-w-[640px] break-words font-sansDisplay text-xl font-semibold leading-tight text-slate-900 dark:text-slate-50 sm:text-2xl">
           {title}
         </h1>
         <MDXRemote {...source} components={components} scope={{ books }} />

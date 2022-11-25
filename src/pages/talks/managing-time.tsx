@@ -2,18 +2,18 @@ import React from "react"
 import { NextPage } from "next"
 
 import { PageLayout } from "../../layouts"
-import { Heading, Paragraph, Meta } from "../../components"
+import { Heading1, Paragraph, Meta } from "../../components"
 
 const ManagingTime: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="You can't manage time - A talk about what people call time management"></Meta>
     <div className="max-w-[640px]">
-      <Heading level="heading1">
+      <Heading1>
         You can't manage time
-        <span className="text-slate-500 dark:text-slate-300 block text-base">
+        <span className="block text-base text-neutral-500">
           A talk about what people call time management
         </span>
-      </Heading>
+      </Heading1>
       <Paragraph>
         How many different things did you already try out to be more productive
         and get more things done? How many tools do you own to accomplish more?

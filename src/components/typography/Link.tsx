@@ -1,16 +1,20 @@
-import { styled } from "../../../stitches.config"
+import React, { HTMLProps } from "react"
+import { cva, cx, VariantProps } from "class-variance-authority"
 
-import { colors } from "./colors"
-
-export const Link = styled("a", {
-  textDecoration: "none",
-
+export const link = cva(null, {
   variants: {
-    color: colors,
     underlined: {
-      true: {
-        textDecoration: "underline",
-      },
+      true: ["underline"],
+      false: ["no-underline"],
     },
   },
+  defaultVariants: {
+    underlined: false,
+  },
 })
+
+export const Link: React.FC<
+  HTMLProps<HTMLAnchorElement> & VariantProps<typeof link>
+> = ({ className, underlined, ...props }) => (
+  <a {...props} className={cx(link({ underlined }), className)} />
+)

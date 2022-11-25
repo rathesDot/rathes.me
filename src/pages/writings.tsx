@@ -23,7 +23,11 @@ const Writings: React.FC<
         <Paragraph>
           From time to time, I do write. Sometime on my blog, but also on other
           blogs such as on{" "}
-          <Link color="slate12" href="https://medium.com/@rathes" underlined>
+          <Link
+            href="https://medium.com/@rathes"
+            underlined
+            className="text-neutral-900 dark:text-neutral-50"
+          >
             Medium
           </Link>
           . The topics, I write about are diverse. Obviously, I write about the
@@ -35,9 +39,9 @@ const Writings: React.FC<
           the title, it may be that you do not speak the language. If you want
           me to translate a specific article, just drop a message{" "}
           <Link
-            color="slate12"
             href="https://twitter.com/rswebdesigner"
             underlined
+            className="text-neutral-900 dark:text-neutral-50"
           >
             @rswebdesigner
           </Link>

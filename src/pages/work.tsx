@@ -3,13 +3,14 @@ import { NextPage } from "next"
 
 import { PageLayout } from "../layouts"
 import {
-  Heading,
   Link,
   List,
   ListItem,
   Paragraph,
   Meta,
   Separator,
+  Heading1,
+  Heading2,
 } from "../components"
 
 import { SayHi } from "../patterns"
@@ -19,18 +20,23 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
     <PageLayout>
       <section className="max-w-[640px]">
         <Meta title="Work" />
+        <Heading1 className="sr-only">My work</Heading1>
         <Paragraph>
           I work as a front-end engineer at Hussle right now, but I also love to
           work on side projects. They do not necessarily have to be development
           related. If you want to see my software engineering related things, I
           recommend you visit my{" "}
-          <Link color="slate12" href="https://github.com/rathesDot" underlined>
+          <Link
+            href="https://github.com/rathesDot"
+            underlined
+            className="text-neutral-900 dark:text-neutral-50"
+          >
             Github profile
           </Link>
           .
         </Paragraph>
         <section className="mt-32">
-          <Heading level="heading2">Learn Tamil Online</Heading>
+          <Heading2>Learn Tamil Online</Heading2>
           <Paragraph>
             The first side project I am working on right now is to provide a
             platform for people that want to learn my mother language Tamil.
@@ -43,13 +49,17 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
           </Paragraph>
           <Paragraph>
             Learn more about the project on{" "}
-            <Link color="slate12" underlined href="https://learn-tamil.com">
+            <Link
+              underlined
+              href="https://learn-tamil.com"
+              className="text-neutral-900 dark:text-neutral-50"
+            >
               https://learn-tamil.com
             </Link>
           </Paragraph>
         </section>
         <section className="mt-32">
-          <Heading level="heading2">Maxout</Heading>
+          <Heading2>Maxout</Heading2>
           <Paragraph>
             During the pandemic in 2020, I started working on a small fitness
             app. It aims to help users reaching their fitness goals by making
@@ -60,9 +70,9 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
             focussing on simplicity and beauty. You can read the full story
             about Maxout in this article{" "}
             <Link
-              color="slate12"
               underlined
               href="https://getmaxout.app/blog/introducing-maxout/"
+              className="text-neutral-900 dark:text-neutral-50"
             >
               Introducing Maxout
             </Link>
@@ -70,13 +80,17 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
           </Paragraph>
           <Paragraph>
             Sign up for Maxout on{" "}
-            <Link color="slate12" underlined href="https://getmaxout.app">
+            <Link
+              underlined
+              href="https://getmaxout.app"
+              className="text-neutral-900 dark:text-neutral-50"
+            >
               https://getmaxout.app
             </Link>
           </Paragraph>
         </section>
         <section className="mt-32">
-          <Heading level="heading2">Public Speaking</Heading>
+          <Heading2>Public Speaking</Heading2>
           <Paragraph>
             In January 2019, I gave my first tech-related talk. Since it was an
             exciting experience, I will hopefully fill up this list with a few

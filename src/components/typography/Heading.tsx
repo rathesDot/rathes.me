@@ -1,42 +1,45 @@
-import { styled } from "../../../stitches.config"
+import React, { HTMLProps } from "react"
+import { cva, cx, VariantProps } from "class-variance-authority"
 
-import { colors } from "./colors"
-
-export const Heading = styled("h1", {
-  fontFamily: "$display",
-  fontSize: "$2xl",
-  fontWeight: 600,
-  lineHeight: "$400",
-
+export const heading = cva("antialiased font-sansDisplay", {
   variants: {
-    color: colors,
-
-    level: {
-      heading1: {
-        fontSize: "$2xl",
-        fontWeight: 600,
-        lineHeight: "$400",
-      },
-      heading2: {
-        fontSize: "$lg",
-        fontWeight: 600,
-        lineHeight: "$500",
-      },
-      heading3: {
-        fontSize: "$sm",
-        fontWeight: 600,
-        lineHeight: "$450",
-      },
-      heading4: {
-        fontSize: "$xs",
-        fontWeight: 400,
-        lineHeight: "$800",
-        textTransform: "uppercase",
-        letterSpacing: "$widest",
-      },
+    size: {
+      1: ["text-2xl", "font-semibold"],
+      2: ["text-lg", "font-semibold"],
+      3: ["text-sm", "font-semibold"],
+      4: [
+        "text-xs",
+        "font-normal",
+        "leading-relaxed",
+        "uppercase",
+        "tracking-widest",
+      ],
     },
   },
-  defaultVariants: {
-    color: "slate12",
-  },
 })
+
+export type HeadingProps = VariantProps<typeof heading>
+
+export const Heading1: React.FC<
+  HTMLProps<HTMLHeadingElement> & HeadingProps
+> = ({ className, size = 1, ...props }) => (
+  <h1 {...props} className={cx(heading({ size }), className)} />
+)
+
+export const Heading2: React.FC<
+  HTMLProps<HTMLHeadingElement> & HeadingProps
+> = ({ className, size = 2, ...props }) => (
+  <h2 {...props} className={cx(heading({ size }), className)} />
+)
+
+export const Heading3: React.FC<
+  HTMLProps<HTMLHeadingElement> & HeadingProps
+> = ({ className, size = 3, ...props }) => (
+  <h3 {...props} className={cx(heading({ size }), className)} />
+)
+
+export const Heading4: React.FC<
+  HTMLProps<HTMLHeadingElement> & HeadingProps
+> = ({ className, size = 4, ...props }) => (
+  <h4 {...props} className={cx(heading({ size }), className)} />
+)

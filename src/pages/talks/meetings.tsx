@@ -2,18 +2,18 @@ import React from "react"
 import { NextPage } from "next"
 
 import { PageLayout } from "../../layouts"
-import { Heading, Paragraph, Meta } from "../../components"
+import { Heading1, Paragraph, Meta } from "../../components"
 
 const Meetings: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="You probably don't need that meeting - Developing a meeting culture that employees will love"></Meta>
     <div className="max-w-[640px]">
-      <Heading level="heading1">
+      <Heading1>
         You probably don't need that meeting
-        <span className="text-slate-500 dark:text-slate-300 block text-base">
+        <span className="block text-base text-neutral-500">
           Developing a meeting culture that employees will love
         </span>
-      </Heading>
+      </Heading1>
       <Paragraph>
         Be honest with yourself. How many of your meetings do you think were
         useful? And how many of them were productive? In this talk, we will talk
