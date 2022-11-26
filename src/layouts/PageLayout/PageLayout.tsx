@@ -1,7 +1,5 @@
 import React, { createContext, useState, useEffect } from "react"
 
-import { lightTheme } from "../../../stitches.config"
-
 import { Footer, Navigation } from "../../patterns"
 
 type ThemeContextType = {
@@ -19,7 +17,7 @@ export const ThemeContext = createContext<ThemeContextType>(
 
 const themes = {
   dark: "dark",
-  light: lightTheme.className,
+  light: "light",
 }
 
 const PageLayout: React.FC<React.PropsWithChildren<unknown>> = ({

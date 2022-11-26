@@ -1,7 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document"
 
-import { getCssText, lightTheme } from "../../stitches.config"
-
 import { colorModePersistanceKey } from "../layouts/PageLayout/PageLayout"
 
 function getInitialColorMode() {
@@ -34,7 +32,7 @@ function getInitialColorMode() {
 const ColorMode = () => {
   const boundFn = String(getInitialColorMode)
     .replace("COLOR_MODE_KEY", colorModePersistanceKey)
-    .replace("LIGHT_THEME_CLASSNAME", lightTheme.className)
+    .replace("LIGHT_THEME_CLASSNAME", "light")
     .replace("DARK_THEME_CLASSNAME", "dark")
 
   let calledFunction = `(${boundFn})()`
@@ -42,22 +40,10 @@ const ColorMode = () => {
   return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />
 }
 
-const FallbackStyles = () => {
-  return (
-    <style
-      id="stitches"
-      dangerouslySetInnerHTML={{
-        __html: getCssText(),
-      }}
-    />
-  )
-}
-
 export default function Document() {
   return (
     <Html>
       <Head>
-        <FallbackStyles />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
