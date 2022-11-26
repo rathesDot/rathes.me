@@ -43,18 +43,7 @@ const ColorMode = () => {
 export default function Document() {
   return (
     <Html>
-      <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+Display:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
-      </Head>
+      <Head />
       <body>
         <ColorMode />
         <Main />
