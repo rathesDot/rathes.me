@@ -1,14 +1,7 @@
-import { styled } from "../../../stitches.config"
+import { PropsWithChildren } from "react"
 
-export const ImageWrapper = styled("span", {
-  borderRadius: "10px",
-  display: "block",
-  margin: "$4 -$8",
-  overflow: "hidden",
-  position: "relative",
-
-  img: {
-    objectFit: "cover",
-    objectPosition: "center center",
-  },
-})
+export const ImageWrapper: React.FC<PropsWithChildren> = ({ children }) => (
+  <div className="relative my-4 -mx-8 overflow-hidden rounded-lg [&_img]:object-cover [&_img]:object-center">
+    {children}
+  </div>
+)

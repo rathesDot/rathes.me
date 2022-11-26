@@ -1,28 +1,7 @@
 import React from "react"
 import RouterLink from "next/link"
-import { styled } from "../../../stitches.config"
 
-import { Heading, Link } from ".."
-
-const Title = styled("li", {
-  fontSize: "$base",
-  color: "$slate12",
-  margin: "$2 0",
-})
-
-const Subtitle = styled("span", {
-  color: "$slate11",
-  display: "block",
-  fontSize: "$xs",
-})
-
-const Container = styled("div", {
-  display: "block",
-})
-
-const ListContent = styled("ul", {
-  display: "block",
-})
+import { Heading2, Link } from ".."
 
 export type ListItemProps = {
   subtitle?: string
@@ -39,45 +18,47 @@ export const ListItem: React.FC<React.PropsWithChildren<ListItemProps>> = ({
   const isExternalLink = link && link.startsWith("http")
 
   return (
-    <Title>
+    <li className="my-2 text-base text-neutral-900 dark:text-neutral-50">
       {isExternalLink ? (
         <Link href={link}>
           {subtitle && subtitlePosition == "above" && (
-            <Subtitle>{subtitle}</Subtitle>
+            <span className="block text-xs text-neutral-500">{subtitle}</span>
           )}
           {children}
           {subtitle && subtitlePosition == "under" && (
-            <Subtitle>{subtitle}</Subtitle>
+            <span className="block text-xs text-neutral-500">{subtitle}</span>
           )}
         </Link>
       ) : (
-        (<RouterLink href={link}>
-
+        <RouterLink href={link}>
           {subtitle && subtitlePosition == "above" && (
-            <Subtitle>{subtitle}</Subtitle>
+            <span className="block text-xs text-neutral-500">{subtitle}</span>
           )}
           {children}
           {subtitle && subtitlePosition == "under" && (
-            <Subtitle>{subtitle}</Subtitle>
+            <span className="block text-xs text-neutral-500">{subtitle}</span>
           )}
-
-        </RouterLink>)
+        </RouterLink>
       )}
-    </Title>
-  );
+    </li>
+  )
 }
 
 export type ListProps = {
   title?: string
 }
 
-export const List: React.FC<React.PropsWithChildren<ListProps>> = ({ title, children, ...props }) => (
-  <Container {...props}>
+export const List: React.FC<React.PropsWithChildren<ListProps>> = ({
+  title,
+  children,
+  ...props
+}) => (
+  <div className="block" {...props}>
     {title && (
-      <Heading level="heading4" color="slate11">
+      <Heading2 size={4} className="text-neutral-900 dark:text-neutral-400">
         {title}
-      </Heading>
+      </Heading2>
     )}
-    <ListContent>{children}</ListContent>
-  </Container>
+    <ul className="block">{children}</ul>
+  </div>
 )

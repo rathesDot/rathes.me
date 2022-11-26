@@ -1,12 +1,11 @@
 import { Html, Head, Main, NextScript } from "next/document"
 
-import { getCssText, lightTheme } from "../../stitches.config"
-
 import { colorModePersistanceKey } from "../layouts/PageLayout/PageLayout"
 
 function getInitialColorMode() {
   const colorModeKey = "COLOR_MODE_KEY"
   const lightThemeClassName = "LIGHT_THEME_CLASSNAME"
+  const darkThemeClassName = "DARK_THEME_CLASSNAME"
 
   const mql = window.matchMedia("(prefers-color-scheme: light)")
   const prefersLightModefromMq = mql.matches
@@ -25,35 +24,26 @@ function getInitialColorMode() {
   let root = document.documentElement
   if (colorMode === "light") {
     root.classList.add(lightThemeClassName)
+  } else {
+    root.classList.add(darkThemeClassName)
   }
 }
 
 const ColorMode = () => {
   const boundFn = String(getInitialColorMode)
     .replace("COLOR_MODE_KEY", colorModePersistanceKey)
-    .replace("LIGHT_THEME_CLASSNAME", lightTheme.className)
+    .replace("LIGHT_THEME_CLASSNAME", "light")
+    .replace("DARK_THEME_CLASSNAME", "dark")
 
   let calledFunction = `(${boundFn})()`
 
   return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />
 }
 
-const FallbackStyles = () => {
-  return (
-    <style
-      id="stitches"
-      dangerouslySetInnerHTML={{
-        __html: getCssText(),
-      }}
-    />
-  )
-}
-
 export default function Document() {
   return (
     <Html>
       <Head>
-        <FallbackStyles />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

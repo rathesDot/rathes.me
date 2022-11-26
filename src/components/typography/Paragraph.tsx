@@ -1,9 +1,18 @@
-import { styled } from "../../../stitches.config"
+import { HTMLAttributes } from "react"
 
-export const Paragraph = styled("p", {
-  color: "$slate11",
-  fontSize: "$base",
-  fontWeight: 400,
-  lineHeight: "$700",
-  margin: "$3 0 $6 0",
-})
+import cx from "clsx"
+
+export const Paragraph: React.FC<HTMLAttributes<HTMLParagraphElement>> = ({
+  className,
+  ...props
+}) => (
+  <p
+    className={cx(
+      "mt-3 mb-6 text-base font-normal leading-relaxed text-neutral-800 dark:text-neutral-400",
+      className
+    )}
+    {...props}
+  >
+    {props.children}
+  </p>
+)

@@ -8,9 +8,9 @@ This is the code base for my website at [rathes.me](https://rathes.me).
 
 ## Features
 
-This website uses [Gatsby](https://www.gatsbyjs.org), an open source framework based on React to build websites and apps. The blog is a bunch of markdown files (stored in `src/content/`) that a Gatsby plugin transforms into pages. Additionally, the blog list is populated with some links to external articles.
+This website uses [Next.js](https://nextjs.org), an open source framework based on React to build websites and apps. The blog is a bunch of markdown files (stored in `src/content/blog`) that are transformed into pages. Additionally, the blog list is populated with some links to external articles.
 
-For the styling part, this website makes use of [Stitches](https://stitches.dev/), a CSS-in-JS solution.
+For the styling part, this website makes use of [Tailwind CSS](https://tailwindcss.com), a utility-first CSS framework.
 
 ## Testing
 

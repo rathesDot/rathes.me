@@ -1,32 +1,19 @@
 import React from "react"
 import { NextPage } from "next"
 
-import { styled } from "../../../stitches.config"
-
 import { PageLayout } from "../../layouts"
-import { Heading, Paragraph, Meta } from "../../components"
-
-const Container = styled("section", {
-  maxWidth: 640,
-})
-
-const HelpText = styled("span", {
-  color: "$slate11",
-  display: "block",
-  fontSize: "$base",
-  lineHeight: "$600",
-})
+import { Heading1, Paragraph, Meta } from "../../components"
 
 const Meetings: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="You probably don't need that meeting - Developing a meeting culture that employees will love"></Meta>
-    <Container>
-      <Heading level="heading1">
+    <div className="max-w-[640px]">
+      <Heading1>
         You probably don't need that meeting
-        <HelpText>
+        <span className="block text-base text-neutral-500">
           Developing a meeting culture that employees will love
-        </HelpText>
-      </Heading>
+        </span>
+      </Heading1>
       <Paragraph>
         Be honest with yourself. How many of your meetings do you think were
         useful? And how many of them were productive? In this talk, we will talk
@@ -43,7 +30,7 @@ const Meetings: React.FC<React.PropsWithChildren<NextPage>> = () => (
         After this talk, you will be able to avoid useless meetings and make the
         necessary meetings more productive.
       </Paragraph>
-    </Container>
+    </div>
   </PageLayout>
 )
 

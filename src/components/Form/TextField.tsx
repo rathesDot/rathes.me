@@ -1,21 +1,10 @@
-import { styled } from "../../../stitches.config"
+import { InputHTMLAttributes } from "react"
 
-export const TextField = styled("input", {
-  alignItems: "center",
-  all: "unset",
-  backgroundColor: "$slate5",
-  borderRadius: 4,
-  boxShadow: `0 0 0 1px $colors$slate5`,
-  boxSizing: "border-box",
-  color: "white",
-  display: "inline-flex",
-  fontSize: 15,
-  justifyContent: "center",
-  height: 35,
-  lineHeight: 1,
-  maxWidth: 480,
-  padding: "0 10px",
-  width: "100%",
-
-  "&:focus": { boxShadow: `0 0 0 2px $colors$slate6` },
-})
+export const TextField: React.FC<InputHTMLAttributes<HTMLInputElement>> = (
+  props
+) => (
+  <input
+    {...props}
+    className="box-border inline-flex h-9 w-full max-w-md items-center justify-center rounded-lg bg-neutral-200 px-2 text-base text-neutral-900 outline-none ring-1 ring-neutral-200 focus:ring-neutral-400 dark:bg-neutral-800 dark:text-neutral-50 dark:ring-neutral-800 dark:focus:ring-neutral-700"
+  />
+)

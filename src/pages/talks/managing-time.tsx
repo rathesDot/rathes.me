@@ -1,30 +1,19 @@
 import React from "react"
 import { NextPage } from "next"
 
-import { styled } from "../../../stitches.config"
-
 import { PageLayout } from "../../layouts"
-import { Heading, Paragraph, Meta } from "../../components"
-
-const Container = styled("section", {
-  maxWidth: 640,
-})
-
-const HelpText = styled("span", {
-  color: "$slate11",
-  display: "block",
-  fontSize: "$base",
-  lineHeight: "$600",
-})
+import { Heading1, Paragraph, Meta } from "../../components"
 
 const ManagingTime: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="You can't manage time - A talk about what people call time management"></Meta>
-    <Container>
-      <Heading level="heading1">
+    <div className="max-w-[640px]">
+      <Heading1>
         You can't manage time
-        <HelpText>A talk about what people call time management</HelpText>
-      </Heading>
+        <span className="block text-base text-neutral-500">
+          A talk about what people call time management
+        </span>
+      </Heading1>
       <Paragraph>
         How many different things did you already try out to be more productive
         and get more things done? How many tools do you own to accomplish more?
@@ -41,7 +30,7 @@ const ManagingTime: React.FC<React.PropsWithChildren<NextPage>> = () => (
         want to get more things done. And you will understand what time
         management means.
       </Paragraph>
-    </Container>
+    </div>
   </PageLayout>
 )
 

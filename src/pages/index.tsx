@@ -1,69 +1,28 @@
 import React from "react"
 import { NextPage } from "next"
 
-import { styled } from "../../stitches.config"
-
 import { Link, List, ListItem, Meta } from "../components"
 import { PageLayout } from "../layouts"
-
-const Container = styled("section", {})
-
-const Introduction = styled("h1", {
-  color: "$slate12",
-  fontFamily: "$display",
-  fontWeight: 600,
-  lineHeight: "$400",
-  overflowWrap: "break-word",
-  maxWidth: 640,
-  marginBottom: "$8",
-
-  variants: {
-    size: {
-      small: {
-        fontSize: "$lg",
-      },
-      default: {
-        fontSize: "$xl",
-      },
-      large: {
-        fontSize: "$2xl",
-      },
-    },
-  },
-})
-
-const Section = styled("section", {
-  marginBottom: "$24",
-  marginTop: "$24",
-})
 
 const IndexPage: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="Home" />
-    <Container>
-      <Introduction
-        size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
-      >
+    <section>
+      <h1 className="mb-8 max-w-[640px] break-words font-sansDisplay text-xl font-semibold leading-snug text-slate-900 dark:text-slate-50 sm:text-2xl">
         I'm Rathes Sachchithananthan, a front-end engineer living in{" "}
         <Link underlined href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9">
           London
         </Link>{" "}
         interested in fitness, languages, books &amp; cooking.
-      </Introduction>
-      <Introduction
-        as="p"
-        size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
-      >
+      </h1>
+      <p className="mb-8 max-w-[640px] break-words font-sansDisplay text-xl font-semibold leading-snug text-slate-900 dark:text-slate-50 sm:text-2xl">
         Currently, I work as a product engineer at{" "}
         <Link underlined href="https://www.intercom.com/">
           Intercom
         </Link>{" "}
         helping businesses building better customer relationships.
-      </Introduction>
-      <Introduction
-        as="p"
-        size={{ "@initial": "small", "@xs": "default", "@sm": "large" }}
-      >
+      </p>
+      <p className="mb-8 max-w-[640px] break-words font-sansDisplay text-xl font-semibold leading-snug text-slate-900 dark:text-slate-50 sm:text-2xl">
         Find out more about me on{" "}
         <Link underlined href="https://twitter.com/rswebdesigner">
           Twitter
@@ -72,9 +31,9 @@ const IndexPage: React.FC<React.PropsWithChildren<NextPage>> = () => (
         <Link underlined href="https://www.instagram.com/tamizhographer/">
           Instagram
         </Link>
-      </Introduction>
+      </p>
 
-      <Section>
+      <section className="my-24">
         <List title="Featured Posts">
           <ListItem link="/blog/en/building-maxout">Building Maxout</ListItem>
           <ListItem link="/blog/en/from-couch-to-5k">
@@ -91,8 +50,8 @@ const IndexPage: React.FC<React.PropsWithChildren<NextPage>> = () => (
             Developing a meeting culture that your employees will love
           </ListItem>
         </List>
-      </Section>
-    </Container>
+      </section>
+    </section>
   </PageLayout>
 )
 

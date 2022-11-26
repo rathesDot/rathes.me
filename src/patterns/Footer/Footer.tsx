@@ -1,36 +1,9 @@
 import React from "react"
-import Link from "next/link"
-import { styled } from "../../../stitches.config"
-
-import { Text } from "../../components"
-
-const Separator = styled("span", {
-  display: "inline-block",
-  marginLeft: 8,
-  marginRight: 8,
-  color: "$slate11",
-  fontSize: "$xs",
-  fontFamily: "$default",
-
-  "&::before": {
-    content: `"/"`,
-  },
-})
 
 const Footer = () => (
-  <div>
-    <Text color="slate11" size="small">
-      &copy; 2020 — Rathes Sachchithananthan
-    </Text>
-    <Separator />
-    <Link href="/legal">
-
-      <Text color="slate11" size="small">
-        Legal Information
-      </Text>
-
-    </Link>
-  </div>
+  <footer className="text-xs text-neutral-400 dark:text-neutral-600">
+    &copy; 2020 — Rathes Sachchithananthan
+  </footer>
 )
 
 export { Footer }

@@ -5,8 +5,6 @@ import matter from "gray-matter"
 import path from "path"
 import fs from "fs"
 
-import { styled } from "../../stitches.config"
-
 import { Link, List, ListItem, Paragraph, Meta } from "../components"
 import { SayHi } from "../patterns"
 import { PageLayout } from "../layouts"
@@ -15,34 +13,21 @@ import { getSortedGroups, groupPostsByYear, Post } from "../utils"
 
 import externalLinks from "../content/blog/externalLinks"
 
-const Container = styled("section", {
-  maxWidth: 640,
-})
-
-const Section = styled("section", {
-  marginTop: "$32",
-})
-
-const SayHiContainer = styled("section", {
-  marginBottom: "$32",
-  marginTop: "$32",
-})
-
-const BlogList = styled("div", {
-  marginTop: "$12",
-})
-
-const Writings: React.FC<React.PropsWithChildren<InferGetStaticPropsType<typeof getStaticProps>>> = ({
-  blogPosts,
-}) => {
+const Writings: React.FC<
+  React.PropsWithChildren<InferGetStaticPropsType<typeof getStaticProps>>
+> = ({ blogPosts }) => {
   return (
     <PageLayout>
-      <Container>
+      <section className="max-w-[640px]">
         <Meta title="Writings" />
         <Paragraph>
           From time to time, I do write. Sometime on my blog, but also on other
           blogs such as on{" "}
-          <Link color="slate12" href="https://medium.com/@rathes" underlined>
+          <Link
+            href="https://medium.com/@rathes"
+            underlined
+            className="text-neutral-900 dark:text-neutral-50"
+          >
             Medium
           </Link>
           . The topics, I write about are diverse. Obviously, I write about the
@@ -54,25 +39,25 @@ const Writings: React.FC<React.PropsWithChildren<InferGetStaticPropsType<typeof 
           the title, it may be that you do not speak the language. If you want
           me to translate a specific article, just drop a message{" "}
           <Link
-            color="slate12"
             href="https://twitter.com/rswebdesigner"
             underlined
+            className="text-neutral-900 dark:text-neutral-50"
           >
             @rswebdesigner
           </Link>
         </Paragraph>
 
-        <Section>
-          <BlogList>
+        <section className="mt-32">
+          <div className="mt-12">
             <List title="Books & Whitepapers">
               <ListItem link="https://learn-tamil.com">
                 A Guide To Basic Tamil Grammar
               </ListItem>
             </List>
-          </BlogList>
+          </div>
 
           {blogPosts.map(([key, posts]) => (
-            <BlogList key={key}>
+            <div className="mt-12" key={key}>
               <List title={key}>
                 {posts.map((post, index) => (
                   <ListItem link={post.link} key={index}>
@@ -80,13 +65,13 @@ const Writings: React.FC<React.PropsWithChildren<InferGetStaticPropsType<typeof 
                   </ListItem>
                 ))}
               </List>
-            </BlogList>
+            </div>
           ))}
-        </Section>
-        <SayHiContainer>
+        </section>
+        <div className="my-32">
           <SayHi />
-        </SayHiContainer>
-      </Container>
+        </div>
+      </section>
     </PageLayout>
   )
 }
