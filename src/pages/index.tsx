@@ -8,21 +8,21 @@ const IndexPage: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="Home" />
     <section>
-      <h1 className="mb-8 max-w-[640px] break-words font-sansDisplay text-xl font-semibold leading-snug text-slate-900 dark:text-slate-50 sm:text-2xl">
+      <h1 className="mb-8 max-w-[640px] break-words font-sansDisplay text-xl font-semibold leading-snug text-slate-900 antialiased dark:text-slate-50 sm:text-2xl">
         I'm Rathes Sachchithananthan, a front-end engineer living in{" "}
         <Link underlined href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9">
           London
         </Link>{" "}
         interested in fitness, languages, books &amp; cooking.
       </h1>
-      <p className="mb-8 max-w-[640px] break-words font-sansDisplay text-xl font-semibold leading-snug text-slate-900 dark:text-slate-50 sm:text-2xl">
+      <p className="mb-8 max-w-[640px] break-words font-sansDisplay text-xl font-semibold leading-snug text-slate-900 antialiased dark:text-slate-50 sm:text-2xl">
         Currently, I work as a product engineer at{" "}
         <Link underlined href="https://www.intercom.com/">
           Intercom
         </Link>{" "}
         helping businesses building better customer relationships.
       </p>
-      <p className="mb-8 max-w-[640px] break-words font-sansDisplay text-xl font-semibold leading-snug text-slate-900 dark:text-slate-50 sm:text-2xl">
+      <p className="mb-8 max-w-[640px] break-words font-sansDisplay text-xl font-semibold leading-snug text-slate-900 antialiased dark:text-slate-50 sm:text-2xl">
         Find out more about me on{" "}
         <Link underlined href="https://twitter.com/rswebdesigner">
           Twitter
