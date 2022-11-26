@@ -9,7 +9,7 @@ import Link from "next/link"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote"
 import * as AspectRatio from "@radix-ui/react-aspect-ratio"
-import prism from "remark-prism"
+import hightlight from "rehype-highlight"
 
 import path from "path"
 import fs from "fs"
@@ -170,7 +170,7 @@ export const getStaticProps: GetStaticProps<{
         url: `${SITE_URL}/blog/${language}/${slug}`,
         source: await serialize(content, {
           mdxOptions: {
-            remarkPlugins: [prism],
+            rehypePlugins: [hightlight],
           },
         }),
       },
