@@ -1,6 +1,6 @@
 import { HTMLAttributes } from "react"
 
-import cx from "classnames"
+import cx from "clsx"
 
 export const Paragraph: React.FC<HTMLAttributes<HTMLParagraphElement>> = ({
   className,
