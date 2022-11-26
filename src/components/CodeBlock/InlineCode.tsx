@@ -1,11 +1,8 @@
-import { styled } from "../../../stitches.config"
+import { HTMLProps } from "react"
 
-export const InlineCode = styled("code", {
-  background: "$slate6",
-  color: "$slate12",
-  fontFamily: "$mono",
-  fontWeight: 400,
-  padding: "0.1em $2",
-  borderRadius: "4px",
-  whiteSpace: "normal",
-})
+export const InlineCode: React.FC<HTMLProps<HTMLElement>> = ({ ...props }) => (
+  <code
+    className="whitespace-normal rounded bg-neutral-200 py-[0.1em] px-2 font-mono text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200"
+    {...props}
+  />
+)
