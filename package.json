@@ -7,7 +7,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^2.1.5",
     "@mdx-js/react": "^2.1.5",
-    "@next/font": "^13.0.6",
+    "@next/font": "^13.1.1",
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-aspect-ratio": "^1.0.1",
     "autoprefixer": "^10.4.13",
@@ -15,7 +15,7 @@
     "clsx": "^1.2.1",
     "date-fns": "^2.29.3",
     "gray-matter": "^4.0.3",
-    "next": "^13.0.6",
+    "next": "^13.1.1",
     "next-mdx-remote": "4.2.0",
     "postcss": "^8.4.19",
     "prism-themes": "^1.9.0",
