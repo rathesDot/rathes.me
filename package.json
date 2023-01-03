@@ -11,7 +11,7 @@
     "@radix-ui/colors": "^0.1.8",
     "@radix-ui/react-aspect-ratio": "^1.0.1",
     "autoprefixer": "^10.4.13",
-    "class-variance-authority": "^0.3.0",
+    "class-variance-authority": "^0.4.0",
     "clsx": "^1.2.1",
     "date-fns": "^2.29.3",
     "gray-matter": "^4.0.3",
