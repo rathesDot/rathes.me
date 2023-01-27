@@ -85,8 +85,8 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
             ))}
           </List>
           <Separator />
-          <List title="Reading List 2022">
-            {books["Reading List 2022"].map((book, index) => (
+          <List title="Reading List 2023">
+            {books["Reading List 2023"].map((book, index) => (
               <ListItem
                 key={`${book.title.replaceAll(" ", "-")}-${index}`}
                 subtitle={`by ${book.author}`}
