@@ -1,7 +1,7 @@
 import type { AppProps } from "next/app"
 import Script from "next/script"
 
-import { Noto_Sans, Noto_Sans_Display } from "@next/font/google"
+import { Noto_Sans, Noto_Sans_Display } from "next/font/google"
 
 const notoSans = Noto_Sans({
   weight: ["400"],
