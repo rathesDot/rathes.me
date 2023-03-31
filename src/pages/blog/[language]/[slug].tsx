@@ -8,7 +8,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote"
-import * as AspectRatio from "@radix-ui/react-aspect-ratio"
 import hightlight from "rehype-highlight"
 
 import path from "path"
