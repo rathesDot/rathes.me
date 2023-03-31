@@ -150,75 +150,76 @@ const Navigation = () => {
   }, [])
 
   return (
-    <nav
-      className={cx("inset-0 z-50 mt-8 md:mt-16 lg:mt-24", {
-        "fixed bg-neutral-50 dark:bg-neutral-900": isOpen,
-        "relative bg-transparent": !isOpen,
-      })}
-    >
+    <nav>
       <div
         className={cx(
-          "box-content flex max-w-xl items-center justify-between text-neutral-900 dark:text-neutral-50",
+          "fixed inset-x-0 mb-4 border-b border-neutral-200  px-6 py-2 backdrop-blur-sm dark:border-neutral-700  md:px-16 lg:px-32",
           {
-            "p-8 md:p-16 lg:px-32 lg:py-24": isOpen,
-            "mb-16 p-0 lg:mb-32": !isOpen,
+            "bg-neutral-50/70 dark:bg-neutral-900/70": !isOpen,
+            "bg-neutral-50/100 dark:bg-neutral-900/100": isOpen,
           }
         )}
       >
-        <div className="flex">
-          <Link
-            className="flex py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
-            href="/"
-            aria-label="Home"
+        <div
+          className={cx(
+            "box-content flex max-w-xl items-center justify-between text-neutral-900 dark:text-neutral-50"
+          )}
+        >
+          <div className="flex">
+            <Link
+              className="flex py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
+              href="/"
+              aria-label="Home"
+            >
+              <IconButton as="span">
+                <Logo />
+              </IconButton>
+            </Link>
+          </div>
+          <div className="flex">
+            <ThemeSwitch theme={theme} onToggle={toggleTheme}>
+              Toggle
+            </ThemeSwitch>
+            <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
+          </div>
+        </div>
+      </div>
+      <div
+        className={cx(
+          "inset-0 mt-[65px] bg-neutral-900 px-8 md:px-16 lg:px-32",
+          {
+            fixed: isOpen,
+            hidden: !isOpen,
+          }
+        )}
+      >
+        <div className="mt-8">
+          <Heading4 className="text-neutral-500">Navigation</Heading4>
+          <MenuItem href="/about">About</MenuItem>
+
+          <MenuItem href="/files/resume.pdf" aria-label="Resume">
+            Resume
+          </MenuItem>
+
+          <MenuItem href="/work">Work</MenuItem>
+
+          <MenuItem href="/writings">Writings</MenuItem>
+        </div>
+        <div className="mt-8">
+          <Heading4 className="text-neutral-500">Current Projects</Heading4>
+          <a
+            className="block py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
+            href="https://learn-tamil.com"
           >
-            <IconButton as="span">
-              <Logo />
-            </IconButton>
-          </Link>
+            Learn Tamil
+          </a>
+          <a
+            className="block py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
+            href="https://getmaxout.app"
+          >
+            Maxout
+          </a>
         </div>
-        <div className="flex">
-          <ThemeSwitch theme={theme} onToggle={toggleTheme}>
-            Toggle
-          </ThemeSwitch>
-          <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
-        </div>
-      </div>
-      <div
-        className={cx("mt-8 px-8 md:px-16 lg:px-32", {
-          block: isOpen,
-          hidden: !isOpen,
-        })}
-      >
-        <Heading4 className="text-neutral-500">Navigation</Heading4>
-        <MenuItem href="/about">About</MenuItem>
-
-        <MenuItem href="/files/resume.pdf" aria-label="Resume">
-          Resume
-        </MenuItem>
-
-        <MenuItem href="/work">Work</MenuItem>
-
-        <MenuItem href="/writings">Writings</MenuItem>
-      </div>
-      <div
-        className={cx("mt-8 px-8 md:px-16 lg:px-32", {
-          block: isOpen,
-          hidden: !isOpen,
-        })}
-      >
-        <Heading4 className="text-neutral-500">Current Projects</Heading4>
-        <a
-          className="block py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
-          href="https://learn-tamil.com"
-        >
-          Learn Tamil
-        </a>
-        <a
-          className="block py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
-          href="https://getmaxout.app"
-        >
-          Maxout
-        </a>
       </div>
     </nav>
   )
