@@ -155,6 +155,16 @@ const TopBar: React.FC<PropsWithChildren<{ isOpen: boolean }>> = ({
   </div>
 )
 
+const menuBody = cva(
+  "inset-0 mt-[65px] bg-neutral-900 px-8 md:px-16 lg:px-32",
+  {
+    variants: {
+      isOpen: { true: "fixed", false: "hidden" },
+    },
+    defaultVariants: { isOpen: false },
+  }
+)
+
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -193,15 +203,7 @@ const Navigation = () => {
           <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
         </div>
       </TopBar>
-      <div
-        className={cx(
-          "inset-0 mt-[65px] bg-neutral-900 px-8 md:px-16 lg:px-32",
-          {
-            fixed: isOpen,
-            hidden: !isOpen,
-          }
-        )}
-      >
+      <div className={menuBody({ isOpen })}>
         <div className="mt-8">
           <Heading4 className="text-neutral-500">Navigation</Heading4>
           <MenuItem href="/about">About</MenuItem>
