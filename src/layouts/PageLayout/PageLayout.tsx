@@ -50,9 +50,9 @@ const PageLayout: React.FC<React.PropsWithChildren<unknown>> = ({
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <main className="flex min-h-screen flex-col justify-between bg-neutral-50 px-8 font-sans text-neutral-900 dark:bg-neutral-900 dark:text-neutral-50 md:px-16 lg:px-32">
+      <main className="bg-neutral-50 px-8 font-sans text-neutral-900 dark:bg-neutral-900 dark:text-neutral-50 md:px-16 lg:px-32">
         <Navigation />
-        <div className="mt-32">
+        <div className="flex min-h-screen flex-col justify-between pt-32">
           {children}
           <Footer />
         </div>

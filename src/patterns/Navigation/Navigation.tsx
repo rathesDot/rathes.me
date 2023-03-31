@@ -129,7 +129,7 @@ const Hamburger: React.FC<
 }
 
 const topbar = cva(
-  "fixed inset-x-0 mb-4 border-b border-neutral-200  px-6 py-2 backdrop-blur-sm dark:border-neutral-700  md:px-16 lg:px-32",
+  "fixed z-50 inset-x-0 mb-4 border-b border-neutral-200  px-6 py-2 backdrop-blur-sm dark:border-neutral-700  md:px-16 lg:px-32",
   {
     variants: {
       isOpen: {
