@@ -82,10 +82,8 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
       <Meta title={title} description={excerpt} meta={meta} />
       <div className="max-w-[640px]">
         {image && (
-          <ImageWrapper>
-            <AspectRatio.Root ratio={16 / 9}>
-              <Image src={image} fill sizes="704px" priority alt={title} />
-            </AspectRatio.Root>
+          <ImageWrapper aspect="16/9">
+            <Image src={image} fill sizes="704px" priority alt={title} />
           </ImageWrapper>
         )}
         <h1 className="mb-2 mt-12 max-w-[640px] break-words font-sansDisplay text-xl font-semibold leading-tight text-slate-900 dark:text-slate-50 sm:text-2xl">
