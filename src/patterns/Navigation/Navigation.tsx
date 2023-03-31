@@ -151,7 +151,7 @@ const Navigation = () => {
 
   return (
     <nav
-      className={cx("inset-0 z-50", {
+      className={cx("inset-0 z-50 mt-8 md:mt-16 lg:mt-24", {
         "fixed bg-neutral-50 dark:bg-neutral-900": isOpen,
         "relative bg-transparent": !isOpen,
       })}
@@ -160,7 +160,7 @@ const Navigation = () => {
         className={cx(
           "box-content flex max-w-xl items-center justify-between text-neutral-900 dark:text-neutral-50",
           {
-            "p-8 md:p-16 lg:py-24 lg:px-32": isOpen,
+            "p-8 md:p-16 lg:px-32 lg:py-24": isOpen,
             "mb-16 p-0 lg:mb-32": !isOpen,
           }
         )}
