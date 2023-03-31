@@ -33,7 +33,7 @@ const ReadingList: NextPage = () => {
   return (
     <PageLayout>
       <Meta title="Reading List" />
-      <div className="mb-32 max-w-[640px] flex-grow">
+      <div className="mb-32 max-w-xl flex-grow">
         <section className="mb-16 flex flex-col gap-4">
           <Heading1>Reading List</Heading1>
           <TextField

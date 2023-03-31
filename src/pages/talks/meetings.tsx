@@ -7,7 +7,7 @@ import { Heading1, Paragraph, Meta } from "../../components"
 const Meetings: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="You probably don't need that meeting - Developing a meeting culture that employees will love"></Meta>
-    <div className="max-w-[640px]">
+    <div className="max-w-xl">
       <Heading1>
         You probably don't need that meeting
         <span className="block text-base text-neutral-500">

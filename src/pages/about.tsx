@@ -21,7 +21,7 @@ import books from "../../data/books.json"
 const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="About me" />
-    <div className="max-w-[640px]">
+    <div className="max-w-xl">
       <Heading1>/raðiːs/</Heading1>
       <Paragraph>
         I'm Rathes Sachchithananthan, a web developer with interests not only in

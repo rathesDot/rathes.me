@@ -129,7 +129,7 @@ const Hamburger: React.FC<
 }
 
 const topbar = cva(
-  "fixed z-50 inset-x-0 mb-4 border-b border-neutral-200  px-6 py-2 backdrop-blur-sm dark:border-neutral-700  md:px-16 lg:px-32",
+  "fixed z-50 inset-x-0 mb-4 border-b border-neutral-200  px-6 py-2 backdrop-blur-sm dark:border-neutral-700",
   {
     variants: {
       isOpen: {
@@ -148,14 +148,14 @@ const TopBar: React.FC<PropsWithChildren<{ isOpen: boolean }>> = ({
   children,
 }) => (
   <div className={topbar({ isOpen })}>
-    <div className="box-content flex max-w-xl items-center justify-between text-neutral-900 dark:text-neutral-50">
+    <div className="mx-auto box-content flex max-w-xl items-center justify-between text-neutral-900 dark:text-neutral-50">
       {children}
     </div>
   </div>
 )
 
 const menuBody = cva(
-  "inset-0 mt-[65px] bg-neutral-900 px-8 md:px-16 lg:px-32",
+  "inset-0 mt-[65px] bg-neutral-900 px-8 md:px-16 lg:px-32 [&_div]:max-w-xl [&_div]:mx-auto",
   {
     variants: {
       isOpen: { true: "fixed", false: "hidden" },

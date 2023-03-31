@@ -18,7 +18,7 @@ import { SayHi } from "../patterns"
 const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
   return (
     <PageLayout>
-      <section className="max-w-[640px]">
+      <section className="max-w-xl">
         <Meta title="Work" />
         <Heading1 className="sr-only">My work</Heading1>
         <Paragraph>
