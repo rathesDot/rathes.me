@@ -7,7 +7,7 @@ import { PageLayout } from "../layouts"
 const IndexPage: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="Home" />
-    <section>
+    <section className="mt-16">
       <h1 className="mb-8 max-w-xl break-words font-sansDisplay text-xl font-medium leading-snug text-neutral-900 antialiased dark:text-neutral-50 sm:text-2xl">
         I'm Rathes Sachchithananthan, a front-end engineer living in{" "}
         <Link underlined href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9">
