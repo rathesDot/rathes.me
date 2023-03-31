@@ -8,7 +8,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { serialize } from "next-mdx-remote/serialize"
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote"
-import * as AspectRatio from "@radix-ui/react-aspect-ratio"
 import hightlight from "rehype-highlight"
 
 import path from "path"
@@ -80,13 +79,13 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <PageLayout>
       <Meta title={title} description={excerpt} meta={meta} />
-      <div className="max-w-[640px]">
+      <div className="max-w-xl">
         {image && (
           <ImageWrapper aspect="16/9">
             <Image src={image} fill sizes="704px" priority alt={title} />
           </ImageWrapper>
         )}
-        <h1 className="mb-2 mt-12 max-w-[640px] break-words font-sansDisplay text-xl font-semibold leading-tight text-slate-900 dark:text-slate-50 sm:text-2xl">
+        <h1 className="mb-2 mt-12 max-w-xl break-words font-sansDisplay text-xl font-semibold leading-tight text-slate-900 dark:text-slate-50 sm:text-2xl">
           {title}
         </h1>
         <MDXRemote {...source} components={components} scope={{ books }} />

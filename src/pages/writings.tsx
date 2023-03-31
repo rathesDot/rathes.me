@@ -18,7 +18,7 @@ const Writings: React.FC<
 > = ({ blogPosts }) => {
   return (
     <PageLayout>
-      <section className="max-w-[640px]">
+      <section className="max-w-xl">
         <Meta title="Writings" />
         <Paragraph>
           From time to time, I do write. Sometime on my blog, but also on other

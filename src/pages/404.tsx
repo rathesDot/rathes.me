@@ -6,7 +6,7 @@ import { List, ListItem, Paragraph, Meta, Heading1 } from "../components"
 const NotFoundPage = () => (
   <PageLayout>
     <Meta title="404: Not found" />
-    <div className="max-w-[640px]">
+    <div className="max-w-xl">
       <Heading1>
         Looks like you are looking for a page that does not exist.
       </Heading1>

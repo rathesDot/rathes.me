@@ -7,7 +7,7 @@ import { Heading1, Paragraph, Meta } from "../../components"
 const ManagingTime: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout>
     <Meta title="You can't manage time - A talk about what people call time management"></Meta>
-    <div className="max-w-[640px]">
+    <div className="max-w-xl">
       <Heading1>
         You can't manage time
         <span className="block text-base text-neutral-500">
