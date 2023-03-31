@@ -218,18 +218,8 @@ const Navigation = () => {
         </div>
         <div className="mt-8">
           <Heading4 className="text-neutral-500">Current Projects</Heading4>
-          <a
-            className="block py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
-            href="https://learn-tamil.com"
-          >
-            Learn Tamil
-          </a>
-          <a
-            className="block py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
-            href="https://getmaxout.app"
-          >
-            Maxout
-          </a>
+          <MenuItem href="https://learn-tamil.com">Learn Tamil</MenuItem>
+          <MenuItem href="https://getmaxout.app">Maxout</MenuItem>
         </div>
       </div>
     </nav>
