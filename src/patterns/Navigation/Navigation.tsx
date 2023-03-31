@@ -180,11 +180,7 @@ const Navigation = () => {
     <nav>
       <TopBar isOpen={isOpen}>
         <div className="flex">
-          <Link
-            className="flex py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
-            href="/"
-            aria-label="Home"
-          >
+          <Link href="/" aria-label="Home">
             <IconButton as="span">
               <Logo />
             </IconButton>
