@@ -8,7 +8,6 @@ import React, {
 } from "react"
 import Link, { LinkProps } from "next/link"
 
-import cx from "clsx"
 import { cva } from "class-variance-authority"
 
 import { ThemeContext } from "../../layouts/PageLayout/PageLayout"
