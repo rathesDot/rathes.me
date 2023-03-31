@@ -9,6 +9,7 @@ import React, {
 import Link, { LinkProps } from "next/link"
 
 import cx from "clsx"
+import { cva } from "class-variance-authority"
 
 import { ThemeContext } from "../../layouts/PageLayout/PageLayout"
 
@@ -128,6 +129,32 @@ const Hamburger: React.FC<
   )
 }
 
+const topbar = cva(
+  "fixed inset-x-0 mb-4 border-b border-neutral-200  px-6 py-2 backdrop-blur-sm dark:border-neutral-700  md:px-16 lg:px-32",
+  {
+    variants: {
+      isOpen: {
+        true: "bg-neutral-50/100 dark:bg-neutral-900/100",
+        false: "bg-neutral-50/70 dark:bg-neutral-900/70",
+      },
+    },
+    defaultVariants: {
+      isOpen: false,
+    },
+  }
+)
+
+const TopBar: React.FC<PropsWithChildren<{ isOpen: boolean }>> = ({
+  isOpen,
+  children,
+}) => (
+  <div className={topbar({ isOpen })}>
+    <div className="box-content flex max-w-xl items-center justify-between text-neutral-900 dark:text-neutral-50">
+      {children}
+    </div>
+  </div>
+)
+
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -151,39 +178,25 @@ const Navigation = () => {
 
   return (
     <nav>
-      <div
-        className={cx(
-          "fixed inset-x-0 mb-4 border-b border-neutral-200  px-6 py-2 backdrop-blur-sm dark:border-neutral-700  md:px-16 lg:px-32",
-          {
-            "bg-neutral-50/70 dark:bg-neutral-900/70": !isOpen,
-            "bg-neutral-50/100 dark:bg-neutral-900/100": isOpen,
-          }
-        )}
-      >
-        <div
-          className={cx(
-            "box-content flex max-w-xl items-center justify-between text-neutral-900 dark:text-neutral-50"
-          )}
-        >
-          <div className="flex">
-            <Link
-              className="flex py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
-              href="/"
-              aria-label="Home"
-            >
-              <IconButton as="span">
-                <Logo />
-              </IconButton>
-            </Link>
-          </div>
-          <div className="flex">
-            <ThemeSwitch theme={theme} onToggle={toggleTheme}>
-              Toggle
-            </ThemeSwitch>
-            <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
-          </div>
+      <TopBar isOpen={isOpen}>
+        <div className="flex">
+          <Link
+            className="flex py-1 font-sansDisplay text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
+            href="/"
+            aria-label="Home"
+          >
+            <IconButton as="span">
+              <Logo />
+            </IconButton>
+          </Link>
         </div>
-      </div>
+        <div className="flex">
+          <ThemeSwitch theme={theme} onToggle={toggleTheme}>
+            Toggle
+          </ThemeSwitch>
+          <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
+        </div>
+      </TopBar>
       <div
         className={cx(
           "inset-0 mt-[65px] bg-neutral-900 px-8 md:px-16 lg:px-32",
