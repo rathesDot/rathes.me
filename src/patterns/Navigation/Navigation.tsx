@@ -214,6 +214,7 @@ const Navigation = () => {
           <MenuItem href="/work">Work</MenuItem>
 
           <MenuItem href="/writings">Writings</MenuItem>
+          <MenuItem href="/reading-list">Reading List</MenuItem>
         </div>
         <div className="mt-8">
           <Heading4 className="text-neutral-500">Current Projects</Heading4>
