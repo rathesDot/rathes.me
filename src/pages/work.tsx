@@ -90,6 +90,26 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
           </Paragraph>
         </section>
         <section className="mt-32">
+          <Heading2>Playground</Heading2>
+          <Paragraph>
+            Not all side projects have to be full on apps. Sometimes I just love
+            to play around with a new tech that I found, or create user
+            interfaces or be creative in any other way.
+          </Paragraph>
+          <Paragraph>
+            Feel free to have a look at some of these fun experiements in what I
+            call{" "}
+            <Link
+              underlined
+              href="https://play.rathes.me"
+              className="text-neutral-900 dark:text-neutral-50"
+            >
+              my playground
+            </Link>
+            .
+          </Paragraph>
+        </section>
+        <section className="mt-32">
           <Heading2>Public Speaking</Heading2>
           <Paragraph>
             In January 2019, I gave my first tech-related talk. Since it was an
