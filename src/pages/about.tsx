@@ -48,8 +48,8 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => (
         languages and cultures.
       </Paragraph>
       <Paragraph>
-        Nowadays, I work as a front-end engineer at Hussle in London building
-        web applications using React.
+        Nowadays, I work as a product engineer at Intercom in London building
+        web applications.
       </Paragraph>
       <Paragraph>
         Apart from that, I spent most of my time working on smaller side

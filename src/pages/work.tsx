@@ -22,10 +22,10 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
         <Meta title="Work" />
         <Heading1 className="sr-only">My work</Heading1>
         <Paragraph>
-          I work as a front-end engineer at Hussle right now, but I also love to
-          work on side projects. They do not necessarily have to be development
-          related. If you want to see my software engineering related things, I
-          recommend you visit my{" "}
+          I work as a product engineer at Intercom at the moment, but I also
+          love to work on side projects. They do not necessarily have to be
+          development related. If you want to see my software engineering
+          related things, I recommend you visit my{" "}
           <Link
             href="https://github.com/rathesDot"
             underlined
