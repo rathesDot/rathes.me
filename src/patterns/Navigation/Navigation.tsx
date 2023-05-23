@@ -155,7 +155,7 @@ const TopBar: React.FC<PropsWithChildren<{ isOpen: boolean }>> = ({
 )
 
 const menuBody = cva(
-  "inset-0 mt-[65px] bg-neutral-50 px-8 md:px-16 lg:px-32 [&_div]:max-w-xl [&_div]:mx-auto dark:bg-neutral-900",
+  "inset-0 mt-[65px] bg-neutral-50 px-8 md:px-16 lg:px-32 [&_div]:max-w-xl [&_div]:mx-auto dark:bg-neutral-900 z-10",
   {
     variants: {
       isOpen: { true: "fixed", false: "hidden" },
