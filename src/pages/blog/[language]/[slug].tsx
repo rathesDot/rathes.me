@@ -48,7 +48,7 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   excerpt,
   image,
 }) => {
-  const components = {
+  const components: any = {
     h1: Heading1,
     h2: Heading2,
     h3: Heading3,
