@@ -110,7 +110,9 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
           </Paragraph>
         </section>
         <section className="mt-32">
-          <Heading2>Public Speaking</Heading2>
+          <Heading2 className="scroll-mt-32" id="public-speaking">
+            Public Speaking
+          </Heading2>
           <Paragraph>
             In January 2019, I gave my first tech-related talk. Since it was an
             exciting experience, I will hopefully fill up this list with a few
