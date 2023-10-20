@@ -1,15 +1,12 @@
 import { HTMLAttributes } from "react"
 
-import cx from "clsx"
+import { cva } from "class-variance-authority"
+
+const styles = cva(
+  "my-8 w-6 border-2 border-neutral-300 dark:border-neutral-700"
+)
 
 export const Separator: React.FC<HTMLAttributes<HTMLHRElement>> = ({
   className,
   ...props
-}) => (
-  <hr
-    className={cx(
-      "my-8 w-6 border-2 border-neutral-300 dark:border-neutral-700"
-    )}
-    {...props}
-  />
-)
+}) => <hr className={styles({ className })} {...props} />
