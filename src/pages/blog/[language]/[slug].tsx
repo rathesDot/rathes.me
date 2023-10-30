@@ -167,6 +167,7 @@ export const getStaticProps: GetStaticProps<{
         url: `${SITE_URL}/blog/${language}/${slug}`,
         source: await serialize(content, {
           mdxOptions: {
+            /** @ts-ignore */
             rehypePlugins: [hightlight],
           },
         }),
