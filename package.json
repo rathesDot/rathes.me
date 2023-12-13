@@ -45,7 +45,7 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "format": "prettier --write src/**/*.{ts,tsx}",
+    "format": "prettier --write src/**/*",
     "test": "jest",
     "lint": "next lint"
   },
