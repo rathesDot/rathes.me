@@ -10,8 +10,8 @@ export const groupPostsByYear = (posts: Post[]): { [key: number]: Post[] } => {
       Date.parse(a.date) < Date.parse(b.date)
         ? 1
         : Date.parse(b.date) < Date.parse(a.date)
-        ? -1
-        : 0
+          ? -1
+          : 0
     )
     .reduce((list, post) => {
       ;(list[new Date(Date.parse(post.date)).getFullYear()] =
