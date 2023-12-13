@@ -11,7 +11,7 @@
     "class-variance-authority": "^0.7.0",
     "date-fns": "^2.30.0",
     "gray-matter": "^4.0.3",
-    "next": "^14.0.3",
+    "next": "^14.0.4",
     "next-mdx-remote": "^4.4.1",
     "postcss": "^8.4.31",
     "prism-themes": "^1.9.0",
