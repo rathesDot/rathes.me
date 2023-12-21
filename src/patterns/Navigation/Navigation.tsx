@@ -1,15 +1,9 @@
-import React, {
-  HTMLProps,
-  PropsWithChildren,
-  useEffect,
-  useMemo,
-  useState,
-} from "react"
+import React, { PropsWithChildren, useEffect, useState } from "react"
 import Link, { LinkProps } from "next/link"
 
-import { cva } from "class-variance-authority"
+import { cva, cx } from "class-variance-authority"
 
-import { Heading4, Logo } from "../../components"
+import { Logo } from "../../components"
 
 const MenuItem: React.FC<PropsWithChildren<LinkProps>> = ({
   children,
@@ -17,7 +11,7 @@ const MenuItem: React.FC<PropsWithChildren<LinkProps>> = ({
 }) => (
   <Link
     {...props}
-    className="font-sansDisplay block py-1 text-lg font-medium text-neutral-900 antialiased dark:text-neutral-50"
+    className="block font-sans text-[6.32688928vh] font-bold leading-none text-neutral-50 antialiased"
   >
     {children}
   </Link>
@@ -70,32 +64,25 @@ const Hamburger: React.FC<
 )
 
 const TopBar: React.FC<PropsWithChildren> = ({ children }) => (
-  <div className="mx-auto box-content flex max-w-xl items-center justify-between p-4 text-neutral-50">
+  <div className="mx-auto flex w-full items-center justify-between p-4 text-neutral-50">
     {children}
   </div>
 )
 
-const menuBody = cva(
-  "inset-0 mt-[65px] bg-neutral-50 px-8 md:px-16 lg:px-32 [&_div]:max-w-xl [&_div]:mx-auto dark:bg-neutral-900 z-10",
+const navigation = cva(
+  "overflow-hidden fixed inset-x-0 z-50 transition-all flex flex-col",
   {
     variants: {
-      isOpen: { true: "fixed", false: "hidden" },
+      isOpen: {
+        true: "inset-y-0 bg-neutral-950/100 h-full",
+        false: "h-14 bg-neutral-950/70 backdrop-blur-sm",
+      },
     },
-    defaultVariants: { isOpen: false },
+    defaultVariants: {
+      isOpen: false,
+    },
   }
 )
-
-const navigation = cva("overflow-hidden fixed inset-x-0 z-50 transition-all", {
-  variants: {
-    isOpen: {
-      true: "inset-y-0 bg-neutral-950/100 h-full",
-      false: "h-14 bg-neutral-950/70 backdrop-blur-sm",
-    },
-  },
-  defaultVariants: {
-    isOpen: false,
-  },
-})
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -119,9 +106,23 @@ const Navigation = () => {
   return (
     <nav className={navigation({ isOpen })}>
       <TopBar>
-        <Logo />
+        <div className={cx({ "opacity-0": isOpen })}>
+          <Logo />
+        </div>
         <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
       </TopBar>
+      {isOpen && (
+        <div className="flex flex-grow items-center">
+          <div className="px-8">
+            <MenuItem href="/">Home</MenuItem>
+            <MenuItem href="/about">About</MenuItem>
+            <MenuItem href="/reading">Reading</MenuItem>
+            <MenuItem href="/writing">Writing</MenuItem>
+            <MenuItem href="/photos">Photos</MenuItem>
+            <MenuItem href="/work">Work</MenuItem>
+          </div>
+        </div>
+      )}
     </nav>
   )
 }
