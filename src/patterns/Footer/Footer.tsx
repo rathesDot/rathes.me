@@ -1,8 +1,12 @@
 import React from "react"
 
 const Footer = () => (
-  <footer className="mb-8 text-xs text-neutral-400 dark:text-neutral-600 md:mb-16 lg:mb-24">
-    &copy; 2023 — Rathes Sachchithananthan
+  <footer className="inline-flex gap-1 p-8 text-xs text-neutral-300">
+    <span>&copy; 2024</span>
+    <span>/</span>
+    <a href="https://mozhi.app/@tamizhographer" target="_blank">
+      @tamizhographer
+    </a>
   </footer>
 )
 
