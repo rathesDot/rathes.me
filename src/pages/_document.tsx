@@ -44,7 +44,7 @@ export default function Document() {
   return (
     <Html>
       <Head />
-      <body>
+      <body className="bg-zinc-950 text-white">
         <ColorMode />
         <Main />
         <NextScript />
