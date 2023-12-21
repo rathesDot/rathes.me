@@ -30,7 +30,7 @@ const IconButton: React.FC<HTMLProps<HTMLButtonElement>> = ({
   <button
     {...props}
     type="button"
-    className="inline-block rounded p-2 text-neutral-900 hover:bg-neutral-100 dark:text-neutral-50 dark:hover:bg-neutral-800"
+    className="inline-block rounded text-neutral-50"
   >
     {children}
   </button>
@@ -75,29 +75,9 @@ const Hamburger: React.FC<
   )
 }
 
-const topbar = cva(
-  "fixed z-50 inset-x-0 mb-4 border-b border-neutral-200  px-6 py-2  dark:border-neutral-700",
-  {
-    variants: {
-      isOpen: {
-        true: "bg-neutral-50/100 dark:bg-neutral-900/100",
-        false: "bg-neutral-50/70 dark:bg-neutral-900/70",
-      },
-    },
-    defaultVariants: {
-      isOpen: false,
-    },
-  }
-)
-
-const TopBar: React.FC<PropsWithChildren<{ isOpen: boolean }>> = ({
-  isOpen,
-  children,
-}) => (
-  <div className={topbar({ isOpen })}>
-    <div className="mx-auto box-content flex max-w-xl items-center justify-between text-neutral-900 dark:text-neutral-50">
-      {children}
-    </div>
+const TopBar: React.FC<PropsWithChildren> = ({ children }) => (
+  <div className="mx-auto box-content flex max-w-xl items-center justify-between p-4 text-neutral-50">
+    {children}
   </div>
 )
 
@@ -142,7 +122,14 @@ const Navigation = () => {
     }
   }, [])
 
-  return <nav className={navigation()}></nav>
+  return (
+    <nav className={navigation({ isOpen })}>
+      <TopBar>
+        <Logo />
+        <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
+      </TopBar>
+    </nav>
+  )
 }
 
 export { Navigation }
