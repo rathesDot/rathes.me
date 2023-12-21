@@ -70,12 +70,27 @@ const TopBar: React.FC<PropsWithChildren> = ({ children }) => (
 )
 
 const navigation = cva(
-  "overflow-hidden fixed inset-x-0 z-50 transition-all flex flex-col",
+  "overflow-hidden fixed inset-x-0 z-50 transition-all duration-300 flex flex-col top-0",
   {
     variants: {
       isOpen: {
-        true: "inset-y-0 bg-neutral-950/100 h-full",
+        true: "bottom-0 bg-neutral-950/100 h-full",
         false: "h-14 bg-neutral-950/70 backdrop-blur-sm",
+      },
+    },
+    defaultVariants: {
+      isOpen: false,
+    },
+  }
+)
+
+const menuBodyContainer = cva(
+  "flex flex-grow items-center transition-opacity delay-500",
+  {
+    variants: {
+      isOpen: {
+        true: "opacity-1",
+        false: "opacity-0 delay-0",
       },
     },
     defaultVariants: {
@@ -111,18 +126,16 @@ const Navigation = () => {
         </div>
         <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
       </TopBar>
-      {isOpen && (
-        <div className="flex flex-grow items-center">
-          <div className="px-8">
-            <MenuItem href="/">Home</MenuItem>
-            <MenuItem href="/about">About</MenuItem>
-            <MenuItem href="/reading">Reading</MenuItem>
-            <MenuItem href="/writing">Writing</MenuItem>
-            <MenuItem href="/photos">Photos</MenuItem>
-            <MenuItem href="/work">Work</MenuItem>
-          </div>
+      <div className={menuBodyContainer({ isOpen })}>
+        <div className="px-8">
+          <MenuItem href="/">Home</MenuItem>
+          <MenuItem href="/about">About</MenuItem>
+          <MenuItem href="/reading">Reading</MenuItem>
+          <MenuItem href="/writing">Writing</MenuItem>
+          <MenuItem href="/photos">Photos</MenuItem>
+          <MenuItem href="/work">Work</MenuItem>
         </div>
-      )}
+      </div>
     </nav>
   )
 }
