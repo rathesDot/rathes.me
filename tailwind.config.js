@@ -13,8 +13,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-notoSans)", ...fontFamily.sans],
-        sansDisplay: ["var(--font-notoDisplay)", ...fontFamily.sans],
+        sans: ["var(--font-switzer)", ...fontFamily.sans],
       },
     },
   },
