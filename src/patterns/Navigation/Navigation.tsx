@@ -76,7 +76,7 @@ const Hamburger: React.FC<
 }
 
 const topbar = cva(
-  "fixed z-50 inset-x-0 mb-4 border-b border-neutral-200  px-6 py-2 backdrop-blur-sm dark:border-neutral-700",
+  "fixed z-50 inset-x-0 mb-4 border-b border-neutral-200  px-6 py-2  dark:border-neutral-700",
   {
     variants: {
       isOpen: {
@@ -111,6 +111,18 @@ const menuBody = cva(
   }
 )
 
+const navigation = cva("overflow-hidden fixed inset-x-0 z-50", {
+  variants: {
+    isOpen: {
+      true: "inset-y-0 bg-zinc-950/100",
+      false: "h-14 bg-zinc-950/70 backdrop-blur-sm",
+    },
+  },
+  defaultVariants: {
+    isOpen: false,
+  },
+})
+
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -130,42 +142,7 @@ const Navigation = () => {
     }
   }, [])
 
-  return (
-    <nav>
-      <TopBar isOpen={isOpen}>
-        <div className="flex">
-          <Link href="/" aria-label="Home">
-            <IconButton as="span">
-              <Logo />
-            </IconButton>
-          </Link>
-        </div>
-        <div className="flex">
-          <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
-        </div>
-      </TopBar>
-      <div className={menuBody({ isOpen })}>
-        <div className="mt-8">
-          <Heading4 className="text-neutral-500">Navigation</Heading4>
-          <MenuItem href="/about">About</MenuItem>
-
-          <MenuItem href="/files/resume.pdf" aria-label="Resume">
-            Resume
-          </MenuItem>
-
-          <MenuItem href="/work">Work</MenuItem>
-
-          <MenuItem href="/writings">Writings</MenuItem>
-          <MenuItem href="/reading-list">Reading List</MenuItem>
-        </div>
-        <div className="mt-8">
-          <Heading4 className="text-neutral-500">Current Projects</Heading4>
-          <MenuItem href="https://learn-tamil.com">Learn Tamil</MenuItem>
-          <MenuItem href="https://getmaxout.app">Maxout</MenuItem>
-        </div>
-      </div>
-    </nav>
-  )
+  return <nav className={navigation()}></nav>
 }
 
 export { Navigation }
