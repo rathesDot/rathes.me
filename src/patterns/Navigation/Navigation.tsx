@@ -91,10 +91,10 @@ const menuBody = cva(
   }
 )
 
-const navigation = cva("overflow-hidden fixed inset-x-0 z-50", {
+const navigation = cva("overflow-hidden fixed inset-x-0 z-50 transition-all", {
   variants: {
     isOpen: {
-      true: "inset-y-0 bg-neutral-950/100",
+      true: "inset-y-0 bg-neutral-950/100 h-full",
       false: "h-14 bg-neutral-950/70 backdrop-blur-sm",
     },
   },
