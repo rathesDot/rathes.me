@@ -23,57 +23,51 @@ const MenuItem: React.FC<PropsWithChildren<LinkProps>> = ({
   </Link>
 )
 
-const IconButton: React.FC<HTMLProps<HTMLButtonElement>> = ({
-  children,
-  ...props
-}) => (
-  <button
-    {...props}
-    type="button"
-    className="inline-block rounded text-neutral-50"
-  >
-    {children}
-  </button>
-)
+const hamburgerIconBar = cva("block h-[1.5px] bg-white transition-all", {
+  variants: {
+    position: {
+      top: "w-[16.5px]",
+      bottom: "mt-[6px] group-hover:translate-x-0 group-hover:w-[16.5px]",
+    },
+    crossed: {
+      true: "",
+      false: "",
+    },
+  },
+  compoundVariants: [
+    {
+      position: "top",
+      crossed: true,
+      class: "-rotate-45 translate-y-[3.75px]",
+    },
+    {
+      position: "bottom",
+      crossed: true,
+      class: "w-[16.5px] rotate-45 -translate-y-[3.75px]",
+    },
+    {
+      position: "bottom",
+      crossed: false,
+      class: "w-[10.5px] translate-x-[6px]",
+    },
+  ],
+})
 
 const Hamburger: React.FC<
   React.PropsWithChildren<{ isOpen: boolean; onToggle: () => void }>
-> = ({ isOpen, onToggle }) => {
-  const iconPaths = useMemo(
-    () =>
-      isOpen
-        ? ["M15 5L5 15", "M5 5L15 15"]
-        : ["M2.5 7.5H17.5", "M2.5 12.5H17.5"],
-    [isOpen]
-  )
-
-  return (
-    <IconButton
-      aria-label={isOpen ? "Close Navigation" : "Open Navigation"}
-      onClick={onToggle}
-    >
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 20 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {iconPaths.map((p, i) => (
-          <path
-            key={i}
-            d={p}
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            style={{ transition: "all 0.2s" }}
-          />
-        ))}
-      </svg>
-    </IconButton>
-  )
-}
+> = ({ isOpen, onToggle }) => (
+  <button
+    aria-label={isOpen ? "Close Navigation" : "Open Navigation"}
+    onClick={onToggle}
+    type="button"
+    className="group block h-6 w-6 p-[3.5px]"
+  >
+    <span className={hamburgerIconBar({ position: "top", crossed: isOpen })} />
+    <span
+      className={hamburgerIconBar({ position: "bottom", crossed: isOpen })}
+    />
+  </button>
+)
 
 const TopBar: React.FC<PropsWithChildren> = ({ children }) => (
   <div className="mx-auto box-content flex max-w-xl items-center justify-between p-4 text-neutral-50">
