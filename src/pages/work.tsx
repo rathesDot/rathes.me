@@ -11,6 +11,7 @@ import {
   Separator,
   Heading1,
   Heading2,
+  Heading3,
 } from "../components"
 
 import { SayHi } from "../patterns"
@@ -110,6 +111,43 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
             .
           </Paragraph>
         </section>
+
+        <section className="my-16">
+          <Heading2 size={4} className="text-neutral-400">
+            Other projects
+          </Heading2>
+          <section className="my-8">
+            <Heading3 size={2}>Espresso at home</Heading3>
+            <Paragraph>
+              A small project that I started to share everything I am learning
+              while trying to recreate the Italian espresso feeling at home.
+            </Paragraph>
+            <Link
+              underlined
+              href="https://espresso-at-home.com/"
+              className="text-neutral-50"
+            >
+              View project
+            </Link>
+          </section>
+          <section className="my-8">
+            <Heading3 size={2}>Kodi — Feature Management Service</Heading3>
+            <Paragraph>
+              The aim of this SaaS is to enable every team to use feature flags
+              straight from the beginning.
+            </Paragraph>
+            <Link
+              underlined
+              href="https://espresso-at-home.com/"
+              className="text-neutral-50"
+            >
+              View project
+            </Link>
+          </section>
+        </section>
+
+        <Separator />
+
         <section className="mt-32">
           <Heading2 className="scroll-mt-32" id="public-speaking">
             Public Speaking
