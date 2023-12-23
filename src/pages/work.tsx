@@ -18,9 +18,9 @@ import { SayHi } from "../patterns"
 const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
   return (
     <PageLayout>
-      <section className="max-w-xl">
+      <section className="max-w-xl p-8">
         <Meta title="Work" />
-        <Heading1 className="sr-only">My work</Heading1>
+        <Heading1 size={2}>My work</Heading1>
         <Paragraph>
           I work as a product engineer at Intercom at the moment, but I also
           love to work on side projects. They do not necessarily have to be
@@ -29,12 +29,13 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
           <Link
             href="https://github.com/rathesDot"
             underlined
-            className="text-neutral-900 dark:text-neutral-50"
+            className="text-neutral-50"
           >
             Github profile
           </Link>
           .
         </Paragraph>
+
         <section className="mt-32">
           <Heading2>Learn Tamil Online</Heading2>
           <Paragraph>
