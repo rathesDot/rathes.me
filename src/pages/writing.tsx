@@ -61,7 +61,7 @@ const Writings: React.FC<
 
           {blogPosts.map(([key, posts]) => (
             <div className="mt-12" key={key}>
-              <List title={key}>
+              <List title={key} className="flex flex-col gap-2">
                 {posts.map((post, index) => (
                   <ListItem link={post.link} key={index}>
                     {post.title}
