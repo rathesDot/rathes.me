@@ -8,7 +8,7 @@ const PageLayout: React.FC<React.PropsWithChildren<unknown>> = ({
   return (
     <main className="font-sans">
       <Navigation />
-      <div>{children}</div>
+      <div className="mt-14">{children}</div>
       <Footer />
     </main>
   )
