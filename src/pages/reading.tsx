@@ -36,7 +36,7 @@ const ReadingList: NextPage = () => {
     <PageLayout>
       <Meta title="Reading" />
       <div className="max-w-xl flex-grow p-8">
-        <section className="mb-16 flex flex-col gap-4">
+        <section>
           <Heading1 size={2}>Reading</Heading1>
           <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
@@ -44,14 +44,16 @@ const ReadingList: NextPage = () => {
             Vestibulum commodo porta neque eget semper. Phasellus non dictum
             metus. Pellentesque pretium est quis aliquet tempus.
           </Paragraph>
-          <TextField
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            aria-label="Filter list"
-            placeholder="Filter list..."
-          />
         </section>
-        <section className="mt-16">
+        <section className="mt-12">
+          <div className="mb-8">
+            <TextField
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              aria-label="Filter list"
+              placeholder="Filter list..."
+            />
+          </div>
           {filteredList.map(([listTitle, books], index, list) => {
             if (!books.length) {
               return
