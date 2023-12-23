@@ -1,5 +1,6 @@
-import React from "react"
+import React, { HTMLProps } from "react"
 import RouterLink from "next/link"
+import { cx } from "class-variance-authority"
 
 import { Heading2, Link } from ".."
 
@@ -20,7 +21,7 @@ const ListItemBody: React.FC<Exclude<ListItemProps, "link">> = ({
   children,
 }) => {
   return (
-    <>
+    <div className="text-base text-neutral-50">
       {subtitle && subtitlePosition == "above" && (
         <Subtitle>{subtitle}</Subtitle>
       )}
@@ -28,7 +29,7 @@ const ListItemBody: React.FC<Exclude<ListItemProps, "link">> = ({
       {subtitle && subtitlePosition == "under" && (
         <Subtitle>{subtitle}</Subtitle>
       )}
-    </>
+    </div>
   )
 }
 
@@ -40,52 +41,49 @@ export const ListItem: React.FC<React.PropsWithChildren<ListItemProps>> = ({
 }) => {
   if (!link) {
     return (
-      <li className="my-2 text-base text-neutral-900 dark:text-neutral-50">
-        <ListItemBody subtitle={subtitle} subtitlePosition={subtitlePosition}>
-          {children}
-        </ListItemBody>
-      </li>
+      <ListItemBody subtitle={subtitle} subtitlePosition={subtitlePosition}>
+        {children}
+      </ListItemBody>
     )
   }
 
   if (link && link.startsWith("http")) {
     return (
-      <li className="my-2 text-base text-neutral-900 dark:text-neutral-50">
-        <Link href={link}>
-          <ListItemBody subtitle={subtitle} subtitlePosition={subtitlePosition}>
-            {children}
-          </ListItemBody>
-        </Link>
-      </li>
+      <Link href={link}>
+        <ListItemBody subtitle={subtitle} subtitlePosition={subtitlePosition}>
+          {children}
+        </ListItemBody>
+      </Link>
     )
   }
 
   return (
-    <li className="my-2 text-base text-neutral-900 dark:text-neutral-50">
-      <RouterLink href={link}>
-        <ListItemBody subtitle={subtitle} subtitlePosition={subtitlePosition}>
-          {children}
-        </ListItemBody>
-      </RouterLink>
-    </li>
+    <RouterLink href={link}>
+      <ListItemBody subtitle={subtitle} subtitlePosition={subtitlePosition}>
+        {children}
+      </ListItemBody>
+    </RouterLink>
   )
 }
 
-export type ListProps = {
+export type ListProps = HTMLProps<HTMLUListElement> & {
   title?: string
 }
 
 export const List: React.FC<React.PropsWithChildren<ListProps>> = ({
   title,
   children,
+  className,
   ...props
 }) => (
-  <div className="block" {...props}>
+  <div className="block">
     {title && (
-      <Heading2 size={4} className="text-neutral-900 dark:text-neutral-400">
+      <Heading2 size={4} className="text-neutral-400">
         {title}
       </Heading2>
     )}
-    <ul className="block">{children}</ul>
+    <ul {...props} className={cx("block", "mt-4", className)}>
+      {children}
+    </ul>
   </div>
 )

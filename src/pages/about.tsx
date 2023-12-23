@@ -39,7 +39,7 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => {
         <Heading1 size={2}>
           I'm a front-end engineer with over 10 years of web experience.
         </Heading1>
-        <div className={readMore({ open })}>
+        <section className={readMore({ open })}>
           <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             suscipit nunc massa, condimentum accumsan lectus luctus vitae.
@@ -58,7 +58,7 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => {
             Vestibulum commodo porta neque eget semper. Phasellus non dictum
             metus. Pellentesque pretium est quis aliquet tempus.
           </Paragraph>
-        </div>
+        </section>
         <button
           type="button"
           onClick={() => setOpen(!open)}
@@ -66,6 +66,38 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => {
         >
           {open ? "Read less" : "Continue Reading"}
         </button>
+
+        <section className="mt-12">
+          <List title="Work Experience" className="flex flex-col gap-6">
+            <ListItem subtitle="December 2021 — now">
+              Product Engineer 3 / Intercom
+            </ListItem>
+            <ListItem subtitle="April 2021 — November 2021">
+              Engineering Team Lead / Hussle
+            </ListItem>
+            <ListItem subtitle="February 2020 — March 2021">
+              Senior Frontend Engineer / Hussle
+            </ListItem>
+            <ListItem subtitle="May 2018 — January 2020">
+              Software Engineer / Teamleader
+            </ListItem>
+            <ListItem subtitle="May 2016 — October 2021">
+              Founder / Aheenam
+            </ListItem>
+            <ListItem subtitle="November 2016 — April 2018">
+              Web Developer / netinsiders
+            </ListItem>
+            <ListItem subtitle="October 2015 — January 2018">
+              Co-Founder / Kernwerk
+            </ListItem>
+            <ListItem subtitle="June 2011 — March 2014">
+              Product Assistant / Kopierland GmbH
+            </ListItem>
+            <ListItem subtitle="June 2006 — March 2016">
+              Web Designer / rathesDot (CreativeCreation)
+            </ListItem>
+          </List>
+        </section>
 
         <div className="my-32">
           <SayHi />
