@@ -1,11 +1,19 @@
-import React from "react"
+import React, { useMemo, useState } from "react"
 import { GetStaticProps, InferGetStaticPropsType } from "next"
 import matter from "gray-matter"
 
 import path from "path"
 import fs from "fs"
 
-import { Link, List, ListItem, Paragraph, Meta, Heading1 } from "../components"
+import {
+  Link,
+  List,
+  ListItem,
+  Paragraph,
+  Meta,
+  Heading1,
+  TextField,
+} from "../components"
 import { SayHi } from "../patterns"
 import { PageLayout } from "../layouts"
 
@@ -16,6 +24,20 @@ import externalLinks from "../content/blog/externalLinks"
 const Writings: React.FC<
   React.PropsWithChildren<InferGetStaticPropsType<typeof getStaticProps>>
 > = ({ blogPosts }) => {
+  const [searchTerm, setSearchTerm] = useState("")
+
+  const filteredList: [string, Post[]][] = useMemo(() => {
+    return blogPosts.map(([year, posts]) => {
+      return [
+        year,
+        posts.filter(
+          (post) =>
+            post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            post.link.toLowerCase().includes(searchTerm.toLowerCase())
+        ),
+      ]
+    })
+  }, [searchTerm, blogPosts])
   return (
     <PageLayout>
       <section className="max-w-xl p-8">
@@ -50,7 +72,15 @@ const Writings: React.FC<
           </Paragraph>
         </section>
 
-        <section className="mt-32">
+        <section className="mt-12">
+          <div className="mb-8">
+            <TextField
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              aria-label="Filter list"
+              placeholder="Filter list..."
+            />
+          </div>
           <div className="mt-12">
             <List title="Books & Whitepapers">
               <ListItem link="https://learn-tamil.com">
@@ -59,7 +89,7 @@ const Writings: React.FC<
             </List>
           </div>
 
-          {blogPosts.map(([key, posts]) => (
+          {filteredList.map(([key, posts]) => (
             <div className="mt-12" key={key}>
               <List title={key} className="flex flex-col gap-2">
                 {posts.map((post, index) => (
