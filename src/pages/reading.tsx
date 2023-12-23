@@ -13,6 +13,7 @@ import {
   TextField,
   Paragraph,
 } from "../components"
+import { SayHi } from "../patterns"
 
 type Book = { title: string; url: string; author: string }
 
@@ -34,7 +35,7 @@ const ReadingList: NextPage = () => {
   return (
     <PageLayout>
       <Meta title="Reading" />
-      <div className="mb-32 max-w-xl flex-grow p-8">
+      <div className="max-w-xl flex-grow p-8">
         <section className="mb-16 flex flex-col gap-4">
           <Heading1 size={2}>Reading</Heading1>
           <Paragraph>
@@ -74,6 +75,9 @@ const ReadingList: NextPage = () => {
             )
           })}
         </section>
+        <div className="mt-16">
+          <SayHi />
+        </div>
       </div>
     </PageLayout>
   )

@@ -119,7 +119,7 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => {
           </a>
         </section>
 
-        <div className="my-32">
+        <div className="mt-16">
           <SayHi />
         </div>
       </div>
