@@ -48,23 +48,25 @@ export const ListItem: React.FC<React.PropsWithChildren<ListItemProps>> = ({
     )
   }
 
-  const isExternalLink = link && link.startsWith("http")
-
-  return (
-    <li className="my-2 text-base text-neutral-900 dark:text-neutral-50">
-      {isExternalLink ? (
+  if (link && link.startsWith("http")) {
+    return (
+      <li className="my-2 text-base text-neutral-900 dark:text-neutral-50">
         <Link href={link}>
           <ListItemBody subtitle={subtitle} subtitlePosition={subtitlePosition}>
             {children}
           </ListItemBody>
         </Link>
-      ) : (
-        <RouterLink href={link}>
-          <ListItemBody subtitle={subtitle} subtitlePosition={subtitlePosition}>
-            {children}
-          </ListItemBody>
-        </RouterLink>
-      )}
+      </li>
+    )
+  }
+
+  return (
+    <li className="my-2 text-base text-neutral-900 dark:text-neutral-50">
+      <RouterLink href={link}>
+        <ListItemBody subtitle={subtitle} subtitlePosition={subtitlePosition}>
+          {children}
+        </ListItemBody>
+      </RouterLink>
     </li>
   )
 }
