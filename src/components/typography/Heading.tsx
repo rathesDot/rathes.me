@@ -1,11 +1,11 @@
 import React, { HTMLProps } from "react"
 import { cva, cx, VariantProps } from "class-variance-authority"
 
-export const heading = cva("antialiased font-sansDisplay", {
+export const heading = cva("antialiased font-sans", {
   variants: {
     size: {
       1: ["text-2xl", "font-semibold"],
-      2: ["text-lg", "font-semibold"],
+      2: ["text-[clamp(20px,6.25vw,48px)]", "font-semibold", "leading-[1.3]"],
       3: ["text-sm", "font-semibold"],
       4: [
         "text-xs",

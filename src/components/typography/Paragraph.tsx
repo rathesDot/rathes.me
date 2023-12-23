@@ -3,7 +3,7 @@ import { HTMLAttributes } from "react"
 import { cva } from "class-variance-authority"
 
 const styles = cva(
-  "mt-3 mb-6 text-base font-normal leading-relaxed text-neutral-800 dark:text-neutral-400"
+  "mt-3 mb-6 text-base font-sans antialiased font-normal text-neutral-300/70"
 )
 
 export const Paragraph: React.FC<HTMLAttributes<HTMLParagraphElement>> = ({
