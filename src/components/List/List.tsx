@@ -38,6 +38,16 @@ export const ListItem: React.FC<React.PropsWithChildren<ListItemProps>> = ({
   link,
   subtitlePosition = "under",
 }) => {
+  if (!link) {
+    return (
+      <li className="my-2 text-base text-neutral-900 dark:text-neutral-50">
+        <ListItemBody subtitle={subtitle} subtitlePosition={subtitlePosition}>
+          {children}
+        </ListItemBody>
+      </li>
+    )
+  }
+
   const isExternalLink = link && link.startsWith("http")
 
   return (
