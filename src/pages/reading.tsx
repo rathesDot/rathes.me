@@ -58,7 +58,7 @@ const ReadingList: NextPage = () => {
 
             return (
               <React.Fragment key={`${listTitle}-${index}`}>
-                <List title={listTitle}>
+                <List title={listTitle} className="flex flex-col gap-4">
                   {books.map((book, index) => (
                     <ListItem
                       link={book.url}
