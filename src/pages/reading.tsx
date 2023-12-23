@@ -11,6 +11,7 @@ import {
   ListItem,
   Separator,
   TextField,
+  Paragraph,
 } from "../components"
 
 type Book = { title: string; url: string; author: string }
@@ -32,10 +33,16 @@ const ReadingList: NextPage = () => {
 
   return (
     <PageLayout>
-      <Meta title="Reading List" />
-      <div className="mb-32 max-w-xl flex-grow">
+      <Meta title="Reading" />
+      <div className="mb-32 max-w-xl flex-grow p-8">
         <section className="mb-16 flex flex-col gap-4">
-          <Heading1>Reading List</Heading1>
+          <Heading1 size={2}>Reading</Heading1>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            suscipit nunc massa, condimentum accumsan lectus luctus vitae.
+            Vestibulum commodo porta neque eget semper. Phasellus non dictum
+            metus. Pellentesque pretium est quis aliquet tempus.
+          </Paragraph>
           <TextField
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
