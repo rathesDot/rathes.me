@@ -89,17 +89,23 @@ const Writings: React.FC<
             </List>
           </div>
 
-          {filteredList.map(([key, posts]) => (
-            <div className="mt-12" key={key}>
-              <List title={key} className="flex flex-col gap-2">
-                {posts.map((post, index) => (
-                  <ListItem link={post.link} key={index}>
-                    {post.title}
-                  </ListItem>
-                ))}
-              </List>
-            </div>
-          ))}
+          {filteredList.map(([key, posts]) => {
+            if (!posts.length) {
+              return
+            }
+
+            return (
+              <div className="mt-12" key={key}>
+                <List title={key} className="flex flex-col gap-2">
+                  {posts.map((post, index) => (
+                    <ListItem link={post.link} key={index}>
+                      {post.title}
+                    </ListItem>
+                  ))}
+                </List>
+              </div>
+            )
+          })}
         </section>
         <div className="my-32">
           <SayHi />
