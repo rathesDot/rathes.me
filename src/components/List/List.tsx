@@ -7,11 +7,30 @@ export type ListItemProps = {
   subtitle?: string
   link?: string
   subtitlePosition?: "above" | "under"
+  children?: React.ReactNode
 }
 
 const Subtitle: React.FC<{ children: string }> = ({ children }) => (
   <span className="block text-xs text-neutral-500">{children}</span>
 )
+
+const ListItemBody: React.FC<Exclude<ListItemProps, "link">> = ({
+  subtitle,
+  subtitlePosition,
+  children,
+}) => {
+  return (
+    <>
+      {subtitle && subtitlePosition == "above" && (
+        <Subtitle>{subtitle}</Subtitle>
+      )}
+      {children}
+      {subtitle && subtitlePosition == "under" && (
+        <Subtitle>{subtitle}</Subtitle>
+      )}
+    </>
+  )
+}
 
 export const ListItem: React.FC<React.PropsWithChildren<ListItemProps>> = ({
   children,
@@ -25,23 +44,15 @@ export const ListItem: React.FC<React.PropsWithChildren<ListItemProps>> = ({
     <li className="my-2 text-base text-neutral-900 dark:text-neutral-50">
       {isExternalLink ? (
         <Link href={link}>
-          {subtitle && subtitlePosition == "above" && (
-            <Subtitle>{subtitle}</Subtitle>
-          )}
-          {children}
-          {subtitle && subtitlePosition == "under" && (
-            <Subtitle>{subtitle}</Subtitle>
-          )}
+          <ListItemBody subtitle={subtitle} subtitlePosition={subtitlePosition}>
+            {children}
+          </ListItemBody>
         </Link>
       ) : (
         <RouterLink href={link}>
-          {subtitle && subtitlePosition == "above" && (
-            <Subtitle>{subtitle}</Subtitle>
-          )}
-          {children}
-          {subtitle && subtitlePosition == "under" && (
-            <Subtitle>{subtitle}</Subtitle>
-          )}
+          <ListItemBody subtitle={subtitle} subtitlePosition={subtitlePosition}>
+            {children}
+          </ListItemBody>
         </RouterLink>
       )}
     </li>
