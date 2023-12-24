@@ -17,7 +17,7 @@ const NotFoundPage = () => (
       </Paragraph>
       <List className="flex flex-col gap-2">
         <ListItem link="/">The homepage</ListItem>
-        <ListItem link="/writings">My blog posts</ListItem>
+        <ListItem link="/writing">My blog posts</ListItem>
         <ListItem link="/about">Information about myself</ListItem>
       </List>
     </div>
