@@ -37,113 +37,67 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
           .
         </Paragraph>
 
-        <section className="mt-32">
-          <Heading2>Learn Tamil Online</Heading2>
-          <Paragraph>
-            The first side project I am working on right now is to provide a
-            platform for people that want to learn my mother language Tamil.
-          </Paragraph>
-          <Paragraph>
-            In a first step, I'm working on a small book. I am then going to use
-            that book as the foundation to build an app. My long term idea is to
-            create a community around learning the language Tamil and the Tamil
-            culture and history.
-          </Paragraph>
-          <Paragraph>
-            Learn more about the project on{" "}
-            <Link
-              underlined
-              href="https://learn-tamil.com"
-              className="text-neutral-900 dark:text-neutral-50"
-            >
-              https://learn-tamil.com
-            </Link>
-          </Paragraph>
-        </section>
-        <section className="mt-32">
-          <Heading2>Maxout</Heading2>
-          <Paragraph>
-            During the pandemic in 2020, I started working on a small fitness
-            app. It aims to help users reaching their fitness goals by making
-            the planning and tracking of workouts easier.
-          </Paragraph>
-          <Paragraph>
-            Compared to other apps on the market, my vision for Maxout is
-            focussing on simplicity and beauty. You can read the full story
-            about Maxout in this article{" "}
-            <Link
-              underlined
-              href="https://getmaxout.app/blog/introducing-maxout/"
-              className="text-neutral-900 dark:text-neutral-50"
-            >
-              Introducing Maxout
-            </Link>
-            .
-          </Paragraph>
-          <Paragraph>
-            Sign up for Maxout on{" "}
-            <Link
-              underlined
-              href="https://getmaxout.app"
-              className="text-neutral-900 dark:text-neutral-50"
-            >
-              https://getmaxout.app
-            </Link>
-          </Paragraph>
-        </section>
-        <section className="mt-32">
-          <Heading2>Playground</Heading2>
-          <Paragraph>
-            Not all side projects have to be full on apps. Sometimes I just love
-            to play around with a new tech that I found, or create user
-            interfaces or be creative in any other way.
-          </Paragraph>
-          <Paragraph>
-            Feel free to have a look at some of these fun experiements in what I
-            call{" "}
-            <Link
-              underlined
-              href="https://play.rathes.me"
-              className="text-neutral-900 dark:text-neutral-50"
-            >
-              my playground
-            </Link>
-            .
-          </Paragraph>
-        </section>
-
-        <section className="my-16">
+        <section className="my-16 flex flex-col gap-4">
           <Heading2 size={4} className="text-neutral-400">
-            Other projects
+            Active projects
           </Heading2>
-          <section className="my-8">
-            <Heading3 size={2}>Espresso at home</Heading3>
-            <Paragraph>
-              A small project that I started to share everything I am learning
-              while trying to recreate the Italian espresso feeling at home.
-            </Paragraph>
-            <Link
-              underlined
-              href="https://espresso-at-home.com/"
-              className="text-neutral-50"
-            >
-              View project
-            </Link>
-          </section>
-          <section className="my-8">
-            <Heading3 size={2}>Kodi — Feature Management Service</Heading3>
-            <Paragraph>
-              The aim of this SaaS is to enable every team to use feature flags
-              straight from the beginning.
-            </Paragraph>
-            <Link
-              underlined
-              href="https://espresso-at-home.com/"
-              className="text-neutral-50"
-            >
-              View project
-            </Link>
-          </section>
+          <div className="flex flex-col gap-16">
+            <section>
+              <Heading3 size={2}>Maxout 2.0</Heading3>
+              <Paragraph>
+                After a first attempt as a workout planning app, Maxout 2.0 aims
+                to be the single necessary app for anyone interested in leading
+                a healthy lifestyle.
+              </Paragraph>
+              <Link
+                underlined
+                href="https://getmaxout.app"
+                className="text-neutral-50"
+              >
+                View project
+              </Link>
+            </section>
+            <section>
+              <Heading3 size={2}>Learn Tamil Online</Heading3>
+              <Paragraph>
+                The mission of Learn Tamil Online is to keep the Tamil language
+                alive which we want to achieve by bringing together the Tamil
+                speaking community from all over the world and all necessary
+                resources to learn Tamil.
+              </Paragraph>
+              <Link
+                underlined
+                href="https://learn-tamil.com"
+                className="text-neutral-50"
+              >
+                View project
+              </Link>
+            </section>
+            <section>
+              <Heading3 size={2}>Espresso at home</Heading3>
+              <Paragraph>
+                A small project that I started to share everything I am learning
+                while trying to recreate the Italian espresso feeling at home.
+              </Paragraph>
+              <Link
+                underlined
+                href="https://espresso-at-home.com"
+                className="text-neutral-50"
+              >
+                View project
+              </Link>
+            </section>
+            <section>
+              <Heading3 size={2}>Kodi — Feature Management Service</Heading3>
+              <Paragraph>
+                The aim of this SaaS is to enable every team to use feature
+                flags straight from the beginning.
+              </Paragraph>
+              <Link disabled className="italic text-neutral-50/30">
+                Coming soon
+              </Link>
+            </section>
+          </div>
         </section>
 
         <Separator />
