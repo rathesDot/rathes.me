@@ -165,35 +165,37 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
             of my current ones below. Each of them is possible as a 20-, 30-,
             and 45-minutes version.
           </Paragraph>
-          <List title="Tech Talks" className="flex flex-col gap-6">
-            <ListItem
-              link="/talks/readme-driven-development-phpuk.pdf"
-              subtitle="February 2019 at PHP UK Unconference"
-            >
-              Introduction to Readme Driven Development
-            </ListItem>
-            <ListItem
-              link="/talks/readme-driven-development.pdf"
-              subtitle="January 2019 at PHP Gent"
-            >
-              Introduction to Readme Driven Development
-            </ListItem>
-          </List>
-          <Separator />
-          <List title="Abstracts" className="flex flex-col gap-6">
-            <ListItem
-              link="/talks/meetings"
-              subtitle="Developing a meeting culture that employees will love"
-            >
-              You probably don’t need that meeting
-            </ListItem>
-            <ListItem
-              link="/talks/managing-time"
-              subtitle="A talk about what people call time management"
-            >
-              You can't manage time
-            </ListItem>
-          </List>
+          <div className="mt-12">
+            <List title="Tech Talks" className="flex flex-col gap-6">
+              <ListItem
+                link="/talks/readme-driven-development-phpuk.pdf"
+                subtitle="February 2019 at PHP UK Unconference"
+              >
+                Introduction to Readme Driven Development
+              </ListItem>
+              <ListItem
+                link="/talks/readme-driven-development.pdf"
+                subtitle="January 2019 at PHP Gent"
+              >
+                Introduction to Readme Driven Development
+              </ListItem>
+            </List>
+            <Separator />
+            <List title="Abstracts" className="flex flex-col gap-6">
+              <ListItem
+                link="/talks/meetings"
+                subtitle="Developing a meeting culture that employees will love"
+              >
+                You probably don’t need that meeting
+              </ListItem>
+              <ListItem
+                link="/talks/managing-time"
+                subtitle="A talk about what people call time management"
+              >
+                You can't manage time
+              </ListItem>
+            </List>
+          </div>
         </section>
         <section className="my-16">
           <SayHi />
