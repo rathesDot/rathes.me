@@ -121,9 +121,9 @@ const Navigation = () => {
   return (
     <nav className={navigation({ isOpen })}>
       <TopBar>
-        <div className={cx({ "opacity-0": isOpen })}>
+        <Link href="/" className={cx({ "opacity-0": isOpen })}>
           <Logo />
-        </div>
+        </Link>
         <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
       </TopBar>
       <div className={menuBodyContainer({ isOpen })}>
