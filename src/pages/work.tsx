@@ -21,7 +21,7 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
     <PageLayout>
       <section className="max-w-xl p-8">
         <Meta title="Work" />
-        <Heading1 size={2}>My work</Heading1>
+        <Heading1>My work</Heading1>
         <Paragraph>
           I work as a product engineer at Intercom at the moment, but I also
           love to work on side projects. They do not necessarily have to be

@@ -22,7 +22,7 @@ const Photos: NextPage = () => (
   <PageLayout>
     <Meta title="Work" />
     <section className="p-8">
-      <Heading1 size={2}>Photography</Heading1>
+      <Heading1>Photography</Heading1>
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit
         nunc massa, condimentum accumsan lectus luctus vitae.

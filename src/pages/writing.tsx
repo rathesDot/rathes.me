@@ -43,7 +43,7 @@ const Writings: React.FC<
       <section className="max-w-xl p-8">
         <Meta title="Writings" />
         <section>
-          <Heading1 size={2}>Writing</Heading1>
+          <Heading1>Writing</Heading1>
           <Paragraph>
             From time to time, I do write. Sometime on my blog, but also on
             other blogs such as on{" "}

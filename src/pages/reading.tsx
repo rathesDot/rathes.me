@@ -37,7 +37,7 @@ const ReadingList: NextPage = () => {
       <Meta title="Reading" />
       <div className="max-w-xl flex-grow p-8">
         <section>
-          <Heading1 size={2}>Reading</Heading1>
+          <Heading1>Reading</Heading1>
           <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
             suscipit nunc massa, condimentum accumsan lectus luctus vitae.

@@ -36,7 +36,7 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => {
     <PageLayout>
       <Meta title="About me" />
       <div className="max-w-xl p-8">
-        <Heading1 size={2}>
+        <Heading1>
           I'm a front-end engineer with over 10 years of web experience.
         </Heading1>
         <section className={readMore({ open })}>
