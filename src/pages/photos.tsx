@@ -3,6 +3,8 @@ import { PageLayout } from "../layouts"
 import { Heading1, Meta, Paragraph } from "../components"
 import Image from "next/image"
 
+import { SayHi } from "../patterns"
+
 import London1 from "../assets/photos/202310_london_1.jpg"
 import London2 from "../assets/photos/202310_london_2.jpg"
 import London3 from "../assets/photos/202307_london.jpg"
@@ -104,6 +106,9 @@ const Photos: NextPage = () => (
         </figcaption>
       </figure>
     </section>
+    <div className="mt-16 p-8">
+      <SayHi />
+    </div>
   </PageLayout>
 )
 
