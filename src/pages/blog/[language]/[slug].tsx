@@ -36,6 +36,7 @@ import {
   Heading3,
   Heading4,
 } from "../../../components"
+import { BulletList } from "../../../components/List/BulletList"
 
 const Pre = ({ children, className }) => {
   return <CodeBlock className={className}>{children}</CodeBlock>
@@ -54,18 +55,15 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     h3: Heading3,
     h4: Heading4,
     hr: Separator,
-    p: Paragraph,
+    p: ({ ...props }) => <Paragraph {...props} />,
     ol: OrderedList,
+    ul: BulletList,
     blockquote: Quote,
     a: ({ ...props }) => (
-      <StyleLink
-        underlined
-        className="text-neutral-900 dark:text-neutral-50"
-        {...props}
-      />
+      <StyleLink underlined className="text-neutral-50" {...props} />
     ),
     img: ({ children, src, alt, ...props }) => (
-      <ImageWrapper>
+      <ImageWrapper className="my-8">
         <img src={src} alt={alt} {...props} />
       </ImageWrapper>
     ),

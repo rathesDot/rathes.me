@@ -4,9 +4,9 @@ import { cva, cx, VariantProps } from "class-variance-authority"
 export const heading = cva("antialiased font-sans", {
   variants: {
     size: {
-      1: ["text-[clamp(24px,7.5vw,64px)]", "font-semibold", "leading-[1.15]"],
+      1: ["text-[clamp(24px,7.5vw,64px)]", "font-semibold", "leading-[1.3]"],
       2: ["text-[clamp(20px,6.25vw,48px)]", "font-semibold", "leading-[1.3]"],
-      3: ["text-sm", "font-semibold"],
+      3: ["text-[clamp(16px,5vw,20px)]", "font-semibold"],
       4: [
         "text-xs",
         "font-normal",

@@ -3,7 +3,7 @@ import { HTMLAttributes } from "react"
 import { cva } from "class-variance-authority"
 
 const styles = cva(
-  "my-8 -mx-8 rounded-lg bg-neutral-200 p-8 text-lg text-neutral-800 dark:bg-neutral-800 dark:text-neutral-500 [&_p]:m-0 [&_p]:text-neutral-800 dark:[&_p]:text-neutral-500",
+  "my-8 -mx-8 p-8 text-lg bg-neutral-900 text-neutral-200/70 [&_p]:m-0 [&_p]:antialiased [&_p]:text-neutral-200/70",
   {
     variants: {
       fontFamily: {
@@ -14,9 +14,14 @@ const styles = cva(
 )
 
 export const Note: React.FC<
-  HTMLAttributes<HTMLDivElement> & { fontFamily?: "mono" }
-> = ({ className, children, fontFamily, ...props }) => (
+  HTMLAttributes<HTMLDivElement> & { fontFamily?: "mono"; title?: string }
+> = ({ className, children, fontFamily, title, ...props }) => (
   <div className={styles({ fontFamily, className })} {...props}>
+    {title && (
+      <strong className="block font-normal text-white antialiased">
+        {title}
+      </strong>
+    )}
     {children}
   </div>
 )
