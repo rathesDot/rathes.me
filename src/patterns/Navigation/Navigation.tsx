@@ -62,7 +62,9 @@ const Hamburger: React.FC<
     type="button"
     className="flex items-center gap-2"
   >
-    <span className="hidden uppercase tracking-widest md:block">Menu</span>
+    <span className="hidden uppercase tracking-widest md:block">
+      {isOpen ? "Close" : "Menu"}
+    </span>
     <div className="group h-6 w-6 py-[7px] md:h-8 md:w-8 md:py-[12px]">
       <span
         className={hamburgerIconBar({ position: "top", crossed: isOpen })}
