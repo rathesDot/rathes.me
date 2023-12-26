@@ -89,7 +89,7 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <MDXRemote {...source} components={components} scope={{ books }} />
         <footer className="my-32">
           <Link
-            href="/writings"
+            href="/writing"
             className="text-slate-50 underline underline-offset-2"
           >
             Back to all articles
