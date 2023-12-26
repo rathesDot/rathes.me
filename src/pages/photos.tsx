@@ -22,7 +22,7 @@ import { Photo } from "../patterns/Photo"
 const Photos: NextPage = () => (
   <PageLayout>
     <Meta title="Work" />
-    <section className="p-8">
+    <section className="max-w-lg p-8">
       <Heading1>Photography</Heading1>
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit
@@ -33,7 +33,7 @@ const Photos: NextPage = () => (
         Pellentesque pretium est quis aliquet tempus.
       </Paragraph>
     </section>
-    <section className="flex flex-col gap-8">
+    <section className="flex flex-col gap-8 md:flex-row md:flex-wrap md:p-8">
       <Photo
         image={London2}
         title="Old Car in London Borough Market"
@@ -98,12 +98,14 @@ const Photos: NextPage = () => (
         image={Edinburgh}
         title="Edinburgh Castle"
         caption="Edinburgh, Scotland / November 2021"
+        mode="landscape"
       />
 
       <Photo
         image={KewGardens}
         title="Japanese Haikus in Kew Gardens"
         caption="Kew Gardens, London / October 2021"
+        mode="landscape"
       />
     </section>
     <div className="mt-16 p-8">
