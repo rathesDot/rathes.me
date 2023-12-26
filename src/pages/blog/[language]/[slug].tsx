@@ -90,9 +90,9 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
         <footer className="my-32">
           <Link
             href="/writings"
-            className="text-slate-900 underline underline-offset-2 dark:text-slate-50"
+            className="text-slate-50 underline underline-offset-2"
           >
-            back to articles
+            Back to all articles
           </Link>
         </footer>
       </div>
