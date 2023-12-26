@@ -20,35 +20,22 @@ module.exports = {
   plugins: [
     plugin(function ({ addBase, addComponents, addUtilities, theme }) {
       addComponents({
-        ".dark .hljs": {
-          color: theme("colors.neutral.400"),
-        },
         ".hljs": {
-          color: theme("colors.neutral.500"),
-        },
-        ".dark .hljs-comment, .dark .hljs-quote": {
-          color: theme("colors.neutral.500"),
-          fontStyle: "italic",
+          color: theme("colors.neutral.400"),
         },
         ".hljs-comment, .hljs-quote": {
-          color: theme("colors.neutral.400"),
+          color: theme("colors.neutral.500"),
           fontStyle: "italic",
         },
-        ".dark .hljs-doctag, .dark .hljs-keyword, .dark .hljs-formula": {
-          color: theme("colors.slate.500"),
-        },
-        ".hljs-doctag,.hljs-keyword, .hljs-formula": {
+        ".hljs-doctag, .hljs-keyword, .hljs-formula": {
           color: theme("colors.slate.500"),
         },
         ".hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst":
           {
             color: theme("colors.gray.500"),
           },
-        ".dark .hljs-literal": {
-          color: theme("colors.blue.400"),
-        },
         ".hljs-literal": {
-          color: theme("colors.blue.600"),
+          color: theme("colors.blue.400"),
         },
         ".hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta .hljs-string":
           {
@@ -58,20 +45,12 @@ module.exports = {
           {
             color: theme("colors.slate.600"),
           },
-        ".dark .hljs-symbol, .dark .hljs-bullet, .dark .hljs-link, .dark .hljs-meta, .dark .hljs-selector-id, .dark .hljs-title":
+        ".hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title":
           {
             color: theme("colors.slate.300"),
           },
-        ".hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title":
-          {
-            color: theme("colors.slate.600"),
-          },
-        ".dark .hljs-built_in, .dark .hljs-title.class_, .dark .hljs-class .hljs-title":
-          {
-            color: theme("colors.blue.100"),
-          },
         ".hljs-built_in, .hljs-title.class_, .hljs-class .hljs-title": {
-          color: theme("colors.blue.900"),
+          color: theme("colors.blue.100"),
         },
         ".hljs-emphasis": {
           fontStyle: "italic",
