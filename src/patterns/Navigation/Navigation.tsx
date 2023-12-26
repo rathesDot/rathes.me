@@ -11,8 +11,25 @@ const MenuItem: React.FC<PropsWithChildren<LinkProps>> = ({
 }) => (
   <Link
     {...props}
-    className="block font-sans text-[6.32688928vh] font-bold leading-none text-neutral-50 antialiased md:text-[clamp(54px,7.5vw,96px)]"
+    className="flex items-center font-sans text-[6.32688928vh] font-bold leading-none text-neutral-50 antialiased md:text-[clamp(54px,7.5vw,96px)] lg:-translate-x-[68px] lg:transition-transform lg:duration-500 lg:hover:translate-x-0"
   >
+    <svg
+      width="84"
+      height="84"
+      viewBox="0 0 84 84"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="-mr-4 hidden pt-4 lg:block"
+    >
+      <path
+        d="M60.375 28.875L73.5 42M73.5 42L60.375 55.125M73.5 42H10.5"
+        stroke="white"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+
     {children}
   </Link>
 )
@@ -121,7 +138,7 @@ const Navigation = () => {
         <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
       </TopBar>
       <div className={menuBodyContainer({ isOpen })}>
-        <div className="px-8 md:px-14">
+        <div className="mx-8 overflow-hidden md:mx-14">
           <MenuItem href="/">Home</MenuItem>
           <MenuItem href="/about">About</MenuItem>
           <MenuItem href="/reading">Reading</MenuItem>
