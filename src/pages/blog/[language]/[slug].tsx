@@ -77,7 +77,7 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   return (
     <PageLayout>
       <Meta title={title} description={excerpt} meta={meta} />
-      <div className="max-w-xl">
+      <div className="max-w-xl p-8">
         {image && (
           <ImageWrapper aspect="16/9">
             <Image src={image} fill sizes="704px" priority alt={title} />
