@@ -11,7 +11,7 @@ const MenuItem: React.FC<PropsWithChildren<LinkProps>> = ({
 }) => (
   <Link
     {...props}
-    className="block font-sans text-[6.32688928vh] font-bold leading-none text-neutral-50 antialiased"
+    className="block font-sans text-[6.32688928vh] font-bold leading-none text-neutral-50 antialiased md:text-[clamp(54px,7.5vw,96px)]"
   >
     {children}
   </Link>
@@ -69,7 +69,7 @@ const navigation = cva(
     variants: {
       isOpen: {
         true: "bottom-0 bg-neutral-950/100 h-full",
-        false: "h-14 bg-neutral-950/70 backdrop-blur-sm",
+        false: "h-14 bg-neutral-950/70 backdrop-blur-sm md:h-24",
       },
     },
     defaultVariants: {
@@ -116,12 +116,12 @@ const Navigation = () => {
     <nav className={navigation({ isOpen })}>
       <TopBar>
         <Link href="/" className={cx({ "opacity-0": isOpen })}>
-          <Logo />
+          <Logo className="md:h-8 md:w-8" />
         </Link>
         <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
       </TopBar>
       <div className={menuBodyContainer({ isOpen })}>
-        <div className="px-8">
+        <div className="px-8 md:px-12">
           <MenuItem href="/">Home</MenuItem>
           <MenuItem href="/about">About</MenuItem>
           <MenuItem href="/reading">Reading</MenuItem>
