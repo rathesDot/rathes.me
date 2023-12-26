@@ -35,7 +35,7 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => {
   return (
     <PageLayout>
       <Meta title="About me" />
-      <div className="max-w-[720px] p-8">
+      <div className="max-w-[720px] p-8 md:px-14">
         <Heading1>
           I'm a front-end engineer with over 10 years of web experience.
         </Heading1>

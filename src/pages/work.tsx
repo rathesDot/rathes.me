@@ -19,7 +19,7 @@ import { SayHi } from "../patterns"
 const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
   return (
     <PageLayout>
-      <section className="max-w-xl p-8">
+      <section className="max-w-xl p-8 md:px-14">
         <Meta title="Work" />
         <Heading1>My work</Heading1>
         <Paragraph>

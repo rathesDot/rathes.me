@@ -22,7 +22,7 @@ import { Photo } from "../patterns/Photo"
 const Photos: NextPage = () => (
   <PageLayout>
     <Meta title="Work" />
-    <section className="max-w-lg p-8">
+    <section className="max-w-lg p-8 md:px-14">
       <Heading1>Photography</Heading1>
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit
@@ -108,7 +108,7 @@ const Photos: NextPage = () => (
         mode="landscape"
       />
     </section>
-    <div className="mt-16 p-8">
+    <div className="mt-16 p-8 md:px-14">
       <SayHi />
     </div>
   </PageLayout>

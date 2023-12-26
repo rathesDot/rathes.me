@@ -58,7 +58,7 @@ const Hamburger: React.FC<
 )
 
 const TopBar: React.FC<PropsWithChildren> = ({ children }) => (
-  <div className="mx-auto flex w-full items-center justify-between p-4 text-neutral-50 md:p-8">
+  <div className="mx-auto flex w-full items-center justify-between p-4 text-neutral-50 md:p-8 md:px-14">
     {children}
   </div>
 )
@@ -121,7 +121,7 @@ const Navigation = () => {
         <Hamburger isOpen={isOpen} onToggle={toggleMenu} />
       </TopBar>
       <div className={menuBodyContainer({ isOpen })}>
-        <div className="px-8 md:px-12">
+        <div className="px-8 md:px-14">
           <MenuItem href="/">Home</MenuItem>
           <MenuItem href="/about">About</MenuItem>
           <MenuItem href="/reading">Reading</MenuItem>

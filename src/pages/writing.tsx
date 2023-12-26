@@ -40,7 +40,7 @@ const Writings: React.FC<
   }, [searchTerm, blogPosts])
   return (
     <PageLayout>
-      <section className="max-w-xl p-8">
+      <section className="max-w-xl p-8 md:px-14">
         <Meta title="Writings" />
         <section>
           <Heading1>Writing</Heading1>
