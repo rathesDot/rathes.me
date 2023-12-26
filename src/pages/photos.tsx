@@ -17,6 +17,7 @@ import Naples2 from "../assets/photos/202204_naples_2.jpg"
 import Naples1 from "../assets/photos/202204_naples_1.jpg"
 import Edinburgh from "../assets/photos/202111_edinburgh.jpg"
 import KewGardens from "../assets/photos/202110_kew_gardens.jpg"
+import { Photo } from "../patterns/Photo"
 
 const Photos: NextPage = () => (
   <PageLayout>
@@ -33,78 +34,77 @@ const Photos: NextPage = () => (
       </Paragraph>
     </section>
     <section className="flex flex-col gap-8">
-      <figure className="flex flex-col gap-1">
-        <Image src={London2} alt="Old Car in London Borough Market" />
-        <figcaption className="px-4 text-xs text-neutral-500">
-          Borough Market, London / October 2023
-        </figcaption>
-      </figure>
-      <figure className="flex flex-col gap-1">
-        <Image src={London1} alt="Elegant lights in London" />
-        <figcaption className="px-4 text-xs text-neutral-500">
-          London / October 2023
-        </figcaption>
-      </figure>
-      <figure className="flex flex-col gap-1">
-        <Image src={London3} alt="Architecture in London" />
-        <figcaption className="px-4 text-xs text-neutral-500">
-          Liverpool Street, London / July 2023
-        </figcaption>
-      </figure>
-      <figure className="flex flex-col gap-1">
-        <Image src={Bologna} alt="Neon sign of pizza place in Bologna" />
-        <figcaption className="px-4 text-xs text-neutral-500">
-          Bologna, Italy / June 2023
-        </figcaption>
-      </figure>
-      <figure className="flex flex-col gap-1">
-        <Image src={Madeira1} alt="Architecture in Madeira" />
-        <figcaption className="px-4 text-xs text-neutral-500">
-          Funchal, Madeira / October 2022
-        </figcaption>
-      </figure>
-      <figure className="flex flex-col gap-1">
-        <Image src={Madeira2} alt="Bus in Madeira" />
-        <figcaption className="px-4 text-xs text-neutral-500">
-          Funchal, Madeira / October 2022
-        </figcaption>
-      </figure>
-      <figure className="flex flex-col gap-1">
-        <Image src={Rome} alt="Old Car in Rome" />
-        <figcaption className="px-4 text-xs text-neutral-500">
-          Rome, Italy / September 2022
-        </figcaption>
-      </figure>
-      <figure className="flex flex-col gap-1">
-        <Image src={Sorrento} alt="Road in Sorrento" />
-        <figcaption className="px-4 text-xs text-neutral-500">
-          Sorrento, Italy / April 2022
-        </figcaption>
-      </figure>
-      <figure className="flex flex-col gap-1">
-        <Image src={Naples1} alt="Old building in Naples" />
-        <figcaption className="px-4 text-xs text-neutral-500">
-          Naples, Italy / April 2022
-        </figcaption>
-      </figure>
-      <figure className="flex flex-col gap-1">
-        <Image src={Naples2} alt="Old building in Naples" />
-        <figcaption className="px-4 text-xs text-neutral-500">
-          Naples, Italy / April 2022
-        </figcaption>
-      </figure>
-      <figure className="flex flex-col gap-1">
-        <Image src={Edinburgh} alt="Edinburgh Castle" />
-        <figcaption className="px-4 text-xs text-neutral-500">
-          Edinburgh, Scotland / November 2021
-        </figcaption>
-      </figure>
-      <figure className="flex flex-col gap-1">
-        <Image src={KewGardens} alt="Japanese Haikus in Kew Gardens" />
-        <figcaption className="px-4 text-xs text-neutral-500">
-          Kew Gardens, London / October 2021
-        </figcaption>
-      </figure>
+      <Photo
+        image={London2}
+        title="Old Car in London Borough Market"
+        caption="Borough Market, London / October 2023"
+      />
+
+      <Photo
+        image={London1}
+        title="Elegant lights in London"
+        caption="London / October 2023"
+      />
+
+      <Photo
+        image={London3}
+        title="Architecture in London"
+        caption="Liverpool Street, London / July 2023"
+      />
+
+      <Photo
+        image={Bologna}
+        title="Neon sign of pizza place in Bologna"
+        caption="Bologna, Italy / June 2023"
+      />
+
+      <Photo
+        image={Madeira1}
+        title="Architecture in Madeira"
+        caption="Funchal, Madeira / October 2022"
+      />
+
+      <Photo
+        image={Madeira2}
+        title="Bus in Madeira"
+        caption="Funchal, Madeira / October 2022"
+      />
+
+      <Photo
+        image={Rome}
+        title="Old Car in Rome"
+        caption="Rome, Italy / September 2022"
+      />
+
+      <Photo
+        image={Sorrento}
+        title="Road in Sorrento"
+        caption="Sorrento, Italy / April 2022"
+      />
+
+      <Photo
+        image={Naples1}
+        title="Old building in Naples"
+        caption="Naples, Italy / April 2022"
+      />
+
+      <Photo
+        image={Naples2}
+        title="Old building in Naples"
+        caption="Naples, Italy / April 2022"
+      />
+
+      <Photo
+        image={Edinburgh}
+        title="Edinburgh Castle"
+        caption="Edinburgh, Scotland / November 2021"
+      />
+
+      <Photo
+        image={KewGardens}
+        title="Japanese Haikus in Kew Gardens"
+        caption="Kew Gardens, London / October 2021"
+      />
     </section>
     <div className="mt-16 p-8">
       <SayHi />
