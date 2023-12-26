@@ -55,7 +55,9 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     h3: Heading3,
     h4: Heading4,
     hr: Separator,
-    p: ({ ...props }) => <Paragraph {...props} className="leading-normal" />,
+    p: ({ ...props }) => (
+      <Paragraph {...props} className="mb-4 leading-normal md:mb-8" />
+    ),
     ol: OrderedList,
     ul: BulletList,
     blockquote: Quote,
