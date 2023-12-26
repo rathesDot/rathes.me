@@ -1,6 +1,6 @@
 import { NextPage } from "next"
 import { PageLayout } from "../layouts"
-import { Heading1, Meta, Paragraph } from "../components"
+import { Heading1, Link, Meta, Paragraph } from "../components"
 import Image from "next/image"
 
 import { SayHi } from "../patterns"
@@ -25,12 +25,20 @@ const Photos: NextPage = () => (
     <section className="max-w-lg p-8 md:px-14">
       <Heading1>Photography</Heading1>
       <Paragraph>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit
-        nunc massa, condimentum accumsan lectus luctus vitae.
+        Aside from reading and writing, photography is the latest of my
+        passions. Trying to imagine a picture, capturing the right moment and
+        bring that idea to life is such a booster for creativity.
       </Paragraph>
       <Paragraph>
-        Vestibulum commodo porta neque eget semper. Phasellus non dictum metus.
-        Pellentesque pretium est quis aliquet tempus.
+        Most of my photos are taken on an iPhone and the others on my{" "}
+        <Link
+          underlined
+          className="text-neutral-50"
+          href="https://amzn.to/3RtSMUA"
+        >
+          Sony A6000
+        </Link>
+        .
       </Paragraph>
     </section>
     <section className="flex flex-col gap-8 md:flex-row md:flex-wrap md:p-8">
