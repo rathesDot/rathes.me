@@ -20,29 +20,18 @@ const MenuItem: React.FC<PropsWithChildren<LinkProps>> = ({
 const hamburgerIconBar = cva("block h-[1.5px] bg-white transition-all", {
   variants: {
     position: {
-      top: "w-[16.5px]",
-      bottom: "mt-[6px] group-hover:translate-x-0 group-hover:w-[16.5px]",
+      top: "",
+      bottom: "translate-y-2 scale-x-[60%] group-hover:scale-x-100",
     },
-    crossed: {
-      true: "",
-      false: "",
-    },
+    crossed: { true: "", false: "" },
   },
   compoundVariants: [
-    {
-      position: "top",
-      crossed: true,
-      class: "-rotate-45 translate-y-[3.75px]",
-    },
+    { position: "bottom", crossed: false, class: "origin-right" },
+    { position: "top", crossed: true, class: "translate-y-[4.5px] rotate-45" },
     {
       position: "bottom",
       crossed: true,
-      class: "w-[16.5px] rotate-45 -translate-y-[3.75px]",
-    },
-    {
-      position: "bottom",
-      crossed: false,
-      class: "w-[10.5px] translate-x-[6px]",
+      class: "origin-center translate-y-[3.5px] -rotate-45 scale-x-100",
     },
   ],
 })
@@ -54,17 +43,22 @@ const Hamburger: React.FC<
     aria-label={isOpen ? "Close Navigation" : "Open Navigation"}
     onClick={onToggle}
     type="button"
-    className="group block h-6 w-6 p-[3.5px]"
+    className="flex items-center gap-2"
   >
-    <span className={hamburgerIconBar({ position: "top", crossed: isOpen })} />
-    <span
-      className={hamburgerIconBar({ position: "bottom", crossed: isOpen })}
-    />
+    <span className="hidden uppercase tracking-widest md:block">Menu</span>
+    <div className="group h-6 w-6 py-[7px] md:h-8 md:w-8 md:py-[12px]">
+      <span
+        className={hamburgerIconBar({ position: "top", crossed: isOpen })}
+      />
+      <span
+        className={hamburgerIconBar({ position: "bottom", crossed: isOpen })}
+      />
+    </div>
   </button>
 )
 
 const TopBar: React.FC<PropsWithChildren> = ({ children }) => (
-  <div className="mx-auto flex w-full items-center justify-between p-4 text-neutral-50">
+  <div className="mx-auto flex w-full items-center justify-between p-4 text-neutral-50 md:p-8">
     {children}
   </div>
 )
