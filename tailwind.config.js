@@ -20,47 +20,67 @@ module.exports = {
   plugins: [
     plugin(function ({ addBase, addComponents, addUtilities, theme }) {
       addComponents({
-        ".hljs": {
-          color: theme("colors.neutral.400"),
-        },
-        ".hljs-comment, .hljs-quote": {
-          color: theme("colors.neutral.500"),
-          fontStyle: "italic",
-        },
-        ".hljs-doctag, .hljs-keyword, .hljs-formula": {
-          color: theme("colors.slate.500"),
-        },
-        ".hljs-section, .hljs-name, .hljs-selector-tag, .hljs-deletion, .hljs-subst":
+        ".hljs": { color: "#c9d1d9" },
+        ".hljs-doctag, .hljs-keyword, .hljs-meta .hljs-keyword, .hljs-template-tag, .hljs-template-variable, .hljs-type, .hljs-variable.language_":
           {
-            color: theme("colors.gray.500"),
+            color: "#ff7b72",
           },
-        ".hljs-literal": {
-          color: theme("colors.blue.400"),
-        },
-        ".hljs-string, .hljs-regexp, .hljs-addition, .hljs-attribute, .hljs-meta .hljs-string":
+        ".hljs - title,.hljs - title.class_,.hljs - title.class_.inherited__,.hljs - title.function_":
           {
-            color: theme("colors.gray.400"),
+            color: "#d2a8ff",
           },
-        ".hljs-attr, .hljs-variable, .hljs-template-variable, .hljs-type, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo, .hljs-number":
+        ".hljs-attr,.hljs-attribute,.hljs-literal,.hljs-meta,.hljs-number,.hljs-operator,.hljs-variable,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id":
           {
-            color: theme("colors.slate.600"),
+            color: "#79c0ff",
           },
-        ".hljs-symbol, .hljs-bullet, .hljs-link, .hljs-meta, .hljs-selector-id, .hljs-title":
-          {
-            color: theme("colors.slate.300"),
-          },
-        ".hljs-built_in, .hljs-title.class_, .hljs-class .hljs-title": {
-          color: theme("colors.blue.100"),
+        ".hljs-regexp,.hljs-string,.hljs-meta .hljs-string": {
+          color: "#a5d6ff",
         },
-        ".hljs-emphasis": {
-          fontStyle: "italic",
+
+        ".hljs-built_in, .hljs-symbol": {
+          color: "#ffa657",
         },
-        ".hljs-strong": {
+        ".hljs-comment,.hljs-code,.hljs-formula": {
+          color: "#8b949e",
+        },
+        " .hljs-name, .hljs-quote, .hljs-selector-tag, .hljs-selector-pseudo": {
+          color: "#7ee787",
+        },
+
+        ".hljs-subst": {
+          color: "#c9d1d9",
+        },
+
+        ".hljs-section": {
+          color: "#1f6feb",
           fontWeight: "bold",
         },
-        ".hljs-link": {
-          textDecoration: "underline",
+
+        ".hljs-bullet": {
+          color: "#f2cc60",
         },
+
+        ".hljs-emphasis": {
+          color: "#c9d1d9",
+          fontStyle: "italic",
+        },
+
+        ".hljs-strong": {
+          color: "#c9d1d9",
+          fontWeight: "bold",
+        },
+
+        ".hljs-addition": {
+          color: "#aff5b4",
+          backgroundColor: "#033a16",
+        },
+
+        ".hljs-deletion": {
+          color: "#ffdcd7",
+          backgroundColor: "#67060c",
+        },
+        ".hljs-char.escape_,.hljs-link,.hljs-params,.hljs-property,.hljs-punctuation,.hljs-tag":
+          {},
       })
     }),
   ],
