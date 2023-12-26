@@ -1,14 +1,16 @@
 import React from "react"
 
 import { Footer, Navigation } from "../../patterns"
+import { cx } from "class-variance-authority"
 
-const PageLayout: React.FC<React.PropsWithChildren<unknown>> = ({
+const PageLayout: React.FC<React.PropsWithChildren<{ className?: string }>> = ({
   children,
+  className,
 }) => {
   return (
-    <main className="font-sans">
+    <main className="flex min-h-screen flex-col font-sans">
       <Navigation />
-      <div className="mt-14 md:mt-24">{children}</div>
+      <div className={cx("mt-14 md:mt-24", className)}>{children}</div>
       <Footer />
     </main>
   )
