@@ -1,7 +1,7 @@
 import React from "react"
+import { cx } from "class-variance-authority"
 
 import { Footer, Navigation } from "../../patterns"
-import { cx } from "class-variance-authority"
 
 const PageLayout: React.FC<React.PropsWithChildren<{ className?: string }>> = ({
   children,

@@ -1,7 +1,6 @@
 import { NextPage } from "next"
 import { PageLayout } from "../layouts"
 import { Heading1, Link, Meta, Paragraph } from "../components"
-import Image from "next/image"
 
 import { SayHi } from "../patterns"
 

@@ -26,6 +26,7 @@ import {
   SITE_URL,
   CodeBlock,
   InlineCode,
+  BulletList,
   OrderedList,
   Paragraph,
   Quote,
@@ -36,7 +37,6 @@ import {
   Heading3,
   Heading4,
 } from "../../../components"
-import { BulletList } from "../../../components/List/BulletList"
 
 const Pre = ({ children, className }) => {
   return <CodeBlock className={className}>{children}</CodeBlock>

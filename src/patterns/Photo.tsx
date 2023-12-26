@@ -1,6 +1,6 @@
+import React from "react"
 import { cva } from "class-variance-authority"
 import Image, { StaticImageData } from "next/image"
-import React from "react"
 
 type PhotoMode = "portrait" | "landscape"
 

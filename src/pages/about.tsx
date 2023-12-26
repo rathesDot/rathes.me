@@ -1,18 +1,9 @@
 import React, { useState } from "react"
-import RouterLink from "next/link"
 import { NextPage } from "next"
 
 import { PageLayout } from "../layouts"
 
-import {
-  Heading1,
-  Heading2,
-  List,
-  ListItem,
-  Paragraph,
-  Meta,
-  Separator,
-} from "../components"
+import { Heading1, List, ListItem, Paragraph, Meta } from "../components"
 
 import { SayHi } from "../patterns"
 
