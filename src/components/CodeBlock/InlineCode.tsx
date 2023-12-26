@@ -2,7 +2,7 @@ import { HTMLProps } from "react"
 
 export const InlineCode: React.FC<HTMLProps<HTMLElement>> = ({ ...props }) => (
   <code
-    className="whitespace-normal break-all rounded bg-neutral-200 px-2 py-[0.1em] font-mono text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200"
+    className="whitespace-normal break-all rounded-sm bg-neutral-800 px-1 py-[0.1em] font-mono text-sm text-neutral-300/80"
     {...props}
   />
 )
