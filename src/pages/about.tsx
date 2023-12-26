@@ -19,7 +19,7 @@ import { SayHi } from "../patterns"
 import { cva } from "class-variance-authority"
 
 const readMore = cva(
-  "relative delay-100 after:h-8 after:bg-gradient-to-t after:from-neutral-950 after:absolute after:bottom-0 after:inset-x-0 transition-all overflow-hidden md:columns-2 md:after:hidden md:[&>p]:mt-0 md:mt-8 md:gap-12",
+  "relative delay-100 after:h-8 after:bg-gradient-to-t after:from-neutral-950 after:absolute after:bottom-0 after:inset-x-0 transition-all overflow-hidden md:columns-2 md:after:hidden md:[&>p]:mt-0 md:mt-8 md:gap-12 lg:columns-3 lg:max-w-5xl",
   {
     variants: {
       open: {
@@ -35,8 +35,8 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => {
   return (
     <PageLayout>
       <Meta title="About me" />
-      <div className="max-w-[720px] p-8 md:px-14">
-        <Heading1>
+      <div className="max-w-[720px] p-8 md:px-14 lg:max-w-none">
+        <Heading1 className="lg:max-w-2xl">
           I'm a front-end engineer with over 10 years of web experience.
         </Heading1>
         <section className={readMore({ open })}>
