@@ -1,12 +1,15 @@
-import React from "react"
+import React, { HTMLProps } from "react"
 
-export const Logo: React.FC<React.PropsWithChildren<unknown>> = () => (
+export const Logo: React.FC<React.PropsWithChildren<HTMLProps<SVGElement>>> = ({
+  className,
+}) => (
   <svg
     width="24"
     height="24"
     viewBox="0 0 49 48"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    className={className}
   >
     <path
       fillRule="evenodd"
