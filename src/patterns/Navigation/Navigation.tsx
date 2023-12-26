@@ -21,12 +21,12 @@ const hamburgerIconBar = cva("block h-[1.5px] bg-white transition-all", {
   variants: {
     position: {
       top: "",
-      bottom: "translate-y-2 scale-x-[60%] group-hover:scale-x-100",
+      bottom: "translate-y-2 group-hover:scale-x-100",
     },
     crossed: { true: "", false: "" },
   },
   compoundVariants: [
-    { position: "bottom", crossed: false, class: "origin-right" },
+    { position: "bottom", crossed: false, class: "origin-right scale-x-[60%]" },
     { position: "top", crossed: true, class: "translate-y-[4.5px] rotate-45" },
     {
       position: "bottom",
