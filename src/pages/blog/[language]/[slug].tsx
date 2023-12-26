@@ -60,7 +60,11 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
     ul: BulletList,
     blockquote: Quote,
     a: ({ ...props }) => (
-      <StyleLink underlined className="text-neutral-50" {...props} />
+      <StyleLink
+        underlined
+        className="text-neutral-50 underline-offset-4"
+        {...props}
+      />
     ),
     img: ({ children, src, alt, ...props }) => (
       <ImageWrapper className="my-8">
