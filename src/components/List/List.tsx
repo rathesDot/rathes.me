@@ -12,7 +12,7 @@ export type ListItemProps = {
 }
 
 const Subtitle: React.FC<{ children: string }> = ({ children }) => (
-  <span className="block text-xs text-neutral-500">{children}</span>
+  <span className="block text-xs text-neutral-500 md:text-sm">{children}</span>
 )
 
 const ListItemBody: React.FC<Exclude<ListItemProps, "link">> = ({
@@ -21,7 +21,7 @@ const ListItemBody: React.FC<Exclude<ListItemProps, "link">> = ({
   children,
 }) => {
   return (
-    <div className="text-base text-neutral-50">
+    <div className="text-base text-neutral-50 md:text-lg">
       {subtitle && subtitlePosition == "above" && (
         <Subtitle>{subtitle}</Subtitle>
       )}
