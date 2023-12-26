@@ -31,6 +31,7 @@ export const Meta: React.FC<React.PropsWithChildren<MetaProps>> = ({
     { property: `og:site_name`, content: `rathes.me` },
     { property: `og:description`, content: metaDescription },
     { property: `og:type`, content: `website` },
+    { name: `twitter:image`, content: SITE_URL + "/images/twitter.png" },
     { name: `twitter:card`, content: `summary` },
     { name: `twitter:creator`, content: SITE_AUTHOR },
     { name: `twitter:title`, content: title },
