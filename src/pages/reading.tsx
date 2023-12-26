@@ -39,10 +39,17 @@ const ReadingList: NextPage = () => {
         <section>
           <Heading1>Reading</Heading1>
           <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            suscipit nunc massa, condimentum accumsan lectus luctus vitae.
-            Vestibulum commodo porta neque eget semper. Phasellus non dictum
-            metus. Pellentesque pretium est quis aliquet tempus.
+            Books play an important part in my life. Just sitting on my couch or
+            bed and reading a novel can be really inspiring.
+          </Paragraph>
+          <Paragraph>
+            I do fancy crime novels with interesting detective characters from
+            good old Sherlock Holmes to Harry Hole. But I read basically any
+            kind of book that can broaden one's horizons.
+          </Paragraph>
+          <Paragraph>
+            Actually, I dream of having my own library one day where I can
+            invite everybody to pick up a nice book and read.
           </Paragraph>
         </section>
         <section className="mt-12">

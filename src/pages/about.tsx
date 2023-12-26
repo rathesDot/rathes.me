@@ -41,22 +41,23 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => {
         </Heading1>
         <section className={readMore({ open })}>
           <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            suscipit nunc massa, condimentum accumsan lectus luctus vitae.
-            Vestibulum commodo porta neque eget semper. Phasellus non dictum
-            metus. Pellentesque pretium est quis aliquet tempus.
+            I started working as a web designer and web developer at a very
+            young age. I earned my first money as a web designer creating custom
+            MySpace layouts when I was just 14. In 2008, at the age of 16, I
+            founded my own company for web design and development. Since then, I
+            have worked with several clients doing quite a wide range of tasks.
           </Paragraph>
           <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            suscipit nunc massa, condimentum accumsan lectus luctus vitae.
-            Vestibulum commodo porta neque eget semper. Phasellus non dictum
-            metus. Pellentesque pretium est quis aliquet tempus.
+            For more than 10 years, I have been working as a web developer doing
+            problem-solving as a back-end engineer using languages such as PHP,
+            Python or Node.js but also as a front-end developer working with
+            HTML/CSS and JavaScript.
           </Paragraph>
           <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            suscipit nunc massa, condimentum accumsan lectus luctus vitae.
-            Vestibulum commodo porta neque eget semper. Phasellus non dictum
-            metus. Pellentesque pretium est quis aliquet tempus.
+            However, my real passion lies beyond software and development. I'm
+            more into solving problems for people, make their lives easier and
+            connecting them with each other. Alongside that, I'm passionate
+            about learning new languages and cultures.
           </Paragraph>
         </section>
         <button
