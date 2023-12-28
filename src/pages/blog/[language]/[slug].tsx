@@ -89,7 +89,7 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             <Image src={image} fill sizes="704px" priority alt={title} />
           </ImageWrapper>
         )}
-        <Heading1>{title}</Heading1>
+        <Heading1 className="my-8">{title}</Heading1>
         <MDXRemote {...source} components={components} scope={{ books }} />
         <footer className="my-32">
           <Link
