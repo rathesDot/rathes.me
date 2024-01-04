@@ -1,5 +1,6 @@
 import React from "react"
 import { NextPage } from "next"
+import Image from "next/image"
 
 import { PageLayout } from "../layouts"
 import {
@@ -15,6 +16,8 @@ import {
 } from "../components"
 
 import { SayHi } from "../patterns"
+
+import CalaisTemplate from "../assets/templates/calais.png"
 
 const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
   return (
@@ -36,6 +39,29 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
           </Link>
           .
         </Paragraph>
+      </section>
+
+      <section className="my-16 flex flex-col gap-4">
+        <Heading2 size={4} className="mx-8 text-neutral-400">
+          Templates
+        </Heading2>
+        <section>
+          <Image
+            src={CalaisTemplate}
+            alt="Preview of template named 'Calais'"
+          />
+          <div className="px-8 py-4">
+            <Heading3 size={2}>Calais</Heading3>
+            <Paragraph>
+              A minimal personal portfolio template best for someone who wants
+              to showcase their projects but also have their resume ready on
+              their website.
+            </Paragraph>
+            <Link disabled className="italic text-neutral-50/30">
+              Coming soon
+            </Link>
+          </div>
+        </section>
       </section>
 
       <section className="my-16 flex flex-col gap-4 p-8 md:px-14">
