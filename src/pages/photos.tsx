@@ -21,7 +21,7 @@ import { Photo } from "../patterns/Photo"
 
 const Photos: NextPage = () => (
   <PageLayout>
-    <Meta title="Work" />
+    <Meta title="Photography" />
     <section className="max-w-lg p-8 md:px-14">
       <Heading1>Photography</Heading1>
       <Paragraph>
