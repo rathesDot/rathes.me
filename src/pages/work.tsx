@@ -42,15 +42,16 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
       </section>
 
       <section className="my-16 flex flex-col gap-4">
-        <Heading2 size={4} className="mx-8 text-neutral-400">
+        <Heading2 size={4} className="mx-8 text-neutral-400 md:mx-14">
           Templates
         </Heading2>
-        <section>
+        <section className="md:flex md:gap-8 md:px-14">
           <Image
             src={CalaisTemplate}
             alt="Preview of template named 'Calais'"
+            width={480}
           />
-          <div className="px-8 py-4">
+          <div className=" max-w-md px-8 py-4">
             <Heading3 size={2}>Calais</Heading3>
             <Paragraph>
               A minimal personal portfolio template best for someone who wants
