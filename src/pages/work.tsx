@@ -65,7 +65,7 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
         </section>
       </section>
 
-      <section className="my-16 flex flex-col gap-4 p-8 md:px-14">
+      <section className="my-16 flex max-w-xl flex-col gap-4 p-8 md:px-14">
         <Heading2 size={4} className="text-neutral-400">
           Active projects
         </Heading2>
@@ -130,7 +130,7 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
 
       <Separator className="mx-8 md:mx-14" />
 
-      <section className="mt-16 p-8 md:px-14">
+      <section className="mt-16 max-w-xl p-8 md:px-14">
         <Heading2 className="scroll-mt-32" id="public-speaking">
           Public Speaking
         </Heading2>
@@ -179,7 +179,7 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
           </List>
         </div>
       </section>
-      <section className="my-16 p-8 md:px-14">
+      <section className="my-16 max-w-xl p-8 md:px-14">
         <SayHi />
       </section>
     </PageLayout>
