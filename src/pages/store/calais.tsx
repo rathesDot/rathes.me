@@ -6,17 +6,19 @@ import { PageLayout } from "../../layouts"
 
 import { Paragraph, Meta, Heading1 } from "../../components"
 
-import CalaisTemplate from "../../assets/templates/calais.png"
+import CalaisTemplateLarge from "../../assets/templates/calais-large.png"
 
 const IndexPage: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout className="md:flex md:flex-grow md:flex-col md:justify-center">
     <Meta title={`Figma Template: Calais`} />
     <section className="md:flex md:gap-8 md:px-14">
-      <Image
-        src={CalaisTemplate}
-        alt="Preview of template named 'Calais'"
-        width={480}
-      />
+      <div>
+        <Image
+          src={CalaisTemplateLarge}
+          alt="Preview of template named 'Calais'"
+          width={480}
+        />
+      </div>
       <div className=" max-w-md px-8 py-4">
         <Heading1>Calais — Figma Template</Heading1>
         <div className="my-2 text-neutral-50/60">$10.00</div>
