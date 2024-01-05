@@ -1,9 +1,11 @@
 import React from "react"
 import { NextPage } from "next"
 import Image from "next/image"
+import RouterLink from "next/link"
 
 import { PageLayout } from "../layouts"
 import {
+  link,
   Link,
   List,
   ListItem,
@@ -30,13 +32,9 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
           love to work on side projects. They do not necessarily have to be
           development related. If you want to see my software engineering
           related things, I recommend you visit my{" "}
-          <Link
-            href="https://github.com/rathesDot"
-            underlined
-            className="text-neutral-50"
-          >
+          <RouterLink href="https://github.com/rathesDot">
             Github profile
-          </Link>
+          </RouterLink>
           .
         </Paragraph>
       </section>
@@ -58,9 +56,13 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
               to showcase their projects but also have their resume ready on
               their website.
             </Paragraph>
-            <Link disabled className="italic text-neutral-50/30">
-              Coming soon
-            </Link>
+
+            <RouterLink
+              href="/store/calais"
+              className={link({ underlined: true })}
+            >
+              View template
+            </RouterLink>
           </div>
         </section>
       </section>
