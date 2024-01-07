@@ -72,7 +72,9 @@ const ReadingList: NextPage = () => {
                   {books.map((book, index) => (
                     <ListItem
                       link={
-                        !!book?.rating ? `/book/${createSlug(book)}` : book.url
+                        !!book?.rating
+                          ? `/reading/${createSlug(book)}`
+                          : book.url
                       }
                       subtitle={`by ${book.author}`}
                       key={`${listTitle}-book-#${index}`}
