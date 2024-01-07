@@ -15,7 +15,14 @@ import {
 } from "../components"
 import { SayHi } from "../patterns"
 
-type Book = { title: string; url: string; author: string }
+type Book = {
+  title: string
+  url: string
+  author: string
+  rating?: number
+  genres: string[]
+  description: string
+}
 
 const ReadingList: NextPage = () => {
   const [searchTerm, setSearchTerm] = useState("")
