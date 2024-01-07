@@ -14,3 +14,5 @@ export const createSlug = (book: Book): string => {
     lower: true,
   })
 }
+
+export const findBookBySlug = (slug: string, books: Book[]): Book => {}
