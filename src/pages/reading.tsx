@@ -3,6 +3,8 @@ import React, { useMemo, useState } from "react"
 
 import data from "../../data/books.json"
 
+import { Book } from "../utils/books"
+
 import { PageLayout } from "../layouts"
 import {
   Heading1,
@@ -15,15 +17,6 @@ import {
 } from "../components"
 import { SayHi } from "../patterns"
 import slugify from "slugify"
-
-type Book = {
-  title: string
-  url: string
-  author: string
-  rating?: number
-  genres: string[]
-  description: string
-}
 
 const ReadingList: NextPage = () => {
   const [searchTerm, setSearchTerm] = useState("")
