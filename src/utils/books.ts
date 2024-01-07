@@ -18,3 +18,5 @@ export const createSlug = (book: Book): string => {
 export const findBookBySlug = (slug: string, books: Book[]): Book => {
   return books.find((book) => createSlug(book) === slug)
 }
+
+export const getAllBooks = (groups: Record<string, Book[]>): Book[] => {}
