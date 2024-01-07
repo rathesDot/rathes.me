@@ -33,9 +33,9 @@ const BookDetailsPage: NextPage<
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    paths: getAllBooks(data).map((book) => ({
-      params: { slug: createSlug(book) },
-    })),
+    paths: getAllBooks(data)
+      .filter((book) => !!book.rating)
+      .map((book) => ({ params: { slug: createSlug(book) } })),
     fallback: false,
   }
 }
