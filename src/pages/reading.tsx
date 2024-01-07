@@ -14,6 +14,7 @@ import {
   Paragraph,
 } from "../components"
 import { SayHi } from "../patterns"
+import slugify from "slugify"
 
 type Book = {
   title: string
@@ -78,7 +79,11 @@ const ReadingList: NextPage = () => {
                 <List title={listTitle} className="flex flex-col gap-4">
                   {books.map((book, index) => (
                     <ListItem
-                      link={book.url}
+                      link={
+                        !!book?.rating
+                          ? `/book/${slugify(book.title)}`
+                          : book.url
+                      }
                       subtitle={`by ${book.author}`}
                       key={`${listTitle}-book-#${index}`}
                     >
