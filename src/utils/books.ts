@@ -3,8 +3,8 @@ export type Book = {
   url: string
   author: string
   rating?: number
-  genres: string[]
-  description: string
+  genres?: string[]
+  description?: string
 }
 
 export const createSlug = () => {}
