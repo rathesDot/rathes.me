@@ -3,7 +3,7 @@ import React, { useMemo, useState } from "react"
 
 import data from "../../data/books.json"
 
-import { Book } from "../utils/books"
+import { Book, createSlug } from "../utils/books"
 
 import { PageLayout } from "../layouts"
 import {
@@ -16,7 +16,6 @@ import {
   Paragraph,
 } from "../components"
 import { SayHi } from "../patterns"
-import slugify from "slugify"
 
 const ReadingList: NextPage = () => {
   const [searchTerm, setSearchTerm] = useState("")
@@ -73,9 +72,7 @@ const ReadingList: NextPage = () => {
                   {books.map((book, index) => (
                     <ListItem
                       link={
-                        !!book?.rating
-                          ? `/book/${slugify(book.title)}`
-                          : book.url
+                        !!book?.rating ? `/book/${createSlug(book)}` : book.url
                       }
                       subtitle={`by ${book.author}`}
                       key={`${listTitle}-book-#${index}`}
