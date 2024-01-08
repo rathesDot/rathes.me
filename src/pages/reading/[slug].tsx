@@ -39,7 +39,7 @@ const BookDetailsPage: NextPage<
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="h-6 w-6"
+              className="h-6 w-6 text-neutral-300/90"
             >
               <path
                 fillRule="evenodd"
@@ -51,7 +51,7 @@ const BookDetailsPage: NextPage<
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="h-6 w-6"
+              className="h-6 w-6 text-neutral-300/90"
             >
               <path
                 fillRule="evenodd"
@@ -65,7 +65,7 @@ const BookDetailsPage: NextPage<
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="h-6 w-6"
+              className="h-6 w-6 text-neutral-300/90"
             >
               <path
                 strokeLinecap="round"
@@ -79,7 +79,7 @@ const BookDetailsPage: NextPage<
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="h-6 w-6"
+              className="h-6 w-6 text-neutral-300/90"
             >
               <path
                 strokeLinecap="round"
@@ -93,7 +93,7 @@ const BookDetailsPage: NextPage<
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="h-6 w-6"
+              className="h-6 w-6 text-neutral-300/90"
             >
               <path
                 strokeLinecap="round"
