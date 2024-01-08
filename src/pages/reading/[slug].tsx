@@ -29,7 +29,9 @@ const BookDetailsPage: NextPage<
       <p className="text-base text-neutral-300">by {author}</p>
       <div className="my-6">
         <div>
-          <h2 className="text-sm text-neutral-500 antialiased">Rating</h2>
+          <h2 className="sr-only text-sm text-neutral-500 antialiased">
+            Rating
+          </h2>
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
