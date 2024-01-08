@@ -24,10 +24,12 @@ const BookDetailsPage: NextPage<
 > = ({ title, author }) => (
   <PageLayout>
     <Meta title="Book: " />
-    <div className="max-w-xl p-8 md:px-14">
-      <Heading1>{title}</Heading1>
-      <p className="text-base text-neutral-300">by {author}</p>
-      <div className="my-6">
+    <div className="flex max-w-xl flex-col gap-4 p-8 md:px-14">
+      <header>
+        <Heading1>{title}</Heading1>
+        <p className="text-base text-neutral-300">by {author}</p>
+      </header>
+      <div>
         <div>
           <h2 className="sr-only text-sm text-neutral-500 antialiased">
             Rating
