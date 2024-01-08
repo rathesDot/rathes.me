@@ -29,7 +29,7 @@ const BookDetailsPage: NextPage<
       <p className="text-base text-neutral-300">by {author}</p>
       <div className="my-6">
         <div>
-          <h2>Rating</h2>
+          <h2 className="text-sm text-neutral-500 antialiased">Rating</h2>
           <div>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -100,7 +100,7 @@ const BookDetailsPage: NextPage<
           </div>
         </div>
         <div>
-          <h2>Genres</h2>
+          <h2 className="text-sm text-neutral-500 antialiased">Genres</h2>
           <div>
             <span>Fantasy</span>
             <span>Fiction</span>
