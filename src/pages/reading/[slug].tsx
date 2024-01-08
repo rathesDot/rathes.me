@@ -17,7 +17,7 @@ import {
 
 import { PageLayout } from "../../layouts"
 
-import { Meta, Heading1 } from "../../components"
+import { Meta, Heading1, Paragraph } from "../../components"
 
 const BookDetailsPage: NextPage<
   InferGetStaticPropsType<typeof getStaticProps>
@@ -26,7 +26,7 @@ const BookDetailsPage: NextPage<
     <Meta title="Book: " />
     <div className="max-w-xl p-8 md:px-14">
       <Heading1>{title}</Heading1>
-      <p>by {author}</p>
+      <p className="text-base text-neutral-300">by {author}</p>
     </div>
   </PageLayout>
 )
