@@ -4,7 +4,7 @@ import Image from "next/image"
 
 import { PageLayout } from "../../layouts"
 
-import { Paragraph, Meta, Heading1 } from "../../components"
+import { Paragraph, Meta, Heading1, Link } from "../../components"
 
 import CalaisTemplateLarge from "../../assets/templates/calais-large.png"
 
@@ -23,12 +23,12 @@ const IndexPage: React.FC<React.PropsWithChildren<NextPage>> = () => (
         <Heading1>Calais — Figma Template</Heading1>
         <div className="my-2 text-neutral-50/60">£9.99</div>
         <div className="my-4">
-          <button
-            disabled
-            className="block w-full rounded bg-neutral-800/90 px-4 py-3 font-semibold text-neutral-50/50 antialiased"
+          <Link
+            href="https://aheenam.lemonsqueezy.com/checkout/buy/597d3764-92f3-4db7-a551-b17ac34a3d77?discount=0"
+            className="block w-full cursor-pointer rounded bg-neutral-800/80 px-4 py-3 text-center font-semibold text-neutral-50 antialiased hover:bg-neutral-700/50"
           >
-            Buy Now (coming soon)
-          </button>
+            Buy Now
+          </Link>
         </div>
         <Paragraph>
           A minimal personal portfolio template best for someone who wants to
