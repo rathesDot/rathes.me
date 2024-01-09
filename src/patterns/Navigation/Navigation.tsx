@@ -83,7 +83,7 @@ const TopBar: React.FC<PropsWithChildren> = ({ children }) => (
 )
 
 const navigation = cva(
-  "overflow-hidden fixed inset-x-0 z-50 transition-all duration-300 flex flex-col top-0",
+  "overflow-hidden fixed inset-x-0 z-50 transition-all duration-300 flex flex-col top-8",
   {
     variants: {
       isOpen: {
