@@ -21,7 +21,7 @@ const IndexPage: React.FC<React.PropsWithChildren<NextPage>> = () => (
       </div>
       <div className=" max-w-md px-8 py-4">
         <Heading1>Calais — Figma Template</Heading1>
-        <div className="my-2 text-neutral-50/60">$10.00</div>
+        <div className="my-2 text-neutral-50/60">£9.99</div>
         <div className="my-4">
           <button
             disabled
