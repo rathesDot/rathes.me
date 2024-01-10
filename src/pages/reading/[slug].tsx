@@ -106,7 +106,7 @@ const BookDetailsPage: NextPage<
         <div>
           <Link
             target="_blank"
-            className="rounded-lg bg-neutral-800 px-3 py-2"
+            className="inline-block rounded-lg bg-neutral-800 px-3 py-2"
             href={url}
           >
             Buy on Amazon
