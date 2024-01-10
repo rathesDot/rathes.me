@@ -7,16 +7,30 @@ import { PageLayout } from "../../layouts"
 import { Paragraph, Meta, Heading1, Link } from "../../components"
 
 import CalaisTemplateLarge from "../../assets/templates/calais-large.png"
+import CalaisPreviewDesktop from "../../assets/templates/calais-preview-home-desktop.png"
+import CalaisPreviewMobile from "../../assets/templates/calais-preview-mobile.png"
 
 const IndexPage: React.FC<React.PropsWithChildren<NextPage>> = () => (
   <PageLayout className="md:flex md:flex-grow md:flex-col md:justify-center">
     <Meta title={`Figma Template: Calais`} />
     <section className="md:flex md:gap-8 md:px-14">
-      <div>
+      <div className="flex flex-col gap-4">
         <Image
           src={CalaisTemplateLarge}
           alt="Preview of template named 'Calais'"
           width={480}
+        />
+        <Image
+          src={CalaisPreviewDesktop}
+          alt="Preview of template named 'Calais'"
+          width={480}
+          className="hidden md:block"
+        />
+        <Image
+          src={CalaisPreviewMobile}
+          alt="Preview of template named 'Calais'"
+          width={480}
+          className="hidden md:block"
         />
       </div>
       <div className=" max-w-md px-8 py-4">
