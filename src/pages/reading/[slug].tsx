@@ -21,7 +21,7 @@ import { Meta, Heading1, Paragraph, Link } from "../../components"
 
 const BookDetailsPage: NextPage<
   InferGetStaticPropsType<typeof getStaticProps>
-> = ({ title, author, url, description }) => (
+> = ({ title, author, url, description, genres }) => (
   <PageLayout>
     <Meta title="Book: " />
     <div className="flex max-w-xl flex-col gap-4 p-8 md:px-14">
@@ -112,11 +112,19 @@ const BookDetailsPage: NextPage<
             Buy on Amazon
           </Link>
         </div>
-        <div>
+        <div className="flex items-center gap-2">
           <h2 className="text-sm text-neutral-500 antialiased">Genres</h2>
-          <div>
-            <span>Fantasy</span>
-            <span>Fiction</span>
+          <div className="flex gap-2">
+            {genres.map((genre) => (
+              <Link
+                key={genre.toLocaleLowerCase()}
+                underlined
+                className="text-sm underline-offset-2 antialiased"
+                href={`/reading?genre=${genre.toLowerCase()}`}
+              >
+                {genre}
+              </Link>
+            ))}
           </div>
         </div>
         {description && <Paragraph>{description}</Paragraph>}
