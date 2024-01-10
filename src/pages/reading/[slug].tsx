@@ -21,7 +21,7 @@ import { Meta, Heading1, Paragraph, Link } from "../../components"
 
 const BookDetailsPage: NextPage<
   InferGetStaticPropsType<typeof getStaticProps>
-> = ({ title, author, url }) => (
+> = ({ title, author, url, description }) => (
   <PageLayout>
     <Meta title="Book: " />
     <div className="flex max-w-xl flex-col gap-4 p-8 md:px-14">
@@ -119,6 +119,7 @@ const BookDetailsPage: NextPage<
             <span>Fiction</span>
           </div>
         </div>
+        {description && <Paragraph>{description}</Paragraph>}
       </div>
     </div>
   </PageLayout>
