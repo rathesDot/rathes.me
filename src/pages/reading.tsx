@@ -3,6 +3,8 @@ import React, { useMemo, useState } from "react"
 
 import data from "../../data/books.json"
 
+import { Book, createSlug } from "../utils/books"
+
 import { PageLayout } from "../layouts"
 import {
   Heading1,
@@ -14,8 +16,6 @@ import {
   Paragraph,
 } from "../components"
 import { SayHi } from "../patterns"
-
-type Book = { title: string; url: string; author: string }
 
 const ReadingList: NextPage = () => {
   const [searchTerm, setSearchTerm] = useState("")
@@ -71,7 +71,11 @@ const ReadingList: NextPage = () => {
                 <List title={listTitle} className="flex flex-col gap-4">
                   {books.map((book, index) => (
                     <ListItem
-                      link={book.url}
+                      link={
+                        !!book?.rating
+                          ? `/reading/${createSlug(book)}`
+                          : book.url
+                      }
                       subtitle={`by ${book.author}`}
                       key={`${listTitle}-book-#${index}`}
                     >

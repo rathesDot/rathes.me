@@ -2803,6 +2803,11 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
+fathom-client@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/fathom-client/-/fathom-client-3.6.0.tgz#f46d8949cf73df89998a8793e51ad2c21efd703b"
+  integrity sha512-/mrgmVvpw4HqDCcqUfPulERhONKgnJGL74RAxfqKDuRQ+7w9lKoTHMzqBWE7WNBvmsgZEthQWJFOWOEjv+T3gA==
+
 fb-watchman@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/fb-watchman/-/fb-watchman-2.0.2.tgz#e9524ee6b5c77e9e5001af0f85f3adbb8623255c"
@@ -6135,6 +6140,11 @@ slash@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-4.0.0.tgz#2422372176c4c6c5addb5e2ada885af984b396a7"
   integrity sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==
+
+slugify@^1.6.6:
+  version "1.6.6"
+  resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.6.6.tgz#2d4ac0eacb47add6af9e04d3be79319cbcc7924b"
+  integrity sha512-h+z7HKHYXj6wJU+AnS/+IH8Uh9fdcX1Lrhg1/VMdf9PwoBQXFcXiAdsy2tSK0P6gKwJLXp02r90ahUCqHk9rrw==
 
 source-map-js@^1.0.2:
   version "1.0.2"
