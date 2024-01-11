@@ -6,6 +6,7 @@ import {
   NextPage,
 } from "next"
 import { cva } from "class-variance-authority"
+import * as Fathom from "fathom-client"
 
 import data from "../../../data/books.json"
 
@@ -66,6 +67,7 @@ const BookDetailsPage: NextPage<
               target="_blank"
               className="inline-block rounded-lg bg-neutral-800 px-3 py-2 font-sans text-xs font-medium antialiased md:text-sm"
               href={url}
+              onClick={() => Fathom.trackEvent(`buy_${title}_book_clicked`)}
             >
               Buy on Amazon
             </Link>
