@@ -77,7 +77,7 @@ const BookDetailsPage: NextPage<
                 <Link
                   key={genre.toLocaleLowerCase()}
                   underlined
-                  className="text-xs underline-offset-2 antialiased"
+                  className="text-xs underline-offset-2 antialiased md:text-sm"
                   href={`/reading?genre=${genre.toLowerCase()}`}
                 >
                   {genre}
