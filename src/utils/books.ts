@@ -7,6 +7,8 @@ export type Book = {
   rating?: number
   genres?: string[]
   description?: string
+  language?: "English" | "Tamil" | "German"
+  image?: string
 }
 
 export const createSlug = (book: Book): string => {
