@@ -16,6 +16,7 @@ export const createSchemaForBook = (book: Book) => {
       reviewBody: book.description,
       reviewRating: {
         author: {
+          "@type": "Person",
           givenName: "Rathes",
         },
         bestRating: 5,
