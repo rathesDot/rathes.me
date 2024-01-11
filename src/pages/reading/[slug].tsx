@@ -51,7 +51,7 @@ const BookDetailsPage: NextPage<
   const [open, setOpen] = useState(descriptionLength <= MIN_DESCRIPTION_LENGTH)
   return (
     <PageLayout>
-      <Meta title="Book: " />
+      <Meta title={`${title} by ${author}`} />
       <div className="flex max-w-xl flex-col gap-4 p-8 md:gap-6 md:px-14">
         <header>
           <Heading1>{title}</Heading1>
