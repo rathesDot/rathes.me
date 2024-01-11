@@ -35,6 +35,14 @@ const readMore = cva(
 
 const MIN_DESCRIPTION_LENGTH = 480
 
+const smallTitle = cva("text-xs text-neutral-500 antialiased md:text-sm", {
+  variants: {
+    hiddenOnMobile: {
+      true: "hidden  md:block",
+    },
+  },
+})
+
 const BookDetailsPage: NextPage<
   InferGetStaticPropsType<typeof getStaticProps>
 > = ({ title, author, url, description, genres, rating }) => {
@@ -50,9 +58,7 @@ const BookDetailsPage: NextPage<
         </header>
         <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
           <div className="col-start-1 col-end-1 row-start-1 row-end-1 md:flex md:items-center md:gap-2">
-            <h2 className="hidden text-xs text-neutral-500 antialiased md:block">
-              Rating
-            </h2>
+            <h2 className={smallTitle({ hiddenOnMobile: true })}>Rating</h2>
             <Rating value={rating} />
           </div>
           <div className="col-start-1 col-end-3 row-start-2 row-end-2">
@@ -65,7 +71,7 @@ const BookDetailsPage: NextPage<
             </Link>
           </div>
           <div className="col-start-2 col-end-2 row-start-1 row-end-1 flex items-center gap-2">
-            <h2 className="text-xs text-neutral-500 antialiased">Genres</h2>
+            <h2 className={smallTitle({ hiddenOnMobile: true })}>Genres</h2>
             <div className="flex gap-2">
               {genres.map((genre) => (
                 <Link
