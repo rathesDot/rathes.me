@@ -40,7 +40,7 @@ const BookDetailsPage: NextPage<
         <div className="col-start-1 col-end-3 row-start-2 row-end-2">
           <Link
             target="_blank"
-            className="inline-block rounded-lg bg-neutral-800 px-3 py-2"
+            className="inline-block rounded-lg bg-neutral-800 px-3 py-2 font-sans text-xs font-medium antialiased"
             href={url}
           >
             Buy on Amazon
