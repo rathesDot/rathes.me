@@ -21,6 +21,7 @@ import { PageLayout } from "../../layouts"
 
 import { Meta, Heading1, Paragraph, Link } from "../../components"
 import { Rating } from "../../components/Rating"
+import { BookSchema } from "../../components/BookSchema"
 
 const readMore = cva(
   "relative delay-100 after:h-8 after:bg-gradient-to-t after:from-neutral-950 after:absolute after:bottom-0 after:inset-x-0 transition-all overflow-hidden",
@@ -46,12 +47,14 @@ const smallTitle = cva("text-xs text-neutral-500 antialiased md:text-sm", {
 
 const BookDetailsPage: NextPage<
   InferGetStaticPropsType<typeof getStaticProps>
-> = ({ title, author, url, description, genres, rating }) => {
+> = (book) => {
+  const { title, author, url, description, genres, rating } = book
   const descriptionLength = useMemo(() => description.length, [description])
   const [open, setOpen] = useState(descriptionLength <= MIN_DESCRIPTION_LENGTH)
   return (
     <PageLayout>
       <Meta title={`${title} by ${author}`} />
+      <BookSchema book={book} />
       <div className="flex max-w-xl flex-col gap-4 p-8 md:gap-6 md:px-14">
         <header>
           <Heading1>{title}</Heading1>
