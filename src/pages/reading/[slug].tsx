@@ -30,14 +30,14 @@ const BookDetailsPage: NextPage<
         <Heading1>{title}</Heading1>
         <p className="text-base text-neutral-300">by {author}</p>
       </header>
-      <div className="flex flex-col gap-4">
-        <div>
-          <h2 className="sr-only text-sm text-neutral-500 antialiased">
+      <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
+        <div className="col-start-1 col-end-1 row-start-1 row-end-1 md:flex md:items-center md:gap-2">
+          <h2 className="hidden text-sm text-neutral-500 antialiased md:block">
             Rating
           </h2>
           <Rating value={rating} />
         </div>
-        <div>
+        <div className="col-start-1 col-end-3 row-start-2 row-end-2">
           <Link
             target="_blank"
             className="inline-block rounded-lg bg-neutral-800 px-3 py-2"
@@ -46,7 +46,7 @@ const BookDetailsPage: NextPage<
             Buy on Amazon
           </Link>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="col-start-2 col-end-2 row-start-1 row-end-1 flex items-center gap-2">
           <h2 className="text-sm text-neutral-500 antialiased">Genres</h2>
           <div className="flex gap-2">
             {genres.map((genre) => (
@@ -61,7 +61,11 @@ const BookDetailsPage: NextPage<
             ))}
           </div>
         </div>
-        {description && <Paragraph>{description}</Paragraph>}
+        {description && (
+          <div className="col-start-1 col-end-3 row-start-3 row-end-3">
+            <Paragraph>{description}</Paragraph>
+          </div>
+        )}
       </div>
     </div>
   </PageLayout>
