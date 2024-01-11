@@ -32,7 +32,7 @@ const BookDetailsPage: NextPage<
       </header>
       <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
         <div className="col-start-1 col-end-1 row-start-1 row-end-1 md:flex md:items-center md:gap-2">
-          <h2 className="hidden text-sm text-neutral-500 antialiased md:block">
+          <h2 className="hidden text-xs text-neutral-500 antialiased md:block">
             Rating
           </h2>
           <Rating value={rating} />
@@ -47,13 +47,13 @@ const BookDetailsPage: NextPage<
           </Link>
         </div>
         <div className="col-start-2 col-end-2 row-start-1 row-end-1 flex items-center gap-2">
-          <h2 className="text-sm text-neutral-500 antialiased">Genres</h2>
+          <h2 className="text-xs text-neutral-500 antialiased">Genres</h2>
           <div className="flex gap-2">
             {genres.map((genre) => (
               <Link
                 key={genre.toLocaleLowerCase()}
                 underlined
-                className="text-sm underline-offset-2 antialiased"
+                className="text-xs underline-offset-2 antialiased"
                 href={`/reading?genre=${genre.toLowerCase()}`}
               >
                 {genre}
