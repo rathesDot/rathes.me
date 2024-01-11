@@ -28,7 +28,7 @@ const BookDetailsPage: NextPage<
     <div className="flex max-w-xl flex-col gap-4 p-8 md:px-14">
       <header>
         <Heading1>{title}</Heading1>
-        <p className="text-base text-neutral-300">by {author}</p>
+        <p className="text-base text-neutral-300/80">by {author}</p>
       </header>
       <div className="flex flex-col gap-4 md:grid md:grid-cols-2">
         <div className="col-start-1 col-end-1 row-start-1 row-end-1 md:flex md:items-center md:gap-2">
