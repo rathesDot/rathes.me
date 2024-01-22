@@ -11,6 +11,7 @@ import Bologna from "../assets/photos/202306_bologna.jpg"
 import Paris from "../assets/photos/202302-paris.jpg"
 import Madeira1 from "../assets/photos/202210_madeira_1.jpg"
 import Madeira2 from "../assets/photos/202210_madeira_2.jpg"
+import MadeiraMountains from "../assets/photos/202210_madeira_mountains.jpg"
 import Rome from "../assets/photos/202209_rome.jpg"
 import Sorrento from "../assets/photos/202204_sorrento.jpg"
 import Naples2 from "../assets/photos/202204_naples_2.jpg"
@@ -82,6 +83,12 @@ const Photos: NextPage = () => (
         image={Madeira2}
         title="Bus in Madeira"
         caption="Funchal, Madeira / October 2022"
+      />
+
+      <Photo
+        image={MadeiraMountains}
+        title="View from Pico do Areeiro in Madeira"
+        caption="Pico do Areeiro, Madeira / October 2022"
       />
 
       <Photo
