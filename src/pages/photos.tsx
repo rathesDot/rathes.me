@@ -8,6 +8,7 @@ import London1 from "../assets/photos/202310_london_1.jpg"
 import London2 from "../assets/photos/202310_london_2.jpg"
 import London3 from "../assets/photos/202307_london.jpg"
 import Bologna from "../assets/photos/202306_bologna.jpg"
+import PisaTower from "../assets/photos/202306_pisa_tower.jpg"
 import Paris from "../assets/photos/202302-paris.jpg"
 import Madeira1 from "../assets/photos/202210_madeira_1.jpg"
 import Madeira2 from "../assets/photos/202210_madeira_2.jpg"
@@ -65,6 +66,12 @@ const Photos: NextPage = () => (
         image={Bologna}
         title="Neon sign of pizza place in Bologna"
         caption="Bologna, Italy / June 2023"
+      />
+
+      <Photo
+        image={PisaTower}
+        title="The Tower of Pisa"
+        caption="Pisa, Italy / June 2023"
       />
 
       <Photo
