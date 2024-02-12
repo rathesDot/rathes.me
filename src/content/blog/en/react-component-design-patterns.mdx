@@ -1,0 +1,82 @@
+---
+title: Useful patterns to design React components
+date: 2024-02-11T13:46:22.930Z
+author: Rathes Sachchithananthan
+template: post
+description: Learn important implementation patterns to create highly reusable components in React
+image: /images/blog/react-component-design-patterns.png
+categories:
+  - React
+  - Component design
+locale: en_US
+---
+
+Recently, I implemented a component for Mozhi that uses some core component design patterns in React and, at the same time, was simple enough to share, so in this little blog post, I will share with you my step-by-step approach to designing a component from scratch.
+
+Before we start with the implementation, let's look at the final result.
+
+![Final result](/images/blog/react-component-design-patterns.png)
+
+This component represents a theme option that users can select for their profile. It consists mainly of two parts: The title of the theme and a content block that can contain many different elements. When the option is selected, we can see a border around the content block.
+
+## Compound components
+
+The most straightforward way to implement this component would be to pass the title as a prop and render the content as children.
+
+```tsx
+const ThemeOption: React.FC<{ title: string, children: React.ReactNode }> = ({ title, children }) => (
+  <div>
+    <div>{children}</div>
+    <h1>{title}</h1>
+  </div>
+)
+```
+
+But wait? What if I want to display the title above the content? Let's add some more props:
+
+```tsx
+type ThemeOptionProps = {
+  title: string,
+  titlePosition: "top" | "bottom"
+  children: React.ReactNode
+}
+
+const ThemeOption: React.FC<> = ({ title, titlePosition, children }) => (
+  <div>
+    {titlePosition === "top" && <h1>{title}</h1>}
+    <div>{children}</div>
+    {titlePosition === "bottom" && <h1>{title}</h1>}
+  </div>
+)
+```
+
+What if we get a new requirement that the title is no longer an `h1` element?
+
+With this approach, you will keep adding more and more props with the number of new requirements, and the component code handling all the different cases gets complicated for no reason.
+
+Because what you want is a title component and another one for the content and the flexibility for the user of that component to arrange them as they wish.
+
+You can use the pattern called "compound components" to achieve this. This pattern contains the state and the behavior of a set of components but allows the component user to control the rendering of the individual parts.
+
+Let's see how that works. The user of the component will implement the above example like this:
+
+```tsx
+<ThemeOption.Root>
+  <ThemeOption.Title asChild>
+    <h3>Colorful</h3>
+  </ThemeOption.Title>
+  <ThemeOption.Body>
+    This is some basic body
+  </ThemeOption.Body>
+</ThemeOption.Root>
+```
+
+This way, the user can choose where to render the title, what element to use, and what the content looks like. This component could even be later extended without breaking the existing behavior.
+
+### React context for sharing state.
+
+How do we start creating such a component? The first step is to implement how we will bring the state of the group of elements to each subcomponent.
+
+When we click on the ThemeOption as a whole, we want to mark it as selected, but the content element needs to register that change and render a green outline around it.
+
+The solution is having a React context at the component's root holding all the state. The subcomponents will then consume the context and use the necessary information for their logic.
