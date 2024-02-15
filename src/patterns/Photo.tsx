@@ -23,6 +23,20 @@ const container = cva("flex flex-col flex-none gap-1", {
   ],
 })
 
+export const PhotoRoll: React.FC<{
+  caption: string
+  children: React.ReactNode
+}> = ({ caption, children }) => {
+  return (
+    <figure role="group" className="px-8">
+      <figcaption className="text-xs text-neutral-500">{caption}</figcaption>
+      <div className="mt-4 flex w-full gap-8 overflow-x-auto pb-4">
+        {children}
+      </div>
+    </figure>
+  )
+}
+
 export const Photo: React.FC<{
   image: StaticImageData
   title: string
