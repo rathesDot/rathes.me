@@ -1,0 +1,274 @@
+---
+title: Useful patterns to design React components
+date: 2024-02-11T13:46:22.930Z
+author: Rathes Sachchithananthan
+template: post
+description: Learn important implementation patterns to create highly reusable components in React
+categories:
+  - React
+  - Component design
+locale: en_US
+---
+
+Recently, I implemented a component for Mozhi that uses some core component design patterns in React and, at the same time, was simple enough to share, so in this little blog post, I will share with you my step-by-step approach to designing a component from scratch.
+
+Before we start with the implementation, let's look at the final result.
+
+![Final result](/images/blog/react-component-design-patterns.png)
+
+This component represents a theme option that users can select for their profile. It consists mainly of two parts: The title of the theme and a content block that can contain many different elements.
+
+We can see a border around the content block when the option is selected.
+
+## Compound components
+
+The most straightforward way to implement this component would be to pass the title as a prop and render the content as children.
+
+```tsx
+const ThemeOption: React.FC<{ title: string, children: React.ReactNode }> = ({ title, children }) => (
+  <div>
+    <div>{children}</div>
+    <h1>{title}</h1>
+  </div>
+)
+```
+
+But wait? What if I want to display the title above the content? Let's add some more props:
+
+```tsx
+type ThemeOptionProps = {
+  title: string,
+  titlePosition: "top" | "bottom"
+  children: React.ReactNode
+}
+
+const ThemeOption: React.FC<> = ({ title, titlePosition, children }) => (
+  <div>
+    {titlePosition === "top" && <h1>{title}</h1>}
+    <div>{children}</div>
+    {titlePosition === "bottom" && <h1>{title}</h1>}
+  </div>
+)
+```
+
+What if we get a new requirement that the title is no longer an `h1` element?
+
+With this approach, you will keep adding more and more props with the number of new requirements, and the component code handling all the different cases gets complicated for no reason.
+
+Because what you want is a title component and another one for the content and the flexibility for the user of that component to arrange them as they wish.
+
+You can use the pattern called "compound components" to achieve this. This pattern contains the state and the behavior of a set of components but allows the component user to control the rendering of the individual parts.
+
+Let's see how that works. The user of the component will implement the above example like this:
+
+```tsx
+<ThemeOption.Root>
+  <ThemeOption.Title asChild>
+    <h3>Colorful</h3>
+  </ThemeOption.Title>
+  <ThemeOption.Body>
+    This is some basic body
+  </ThemeOption.Body>
+</ThemeOption.Root>
+```
+
+This way, the user can choose where to render the title, what element to use, and what the content looks like. This component could even be later extended without breaking the existing behavior.
+
+### React context for sharing state.
+
+How do we start creating such a component? The first step is to implement how we will bring the state of the group of elements to each subcomponent.
+
+When we click on the ThemeOption as a whole, we want to mark it as selected, but the content element needs to register that change and render a green outline around it.
+
+The solution is having a React context at the component's root holding all the state. The subcomponents will then consume the context and use the necessary information for their logic.
+
+```tsx
+type ThemeOptionContextProps = {
+  selected: boolean
+}
+
+const ThemeOptionContext = createContext<ThemeOptionContextProps>({
+  selected: false
+});
+
+const Root: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const [selected, setSelected] = useState(false)
+
+  return (
+		<ThemeOptionContext.Provider value={{ selected }}>
+	    <button aria-pressed={selected} onClick={() => setIsSelected(!selected)}>
+        {children}
+      </button>
+	  </ThemeOptionContext.Provider>
+	)
+}
+```
+
+<Note>
+**Note**
+
+In our case, the root component is a button, not a radio button, as I wanted to avoid implementing a form and radio button groups here. But with `aria-pressed`, I can still make the button be seen as a selectable element on screen readers.
+</Note>
+
+With the Root component that holds the context provider, I usually also implement something I call a "consumer hook." A consumer hook is a custom useContext hook for our implemented context.
+
+The main benefit of such a consumer hook is that it hides away the boilerplate and provides a specific error message when used somewhere you shouldn't be using.
+
+```ts
+const useThemeOptionContext = () => {
+  const context = useContext(ThemeOptionContext)
+
+  if (context === undefined) {
+    throw new Error(
+      "useThemeOptionContext must be used within a ThemeOptionProvider"
+    )
+  }
+
+  return context
+}
+```
+
+## The "asChild" pattern
+
+Now that we've sorted the root out, let's look at implementing the individual components. First, we have the title.
+
+```tsx
+const Title: React.FC<{ children: string }> = ({ children }) => (
+  <h2>{ children }</h2>
+)
+```
+
+Here, we ensure we accept a string as the children and render a `h2` element. But how do we make sure that we are flexible with what HTML element we use for the title?
+
+We can resolve that with the `asChild` pattern. You might be familiar with a similar pattern using the `as` property.
+
+```tsx
+// Render a link but as button styles
+<Button as={Link} />
+
+// Or Render the Link component of your framework using your Link component
+<Link as={RouterLink} />
+```
+
+This pattern works in many cases, but as soon as you need more customization, like adding additional props, things get messy quickly. In the first example above, imagine you want to render the button as a link but with a specific prop `noUnderline`. How would you do that?
+
+The `asChild` pattern is the next step to this component but is far more powerful. This pattern is explained quite quickly. If `asChild` is `false`, we render the default element. But when it's `true`, we render the child element and pass the props on to that element.
+
+So, for our title component, it looks like this
+
+```tsx
+type TitleProps = {
+	children: React.ReactNode;
+  asChild?: boolean
+}
+
+const Title: React.FC<TitleProps> = ({ children, asChild = false }) => {
+  if (asChild) {
+    // do some magic
+  }
+
+  return <h2>{ children }</h2>
+}
+```
+
+The first thing we will have to do when asChild is true is check the number of child elements passed down and throw an error if we have more than one because that's a requirement to be able to pass down the props to that child.
+
+```ts
+if (Children.count(children) > 1) {
+  throw new Error("Only a single element allowed")
+}
+```
+
+Next, we want to ensure we pass in a valid element that React can work with. For example, `true` would be a valid `React.ReactNode` to pass down, but we don't want to allow that here.
+
+```ts
+if (!React.isValidElement(children)) {
+  throw new Error("Invalid children used")
+}
+```
+
+Once we've checked that we pass all these requirements, all we have to do is to clone the child element and spread in the props that were passed through to our parent component.
+
+```ts
+return React.cloneElement(children, { ...props })
+```
+
+All that combined, it would look like this:
+
+```tsx
+const Title: React.FC<{
+  children: React.ReactNode
+  asChild?: boolean
+}> = ({ children, asChild = false, ...props }) => {
+  if (asChild) {
+    if (Children.count(children) > 1) {
+      throw new Error("Only a single element allowed")
+    }
+
+    if (!React.isValidElement(children)) {
+      throw new Error("Invalid children used")
+    }
+
+    return React.cloneElement(children, { ...props })
+  }
+
+  return <h2>{children}</h2>
+}
+```
+
+It's pretty straightforward and yet super powerful. Now, our title component can be any element.
+
+<Note>
+**Note**
+
+The types of this are intentionally kept super simple. Right now, we don't allow any button props on the top level, which we maybe could do and then merge the props of the component and the children correctly. But I think this level is not necessary in this introductory blog post
+</Note>
+
+## Class Variance Authority
+
+The body component is implemented straightforwardly; it uses the selected state from the context of the ThemeOption and renders with the correct styles applied.
+
+```tsx
+const Body: React.FC<PropsWithChildren> = ({ children }) => {
+  const { selected } = useThemeOptionContext()
+
+  return <div className={/* Add styles based on selected */}>{children}</div>
+}
+```
+
+If you use a CSS-in-TS library like [Stitches](https://stitches.dev/) or [Vanilla Extract](https://vanilla-extract.style/), you will know about the powerful APIs they provide to create different variants of the same component.
+
+If you work in CSS only, or as I do with Tailwind CSS, a similar package called [Class Variance Authority](https://cva.style) does the same for plain CSS. With a few lines, you can create styles for different variants.
+
+```ts
+const bodyStyles = cva(
+  "w-full bg-gray-50 rounded-lg aspect-[3/4] overflow-hidden flex flex-col items-center justify-center relative",
+  {
+    variants: {
+      selected: {
+        true: "ring ring-lime-400 ring-offset-2"
+      }
+    }
+  }
+)
+```
+
+Now, you can apply the correct styles for your component by calling the style function.
+
+```tsx
+const Body: React.FC<PropsWithChildren> = ({ children }) => {
+  const { selected } = useThemeOptionContext()
+
+  return <div className={bodyStyles({ selected })}>{children}</div>
+}
+```
+
+When `selected` is `true`, the ring styles will be applied on top of the default styles. You can have more than one variant, and the values don't have to be boolean but can be any value. On top of that, you can even have compound variants, making even more complex component styles possible.
+
+Using something like CVA makes component variants a lot easier. In our example, we only have one parameter, but imagine a button that can be filled or outlined, have an icon or not, might look like a link, and can be in a few different colors. Imagine you had to organize all the classes for that manually.
+
+***
+
+There are a few more things that this component needs to make it complete. Currently, the component is uncontrolled, but there might be cases in which we want to provide the selected value and deal with the click on the button ourselves.
+
+But this blog post has introduced the two React component patterns I wanted to share — Compound components and the `asChild` pattern. Using these in your code base will make your components a lot more flexible, and the API of these components will be much easier to explain.
