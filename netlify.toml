@@ -9,3 +9,6 @@
   to = "/writing"
   status = 301
   force = true
+
+[build.processing]
+  skip_processing = true
