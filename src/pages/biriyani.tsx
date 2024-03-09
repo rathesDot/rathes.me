@@ -34,13 +34,13 @@ const BiriyaniPage: NextPage = () => {
           <Heading2 size={4} className="text-neutral-400">
             Ingredients
           </Heading2>
-          <ul className="mb-8 mt-2">
+          <ul className="mb-8 mt-2 flex flex-col gap-3">
             {ingredients.map((ingredient, index) => {
               return (
                 <li key={index}>
-                  <label className="flex items-center gap-1 text-lg antialiased">
+                  <label className="flex items-center gap-2 text-lg leading-none antialiased">
                     <input
-                      className="bg-red grid h-5 w-5 appearance-none place-content-center rounded border-2 border-neutral-600 outline-none before:h-3 before:w-3 before:rounded-sm checked:before:bg-neutral-500 focus:outline focus:outline-offset-0 focus:outline-neutral-700"
+                      className="bg-red mt-[2px] grid h-5 w-5 appearance-none place-content-center rounded border-2 border-neutral-600 outline-none before:h-3 before:w-3 before:rounded-sm checked:before:bg-neutral-500 focus:outline focus:outline-offset-0 focus:outline-neutral-700"
                       type="checkbox"
                     />
                     <span>
