@@ -60,7 +60,47 @@ const BiriyaniPage: NextPage = () => {
           <Heading2 size={4} className="text-neutral-400">
             Instructions
           </Heading2>
-          <div></div>
+          <ol className="mb-8 mt-2 flex list-outside list-decimal flex-col gap-3 pl-8 antialiased marker:font-sans marker:text-xl marker:font-semibold">
+            <li className="text-lg antialiased">
+              Wash the Basmati Rice properly and soak it in cold water
+            </li>
+            <li className="text-lg antialiased">
+              In a large pot (remember that you will have 1kg of rice and 1kg of
+              chicken), add the onions and the oil and put the stove on to
+              medium heat. While the oil heats up, add the cardamom, cinnamon
+              and the cloves
+            </li>
+            <li className="text-lg antialiased">
+              Fry the onions on medium heat until the become golden brown.
+            </li>
+            <li className="text-lg antialiased">
+              Turn down the heat to low and add:
+              <ul className="my-4 flex list-outside list-disc flex-col gap-1 pl-6">
+                <li>Roughly chopped coriander leaves</li>
+                <li>Roughly chopped mint leaves</li>
+                <li>
+                  Green chilies (whole, we only need the flavor, not the spice)
+                </li>
+                <li>Curry Powder</li>
+                <li>
+                  Use a spice grinder to make a paste of the Ginger and the
+                  Garlic and add it as well
+                </li>
+                <li>Salt (to taste, I normally start with 2 tea spoons)</li>
+                <li>Curd</li>
+                <li>Tomatoes, fine diced</li>
+              </ul>
+            </li>
+            <li>
+              Mix everything well together and cook for like 30 to 60 seconds
+            </li>
+            <li>
+              Add 800 ml water. Put on a lid and bring it to a boil turning the
+              heat up. At the same time, bring another pot with water to boil.
+              Once it starts boiling, salt it properly. We are going to pre-cook
+              there rice in that water
+            </li>
+          </ol>
         </section>
       </div>
     </PageLayout>
