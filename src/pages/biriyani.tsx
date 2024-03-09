@@ -2,6 +2,7 @@ import { NextPage } from "next"
 
 import { PageLayout } from "../layouts"
 import { useState } from "react"
+import { Heading2, TextField } from "../components"
 
 // ingredients for 1kg
 const ingredients = [
@@ -28,7 +29,20 @@ const BiriyaniPage: NextPage = () => {
   const [amountOfBiriyani, setAmountOfBiriyani] = useState<number>(1)
   return (
     <PageLayout>
-      <div className="px-4"></div>
+      <div className="px-4">
+        <section>
+          <Heading2 size={4} className="text-neutral-400">
+            Ingredients
+          </Heading2>
+          <div></div>
+        </section>
+        <section>
+          <Heading2 size={4} className="text-neutral-400">
+            Instructions
+          </Heading2>
+          <div></div>
+        </section>
+      </div>
     </PageLayout>
   )
 }
