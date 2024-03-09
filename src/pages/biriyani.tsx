@@ -34,26 +34,25 @@ const BiriyaniPage: NextPage = () => {
           <Heading2 size={4} className="text-neutral-400">
             Ingredients
           </Heading2>
-          <div className="mb-8 mt-2">
+          <ul className="mb-8 mt-2">
             {ingredients.map((ingredient, index) => {
               return (
-                <label
-                  key={index}
-                  className="flex items-center gap-1 text-lg antialiased"
-                >
-                  <input
-                    className="bg-red grid h-5 w-5 appearance-none place-content-center rounded border-2 border-neutral-600 outline-none before:h-3 before:w-3 before:rounded-sm checked:before:bg-neutral-500 focus:outline focus:outline-offset-0 focus:outline-neutral-700"
-                    type="checkbox"
-                  />
-                  <strong className="font-semibold">
-                    {ingredient.amount}
-                    {ingredient.unit}
-                  </strong>
-                  {ingredient.name}
-                </label>
+                <li key={index}>
+                  <label className="flex items-center gap-1 text-lg antialiased">
+                    <input
+                      className="bg-red grid h-5 w-5 appearance-none place-content-center rounded border-2 border-neutral-600 outline-none before:h-3 before:w-3 before:rounded-sm checked:before:bg-neutral-500 focus:outline focus:outline-offset-0 focus:outline-neutral-700"
+                      type="checkbox"
+                    />
+                    <strong className="font-semibold">
+                      {ingredient.amount}
+                      {ingredient.unit}
+                    </strong>
+                    {ingredient.name}
+                  </label>
+                </li>
               )
             })}
-          </div>
+          </ul>
         </section>
         <section>
           <Heading2 size={4} className="text-neutral-400">
