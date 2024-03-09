@@ -43,11 +43,13 @@ const BiriyaniPage: NextPage = () => {
                       className="bg-red grid h-5 w-5 appearance-none place-content-center rounded border-2 border-neutral-600 outline-none before:h-3 before:w-3 before:rounded-sm checked:before:bg-neutral-500 focus:outline focus:outline-offset-0 focus:outline-neutral-700"
                       type="checkbox"
                     />
-                    <strong className="font-semibold">
-                      {ingredient.amount}
-                      {ingredient.unit}
-                    </strong>
-                    {ingredient.name}
+                    <span>
+                      <strong className="font-semibold">
+                        {ingredient.amount}
+                        {ingredient.unit}
+                      </strong>{" "}
+                      {ingredient.name}
+                    </span>
                   </label>
                 </li>
               )
