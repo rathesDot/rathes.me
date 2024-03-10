@@ -29,8 +29,8 @@ const BiriyaniPage: NextPage = () => {
   const [amountOfBiriyani, setAmountOfBiriyani] = useState<number>(1)
   return (
     <PageLayout>
-      <div className="px-4">
-        <section>
+      <div className="flex-grow p-8 md:px-14 lg:flex lg:gap-8">
+        <section className="flex-none lg:min-w-56">
           <Heading2 size={4} className="text-neutral-400">
             Ingredients
           </Heading2>
@@ -56,7 +56,7 @@ const BiriyaniPage: NextPage = () => {
             })}
           </ul>
         </section>
-        <section>
+        <section className="max-w-xl">
           <Heading2 size={4} className="text-neutral-400">
             Instructions
           </Heading2>
