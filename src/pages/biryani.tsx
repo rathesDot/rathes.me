@@ -25,22 +25,22 @@ const ingredients = [
   { name: "Water", amount: 1200, unit: "ml" },
 ]
 
-const BiriyaniPage: NextPage = () => {
-  const [amountOfBiriyani, setAmountOfBiriyani] = useState<number>(1)
+const BiryaniPage: NextPage = () => {
+  const [amountOfBiryani, setAmountOfBiryani] = useState<number>(1)
   return (
     <PageLayout>
       <section className="max-w-xl p-8 md:px-14">
-        <Heading1>Chicken Biriyani Recipe</Heading1>
+        <Heading1>Chicken Biryani Recipe</Heading1>
         <Paragraph>
-          One of my favorite dishes is a good chicken biriyani. There are
-          several biriyani recipes out there as every region in India as well as
-          many neighboring countries have the their own variants.
+          One of my favorite dishes is a good chicken biryani. There are several
+          biryani recipes out there as every region in India as well as many
+          neighboring countries have the their own variants.
         </Paragraph>
         <Paragraph>
-          My own recipe is based off the typical Chennai style biriyani and it's
+          My own recipe is based off the typical Chennai style biryani and it's
           developed in a way that it can be easily replicated in Western
           countries and kitchens without losing the original taste of a good
-          biriyani.
+          biryani.
         </Paragraph>
       </section>
       <div className="flex-grow p-8 md:px-14 lg:flex lg:gap-8">
@@ -150,7 +150,7 @@ const BiriyaniPage: NextPage = () => {
               stove), carefully mix the top layer rice with the curry below
             </li>
             <li className="text-lg antialiased">
-              Plate the biriyani by taking the rice from the bottom so that the
+              Plate the biryani by taking the rice from the bottom so that the
               rice on the top keeps mixing with the curry.{" "}
               <strong>Enjoy!</strong>
             </li>
@@ -161,4 +161,4 @@ const BiriyaniPage: NextPage = () => {
   )
 }
 
-export default BiriyaniPage
+export default BiryaniPage
