@@ -64,6 +64,13 @@ const BiriyaniPage: NextPage = () => {
             <li className="text-lg antialiased">
               Wash the Basmati Rice properly and soak it in cold water
             </li>
+            <li>
+              Prep the ingredients. Julienne the onions. Remove the stalks from
+              the coriander and mint and finely chop them. If you use fresh
+              garlic and ginger, peel them and use a food processor to create a
+              paste. Dice the tomatoes and finally cut the chicken into bite
+              size pieces.
+            </li>
             <li className="text-lg antialiased">
               In a large pot (remember that you will have 1kg of rice and 1kg of
               chicken), add the onions and the oil and put the stove on to
