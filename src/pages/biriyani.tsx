@@ -64,7 +64,7 @@ const BiriyaniPage: NextPage = () => {
             <li className="text-lg antialiased">
               Wash the Basmati Rice properly and soak it in cold water
             </li>
-            <li>
+            <li className="text-lg antialiased">
               Prep the ingredients. Julienne the onions. Remove the stalks from
               the coriander and mint and finely chop them. If you use fresh
               garlic and ginger, peel them and use a food processor to create a
@@ -98,31 +98,31 @@ const BiriyaniPage: NextPage = () => {
                 <li>Tomatoes, fine diced</li>
               </ul>
             </li>
-            <li>
+            <li className="text-lg antialiased">
               Mix everything well together and cook for like 30 to 60 seconds
             </li>
-            <li>
+            <li className="text-lg antialiased">
               Add 1200 ml water. Put on a lid and bring it to a boil turning the
               heat up. Turn down the heat of the curry once it starts boiling
               and let it simmer for 5 more minutes
             </li>
-            <li>
+            <li className="text-lg antialiased">
               Add the chicken and bring it to boil again as the chicken will
               cool down your curry rapidly. Let it boil for two minutes while
               mixing the curry, then put the lid on and let it simmer for 2 more
               minutes on low heat.
             </li>
-            <li>
+            <li className="text-lg antialiased">
               Layer the soaked rice (without the soaking water of course) on the
               curry and spread it evenly. Do not mix it, just spread the rice on
               top of the curry.
             </li>
-            <li>
+            <li className="text-lg antialiased">
               Once you have spread the rice evenly, the water should be at the
               same level as the rice layer. If not, add a bit of fresh water to
               level it up.
             </li>
-            <li>
+            <li className="text-lg antialiased">
               Cover the pot with a lid and bring it to a boil. Once it boiled,
               turn down the heat to the lowest and let the rice cook. Make sure
               that the pot does not lose steam. That's where a heavy pot comes
@@ -131,11 +131,11 @@ const BiriyaniPage: NextPage = () => {
               a tea towel to keep it even more safe.{" "}
               <strong>Do not open the pot while the rice is cooking</strong>
             </li>
-            <li>
+            <li className="text-lg antialiased">
               Once the rice is cooked properly (takes 5-15 minutes depending on
               stove), carefully mix the top layer rice with the curry below
             </li>
-            <li>
+            <li className="text-lg antialiased">
               Plate the biriyani by taking the rice from the bottom so that the
               rice on the top keeps mixing with the curry.{" "}
               <strong>Enjoy!</strong>
