@@ -2,7 +2,7 @@ import { NextPage } from "next"
 
 import { PageLayout } from "../layouts"
 import { useState } from "react"
-import { Heading2, TextField } from "../components"
+import { Heading1, Heading2, Paragraph, TextField } from "../components"
 
 // ingredients for 1kg
 const ingredients = [
@@ -29,6 +29,20 @@ const BiriyaniPage: NextPage = () => {
   const [amountOfBiriyani, setAmountOfBiriyani] = useState<number>(1)
   return (
     <PageLayout>
+      <section className="max-w-xl p-8 md:px-14">
+        <Heading1>Chicken Biriyani Recipe</Heading1>
+        <Paragraph>
+          One of my favorite dishes is a good chicken biriyani. There are
+          several biriyani recipes out there as every region in India as well as
+          many neighboring countries have the their own variants.
+        </Paragraph>
+        <Paragraph>
+          My own recipe is based off the typical Chennai style biriyani and it's
+          developed in a way that it can be easily replicated in Western
+          countries and kitchens without losing the original taste of a good
+          biriyani.
+        </Paragraph>
+      </section>
       <div className="flex-grow p-8 md:px-14 lg:flex lg:gap-8">
         <section className="flex-none lg:min-w-56">
           <Heading2 size={4} className="text-neutral-400">
