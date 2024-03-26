@@ -4,6 +4,10 @@ import { Heading1, Link, Meta, Paragraph } from "../components"
 
 import { SayHi } from "../patterns"
 
+import Iceland1 from "../assets/photos/202402_iceland_1.jpg"
+import Iceland2 from "../assets/photos/202402_iceland_2.jpg"
+import Iceland3 from "../assets/photos/202402_iceland_3.jpg"
+import Iceland4 from "../assets/photos/202402_iceland_4.jpg"
 import London1 from "../assets/photos/202310_london_1.jpg"
 import London2 from "../assets/photos/202310_london_2.jpg"
 import London3 from "../assets/photos/202307_london.jpg"
@@ -44,6 +48,27 @@ const Photos: NextPage = () => (
       </Paragraph>
     </section>
     <section className="flex flex-col gap-8 md:flex-row md:flex-wrap md:p-8">
+      <Photo
+        image={Iceland1}
+        title="Steam coming out of hardened Lava"
+        caption="Reykjavík, Iceland / February 2024"
+      />
+      <Photo
+        image={Iceland2}
+        title="Van parked in snow"
+        caption="Reykjavík, Iceland / February 2024"
+      />
+      <Photo
+        image={Iceland3}
+        title="Car driving through the snow in Iceland"
+        caption="Reykjavík, Iceland / February 2024"
+      />
+      <Photo
+        image={Iceland4}
+        title="Car driving through the snow in Iceland"
+        caption="Reykjavík, Iceland / February 2024"
+      />
+
       <Photo
         image={London2}
         title="Old Car in London Borough Market"
