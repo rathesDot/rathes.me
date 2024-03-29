@@ -163,7 +163,7 @@ export const getStaticProps: GetStaticProps<{
     return {
       props: {
         title: data.title,
-        excerpt,
+        excerpt: excerpt || data.description,
         image: data.image || null,
         meta: [...meta, ...imageMeta],
         url: `${SITE_URL}/blog/${language}/${slug}`,
