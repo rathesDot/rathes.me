@@ -10,3 +10,19 @@ updates:
       - rathesDot
     labels:
       - dependencies
+    groups:
+      next:
+        patterns:
+          - "eslint-config-next"
+          - "next"
+      tailwindcss:
+        patterns:
+          - "tailwindcss"
+          - "autoprefixer"
+          - "postcss"
+      jest:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
