@@ -1,12 +1,12 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: monthly
-    time: "14:00"
-  open-pull-requests-limit: 3
-  reviewers:
-  - rathesDot
-  labels:
-  - dependencies
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: monthly
+      time: "14:00"
+    open-pull-requests-limit: 3
+    reviewers:
+      - rathesDot
+    labels:
+      - dependencies
