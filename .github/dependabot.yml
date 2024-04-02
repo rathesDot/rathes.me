@@ -20,7 +20,7 @@ updates:
           - "tailwindcss"
           - "autoprefixer"
           - "postcss"
-      jest:
+      react:
         patterns:
           - "react"
           - "react-dom"
