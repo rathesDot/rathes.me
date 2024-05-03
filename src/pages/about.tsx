@@ -62,7 +62,10 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => {
         <section className="mt-12 md:mt-32">
           <List title="Work Experience" className="md:flex md:gap-12">
             <div className="flex flex-col gap-6">
-              <ListItem subtitle="December 2021 — now">
+              <ListItem subtitle="April 2024 — now">
+                Senior Engineer / Intercom
+              </ListItem>
+              <ListItem subtitle="December 2021 — March 2024">
                 Product Engineer 3 / Intercom
               </ListItem>
               <ListItem subtitle="April 2021 — November 2021">
@@ -74,11 +77,11 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => {
               <ListItem subtitle="May 2018 — January 2020">
                 Software Engineer / Teamleader
               </ListItem>
+            </div>
+            <div className="mt-6 flex flex-col gap-6 md:mt-0">
               <ListItem subtitle="May 2016 — October 2021">
                 Founder / Aheenam
               </ListItem>
-            </div>
-            <div className="mt-6 flex flex-col gap-6 md:mt-0">
               <ListItem subtitle="November 2016 — April 2018">
                 Web Developer / netinsiders
               </ListItem>
