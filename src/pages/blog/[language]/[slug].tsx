@@ -63,7 +63,7 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
   meta,
   title,
   excerpt,
-  image,
+  featureImage,
   date,
 }) => {
   const components: any = {
@@ -118,10 +118,19 @@ const Blogpost: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
             </span>
           </div>
         </header>
-        {image && (
-          <ImageWrapper aspect="16/9" className="mb-8">
-            <Image src={image} fill sizes="704px" priority alt={title} />
-          </ImageWrapper>
+        {featureImage && (
+          <figure className="my-8">
+            <div className="relative aspect-[3/2]">
+              <Image
+                src={featureImage}
+                fill
+                sizes="704px"
+                priority
+                alt={title}
+                className="object-cover object-center"
+              />
+            </div>
+          </figure>
         )}
         <MDXRemote {...source} components={components} scope={{ books }} />
         <footer className="my-32">
@@ -162,7 +171,7 @@ export const getStaticProps: GetStaticProps<{
   source: MDXRemoteSerializeResult
   title: string
   excerpt: string
-  image?: string
+  featureImage?: string
   meta: { name: string; content: string }[]
   date?: string
 }> = async ({ params }) => {
@@ -198,7 +207,7 @@ export const getStaticProps: GetStaticProps<{
       props: {
         title: data.title,
         excerpt: excerpt || data.description,
-        image: data.image || null,
+        featureImage: data.image || null,
         date: data.date.toString() || null,
         meta: [...meta, ...imageMeta],
         url: `${SITE_URL}/blog/${language}/${slug}`,
