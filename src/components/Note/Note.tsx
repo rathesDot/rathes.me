@@ -3,7 +3,7 @@ import { HTMLAttributes } from "react"
 import { cva } from "class-variance-authority"
 
 const styles = cva(
-  "my-8 -mx-8 p-8 text-lg bg-neutral-900 text-neutral-200/70 [&_p]:m-0 [&_p]:antialiased [&_p]:text-neutral-200/70",
+  "my-8 p-8 bg-neutral-800/30 outline outline-neutral-800 text-neutral-400 rounded",
   {
     variants: {
       fontFamily: {
