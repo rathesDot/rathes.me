@@ -1,10 +1,17 @@
 import { Metadata, NextPage } from "next"
-import { generateBlogParams } from "../../../../services/blog"
+import {
+  generateBlogMetaData,
+  generateBlogParams,
+} from "../../../../services/blog"
 
-export async function generateMetadata({ params }): Promise<Metadata> {
-  return {
-    title: params.slug,
-  }
+type Params = { lang: "en" | "de"; slug: string }
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Params
+}): Promise<Metadata> {
+  return generateBlogMetaData(params.lang, params.slug)
 }
 
 export const dynamicParams = false
@@ -13,9 +20,7 @@ export async function generateStaticParams() {
   return generateBlogParams()
 }
 
-const BlogPage: NextPage<{
-  params: { lang: "en" | "de"; slug: string }
-}> = ({ params }) => {
+const BlogPage: NextPage<{ params: Params }> = ({ params }) => {
   return (
     <div>
       My Post: {params.slug} in {params.lang}
