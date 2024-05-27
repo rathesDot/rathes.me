@@ -1,7 +1,7 @@
 import path from "path"
 import fs from "fs"
 import { Metadata } from "next"
-import { serialize } from "next-mdx-remote/serialize"
+import matter from "gray-matter"
 
 type Language = "en" | "de"
 
@@ -13,7 +13,7 @@ const fetchBlogPost = (lang: Language, slug: string) => {
 }
 
 const parseBlogPost = (source: string) => {
-  return serialize(source, { parseFrontmatter: true })
+  return matter(source)
 }
 
 const getFrontmatter = async (
@@ -21,9 +21,14 @@ const getFrontmatter = async (
   slug: string
 ): Promise<Record<string, unknown>> => {
   const source = fetchBlogPost(lang, slug)
-  const { frontmatter } = await parseBlogPost(source)
+  const { data } = parseBlogPost(source)
 
-  return frontmatter
+  return data
+}
+
+export const getBlogPost = (lang: Language, slug: string) => {
+  const source = fetchBlogPost(lang, slug)
+  return parseBlogPost(source)
 }
 
 export const generateBlogMetaData = async (
