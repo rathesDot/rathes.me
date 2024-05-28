@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority"
 import Link from "next/link"
 
 const rootStyles = cva(
-  "bg-neutral-950/70 backdrop-blur-sm sticky top-0 border-b border-neutral-800"
+  "bg-neutral-950/70 sticky top-0 border-b border-neutral-800 z-20"
 )
 
 export const Root: React.FC<ComponentPropsWithRef<"nav">> = ({
@@ -12,7 +12,7 @@ export const Root: React.FC<ComponentPropsWithRef<"nav">> = ({
 }) => <nav className={rootStyles({ className })} {...props} />
 
 const menuStyles = cva(
-  "container flex max-w-xl items-center justify-between gap-4 overflow-x-auto px-2 sm:px-6 md:px-12"
+  "container flex max-w-xl backdrop-blur-sm items-center justify-between gap-4 overflow-x-auto px-2 sm:px-6 md:px-12"
 )
 
 export const Menu: React.FC<ComponentPropsWithRef<"div">> = ({
@@ -37,5 +37,34 @@ export const Item: React.FC<ComponentPropsWithRef<"a">> = ({
 }) => (
   <Link href={href} className={itemStyles({ className })} {...props}>
     {children}
+  </Link>
+)
+
+const bannerStyles = cva(
+  "group flex h-8 items-center justify-center gap-1 bg-neutral-800 text-center text-sm font-semibold font-defaultSans text-neutral-50 antialiased"
+)
+
+export const Banner: React.FC<ComponentPropsWithRef<"a">> = ({
+  className,
+  children,
+  href,
+  ...props
+}) => (
+  <Link href={href} className={bannerStyles({ className })} {...props}>
+    {children}
+    <span className="origin-left transition-transform group-hover:translate-x-1">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+        className="size-5"
+      >
+        <path
+          fillRule="evenodd"
+          d="M2 10a.75.75 0 0 1 .75-.75h12.59l-2.1-1.95a.75.75 0 1 1 1.02-1.1l3.5 3.25a.75.75 0 0 1 0 1.1l-3.5 3.25a.75.75 0 1 1-1.02-1.1l2.1-1.95H2.75A.75.75 0 0 1 2 10Z"
+          clipRule="evenodd"
+        />
+      </svg>
+    </span>
   </Link>
 )
