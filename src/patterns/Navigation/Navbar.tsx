@@ -8,14 +8,21 @@ const rootStyles = cva(
 
 export const Root: React.FC<ComponentPropsWithRef<"nav">> = ({
   className,
+  ...props
+}) => <nav className={rootStyles({ className })} {...props} />
+
+const menuStyles = cva(
+  "container flex max-w-xl items-center justify-between gap-4 overflow-x-auto px-2 sm:px-6 md:px-12"
+)
+
+export const Menu: React.FC<ComponentPropsWithRef<"div">> = ({
+  className,
   children,
   ...props
 }) => (
-  <nav className={rootStyles({ className })} {...props}>
-    <div className="container flex max-w-xl items-center justify-between gap-4 overflow-x-auto px-2 sm:px-6 md:px-12">
-      {children}
-    </div>
-  </nav>
+  <div className={menuStyles({ className })} {...props}>
+    {children}
+  </div>
 )
 
 const itemStyles = cva(
