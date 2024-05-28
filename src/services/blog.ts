@@ -3,13 +3,19 @@ import fs from "fs"
 import { Metadata } from "next"
 import matter from "gray-matter"
 
+import { getSortedGroups, groupPostsByYear } from "../utils"
+import externalLinks from "../content/blog/externalLinks"
+
 type Language = "en" | "de"
 
-const fetchBlogPost = (lang: Language, slug: string) => {
-  return fs.readFileSync(
-    path.join(process.cwd(), `./src/content/blog/${lang}/${slug}.mdx`),
-    "utf-8"
-  )
+const languages = ["en", "de"]
+const getBlogPath = () => path.join(process.cwd(), "./src/content/blog")
+
+const getFileFromSlug = (slug: string): string => `${slug}.mdx`
+const getSlugFromFile = (file: string): string => path.basename(file, ".mdx")
+
+const fetchBlogPost = (lang: Language, file: string) => {
+  return fs.readFileSync(path.join(getBlogPath(), `./${lang}/${file}`), "utf-8")
 }
 
 const parseBlogPost = (source: string) => {
@@ -20,15 +26,37 @@ const getFrontmatter = async (
   lang: Language,
   slug: string
 ): Promise<Record<string, unknown>> => {
-  const source = fetchBlogPost(lang, slug)
+  const source = fetchBlogPost(lang, getFileFromSlug(slug))
   const { data } = parseBlogPost(source)
 
   return data
 }
 
 export const getBlogPost = (lang: Language, slug: string) => {
-  const source = fetchBlogPost(lang, slug)
+  const source = fetchBlogPost(lang, getFileFromSlug(slug))
   return parseBlogPost(source)
+}
+
+const getPostsByLang = (lang: Language) =>
+  fs.readdirSync(path.join(getBlogPath(), lang))
+
+export const getAllBlogPosts = () => {
+  const posts = languages
+    .map((language: Language) =>
+      getPostsByLang(language).map((entry) => {
+        const source = fetchBlogPost(language, entry)
+        const { data: frontmatter } = matter(source)
+
+        return {
+          link: `/blog/${language}/${getSlugFromFile(entry)}`,
+          title: frontmatter.title,
+          date: frontmatter.date,
+        }
+      })
+    )
+    .flat()
+
+  return getSortedGroups(groupPostsByYear([...posts, ...externalLinks]))
 }
 
 export const generateBlogMetaData = async (
@@ -54,14 +82,12 @@ export const generateBlogMetaData = async (
 }
 
 export const generateBlogParams = (): { lang: Language; slug: string }[] => {
-  const blogsPath = path.join(process.cwd(), "./src/content/blog")
-  const languages = ["en", "de"]
-
   return languages
     .map((lang: Language) =>
-      fs
-        .readdirSync(path.join(blogsPath, lang))
-        .map((entry) => ({ lang, slug: `${path.basename(entry, ".mdx")}` }))
+      getPostsByLang(lang).map((entry) => ({
+        lang,
+        slug: `${path.basename(entry, ".mdx")}`,
+      }))
     )
     .flat()
 }
