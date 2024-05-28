@@ -1,9 +1,9 @@
 import React from "react"
 import { cx } from "class-variance-authority"
 
+import * as Navbar from "../../patterns/Navbar"
 import { Footer } from "../../patterns"
 import { Logo } from "../../components"
-import * as Navbar from "../../patterns/Navigation/Navbar"
 
 const PageLayout: React.FC<React.PropsWithChildren<{ className?: string }>> = ({
   children,
