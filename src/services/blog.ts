@@ -3,7 +3,7 @@ import fs from "fs"
 import { Metadata } from "next"
 import matter from "gray-matter"
 
-import { getSortedGroups, groupPostsByYear } from "../utils"
+import { getSortedGroups, groupPostsByYear, Post } from "../utils"
 import externalLinks from "../content/blog/externalLinks"
 
 type Language = "en" | "de"
@@ -57,6 +57,25 @@ export const getAllBlogPosts = () => {
     .flat()
 
   return getSortedGroups(groupPostsByYear([...posts, ...externalLinks]))
+}
+
+export const getFilteredBlogPosts = (
+  searchTerm?: string
+): [string, Post[]][] => {
+  const posts = getAllBlogPosts()
+
+  if (!searchTerm || searchTerm === "") return posts
+
+  return posts.map(([year, posts]) => {
+    return [
+      year,
+      posts.filter(
+        (post) =>
+          post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          post.link.toLowerCase().includes(searchTerm.toLowerCase())
+      ),
+    ]
+  })
 }
 
 export const generateBlogMetaData = async (
