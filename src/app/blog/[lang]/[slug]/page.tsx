@@ -79,7 +79,6 @@ const BlogPage: NextPage<{ params: Params }> = async ({ params }) => {
             source={content}
             options={{
               scope: { books },
-              /** @ts-expect-error */
               mdxOptions: { rehypePlugins: [rehypeHighlight] },
             }}
             components={components}
