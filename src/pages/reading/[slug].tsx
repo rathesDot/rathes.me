@@ -49,7 +49,10 @@ const BookDetailsPage: NextPage<
   InferGetStaticPropsType<typeof getStaticProps>
 > = (book) => {
   const { title, author, url, description, genres, rating } = book
-  const descriptionLength = useMemo(() => description.length, [description])
+  const descriptionLength = useMemo(
+    () => description?.length || 0,
+    [description]
+  )
   const [open, setOpen] = useState(descriptionLength <= MIN_DESCRIPTION_LENGTH)
   return (
     <PageLayout>
@@ -63,7 +66,7 @@ const BookDetailsPage: NextPage<
         <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-x-2 md:gap-y-6">
           <div className="col-start-1 col-end-1 row-start-1 row-end-1 md:flex md:items-center md:gap-2">
             <h2 className={smallTitle({ hiddenOnMobile: true })}>Rating</h2>
-            <Rating value={rating} />
+            <Rating value={rating || 0} />
           </div>
           <div className="col-start-1 col-end-3 row-start-2 row-end-2">
             <Link
@@ -78,7 +81,7 @@ const BookDetailsPage: NextPage<
           <div className="col-start-2 col-end-2 row-start-1 row-end-1 flex items-center gap-2">
             <h2 className={smallTitle({ hiddenOnMobile: true })}>Genres</h2>
             <div className="flex gap-2">
-              {genres.map((genre) => (
+              {(genres || []).map((genre) => (
                 <Link
                   key={genre.toLocaleLowerCase()}
                   underlined
@@ -122,10 +125,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps<Book> = async ({ params }) => {
-  const slug = params.slug
+  const slug = params?.slug
+
+  if (!slug) {
+    return { notFound: true }
+  }
 
   try {
     const book = findBookBySlug(`${slug}`, getAllBooks(data))
+
+    if (!book) throw new Error()
 
     return { props: { ...book } }
   } catch (e) {

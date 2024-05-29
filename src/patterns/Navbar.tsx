@@ -32,7 +32,7 @@ const itemStyles = cva(
 export const Item: React.FC<ComponentPropsWithRef<"a">> = ({
   className,
   children,
-  href,
+  href = "",
   ...props
 }) => (
   <Link href={href} className={itemStyles({ className })} {...props}>
@@ -47,7 +47,7 @@ const bannerStyles = cva(
 export const Banner: React.FC<ComponentPropsWithRef<"a">> = ({
   className,
   children,
-  href,
+  href = "",
   ...props
 }) => (
   <Link href={href} className={bannerStyles({ className })} {...props}>

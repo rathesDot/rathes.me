@@ -17,7 +17,10 @@ export const createSlug = (book: Book): string => {
   })
 }
 
-export const findBookBySlug = (slug: string, books: Book[]): Book => {
+export const findBookBySlug = (
+  slug: string,
+  books: Book[]
+): Book | undefined => {
   return books.find((book) => createSlug(book) === slug)
 }
 
