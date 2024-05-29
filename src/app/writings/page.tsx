@@ -4,6 +4,7 @@ import { Heading1, Link, List, ListItem, Paragraph } from "../../components"
 import { getFilteredBlogPosts } from "../../services/blog"
 
 import { SayHi } from "../../patterns"
+import { Search } from "../../patterns/Search"
 
 const WritingPage: NextPage<{
   searchParams: { [key: string]: string | string[] | undefined }
@@ -44,6 +45,9 @@ const WritingPage: NextPage<{
         </section>
 
         <div className="mt-12">
+          <div className="mb-8">
+            <Search />
+          </div>
           <List title="Books & Whitepapers">
             <ListItem link="https://learn-tamil.com">
               A Guide To Basic Tamil Grammar
