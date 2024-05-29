@@ -46,7 +46,7 @@ const WritingPage: NextPage<{
 
         <div className="mt-12">
           <div className="mb-8">
-            <Search />
+            <Search defaultValue={searchParams.q?.toString() || ""} />
           </div>
           <List title="Books & Whitepapers">
             <ListItem link="https://learn-tamil.com">
