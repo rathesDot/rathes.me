@@ -5,8 +5,10 @@ import { getFilteredBlogPosts } from "../../services/blog"
 
 import { SayHi } from "../../patterns"
 
-const WritingPage: NextPage = () => {
-  const posts = getFilteredBlogPosts("")
+const WritingPage: NextPage<{
+  searchParams: { [key: string]: string | string[] | undefined }
+}> = ({ searchParams }) => {
+  const posts = getFilteredBlogPosts(searchParams.q?.toString() || "")
 
   return (
     <PageLayout>
