@@ -1,10 +1,16 @@
-import { NextPage } from "next"
+import { NextPage, Metadata } from "next"
 import { PageLayout } from "../../layouts"
 import { Heading1, Link, List, ListItem, Paragraph } from "../../components"
 import { getFilteredBlogPosts } from "../../services/blog"
 
 import { SayHi } from "../../patterns"
 import { Search } from "../../patterns/Search"
+
+export const metadata: Metadata = {
+  title: "Writing",
+  description:
+    "I write about all sort of topics, not just tech! It could be related to start ups, design or just some of my personal thoughts",
+}
 
 const WritingPage: NextPage<{
   searchParams: { [key: string]: string | string[] | undefined }
