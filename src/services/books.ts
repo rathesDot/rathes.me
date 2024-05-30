@@ -33,3 +33,24 @@ export const createSlug = (book: Book): string => {
     lower: true,
   })
 }
+
+export const findBookBySlug = (slug: string): Book | undefined => {
+  return getAllBooks().find((book) => createSlug(book) === slug)
+}
+
+export const generateBookMetadata = (slug: string) => {
+  const book = findBookBySlug(slug)
+
+  if (!book) throw new Error(`No book found for ${slug}`)
+
+  return {
+    title: book.title,
+    description: book.description,
+  }
+}
+
+export const generateBookParams = () => {
+  return getAllBooks()
+    .filter((book) => !!book.rating)
+    .map((book) => ({ slug: createSlug(book) }))
+}
