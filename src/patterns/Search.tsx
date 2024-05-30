@@ -19,7 +19,7 @@ export const Search: React.FC<ComponentPropsWithRef<"input">> = ({
       params.delete("q")
     }
 
-    replace(`${pathname}?${params.toString()}`)
+    replace(`${pathname}?${params.toString()}`, { scroll: false })
   }
 
   return (
