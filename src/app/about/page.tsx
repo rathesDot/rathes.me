@@ -1,36 +1,23 @@
-import React, { useState } from "react"
-import { NextPage } from "next"
+import { Metadata, NextPage } from "next"
 
-import { PageLayout } from "../layouts"
+import { PageLayout } from "../../layouts"
+import { SayHi } from "../../patterns"
+import { Heading1, List, ListItem, Paragraph } from "../../components"
 
-import { Heading1, List, ListItem, Paragraph, Meta } from "../components"
+import { ExpandableSection } from "./ExpandableSection"
 
-import { SayHi } from "../patterns"
+export const metaData: Metadata = {
+  title: "About me",
+}
 
-import { cva } from "class-variance-authority"
-
-const readMore = cva(
-  "relative delay-100 after:h-8 after:bg-gradient-to-t after:from-neutral-950 after:absolute after:bottom-0 after:inset-x-0 transition-all overflow-hidden md:columns-2 md:after:hidden md:[&>p]:mt-0 md:mt-8 md:gap-12 lg:columns-3 lg:max-w-5xl",
-  {
-    variants: {
-      open: {
-        false: "max-h-56 after:opacity-100 md:max-h-none",
-        true: "max-h-[540px] after:opacity-0 md:max-h-none",
-      },
-    },
-  }
-)
-
-const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => {
-  const [open, setOpen] = useState(false)
+const AboutPage: NextPage = () => {
   return (
     <PageLayout>
-      <Meta title="About me" />
       <div className="max-w-[720px] p-8 md:px-14 lg:max-w-none">
         <Heading1 className="lg:max-w-2xl">
           I'm a front-end engineer with over 10 years of web experience.
         </Heading1>
-        <section className={readMore({ open })}>
+        <ExpandableSection>
           <Paragraph>
             I started working as a web designer and web developer at a very
             young age. I earned my first money as a web designer creating custom
@@ -50,14 +37,7 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => {
             connecting them with each other. Alongside that, I'm passionate
             about learning new languages and cultures.
           </Paragraph>
-        </section>
-        <button
-          type="button"
-          onClick={() => setOpen(!open)}
-          className="mt-4 inline-block text-white underline underline-offset-2 md:hidden"
-        >
-          {open ? "Read less" : "Continue Reading"}
-        </button>
+        </ExpandableSection>
 
         <section className="mt-12 md:mt-32">
           <List title="Work Experience" className="md:flex md:gap-12">
@@ -126,4 +106,4 @@ const AboutMe: React.FC<React.PropsWithChildren<NextPage>> = () => {
   )
 }
 
-export default AboutMe
+export default AboutPage
