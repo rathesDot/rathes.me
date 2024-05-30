@@ -1,6 +1,5 @@
 import React from "react"
 
-import { List, ListItem, Paragraph, Heading1 } from "../components"
 import { cva } from "class-variance-authority"
 import Link from "next/link"
 
