@@ -1,40 +1,33 @@
-import { NextPage } from "next"
-import React, { useMemo, useState } from "react"
+import React from "react"
+import { Metadata, NextPage } from "next"
 
-import data from "../../data/books.json"
+import { createSlug, getFilteredList } from "../../services/books"
 
-import { Book, createSlug } from "../utils/books"
+import { PageLayout } from "../../layouts"
 
-import { PageLayout } from "../layouts"
+import { Search } from "../../patterns/Search"
+import { SayHi } from "../../patterns"
+
 import {
   Heading1,
-  Meta,
   List,
   ListItem,
-  Separator,
-  TextField,
   Paragraph,
-} from "../components"
-import { SayHi } from "../patterns"
+  Separator,
+} from "../../components"
 
-const ReadingList: NextPage = () => {
-  const [searchTerm, setSearchTerm] = useState("")
-  const filteredList: [string, Book[]][] = useMemo(() => {
-    return (Object.entries(data) as [string, Book[]][]).map(([year, books]) => {
-      return [
-        year,
-        books.filter(
-          (book) =>
-            book.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            book.author.toLowerCase().includes(searchTerm.toLowerCase())
-        ),
-      ]
-    })
-  }, [searchTerm])
+export const metadata: Metadata = {
+  title: "Writing",
+  description: "I love to read, I read any book that I can get my hands on.",
+}
+
+const ReadingPage: NextPage<{
+  searchParams: { [key: string]: string | string[] | undefined }
+}> = ({ searchParams }) => {
+  const books = getFilteredList(searchParams.q?.toString() || "")
 
   return (
     <PageLayout>
-      <Meta title="Reading" />
       <div className="max-w-xl flex-grow p-8 md:px-14">
         <section>
           <Heading1>Reading</Heading1>
@@ -54,14 +47,9 @@ const ReadingList: NextPage = () => {
         </section>
         <section className="mt-12">
           <div className="mb-8">
-            <TextField
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              aria-label="Filter list"
-              placeholder="Filter list..."
-            />
+            <Search defaultValue={searchParams.q?.toString() || ""} />
           </div>
-          {filteredList.map(([listTitle, books], index, list) => {
+          {books.map(([listTitle, books], index, list) => {
             if (!books.length) {
               return
             }
@@ -96,4 +84,4 @@ const ReadingList: NextPage = () => {
   )
 }
 
-export default ReadingList
+export default ReadingPage
