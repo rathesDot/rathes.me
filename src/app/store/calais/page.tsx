@@ -1,18 +1,20 @@
-import React from "react"
-import { NextPage } from "next"
+import { Metadata, NextPage } from "next"
 import Image from "next/image"
 
-import { PageLayout } from "../../layouts"
+import { PageLayout } from "../../../layouts"
+import { Heading1, Link, Paragraph } from "../../../components"
 
-import { Paragraph, Meta, Heading1, Link } from "../../components"
+import CalaisTemplateLarge from "../../../assets/templates/calais-large.png"
+import CalaisPreviewDesktop from "../../../assets/templates/calais-preview-home-desktop.png"
+import CalaisPreviewMobile from "../../../assets/templates/calais-preview-mobile.png"
 
-import CalaisTemplateLarge from "../../assets/templates/calais-large.png"
-import CalaisPreviewDesktop from "../../assets/templates/calais-preview-home-desktop.png"
-import CalaisPreviewMobile from "../../assets/templates/calais-preview-mobile.png"
+export const metadata: Metadata = {
+  title: "Figma Template: Calais",
+  description: "I love to read, I read any book that I can get my hands on.",
+}
 
-const IndexPage: React.FC<React.PropsWithChildren<NextPage>> = () => (
+const CalaisPage: NextPage = () => (
   <PageLayout className="md:flex md:flex-grow md:flex-col md:justify-center">
-    <Meta title={`Figma Template: Calais`} />
     <section className="md:flex md:gap-8 md:px-14">
       <div className="flex flex-col gap-4">
         <Image
@@ -67,4 +69,4 @@ const IndexPage: React.FC<React.PropsWithChildren<NextPage>> = () => (
   </PageLayout>
 )
 
-export default IndexPage
+export default CalaisPage
