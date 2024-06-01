@@ -3,7 +3,6 @@ import localFont from "next/font/local"
 import Fathom from "../components/Fathom"
 
 import * as Navbar from "../patterns/Navbar"
-import { Footer } from "../patterns"
 import { Logo } from "../components"
 
 import "../styles/globals.css"
@@ -55,7 +54,17 @@ export default function RootLayout({
             </Navbar.Menu>
           </Navbar.Root>
           <div className="mt-8">{children}</div>
-          <Footer />
+          <footer className="inline-flex gap-1 p-8 text-xs text-neutral-400 md:px-14">
+            <span>&copy; {new Date().getFullYear()}</span>
+            <span>/</span>
+            <a
+              className="mb-4 font-medium text-neutral-400 underline decoration-neutral-600 decoration-dotted underline-offset-2 antialiased transition-colors hover:decoration-neutral-400"
+              href="https://mozhi.app/@tamizhographer"
+              target="_blank"
+            >
+              @tamizhographer
+            </a>
+          </footer>
         </main>
       </body>
     </html>
