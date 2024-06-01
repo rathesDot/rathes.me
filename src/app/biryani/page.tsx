@@ -1,8 +1,12 @@
-import { NextPage } from "next"
+import { Metadata, NextPage } from "next"
+import { PageLayout } from "../../layouts"
+import { Heading1, Heading2, Paragraph } from "../../components"
 
-import { PageLayout } from "../layouts"
-import { useState } from "react"
-import { Heading1, Heading2, Paragraph, TextField } from "../components"
+export const metadata: Metadata = {
+  title: "Biryani",
+  description:
+    "My own recipe is based off the typical Chennai style biryani and it's developed in a way that it can be easily replicated in Western countries and kitchens without losing the original taste of a good biryani.",
+}
 
 // ingredients for 1kg
 const ingredients = [
@@ -26,7 +30,6 @@ const ingredients = [
 ]
 
 const BiryaniPage: NextPage = () => {
-  const [amountOfBiryani, setAmountOfBiryani] = useState<number>(1)
   return (
     <PageLayout>
       <section className="max-w-xl p-8 md:px-14">
