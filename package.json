@@ -8,7 +8,7 @@
     "@mdx-js/mdx": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "autoprefixer": "^10.4.19",
-    "class-variance-authority": "^0.7.0",
+    "cva": "^1.0.0-beta.1",
     "date-fns": "^3.6.0",
     "fathom-client": "^3.6.0",
     "gray-matter": "^4.0.3",
