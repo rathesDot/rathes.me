@@ -1,16 +1,12 @@
-import { HTMLAttributes } from "react"
+import { ComponentPropsWithRef } from "react"
 
 import { cva } from "../../../cva.config"
 
 const styles = cva({
-  base: "mt-3 mb-4 text-base leading-snug font-sans antialiased font-normal text-neutral-300/70 md:text-lg",
+  base: "mb-4 text-neutral-400 antialiased last-of-type:mb-0",
 })
 
-export const Paragraph: React.FC<HTMLAttributes<HTMLParagraphElement>> = ({
+export const Paragraph: React.FC<ComponentPropsWithRef<"p">> = ({
   className,
   ...props
-}) => (
-  <p className={styles({ className })} {...props}>
-    {props.children}
-  </p>
-)
+}) => <p className={styles({ className })} {...props} />
