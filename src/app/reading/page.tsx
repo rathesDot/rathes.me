@@ -4,7 +4,7 @@ import { Metadata, NextPage } from "next"
 import { createSlug, getFilteredList } from "../../services/books"
 
 import { Search } from "../../patterns/Search"
-import { SayHi } from "../../patterns"
+import { SayHi } from "../../patterns/SayHi"
 
 import {
   Heading1,

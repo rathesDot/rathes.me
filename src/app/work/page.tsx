@@ -1,7 +1,7 @@
 import { Metadata, NextPage } from "next"
 import Image from "next/image"
 
-import { SayHi } from "../../patterns"
+import { SayHi } from "../../patterns/SayHi"
 import {
   Heading1,
   Paragraph,

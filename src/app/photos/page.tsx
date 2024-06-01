@@ -2,7 +2,7 @@ import { Metadata, NextPage } from "next"
 
 import { Heading1, Link, Paragraph } from "../../components"
 import { Photo } from "../../patterns/Photo"
-import { SayHi } from "../../patterns"
+import { SayHi } from "../../patterns/SayHi"
 
 import Iceland1 from "../../assets/photos/202402_iceland_1.jpg"
 import Iceland2 from "../../assets/photos/202402_iceland_2.jpg"

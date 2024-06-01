@@ -2,7 +2,7 @@ import { NextPage, Metadata } from "next"
 
 import { getFilteredBlogPosts } from "../../services/blog"
 
-import { SayHi } from "../../patterns"
+import { SayHi } from "../../patterns/SayHi"
 import { Search } from "../../patterns/Search"
 import { Heading1, Link, List, ListItem, Paragraph } from "../../components"
 
