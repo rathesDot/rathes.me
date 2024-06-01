@@ -12,7 +12,7 @@ export const Root: React.FC<ComponentPropsWithRef<"nav">> = ({
 }) => <nav className={rootStyles({ className })} {...props} />
 
 const menuStyles = cva(
-  "container flex max-w-xl backdrop-blur-sm items-center justify-between gap-4 overflow-x-auto px-2 sm:px-6 md:px-12"
+  "container mx-auto flex max-w-xl backdrop-blur-sm items-center justify-between gap-4 overflow-x-auto px-2 md:px-0"
 )
 
 export const Menu: React.FC<ComponentPropsWithRef<"div">> = ({

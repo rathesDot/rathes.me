@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const WorkPage: NextPage = () => {
   return (
     <div>
-      <section className="max-w-xl p-8 md:px-14">
+      <section>
         <Heading1>My work</Heading1>
         <Paragraph>
           I work as a product engineer at Intercom at the moment, but I also
@@ -36,16 +36,16 @@ const WorkPage: NextPage = () => {
       </section>
 
       <section className="my-16 flex flex-col gap-4">
-        <Heading2 size={4} className="mx-8 text-neutral-400 md:mx-14">
+        <Heading2 size={4} className="text-neutral-400">
           Templates
         </Heading2>
-        <section className="md:flex md:gap-8 md:px-14">
+        <section>
           <Image
             src={CalaisTemplate}
             alt="Preview of template named 'Calais'"
             width={480}
           />
-          <div className=" max-w-md px-8 py-4">
+          <div className="py-4">
             <Heading3 size={2}>Calais</Heading3>
             <Paragraph>
               A minimal personal portfolio template best for someone who wants
@@ -58,7 +58,7 @@ const WorkPage: NextPage = () => {
         </section>
       </section>
 
-      <section className="my-16 flex max-w-xl flex-col gap-4 p-8 md:px-14">
+      <section className="my-16 flex max-w-xl flex-col gap-4">
         <Heading2 size={4} className="text-neutral-400">
           Active projects
         </Heading2>
@@ -114,16 +114,20 @@ const WorkPage: NextPage = () => {
               The aim of this SaaS is to enable every team to use feature flags
               straight from the beginning.
             </Paragraph>
-            <Link disabled className="italic text-neutral-50/30">
-              Coming soon
+            <Link
+              underlined
+              href="https://getkodi.com"
+              className="text-neutral-50"
+            >
+              View project
             </Link>
           </section>
         </div>
       </section>
 
-      <Separator className="mx-8 md:mx-14" />
+      <Separator />
 
-      <section className="mt-16 max-w-xl p-8 md:px-14">
+      <section className="mt-16">
         <Heading2 className="scroll-mt-32" id="public-speaking">
           Public Speaking
         </Heading2>
@@ -209,7 +213,7 @@ const WorkPage: NextPage = () => {
           </article>
         </div>
       </section>
-      <section className="my-16 max-w-xl p-8 md:px-14">
+      <section className="my-16 max-w-xl">
         <SayHi />
       </section>
     </div>

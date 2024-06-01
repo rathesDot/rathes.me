@@ -18,7 +18,7 @@ const WritingPage: NextPage<{
   const posts = getFilteredBlogPosts(searchParams.q?.toString() || "")
 
   return (
-    <section className="max-w-xl p-8 md:px-14">
+    <section className="max-w-xl">
       <section>
         <Heading1>Writing</Heading1>
         <Paragraph>

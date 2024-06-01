@@ -31,7 +31,7 @@ const ingredients = [
 const BiryaniPage: NextPage = () => {
   return (
     <div>
-      <section className="max-w-xl p-8 md:px-14">
+      <section>
         <Heading1>Chicken Biryani Recipe</Heading1>
         <Paragraph>
           One of my favorite dishes is a good chicken biryani. There are several
@@ -45,7 +45,7 @@ const BiryaniPage: NextPage = () => {
           biryani.
         </Paragraph>
       </section>
-      <div className="flex-grow p-8 md:px-14 lg:flex lg:gap-8">
+      <div className="mt-8 flex-grow md:-mx-8 md:flex md:gap-8">
         <section className="flex-none lg:min-w-56">
           <Heading2 size={4} className="text-neutral-400">
             Ingredients

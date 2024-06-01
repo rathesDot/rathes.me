@@ -11,33 +11,33 @@ export const metadata: Metadata = {
 
 const AboutPage: NextPage = () => {
   return (
-    <div className="max-w-[720px] p-8 md:px-14 lg:max-w-none">
-      <Heading1 className="lg:max-w-2xl">
+    <div className="">
+      <h1 className="mb-2 mt-8 text-2xl font-bold leading-tight tracking-[-0.01em] text-white antialiased">
         I'm a front-end engineer with over 10 years of web experience.
-      </Heading1>
+      </h1>
       <ExpandableSection>
-        <Paragraph>
+        <p className="mb-4 text-neutral-400 antialiased last-of-type:mb-0">
           I started working as a web designer and web developer at a very young
           age. I earned my first money as a web designer creating custom MySpace
           layouts when I was just 14. In 2008, at the age of 16, I founded my
           own company for web design and development. Since then, I have worked
           with several clients doing quite a wide range of tasks.
-        </Paragraph>
-        <Paragraph>
+        </p>
+        <p className="mb-4 text-neutral-400 antialiased last-of-type:mb-0">
           For more than 10 years, I have been working as a web developer doing
           problem-solving as a back-end engineer using languages such as PHP,
           Python or Node.js but also as a front-end developer working with
           HTML/CSS and JavaScript.
-        </Paragraph>
-        <Paragraph>
+        </p>
+        <p className="mb-4 text-neutral-400 antialiased last-of-type:mb-0">
           However, my real passion lies beyond software and development. I'm
           more into solving problems for people, make their lives easier and
           connecting them with each other. Alongside that, I'm passionate about
           learning new languages and cultures.
-        </Paragraph>
+        </p>
       </ExpandableSection>
 
-      <section className="mt-12 md:mt-32">
+      <section className="mt-12 md:mt-16">
         <List title="Work Experience" className="md:flex md:gap-12">
           <div className="flex flex-col gap-6">
             <ListItem subtitle="April 2024 — now">
@@ -55,8 +55,6 @@ const AboutPage: NextPage = () => {
             <ListItem subtitle="May 2018 — January 2020">
               Software Engineer / Teamleader
             </ListItem>
-          </div>
-          <div className="mt-6 flex flex-col gap-6 md:mt-0">
             <ListItem subtitle="May 2016 — October 2021">
               Founder / Aheenam
             </ListItem>
@@ -76,7 +74,7 @@ const AboutPage: NextPage = () => {
         </List>
         <a
           href="/files/resume.pdf"
-          className="mt-8 inline-flex items-center gap-1"
+          className="mt-8 flex items-center gap-1 font-medium text-neutral-300 underline decoration-neutral-600 underline-offset-2 antialiased transition-colors hover:decoration-neutral-400"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

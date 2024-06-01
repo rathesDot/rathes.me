@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 const PhotoPage: NextPage = () => {
   return (
     <div>
-      <section className="max-w-lg p-8 md:px-14">
+      <section className="">
         <Heading1>Photography</Heading1>
         <Paragraph>
           Aside from reading and writing, photography is the latest of my
@@ -52,7 +52,7 @@ const PhotoPage: NextPage = () => {
           .
         </Paragraph>
       </section>
-      <section className="flex flex-col gap-8 md:flex-row md:flex-wrap md:p-8">
+      <section className="-mx-4 mt-16 flex flex-col gap-8 md:-mx-[56px] md:flex-row md:flex-wrap">
         <Photo
           image={Iceland1}
           title="Steam coming out of hardened Lava"
@@ -166,7 +166,7 @@ const PhotoPage: NextPage = () => {
           mode="landscape"
         />
       </section>
-      <div className="mt-16 p-8 md:px-14">
+      <div className="mt-16">
         <SayHi />
       </div>
     </div>
