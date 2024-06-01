@@ -157,20 +157,57 @@ const WorkPage: NextPage = () => {
             </ListItem>
           </List>
           <Separator />
-          <List title="Abstracts" className="flex flex-col gap-6">
-            <ListItem
-              link="/talks/meetings"
-              subtitle="Developing a meeting culture that employees will love"
-            >
-              You probably don’t need that meeting
-            </ListItem>
-            <ListItem
-              link="/talks/managing-time"
-              subtitle="A talk about what people call time management"
-            >
+          <Heading2 size={4} className="text-neutral-400">
+            Abstracts
+          </Heading2>
+          <article className="my-6">
+            <Heading3 className="mb-2">
+              You probably don't need that meeting
+              <span className="block text-base font-medium text-neutral-500">
+                Developing a meeting culture that employees will love
+              </span>
+            </Heading3>
+            <p className="mb-2 text-base text-neutral-400 antialiased">
+              Be honest with yourself. How many of your meetings do you think
+              were useful? And how many of them were productive? In this talk,
+              we will talk about developing a meeting culture that everybody in
+              the company will love!
+            </p>
+            <p className="mb-2 text-base text-neutral-400 antialiased">
+              You will learn how to avoid unnecessary meetings, how other types
+              of communication can be more effective and efficient. You will
+              also learn how to conduct those unavoidable meetings so that they
+              are productive and don't feel like a waste of time.
+            </p>
+            <p className="mb-2 text-base text-neutral-400 antialiased">
+              After this talk, you will be able to avoid useless meetings and
+              make the necessary meetings more productive.
+            </p>
+          </article>
+          <article className="my-6">
+            <Heading3 className="mb-2">
               You can't manage time
-            </ListItem>
-          </List>
+              <span className="block text-base font-medium text-neutral-500">
+                A talk about what people call time management
+              </span>
+            </Heading3>
+            <p className="mb-2 text-base text-neutral-400 antialiased">
+              How many different things did you already try out to be more
+              productive and get more things done? How many tools do you own to
+              accomplish more? And did it help?
+            </p>
+            <p className="mb-2 text-base text-neutral-400 antialiased">
+              This talk focusses on what time management is about, why you can't
+              manage time. You will learn about the emotional aspect of time
+              management and the essential habits that will help you to get more
+              things done.
+            </p>
+            <p className="mb-2 text-base text-neutral-400 antialiased">
+              After this talk, you will have an idea of what you can work on if
+              you want to get more things done. And you will understand what
+              time management means.
+            </p>
+          </article>
         </div>
       </section>
       <section className="my-16 max-w-xl p-8 md:px-14">
