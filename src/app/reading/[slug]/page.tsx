@@ -3,7 +3,6 @@ import { notFound } from "next/navigation"
 import { cva } from "class-variance-authority"
 
 import {
-  Book,
   findBookBySlug,
   generateBookMetadata,
   generateBookParams,
@@ -11,7 +10,7 @@ import {
 
 import { PageLayout } from "../../../layouts"
 
-import { Meta, Heading1, Paragraph, Link } from "../../../components"
+import { Heading1, Paragraph, Link } from "../../../components"
 import { Rating } from "../../../components/Rating"
 import { BookSchema } from "../../../components/BookSchema"
 
@@ -50,7 +49,6 @@ const BookDetailsPage: NextPage<{ params: { slug: string } }> = ({
 
   return (
     <PageLayout>
-      <Meta title={`${title} by ${author}`} />
       <BookSchema book={book} />
       <div className="flex max-w-xl flex-col gap-4 p-8 md:gap-6 md:px-14">
         <header>
