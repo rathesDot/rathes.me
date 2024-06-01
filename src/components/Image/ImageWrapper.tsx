@@ -1,16 +1,14 @@
 import { HTMLProps, PropsWithChildren } from "react"
-import { cva, VariantProps } from "class-variance-authority"
+import { cva, VariantProps } from "cva"
 
-const wrapperStyles = cva(
-  "relative block -mx-8 my-4 overflow-hidden [&_img]:object-cover [&_img]:object-center",
-  {
-    variants: {
-      aspect: {
-        "16/9": "aspect-video",
-      },
+const wrapperStyles = cva({
+  base: "relative block -mx-8 my-4 overflow-hidden [&_img]:object-cover [&_img]:object-center",
+  variants: {
+    aspect: {
+      "16/9": "aspect-video",
     },
-  }
-)
+  },
+})
 
 export const ImageWrapper: React.FC<
   PropsWithChildren<

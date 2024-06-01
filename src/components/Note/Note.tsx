@@ -1,17 +1,15 @@
 import { HTMLAttributes } from "react"
 
-import { cva } from "class-variance-authority"
+import { cva } from "cva"
 
-const styles = cva(
-  "my-8 p-8 bg-neutral-800/30 outline outline-neutral-800 text-neutral-400 rounded",
-  {
-    variants: {
-      fontFamily: {
-        mono: "font-mono",
-      },
+const styles = cva({
+  base: "my-8 p-8 bg-neutral-800/30 outline outline-neutral-800 text-neutral-400 rounded",
+  variants: {
+    fontFamily: {
+      mono: "font-mono",
     },
-  }
-)
+  },
+})
 
 export const Note: React.FC<
   HTMLAttributes<HTMLDivElement> & { fontFamily?: "mono"; title?: string }

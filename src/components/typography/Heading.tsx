@@ -1,7 +1,8 @@
 import React, { HTMLProps } from "react"
-import { cva, cx, VariantProps } from "class-variance-authority"
+import { cva, VariantProps } from "cva"
 
-export const heading = cva("antialiased font-sans", {
+export const heading = cva({
+  base: "antialiased font-sans",
   variants: {
     size: {
       1: [
@@ -29,23 +30,23 @@ export type HeadingProps = VariantProps<typeof heading>
 export const Heading1: React.FC<
   HTMLProps<HTMLHeadingElement> & HeadingProps
 > = ({ className, size = 1, ...props }) => (
-  <h1 {...props} className={cx(heading({ size }), className)} />
+  <h1 {...props} className={heading({ size, className })} />
 )
 
 export const Heading2: React.FC<
   HTMLProps<HTMLHeadingElement> & HeadingProps
 > = ({ className, size = 2, ...props }) => (
-  <h2 {...props} className={cx(heading({ size }), className)} />
+  <h2 {...props} className={heading({ size, className })} />
 )
 
 export const Heading3: React.FC<
   HTMLProps<HTMLHeadingElement> & HeadingProps
 > = ({ className, size = 3, ...props }) => (
-  <h3 {...props} className={cx(heading({ size }), className)} />
+  <h3 {...props} className={heading({ size, className })} />
 )
 
 export const Heading4: React.FC<
   HTMLProps<HTMLHeadingElement> & HeadingProps
 > = ({ className, size = 4, ...props }) => (
-  <h4 {...props} className={cx(heading({ size }), className)} />
+  <h4 {...props} className={heading({ size, className })} />
 )

@@ -1,9 +1,9 @@
 import { HTMLProps } from "react"
-import { cva } from "class-variance-authority"
+import { cva } from "cva"
 
-const styles = cva(
-  "my-8 -mx-8 overflow-x-auto border px-[1em] py-8 border-neutral-800 bg-neutral-900"
-)
+const styles = cva({
+  base: "my-8 -mx-8 overflow-x-auto border px-[1em] py-8 border-neutral-800 bg-neutral-900",
+})
 
 export const CodeBlock: React.FC<HTMLProps<HTMLPreElement>> = ({
   className,

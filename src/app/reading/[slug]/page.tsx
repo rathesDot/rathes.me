@@ -1,6 +1,6 @@
 import { Metadata, NextPage } from "next"
 import { notFound } from "next/navigation"
-import { cva } from "class-variance-authority"
+import { cva } from "cva"
 
 import {
   findBookBySlug,
@@ -26,7 +26,8 @@ export async function generateStaticParams() {
   return generateBookParams()
 }
 
-const smallTitle = cva("text-xs text-neutral-500 antialiased md:text-sm", {
+const smallTitle = cva({
+  base: "text-xs text-neutral-500 antialiased md:text-sm",
   variants: {
     hiddenOnMobile: {
       true: "hidden  md:block",

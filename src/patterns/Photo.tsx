@@ -1,10 +1,11 @@
 import React from "react"
-import { cva } from "class-variance-authority"
+import { cva } from "cva"
 import Image, { StaticImageData } from "next/image"
 
 type PhotoMode = "portrait" | "landscape"
 
-const container = cva("flex flex-col flex-none gap-1", {
+const container = cva({
+  base: "flex flex-col flex-none gap-1",
   variants: {
     mode: {
       landscape: "md:max-w-[672px]",

@@ -1,7 +1,7 @@
 import React, { HTMLProps } from "react"
-import { cva, cx, VariantProps } from "class-variance-authority"
+import { cva, VariantProps } from "cva"
 
-export const link = cva(null, {
+export const link = cva({
   variants: {
     underlined: {
       true: ["underline"],
@@ -16,5 +16,5 @@ export const link = cva(null, {
 export const Link: React.FC<
   HTMLProps<HTMLAnchorElement> & VariantProps<typeof link>
 > = ({ className, underlined, ...props }) => (
-  <a {...props} className={cx(link({ underlined }), className)} />
+  <a {...props} className={link({ underlined, className })} />
 )

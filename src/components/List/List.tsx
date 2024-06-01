@@ -1,6 +1,6 @@
 import React, { HTMLProps } from "react"
 import RouterLink from "next/link"
-import { cx } from "class-variance-authority"
+import { cx } from "cva"
 
 import { Heading2, Link } from ".."
 

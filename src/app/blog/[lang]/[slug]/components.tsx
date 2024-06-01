@@ -1,9 +1,10 @@
 import { ComponentPropsWithRef } from "react"
-import { cva } from "class-variance-authority"
+import { cva } from "cva"
 
 import { List, ListItem, Note } from "../../../../components"
 
-export const heading = cva("text-white antialiased mt-8", {
+export const heading = cva({
+  base: "text-white antialiased mt-8",
   variants: {
     level: {
       h1: "text-2xl font-bold tracking-[-0.01em] leading-tight",
@@ -14,41 +15,44 @@ export const heading = cva("text-white antialiased mt-8", {
   },
 })
 
-const paragraph = cva("text-neutral-400 antialiased mb-4 last-of-type:mb-0")
+const paragraph = cva({
+  base: "text-neutral-400 antialiased mb-4 last-of-type:mb-0",
+})
 
-export const link = cva(
-  "text-neutral-300 underline underline-offset-2 decoration-neutral-600 hover:decoration-neutral-400 transition-colors font-medium antialiased mb-4"
-)
+export const link = cva({
+  base: "text-neutral-300 underline underline-offset-2 decoration-neutral-600 hover:decoration-neutral-400 transition-colors font-medium antialiased mb-4",
+})
 
-const image = cva(
-  "relative block my-4 [&_img]:object-cover [&_img]:object-center"
-)
+const image = cva({
+  base: "relative block my-4 [&_img]:object-cover [&_img]:object-center",
+})
 
-export const caption = cva("text-neutral-400 block my-1 text-xs")
+export const caption = cva({ base: "text-neutral-400 block my-1 text-xs" })
 
-const hr = cva(
-  "h-auto border-none leading-none my-8 text-neutral-600 antialiased font-semibold before:block before:content-['*_*_*']"
-)
+const hr = cva({
+  base: "h-auto border-none leading-none my-8 text-neutral-600 antialiased font-semibold before:block before:content-['*_*_*']",
+})
 
-const orderedList = cva(
-  "list-decimal pl-6 my-4 space-y-4 marker:text-neutral-400/70"
-)
-const unorderedList = cva(
-  "list-disc pl-6 my-4 space-y-4 marker:text-neutral-400/70"
-)
-const listItem = cva("text-neutral-400 antialiased [&_p]:mb-0")
+const orderedList = cva({
+  base: "list-decimal pl-6 my-4 space-y-4 marker:text-neutral-400/70",
+})
+const unorderedList = cva({
+  base: "list-disc pl-6 my-4 space-y-4 marker:text-neutral-400/70",
+})
+const listItem = cva({ base: "text-neutral-400 antialiased [&_p]:mb-0" })
 
-const bold = cva("text-neutral-300 font-semibold antialiased")
+const bold = cva({ base: "text-neutral-300 font-semibold antialiased" })
 
-const strikethrough = cva(
-  "line-through decoration-neutral-400 hover:decoration-neutral-400/50 transition-colors font-medium antialiased mb-4"
-)
+const strikethrough = cva({
+  base: "line-through decoration-neutral-400 hover:decoration-neutral-400/50 transition-colors font-medium antialiased mb-4",
+})
 
-const quote = cva(
-  "relative my-8 py-8 pl-12 pr-8 bg-neutral-800/30 text-neutral-400"
-)
+const quote = cva({
+  base: "relative my-8 py-8 pl-12 pr-8 bg-neutral-800/30 text-neutral-400",
+})
 
-const inlineCode = cva("font-mono text-sm", {
+const inlineCode = cva({
+  base: "font-mono text-sm",
   variants: {
     codeblock: {
       false:
@@ -57,9 +61,9 @@ const inlineCode = cva("font-mono text-sm", {
   },
 })
 
-const codeBlock = cva(
-  "my-8 overflow-x-auto rounded bg-neutral-800/30 p-8 text-neutral-400 outline outline-neutral-800"
-)
+const codeBlock = cva({
+  base: "my-8 overflow-x-auto rounded bg-neutral-800/30 p-8 text-neutral-400 outline outline-neutral-800",
+})
 
 export const components: any = {
   h1: ({ className, ...props }: ComponentPropsWithRef<"h1">) => (

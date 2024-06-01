@@ -1,19 +1,17 @@
 "use client"
 
 import React, { ComponentPropsWithRef, useState } from "react"
-import { cva } from "class-variance-authority"
+import { cva } from "cva"
 
-const readMore = cva(
-  "relative delay-100 after:h-8 after:bg-gradient-to-t after:from-neutral-950 after:absolute after:bottom-0 after:inset-x-0 transition-all ease-linear overflow-hidden",
-  {
-    variants: {
-      open: {
-        false: "max-h-56 after:opacity-100",
-        true: "max-h-[540px] after:opacity-0",
-      },
+const readMore = cva({
+  base: "relative delay-100 after:h-8 after:bg-gradient-to-t after:from-neutral-950 after:absolute after:bottom-0 after:inset-x-0 transition-all ease-linear overflow-hidden",
+  variants: {
+    open: {
+      false: "max-h-56 after:opacity-100",
+      true: "max-h-[540px] after:opacity-0",
     },
-  }
-)
+  },
+})
 
 export const ExpandableSection: React.FC<ComponentPropsWithRef<"section">> = ({
   className,
