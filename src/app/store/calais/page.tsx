@@ -1,7 +1,6 @@
 import { Metadata, NextPage } from "next"
 import Image from "next/image"
 
-import { PageLayout } from "../../../layouts"
 import { Heading1, Link, Paragraph } from "../../../components"
 
 import CalaisTemplateLarge from "../../../assets/templates/calais-large.png"
@@ -14,7 +13,7 @@ export const metadata: Metadata = {
 }
 
 const CalaisPage: NextPage = () => (
-  <PageLayout className="md:flex md:flex-grow md:flex-col md:justify-center">
+  <div className="md:flex md:flex-grow md:flex-col md:justify-center">
     <section className="md:flex md:gap-8 md:px-14">
       <div className="flex flex-col gap-4">
         <Image
@@ -66,7 +65,7 @@ const CalaisPage: NextPage = () => (
         </div>
       </div>
     </section>
-  </PageLayout>
+  </div>
 )
 
 export default CalaisPage

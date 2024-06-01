@@ -1,7 +1,6 @@
 import { Metadata, NextPage } from "next"
 import Image from "next/image"
 
-import { PageLayout } from "../../layouts"
 import { SayHi } from "../../patterns"
 import {
   Heading1,
@@ -24,7 +23,7 @@ export const metadata: Metadata = {
 
 const WorkPage: NextPage = () => {
   return (
-    <PageLayout>
+    <div>
       <section className="max-w-xl p-8 md:px-14">
         <Heading1>My work</Heading1>
         <Paragraph>
@@ -213,7 +212,7 @@ const WorkPage: NextPage = () => {
       <section className="my-16 max-w-xl p-8 md:px-14">
         <SayHi />
       </section>
-    </PageLayout>
+    </div>
   )
 }
 

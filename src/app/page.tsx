@@ -1,10 +1,9 @@
 import { NextPage } from "next"
-import { PageLayout } from "../layouts"
 import { Link } from "../components"
 
 const HomePage: NextPage = () => {
   return (
-    <PageLayout className="flex flex-grow flex-col justify-center">
+    <div className="flex flex-grow flex-col justify-center">
       <section className="p-8 md:px-14">
         <h1 className="mb-8 max-w-xl break-words font-sans text-[3.55vh] font-semibold leading-[1.2em] text-neutral-50 antialiased md:text-[clamp(32px,7.5vw,36px)]">
           I'm Rathes Sachchithananthan, a front-end engineer living in{" "}
@@ -31,7 +30,7 @@ const HomePage: NextPage = () => {
           </Link>
         </p>
       </section>
-    </PageLayout>
+    </div>
   )
 }
 

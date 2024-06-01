@@ -3,8 +3,6 @@ import { Metadata, NextPage } from "next"
 
 import { createSlug, getFilteredList } from "../../services/books"
 
-import { PageLayout } from "../../layouts"
-
 import { Search } from "../../patterns/Search"
 import { SayHi } from "../../patterns"
 
@@ -27,7 +25,7 @@ const ReadingPage: NextPage<{
   const books = getFilteredList(searchParams.q?.toString() || "")
 
   return (
-    <PageLayout>
+    <div>
       <div className="max-w-xl flex-grow p-8 md:px-14">
         <section>
           <Heading1>Reading</Heading1>
@@ -80,7 +78,7 @@ const ReadingPage: NextPage<{
           <SayHi />
         </div>
       </div>
-    </PageLayout>
+    </div>
   )
 }
 

@@ -1,5 +1,4 @@
 import { Metadata, NextPage } from "next"
-import { PageLayout } from "../../layouts"
 import { Heading1, Heading2, Paragraph } from "../../components"
 
 export const metadata: Metadata = {
@@ -31,7 +30,7 @@ const ingredients = [
 
 const BiryaniPage: NextPage = () => {
   return (
-    <PageLayout>
+    <div>
       <section className="max-w-xl p-8 md:px-14">
         <Heading1>Chicken Biryani Recipe</Heading1>
         <Paragraph>
@@ -160,7 +159,7 @@ const BiryaniPage: NextPage = () => {
           </ol>
         </section>
       </div>
-    </PageLayout>
+    </div>
   )
 }
 

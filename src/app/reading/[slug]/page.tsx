@@ -8,8 +8,6 @@ import {
   generateBookParams,
 } from "../../../services/books"
 
-import { PageLayout } from "../../../layouts"
-
 import { Heading1, Paragraph, Link } from "../../../components"
 import { Rating } from "../../../components/Rating"
 import { BookSchema } from "../../../components/BookSchema"
@@ -48,7 +46,7 @@ const BookDetailsPage: NextPage<{ params: { slug: string } }> = ({
   const { title, author, url, description, genres, rating } = book
 
   return (
-    <PageLayout>
+    <div>
       <BookSchema book={book} />
       <div className="flex max-w-xl flex-col gap-4 p-8 md:gap-6 md:px-14">
         <header>
@@ -91,7 +89,7 @@ const BookDetailsPage: NextPage<{ params: { slug: string } }> = ({
           )}
         </div>
       </div>
-    </PageLayout>
+    </div>
   )
 }
 

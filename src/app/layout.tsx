@@ -1,5 +1,10 @@
 import localFont from "next/font/local"
+
 import Fathom from "../components/Fathom"
+
+import * as Navbar from "../patterns/Navbar"
+import { Footer } from "../patterns"
+import { Logo } from "../components"
 
 import "../styles/globals.css"
 
@@ -33,7 +38,25 @@ export default function RootLayout({
         className={`${switzer.variable} bg-neutral-950 font-sans text-white`}
       >
         <Fathom />
-        {children}
+        <main className="flex min-h-screen flex-col font-sans">
+          <Navbar.Root>
+            <Navbar.Banner href="/store/calais">
+              Get my latest Figma template "Calais"
+            </Navbar.Banner>
+            <Navbar.Menu>
+              <Navbar.Item href="/">
+                <Logo className="h-6 w-6" />
+              </Navbar.Item>
+              <Navbar.Item href="/about">About me</Navbar.Item>
+              <Navbar.Item href="/reading">Reading</Navbar.Item>
+              <Navbar.Item href="/writing">Writing</Navbar.Item>
+              <Navbar.Item href="/photos">Photography</Navbar.Item>
+              <Navbar.Item href="/work">Work</Navbar.Item>
+            </Navbar.Menu>
+          </Navbar.Root>
+          <div className="mt-8">{children}</div>
+          <Footer />
+        </main>
       </body>
     </html>
   )

@@ -1,6 +1,5 @@
 import { Metadata, NextPage } from "next"
 
-import { PageLayout } from "../../layouts"
 import { Heading1, Link, Paragraph } from "../../components"
 import { Photo } from "../../patterns/Photo"
 import { SayHi } from "../../patterns"
@@ -33,7 +32,7 @@ export const metadata: Metadata = {
 
 const PhotoPage: NextPage = () => {
   return (
-    <PageLayout>
+    <div>
       <section className="max-w-lg p-8 md:px-14">
         <Heading1>Photography</Heading1>
         <Paragraph>
@@ -170,7 +169,7 @@ const PhotoPage: NextPage = () => {
       <div className="mt-16 p-8 md:px-14">
         <SayHi />
       </div>
-    </PageLayout>
+    </div>
   )
 }
 
