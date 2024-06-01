@@ -6,7 +6,7 @@ import { Heading1, List, ListItem, Paragraph } from "../../components"
 
 import { ExpandableSection } from "./ExpandableSection"
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: "About me",
 }
 
