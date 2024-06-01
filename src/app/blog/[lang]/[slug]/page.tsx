@@ -10,13 +10,14 @@ import { MDXRemote } from "next-mdx-remote/rsc"
 
 import books from "../../../../../data/books.json"
 
-import { components, heading, link, caption } from "./components"
-
 import Image from "next/image"
 import Link from "next/link"
 
-import { PageLayout } from "../../../../layouts"
 import rehypeHighlight from "rehype-highlight"
+import remarkGfm from "remark-gfm"
+
+import { PageLayout } from "../../../../layouts"
+import { components, heading, link, caption } from "./components"
 
 type Params = { lang: "en" | "de"; slug: string }
 
@@ -79,7 +80,10 @@ const BlogPage: NextPage<{ params: Params }> = async ({ params }) => {
             source={content}
             options={{
               scope: { books },
-              mdxOptions: { rehypePlugins: [rehypeHighlight] },
+              mdxOptions: {
+                remarkPlugins: [remarkGfm],
+                rehypePlugins: [rehypeHighlight],
+              },
             }}
             components={components}
           />

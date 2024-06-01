@@ -40,6 +40,10 @@ const listItem = cva("text-neutral-400 antialiased [&_p]:mb-0")
 
 const bold = cva("text-neutral-300 font-semibold antialiased")
 
+const strikethrough = cva(
+  "line-through decoration-neutral-400 hover:decoration-neutral-400/50 transition-colors font-medium antialiased mb-4"
+)
+
 const quote = cva(
   "relative my-8 py-8 pl-12 pr-8 bg-neutral-800/30 text-neutral-400"
 )
@@ -126,5 +130,8 @@ export const components: any = {
   Note,
   strong: ({ className, ...props }: ComponentPropsWithRef<"strong">) => (
     <strong {...props} className={bold({ className })} />
+  ),
+  del: ({ className, ...props }: ComponentPropsWithRef<"del">) => (
+    <del {...props} className={strikethrough({ className })} />
   ),
 }
