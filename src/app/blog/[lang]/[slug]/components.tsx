@@ -1,5 +1,6 @@
 import { ComponentPropsWithRef } from "react"
-import { cva } from "cva"
+
+import { cva } from "../../../../../cva.config"
 
 import { List, ListItem, Note } from "../../../../components"
 

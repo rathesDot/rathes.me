@@ -1,7 +1,8 @@
 "use client"
 
 import React, { ComponentPropsWithRef, useState } from "react"
-import { cva } from "cva"
+
+import { cva } from "../../../cva.config"
 
 const readMore = cva({
   base: "relative delay-100 after:h-8 after:bg-gradient-to-t after:from-neutral-950 after:absolute after:bottom-0 after:inset-x-0 transition-all ease-linear overflow-hidden",

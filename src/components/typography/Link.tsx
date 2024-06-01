@@ -1,5 +1,6 @@
 import React, { HTMLProps } from "react"
-import { cva, VariantProps } from "cva"
+
+import { cva, VariantProps } from "../../../cva.config"
 
 export const link = cva({
   variants: {

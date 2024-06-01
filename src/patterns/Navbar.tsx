@@ -1,6 +1,8 @@
 import React, { ComponentPropsWithRef } from "react"
-import { cva } from "cva"
+
 import Link from "next/link"
+
+import { cva } from "../../cva.config"
 
 const rootStyles = cva({
   base: "bg-neutral-950/70 sticky top-0 border-b border-neutral-800 z-20",

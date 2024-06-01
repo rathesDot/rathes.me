@@ -1,6 +1,6 @@
 import { HTMLAttributes } from "react"
 
-import { cva } from "cva"
+import { cva } from "../../../cva.config"
 
 const styles = cva({
   base: "relative my-8 -mx-8 pt-11 pl-12 pb-8 pr-8 text-lg text-neutral-800 bg-neutral-900 [&_p]:m-0 [&_p]:text-neutral-300 antialiased",

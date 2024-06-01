@@ -1,7 +1,8 @@
 import React from "react"
 
-import { cva } from "cva"
 import Link from "next/link"
+
+import { cva } from "../../cva.config"
 
 export const metadata = {
   title: "Not Found",

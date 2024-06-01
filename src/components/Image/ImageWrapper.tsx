@@ -1,5 +1,5 @@
 import { HTMLProps, PropsWithChildren } from "react"
-import { cva, VariantProps } from "cva"
+import { cva, VariantProps } from "../../../cva.config"
 
 const wrapperStyles = cva({
   base: "relative block -mx-8 my-4 overflow-hidden [&_img]:object-cover [&_img]:object-center",

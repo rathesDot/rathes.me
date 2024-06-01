@@ -1,6 +1,6 @@
 import { HTMLAttributes } from "react"
 
-import { cva } from "cva"
+import { cva } from "../../../cva.config"
 
 const styles = cva({
   base: "mt-3 mb-4 text-base leading-snug font-sans antialiased font-normal text-neutral-300/70 md:text-lg",

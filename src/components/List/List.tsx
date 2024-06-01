@@ -1,6 +1,7 @@
 import React, { HTMLProps } from "react"
 import RouterLink from "next/link"
-import { cx } from "cva"
+
+import { cx } from "../../../cva.config"
 
 import { Heading2, Link } from ".."
 
