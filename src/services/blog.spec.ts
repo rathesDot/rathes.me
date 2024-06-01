@@ -1,6 +1,6 @@
-import { groupPostsByYear, getSortedGroups } from "./index"
+import { groupPostsByYear, getSortedGroups } from "../utils/index"
 
-describe("utils", () => {
+describe("blog", () => {
   it("groups posts by year", () => {
     const posts = [
       {
