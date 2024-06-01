@@ -1,30 +1,30 @@
-import React from "react"
-import { NextPage } from "next"
+import { Metadata, NextPage } from "next"
 import Image from "next/image"
-import RouterLink from "next/link"
 
-import { PageLayout } from "../layouts"
+import { PageLayout } from "../../layouts"
+import { SayHi } from "../../patterns"
 import {
-  link,
-  Link,
-  List,
-  ListItem,
-  Paragraph,
-  Meta,
-  Separator,
   Heading1,
+  Paragraph,
+  Link,
   Heading2,
   Heading3,
-} from "../components"
+  Separator,
+  List,
+  ListItem,
+} from "../../components"
 
-import { SayHi } from "../patterns"
+import CalaisTemplate from "../../assets/templates/calais.png"
 
-import CalaisTemplate from "../assets/templates/calais.png"
+export const metadata: Metadata = {
+  title: "Work",
+  description:
+    "When I am not working at my day job, you will find me exploring new technology or design and working on some side projects. This is a list of the things I am working on at the moment.",
+}
 
-const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
+const WorkPage: NextPage = () => {
   return (
     <PageLayout>
-      <Meta title="Work" />
       <section className="max-w-xl p-8 md:px-14">
         <Heading1>My work</Heading1>
         <Paragraph>
@@ -32,10 +32,7 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
           love to work on side projects. They do not necessarily have to be
           development related. If you want to see my software engineering
           related things, I recommend you visit my{" "}
-          <RouterLink href="https://github.com/rathesDot">
-            Github profile
-          </RouterLink>
-          .
+          <Link href="https://github.com/rathesDot">Github profile</Link>.
         </Paragraph>
       </section>
 
@@ -57,12 +54,7 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
               their website.
             </Paragraph>
 
-            <RouterLink
-              href="/store/calais"
-              className={link({ underlined: true })}
-            >
-              View template
-            </RouterLink>
+            <Link href="/store/calais">View template</Link>
           </div>
         </section>
       </section>
@@ -188,4 +180,4 @@ const Work: React.FC<React.PropsWithChildren<NextPage>> = () => {
   )
 }
 
-export default Work
+export default WorkPage
