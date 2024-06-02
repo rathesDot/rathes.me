@@ -6,7 +6,7 @@ import { Separator } from "../../components/Separator"
 import { Link } from "../../components/Link"
 import { Paragraph } from "../../components/Paragraph"
 import { Heading1, Heading2, Heading3 } from "../../components/Heading"
-import * as List from "../../components/List/List"
+import * as List from "../../components/List"
 
 import CalaisTemplate from "../../assets/templates/calais.png"
 

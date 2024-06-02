@@ -2,7 +2,7 @@ import { Metadata, NextPage } from "next"
 
 import { SayHi } from "../../patterns/SayHi"
 import { Paragraph } from "../../components/Paragraph"
-import * as List from "../../components/List/List"
+import * as List from "../../components/List"
 
 import { ExpandableSection } from "./ExpandableSection"
 import { Heading1 } from "../../components/Heading"

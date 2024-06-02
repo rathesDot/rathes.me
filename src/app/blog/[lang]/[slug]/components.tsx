@@ -4,7 +4,7 @@ import { cva, VariantProps } from "../../../../../cva.config"
 
 import { Separator } from "../../../../components/Separator"
 
-import * as List from "../../../../components/List/List"
+import * as List from "../../../../components/List"
 import {
   Heading1,
   Heading2,

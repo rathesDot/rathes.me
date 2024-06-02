@@ -1,7 +1,7 @@
 import React, { ComponentPropsWithRef, PropsWithChildren } from "react"
 import RouterLink, { LinkProps } from "next/link"
 
-import { cx } from "../../../cva.config"
+import { cx } from "../../cva.config"
 
 export const Root: React.FC<ComponentPropsWithRef<"div">> = ({
   className,

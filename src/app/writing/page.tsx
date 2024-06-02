@@ -5,7 +5,7 @@ import { getFilteredBlogPosts } from "../../services/blog"
 import { Link } from "../../components/Link"
 import { Paragraph } from "../../components/Paragraph"
 import { Heading1 } from "../../components/Heading"
-import * as List from "../../components/List/List"
+import * as List from "../../components/List"
 
 import { SayHi } from "../../patterns/SayHi"
 import { Search } from "../../patterns/Search"
