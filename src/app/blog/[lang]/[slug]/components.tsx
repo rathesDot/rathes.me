@@ -3,6 +3,7 @@ import { ComponentPropsWithRef, PropsWithChildren } from "react"
 import { cva } from "../../../../../cva.config"
 
 import { Note } from "../../../../components"
+
 import * as List from "../../../../components/List/List"
 import {
   Heading1,
@@ -11,9 +12,7 @@ import {
   Heading4,
 } from "../../../../components/Heading"
 
-const paragraph = cva({
-  base: "text-neutral-400 antialiased mb-4 last-of-type:mb-0",
-})
+import { Paragraph } from "../../../../components/Paragraph"
 
 export const link = cva({
   base: "text-neutral-300 underline underline-offset-2 decoration-neutral-600 hover:decoration-neutral-400 transition-colors font-medium antialiased mb-4",
@@ -66,9 +65,7 @@ export const components: any = {
   h2: (props: ComponentPropsWithRef<"h2">) => <Heading2 {...props} />,
   h3: (props: ComponentPropsWithRef<"h3">) => <Heading3 {...props} />,
   h4: (props: ComponentPropsWithRef<"h4">) => <Heading4 {...props} />,
-  p: ({ className, ...props }: ComponentPropsWithRef<"p">) => (
-    <p {...props} className={paragraph({ className })} />
-  ),
+  p: (props: ComponentPropsWithRef<"p">) => <Paragraph {...props} />,
   hr: ({ className, ...props }: ComponentPropsWithRef<"hr">) => (
     <hr {...props} className={hr({ className })} />
   ),

@@ -1,5 +1,5 @@
 import { Metadata, NextPage } from "next"
-import { Paragraph } from "../../components"
+import { Paragraph } from "../../components/Paragraph"
 import { Heading1, Heading2 } from "../../components/Heading"
 
 export const metadata: Metadata = {

@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef } from "react"
 
-import { cva } from "../../../cva.config"
+import { cva } from "../../cva.config"
 
 const styles = cva({
   base: "mb-4 text-neutral-400 antialiased last-of-type:mb-0",

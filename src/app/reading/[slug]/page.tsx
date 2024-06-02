@@ -9,7 +9,8 @@ import {
   generateBookParams,
 } from "../../../services/books"
 
-import { Paragraph, Link } from "../../../components"
+import { Link } from "../../../components"
+import { Paragraph } from "../../../components/Paragraph"
 import { Heading1 } from "../../../components/Heading"
 import { Rating } from "../../../components/Rating"
 import { BookSchema } from "../../../components/BookSchema"

@@ -2,11 +2,13 @@ import { NextPage, Metadata } from "next"
 
 import { getFilteredBlogPosts } from "../../services/blog"
 
-import { SayHi } from "../../patterns/SayHi"
-import { Search } from "../../patterns/Search"
-import { Link, Paragraph } from "../../components"
+import { Link } from "../../components"
+import { Paragraph } from "../../components/Paragraph"
 import { Heading1 } from "../../components/Heading"
 import * as List from "../../components/List/List"
+
+import { SayHi } from "../../patterns/SayHi"
+import { Search } from "../../patterns/Search"
 
 export const metadata: Metadata = {
   title: "Writing",

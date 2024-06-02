@@ -1,6 +1,7 @@
 import { Metadata, NextPage } from "next"
 
-import { Link, Paragraph } from "../../components"
+import { Link } from "../../components"
+import { Paragraph } from "../../components/Paragraph"
 import { Heading1 } from "../../components/Heading"
 
 import { Photo } from "../../patterns/Photo"

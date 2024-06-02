@@ -1,7 +1,7 @@
 import { Metadata, NextPage } from "next"
 
 import { SayHi } from "../../patterns/SayHi"
-import { Paragraph } from "../../components"
+import { Paragraph } from "../../components/Paragraph"
 import * as List from "../../components/List/List"
 
 import { ExpandableSection } from "./ExpandableSection"
