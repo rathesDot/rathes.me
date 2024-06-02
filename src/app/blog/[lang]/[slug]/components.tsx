@@ -1,8 +1,7 @@
 import { ComponentPropsWithRef, PropsWithChildren } from "react"
 
-import { cva } from "../../../../../cva.config"
+import { cva, VariantProps } from "../../../../../cva.config"
 
-import { Note } from "../../../../components"
 import { Separator } from "../../../../components/Separator"
 
 import * as List from "../../../../components/List/List"
@@ -52,6 +51,15 @@ const inlineCode = cva({
 
 const codeBlock = cva({
   base: "my-8 overflow-x-auto rounded bg-neutral-800/30 p-8 text-neutral-400 outline outline-neutral-800",
+})
+
+const note = cva({
+  base: "my-8 p-8 bg-neutral-800/30 outline outline-neutral-800 text-neutral-400 rounded",
+  variants: {
+    fontFamily: {
+      mono: "font-mono",
+    },
+  },
 })
 
 export const components: any = {
@@ -134,7 +142,13 @@ export const components: any = {
       </List.Item>
     )
   },
-  Note,
+  Note: ({
+    className,
+    fontFamily,
+    ...props
+  }: ComponentPropsWithRef<"div"> & VariantProps<typeof note>) => (
+    <div className={note({ fontFamily, className })} {...props} />
+  ),
   strong: ({ className, ...props }: ComponentPropsWithRef<"strong">) => (
     <strong {...props} className={bold({ className })} />
   ),
