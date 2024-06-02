@@ -3,7 +3,7 @@ import localFont from "next/font/local"
 import Fathom from "../components/Fathom"
 
 import * as Navbar from "../patterns/Navbar"
-import { Logo } from "../components"
+import { Logo } from "../components/Logo"
 
 import "../styles/globals.css"
 
