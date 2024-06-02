@@ -3,6 +3,7 @@ import { ComponentPropsWithRef, PropsWithChildren } from "react"
 import { cva } from "../../../../../cva.config"
 
 import { Note } from "../../../../components"
+import { Separator } from "../../../../components/Separator"
 
 import * as List from "../../../../components/List/List"
 import {
@@ -20,10 +21,6 @@ const image = cva({
 })
 
 export const caption = cva({ base: "text-neutral-400 block my-1 text-xs" })
-
-const hr = cva({
-  base: "h-auto border-none leading-none my-8 text-neutral-600 antialiased font-semibold before:block before:content-['*_*_*']",
-})
 
 const orderedList = cva({
   base: "list-decimal pl-6 my-4 space-y-4 marker:text-neutral-400/70",
@@ -63,9 +60,7 @@ export const components: any = {
   h3: (props: ComponentPropsWithRef<"h3">) => <Heading3 {...props} />,
   h4: (props: ComponentPropsWithRef<"h4">) => <Heading4 {...props} />,
   p: (props: ComponentPropsWithRef<"p">) => <Paragraph {...props} />,
-  hr: ({ className, ...props }: ComponentPropsWithRef<"hr">) => (
-    <hr {...props} className={hr({ className })} />
-  ),
+  hr: (props: ComponentPropsWithRef<"hr">) => <Separator {...props} />,
   ol: ({ className, ...props }: ComponentPropsWithRef<"ol">) => (
     <ol {...props} className={orderedList({ className })} />
   ),

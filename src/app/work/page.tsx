@@ -2,7 +2,7 @@ import { Metadata, NextPage } from "next"
 import Image from "next/image"
 
 import { SayHi } from "../../patterns/SayHi"
-import { Separator } from "../../components"
+import { Separator } from "../../components/Separator"
 import { Link } from "../../components/Link"
 import { Paragraph } from "../../components/Paragraph"
 import { Heading1, Heading2, Heading3 } from "../../components/Heading"

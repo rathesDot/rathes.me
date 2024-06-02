@@ -6,7 +6,7 @@ import { createSlug, getFilteredList } from "../../services/books"
 import { Search } from "../../patterns/Search"
 import { SayHi } from "../../patterns/SayHi"
 
-import { Separator } from "../../components"
+import { Separator } from "../../components/Separator"
 import { Paragraph } from "../../components/Paragraph"
 import { Heading1 } from "../../components/Heading"
 import * as List from "../../components/List/List"
