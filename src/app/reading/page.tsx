@@ -6,13 +6,8 @@ import { createSlug, getFilteredList } from "../../services/books"
 import { Search } from "../../patterns/Search"
 import { SayHi } from "../../patterns/SayHi"
 
-import {
-  Heading1,
-  List,
-  ListItem,
-  Paragraph,
-  Separator,
-} from "../../components"
+import { Heading1, Paragraph, Separator } from "../../components"
+import * as List from "../../components/List/List"
 
 export const metadata: Metadata = {
   title: "Writing",
@@ -53,19 +48,25 @@ const ReadingPage: NextPage<{
 
           return (
             <React.Fragment key={`${listTitle}-${index}`}>
-              <List title={listTitle} className="flex flex-col gap-4">
-                {books.map((book, index) => (
-                  <ListItem
-                    link={
-                      !!book?.rating ? `/reading/${createSlug(book)}` : book.url
-                    }
-                    subtitle={`by ${book.author}`}
-                    key={`${listTitle}-book-#${index}`}
-                  >
-                    {book.title}
-                  </ListItem>
-                ))}
-              </List>
+              <List.Root>
+                <List.Title>{listTitle}</List.Title>
+                <List.Container>
+                  {books.map((book, index) => (
+                    <List.Item key={`${listTitle}-book-#${index}`}>
+                      <List.Link
+                        href={
+                          !!book?.rating
+                            ? `/reading/${createSlug(book)}`
+                            : book.url
+                        }
+                      >
+                        {book.title}
+                        <List.Subtitle>by {book.author}</List.Subtitle>
+                      </List.Link>
+                    </List.Item>
+                  ))}
+                </List.Container>
+              </List.Root>
               {index !== list.length - 1 && <Separator />}
             </React.Fragment>
           )

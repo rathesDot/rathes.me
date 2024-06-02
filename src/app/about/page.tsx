@@ -1,7 +1,8 @@
 import { Metadata, NextPage } from "next"
 
 import { SayHi } from "../../patterns/SayHi"
-import { Heading1, List, ListItem, Paragraph } from "../../components"
+import { Heading1, Paragraph } from "../../components"
+import * as List from "../../components/List/List"
 
 import { ExpandableSection } from "./ExpandableSection"
 
@@ -16,62 +17,73 @@ const AboutPage: NextPage = () => {
         I'm a front-end engineer with over 10 years of web experience.
       </h1>
       <ExpandableSection>
-        <p className="mb-4 text-neutral-400 antialiased last-of-type:mb-0">
+        <Paragraph>
           I started working as a web designer and web developer at a very young
           age. I earned my first money as a web designer creating custom MySpace
           layouts when I was just 14. In 2008, at the age of 16, I founded my
           own company for web design and development. Since then, I have worked
           with several clients doing quite a wide range of tasks.
-        </p>
-        <p className="mb-4 text-neutral-400 antialiased last-of-type:mb-0">
+        </Paragraph>
+        <Paragraph>
           For more than 10 years, I have been working as a web developer doing
           problem-solving as a back-end engineer using languages such as PHP,
           Python or Node.js but also as a front-end developer working with
           HTML/CSS and JavaScript.
-        </p>
-        <p className="mb-4 text-neutral-400 antialiased last-of-type:mb-0">
+        </Paragraph>
+        <Paragraph>
           However, my real passion lies beyond software and development. I'm
           more into solving problems for people, make their lives easier and
           connecting them with each other. Alongside that, I'm passionate about
           learning new languages and cultures.
-        </p>
+        </Paragraph>
       </ExpandableSection>
 
       <section className="mt-12 md:mt-16">
-        <List title="Work Experience" className="md:flex md:gap-12">
-          <div className="flex flex-col gap-6">
-            <ListItem subtitle="April 2024 — now">
+        <List.Root>
+          <List.Title>Work Experience</List.Title>
+          <List.Container>
+            <List.Item>
               Senior Engineer / Intercom
-            </ListItem>
-            <ListItem subtitle="December 2021 — March 2024">
+              <List.Subtitle>April 2024 — now</List.Subtitle>
+            </List.Item>
+            <List.Item>
               Product Engineer 3 / Intercom
-            </ListItem>
-            <ListItem subtitle="April 2021 — November 2021">
+              <List.Subtitle>December 2021 — March 2024</List.Subtitle>
+            </List.Item>
+            <List.Item>
               Engineering Team Lead / Hussle
-            </ListItem>
-            <ListItem subtitle="February 2020 — March 2021">
+              <List.Subtitle>April 2021 — November 2021</List.Subtitle>
+            </List.Item>
+            <List.Item>
               Senior Frontend Engineer / Hussle
-            </ListItem>
-            <ListItem subtitle="May 2018 — January 2020">
+              <List.Subtitle>February 2020 — March 2021</List.Subtitle>
+            </List.Item>
+            <List.Item>
               Software Engineer / Teamleader
-            </ListItem>
-            <ListItem subtitle="May 2016 — October 2021">
+              <List.Subtitle>May 2018 — January 2020</List.Subtitle>
+            </List.Item>
+            <List.Item>
               Founder / Aheenam
-            </ListItem>
-            <ListItem subtitle="November 2016 — April 2018">
+              <List.Subtitle>May 2016 — October 2021</List.Subtitle>
+            </List.Item>
+            <List.Item>
               Web Developer / netinsiders
-            </ListItem>
-            <ListItem subtitle="October 2015 — January 2018">
+              <List.Subtitle>November 2016 — April 2018</List.Subtitle>
+            </List.Item>
+            <List.Item>
               Co-Founder / Kernwerk
-            </ListItem>
-            <ListItem subtitle="June 2011 — March 2014">
+              <List.Subtitle>October 2015 — January 2018</List.Subtitle>
+            </List.Item>
+            <List.Item>
               Product Assistant / Kopierland GmbH
-            </ListItem>
-            <ListItem subtitle="June 2006 — March 2016">
+              <List.Subtitle>June 2011 — March 2014</List.Subtitle>
+            </List.Item>
+            <List.Item>
               Web Designer / rathesDot (CreativeCreation)
-            </ListItem>
-          </div>
-        </List>
+              <List.Subtitle>June 2006 — March 2016</List.Subtitle>
+            </List.Item>
+          </List.Container>
+        </List.Root>
         <a
           href="/files/resume.pdf"
           className="mt-8 flex items-center gap-1 font-medium text-neutral-300 underline decoration-neutral-600 underline-offset-2 antialiased transition-colors hover:decoration-neutral-400"

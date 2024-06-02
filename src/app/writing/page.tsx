@@ -4,7 +4,8 @@ import { getFilteredBlogPosts } from "../../services/blog"
 
 import { SayHi } from "../../patterns/SayHi"
 import { Search } from "../../patterns/Search"
-import { Heading1, Link, List, ListItem, Paragraph } from "../../components"
+import { Heading1, Link, Paragraph } from "../../components"
+import * as List from "../../components/List/List"
 
 export const metadata: Metadata = {
   title: "Writing",
@@ -53,11 +54,16 @@ const WritingPage: NextPage<{
         <div className="mb-8">
           <Search defaultValue={searchParams.q?.toString() || ""} />
         </div>
-        <List title="Books & Whitepapers">
-          <ListItem link="https://learn-tamil.com">
-            A Guide To Basic Tamil Grammar
-          </ListItem>
-        </List>
+        <List.Root>
+          <List.Title>Books & Whitepapers</List.Title>
+          <List.Container>
+            <List.Item>
+              <List.Link href="https://learn-tamil.com">
+                A Guide To Basic Tamil Grammar
+              </List.Link>
+            </List.Item>
+          </List.Container>
+        </List.Root>
 
         {posts.map(([key, posts]) => {
           if (!posts.length) {
@@ -66,13 +72,16 @@ const WritingPage: NextPage<{
 
           return (
             <div className="mt-12" key={key}>
-              <List title={key} className="flex flex-col gap-2">
-                {posts.map((post, index) => (
-                  <ListItem link={post.link} key={index}>
-                    {post.title}
-                  </ListItem>
-                ))}
-              </List>
+              <List.Root>
+                <List.Title>{key}</List.Title>
+                <List.Container>
+                  {posts.map((post, index) => (
+                    <List.Item key={index}>
+                      <List.Link href={post.link}>{post.title}</List.Link>
+                    </List.Item>
+                  ))}
+                </List.Container>
+              </List.Root>
             </div>
           )
         })}

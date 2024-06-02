@@ -1,8 +1,9 @@
-import { ComponentPropsWithRef } from "react"
+import { ComponentPropsWithRef, PropsWithChildren } from "react"
 
 import { cva } from "../../../../../cva.config"
 
-import { List, ListItem, Note } from "../../../../components"
+import { Note } from "../../../../components"
+import * as List from "../../../../components/List/List"
 
 export const heading = cva({
   base: "text-white antialiased mt-8",
@@ -130,8 +131,34 @@ export const components: any = {
   code: ({ className, ...props }: ComponentPropsWithRef<"code">) => (
     <code className={inlineCode({ codeblock: className !== "" })} {...props} />
   ),
-  List,
-  ListItem,
+  List: ({ title, children }: PropsWithChildren<{ title?: string }>) => (
+    <List.Root>
+      {title && <List.Title>{title}</List.Title>}
+      <List.Container>{children}</List.Container>
+    </List.Root>
+  ),
+  ListItem: ({
+    link,
+    subtitle,
+    children,
+  }: PropsWithChildren<{ link?: string; subtitle?: string }>) => {
+    const Subtitle = () => subtitle && <List.Subtitle>{subtitle}</List.Subtitle>
+    return (
+      <List.Item>
+        {link ? (
+          <List.Link href={link}>
+            {children}
+            <Subtitle />
+          </List.Link>
+        ) : (
+          <>
+            {children}
+            <Subtitle />
+          </>
+        )}
+      </List.Item>
+    )
+  },
   Note,
   strong: ({ className, ...props }: ComponentPropsWithRef<"strong">) => (
     <strong {...props} className={bold({ className })} />

@@ -9,9 +9,8 @@ import {
   Heading2,
   Heading3,
   Separator,
-  List,
-  ListItem,
 } from "../../components"
+import * as List from "../../components/List/List"
 
 import CalaisTemplate from "../../assets/templates/calais.png"
 
@@ -145,20 +144,25 @@ const WorkPage: NextPage = () => {
           45-minutes version.
         </Paragraph>
         <div className="mt-12">
-          <List title="Tech Talks" className="flex flex-col gap-6">
-            <ListItem
-              link="/talks/readme-driven-development-phpuk.pdf"
-              subtitle="February 2019 at PHP UK Unconference"
-            >
-              Introduction to Readme Driven Development
-            </ListItem>
-            <ListItem
-              link="/talks/readme-driven-development.pdf"
-              subtitle="January 2019 at PHP Gent"
-            >
-              Introduction to Readme Driven Development
-            </ListItem>
-          </List>
+          <List.Root>
+            <List.Title>Tech talks</List.Title>
+            <List.Container>
+              <List.Item>
+                <List.Link href="/talks/readme-driven-development-phpuk.pdf">
+                  <List.Subtitle>
+                    February 2019 at PHP UK Unconference
+                  </List.Subtitle>
+                  Introduction to Readme Driven Development
+                </List.Link>
+              </List.Item>
+              <List.Item>
+                <List.Link href="/talks/readme-driven-development.pdf">
+                  <List.Subtitle>January 2019 at PHP Gent</List.Subtitle>
+                  Introduction to Readme Driven Development
+                </List.Link>
+              </List.Item>
+            </List.Container>
+          </List.Root>
           <Separator />
           <Heading2 size={4} className="text-neutral-400">
             Abstracts
