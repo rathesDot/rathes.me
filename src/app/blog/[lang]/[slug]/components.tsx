@@ -13,10 +13,7 @@ import {
 } from "../../../../components/Heading"
 
 import { Paragraph } from "../../../../components/Paragraph"
-
-export const link = cva({
-  base: "text-neutral-300 underline underline-offset-2 decoration-neutral-600 hover:decoration-neutral-400 transition-colors font-medium antialiased mb-4",
-})
+import { Link } from "../../../../components/Link"
 
 const image = cva({
   base: "relative block my-4 [&_img]:object-cover [&_img]:object-center",
@@ -102,8 +99,8 @@ export const components: any = {
       {children}
     </blockquote>
   ),
-  a: ({ className, ...props }: ComponentPropsWithRef<"a">) => (
-    <a {...props} className={link({ className })} />
+  a: ({ href = "#", ...props }: ComponentPropsWithRef<"a">) => (
+    <Link href={href} {...props} />
   ),
   img: ({ className, alt, ...props }: ComponentPropsWithRef<"img">) => (
     <img alt={alt} {...props} className={image({ className })} />

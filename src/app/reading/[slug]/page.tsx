@@ -9,7 +9,7 @@ import {
   generateBookParams,
 } from "../../../services/books"
 
-import { Link } from "../../../components"
+import { Link } from "../../../components/Link"
 import { Paragraph } from "../../../components/Paragraph"
 import { Heading1 } from "../../../components/Heading"
 import { Rating } from "../../../components/Rating"

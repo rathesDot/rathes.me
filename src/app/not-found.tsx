@@ -1,32 +1,13 @@
 import React from "react"
 
-import Link from "next/link"
-
 import { cva } from "../../cva.config"
+import { Link } from "../components/Link"
+import { Heading1 } from "../components/Heading"
+import { Paragraph } from "../components/Paragraph"
 
 export const metadata = {
   title: "Not Found",
 }
-
-const heading = cva({
-  base: "text-white antialiased mt-8",
-  variants: {
-    level: {
-      h1: "text-2xl font-bold tracking-[-0.01em] leading-tight",
-      h2: "text-lg font-semibold",
-      h3: "text-base font-semibold",
-      h4: "text-base font-normal",
-    },
-  },
-})
-
-const paragraph = cva({
-  base: "text-neutral-400 antialiased mb-4 last-of-type:mb-0",
-})
-
-const link = cva({
-  base: "text-neutral-300 underline underline-offset-2 decoration-neutral-600 hover:decoration-neutral-400 transition-colors font-medium antialiased mb-4",
-})
 
 const unorderedList = cva({
   base: "my-4 space-y-4 marker:text-neutral-400/70",
@@ -36,33 +17,29 @@ const unorderedList = cva({
   defaultVariants: { withDisc: true },
 })
 
-const listItem = cva({ base: "text-neutral-400 antialiased [&_p]:mb-0" })
+const listItem = cva({
+  base: "text-neutral-400 antialiased [&_p]:mb-0",
+})
 
 const NotFoundPage = () => (
-  <div className="flex min-h-screen max-w-[54ch] flex-col justify-center p-8 lg:ml-8">
-    <h1 className={heading({ level: "h1", className: "mb-2" })}>
+  <div className="mt-8">
+    <Heading1 className="mb-2 max-w-md">
       Looks like you are looking for a page that does not exist.
-    </h1>
-    <p className={paragraph()}>
+    </Heading1>
+    <Paragraph>
       If you came here from a Google Search, feel free to go back and try a
       different search term. Otherwise, here are some things that you might have
       been looking for:
-    </p>
+    </Paragraph>
     <ul className={unorderedList({ withDisc: false, className: "space-y-2" })}>
       <li className={listItem()}>
-        <Link className={link()} href="/">
-          Homepage
-        </Link>
+        <Link href="/">Homepage</Link>
       </li>
       <li className={listItem()}>
-        <Link className={link()} href="/writing">
-          Blog
-        </Link>
+        <Link href="/writing">Blog</Link>
       </li>
       <li className={listItem()}>
-        <Link className={link()} href="/about">
-          About me
-        </Link>
+        <Link href="/about">About me</Link>
       </li>
     </ul>
   </div>

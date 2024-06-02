@@ -2,7 +2,8 @@ import { Metadata, NextPage } from "next"
 import Image from "next/image"
 
 import { SayHi } from "../../patterns/SayHi"
-import { Link, Separator } from "../../components"
+import { Separator } from "../../components"
+import { Link } from "../../components/Link"
 import { Paragraph } from "../../components/Paragraph"
 import { Heading1, Heading2, Heading3 } from "../../components/Heading"
 import * as List from "../../components/List/List"
@@ -64,11 +65,7 @@ const WorkPage: NextPage = () => {
               to be the single necessary app for anyone interested in leading a
               healthy lifestyle.
             </Paragraph>
-            <Link
-              underlined
-              href="https://getmaxout.app"
-              className="text-neutral-50"
-            >
+            <Link href="https://getmaxout.app" className="text-neutral-50">
               View project
             </Link>
           </section>
@@ -80,13 +77,7 @@ const WorkPage: NextPage = () => {
               speaking community from all over the world and all necessary
               resources to learn Tamil.
             </Paragraph>
-            <Link
-              underlined
-              href="https://learn-tamil.com"
-              className="text-neutral-50"
-            >
-              View project
-            </Link>
+            <Link href="https://learn-tamil.com">View project</Link>
           </section>
           <section>
             <Heading3 level="h2">Espresso at home</Heading3>
@@ -94,13 +85,7 @@ const WorkPage: NextPage = () => {
               A small project that I started to share everything I am learning
               while trying to recreate the Italian espresso feeling at home.
             </Paragraph>
-            <Link
-              underlined
-              href="https://espresso-at-home.com"
-              className="text-neutral-50"
-            >
-              View project
-            </Link>
+            <Link href="https://espresso-at-home.com">View project</Link>
           </section>
           <section>
             <Heading3 level="h2">Kodi — Feature Management Service</Heading3>
@@ -108,13 +93,7 @@ const WorkPage: NextPage = () => {
               The aim of this SaaS is to enable every team to use feature flags
               straight from the beginning.
             </Paragraph>
-            <Link
-              underlined
-              href="https://getkodi.com"
-              className="text-neutral-50"
-            >
-              View project
-            </Link>
+            <Link href="https://getkodi.com">View project</Link>
           </section>
         </div>
       </section>

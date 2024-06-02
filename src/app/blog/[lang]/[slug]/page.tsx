@@ -11,13 +11,13 @@ import { MDXRemote } from "next-mdx-remote/rsc"
 import books from "../../../../../data/books.json"
 
 import Image from "next/image"
-import Link from "next/link"
 
 import rehypeHighlight from "rehype-highlight"
 import remarkGfm from "remark-gfm"
 
-import { components, link, caption } from "./components"
+import { components, caption } from "./components"
 import { Heading1 } from "../../../../components/Heading"
+import { Link } from "../../../../components/Link"
 
 type Params = { lang: "en" | "de"; slug: string }
 
@@ -84,9 +84,7 @@ const BlogPage: NextPage<{ params: Params }> = async ({ params }) => {
         components={components}
       />
       <footer className="my-32">
-        <Link href="/writing" className={link()}>
-          Back to all articles
-        </Link>
+        <Link href="/writing">Back to all articles</Link>
       </footer>
     </article>
   )

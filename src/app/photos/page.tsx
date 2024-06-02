@@ -1,8 +1,8 @@
 import { Metadata, NextPage } from "next"
 
-import { Link } from "../../components"
 import { Paragraph } from "../../components/Paragraph"
 import { Heading1 } from "../../components/Heading"
+import { Link } from "../../components/Link"
 
 import { Photo } from "../../patterns/Photo"
 import { SayHi } from "../../patterns/SayHi"
@@ -45,14 +45,7 @@ const PhotoPage: NextPage = () => {
         </Paragraph>
         <Paragraph>
           Most of my photos are taken on an iPhone and the others on my{" "}
-          <Link
-            underlined
-            className="text-neutral-50"
-            href="https://amzn.to/3RtSMUA"
-          >
-            Sony A6000
-          </Link>
-          .
+          <Link href="https://amzn.to/3RtSMUA">Sony A6000</Link>.
         </Paragraph>
       </section>
       <section className="-mx-4 mt-16 flex flex-col gap-8 md:-mx-[56px] md:flex-row md:flex-wrap">

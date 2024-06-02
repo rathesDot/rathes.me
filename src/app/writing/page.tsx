@@ -2,7 +2,7 @@ import { NextPage, Metadata } from "next"
 
 import { getFilteredBlogPosts } from "../../services/blog"
 
-import { Link } from "../../components"
+import { Link } from "../../components/Link"
 import { Paragraph } from "../../components/Paragraph"
 import { Heading1 } from "../../components/Heading"
 import * as List from "../../components/List/List"
@@ -27,14 +27,7 @@ const WritingPage: NextPage<{
         <Heading1>Writing</Heading1>
         <Paragraph>
           From time to time, I do write. Sometime on my blog, but also on other
-          blogs such as on{" "}
-          <Link
-            href="https://medium.com/@rathes"
-            underlined
-            className="text-neutral-50"
-          >
-            Medium
-          </Link>
+          blogs such as on <Link href="https://medium.com/@rathes">Medium</Link>
           . The topics, I write about are diverse. Obviously, I write about the
           web, but also about non-web topics like my mother tongue Tamil or even
           about movies or anime.
@@ -43,13 +36,7 @@ const WritingPage: NextPage<{
           I do write in English, German and Tamil. So if you do not understand
           the title, it may be that you do not speak the language. If you want
           me to translate a specific article, just drop a message{" "}
-          <Link
-            href="https://twitter.com/rswebdesigner"
-            underlined
-            className="text-neutral-50"
-          >
-            @rswebdesigner
-          </Link>
+          <Link href="https://twitter.com/rswebdesigner">@rswebdesigner</Link>
         </Paragraph>
       </section>
 
