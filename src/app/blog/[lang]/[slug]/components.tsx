@@ -4,18 +4,12 @@ import { cva } from "../../../../../cva.config"
 
 import { Note } from "../../../../components"
 import * as List from "../../../../components/List/List"
-
-export const heading = cva({
-  base: "text-white antialiased mt-8",
-  variants: {
-    level: {
-      h1: "text-2xl font-bold tracking-[-0.01em] leading-tight",
-      h2: "text-lg font-semibold",
-      h3: "text-base font-semibold",
-      h4: "text-base font-normal",
-    },
-  },
-})
+import {
+  Heading1,
+  Heading2,
+  Heading3,
+  Heading4,
+} from "../../../../components/Heading"
 
 const paragraph = cva({
   base: "text-neutral-400 antialiased mb-4 last-of-type:mb-0",
@@ -68,18 +62,10 @@ const codeBlock = cva({
 })
 
 export const components: any = {
-  h1: ({ className, ...props }: ComponentPropsWithRef<"h1">) => (
-    <h1 {...props} className={heading({ level: "h1", className })} />
-  ),
-  h2: ({ className, ...props }: ComponentPropsWithRef<"h2">) => (
-    <h2 {...props} className={heading({ level: "h2", className })} />
-  ),
-  h3: ({ className, ...props }: ComponentPropsWithRef<"h3">) => (
-    <h3 {...props} className={heading({ level: "h3", className })} />
-  ),
-  h4: ({ className, ...props }: ComponentPropsWithRef<"h4">) => (
-    <h4 {...props} className={heading({ level: "h4", className })} />
-  ),
+  h1: (props: ComponentPropsWithRef<"h1">) => <Heading1 {...props} />,
+  h2: (props: ComponentPropsWithRef<"h2">) => <Heading2 {...props} />,
+  h3: (props: ComponentPropsWithRef<"h3">) => <Heading3 {...props} />,
+  h4: (props: ComponentPropsWithRef<"h4">) => <Heading4 {...props} />,
   p: ({ className, ...props }: ComponentPropsWithRef<"p">) => (
     <p {...props} className={paragraph({ className })} />
   ),

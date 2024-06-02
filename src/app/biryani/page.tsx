@@ -1,5 +1,6 @@
 import { Metadata, NextPage } from "next"
-import { Heading1, Heading2, Paragraph } from "../../components"
+import { Paragraph } from "../../components"
+import { Heading1, Heading2 } from "../../components/Heading"
 
 export const metadata: Metadata = {
   title: "Biryani",
@@ -47,7 +48,7 @@ const BiryaniPage: NextPage = () => {
       </section>
       <div className="mt-8 flex-grow md:-mx-8 md:flex md:gap-8">
         <section className="flex-none lg:min-w-56">
-          <Heading2 size={4} className="text-neutral-400">
+          <Heading2 level="h4" className="text-neutral-400">
             Ingredients
           </Heading2>
           <ul className="mb-8 mt-2 flex flex-col gap-3">
@@ -73,7 +74,7 @@ const BiryaniPage: NextPage = () => {
           </ul>
         </section>
         <section className="max-w-xl">
-          <Heading2 size={4} className="text-neutral-400">
+          <Heading2 level="h4" className="text-neutral-400">
             Instructions
           </Heading2>
           <ol className="mb-8 mt-2 flex list-outside list-decimal flex-col gap-3 pl-8 antialiased marker:font-sans marker:text-xl marker:font-semibold">

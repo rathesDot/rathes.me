@@ -1,7 +1,8 @@
 import { Metadata, NextPage } from "next"
 import Image from "next/image"
 
-import { Heading1, Link, Paragraph } from "../../../components"
+import { Link, Paragraph } from "../../../components"
+import { Heading1 } from "../../../components/Heading"
 
 import CalaisTemplateLarge from "../../../assets/templates/calais-large.png"
 import CalaisPreviewDesktop from "../../../assets/templates/calais-preview-home-desktop.png"

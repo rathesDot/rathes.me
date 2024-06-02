@@ -16,7 +16,8 @@ import Link from "next/link"
 import rehypeHighlight from "rehype-highlight"
 import remarkGfm from "remark-gfm"
 
-import { components, heading, link, caption } from "./components"
+import { components, link, caption } from "./components"
+import { Heading1 } from "../../../../components/Heading"
 
 type Params = { lang: "en" | "de"; slug: string }
 
@@ -40,7 +41,7 @@ const BlogPage: NextPage<{ params: Params }> = async ({ params }) => {
   return (
     <article className="max-w-[54ch]">
       <header className="mb-8">
-        <h1 className={heading({ level: "h1" })}>{data.title}</h1>
+        <Heading1>{data.title}</Heading1>
         <div className="flex items-center gap-2">
           <time
             className="text-sm text-neutral-400 antialiased"

@@ -6,7 +6,8 @@ import { createSlug, getFilteredList } from "../../services/books"
 import { Search } from "../../patterns/Search"
 import { SayHi } from "../../patterns/SayHi"
 
-import { Heading1, Paragraph, Separator } from "../../components"
+import { Paragraph, Separator } from "../../components"
+import { Heading1 } from "../../components/Heading"
 import * as List from "../../components/List/List"
 
 export const metadata: Metadata = {

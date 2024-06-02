@@ -2,14 +2,8 @@ import { Metadata, NextPage } from "next"
 import Image from "next/image"
 
 import { SayHi } from "../../patterns/SayHi"
-import {
-  Heading1,
-  Paragraph,
-  Link,
-  Heading2,
-  Heading3,
-  Separator,
-} from "../../components"
+import { Paragraph, Link, Separator } from "../../components"
+import { Heading1, Heading2, Heading3 } from "../../components/Heading"
 import * as List from "../../components/List/List"
 
 import CalaisTemplate from "../../assets/templates/calais.png"
@@ -35,7 +29,7 @@ const WorkPage: NextPage = () => {
       </section>
 
       <section className="my-16 flex flex-col gap-4">
-        <Heading2 size={4} className="text-neutral-400">
+        <Heading2 level="h4" className="text-neutral-400">
           Templates
         </Heading2>
         <section>
@@ -45,7 +39,7 @@ const WorkPage: NextPage = () => {
             width={480}
           />
           <div className="py-4">
-            <Heading3 size={2}>Calais</Heading3>
+            <Heading3 level="h2">Calais</Heading3>
             <Paragraph>
               A minimal personal portfolio template best for someone who wants
               to showcase their projects but also have their resume ready on
@@ -58,12 +52,12 @@ const WorkPage: NextPage = () => {
       </section>
 
       <section className="my-16 flex max-w-xl flex-col gap-4">
-        <Heading2 size={4} className="text-neutral-400">
+        <Heading2 level="h4" className="text-neutral-400">
           Active projects
         </Heading2>
         <div className="flex flex-col gap-16">
           <section>
-            <Heading3 size={2}>Maxout 2.0</Heading3>
+            <Heading3 level="h2">Maxout 2.0</Heading3>
             <Paragraph>
               After a first attempt as a workout planning app, Maxout 2.0 aims
               to be the single necessary app for anyone interested in leading a
@@ -78,7 +72,7 @@ const WorkPage: NextPage = () => {
             </Link>
           </section>
           <section>
-            <Heading3 size={2}>Learn Tamil Online</Heading3>
+            <Heading3 level="h2">Learn Tamil Online</Heading3>
             <Paragraph>
               The mission of Learn Tamil Online is to keep the Tamil language
               alive which we want to achieve by bringing together the Tamil
@@ -94,7 +88,7 @@ const WorkPage: NextPage = () => {
             </Link>
           </section>
           <section>
-            <Heading3 size={2}>Espresso at home</Heading3>
+            <Heading3 level="h2">Espresso at home</Heading3>
             <Paragraph>
               A small project that I started to share everything I am learning
               while trying to recreate the Italian espresso feeling at home.
@@ -108,7 +102,7 @@ const WorkPage: NextPage = () => {
             </Link>
           </section>
           <section>
-            <Heading3 size={2}>Kodi — Feature Management Service</Heading3>
+            <Heading3 level="h2">Kodi — Feature Management Service</Heading3>
             <Paragraph>
               The aim of this SaaS is to enable every team to use feature flags
               straight from the beginning.
@@ -164,7 +158,7 @@ const WorkPage: NextPage = () => {
             </List.Container>
           </List.Root>
           <Separator />
-          <Heading2 size={4} className="text-neutral-400">
+          <Heading2 level="h4" className="text-neutral-400">
             Abstracts
           </Heading2>
           <article className="my-6">

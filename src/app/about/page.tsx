@@ -1,10 +1,11 @@
 import { Metadata, NextPage } from "next"
 
 import { SayHi } from "../../patterns/SayHi"
-import { Heading1, Paragraph } from "../../components"
+import { Paragraph } from "../../components"
 import * as List from "../../components/List/List"
 
 import { ExpandableSection } from "./ExpandableSection"
+import { Heading1 } from "../../components/Heading"
 
 export const metadata: Metadata = {
   title: "About me",
@@ -13,9 +14,9 @@ export const metadata: Metadata = {
 const AboutPage: NextPage = () => {
   return (
     <div className="">
-      <h1 className="mb-2 mt-8 text-2xl font-bold leading-tight tracking-[-0.01em] text-white antialiased">
+      <Heading1 className="mb-2">
         I'm a front-end engineer with over 10 years of web experience.
-      </h1>
+      </Heading1>
       <ExpandableSection>
         <Paragraph>
           I started working as a web designer and web developer at a very young

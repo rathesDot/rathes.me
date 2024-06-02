@@ -4,7 +4,8 @@ import { getFilteredBlogPosts } from "../../services/blog"
 
 import { SayHi } from "../../patterns/SayHi"
 import { Search } from "../../patterns/Search"
-import { Heading1, Link, Paragraph } from "../../components"
+import { Link, Paragraph } from "../../components"
+import { Heading1 } from "../../components/Heading"
 import * as List from "../../components/List/List"
 
 export const metadata: Metadata = {
