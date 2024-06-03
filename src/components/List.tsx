@@ -18,9 +18,10 @@ export const Title: React.FC<ComponentPropsWithRef<"h2">> = ({
   />
 )
 
-export const Container: React.FC<ComponentPropsWithRef<"ul">> = (props) => (
-  <ul className="my-4 space-y-4" {...props} />
-)
+export const Container: React.FC<ComponentPropsWithRef<"ul">> = ({
+  className,
+  ...props
+}) => <ul className={cx("my-4 space-y-4", className)} {...props} />
 
 export const Item: React.FC<ComponentPropsWithRef<"li">> = (props) => (
   <li
