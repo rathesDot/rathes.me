@@ -31,9 +31,7 @@ const WorkPage: NextPage = () => {
       </section>
 
       <section className="my-16 flex flex-col gap-4">
-        <Heading2 level="h4" className="text-neutral-400">
-          Templates
-        </Heading2>
+        <Heading2 level="small">Templates</Heading2>
         <section>
           <Image
             src={CalaisTemplate}
@@ -48,24 +46,26 @@ const WorkPage: NextPage = () => {
               their website.
             </Paragraph>
 
-            <Link href="/store/calais">View template</Link>
+            <Link className="mt-2 block text-sm" href="/store/calais">
+              View template
+            </Link>
           </div>
         </section>
       </section>
 
-      <section className="my-16 flex max-w-xl flex-col gap-4">
-        <Heading2 level="h4" className="text-neutral-400">
-          Active projects
-        </Heading2>
-        <div className="flex flex-col gap-16">
+      <section className="my-16 max-w-xl">
+        <Heading2 level="small">Active projects</Heading2>
+        <div className="spacing-y-4">
           <section>
-            <Heading3 level="h2">Maxout 2.0</Heading3>
+            <Heading3 className="mt-4" level="h2">
+              Maxout 2.0
+            </Heading3>
             <Paragraph>
               After a first attempt as a workout planning app, Maxout 2.0 aims
               to be the single necessary app for anyone interested in leading a
               healthy lifestyle.
             </Paragraph>
-            <Link href="https://getmaxout.app" className="text-neutral-50">
+            <Link className="mt-2 block text-sm" href="https://getmaxout.app">
               View project
             </Link>
           </section>
@@ -77,7 +77,9 @@ const WorkPage: NextPage = () => {
               speaking community from all over the world and all necessary
               resources to learn Tamil.
             </Paragraph>
-            <Link href="https://learn-tamil.com">View project</Link>
+            <Link className="mt-2 block text-sm" href="https://learn-tamil.com">
+              View project
+            </Link>
           </section>
           <section>
             <Heading3 level="h2">Espresso at home</Heading3>
@@ -85,7 +87,12 @@ const WorkPage: NextPage = () => {
               A small project that I started to share everything I am learning
               while trying to recreate the Italian espresso feeling at home.
             </Paragraph>
-            <Link href="https://espresso-at-home.com">View project</Link>
+            <Link
+              className="mt-2 block text-sm"
+              href="https://espresso-at-home.com"
+            >
+              View project
+            </Link>
           </section>
           <section>
             <Heading3 level="h2">Kodi — Feature Management Service</Heading3>
@@ -93,7 +100,9 @@ const WorkPage: NextPage = () => {
               The aim of this SaaS is to enable every team to use feature flags
               straight from the beginning.
             </Paragraph>
-            <Link href="https://getkodi.com">View project</Link>
+            <Link className="mt-2 block text-sm" href="https://getkodi.com">
+              View project
+            </Link>
           </section>
         </div>
       </section>
