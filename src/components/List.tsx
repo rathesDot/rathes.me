@@ -3,6 +3,8 @@ import RouterLink, { LinkProps } from "next/link"
 
 import { cx } from "../../cva.config"
 
+import { Heading2 } from "./Heading"
+
 export const Root: React.FC<ComponentPropsWithRef<"div">> = ({
   className,
   ...props
@@ -11,12 +13,7 @@ export const Root: React.FC<ComponentPropsWithRef<"div">> = ({
 export const Title: React.FC<ComponentPropsWithRef<"h2">> = ({
   className,
   ...props
-}) => (
-  <h2
-    className="text-xs font-semibold uppercase tracking-wide text-neutral-500 antialiased"
-    {...props}
-  />
-)
+}) => <Heading2 level="small" {...props} />
 
 export const Container: React.FC<ComponentPropsWithRef<"ul">> = ({
   className,
