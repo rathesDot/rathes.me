@@ -255,6 +255,11 @@ const AboutPage: NextPage = () => {
               </List.Item>
             </List.Container>
           </List.Root>
+          <Paragraph className="mt-8 text-sm text-neutral-500">
+            There are many other tools and services I use for deployment,
+            monitoring and product management, but they all depend on the team
+            and project I am working with and on
+          </Paragraph>
         </section>
       </div>
       <a
