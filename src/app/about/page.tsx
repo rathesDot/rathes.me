@@ -40,11 +40,11 @@ const AboutPage: NextPage = () => {
         </Paragraph>
       </ExpandableSection>
 
-      <div className="mb-8 mt-12 space-y-8 md:-mx-16 md:mt-16 md:flex md:gap-16 md:space-y-0 lg:-mx-32">
+      <div className="mb-16 mt-12 space-y-8 md:-mx-16 md:mt-16 md:flex md:gap-16 md:space-y-0 lg:-mx-32">
         <section className="flex-none md:max-w-80 lg:max-w-96">
           <List.Root>
             <List.Title>Work Experience</List.Title>
-            <List.Container className="space-y-6">
+            <List.Container className="mb-0 space-y-6">
               <List.Item>
                 Senior Engineer / Intercom
                 <List.Subtitle>April 2024 — now</List.Subtitle>
@@ -124,143 +124,152 @@ const AboutPage: NextPage = () => {
           </List.Root>
         </section>
         <section>
-          <List.Root>
-            <List.Title>Education</List.Title>
-            <List.Container className="space-y-6">
-              <List.Item>
-                B.Sc. Media Computer Science
-                <List.Subtitle>
-                  Ulm University / 10/2011 - 09/2014
-                </List.Subtitle>
-              </List.Item>
-            </List.Container>
-          </List.Root>
-          <Heading2 level="small">Career vision</Heading2>
-          <Paragraph className="mt-4 font-medium text-neutral-500">
-            While I m currently on the IC track as a full-stack engineer, my
-            strength is my ability to understand and get all stakeholders on the
-            same page, enabling my team to deliver effectively and efficiently.
-          </Paragraph>
-          <Paragraph className="font-medium text-neutral-500">
-            In the long term, I see myself in a role that allows me to support
-            and lead one or multiple teams to deliver impactful outcomes.
-          </Paragraph>
-          <List.Root>
-            <List.Title>Tech Stack</List.Title>
-            <List.Container className="space-y-2">
-              <List.Item>
-                <List.Link
-                  target="_blank"
-                  href="https://www.typescriptlang.org/"
-                >
-                  TypeScript
-                </List.Link>
-              </List.Item>
-              <List.Item>
-                <List.Link target="_blank" href="https://nextjs.org/">
-                  Next.js
-                </List.Link>
-              </List.Item>
-              <List.Item>
-                <List.Link target="_blank" href="https://tailwindcss.com">
-                  Tailwind CSS
-                </List.Link>{" "}
-                <span className="text-xs text-neutral-500">and</span>{" "}
-                <List.Link target="_blank" href="https://cva.style/">
-                  CVA
-                </List.Link>{" "}
-              </List.Item>
-              <List.Item>
-                <List.Link target="_blank" href="https://jestjs.io/">
-                  Jest
-                </List.Link>{" "}
-                <span className="text-xs text-neutral-500">and</span>{" "}
-                <List.Link target="_blank" href="https://testing-library.com/">
-                  Testing Library
-                </List.Link>{" "}
-              </List.Item>
-              <List.Item>
-                <List.Link target="_blank" href="https://tanstack.com/query">
-                  TanStack Query
-                </List.Link>{" "}
-                <span className="text-xs text-neutral-500">or</span>{" "}
-                <List.Link target="_blank" href="https://swr.vercel.app">
-                  SWR
-                </List.Link>{" "}
-              </List.Item>
-              <List.Item>
-                <List.Link target="_blank" href="https://laravel.com/">
-                  Laravel
-                </List.Link>{" "}
-                <span className="text-xs text-neutral-500">and</span>{" "}
-                <List.Link target="_blank" href="https://inertiajs.com/">
-                  Inertia
-                </List.Link>
-              </List.Item>
-              <List.Item>
-                <List.Link target="_blank" href="https://phpunit.de">
-                  PHPUnit
-                </List.Link>{" "}
-                <span className="text-xs text-neutral-500">or</span>{" "}
-                <List.Link target="_blank" href="https://pestphp.com/">
-                  Pest
-                </List.Link>{" "}
-              </List.Item>
-            </List.Container>
-          </List.Root>
-          <List.Root>
-            <List.Title>Tools and Services</List.Title>
-            <List.Container className="space-y-2">
-              <List.Item>
-                <List.Link target="_blank" href="https://code.visualstudio.com">
-                  VS Code
-                </List.Link>
-              </List.Item>
-              <List.Item>
-                <List.Link target="_blank" href="https://hyper.is">
-                  Hyper
-                </List.Link>
-              </List.Item>
-              <List.Item>
-                <List.Link target="_blank" href="https://www.netlify.com">
-                  Netlify
-                </List.Link>
-              </List.Item>
-              <List.Item>
-                <List.Link target="_blank" href="https://www.figma.com">
-                  Figma
-                </List.Link>
-              </List.Item>
-              <List.Item>
-                <List.Link target="_blank" href="https://www.notion.so">
-                  Notion
-                </List.Link>
-              </List.Item>
-              <List.Item>
-                <List.Link target="_blank" href="https://github.com">
-                  GitHub
-                </List.Link>
-              </List.Item>
-              <List.Item>
-                <List.Link target="_blank" href="https://forge.laravel.com">
-                  Laravel Forge
-                </List.Link>
-              </List.Item>
-              <List.Item>
-                <List.Link
-                  target="_blank"
-                  href="https://m.do.co/c/9823c8ab6676"
-                >
-                  Digital Ocean
-                </List.Link>
-              </List.Item>
-            </List.Container>
-          </List.Root>
-          <Paragraph className="mt-8 text-sm text-neutral-500">
-            There are many other tools and services I use for deployment,
-            monitoring and product management, but they all depend on the team
-            and project I am working with and on
-          </Paragraph>
+          <div className="md:sticky md:top-24">
+            <List.Root>
+              <List.Title>Education</List.Title>
+              <List.Container className="space-y-6">
+                <List.Item>
+                  B.Sc. Media Computer Science
+                  <List.Subtitle>
+                    Ulm University / 10/2011 - 09/2014
+                  </List.Subtitle>
+                </List.Item>
+              </List.Container>
+            </List.Root>
+            <Heading2 level="small">Career vision</Heading2>
+            <Paragraph className="mt-4 font-medium text-neutral-500">
+              While I m currently on the IC track as a full-stack engineer, my
+              strength is my ability to understand and get all stakeholders on
+              the same page, enabling my team to deliver effectively and
+              efficiently.
+            </Paragraph>
+            <Paragraph className="font-medium text-neutral-500">
+              In the long term, I see myself in a role that allows me to support
+              and lead one or multiple teams to deliver impactful outcomes.
+            </Paragraph>
+            <List.Root>
+              <List.Title>Tech Stack</List.Title>
+              <List.Container className="space-y-2">
+                <List.Item>
+                  <List.Link
+                    target="_blank"
+                    href="https://www.typescriptlang.org/"
+                  >
+                    TypeScript
+                  </List.Link>
+                </List.Item>
+                <List.Item>
+                  <List.Link target="_blank" href="https://nextjs.org/">
+                    Next.js
+                  </List.Link>
+                </List.Item>
+                <List.Item>
+                  <List.Link target="_blank" href="https://tailwindcss.com">
+                    Tailwind CSS
+                  </List.Link>{" "}
+                  <span className="text-xs text-neutral-500">and</span>{" "}
+                  <List.Link target="_blank" href="https://cva.style/">
+                    CVA
+                  </List.Link>{" "}
+                </List.Item>
+                <List.Item>
+                  <List.Link target="_blank" href="https://jestjs.io/">
+                    Jest
+                  </List.Link>{" "}
+                  <span className="text-xs text-neutral-500">and</span>{" "}
+                  <List.Link
+                    target="_blank"
+                    href="https://testing-library.com/"
+                  >
+                    Testing Library
+                  </List.Link>{" "}
+                </List.Item>
+                <List.Item>
+                  <List.Link target="_blank" href="https://tanstack.com/query">
+                    TanStack Query
+                  </List.Link>{" "}
+                  <span className="text-xs text-neutral-500">or</span>{" "}
+                  <List.Link target="_blank" href="https://swr.vercel.app">
+                    SWR
+                  </List.Link>{" "}
+                </List.Item>
+                <List.Item>
+                  <List.Link target="_blank" href="https://laravel.com/">
+                    Laravel
+                  </List.Link>{" "}
+                  <span className="text-xs text-neutral-500">and</span>{" "}
+                  <List.Link target="_blank" href="https://inertiajs.com/">
+                    Inertia
+                  </List.Link>
+                </List.Item>
+                <List.Item>
+                  <List.Link target="_blank" href="https://phpunit.de">
+                    PHPUnit
+                  </List.Link>{" "}
+                  <span className="text-xs text-neutral-500">or</span>{" "}
+                  <List.Link target="_blank" href="https://pestphp.com/">
+                    Pest
+                  </List.Link>{" "}
+                </List.Item>
+              </List.Container>
+            </List.Root>
+            <List.Root>
+              <List.Title>Tools and Services</List.Title>
+              <List.Container className="space-y-2">
+                <List.Item>
+                  <List.Link
+                    target="_blank"
+                    href="https://code.visualstudio.com"
+                  >
+                    VS Code
+                  </List.Link>
+                </List.Item>
+                <List.Item>
+                  <List.Link target="_blank" href="https://hyper.is">
+                    Hyper
+                  </List.Link>
+                </List.Item>
+                <List.Item>
+                  <List.Link target="_blank" href="https://www.netlify.com">
+                    Netlify
+                  </List.Link>
+                </List.Item>
+                <List.Item>
+                  <List.Link target="_blank" href="https://www.figma.com">
+                    Figma
+                  </List.Link>
+                </List.Item>
+                <List.Item>
+                  <List.Link target="_blank" href="https://www.notion.so">
+                    Notion
+                  </List.Link>
+                </List.Item>
+                <List.Item>
+                  <List.Link target="_blank" href="https://github.com">
+                    GitHub
+                  </List.Link>
+                </List.Item>
+                <List.Item>
+                  <List.Link target="_blank" href="https://forge.laravel.com">
+                    Laravel Forge
+                  </List.Link>
+                </List.Item>
+                <List.Item>
+                  <List.Link
+                    target="_blank"
+                    href="https://m.do.co/c/9823c8ab6676"
+                  >
+                    Digital Ocean
+                  </List.Link>
+                </List.Item>
+              </List.Container>
+            </List.Root>
+            <Paragraph className="mt-8 text-sm text-neutral-500">
+              There are many other tools and services I use for deployment,
+              monitoring and product management, but they all depend on the team
+              and project I am working with and on
+            </Paragraph>
+          </div>
         </section>
       </div>
       <Paragraph>
