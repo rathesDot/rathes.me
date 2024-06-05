@@ -27,8 +27,14 @@ export const Item: React.FC<ComponentPropsWithRef<"li">> = (props) => (
   />
 )
 
-export const Subtitle: React.FC<ComponentPropsWithRef<"span">> = (props) => (
-  <span className="block text-xs text-neutral-500 md:text-sm" {...props} />
+export const Subtitle: React.FC<ComponentPropsWithRef<"span">> = ({
+  className,
+  ...props
+}) => (
+  <span
+    className={cx("block text-xs text-neutral-500 md:text-sm", className)}
+    {...props}
+  />
 )
 
 export const Link: React.FC<PropsWithChildren<LinkProps>> = (props) => {
