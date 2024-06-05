@@ -1,5 +1,5 @@
-import React, { ComponentPropsWithRef, PropsWithChildren } from "react"
-import RouterLink, { LinkProps } from "next/link"
+import React, { ComponentPropsWithRef } from "react"
+import RouterLink, { LinkProps as RouterLinkProps } from "next/link"
 
 import { cx } from "../../cva.config"
 
@@ -37,6 +37,8 @@ export const Subtitle: React.FC<ComponentPropsWithRef<"span">> = ({
   />
 )
 
-export const Link: React.FC<PropsWithChildren<LinkProps>> = (props) => {
+type LinkProps = RouterLinkProps & ComponentPropsWithRef<"a">
+
+export const Link: React.FC<LinkProps> = (props) => {
   return <RouterLink {...props} />
 }
