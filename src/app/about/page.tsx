@@ -6,6 +6,7 @@ import * as List from "../../components/List"
 
 import { ExpandableSection } from "./ExpandableSection"
 import { Heading1, Heading2 } from "../../components/Heading"
+import { Link } from "../../components/Link"
 
 export const metadata: Metadata = {
   title: "About me",
@@ -39,7 +40,7 @@ const AboutPage: NextPage = () => {
         </Paragraph>
       </ExpandableSection>
 
-      <div className="mt-12 space-y-8 md:-mx-16 md:mt-16 md:flex md:gap-16 md:space-y-0 lg:-mx-32">
+      <div className="mb-8 mt-12 space-y-8 md:-mx-16 md:mt-16 md:flex md:gap-16 md:space-y-0 lg:-mx-32">
         <section className="flex-none md:max-w-80 lg:max-w-96">
           <List.Root>
             <List.Title>Work Experience</List.Title>
@@ -262,26 +263,12 @@ const AboutPage: NextPage = () => {
           </Paragraph>
         </section>
       </div>
-      <a
-        href="/files/resume.pdf"
-        className="mt-8 flex items-center gap-1 font-medium text-neutral-300 underline decoration-neutral-600 underline-offset-2 antialiased transition-colors hover:decoration-neutral-400"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth={1.5}
-          stroke="currentColor"
-          className="h-4 w-4"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
-          />
-        </svg>
-        <span className="text-sm md:text-base">Download CV</span>
-      </a>
+      <Paragraph>
+        Want to have a local copy of the full resume?{" "}
+        <Link href="/files/resume.pdf">
+          <span className="text-sm md:text-base">Download the PDF here</span>
+        </Link>
+      </Paragraph>
 
       <div className="mt-16 md:mt-32">
         <SayHi />
