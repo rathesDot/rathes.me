@@ -5,7 +5,7 @@ import { Paragraph } from "../../components/Paragraph"
 import * as List from "../../components/List"
 
 import { ExpandableSection } from "./ExpandableSection"
-import { Heading1 } from "../../components/Heading"
+import { Heading1, Heading2 } from "../../components/Heading"
 
 export const metadata: Metadata = {
   title: "About me",
@@ -39,106 +39,244 @@ const AboutPage: NextPage = () => {
         </Paragraph>
       </ExpandableSection>
 
-      <section className="mt-12 md:mt-16">
-        <List.Root>
-          <List.Title>Work Experience</List.Title>
-          <List.Container className="space-y-6">
-            <List.Item>
-              Senior Engineer / Intercom
-              <List.Subtitle>April 2024 — now</List.Subtitle>
-              <Paragraph className="mt-2 text-neutral-500">
-                Owning and leading bigger, more strategic projects at team level
-                and contributing to the roadmap and technical strategy. I'm also
-                coaching and mentoring other team mates to help the entire team
-                work as effective as possible
-              </Paragraph>
-            </List.Item>
-            <List.Item>
-              Product Engineer 3 / Intercom
-              <List.Subtitle>December 2021 — March 2024</List.Subtitle>
-            </List.Item>
-            <List.Item>
-              Engineering Team Lead / Hussle
-              <List.Subtitle>April 2021 — November 2021</List.Subtitle>
-              <Paragraph className="mt-2 text-neutral-500">
-                As the team could not grow due to the impacts of the pandemic, I
-                was guiding and leading the front-end and back-end engineers to
-                collaborate and work closely together to help out each other to
-                fill gaps
-              </Paragraph>
-            </List.Item>
-            <List.Item>
-              Senior Frontend Engineer / Hussle
-              <List.Subtitle>February 2020 — March 2021</List.Subtitle>
-              <Paragraph className="mt-2 text-neutral-500">
-                In 2020, I made the decision to make another big step and moved
-                to London to work in FitTech at Hussle. This was my chance to
-                combine my passion for fitness with my passion for tech.
-              </Paragraph>
-            </List.Item>
-            <List.Item>
-              Software Engineer / Teamleader
-              <List.Subtitle>May 2018 — January 2020</List.Subtitle>
-            </List.Item>
-            <List.Item>
-              Founder / Aheenam
-              <List.Subtitle>May 2016 — October 2021</List.Subtitle>
-              <Paragraph className="mt-2 text-neutral-500">
-                In 2016, I decided decrease client work and focus more on
-                creating software products. Therefore, I changed the type of my
-                business and created a custom brand for this company
-              </Paragraph>
-            </List.Item>
-            <List.Item>
-              Web Developer / netinsiders
-              <List.Subtitle>November 2016 — April 2018</List.Subtitle>
-            </List.Item>
-            <List.Item>
-              Co-Founder / Kernwerk
-              <List.Subtitle>October 2015 — January 2018</List.Subtitle>
-              <Paragraph className="mt-2 text-neutral-500">
-                Together with some friends, I created an awesome app for digital
-                personal training. I created the backend of first MVP using
-                Laravel as the framework of choice. Due to lack of time and
-                shift of interests, I left this project by the end of 2017.
-              </Paragraph>
-            </List.Item>
-            <List.Item>
-              Product Assistant / Kopierland GmbH
-              <List.Subtitle>June 2011 — March 2014</List.Subtitle>
-            </List.Item>
-            <List.Item>
-              Web Designer / rathesDot (CreativeCreation)
-              <List.Subtitle>June 2006 — March 2016</List.Subtitle>
-              <Paragraph className="mt-2 text-neutral-500">
-                Earning my first money creating custom MySpace layouts, I went
-                on to create custom websites for various customer of different
-                sizes as a freelancer
-              </Paragraph>
-            </List.Item>
-          </List.Container>
-        </List.Root>
-        <a
-          href="/files/resume.pdf"
-          className="mt-8 flex items-center gap-1 font-medium text-neutral-300 underline decoration-neutral-600 underline-offset-2 antialiased transition-colors hover:decoration-neutral-400"
+      <div className="mt-12 space-y-8 md:-mx-16 md:mt-16 md:flex md:gap-16 md:space-y-0 lg:-mx-32">
+        <section className="flex-none md:max-w-80 lg:max-w-96">
+          <List.Root>
+            <List.Title>Work Experience</List.Title>
+            <List.Container className="space-y-6">
+              <List.Item>
+                Senior Engineer / Intercom
+                <List.Subtitle>April 2024 — now</List.Subtitle>
+                <Paragraph className="mt-2 text-neutral-500">
+                  Owning and leading bigger, more strategic projects at team
+                  level and contributing to the roadmap and technical strategy.
+                  I'm also coaching and mentoring other team mates to help the
+                  entire team work as effective as possible
+                </Paragraph>
+              </List.Item>
+              <List.Item>
+                Product Engineer 3 / Intercom
+                <List.Subtitle>December 2021 — March 2024</List.Subtitle>
+              </List.Item>
+              <List.Item>
+                Engineering Team Lead / Hussle
+                <List.Subtitle>April 2021 — November 2021</List.Subtitle>
+                <Paragraph className="mt-2 text-neutral-500">
+                  As the team could not grow due to the impacts of the pandemic,
+                  I was guiding and leading the front-end and back-end engineers
+                  to collaborate and work closely together to help out each
+                  other to fill gaps
+                </Paragraph>
+              </List.Item>
+              <List.Item>
+                Senior Frontend Engineer / Hussle
+                <List.Subtitle>February 2020 — March 2021</List.Subtitle>
+                <Paragraph className="mt-2 text-neutral-500">
+                  In 2020, I made the decision to make another big step and
+                  moved to London to work in FitTech at Hussle. This was my
+                  chance to combine my passion for fitness with my passion for
+                  tech.
+                </Paragraph>
+              </List.Item>
+              <List.Item>
+                Software Engineer / Teamleader
+                <List.Subtitle>May 2018 — January 2020</List.Subtitle>
+              </List.Item>
+              <List.Item>
+                Founder / Aheenam
+                <List.Subtitle>May 2016 — October 2021</List.Subtitle>
+                <Paragraph className="mt-2 text-neutral-500">
+                  In 2016, I decided decrease client work and focus more on
+                  creating software products. Therefore, I changed the type of
+                  my business and created a custom brand for this company
+                </Paragraph>
+              </List.Item>
+              <List.Item>
+                Web Developer / netinsiders
+                <List.Subtitle>November 2016 — April 2018</List.Subtitle>
+              </List.Item>
+              <List.Item>
+                Co-Founder / Kernwerk
+                <List.Subtitle>October 2015 — January 2018</List.Subtitle>
+                <Paragraph className="mt-2 text-neutral-500">
+                  Together with some friends, I created an awesome app for
+                  digital personal training. I created the backend of first MVP
+                  using Laravel as the framework of choice. Due to lack of time
+                  and shift of interests, I left this project by the end of
+                  2017.
+                </Paragraph>
+              </List.Item>
+              <List.Item>
+                Product Assistant / Kopierland GmbH
+                <List.Subtitle>June 2011 — March 2014</List.Subtitle>
+              </List.Item>
+              <List.Item>
+                Web Designer / rathesDot (CreativeCreation)
+                <List.Subtitle>June 2006 — March 2016</List.Subtitle>
+                <Paragraph className="mt-2 text-neutral-500">
+                  Earning my first money creating custom MySpace layouts, I went
+                  on to create custom websites for various customer of different
+                  sizes as a freelancer
+                </Paragraph>
+              </List.Item>
+            </List.Container>
+          </List.Root>
+        </section>
+        <section>
+          <List.Root>
+            <List.Title>Education</List.Title>
+            <List.Container className="space-y-6">
+              <List.Item>
+                B.Sc. Media Computer Science
+                <List.Subtitle>
+                  Ulm University / 10/2011 - 09/2014
+                </List.Subtitle>
+              </List.Item>
+            </List.Container>
+          </List.Root>
+          <Heading2 level="small">Career vision</Heading2>
+          <Paragraph className="mt-4 font-medium text-neutral-500">
+            While I m currently on the IC track as a full-stack engineer, my
+            strength is my ability to understand and get all stakeholders on the
+            same page, enabling my team to deliver effectively and efficiently.
+          </Paragraph>
+          <Paragraph className="font-medium text-neutral-500">
+            In the long term, I see myself in a role that allows me to support
+            and lead one or multiple teams to deliver impactful outcomes.
+          </Paragraph>
+          <List.Root>
+            <List.Title>Tech Stack</List.Title>
+            <List.Container className="space-y-2">
+              <List.Item>
+                <List.Link
+                  target="_blank"
+                  href="https://www.typescriptlang.org/"
+                >
+                  TypeScript
+                </List.Link>
+              </List.Item>
+              <List.Item>
+                <List.Link target="_blank" href="https://nextjs.org/">
+                  Next.js
+                </List.Link>
+              </List.Item>
+              <List.Item>
+                <List.Link target="_blank" href="https://tailwindcss.com">
+                  Tailwind CSS
+                </List.Link>{" "}
+                <span className="text-xs text-neutral-500">and</span>{" "}
+                <List.Link target="_blank" href="https://cva.style/">
+                  CVA
+                </List.Link>{" "}
+              </List.Item>
+              <List.Item>
+                <List.Link target="_blank" href="https://jestjs.io/">
+                  Jest
+                </List.Link>{" "}
+                <span className="text-xs text-neutral-500">and</span>{" "}
+                <List.Link target="_blank" href="https://testing-library.com/">
+                  Testing Library
+                </List.Link>{" "}
+              </List.Item>
+              <List.Item>
+                <List.Link target="_blank" href="https://tanstack.com/query">
+                  TanStack Query
+                </List.Link>{" "}
+                <span className="text-xs text-neutral-500">or</span>{" "}
+                <List.Link target="_blank" href="https://swr.vercel.app">
+                  SWR
+                </List.Link>{" "}
+              </List.Item>
+              <List.Item>
+                <List.Link target="_blank" href="https://laravel.com/">
+                  Laravel
+                </List.Link>{" "}
+                <span className="text-xs text-neutral-500">and</span>{" "}
+                <List.Link target="_blank" href="https://inertiajs.com/">
+                  Inertia
+                </List.Link>
+              </List.Item>
+              <List.Item>
+                <List.Link target="_blank" href="https://phpunit.de">
+                  PHPUnit
+                </List.Link>{" "}
+                <span className="text-xs text-neutral-500">or</span>{" "}
+                <List.Link target="_blank" href="https://pestphp.com/">
+                  Pest
+                </List.Link>{" "}
+              </List.Item>
+            </List.Container>
+          </List.Root>
+          <List.Root>
+            <List.Title>Tools and Services</List.Title>
+            <List.Container className="space-y-2">
+              <List.Item>
+                <List.Link target="_blank" href="https://code.visualstudio.com">
+                  VS Code
+                </List.Link>
+              </List.Item>
+              <List.Item>
+                <List.Link target="_blank" href="https://hyper.is">
+                  Hyper
+                </List.Link>
+              </List.Item>
+              <List.Item>
+                <List.Link target="_blank" href="https://www.netlify.com">
+                  Netlify
+                </List.Link>
+              </List.Item>
+              <List.Item>
+                <List.Link target="_blank" href="https://www.figma.com">
+                  Figma
+                </List.Link>
+              </List.Item>
+              <List.Item>
+                <List.Link target="_blank" href="https://www.notion.so">
+                  Notion
+                </List.Link>
+              </List.Item>
+              <List.Item>
+                <List.Link target="_blank" href="https://github.com">
+                  GitHub
+                </List.Link>
+              </List.Item>
+              <List.Item>
+                <List.Link target="_blank" href="https://forge.laravel.com">
+                  Laravel Forge
+                </List.Link>
+              </List.Item>
+              <List.Item>
+                <List.Link
+                  target="_blank"
+                  href="https://m.do.co/c/9823c8ab6676"
+                >
+                  Digital Ocean
+                </List.Link>
+              </List.Item>
+            </List.Container>
+          </List.Root>
+        </section>
+      </div>
+      <a
+        href="/files/resume.pdf"
+        className="mt-8 flex items-center gap-1 font-medium text-neutral-300 underline decoration-neutral-600 underline-offset-2 antialiased transition-colors hover:decoration-neutral-400"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="h-4 w-4"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="h-4 w-4"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
-            />
-          </svg>
-          <span className="text-sm md:text-base">Download CV</span>
-        </a>
-      </section>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+          />
+        </svg>
+        <span className="text-sm md:text-base">Download CV</span>
+      </a>
 
       <div className="mt-16 md:mt-32">
         <SayHi />
