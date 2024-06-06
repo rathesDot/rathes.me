@@ -12,7 +12,7 @@ import { Heading1 } from "../../components/Heading"
 import * as List from "../../components/List"
 
 export const metadata: Metadata = {
-  title: "Writing",
+  title: "Reading",
   description: "I love to read, I read any book that I can get my hands on.",
 }
 
