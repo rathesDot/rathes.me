@@ -18,7 +18,7 @@ const CalaisPage: NextPage = () => (
   <div className="md:my-8">
     <div className="mb-12 md:mb-16">
       <Heading1>Calais — Figma Template</Heading1>
-      <div className="my-2 text-neutral-50/60">£9.99</div>
+      <div className="my-2 text-neutral-50/60">$9.99</div>
       <div className="my-4">
         <Link
           href="https://aheenam.lemonsqueezy.com/checkout/buy/597d3764-92f3-4db7-a551-b17ac34a3d77?discount=0"
