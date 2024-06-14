@@ -10,8 +10,9 @@ function TrackPageView() {
 
   // Load the Fathom script on mount
   useEffect(() => {
-    load("MY_FATHOM_ID", {
+    load("ZYWCGBNZ", {
       auto: false,
+      includedDomains: ["rathes.me"],
     })
   }, [])
 
