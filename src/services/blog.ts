@@ -98,7 +98,7 @@ export const generateBlogMetaData = async (
     openGraph: {
       type: "article",
       locale: frontmatter.locale,
-      images: frontmatter.image,
+      images: frontmatter.social || frontmatter.image,
       title: frontmatter.title,
       authors: "@rswebdesigner",
     },
