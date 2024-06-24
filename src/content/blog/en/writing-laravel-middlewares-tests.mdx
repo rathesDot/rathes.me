@@ -1,0 +1,106 @@
+---
+title: Writing Tests for Laravel Middlewares
+date: 2024-06-24T07:38:54.930Z
+# image: /images/blog/*/.png
+author: Rathes Sachchithananthan
+template: post
+description: Struggling to write unit tests for your Laravel middleware? This video provides a clear, step-by-step guide to get you started. Learn how to create a test environment, implement a sample middleware, and write assertions to ensure it functions correctly. Boost your Laravel development confidence with this practical approach to middleware testing!
+categories:
+  - Web
+tags:
+  - Laravel
+  - PHP
+  - webdev
+locale: en_US
+---
+
+Laravel middlewares are a powerful tool for adding functionality to your application's HTTP requests. They can be used for a variety of purposes, such as authentication, authorization, and request logging.
+
+## What are Laravel middlewares?
+
+Middlewares are classes that intercept HTTP requests before they reach your application's controllers. They can modify the request, perform actions, or terminate the request entirely.
+
+At the same time, middlewares can also be used to alter the response after the request has been handled by the application.
+
+## How to test middlewares in Laravel?
+
+There are multiple ways to test them, one of them ins when you manually create the required request and callback and trigger the handle method of the middleware manually.
+
+Another way — and this is the one I prefer — is to test a middleware against routes. The same way, you would actually use the middleware in your code.
+
+Let's have a look at the following simplified middleware:
+
+```php
+<?php
+
+namespace App\Http\Middleware;
+
+use App\Models\User;
+use Closure;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+class UsernameMiddleware
+{
+  public $blocklist = ['John Doe', 'Jane Doe'];
+
+  public function handle(Request $request, Closure $next): Response
+  {
+      if (! $request->user()) {
+          return redirect('/login');
+      }
+
+      abort_if(collect($this->blocklist)->contains($request->user()->name), 403);
+
+      return $next($request);
+  }
+}
+```
+
+This middleware tests if the currently authenticated user is in a given list and if they are, the request is aborted with a 403 error.
+
+To write a test for this, we will create a new route in our test file using the same Route facade that we also use in our application. This will create a new route that temporarily exists in that one particular test file. To this new route, we can now attach our middleware.
+
+```php
+<?php
+
+beforeEach(function () {
+  Route::get('/test-middleware', fn () => 'It works')->middleware(UsernameMiddleware::class);
+});
+
+```
+
+Now, we can write tests regular HTTP tests against this new route and ensure that the middleware behaves exactly how we want it.
+
+```php
+it('returns 403 if user is on blocklist', function () {
+  $user = User::factory()->create(['name' => 'John Doe'])->create();
+
+  $this
+    ->actingAs($user)
+    ->visit('/test-middleware')
+    ->assertStatus(403);
+});
+```
+
+For example, in this test above, we ensure that the status code is 403 for a user that visits our dummy route and is on the blocklist of the middleware.
+
+```php
+it('passes middleware for any other user', function () {
+  $user = User::factory()->create(['name' => 'Harry Potter'])->create();
+
+  $this
+    ->actingAs($user)
+    ->visit('/test-middleware')
+    ->assertStatus(200)
+    ->assertSee('It works');
+});
+```
+
+In this test, we are making sure that, when the user is not on the blocklist, they get to the see the response of the route which in our case is just a "It works".
+
+## Conclusion
+
+This way of testing middlewares is not only simpler to setup, but it also allows you to write more tests more natural and closer to how the middlewares would work in your actual application. All that without actually having to setup all of your application which you would have to do when you tested your middleware against real app routes.
+
+An additional benefit of this way of testing compared to isolated unit tests is that you can easily extend this to test how your middleware interplays with a stack of other middlewares. You just need to update the test route and attach all the other middlewares and you have a setup that uses all middlewares.
