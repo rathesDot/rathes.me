@@ -22,6 +22,12 @@ Middlewares are classes that intercept HTTP requests before they reach your appl
 
 At the same time, middlewares can also be used to alter the response after the request has been handled by the application.
 
+<Note>
+**Video Tutorial?**
+
+If you prefer a video tutorial on this topic, have a look at my [YouTube video](https://youtu.be/2YthFqrWBGA?si=FoQSSRp-LhVhicIs) around this topic.
+</Note>
+
 ## How to test middlewares in Laravel?
 
 There are multiple ways to test them, one of them ins when you manually create the required request and callback and trigger the handle method of the middleware manually.
@@ -69,6 +75,12 @@ beforeEach(function () {
 });
 
 ```
+
+<Note>
+**Note**
+
+I am using [Pest](https://pestphp.com/) here to write tests but you can also just use regular PHPUnit. In that case, you would setup your Route in the `setUp` method.
+</Note>
 
 Now, we can write tests regular HTTP tests against this new route and ensure that the middleware behaves exactly how we want it.
 
