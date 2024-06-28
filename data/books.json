@@ -75,9 +75,14 @@
   ],
   "Reading List 2024": [
     {
+      "title": "Engineering Management for the rest of us",
+      "url": "https://www.engmanagement.dev",
+      "author": "Sarah Drasner"
+    },
+    {
       "title": "Mimik",
       "url": "https://amzn.to/4akyAw6",
-      "author": "Sebastian Fitzek"      
+      "author": "Sebastian Fitzek"
     },
     {
       "title": "Let Her Go (Fiona Red 1)",
