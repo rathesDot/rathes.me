@@ -30,7 +30,7 @@ import { Note } from "../../../components"
 
 Authentifizierung ist ein Thema, mit dem man sich fast immer beschäftigen muss, wenn man eine größere Webanwendung entwickelt. Anders als bei der klassischen Authentifizierung bei serverseitigen Anwendungen, kann man bei der Entwicklung einer Webapp, die auf eine API zugreift, nicht mit Sessions arbeiten. REST API’s, die im Web immer wieder Verwendung finden, sind zustandslos. Daher muss bei jeder Anfrage eine die Information der Authentifizierung immer mitgeschickt werden.
 
-Diese Information ist in der Regel ein Token, das von der API geliefert bei Login wird. Du kannst dafür zum Beispiel das [JSON Webtoken](/blog/json-web-token) verwenden. Dieses Token musst du also immer mitschicken. Wie dieses Token erzeugt wird, ist aber nicht die Aufgabe der Webapp. Das ist der Job der API.
+Diese Information ist in der Regel ein Token, das von der API geliefert bei Login wird. Du kannst dafür zum Beispiel das [JSON Webtoken](/blog/de/json-web-token) verwenden. Dieses Token musst du also immer mitschicken. Wie dieses Token erzeugt wird, ist aber nicht die Aufgabe der Webapp. Das ist der Job der API.
 
 ## Ablauf einer Authentifizierung in einer Webapp
 
@@ -98,7 +98,7 @@ An dieser Stelle beantwortet sich dann auch direkt die andere Frage. Wo finden w
 
 ### Routen absichern
 
-Jetzt können wir also unseren User authentifizieren. Jetzt müssen wir nur noch sicherstellen, dass die zu authentifizierenden Seiten auch wirklich abgesichert sind. Dafür liefert uns in Vue 2 der Router eine Möglichkeit sogenannte "[Navigation Guards](https://router.vuejs.org/en/advanced/navigation-guards.html)" einzusetzen. Sowohl global als auch pro einzelne Router kann man festlegen, was passieren soll bevor die Route ausgeführt wird. In [Laravel kennt man da zum Beispiel das Konzept der Middlware](https://laravel.com/docs/middleware). Wir benutzen diese Möglichkeit und prüfen, ob ein Token existiert. Erst dann kann dann diese Route besucht werden.
+Jetzt können wir also unseren User authentifizieren. Jetzt müssen wir nur noch sicherstellen, dass die zu authentifizierenden Seiten auch wirklich abgesichert sind. Dafür liefert uns in Vue 2 der Router eine Möglichkeit sogenannte "[Navigation Guards](https://router.vuejs.org/guide/advanced/navigation-guards.html#Navigation-Guards)" einzusetzen. Sowohl global als auch pro einzelne Router kann man festlegen, was passieren soll bevor die Route ausgeführt wird. In [Laravel kennt man da zum Beispiel das Konzept der Middlware](https://laravel.com/docs/middleware). Wir benutzen diese Möglichkeit und prüfen, ob ein Token existiert. Erst dann kann dann diese Route besucht werden.
 
 ```javascript
 router.beforeEach((to, from, next) => {
@@ -110,7 +110,7 @@ router.beforeEach((to, from, next) => {
 })
 ```
 
-Wir prüfen hier, ob die Route, welche der Benutzer besuchen will (to) überhaupt eine Authentifizierung benötigt und ob der Benutzer dann dafür authentifiziert ist. Ist das nicht der Fall leiten wir den Benutzer zum Login weiter. Ansonsten kann er die Route besuchen. Dieses `to.meta.auth` ist einfach nur ein [benutzerdefinierte Variable im Route-Objekt](https://router.vuejs.org/en/advanced/meta.html), womit du bestimmen kannst, ob Auth zum Einsatz kommen soll oder nicht. Das Route-Objekt sieht dann zum Beispiel so aus:
+Wir prüfen hier, ob die Route, welche der Benutzer besuchen will (to) überhaupt eine Authentifizierung benötigt und ob der Benutzer dann dafür authentifiziert ist. Ist das nicht der Fall leiten wir den Benutzer zum Login weiter. Ansonsten kann er die Route besuchen. Dieses `to.meta.auth` ist einfach nur ein [benutzerdefinierte Variable im Route-Objekt](https://router.vuejs.org/guide/advanced/meta.html#Route-Meta-Fields), womit du bestimmen kannst, ob Auth zum Einsatz kommen soll oder nicht. Das Route-Objekt sieht dann zum Beispiel so aus:
 
 ```javascript
 {
