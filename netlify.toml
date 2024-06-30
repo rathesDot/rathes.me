@@ -10,5 +10,11 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/json-web-token"
+  to = "/blog/de/json-web-token"
+  status = 301
+  force = true
+
 [build.processing]
   skip_processing = true
