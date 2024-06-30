@@ -14,6 +14,9 @@ import * as List from "../../components/List"
 export const metadata: Metadata = {
   title: "Reading",
   description: "I love to read, I read any book that I can get my hands on.",
+  alternates: {
+    canonical: "/reading",
+  },
 }
 
 const ReadingPage: NextPage<{
