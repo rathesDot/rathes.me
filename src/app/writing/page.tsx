@@ -75,6 +75,15 @@ const WritingPage: NextPage<{
             </div>
           )
         })}
+
+        <List.Root>
+          <List.Title>Other writings</List.Title>
+          <List.Container>
+            <List.Item>
+              <List.Link href="/biryani">My famous biryani recipe</List.Link>
+            </List.Item>
+          </List.Container>
+        </List.Root>
       </div>
       <div className="mt-16">
         <SayHi />
