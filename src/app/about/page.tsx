@@ -46,8 +46,12 @@ const AboutPage: NextPage = () => {
             <List.Title>Work Experience</List.Title>
             <List.Container className="mb-0 space-y-6">
               <List.Item>
+                Senior Software Engineer / HubSpot
+                <List.Subtitle>July 2024 — now</List.Subtitle>
+              </List.Item>
+              <List.Item>
                 Senior Engineer / Intercom
-                <List.Subtitle>April 2024 — now</List.Subtitle>
+                <List.Subtitle>April 2024 — June 2024</List.Subtitle>
                 <Paragraph className="mt-2 text-neutral-500">
                   Owning and leading bigger, more strategic projects at team
                   level and contributing to the roadmap and technical strategy.
