@@ -15,14 +15,14 @@ const HomePage: NextPage = () => {
         interested in fitness, languages, books &amp; cooking.
       </h1>
       <p className="mb-8 max-w-xl break-words font-sans text-[3.55vh] font-semibold leading-[1.2em] text-neutral-50 antialiased md:text-[clamp(32px,7.5vw,36px)]">
-        Currently, I work as a product engineer at{" "}
+        Currently, I work as a senior software engineer at{" "}
         <Link
           className="text-white decoration-dotted underline-offset-4"
-          href="https://www.intercom.com/"
+          href="https://www.hubspot.com/"
         >
-          Intercom
+          HubSpot
         </Link>{" "}
-        helping businesses building better customer relationships.
+        helping businesses grow better.
       </p>
       <p className="mb-8 max-w-xl break-words font-sans text-[3.55vh] font-semibold leading-[1.2em] text-neutral-50 antialiased md:text-[clamp(32px,7.5vw,36px)]">
         Find out more about me on{" "}
