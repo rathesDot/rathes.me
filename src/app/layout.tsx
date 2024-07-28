@@ -61,7 +61,7 @@ export default function RootLayout({
             <span>/</span>
             <a
               className="mb-4 font-medium text-neutral-400 underline decoration-neutral-600 decoration-dotted underline-offset-2 antialiased transition-colors hover:decoration-neutral-400"
-              href="https://mozhi.app/@tamizhographer"
+              href="https://pinkary.com/@tamizhographer"
               target="_blank"
             >
               @tamizhographer

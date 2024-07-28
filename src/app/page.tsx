@@ -28,10 +28,10 @@ const HomePage: NextPage = () => {
         Find out more about me on{" "}
         <Link
           className="text-white decoration-dotted underline-offset-4"
-          href="https://mozhi.app/@tamizhographer"
+          href="https://pinkary.com/@tamizhographer"
           target="_blank"
         >
-          Mozhi
+          Pinkary
         </Link>
       </p>
     </div>
