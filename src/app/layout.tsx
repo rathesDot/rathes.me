@@ -39,9 +39,6 @@ export default function RootLayout({
         <Fathom />
         <main className="flex min-h-screen flex-col font-sans">
           <Navbar.Root>
-            <Navbar.Banner href="/store/calais">
-              Get my latest Figma template "Calais"
-            </Navbar.Banner>
             <Navbar.Menu>
               <Navbar.Item href="/">
                 <Logo className="h-6 w-6" />
