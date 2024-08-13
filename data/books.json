@@ -82,7 +82,10 @@
     {
       "title": "Miteinander reden: 1",
       "url": "https://amzn.to/3WgvhSH",
-      "author": "Friedemann Schulz von Thun"
+      "author": "Friedemann Schulz von Thun",
+      "rating": 4,
+      "genres": ["German", "Psychology", "Non-Fiction"],
+      "description": "This book explains some quite theoretical concepts of communications psychology in terms that the regular reader can understand and even recognize in their own everyday life."
     },
     {
       "title": "A Clash of Kings: A Song of Ice and Fire",
