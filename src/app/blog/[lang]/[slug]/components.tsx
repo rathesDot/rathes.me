@@ -105,9 +105,17 @@ export const components: any = {
   a: ({ href = "#", ...props }: ComponentPropsWithRef<"a">) => (
     <Link href={href} {...props} />
   ),
-  img: ({ className, alt, ...props }: ComponentPropsWithRef<"img">) => (
-    <img alt={alt} {...props} className={image({ className })} />
-  ),
+  img: ({ className, alt, src, ...props }: ComponentPropsWithRef<"img">) => {
+    console.log(src, "test")
+    return (
+      <img
+        alt={alt}
+        src={`/.netlify/images?url=${src}&w=500`}
+        {...props}
+        className={image({ className })}
+      />
+    )
+  },
   pre: ({ className, ...props }: ComponentPropsWithRef<"pre">) => (
     <pre {...props} className={codeBlock({ className })} />
   ),
