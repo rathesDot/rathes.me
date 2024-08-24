@@ -26,6 +26,7 @@ import Naples2 from "../../assets/photos/202204_naples_2.jpg"
 import Naples1 from "../../assets/photos/202204_naples_1.jpg"
 import Edinburgh from "../../assets/photos/202111_edinburgh.jpg"
 import KewGardens from "../../assets/photos/202110_kew_gardens.jpg"
+import Bergen1 from "../../assets/photos/202404_Bergen_1.jpg"
 
 export const metadata: Metadata = {
   title: "Photography",
@@ -49,6 +50,11 @@ const PhotoPage: NextPage = () => {
         </Paragraph>
       </section>
       <section className="-mx-4 mt-16 flex flex-col gap-8 md:-mx-[56px] md:flex-row md:flex-wrap">
+        <Photo
+          image={Bergen1}
+          title="View of Bergen from above"
+          caption="Bergen, Norway / April 2024"
+        />
         <Photo
           image={Iceland1}
           title="Steam coming out of hardened Lava"
