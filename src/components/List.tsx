@@ -42,3 +42,7 @@ type LinkProps = RouterLinkProps & ComponentPropsWithRef<"a">
 export const Link: React.FC<LinkProps> = (props) => {
   return <RouterLink {...props} />
 }
+
+export const Button: React.FC<ComponentPropsWithRef<"button">> = (props) => {
+  return <button type="button" className="block w-full text-left" {...props} />
+}

@@ -10,6 +10,7 @@ import { Separator } from "../../components/Separator"
 import { Paragraph } from "../../components/Paragraph"
 import { Heading1 } from "../../components/Heading"
 import * as List from "../../components/List"
+import { BookListItem } from "./book-list-item"
 
 export const metadata: Metadata = {
   title: "Reading",
@@ -57,18 +58,10 @@ const ReadingPage: NextPage<{
                 <List.Title>{listTitle}</List.Title>
                 <List.Container>
                   {books.map((book, index) => (
-                    <List.Item key={`${listTitle}-book-#${index}`}>
-                      <List.Link
-                        href={
-                          !!book?.rating
-                            ? `/reading/${createSlug(book)}`
-                            : book.url
-                        }
-                      >
-                        {book.title}
-                        <List.Subtitle>by {book.author}</List.Subtitle>
-                      </List.Link>
-                    </List.Item>
+                    <BookListItem
+                      key={`${listTitle}-book-#${index}`}
+                      book={book}
+                    />
                   ))}
                 </List.Container>
               </List.Root>
