@@ -93,7 +93,9 @@ export const generateBlogMetaData = async (
   >
 
   return {
-    title: frontmatter.title,
+    title: {
+      absolute: `${frontmatter.title} — rathes.me`,
+    },
     description: frontmatter.description,
     openGraph: {
       type: "article",
