@@ -101,6 +101,7 @@ export const generateBlogMetaData = async (
       images: frontmatter.social || frontmatter.image,
       title: frontmatter.title,
       authors: "@rswebdesigner",
+      url: `/blog/${lang}/${slug}`,
     },
   }
 }
