@@ -1,5 +1,10 @@
 const links = [
   {
+    title: "Bringing back Burpril",
+    date: "Oct 9, 2024",
+    link: "https://getmaxout.app/blog/bringing-back-burpril",
+  },
+  {
     title: "A complete guide to feature flags",
     date: "May 19, 2024",
     link: "https://getkodi.com/blog/guide-to-feature-flags",
