@@ -9,7 +9,7 @@
     "@mdx-js/react": "^3.1.0",
     "autoprefixer": "^10.4.20",
     "cva": "^1.0.0-beta.1",
-    "date-fns": "^3.6.0",
+    "date-fns": "^4.1.0",
     "fathom-client": "^3.7.2",
     "gray-matter": "^4.0.3",
     "next": "^14.2.15",
