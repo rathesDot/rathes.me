@@ -1,20 +1,2 @@
-[[redirects]]
-  from = "/reading-list"
-  to = "/reading"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/writings"
-  to = "/writing"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/blog/json-web-token"
-  to = "/blog/de/json-web-token"
-  status = 301
-  force = true
-
 [build.processing]
   skip_processing = true
