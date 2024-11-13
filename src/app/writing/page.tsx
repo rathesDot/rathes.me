@@ -16,9 +16,12 @@ export const metadata: Metadata = {
     "I write about all sort of topics, not just tech! It could be related to start ups, design or just some of my personal thoughts",
 }
 
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+
 const WritingPage: NextPage<{
-  searchParams: { [key: string]: string | string[] | undefined }
-}> = ({ searchParams }) => {
+  searchParams: SearchParams
+}> = async (props) => {
+  const searchParams = await props.searchParams
   const posts = getFilteredBlogPosts(searchParams.q?.toString() || "")
 
   return (

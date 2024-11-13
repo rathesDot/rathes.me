@@ -20,9 +20,12 @@ export const metadata: Metadata = {
   },
 }
 
-const ReadingPage: NextPage<{
-  searchParams: { [key: string]: string | string[] | undefined }
-}> = ({ searchParams }) => {
+type Params = { [key: string]: string | string[] | undefined }
+
+const ReadingPage: NextPage<{ searchParams: Promise<Params> }> = async (
+  props
+) => {
+  const searchParams = await props.searchParams
   const books = getFilteredList(searchParams.q?.toString() || "")
 
   return (

@@ -21,11 +21,10 @@ import { Link } from "../../../../components/Link"
 
 type Params = { lang: "en" | "de"; slug: string }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Params
+export async function generateMetadata(props: {
+  params: Promise<Params>
 }): Promise<Metadata> {
+  const params = await props.params
   return generateBlogMetaData(params.lang, params.slug)
 }
 
@@ -35,7 +34,8 @@ export async function generateStaticParams() {
   return generateBlogParams()
 }
 
-const BlogPage: NextPage<{ params: Params }> = async ({ params }) => {
+const BlogPage: NextPage<{ params: Promise<Params> }> = async (props) => {
+  const params = await props.params
   const { content, data } = getBlogPost(params.lang, params.slug)
 
   return (

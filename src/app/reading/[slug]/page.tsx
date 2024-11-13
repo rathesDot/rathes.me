@@ -15,11 +15,12 @@ import { Heading1 } from "../../../components/Heading"
 import { Rating } from "../../../components/Rating"
 import { BookSchema } from "../../../components/BookSchema"
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string }
+type Params = Promise<{ slug: string }>
+
+export async function generateMetadata(props: {
+  params: Params
 }): Promise<Metadata> {
+  const params = await props.params
   return generateBookMetadata(params.slug)
 }
 
@@ -38,9 +39,11 @@ const smallTitle = cva({
   },
 })
 
-const BookDetailsPage: NextPage<{ params: { slug: string } }> = ({
-  params: { slug },
-}) => {
+const BookDetailsPage: NextPage<{ params: Params }> = async (props) => {
+  const params = await props.params
+
+  const { slug } = params
+
   const book = findBookBySlug(slug)
 
   if (!book) {
