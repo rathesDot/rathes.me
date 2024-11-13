@@ -26,7 +26,7 @@ module.exports = {
           {
             color: "#ff7b72",
           },
-        ".hljs - title,.hljs - title.class_,.hljs - title.class_.inherited__,.hljs - title.function_":
+        ".hljs-title,.hljs-title.class_,.hljs-title.class_.inherited__,.hljs-title.function_":
           {
             color: "#d2a8ff",
           },
