@@ -51,7 +51,7 @@ const WritingPage: NextPage<{
           <List.Title>Books & Whitepapers</List.Title>
           <List.Container>
             <List.Item>
-              <List.Link href="https://learn-tamil.com">
+              <List.Link href="https://learn-tamil.com/books/guide-to-basic-tamil-grammar">
                 A Guide To Basic Tamil Grammar
               </List.Link>
             </List.Item>
