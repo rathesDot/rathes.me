@@ -44,17 +44,17 @@ const inlineCode = cva({
   variants: {
     codeblock: {
       false:
-        "whitespace-normal break-all text-neutral-300 bg-neutral-800 rounded-sm px-1 py-[0.1em]",
+        "whitespace-normal break-all text-neutral-300 bg-neutral-800 rounded-xs px-1 py-[0.1em]",
     },
   },
 })
 
 const codeBlock = cva({
-  base: "my-8 overflow-x-auto rounded bg-neutral-800/30 p-8 text-neutral-400 outline outline-neutral-800",
+  base: "my-8 overflow-x-auto rounded-sm bg-neutral-800/30 p-8 text-neutral-400 outline outline-neutral-800",
 })
 
 const note = cva({
-  base: "my-8 p-8 bg-neutral-800/30 outline outline-neutral-800 text-neutral-400 rounded",
+  base: "my-8 p-8 bg-neutral-800/30 outline outline-neutral-800 text-neutral-400 rounded-sm",
   variants: {
     fontFamily: {
       mono: "font-mono",

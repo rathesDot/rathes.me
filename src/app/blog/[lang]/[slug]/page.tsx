@@ -57,7 +57,7 @@ const BlogPage: NextPage<{ params: Promise<Params> }> = async (props) => {
       </header>
       {data.image && (
         <figure className="my-8">
-          <div className="relative aspect-[3/2]">
+          <div className="relative aspect-3/2">
             <Image
               src={data.image}
               fill

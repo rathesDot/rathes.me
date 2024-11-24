@@ -46,7 +46,7 @@ const BiryaniPage: NextPage = () => {
           biryani.
         </Paragraph>
       </section>
-      <div className="mt-8 flex-grow md:-mx-8 md:flex md:gap-8">
+      <div className="mt-8 grow md:-mx-8 md:flex md:gap-8">
         <section className="flex-none lg:min-w-56">
           <Heading2 level="h4" className="text-neutral-400">
             Ingredients
@@ -57,7 +57,7 @@ const BiryaniPage: NextPage = () => {
                 <li key={index}>
                   <label className="flex items-center gap-2 text-lg leading-none antialiased">
                     <input
-                      className="bg-red mt-[2px] grid h-5 w-5 appearance-none place-content-center rounded border-2 border-neutral-600 outline-none before:h-3 before:w-3 before:rounded-sm checked:before:bg-neutral-500 focus:outline focus:outline-offset-0 focus:outline-neutral-700"
+                      className="bg-red mt-[2px] grid h-5 w-5 appearance-none place-content-center rounded-sm border-2 border-neutral-600 outline-hidden before:h-3 before:w-3 before:rounded-xs checked:before:bg-neutral-500 focus:outline focus:outline-offset-0 focus:outline-neutral-700"
                       type="checkbox"
                     />
                     <span>

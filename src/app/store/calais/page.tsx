@@ -22,7 +22,7 @@ const CalaisPage: NextPage = () => (
       <div className="my-4">
         <Link
           href="https://aheenam.lemonsqueezy.com/checkout/buy/597d3764-92f3-4db7-a551-b17ac34a3d77?discount=0"
-          className="block w-full cursor-pointer rounded bg-neutral-800/80 px-4 py-3 text-center font-semibold text-neutral-50 antialiased hover:bg-neutral-700/50"
+          className="block w-full cursor-pointer rounded-sm bg-neutral-800/80 px-4 py-3 text-center font-semibold text-neutral-50 antialiased hover:bg-neutral-700/50"
         >
           Buy Now
         </Link>

@@ -5,7 +5,7 @@ import React, { ComponentPropsWithRef, useState } from "react"
 import { cva } from "../../../cva.config"
 
 const readMore = cva({
-  base: "relative delay-100 after:h-8 after:bg-gradient-to-t after:from-neutral-950 after:absolute after:bottom-0 after:inset-x-0 transition-all ease-linear overflow-hidden",
+  base: "relative delay-100 after:h-8 after:bg-linear-to-t after:from-neutral-950 after:absolute after:bottom-0 after:inset-x-0 transition-all ease-linear overflow-hidden",
   variants: {
     open: {
       false: "max-h-56 after:opacity-100",

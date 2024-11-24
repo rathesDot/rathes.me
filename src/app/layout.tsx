@@ -50,7 +50,7 @@ export default function RootLayout({
               <Navbar.Item href="/work">Work</Navbar.Item>
             </Navbar.Menu>
           </Navbar.Root>
-          <div className="container mx-auto my-8 w-full max-w-[560px] flex-grow px-4 md:px-0">
+          <div className="container mx-auto my-8 w-full max-w-[560px] grow px-4 md:px-0">
             {children}
           </div>
           <footer className="mx-auto mt-auto inline-flex w-full max-w-[576px] gap-1 px-4 py-8 text-xs text-neutral-400 md:px-0">
