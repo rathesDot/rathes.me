@@ -28,7 +28,7 @@ export const Menu: React.FC<ComponentPropsWithRef<"div">> = ({
 )
 
 const itemStyles = cva({
-  base: "text-neutral-400 text-sm flex-none font-defaultSans font-medium antialiased py-4 px-2 inline-flex transition-colors hover:text-white",
+  base: "text-neutral-400 text-sm flex-none font-sans font-medium antialiased py-4 px-2 inline-flex transition-colors hover:text-white",
 })
 
 export const Item: React.FC<ComponentPropsWithRef<"a">> = ({
@@ -43,7 +43,7 @@ export const Item: React.FC<ComponentPropsWithRef<"a">> = ({
 )
 
 const bannerStyles = cva({
-  base: "group flex h-8 items-center justify-center gap-1 bg-neutral-800 text-center text-sm font-semibold font-defaultSans text-neutral-50 antialiased",
+  base: "group flex h-8 items-center justify-center gap-1 bg-neutral-800 text-center text-sm font-semibold font-sans text-neutral-50 antialiased",
 })
 
 export const Banner: React.FC<ComponentPropsWithRef<"a">> = ({

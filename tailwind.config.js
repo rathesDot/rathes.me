@@ -5,7 +5,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        defaultSans: fontFamily.sans,
         sans: ["var(--font-switzer)", ...fontFamily.sans],
       },
     },
