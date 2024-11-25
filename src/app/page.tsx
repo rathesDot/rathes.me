@@ -1,40 +1,27 @@
 import { NextPage } from "next"
 import { Link } from "../components/Link"
+import { Heading1, heading } from "../components/Heading"
 
 const HomePage: NextPage = () => {
   return (
-    <div className="mt-8">
-      <h1 className="mb-8 max-w-xl break-words font-sans text-[3.55vh] font-semibold leading-[1.2em] text-neutral-50 antialiased md:text-[clamp(32px,7.5vw,36px)]">
+    <main className="space-y-12 p-4">
+      <Heading1>
         I'm Rathes Sachchithananthan, a front-end engineer living in{" "}
-        <Link
-          className="text-white decoration-dotted underline-offset-4"
-          href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9"
-        >
-          London
-        </Link>{" "}
+        <Link href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9">London</Link>{" "}
         interested in fitness, languages, books &amp; cooking.
-      </h1>
-      <p className="mb-8 max-w-xl break-words font-sans text-[3.55vh] font-semibold leading-[1.2em] text-neutral-50 antialiased md:text-[clamp(32px,7.5vw,36px)]">
+      </Heading1>
+      <p className={heading({ level: "h1" })}>
         Currently, I work as a senior software engineer at{" "}
-        <Link
-          className="text-white decoration-dotted underline-offset-4"
-          href="https://www.hubspot.com/"
-        >
-          HubSpot
-        </Link>{" "}
-        helping businesses grow better.
+        <Link href="https://www.hubspot.com/">HubSpot</Link> helping businesses
+        grow better.
       </p>
-      <p className="mb-8 max-w-xl break-words font-sans text-[3.55vh] font-semibold leading-[1.2em] text-neutral-50 antialiased md:text-[clamp(32px,7.5vw,36px)]">
+      <p className={heading({ level: "h1" })}>
         Find out more about me on{" "}
-        <Link
-          className="text-white decoration-dotted underline-offset-4"
-          href="https://pinkary.com/@tamizhographer"
-          target="_blank"
-        >
+        <Link href="https://pinkary.com/@tamizhographer" target="_blank">
           Pinkary
         </Link>
       </p>
-    </div>
+    </main>
   )
 }
 
