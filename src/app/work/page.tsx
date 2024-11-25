@@ -1,13 +1,15 @@
 import { Metadata, NextPage } from "next"
 import Image from "next/image"
 
+import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
+
 import { Separator } from "../../components/Separator"
 import { Link } from "../../components/Link"
 import { Paragraph } from "../../components/Paragraph"
-import { Heading1, Heading2, Heading3 } from "../../components/Heading"
+import { heading, Heading1, Heading2, Heading3 } from "../../components/Heading"
 import * as List from "../../components/List"
 
-import CalaisTemplate from "../../assets/templates/calais.png"
+import CalaisPreview from "../../assets/images/calais-preview.png"
 
 export const metadata: Metadata = {
   title: "Work",
@@ -29,28 +31,37 @@ const WorkPage: NextPage = () => {
         </Paragraph>
       </section>
 
-      <section className="my-16 flex flex-col gap-4">
-        <Heading2 level="small">Templates</Heading2>
-        <section>
-          <Image
-            src={CalaisTemplate}
-            alt="Preview of template named 'Calais'"
-            width={480}
-          />
-          <div className="py-4">
-            <Heading3 level="h2">Calais</Heading3>
+      <div className="space-y-16 py-8">
+        <section className="space-y-8">
+          <div className="px-4">
+            <header className="mb-1 flex items-center justify-between">
+              <Heading2>Calais</Heading2>
+              <Link
+                className={heading({ level: "small" })}
+                href="https://aheenam.com/templates/calais"
+                target="_blank"
+                underlined={false}
+              >
+                Visit page <ArrowUpRightIcon className="inline size-4" />
+              </Link>
+            </header>
             <Paragraph>
-              A minimal personal portfolio template best for someone who wants
-              to showcase their projects but also have their resume ready on
-              their website.
+              I created this personal portfolio theme as an exploration for my
+              own website here. Even though I did not end up with making this
+              radical change, I really like this minimal approach with a single
+              accent color.
             </Paragraph>
-
-            <Link className="mt-2 block text-sm" href="/store/calais">
-              View template
-            </Link>
+          </div>
+          <div className="overflow-hidden pl-4">
+            <Image
+              src={CalaisPreview}
+              alt="Preview of template named 'Calais'"
+              height={400}
+              className="max-w-none"
+            />
           </div>
         </section>
-      </section>
+      </div>
 
       <section className="my-16 max-w-xl">
         <Heading2 level="small">Active projects</Heading2>
