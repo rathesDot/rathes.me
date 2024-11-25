@@ -9,7 +9,7 @@ const container = cva({
   base: "flex flex-col flex-none gap-1",
   variants: {
     mode: {
-      landscape: "md:max-w-[672px]",
+      landscape: "md:max-w-[656px] md:col-span-2",
       portrait: "md:max-w-[320px]",
     },
   },

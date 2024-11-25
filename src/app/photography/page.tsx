@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const PhotoPage: NextPage = () => {
   return (
     <main className="py-4">
-      <section className="px-4">
+      <section className="mx-auto max-w-lg px-4 sm:px-0">
         <Heading1>Photography</Heading1>
         <Paragraph>
           Aside from reading and writing, photography is the latest of my
@@ -52,7 +52,7 @@ const PhotoPage: NextPage = () => {
           .
         </Paragraph>
       </section>
-      <section className="grid gap-8 py-8">
+      <section className="mx-auto grid max-w-[656px] gap-8 py-8 md:grid-cols-2 md:gap-x-4 md:gap-y-8">
         <Photo
           image={Bergen1}
           title="View of Bergen from above"
