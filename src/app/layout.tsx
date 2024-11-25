@@ -1,4 +1,7 @@
 import { Inter } from "next/font/google"
+import NextLink from "next/link"
+
+import { Bars2Icon } from "@heroicons/react/24/outline"
 
 import Fathom from "../components/Fathom"
 
@@ -6,6 +9,7 @@ import "../styles/globals.css"
 
 import { SayHi } from "../patterns/SayHi"
 import { Link } from "../components/Link"
+import { Logo } from "../components/Logo"
 
 export const metadata = {
   title: {
@@ -31,6 +35,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body className="bg-white font-sans text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50">
+        <nav className="flex items-center justify-between p-4">
+          <NextLink href="/">
+            <Logo className="size-6" />
+          </NextLink>
+          <button>
+            <Bars2Icon className="size-6" />
+          </button>
+        </nav>
         <Fathom />
         {children}
         <footer className="space-y-12 px-4 py-8">
