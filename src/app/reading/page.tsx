@@ -45,9 +45,12 @@ const ReadingPage: NextPage<{ searchParams: Promise<Params> }> = async (
           everybody to pick up a nice book and read.
         </Paragraph>
       </section>
-      <section className="mt-12">
-        <div className="mb-8">
-          <Search defaultValue={searchParams.q?.toString() || ""} />
+      <section className="space-y-8 py-8">
+        <div className="px-4">
+          <Search
+            placeholder="Book title or Author"
+            defaultValue={searchParams.q?.toString() || ""}
+          />
         </div>
         {books.map(([listTitle, books], index, list) => {
           if (!books.length) {
