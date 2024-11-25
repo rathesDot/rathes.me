@@ -32,10 +32,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body
-        className={`${switzer.variable} bg-neutral-950 font-sans text-white`}
-      >
+    <html lang="en" className={`${switzer.variable}`}>
+      <body className="bg-neutral-950 font-sans text-white">
         <Fathom />
         <main className="flex min-h-screen flex-col font-sans">
           <Navbar.Root>
