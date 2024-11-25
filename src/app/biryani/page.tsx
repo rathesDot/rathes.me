@@ -40,7 +40,7 @@ const ingredients = [
 const BiryaniPage: NextPage = () => {
   return (
     <main className="space-y-12 py-4">
-      <section className="px-4">
+      <section className="mx-auto max-w-lg px-4 sm:px-0">
         <Heading1>Chicken Biryani Recipe</Heading1>
         <Paragraph>
           One of my favorite dishes is a good chicken biryani. There are several
@@ -54,7 +54,7 @@ const BiryaniPage: NextPage = () => {
           biryani.
         </Paragraph>
       </section>
-      <section className="px-4">
+      <section className="mx-auto max-w-lg px-4 sm:px-0">
         <Heading2 level="small">Ingredients</Heading2>
         <ul className="mt-4 space-y-2">
           {ingredients.map((ingredient, index) => {
@@ -80,7 +80,7 @@ const BiryaniPage: NextPage = () => {
           })}
         </ul>
       </section>
-      <section className="px-4">
+      <section className="mx-auto max-w-lg px-4 sm:px-0">
         <Heading2 level="small">Instructions</Heading2>
         <ol className="mt-4 space-y-2 pl-7 antialiased [counter-reset:section]">
           <li className={instructionItem()}>
