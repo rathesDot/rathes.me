@@ -1,7 +1,7 @@
 import React from "react"
 import { Metadata, NextPage } from "next"
 
-import { createSlug, getFilteredList } from "../../services/books"
+import { getFilteredList } from "../../services/books"
 
 import { Search } from "../../patterns/Search"
 
