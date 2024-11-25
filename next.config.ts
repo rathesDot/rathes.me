@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     return [
       { source: "/reading-list", destination: "/reading", permanent: true },
       { source: "/writings", destination: "/writing", permanent: true },
+      { source: "/photos", destination: "/photography", permanent: true },
       {
         source: "/blog/json-web-token",
         destination: "/blog/de/json-web-token",
