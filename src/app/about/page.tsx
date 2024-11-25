@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 const AboutPage: NextPage = () => {
   return (
     <main className="space-y-12 p-4 lg:px-0">
-      <section>
+      <section className="mx-auto max-w-lg">
         <Heading1>
           I'm a front-end engineer with over 10 years of web experience.
         </Heading1>
@@ -48,7 +48,7 @@ const AboutPage: NextPage = () => {
         </Paragraph>
       </section>
 
-      <section>
+      <section className="mx-auto max-w-lg">
         <header className="mb-3 flex items-center justify-between">
           <Heading2 level="small">Work Experience</Heading2>
           <Link
