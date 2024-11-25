@@ -35,6 +35,16 @@ const AboutPage: NextPage = () => {
         them with each other. Alongside that, I'm passionate about learning new
         languages and cultures.
       </Paragraph>
+      <Heading2>Career vision</Heading2>
+      <Paragraph>
+        While I m currently on the IC track as a full-stack engineer, my
+        strength is my ability to understand and get all stakeholders on the
+        same page, enabling my team to deliver effectively and efficiently.
+      </Paragraph>
+      <Paragraph>
+        In the long term, I see myself in a role that allows me to support and
+        lead one or multiple teams to deliver impactful outcomes.
+      </Paragraph>
 
       <div className="mt-12 mb-16 space-y-8 md:-mx-16 md:mt-16 md:flex md:gap-16 md:space-y-0 lg:-mx-32">
         <section className="flex-none md:max-w-80 lg:max-w-96">
@@ -136,17 +146,6 @@ const AboutPage: NextPage = () => {
                 </List.Item>
               </List.Container>
             </List.Root>
-            <Heading2 level="small">Career vision</Heading2>
-            <Paragraph className="mt-4 font-medium text-neutral-500">
-              While I m currently on the IC track as a full-stack engineer, my
-              strength is my ability to understand and get all stakeholders on
-              the same page, enabling my team to deliver effectively and
-              efficiently.
-            </Paragraph>
-            <Paragraph className="font-medium text-neutral-500">
-              In the long term, I see myself in a role that allows me to support
-              and lead one or multiple teams to deliver impactful outcomes.
-            </Paragraph>
             <List.Root>
               <List.Title>Tech Stack</List.Title>
               <List.Container className="space-y-2">
