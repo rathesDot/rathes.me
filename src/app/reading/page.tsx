@@ -4,7 +4,6 @@ import { Metadata, NextPage } from "next"
 import { createSlug, getFilteredList } from "../../services/books"
 
 import { Search } from "../../patterns/Search"
-import { SayHi } from "../../patterns/SayHi"
 
 import { Separator } from "../../components/Separator"
 import { Paragraph } from "../../components/Paragraph"
@@ -29,8 +28,8 @@ const ReadingPage: NextPage<{ searchParams: Promise<Params> }> = async (
   const books = getFilteredList(searchParams.q?.toString() || "")
 
   return (
-    <div>
-      <section>
+    <main>
+      <section className="px-4">
         <Heading1>Reading</Heading1>
         <Paragraph>
           Books play an important part in my life. Just sitting on my couch or
@@ -73,10 +72,7 @@ const ReadingPage: NextPage<{ searchParams: Promise<Params> }> = async (
           )
         })}
       </section>
-      <div className="mt-16">
-        <SayHi />
-      </div>
-    </div>
+    </main>
   )
 }
 
