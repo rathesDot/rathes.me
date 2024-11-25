@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 }
 
 const instructionItem = cva({
-  base: "relative antialiased text-base [counter-increment:section] before:absolute before:mt-0.5 before:-ml-7 before:flex before:size-5 before:items-center before:justify-center before:rounded-full before:bg-neutral-200 before:text-xs before:font-semibold before:[content:counters(section,'.')]",
+  base: "relative text-base antialiased [counter-increment:section] before:absolute before:mt-0.5 before:-ml-7 before:flex before:size-5 before:items-center before:justify-center before:rounded-full before:bg-neutral-200 before:text-xs before:font-semibold before:[content:counters(section,'.')] dark:text-neutral-400 dark:before:bg-neutral-800 dark:before:text-neutral-400 dark:before:[content:counters(section,'.')]",
 })
 
 // ingredients for 1kg
