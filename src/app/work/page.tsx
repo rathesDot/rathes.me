@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 const WorkPage: NextPage = () => {
   return (
     <main className="space-y-12 py-4">
-      <section className="px-4">
+      <section className="mx-auto max-w-lg px-4 sm:px-0">
         <Heading1>My work</Heading1>
         <Paragraph>
           I work as a product engineer at Intercom at the moment, but I also
@@ -33,9 +33,9 @@ const WorkPage: NextPage = () => {
         </Paragraph>
       </section>
 
-      <div className="space-y-16 py-8">
+      <div className="space-y-16 py-8 lg:space-y-32 lg:py-16">
         <section className="space-y-8">
-          <div className="px-4">
+          <div className="mx-auto max-w-lg px-4 sm:px-0">
             <header className="mb-1 flex items-center justify-between">
               <Heading2>Calais</Heading2>
               <Link
@@ -54,18 +54,18 @@ const WorkPage: NextPage = () => {
               accent color.
             </Paragraph>
           </div>
-          <div className="overflow-hidden pl-4">
+          <div className="overflow-hidden pl-4 sm:pl-0">
             <Image
               src={CalaisPreview}
               alt="Preview of template named 'Calais'"
               height={400}
-              className="max-w-none"
+              className="mx-auto max-w-none"
             />
           </div>
         </section>
 
         <section className="space-y-8">
-          <div className="px-4">
+          <div className="mx-auto max-w-lg px-4 sm:px-0">
             <header className="mb-1 flex items-center justify-between">
               <Heading2>Learn Tamil Online</Heading2>
               <Link
@@ -99,18 +99,18 @@ const WorkPage: NextPage = () => {
               that you can read in Tamil but also tap to read transliterated.
             </Paragraph>
           </div>
-          <div className="overflow-hidden">
+          <div className="@container overflow-hidden">
             <Image
               src={LearnTamilPreview}
               alt="Image showcasing a book cover on the left and two screens of the Learn Tamil App in the center and right"
               height={350}
-              className="-ml-40 max-w-none"
+              className="-ml-40 max-w-none @[456px]:mx-auto"
             />
           </div>
         </section>
 
         <section className="space-y-8">
-          <div className="px-4">
+          <div className="mx-auto max-w-lg px-4 sm:px-0">
             <header className="mb-1 flex items-center justify-between">
               <Heading2>Kodi</Heading2>
               <Link
@@ -129,18 +129,18 @@ const WorkPage: NextPage = () => {
               experimenting and exploring
             </Paragraph>
           </div>
-          <div className="overflow-hidden pl-4 drop-shadow">
+          <div className="overflow-hidden pl-4 drop-shadow sm:pl-0">
             <Image
               src={KodiPreview}
               alt="Screenshot of the Kodi dashboard"
               height={340}
-              className="max-w-none"
+              className="mx-auto max-w-none"
             />
           </div>
         </section>
 
         <section className="space-y-4">
-          <div className="px-4">
+          <div className="mx-auto max-w-lg px-4 sm:px-0">
             <header className="mb-1 flex items-center justify-between">
               <Heading2>Other projects</Heading2>
             </header>
@@ -154,7 +154,7 @@ const WorkPage: NextPage = () => {
               time to time.
             </Paragraph>
           </div>
-          <ul className="space-y-2 px-4">
+          <ul className="mx-auto max-w-lg space-y-2 px-4 sm:px-0">
             <li>
               <Card asChild>
                 <NextLink
