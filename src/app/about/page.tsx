@@ -60,7 +60,7 @@ const AboutPage: NextPage = () => {
             Download CV
           </Link>
         </header>
-        <List.Container className="space-y-4">
+        <List.Container className="space-y-6">
           <List.Item>
             Senior Software Engineer / HubSpot
             <List.Subtitle>July 2024 — now</List.Subtitle>
@@ -68,7 +68,7 @@ const AboutPage: NextPage = () => {
           <List.Item>
             Senior Engineer / Intercom
             <List.Subtitle>April 2024 — June 2024</List.Subtitle>
-            <Paragraph className="mt-2 text-neutral-500">
+            <Paragraph className="mt-1 font-normal">
               Owning and leading bigger, more strategic projects at team level
               and contributing to the roadmap and technical strategy. I'm also
               coaching and mentoring other team mates to help the entire team
@@ -82,7 +82,7 @@ const AboutPage: NextPage = () => {
           <List.Item>
             Engineering Team Lead / Hussle
             <List.Subtitle>April 2021 — November 2021</List.Subtitle>
-            <Paragraph className="mt-2 text-neutral-500">
+            <Paragraph className="mt-1 font-normal">
               As the team could not grow due to the impacts of the pandemic, I
               was guiding and leading the front-end and back-end engineers to
               collaborate and work closely together to help out each other to
@@ -92,7 +92,7 @@ const AboutPage: NextPage = () => {
           <List.Item>
             Senior Frontend Engineer / Hussle
             <List.Subtitle>February 2020 — March 2021</List.Subtitle>
-            <Paragraph className="mt-2 text-neutral-500">
+            <Paragraph className="mt-1 font-normal">
               In 2020, I made the decision to make another big step and moved to
               London to work in FitTech at Hussle. This was my chance to combine
               my passion for fitness with my passion for tech.
@@ -105,7 +105,7 @@ const AboutPage: NextPage = () => {
           <List.Item>
             Founder / Aheenam
             <List.Subtitle>May 2016 — October 2021</List.Subtitle>
-            <Paragraph className="mt-2 text-neutral-500">
+            <Paragraph className="mt-1 font-normal">
               In 2016, I decided decrease client work and focus more on creating
               software products. Therefore, I changed the type of my business
               and created a custom brand for this company
@@ -118,7 +118,7 @@ const AboutPage: NextPage = () => {
           <List.Item>
             Co-Founder / Kernwerk
             <List.Subtitle>October 2015 — January 2018</List.Subtitle>
-            <Paragraph className="mt-2 text-neutral-500">
+            <Paragraph className="mt-1 font-normal">
               Together with some friends, I created an awesome app for digital
               personal training. I created the backend of first MVP using
               Laravel as the framework of choice. Due to lack of time and shift
@@ -132,7 +132,7 @@ const AboutPage: NextPage = () => {
           <List.Item>
             Web Designer / rathesDot (CreativeCreation)
             <List.Subtitle>June 2006 — March 2016</List.Subtitle>
-            <Paragraph className="mt-2 text-neutral-500">
+            <Paragraph className="mt-1 font-normal">
               Earning my first money creating custom MySpace layouts, I went on
               to create custom websites for various customer of different sizes
               as a freelancer
