@@ -3,7 +3,6 @@ import { Metadata, NextPage } from "next"
 import { Paragraph } from "../../components/Paragraph"
 import * as List from "../../components/List"
 
-import { ExpandableSection } from "./ExpandableSection"
 import { Heading1, Heading2 } from "../../components/Heading"
 import { Link } from "../../components/Link"
 
@@ -17,27 +16,25 @@ const AboutPage: NextPage = () => {
       <Heading1>
         I'm a front-end engineer with over 10 years of web experience.
       </Heading1>
-      <ExpandableSection>
-        <Paragraph>
-          I started working as a web designer and web developer at a very young
-          age. I earned my first money as a web designer creating custom MySpace
-          layouts when I was just 14. In 2008, at the age of 16, I founded my
-          own company for web design and development. Since then, I have worked
-          with several clients doing quite a wide range of tasks.
-        </Paragraph>
-        <Paragraph>
-          For more than 10 years, I have been working as a web developer doing
-          problem-solving as a back-end engineer using languages such as PHP,
-          Python or Node.js but also as a front-end developer working with
-          HTML/CSS and JavaScript.
-        </Paragraph>
-        <Paragraph>
-          However, my real passion lies beyond software and development. I'm
-          more into solving problems for people, make their lives easier and
-          connecting them with each other. Alongside that, I'm passionate about
-          learning new languages and cultures.
-        </Paragraph>
-      </ExpandableSection>
+      <Paragraph>
+        I started working as a web designer and web developer at a very young
+        age. I earned my first money as a web designer creating custom MySpace
+        layouts when I was just 14. In 2008, at the age of 16, I founded my own
+        company for web design and development. Since then, I have worked with
+        several clients doing quite a wide range of tasks.
+      </Paragraph>
+      <Paragraph>
+        For more than 10 years, I have been working as a web developer doing
+        problem-solving as a back-end engineer using languages such as PHP,
+        Python or Node.js but also as a front-end developer working with
+        HTML/CSS and JavaScript.
+      </Paragraph>
+      <Paragraph>
+        However, my real passion lies beyond software and development. I'm more
+        into solving problems for people, make their lives easier and connecting
+        them with each other. Alongside that, I'm passionate about learning new
+        languages and cultures.
+      </Paragraph>
 
       <div className="mt-12 mb-16 space-y-8 md:-mx-16 md:mt-16 md:flex md:gap-16 md:space-y-0 lg:-mx-32">
         <section className="flex-none md:max-w-80 lg:max-w-96">
