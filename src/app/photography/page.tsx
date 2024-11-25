@@ -36,8 +36,8 @@ export const metadata: Metadata = {
 
 const PhotoPage: NextPage = () => {
   return (
-    <div>
-      <section className="">
+    <main className="py-4">
+      <section className="px-4">
         <Heading1>Photography</Heading1>
         <Paragraph>
           Aside from reading and writing, photography is the latest of my
@@ -46,10 +46,13 @@ const PhotoPage: NextPage = () => {
         </Paragraph>
         <Paragraph>
           Most of my photos are taken on an iPhone and the others on my{" "}
-          <Link href="https://amzn.to/3RtSMUA">Sony A6000</Link>.
+          <Link target="_blank" href="https://amzn.to/3RtSMUA">
+            Sony A6000
+          </Link>
+          .
         </Paragraph>
       </section>
-      <section className="-mx-4 mt-16 flex flex-col gap-8 md:-mx-[56px] md:flex-row md:flex-wrap">
+      <section className="grid gap-8 py-8">
         <Photo
           image={Bergen1}
           title="View of Bergen from above"
@@ -168,10 +171,7 @@ const PhotoPage: NextPage = () => {
           mode="landscape"
         />
       </section>
-      <div className="mt-16">
-        <SayHi />
-      </div>
-    </div>
+    </main>
   )
 }
 
