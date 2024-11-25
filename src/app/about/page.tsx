@@ -1,6 +1,5 @@
 import { Metadata, NextPage } from "next"
 
-import { SayHi } from "../../patterns/SayHi"
 import { Paragraph } from "../../components/Paragraph"
 import * as List from "../../components/List"
 
@@ -14,8 +13,8 @@ export const metadata: Metadata = {
 
 const AboutPage: NextPage = () => {
   return (
-    <div className="">
-      <Heading1 className="mb-2">
+    <main className="p-4">
+      <Heading1>
         I'm a front-end engineer with over 10 years of web experience.
       </Heading1>
       <ExpandableSection>
@@ -40,7 +39,7 @@ const AboutPage: NextPage = () => {
         </Paragraph>
       </ExpandableSection>
 
-      <div className="mb-16 mt-12 space-y-8 md:-mx-16 md:mt-16 md:flex md:gap-16 md:space-y-0 lg:-mx-32">
+      <div className="mt-12 mb-16 space-y-8 md:-mx-16 md:mt-16 md:flex md:gap-16 md:space-y-0 lg:-mx-32">
         <section className="flex-none md:max-w-80 lg:max-w-96">
           <List.Root>
             <List.Title>Work Experience</List.Title>
@@ -282,11 +281,7 @@ const AboutPage: NextPage = () => {
           <span className="text-sm md:text-base">Download the PDF here</span>
         </Link>
       </Paragraph>
-
-      <div className="mt-16 md:mt-32">
-        <SayHi />
-      </div>
-    </div>
+    </main>
   )
 }
 
