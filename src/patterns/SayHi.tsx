@@ -8,7 +8,7 @@ export const SayHi: React.FC<React.PropsWithChildren<unknown>> = () => (
     <Link
       aria-label="Send an E-Mail to hello+website@rathes.me"
       href="mailto:hello+website@rathes.me"
-      className="decoration-currentColor decoration-solid"
+      className="text-current"
     >
       Say hi!
     </Link>
