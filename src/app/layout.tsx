@@ -47,13 +47,15 @@ export default function RootLayout({
         </nav>
         <Fathom />
         {children}
-        <footer className="mx-auto max-w-lg space-y-12 px-4 py-8">
-          <SayHi />
-          <div className="text-xs text-neutral-600 dark:text-neutral-400">
-            &copy; {new Date(Date.now()).getFullYear()} /{" "}
-            <Link href="https://pinkary.com/@tamizhographer" target="_blank">
-              @tamizhographer
-            </Link>
+        <footer className="px-4 py-8 lg:px-0">
+          <div className="mx-auto max-w-lg space-y-12">
+            <SayHi />
+            <div className="text-xs text-neutral-600 dark:text-neutral-400">
+              &copy; {new Date(Date.now()).getFullYear()} /{" "}
+              <Link href="https://pinkary.com/@tamizhographer" target="_blank">
+                @tamizhographer
+              </Link>
+            </div>
           </div>
         </footer>
       </body>
