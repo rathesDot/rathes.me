@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
         destination: "/blog/de/json-web-token",
         permanent: true,
       },
+      {
+        source: "/store/calais",
+        destination: "https://aheenam.com/templates/calais",
+        permanent: true,
+      },
     ]
   },
 }
