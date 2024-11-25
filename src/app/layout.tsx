@@ -1,4 +1,4 @@
-import localFont from "next/font/local"
+import { Inter } from "next/font/google"
 
 import Fathom from "../components/Fathom"
 
@@ -21,10 +21,7 @@ export const metadata = {
   creator: "Rathes Sachchithananthan",
 }
 
-const switzer = localFont({
-  src: "../assets/switzer-variable.ttf",
-  variable: "--font-switzer",
-})
+const inter = Inter({ variable: "--font-inter" })
 
 export default function RootLayout({
   children,
@@ -32,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${switzer.variable}`}>
+    <html lang="en" className={`${inter.variable}`}>
       <body className="bg-neutral-950 font-sans text-white">
         <Fathom />
         <main className="flex min-h-screen flex-col font-sans">
