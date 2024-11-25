@@ -10,6 +10,7 @@ import { heading, Heading1, Heading2, Heading3 } from "../../components/Heading"
 import * as List from "../../components/List"
 
 import CalaisPreview from "../../assets/images/calais-preview.png"
+import LearnTamilPreview from "../../assets/images/learn-tamil-preview.png"
 
 export const metadata: Metadata = {
   title: "Work",
@@ -61,6 +62,51 @@ const WorkPage: NextPage = () => {
             />
           </div>
         </section>
+
+        <section className="space-y-8">
+          <div className="px-4">
+            <header className="mb-1 flex items-center justify-between">
+              <Heading2>Learn Tamil Online</Heading2>
+              <Link
+                className={heading({ level: "small" })}
+                href="https://learn-tamil.com/"
+                target="_blank"
+                underlined={false}
+              >
+                Visit page <ArrowUpRightIcon className="inline size-4" />
+              </Link>
+            </header>
+            <Paragraph>
+              My own mother tongue is one of the oldest languages that's still
+              in use and it is really close to my heart to keep this language
+              alive.
+            </Paragraph>
+            <Paragraph>
+              With Learn Tamil Online, I want to build a platform of various
+              resource that help with learning the language, starting with a
+              book about{" "}
+              <Link
+                target="_blank"
+                href="https://learn-tamil.com/books/guide-to-basic-tamil-grammar"
+              >
+                basic Tamil grammar
+              </Link>{" "}
+              and{" "}
+              <Link href="https://learn-tamil.com/resources/tamil-song-lyrics">
+                Tamil song lyrics
+              </Link>{" "}
+              that you can read in Tamil but also tap to read transliterated.
+            </Paragraph>
+          </div>
+          <div className="overflow-hidden">
+            <Image
+              src={LearnTamilPreview}
+              alt="Image showcasing a book cover on the left and two screens of the Learn Tamil App in the center and right"
+              height={350}
+              className="-ml-40 max-w-none"
+            />
+          </div>
+        </section>
       </div>
 
       <section className="my-16 max-w-xl">
@@ -76,18 +122,6 @@ const WorkPage: NextPage = () => {
               healthy lifestyle.
             </Paragraph>
             <Link className="mt-2 block text-sm" href="https://getmaxout.app">
-              View project
-            </Link>
-          </section>
-          <section>
-            <Heading3 level="h2">Learn Tamil Online</Heading3>
-            <Paragraph>
-              The mission of Learn Tamil Online is to keep the Tamil language
-              alive which we want to achieve by bringing together the Tamil
-              speaking community from all over the world and all necessary
-              resources to learn Tamil.
-            </Paragraph>
-            <Link className="mt-2 block text-sm" href="https://learn-tamil.com">
               View project
             </Link>
           </section>
