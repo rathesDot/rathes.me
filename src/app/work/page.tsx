@@ -1,7 +1,6 @@
 import { Metadata, NextPage } from "next"
 import Image from "next/image"
 
-import { SayHi } from "../../patterns/SayHi"
 import { Separator } from "../../components/Separator"
 import { Link } from "../../components/Link"
 import { Paragraph } from "../../components/Paragraph"
@@ -18,8 +17,8 @@ export const metadata: Metadata = {
 
 const WorkPage: NextPage = () => {
   return (
-    <div>
-      <section>
+    <main className="space-y-12 py-4">
+      <section className="px-4">
         <Heading1>My work</Heading1>
         <Paragraph>
           I work as a product engineer at Intercom at the moment, but I also
@@ -200,10 +199,7 @@ const WorkPage: NextPage = () => {
           </article>
         </div>
       </section>
-      <section className="my-16 max-w-xl">
-        <SayHi />
-      </section>
-    </div>
+    </main>
   )
 }
 
