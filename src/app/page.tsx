@@ -114,6 +114,34 @@ const HomePage: NextPage = () => {
           </List.Container>
         </List.Root>
       </section>
+      <section>
+        <header className="mb-3 flex items-center justify-between">
+          <Heading2 level="small">Currently reading</Heading2>
+          <Link
+            className={heading({ level: "small" })}
+            href="/reading"
+            underlined={false}
+          >
+            More books
+          </Link>
+        </header>
+        <List.Root>
+          <List.Container className="space-y-3">
+            <List.Item>
+              The Seven Deaths of Evelyn Hardcastle
+              <List.Subtitle>by Stuart Turton</List.Subtitle>
+            </List.Item>
+            <List.Item>
+              Butter
+              <List.Subtitle>by Asako Yuzuki</List.Subtitle>
+            </List.Item>
+            <List.Item>
+              Origins: How the Earth Shaped Human History
+              <List.Subtitle>by Lewis Dartnell</List.Subtitle>
+            </List.Item>
+          </List.Container>
+        </List.Root>
+      </section>
     </main>
   )
 }

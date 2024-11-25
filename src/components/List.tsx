@@ -32,7 +32,10 @@ export const Subtitle: React.FC<ComponentPropsWithRef<"span">> = ({
   ...props
 }) => (
   <span
-    className={cx("block text-xs text-neutral-500 md:text-sm", className)}
+    className={cx(
+      "block text-sm text-neutral-500 dark:text-neutral-400",
+      className
+    )}
     {...props}
   />
 )
