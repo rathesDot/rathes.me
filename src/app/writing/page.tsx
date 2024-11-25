@@ -7,7 +7,6 @@ import { Paragraph } from "../../components/Paragraph"
 import { Heading1 } from "../../components/Heading"
 import * as List from "../../components/List"
 
-import { SayHi } from "../../patterns/SayHi"
 import { Search } from "../../patterns/Search"
 
 export const metadata: Metadata = {
@@ -25,7 +24,7 @@ const WritingPage: NextPage<{
   const posts = getFilteredBlogPosts(searchParams.q?.toString() || "")
 
   return (
-    <section className="max-w-xl">
+    <main className="space-y-8 py-8">
       <section>
         <Heading1>Writing</Heading1>
         <Paragraph>
@@ -88,10 +87,7 @@ const WritingPage: NextPage<{
           </List.Container>
         </List.Root>
       </div>
-      <div className="mt-16">
-        <SayHi />
-      </div>
-    </section>
+    </main>
   )
 }
 
