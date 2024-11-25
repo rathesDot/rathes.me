@@ -1,14 +1,17 @@
 import React from "react"
 import { Metadata, NextPage } from "next"
 
+import * as Collapsible from "@radix-ui/react-collapsible"
+import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/16/solid"
+
 import { getFilteredList } from "../../services/books"
 
 import { Search } from "../../patterns/Search"
 
-import { Separator } from "../../components/Separator"
 import { Paragraph } from "../../components/Paragraph"
-import { Heading1 } from "../../components/Heading"
+import { heading, Heading1 } from "../../components/Heading"
 import * as List from "../../components/List"
+
 import { BookListItem } from "./book-list-item"
 
 export const metadata: Metadata = {
@@ -52,26 +55,44 @@ const ReadingPage: NextPage<{ searchParams: Promise<Params> }> = async (
             defaultValue={searchParams.q?.toString() || ""}
           />
         </div>
-        {books.map(([listTitle, books], index, list) => {
+        {books.map(([listTitle, books], index) => {
           if (!books.length) {
             return
           }
 
           return (
-            <React.Fragment key={`${listTitle}-${index}`}>
-              <List.Root>
-                <List.Title>{listTitle}</List.Title>
-                <List.Container>
-                  {books.map((book, index) => (
-                    <BookListItem
-                      key={`${listTitle}-book-#${index}`}
-                      book={book}
-                    />
-                  ))}
-                </List.Container>
-              </List.Root>
-              {index !== list.length - 1 && <Separator />}
-            </React.Fragment>
+            <div className="px-4" key={`${listTitle}-${index}`}>
+              <Collapsible.Root
+                asChild
+                defaultOpen={
+                  listTitle === "Currently reading" ||
+                  (!!searchParams.q && searchParams.q.toString() !== "")
+                }
+              >
+                <List.Root>
+                  <Collapsible.Trigger
+                    className={heading({
+                      level: "small",
+                      className: "group flex cursor-pointer items-center gap-1",
+                    })}
+                  >
+                    <ChevronRightIcon className="size-4 group-data-[state='open']:hidden" />
+                    <ChevronDownIcon className="size-4 group-data-[state='closed']:hidden" />
+                    {listTitle}
+                  </Collapsible.Trigger>
+                  <Collapsible.Content>
+                    <List.Container className="mt-3 space-y-3 pl-5">
+                      {books.map((book, index) => (
+                        <BookListItem
+                          key={`${listTitle}-book-#${index}`}
+                          book={book}
+                        />
+                      ))}
+                    </List.Container>
+                  </Collapsible.Content>
+                </List.Root>
+              </Collapsible.Root>
+            </div>
           )
         })}
       </section>
