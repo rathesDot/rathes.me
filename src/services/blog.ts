@@ -9,6 +9,7 @@ type Post = {
   title: string
   date: string
   link: string
+  external?: boolean
 }
 
 type Language = "en" | "de"
@@ -56,12 +57,18 @@ export const getAllBlogPosts = () => {
           link: `/blog/${language}/${getSlugFromFile(entry)}`,
           title: frontmatter.title,
           date: frontmatter.date,
+          external: false,
         }
       })
     )
     .flat()
 
-  return getSortedGroups(groupPostsByYear([...posts, ...externalLinks]))
+  return getSortedGroups(
+    groupPostsByYear([
+      ...posts,
+      ...externalLinks.map((p) => ({ ...p, external: true })),
+    ])
+  )
 }
 
 export const getFilteredBlogPosts = (

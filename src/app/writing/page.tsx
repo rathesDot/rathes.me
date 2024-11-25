@@ -1,7 +1,11 @@
 import { NextPage, Metadata } from "next"
 
 import * as Collapsible from "@radix-ui/react-collapsible"
-import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/16/solid"
+import {
+  ChevronRightIcon,
+  ChevronDownIcon,
+  ArrowUpRightIcon,
+} from "@heroicons/react/16/solid"
 
 import { getFilteredBlogPosts } from "../../services/blog"
 
@@ -115,7 +119,15 @@ const WritingPage: NextPage<{
                     <List.Container className="mt-3 space-y-2 pl-5">
                       {posts.map((post, index) => (
                         <List.Item key={index}>
-                          <List.Link href={post.link}>{post.title}</List.Link>
+                          <List.Link
+                            href={post.link}
+                            className="flex items-center gap-1"
+                          >
+                            {post.title}
+                            {post.external && (
+                              <ArrowUpRightIcon className="inline size-5 text-neutral-400" />
+                            )}
+                          </List.Link>
                         </List.Item>
                       ))}
                     </List.Container>
