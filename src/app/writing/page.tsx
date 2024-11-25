@@ -28,7 +28,7 @@ const WritingPage: NextPage<{
 
   return (
     <main className="space-y-8 py-4 lg:py-8">
-      <section className="px-4">
+      <section className="mx-auto max-w-lg px-4 sm:px-0">
         <Heading1>Writing</Heading1>
         <Paragraph>
           From time to time, I do write. Sometime on my blog, but also on other
