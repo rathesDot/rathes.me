@@ -1,10 +1,13 @@
 import { NextPage, Metadata } from "next"
 
+import * as Collapsible from "@radix-ui/react-collapsible"
+import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/16/solid"
+
 import { getFilteredBlogPosts } from "../../services/blog"
 
 import { Link } from "../../components/Link"
 import { Paragraph } from "../../components/Paragraph"
-import { Heading1 } from "../../components/Heading"
+import { heading, Heading1 } from "../../components/Heading"
 import * as List from "../../components/List"
 
 import { Search } from "../../patterns/Search"
@@ -24,8 +27,8 @@ const WritingPage: NextPage<{
   const posts = getFilteredBlogPosts(searchParams.q?.toString() || "")
 
   return (
-    <main className="space-y-8 py-8">
-      <section>
+    <main className="space-y-8 py-4 lg:py-8">
+      <section className="px-4">
         <Heading1>Writing</Heading1>
         <Paragraph>
           From time to time, I do write. Sometime on my blog, but also on other
@@ -42,20 +45,46 @@ const WritingPage: NextPage<{
         </Paragraph>
       </section>
 
-      <div className="mt-12">
-        <div className="mb-8">
-          <Search defaultValue={searchParams.q?.toString() || ""} />
+      <section className="space-y-8 py-4">
+        <div className="mx-auto max-w-lg px-4 sm:px-0">
+          <Search
+            placeholder="Blog post title"
+            defaultValue={searchParams.q?.toString() || ""}
+          />
         </div>
-        <List.Root>
-          <List.Title>Books & Whitepapers</List.Title>
-          <List.Container>
-            <List.Item>
-              <List.Link href="https://learn-tamil.com/books/guide-to-basic-tamil-grammar">
-                A Guide To Basic Tamil Grammar
-              </List.Link>
-            </List.Item>
-          </List.Container>
-        </List.Root>
+        <div className="mx-auto max-w-lg px-4 sm:px-0">
+          <Collapsible.Root
+            asChild
+            defaultOpen={!!searchParams.q && searchParams.q.toString() !== ""}
+          >
+            <List.Root>
+              <Collapsible.Trigger
+                className={heading({
+                  level: "small",
+                  className: "group flex cursor-pointer items-center gap-1",
+                })}
+              >
+                <ChevronRightIcon className="size-4 group-data-[state='open']:hidden" />
+                <ChevronDownIcon className="size-4 group-data-[state='closed']:hidden" />
+                Books, recipes and more
+              </Collapsible.Trigger>
+              <Collapsible.Content>
+                <List.Container className="mt-3 space-y-2 pl-5">
+                  <List.Item>
+                    <List.Link href="https://learn-tamil.com/books/guide-to-basic-tamil-grammar">
+                      A Guide To Basic Tamil Grammar
+                    </List.Link>
+                  </List.Item>
+                  <List.Item>
+                    <List.Link href="/biryani">
+                      Chicken biryani recipe
+                    </List.Link>
+                  </List.Item>
+                </List.Container>
+              </Collapsible.Content>
+            </List.Root>
+          </Collapsible.Root>
+        </div>
 
         {posts.map(([key, posts]) => {
           if (!posts.length) {
@@ -63,30 +92,40 @@ const WritingPage: NextPage<{
           }
 
           return (
-            <div className="mt-12" key={key}>
-              <List.Root>
-                <List.Title>{key}</List.Title>
-                <List.Container>
-                  {posts.map((post, index) => (
-                    <List.Item key={index}>
-                      <List.Link href={post.link}>{post.title}</List.Link>
-                    </List.Item>
-                  ))}
-                </List.Container>
-              </List.Root>
+            <div className="mx-auto max-w-lg px-4 sm:px-0" key={key}>
+              <Collapsible.Root
+                asChild
+                defaultOpen={
+                  key === new Date().getFullYear().toString() ||
+                  (!!searchParams.q && searchParams.q.toString() !== "")
+                }
+              >
+                <List.Root>
+                  <Collapsible.Trigger
+                    className={heading({
+                      level: "small",
+                      className: "group flex cursor-pointer items-center gap-1",
+                    })}
+                  >
+                    <ChevronRightIcon className="size-4 group-data-[state='open']:hidden" />
+                    <ChevronDownIcon className="size-4 group-data-[state='closed']:hidden" />
+                    {key}
+                  </Collapsible.Trigger>
+                  <Collapsible.Content>
+                    <List.Container className="mt-3 space-y-2 pl-5">
+                      {posts.map((post, index) => (
+                        <List.Item key={index}>
+                          <List.Link href={post.link}>{post.title}</List.Link>
+                        </List.Item>
+                      ))}
+                    </List.Container>
+                  </Collapsible.Content>
+                </List.Root>
+              </Collapsible.Root>
             </div>
           )
         })}
-
-        <List.Root>
-          <List.Title>Other writings</List.Title>
-          <List.Container>
-            <List.Item>
-              <List.Link href="/biryani">My famous biryani recipe</List.Link>
-            </List.Item>
-          </List.Container>
-        </List.Root>
-      </div>
+      </section>
     </main>
   )
 }
