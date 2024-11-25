@@ -22,7 +22,7 @@ export const Container: React.FC<ComponentPropsWithRef<"ul">> = ({
 
 export const Item: React.FC<ComponentPropsWithRef<"li">> = (props) => (
   <li
-    className="text-base leading-tight font-medium text-neutral-900 antialiased dark:text-neutral-50"
+    className="text-base font-medium text-neutral-900 antialiased dark:text-neutral-50"
     {...props}
   />
 )

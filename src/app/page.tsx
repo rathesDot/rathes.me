@@ -1,9 +1,11 @@
 import { NextPage } from "next"
 import NextLink from "next/link"
-import { Link } from "../components/Link"
-import { Heading1, Heading2, heading } from "../components/Heading"
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
+
+import { Heading1, Heading2, heading } from "../components/Heading"
+import { Link } from "../components/Link"
 import { Card } from "../components/Card"
+import * as List from "../components/List"
 
 const HomePage: NextPage = () => {
   return (
@@ -75,6 +77,42 @@ const HomePage: NextPage = () => {
             </Card>
           </li>
         </ul>
+      </section>
+      <section>
+        <header className="mb-3 flex items-center justify-between">
+          <Heading2 level="small">Latest blog posts</Heading2>
+          <Link
+            className={heading({ level: "small" })}
+            href="/writing"
+            underlined={false}
+          >
+            Read more
+          </Link>
+        </header>
+        <List.Root>
+          <List.Container>
+            <List.Item>
+              <List.Link href="/">What happened in 2024 — A review</List.Link>
+            </List.Item>
+            <List.Item>
+              <List.Link href="/">New hopes for social media</List.Link>
+            </List.Item>
+            <List.Item>
+              <List.Link href="/">
+                What does it mean to be successful?
+              </List.Link>
+            </List.Item>
+            <List.Item>
+              <List.Link href="/">
+                Bringing back Burpril{" "}
+                <ArrowUpRightIcon className="inline size-4" />
+              </List.Link>
+            </List.Item>
+            <List.Item>
+              <List.Link href="/">Shutting down Mozhi</List.Link>
+            </List.Item>
+          </List.Container>
+        </List.Root>
       </section>
     </main>
   )
