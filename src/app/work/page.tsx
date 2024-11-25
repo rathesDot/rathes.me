@@ -4,12 +4,10 @@ import NextLink from "next/link"
 
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
 
-import { Separator } from "../../components/Separator"
 import { Link } from "../../components/Link"
 import { Paragraph } from "../../components/Paragraph"
-import { heading, Heading1, Heading2, Heading3 } from "../../components/Heading"
+import { heading, Heading1, Heading2 } from "../../components/Heading"
 import { Card } from "../../components/Card"
-import * as List from "../../components/List"
 
 import CalaisPreview from "../../assets/images/calais-preview.png"
 import LearnTamilPreview from "../../assets/images/learn-tamil-preview.png"
@@ -194,100 +192,6 @@ const WorkPage: NextPage = () => {
           </ul>
         </section>
       </div>
-
-      <Separator />
-
-      <section className="mt-16">
-        <Heading2 className="scroll-mt-32" id="public-speaking">
-          Public Speaking
-        </Heading2>
-        <Paragraph>
-          In January 2019, I gave my first tech-related talk. Since it was an
-          exciting experience, I will hopefully fill up this list with a few
-          more of them. They do not only have to be about tech-related stuff but
-          also about society related things as I did a few times in the past
-          already.
-        </Paragraph>
-        <Paragraph>
-          If you want me to give a talk at your meetup, conference, or even
-          private events, feel free to message me. You can find the abstracts of
-          my current ones below. Each of them is possible as a 20-, 30-, and
-          45-minutes version.
-        </Paragraph>
-        <div className="mt-12">
-          <List.Root>
-            <List.Title>Tech talks</List.Title>
-            <List.Container>
-              <List.Item>
-                <List.Link href="/talks/readme-driven-development-phpuk.pdf">
-                  <List.Subtitle>
-                    February 2019 at PHP UK Unconference
-                  </List.Subtitle>
-                  Introduction to Readme Driven Development
-                </List.Link>
-              </List.Item>
-              <List.Item>
-                <List.Link href="/talks/readme-driven-development.pdf">
-                  <List.Subtitle>January 2019 at PHP Gent</List.Subtitle>
-                  Introduction to Readme Driven Development
-                </List.Link>
-              </List.Item>
-            </List.Container>
-          </List.Root>
-          <Separator />
-          <Heading2 level="h4" className="text-neutral-400">
-            Abstracts
-          </Heading2>
-          <article className="my-6">
-            <Heading3 className="mb-2">
-              You probably don't need that meeting
-              <span className="block text-base font-medium text-neutral-500">
-                Developing a meeting culture that employees will love
-              </span>
-            </Heading3>
-            <p className="mb-2 text-base text-neutral-400 antialiased">
-              Be honest with yourself. How many of your meetings do you think
-              were useful? And how many of them were productive? In this talk,
-              we will talk about developing a meeting culture that everybody in
-              the company will love!
-            </p>
-            <p className="mb-2 text-base text-neutral-400 antialiased">
-              You will learn how to avoid unnecessary meetings, how other types
-              of communication can be more effective and efficient. You will
-              also learn how to conduct those unavoidable meetings so that they
-              are productive and don't feel like a waste of time.
-            </p>
-            <p className="mb-2 text-base text-neutral-400 antialiased">
-              After this talk, you will be able to avoid useless meetings and
-              make the necessary meetings more productive.
-            </p>
-          </article>
-          <article className="my-6">
-            <Heading3 className="mb-2">
-              You can't manage time
-              <span className="block text-base font-medium text-neutral-500">
-                A talk about what people call time management
-              </span>
-            </Heading3>
-            <p className="mb-2 text-base text-neutral-400 antialiased">
-              How many different things did you already try out to be more
-              productive and get more things done? How many tools do you own to
-              accomplish more? And did it help?
-            </p>
-            <p className="mb-2 text-base text-neutral-400 antialiased">
-              This talk focusses on what time management is about, why you can't
-              manage time. You will learn about the emotional aspect of time
-              management and the essential habits that will help you to get more
-              things done.
-            </p>
-            <p className="mb-2 text-base text-neutral-400 antialiased">
-              After this talk, you will have an idea of what you can work on if
-              you want to get more things done. And you will understand what
-              time management means.
-            </p>
-          </article>
-        </div>
-      </section>
     </main>
   )
 }
