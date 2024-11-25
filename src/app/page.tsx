@@ -14,8 +14,8 @@ import Iceland3 from "../assets/photos/202402_iceland_3.jpg"
 
 const HomePage: NextPage = () => {
   return (
-    <main className="space-y-12 p-4">
-      <section>
+    <main className="space-y-12 p-4 lg:px-0">
+      <section className="mx-auto max-w-lg">
         <Heading1>
           I'm Rathes Sachchithananthan, a front-end engineer living in{" "}
           <Link href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9">London</Link>{" "}
@@ -33,7 +33,7 @@ const HomePage: NextPage = () => {
           </Link>
         </p>
       </section>
-      <section>
+      <section className="mx-auto max-w-lg">
         <header className="mb-2 flex items-center justify-between">
           <Heading2 level="small">Current projects</Heading2>
           <Link
@@ -83,7 +83,7 @@ const HomePage: NextPage = () => {
           </li>
         </ul>
       </section>
-      <section>
+      <section className="mx-auto max-w-lg">
         <header className="mb-3 flex items-center justify-between">
           <Heading2 level="small">Latest blog posts</Heading2>
           <Link
@@ -119,7 +119,7 @@ const HomePage: NextPage = () => {
           </List.Container>
         </List.Root>
       </section>
-      <section>
+      <section className="mx-auto max-w-lg">
         <header className="mb-3 flex items-center justify-between">
           <Heading2 level="small">Currently reading</Heading2>
           <Link
@@ -147,8 +147,8 @@ const HomePage: NextPage = () => {
           </List.Container>
         </List.Root>
       </section>
-      <section>
-        <header className="mb-3 flex items-center justify-between">
+      <section className="mx-auto max-w-[662px]">
+        <header className="mx-auto mb-3 flex max-w-lg items-center justify-between">
           <Heading2 level="small">Latest shots</Heading2>
           <Link
             className={heading({ level: "small" })}

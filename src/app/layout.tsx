@@ -35,17 +35,19 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body className="bg-white font-sans text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50">
-        <nav className="flex items-center justify-between p-4">
-          <NextLink href="/">
-            <Logo className="size-6" />
-          </NextLink>
-          <button>
-            <Bars2Icon className="size-6" />
-          </button>
+        <nav className="p-4 lg:px-0">
+          <div className="mx-auto flex max-w-lg items-center justify-between">
+            <NextLink href="/">
+              <Logo className="size-6" />
+            </NextLink>
+            <button>
+              <Bars2Icon className="size-6" />
+            </button>
+          </div>
         </nav>
         <Fathom />
         {children}
-        <footer className="space-y-12 px-4 py-8">
+        <footer className="mx-auto max-w-lg space-y-12 px-4 py-8">
           <SayHi />
           <div className="text-xs text-neutral-600 dark:text-neutral-400">
             &copy; {new Date(Date.now()).getFullYear()} /{" "}
