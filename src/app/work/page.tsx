@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 const WorkPage: NextPage = () => {
   return (
-    <main className="space-y-12 py-4">
+    <main className="space-y-12 py-4 lg:py-8">
       <section className="mx-auto max-w-lg px-4 sm:px-0">
         <Heading1>My work</Heading1>
         <Paragraph>

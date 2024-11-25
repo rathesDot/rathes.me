@@ -31,7 +31,7 @@ const ReadingPage: NextPage<{ searchParams: Promise<Params> }> = async (
   const books = getFilteredList(searchParams.q?.toString() || "")
 
   return (
-    <main>
+    <main className="py-4 lg:py-8">
       <section className="mx-auto max-w-lg px-4 sm:px-0">
         <Heading1>Reading</Heading1>
         <Paragraph>
