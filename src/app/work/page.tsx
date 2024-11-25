@@ -1,5 +1,6 @@
 import { Metadata, NextPage } from "next"
 import Image from "next/image"
+import NextLink from "next/link"
 
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
 
@@ -7,6 +8,7 @@ import { Separator } from "../../components/Separator"
 import { Link } from "../../components/Link"
 import { Paragraph } from "../../components/Paragraph"
 import { heading, Heading1, Heading2, Heading3 } from "../../components/Heading"
+import { Card } from "../../components/Card"
 import * as List from "../../components/List"
 
 import CalaisPreview from "../../assets/images/calais-preview.png"
@@ -138,39 +140,60 @@ const WorkPage: NextPage = () => {
             />
           </div>
         </section>
-      </div>
 
-      <section className="my-16 max-w-xl">
-        <Heading2 level="small">Active projects</Heading2>
-        <div className="spacing-y-4">
-          <section>
-            <Heading3 className="mt-4" level="h2">
-              Maxout 2.0
-            </Heading3>
+        <section className="space-y-4">
+          <div className="px-4">
+            <header className="mb-1 flex items-center justify-between">
+              <Heading2>Other projects</Heading2>
+            </header>
             <Paragraph>
-              After a first attempt as a workout planning app, Maxout 2.0 aims
-              to be the single necessary app for anyone interested in leading a
-              healthy lifestyle.
+              I love to explore and try out many different things. That's what
+              makes side projects a lot more enjoyable and feel less like
+              another job.
             </Paragraph>
-            <Link className="mt-2 block text-sm" href="https://getmaxout.app">
-              View project
-            </Link>
-          </section>
-          <section>
-            <Heading3 level="h2">Espresso at home</Heading3>
             <Paragraph>
-              A small project that I started to share everything I am learning
-              while trying to recreate the Italian espresso feeling at home.
+              Below is an incomplete list of other projects that I work on from
+              time to time.
             </Paragraph>
-            <Link
-              className="mt-2 block text-sm"
-              href="https://espresso-at-home.com"
-            >
-              View project
-            </Link>
-          </section>
-        </div>
-      </section>
+          </div>
+          <ul className="space-y-2 px-4">
+            <li>
+              <Card asChild>
+                <NextLink
+                  href="https://getmaxout.app"
+                  target="_blank"
+                  className="flex items-center justify-between"
+                >
+                  Maxout 2.0
+                  <ArrowUpRightIcon className="size-5 align-middle text-neutral-600 dark:text-neutral-200" />
+                </NextLink>
+              </Card>
+            </li>
+            <li>
+              <Card>
+                <NextLink
+                  className="flex items-center justify-between"
+                  href="https://espresso-at-home.com"
+                  target="_blank"
+                >
+                  Espresso at home
+                  <ArrowUpRightIcon className="size-5 align-middle text-neutral-600 dark:text-neutral-200" />
+                </NextLink>
+              </Card>
+            </li>
+            <li>
+              <Card>
+                <NextLink
+                  className="flex items-center justify-between"
+                  href="/blog/en/closing-mozhi"
+                >
+                  Mozhi
+                </NextLink>
+              </Card>
+            </li>
+          </ul>
+        </section>
+      </div>
 
       <Separator />
 
