@@ -32,7 +32,7 @@ const ReadingPage: NextPage<{ searchParams: Promise<Params> }> = async (
 
   return (
     <main>
-      <section className="px-4">
+      <section className="mx-auto max-w-lg px-4 sm:px-0">
         <Heading1>Reading</Heading1>
         <Paragraph>
           Books play an important part in my life. Just sitting on my couch or
@@ -49,7 +49,7 @@ const ReadingPage: NextPage<{ searchParams: Promise<Params> }> = async (
         </Paragraph>
       </section>
       <section className="space-y-8 py-8">
-        <div className="px-4">
+        <div className="mx-auto max-w-lg px-4 sm:px-0">
           <Search
             placeholder="Book title or Author"
             defaultValue={searchParams.q?.toString() || ""}
@@ -61,7 +61,10 @@ const ReadingPage: NextPage<{ searchParams: Promise<Params> }> = async (
           }
 
           return (
-            <div className="px-4" key={`${listTitle}-${index}`}>
+            <div
+              className="mx-auto max-w-lg px-4 sm:px-0"
+              key={`${listTitle}-${index}`}
+            >
               <Collapsible.Root
                 asChild
                 defaultOpen={
