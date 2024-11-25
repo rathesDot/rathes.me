@@ -11,6 +11,7 @@ import * as List from "../../components/List"
 
 import CalaisPreview from "../../assets/images/calais-preview.png"
 import LearnTamilPreview from "../../assets/images/learn-tamil-preview.png"
+import KodiPreview from "../../assets/images/kodi-preview.png"
 
 export const metadata: Metadata = {
   title: "Work",
@@ -107,6 +108,36 @@ const WorkPage: NextPage = () => {
             />
           </div>
         </section>
+
+        <section className="space-y-8">
+          <div className="px-4">
+            <header className="mb-1 flex items-center justify-between">
+              <Heading2>Kodi</Heading2>
+              <Link
+                className={heading({ level: "small" })}
+                href="https://getkodi.com"
+                target="_blank"
+                underlined={false}
+              >
+                Visit page <ArrowUpRightIcon className="inline size-4" />
+              </Link>
+            </header>
+            <Paragraph>
+              My vision for this SaaS is to establish a feature flag and release
+              management platform that enables small startups and indiehackers
+              to ship more confidently and increase their tolerance towards
+              experimenting and exploring
+            </Paragraph>
+          </div>
+          <div className="overflow-hidden pl-4 drop-shadow">
+            <Image
+              src={KodiPreview}
+              alt="Screenshot of the Kodi dashboard"
+              height={340}
+              className="max-w-none"
+            />
+          </div>
+        </section>
       </div>
 
       <section className="my-16 max-w-xl">
@@ -135,16 +166,6 @@ const WorkPage: NextPage = () => {
               className="mt-2 block text-sm"
               href="https://espresso-at-home.com"
             >
-              View project
-            </Link>
-          </section>
-          <section>
-            <Heading3 level="h2">Kodi — Feature Management Service</Heading3>
-            <Paragraph>
-              The aim of this SaaS is to enable every team to use feature flags
-              straight from the beginning.
-            </Paragraph>
-            <Link className="mt-2 block text-sm" href="https://getkodi.com">
               View project
             </Link>
           </section>
