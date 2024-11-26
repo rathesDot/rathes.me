@@ -77,7 +77,7 @@ const BookDetailsPage: NextPage<{ params: Params }> = async (props) => {
         </div>
         <div className="space-y-1">
           <Heading2 level="small">Genres</Heading2>
-          <div className="flex gap-2">
+          <div className="inline-flex flex-wrap gap-2">
             {(genres || []).map((genre) => (
               <Link
                 key={genre.toLocaleLowerCase()}
