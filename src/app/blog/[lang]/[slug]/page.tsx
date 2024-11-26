@@ -39,7 +39,7 @@ const BlogPage: NextPage<{ params: Promise<Params> }> = async (props) => {
   const { content, data } = getBlogPost(params.lang, params.slug)
 
   return (
-    <main className="py-4">
+    <main className="py-4 lg:py-8">
       <header className="mx-auto mb-4 max-w-lg space-y-1 px-4 sm:px-0">
         <Heading1 className="mb-1">{data.title}</Heading1>
         <div className="flex items-center gap-2">
