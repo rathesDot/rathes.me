@@ -8,7 +8,7 @@ export const Rating: React.FC<{ value: number }> = ({ value }) => (
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className="h-6 w-6 text-neutral-300/90"
+        className="size-6 text-neutral-800 dark:text-neutral-400"
       >
         <path
           fillRule="evenodd"
