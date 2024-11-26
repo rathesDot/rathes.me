@@ -5,10 +5,10 @@ import { type LinkProps } from "next/link"
 import BaseLink from "next/link"
 
 export const link = cva({
-  base: "text-neutral-300 font-medium antialiased",
+  base: "text-current antialiased transition-colors dark:text-neutral-300 dark:hover:text-white",
   variants: {
     underlined: {
-      true: "underline underline-offset-2 decoration-neutral-600 hover:decoration-neutral-400 transition-colors",
+      true: "underline underline-offset-2 decoration-neutral-300 hover:decoration-neutral-900 dark:decoration-neutral-600 dark:hover:decoration-neutral-400",
       false: "no-underline",
     },
   },

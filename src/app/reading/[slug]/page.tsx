@@ -11,7 +11,7 @@ import {
 
 import { Link } from "../../../components/Link"
 import { Paragraph } from "../../../components/Paragraph"
-import { Heading1 } from "../../../components/Heading"
+import { Heading1, Heading2 } from "../../../components/Heading"
 import { Rating } from "../../../components/Rating"
 import { BookSchema } from "../../../components/BookSchema"
 
@@ -53,50 +53,45 @@ const BookDetailsPage: NextPage<{ params: Params }> = async (props) => {
   const { title, author, url, description, genres, rating } = book
 
   return (
-    <div>
+    <main className="mx-auto max-w-lg space-y-4 px-4 py-4 sm:px-0">
       <BookSchema book={book} />
-      <div className="flex max-w-xl flex-col gap-4 md:gap-6">
-        <header>
-          <Heading1>{title}</Heading1>
-          <p className="text-base text-neutral-300/80">by {author}</p>
-        </header>
-        <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-x-2 md:gap-y-6">
-          <div className="col-start-1 col-end-1 row-start-1 row-end-1 md:flex md:items-center md:gap-2">
-            <h2 className={smallTitle({ hiddenOnMobile: true })}>Rating</h2>
-            <Rating value={rating || 0} />
-          </div>
-          <div className="col-start-1 col-end-3 row-start-2 row-end-2">
+      <header>
+        <Heading1 className="mb-0">{title}</Heading1>
+        <p className="block text-sm leading-relaxed text-neutral-500 antialiased dark:text-neutral-400">
+          by {author}
+        </p>
+      </header>
+      <div className="space-y-2">
+        <Heading2 level="small">Rating</Heading2>
+        <Rating value={rating || 0} />
+      </div>
+      <div className="space-y-1">
+        <Heading2 level="small">Genres</Heading2>
+        <div className="inline-flex flex-wrap gap-2">
+          {(genres || []).map((genre) => (
             <Link
-              target="_blank"
-              className="inline-block rounded-lg bg-neutral-800 px-3 py-2 font-sans text-xs font-medium antialiased md:text-sm"
-              href={url}
+              key={genre.toLocaleLowerCase()}
+              underlined
+              className="text-sm"
+              href={`/reading?genre=${genre.toLowerCase()}`}
             >
-              Buy on Amazon
+              {genre}
             </Link>
-          </div>
-          <div className="col-start-2 col-end-2 row-start-1 row-end-1 flex items-center gap-2">
-            <h2 className={smallTitle({ hiddenOnMobile: true })}>Genres</h2>
-            <div className="flex gap-2">
-              {(genres || []).map((genre) => (
-                <Link
-                  key={genre.toLocaleLowerCase()}
-                  underlined
-                  className="text-xs underline-offset-2 antialiased md:text-sm"
-                  href={`/reading?genre=${genre.toLowerCase()}`}
-                >
-                  {genre}
-                </Link>
-              ))}
-            </div>
-          </div>
-          {description && (
-            <div className="col-start-1 col-end-3 row-start-3 row-end-3">
-              <Paragraph className="mt-0">{description}</Paragraph>
-            </div>
-          )}
+          ))}
         </div>
       </div>
-    </div>
+      <div>
+        <Link
+          target="_blank"
+          className="inline-block rounded-md bg-neutral-200 px-3 py-2.5 font-semibold text-neutral-700 antialiased dark:bg-neutral-800 dark:text-neutral-300"
+          underlined={false}
+          href={url}
+        >
+          Buy on Amazon
+        </Link>
+      </div>
+      {description && <Paragraph>{description}</Paragraph>}
+    </main>
   )
 }
 

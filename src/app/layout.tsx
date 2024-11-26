@@ -1,11 +1,14 @@
-import localFont from "next/font/local"
+import { Inter } from "next/font/google"
 
 import Fathom from "../components/Fathom"
 
-import * as Navbar from "../patterns/Navbar"
-import { Logo } from "../components/Logo"
-
 import "../styles/globals.css"
+
+import * as Navbar from "../patterns/Navbar"
+
+import { SayHi } from "../patterns/SayHi"
+import { Link } from "../components/Link"
+import { Logo } from "../components/Logo"
 
 export const metadata = {
   title: {
@@ -21,9 +24,9 @@ export const metadata = {
   creator: "Rathes Sachchithananthan",
 }
 
-const switzer = localFont({
-  src: "../assets/switzer-variable.ttf",
-  variable: "--font-switzer",
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin", "latin-ext"],
 })
 
 export default function RootLayout({
@@ -32,37 +35,33 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${switzer.variable}`}>
-      <body className="bg-neutral-950 font-sans text-white">
-        <Fathom />
-        <main className="flex min-h-screen flex-col font-sans">
-          <Navbar.Root>
+    <html lang="en" className={`${inter.variable}`}>
+      <body className="bg-white font-sans text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50">
+        <Navbar.Root>
+          <div className="mx-auto max-w-lg px-4 sm:px-0">
             <Navbar.Menu>
-              <Navbar.Item href="/">
-                <Logo className="h-6 w-6" />
+              <Navbar.Item href="/" className="px-1">
+                <Logo className="size-5 text-neutral-900 dark:text-neutral-400" />
               </Navbar.Item>
-              <Navbar.Item href="/about">About me</Navbar.Item>
-              <Navbar.Item href="/reading">Reading</Navbar.Item>
-              <Navbar.Item href="/writing">Writing</Navbar.Item>
-              <Navbar.Item href="/photos">Photography</Navbar.Item>
+              <Navbar.Item href="/about">About</Navbar.Item>
               <Navbar.Item href="/work">Work</Navbar.Item>
+              <Navbar.Item href="/writing">Writing</Navbar.Item>
+              <Navbar.Item href="/reading">Reading</Navbar.Item>
+              <Navbar.Item href="/photography">Photos</Navbar.Item>
             </Navbar.Menu>
-          </Navbar.Root>
-          <div className="container mx-auto my-8 w-full max-w-[560px] grow px-4 md:px-0">
-            {children}
           </div>
-          <footer className="mx-auto mt-auto inline-flex w-full max-w-[576px] gap-1 px-4 py-8 text-xs text-neutral-400 md:px-0">
-            <span>&copy; {new Date().getFullYear()}</span>
-            <span>/</span>
-            <a
-              className="mb-4 font-medium text-neutral-400 underline decoration-neutral-600 decoration-dotted underline-offset-2 antialiased transition-colors hover:decoration-neutral-400"
-              href="https://pinkary.com/@tamizhographer"
-              target="_blank"
-            >
+        </Navbar.Root>
+        <Fathom />
+        {children}
+        <footer className="mx-auto max-w-lg space-y-12 px-4 py-8 sm:px-0">
+          <SayHi />
+          <div className="text-xs text-neutral-600 dark:text-neutral-400">
+            &copy; {new Date(Date.now()).getFullYear()} /{" "}
+            <Link href="https://pinkary.com/@tamizhographer" target="_blank">
               @tamizhographer
-            </a>
-          </footer>
-        </main>
+            </Link>
+          </div>
+        </footer>
       </body>
     </html>
   )

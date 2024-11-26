@@ -9,20 +9,10 @@ const container = cva({
   base: "flex flex-col flex-none gap-1",
   variants: {
     mode: {
-      landscape: "md:max-w-[672px]",
+      landscape: "md:max-w-[656px] md:col-span-2",
       portrait: "md:max-w-[320px]",
     },
-    list: {
-      true: "max-w-[320px]",
-    },
   },
-  compoundVariants: [
-    {
-      mode: "landscape",
-      list: true,
-      className: "max-w-[320px]",
-    },
-  ],
 })
 
 export const Photo: React.FC<{
@@ -30,12 +20,11 @@ export const Photo: React.FC<{
   title: string
   caption?: string
   mode?: PhotoMode
-  inList?: boolean
-}> = ({ image, title, inList: list = false, caption, mode = "portrait" }) => (
-  <figure className={container({ mode, list })}>
+}> = ({ image, title, caption, mode = "portrait" }) => (
+  <figure className={container({ mode })}>
     <Image src={image} alt={title} />
     {caption && (
-      <figcaption className="px-4 text-xs text-neutral-500">
+      <figcaption className="px-4 text-xs text-neutral-500 dark:text-neutral-400">
         {caption}
       </figcaption>
     )}

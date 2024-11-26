@@ -39,29 +39,29 @@ const BlogPage: NextPage<{ params: Promise<Params> }> = async (props) => {
   const { content, data } = getBlogPost(params.lang, params.slug)
 
   return (
-    <article className="max-w-[54ch]">
-      <header className="mb-8">
-        <Heading1>{data.title}</Heading1>
+    <main className="py-4 lg:py-8">
+      <header className="mx-auto mb-4 max-w-lg space-y-1 px-4 sm:px-0">
+        <Heading1 className="mb-1">{data.title}</Heading1>
         <div className="flex items-center gap-2">
           <time
-            className="text-sm text-neutral-400 antialiased"
+            className="text-sm text-neutral-500 antialiased"
             dateTime={format(new Date(Date.parse(data.date)), "yyyy-MM-dd")}
           >
             {format(new Date(Date.parse(data.date)), "MMM dd, yyyy")}
           </time>
-          <span className="text-sm text-neutral-600 antialiased">/</span>
-          <span className="text-sm text-neutral-400 antialiased">
+          <span className="text-sm text-neutral-500 antialiased">/</span>
+          <span className="text-sm text-neutral-500 antialiased">
             Rathes Sachchithananthan
           </span>
         </div>
       </header>
       {data.image && (
-        <figure className="my-8">
+        <figure className="mx-auto my-4 max-w-lg sm:px-0">
           <div className="relative aspect-3/2">
             <Image
               src={data.image}
               fill
-              sizes="704px"
+              sizes="512px"
               priority
               alt={data.title}
               className="object-cover object-center"
@@ -72,21 +72,20 @@ const BlogPage: NextPage<{ params: Promise<Params> }> = async (props) => {
           )}
         </figure>
       )}
-      <MDXRemote
-        source={content}
-        options={{
-          scope: { books },
-          mdxOptions: {
-            remarkPlugins: [remarkGfm],
-            rehypePlugins: [rehypeHighlight],
-          },
-        }}
-        components={components}
-      />
-      <footer className="my-32">
-        <Link href="/writing">Back to all articles</Link>
-      </footer>
-    </article>
+      <article className="mx-auto max-w-lg px-4 sm:px-0">
+        <MDXRemote
+          source={content}
+          options={{
+            scope: { books },
+            mdxOptions: {
+              remarkPlugins: [remarkGfm],
+              rehypePlugins: [rehypeHighlight],
+            },
+          }}
+          components={components}
+        />
+      </article>
+    </main>
   )
 }
 

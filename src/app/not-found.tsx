@@ -1,29 +1,16 @@
 import React from "react"
 
-import { cva } from "../../cva.config"
-import { Link } from "../components/Link"
 import { Heading1 } from "../components/Heading"
 import { Paragraph } from "../components/Paragraph"
+import * as List from "../components/List"
 
 export const metadata = {
   title: "Not Found",
 }
 
-const unorderedList = cva({
-  base: "my-4 space-y-4 marker:text-neutral-400/70",
-  variants: {
-    withDisc: { true: "list-disc pl-6" },
-  },
-  defaultVariants: { withDisc: true },
-})
-
-const listItem = cva({
-  base: "text-neutral-400 antialiased [&_p]:mb-0",
-})
-
 const NotFoundPage = () => (
-  <div className="mt-8">
-    <Heading1 className="mb-2 max-w-md">
+  <main className="p-4">
+    <Heading1>
       Looks like you are looking for a page that does not exist.
     </Heading1>
     <Paragraph>
@@ -31,18 +18,20 @@ const NotFoundPage = () => (
       different search term. Otherwise, here are some things that you might have
       been looking for:
     </Paragraph>
-    <ul className={unorderedList({ withDisc: false, className: "space-y-2" })}>
-      <li className={listItem()}>
-        <Link href="/">Homepage</Link>
-      </li>
-      <li className={listItem()}>
-        <Link href="/writing">Blog</Link>
-      </li>
-      <li className={listItem()}>
-        <Link href="/about">About me</Link>
-      </li>
-    </ul>
-  </div>
+    <List.Root className="my-4">
+      <List.Container className="space-y-2">
+        <List.Item>
+          <List.Link href="/">Homepage</List.Link>
+        </List.Item>
+        <List.Item>
+          <List.Link href="/writing">Blog</List.Link>
+        </List.Item>
+        <List.Item>
+          <List.Link href="/about">About me</List.Link>
+        </List.Item>
+      </List.Container>
+    </List.Root>
+  </main>
 )
 
 export default NotFoundPage

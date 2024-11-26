@@ -18,11 +18,11 @@ export const Title: React.FC<ComponentPropsWithRef<"h2">> = ({
 export const Container: React.FC<ComponentPropsWithRef<"ul">> = ({
   className,
   ...props
-}) => <ul className={cx("my-4 space-y-4", className)} {...props} />
+}) => <ul className={cx("space-y-1 not-first:my-4", className)} {...props} />
 
 export const Item: React.FC<ComponentPropsWithRef<"li">> = (props) => (
   <li
-    className="text-base font-medium leading-tight text-neutral-200 antialiased"
+    className="text-base font-medium text-neutral-900 antialiased dark:text-neutral-50"
     {...props}
   />
 )
@@ -32,7 +32,10 @@ export const Subtitle: React.FC<ComponentPropsWithRef<"span">> = ({
   ...props
 }) => (
   <span
-    className={cx("block text-xs text-neutral-500 md:text-sm", className)}
+    className={cx(
+      "block text-sm text-neutral-500 dark:text-neutral-400",
+      className
+    )}
     {...props}
   />
 )

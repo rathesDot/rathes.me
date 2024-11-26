@@ -1,6 +1,7 @@
 "use client"
 
 import React from "react"
+import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
 
 import * as List from "../../components/List"
 import { Book, createSlug } from "../../services/books"
@@ -23,7 +24,10 @@ export const BookListItem: React.FC<{ book: Book }> = ({ book }) => {
   return (
     <List.Item>
       <List.Button onClick={() => router.push(book.url)}>
-        {book.title}
+        <span className="flex items-center gap-1">
+          {book.title}
+          <ArrowUpRightIcon className="hidden size-5 text-neutral-400 sm:inline" />
+        </span>
         <List.Subtitle>by {book.author}</List.Subtitle>
       </List.Button>
     </List.Item>
