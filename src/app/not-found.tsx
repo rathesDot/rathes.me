@@ -9,7 +9,7 @@ export const metadata = {
 }
 
 const NotFoundPage = () => (
-  <main className="p-4">
+  <main className="mx-auto max-w-lg p-4 sm:px-0 lg:py-8">
     <Heading1>
       Looks like you are looking for a page that does not exist.
     </Heading1>
