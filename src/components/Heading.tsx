@@ -9,7 +9,7 @@ export const heading = cva({
       h1: "text-2xl font-semibold tracking-[-0.03em] leading-tight mb-4",
       h2: "text-lg font-semibold",
       h3: "text-base font-semibold",
-      h4: "text-base font-normal",
+      h4: "text-sm font-semibold",
       small: "text-sm font-semibold text-neutral-600 dark:text-neutral-100",
     },
   },

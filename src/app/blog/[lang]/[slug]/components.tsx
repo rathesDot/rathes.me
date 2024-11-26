@@ -34,7 +34,7 @@ const listItem = cva({ base: "antialiased [&_p]:mb-0" })
 const bold = cva({ base: "font-semibold antialiased" })
 
 const strikethrough = cva({
-  base: "line-through decoration-neutral-400 transition-colors font-medium antialiased mb-4",
+  base: "line-through decoration-neutral-500 dark:decoration-neutral-400 transition-colors font-medium antialiased mb-4",
 })
 
 const quote = cva({
@@ -92,12 +92,12 @@ export const components: any = {
         viewBox="0 0 41 33"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute top-6 left-6"
+        className="absolute top-6 left-6 text-neutral-500 dark:text-neutral-400"
       >
         <path
           d="M40.232 17.984V32.832H24.36V23.104C24.36 18.4106 24.872 14.4426 25.896 11.2C26.92 7.87196 28.456 4.45862 30.504 0.959961H38.056C37.288 3.00796 36.5626 4.92796 35.88 6.71996C35.2826 8.51196 34.7706 10.3466 34.344 12.224C34.0026 14.016 33.832 15.936 33.832 17.984H40.232ZM16.04 17.984V32.832H0.167969V23.104C0.167969 18.4106 0.679969 14.4426 1.70397 11.2C2.8133 7.87196 4.3493 4.45862 6.31197 0.959961H13.864C13.0106 3.00796 12.2853 4.92796 11.688 6.71996C11.0906 8.51196 10.6213 10.3466 10.28 12.224C9.93864 14.016 9.76797 15.936 9.76797 17.984H16.04Z"
           fill="currentColor"
-          fillOpacity="0.05"
+          fillOpacity="0.15"
         />
       </svg>
 
@@ -127,7 +127,7 @@ export const components: any = {
   List: ({ title, children }: PropsWithChildren<{ title?: string }>) => (
     <List.Root>
       {title && <List.Title>{title}</List.Title>}
-      <List.Container>{children}</List.Container>
+      <List.Container className="my-8 space-y-4">{children}</List.Container>
     </List.Root>
   ),
   ListItem: ({
