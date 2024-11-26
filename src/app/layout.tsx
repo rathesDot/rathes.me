@@ -1,8 +1,6 @@
 import { Inter } from "next/font/google"
 import NextLink from "next/link"
 
-import { Bars2Icon } from "@heroicons/react/24/outline"
-
 import Fathom from "../components/Fathom"
 
 import "../styles/globals.css"
