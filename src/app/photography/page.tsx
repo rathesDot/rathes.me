@@ -5,7 +5,6 @@ import { Heading1 } from "../../components/Heading"
 import { Link } from "../../components/Link"
 
 import { Photo } from "../../patterns/Photo"
-import { SayHi } from "../../patterns/SayHi"
 
 import Iceland1 from "../../assets/photos/202402_iceland_1.jpg"
 import Iceland2 from "../../assets/photos/202402_iceland_2.jpg"
