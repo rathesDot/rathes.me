@@ -11,7 +11,7 @@ import {
 
 import { Link } from "../../../components/Link"
 import { Paragraph } from "../../../components/Paragraph"
-import { Heading1 } from "../../../components/Heading"
+import { Heading1, Heading2 } from "../../../components/Heading"
 import { Rating } from "../../../components/Rating"
 import { BookSchema } from "../../../components/BookSchema"
 
@@ -53,15 +53,17 @@ const BookDetailsPage: NextPage<{ params: Params }> = async (props) => {
   const { title, author, url, description, genres, rating } = book
 
   return (
-    <main className="space-y-4 py-4">
+    <main className="space-y-4 px-4 py-4">
       <BookSchema book={book} />
       <header>
-        <Heading1>{title}</Heading1>
-        <p className="text-base text-neutral-300/80">by {author}</p>
+        <Heading1 className="mb-0">{title}</Heading1>
+        <p className="block text-sm leading-relaxed text-neutral-500 antialiased dark:text-neutral-400">
+          by {author}
+        </p>
       </header>
       <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-x-2 md:gap-y-6">
-        <div className="col-start-1 col-end-1 row-start-1 row-end-1 md:flex md:items-center md:gap-2">
-          <h2 className={smallTitle({ hiddenOnMobile: true })}>Rating</h2>
+        <div className="space-y-2">
+          <Heading2 level="small">Rating</Heading2>
           <Rating value={rating || 0} />
         </div>
         <div className="col-start-1 col-end-3 row-start-2 row-end-2">
@@ -73,14 +75,14 @@ const BookDetailsPage: NextPage<{ params: Params }> = async (props) => {
             Buy on Amazon
           </Link>
         </div>
-        <div className="col-start-2 col-end-2 row-start-1 row-end-1 flex items-center gap-2">
-          <h2 className={smallTitle({ hiddenOnMobile: true })}>Genres</h2>
+        <div className="space-y-1">
+          <Heading2 level="small">Genres</Heading2>
           <div className="flex gap-2">
             {(genres || []).map((genre) => (
               <Link
                 key={genre.toLocaleLowerCase()}
                 underlined
-                className="text-xs underline-offset-2 antialiased md:text-sm"
+                className="text-sm"
                 href={`/reading?genre=${genre.toLowerCase()}`}
               >
                 {genre}
