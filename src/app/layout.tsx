@@ -25,7 +25,10 @@ export const metadata = {
   creator: "Rathes Sachchithananthan",
 }
 
-const inter = Inter({ variable: "--font-inter" })
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin", "latin-ext"],
+})
 
 export default function RootLayout({
   children,
