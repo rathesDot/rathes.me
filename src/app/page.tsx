@@ -3,6 +3,9 @@ import NextLink from "next/link"
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
 import Image from "next/image"
 
+import { getCurrentlyReading } from "../services/books"
+import { getLatestBlogposts } from "../services/blog"
+
 import { Heading1, Heading2, heading } from "../components/Heading"
 import { Link } from "../components/Link"
 import { Card } from "../components/Card"
@@ -11,10 +14,10 @@ import * as List from "../components/List"
 import Iceland1 from "../assets/photos/202402_iceland_1.jpg"
 import Iceland2 from "../assets/photos/202402_iceland_2.jpg"
 import Iceland3 from "../assets/photos/202402_iceland_3.jpg"
-import { getCurrentlyReading } from "../services/books"
 
 const HomePage: NextPage = () => {
   const books = getCurrentlyReading()
+  const posts = getLatestBlogposts()
 
   return (
     <main className="space-y-12 py-4">
@@ -99,26 +102,21 @@ const HomePage: NextPage = () => {
         </header>
         <List.Root>
           <List.Container>
-            <List.Item>
-              <List.Link href="/">What happened in 2024 — A review</List.Link>
-            </List.Item>
-            <List.Item>
-              <List.Link href="/">New hopes for social media</List.Link>
-            </List.Item>
-            <List.Item>
-              <List.Link href="/">
-                What does it mean to be successful?
-              </List.Link>
-            </List.Item>
-            <List.Item>
-              <List.Link href="/">
-                Bringing back Burpril{" "}
-                <ArrowUpRightIcon className="inline size-4" />
-              </List.Link>
-            </List.Item>
-            <List.Item>
-              <List.Link href="/">Shutting down Mozhi</List.Link>
-            </List.Item>
+            {posts.map((posts, index) => {
+              return (
+                <List.Item key={`post-${index}`}>
+                  <List.Link href={posts.link}>
+                    {posts.title}
+                    {posts.external && (
+                      <>
+                        {" "}
+                        <ArrowUpRightIcon className="inline size-4" />
+                      </>
+                    )}
+                  </List.Link>
+                </List.Item>
+              )
+            })}
           </List.Container>
         </List.Root>
       </section>
