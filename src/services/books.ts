@@ -28,6 +28,10 @@ export const getFilteredList = (term: string): [string, Book[]][] => {
   ])
 }
 
+export const getCurrentlyReading = () => {
+  return books["Currently reading"]
+}
+
 export const createSlug = (book: Book): string => {
   return slugify(`${book.title} ${book.author}`, {
     lower: true,

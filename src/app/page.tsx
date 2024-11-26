@@ -11,8 +11,11 @@ import * as List from "../components/List"
 import Iceland1 from "../assets/photos/202402_iceland_1.jpg"
 import Iceland2 from "../assets/photos/202402_iceland_2.jpg"
 import Iceland3 from "../assets/photos/202402_iceland_3.jpg"
+import { getCurrentlyReading } from "../services/books"
 
 const HomePage: NextPage = () => {
+  const books = getCurrentlyReading()
+
   return (
     <main className="space-y-12 py-4">
       <section className="mx-auto max-w-lg p-4 sm:px-0">
@@ -132,18 +135,14 @@ const HomePage: NextPage = () => {
         </header>
         <List.Root>
           <List.Container className="space-y-3">
-            <List.Item>
-              The Seven Deaths of Evelyn Hardcastle
-              <List.Subtitle>by Stuart Turton</List.Subtitle>
-            </List.Item>
-            <List.Item>
-              Butter
-              <List.Subtitle>by Asako Yuzuki</List.Subtitle>
-            </List.Item>
-            <List.Item>
-              Origins: How the Earth Shaped Human History
-              <List.Subtitle>by Lewis Dartnell</List.Subtitle>
-            </List.Item>
+            {books.map((book, index) => {
+              return (
+                <List.Item key={`book-${index}`}>
+                  {book.title}
+                  <List.Subtitle>by {book.author}</List.Subtitle>
+                </List.Item>
+              )
+            })}
           </List.Container>
         </List.Root>
       </section>
