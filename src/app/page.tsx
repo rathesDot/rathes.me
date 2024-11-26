@@ -147,7 +147,7 @@ const HomePage: NextPage = () => {
           </List.Container>
         </List.Root>
       </section>
-      <section className="mx-auto max-w-[662px]">
+      <section className="mx-auto max-w-[662px] p-4 sm:px-0">
         <header className="mx-auto mb-3 flex max-w-lg items-center justify-between">
           <Heading2 level="small">Latest shots</Heading2>
           <Link
