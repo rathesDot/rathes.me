@@ -40,7 +40,7 @@ export default function RootLayout({
         <Navbar.Root>
           <div className="mx-auto max-w-lg px-4 sm:px-0">
             <Navbar.Menu>
-              <Navbar.Item href="/" className="px-1">
+              <Navbar.Item href="/" className="px-1" title="Home">
                 <Logo className="size-5 text-neutral-900 dark:text-neutral-400" />
               </Navbar.Item>
               <Navbar.Item href="/about">About</Navbar.Item>
