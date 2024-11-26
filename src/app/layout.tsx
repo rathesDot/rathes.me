@@ -1,9 +1,10 @@
 import { Inter } from "next/font/google"
-import NextLink from "next/link"
 
 import Fathom from "../components/Fathom"
 
 import "../styles/globals.css"
+
+import * as Navbar from "../patterns/Navbar"
 
 import { SayHi } from "../patterns/SayHi"
 import { Link } from "../components/Link"
@@ -36,45 +37,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body className="bg-white font-sans text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50">
-        <nav className="sticky top-0 mt-0 border-b bg-white/70 backdrop-blur-sm dark:border-b-neutral-800 dark:bg-neutral-950/70">
+        <Navbar.Root>
           <div className="mx-auto max-w-lg px-4 sm:px-0">
-            <div className="flex items-center justify-between">
-              <NextLink href="/">
+            <Navbar.Menu>
+              <Navbar.Item href="/" className="px-1">
                 <Logo className="size-5 text-neutral-900 dark:text-neutral-400" />
-              </NextLink>
-              <NextLink
-                href="/about"
-                className="block px-1 py-4 text-sm text-neutral-900 antialiased dark:text-neutral-400"
-              >
-                About
-              </NextLink>
-              <NextLink
-                href="/work"
-                className="block px-1 py-4 text-sm text-neutral-900 antialiased dark:text-neutral-400"
-              >
-                Work
-              </NextLink>
-              <NextLink
-                href="/writing"
-                className="block px-1 py-4 text-sm text-neutral-900 antialiased dark:text-neutral-400"
-              >
-                Writing
-              </NextLink>
-              <NextLink
-                href="/reading"
-                className="block px-1 py-4 text-sm text-neutral-900 antialiased dark:text-neutral-400"
-              >
-                Reading
-              </NextLink>
-              <NextLink
-                href="/photography"
-                className="block px-1 py-4 text-sm text-neutral-900 antialiased dark:text-neutral-400"
-              >
-                Photos
-              </NextLink>
-            </div>
+              </Navbar.Item>
+              <Navbar.Item href="/about">About</Navbar.Item>
+              <Navbar.Item href="/work">Work</Navbar.Item>
+              <Navbar.Item href="/writing">Writing</Navbar.Item>
+              <Navbar.Item href="/reading">Reading</Navbar.Item>
+              <Navbar.Item href="/photography">Photos</Navbar.Item>
+            </Navbar.Menu>
           </div>
-        </nav>
+        </Navbar.Root>
         <Fathom />
         {children}
         <footer className="mx-auto max-w-lg space-y-12 px-4 py-8 sm:px-0">
