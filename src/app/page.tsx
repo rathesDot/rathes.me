@@ -14,7 +14,7 @@ import Iceland3 from "../assets/photos/202402_iceland_3.jpg"
 
 const HomePage: NextPage = () => {
   return (
-    <main className="space-y-12">
+    <main className="space-y-12 py-4">
       <section className="mx-auto max-w-lg p-4 sm:px-0">
         <Heading1>
           I'm Rathes Sachchithananthan, a front-end engineer living in{" "}

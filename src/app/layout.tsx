@@ -38,14 +38,43 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable}`}>
       <body className="bg-white font-sans text-neutral-950 dark:bg-neutral-950 dark:text-neutral-50">
-        <nav className="mx-auto max-w-lg p-4 sm:px-0">
-          <div className="flex items-center justify-between">
-            <NextLink href="/">
-              <Logo className="size-6" />
-            </NextLink>
-            <button>
-              <Bars2Icon className="size-6" />
-            </button>
+        <nav className="sticky top-0 mt-0 border-b bg-white/70 backdrop-blur-sm dark:border-b-neutral-800 dark:bg-neutral-950/70">
+          <div className="mx-auto max-w-lg px-4 sm:px-0">
+            <div className="flex items-center justify-between">
+              <NextLink href="/">
+                <Logo className="size-5 text-neutral-900 dark:text-neutral-400" />
+              </NextLink>
+              <NextLink
+                href="/about"
+                className="block px-1 py-4 text-sm text-neutral-900 antialiased dark:text-neutral-400"
+              >
+                About
+              </NextLink>
+              <NextLink
+                href="/work"
+                className="block px-1 py-4 text-sm text-neutral-900 antialiased dark:text-neutral-400"
+              >
+                Work
+              </NextLink>
+              <NextLink
+                href="/writing"
+                className="block px-1 py-4 text-sm text-neutral-900 antialiased dark:text-neutral-400"
+              >
+                Writing
+              </NextLink>
+              <NextLink
+                href="/reading"
+                className="block px-1 py-4 text-sm text-neutral-900 antialiased dark:text-neutral-400"
+              >
+                Reading
+              </NextLink>
+              <NextLink
+                href="/photography"
+                className="block px-1 py-4 text-sm text-neutral-900 antialiased dark:text-neutral-400"
+              >
+                Photos
+              </NextLink>
+            </div>
           </div>
         </nav>
         <Fathom />
