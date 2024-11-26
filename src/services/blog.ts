@@ -71,6 +71,34 @@ export const getAllBlogPosts = () => {
   )
 }
 
+export const getLatestBlogposts = (count = 5) => {
+  const posts = languages
+    .map((language: Language) =>
+      getPostsByLang(language).map((entry) => {
+        const source = fetchBlogPost(language, entry)
+        const { data: frontmatter } = matter(source)
+
+        return {
+          link: `/blog/${language}/${getSlugFromFile(entry)}`,
+          title: frontmatter.title,
+          date: frontmatter.date,
+          external: false,
+        }
+      })
+    )
+    .flat()
+
+  return [...posts, ...externalLinks.map((p) => ({ ...p, external: true }))]
+    .sort((a, b) =>
+      Date.parse(a.date) < Date.parse(b.date)
+        ? 1
+        : Date.parse(b.date) < Date.parse(a.date)
+          ? -1
+          : 0
+    )
+    .slice(0, count)
+}
+
 export const getFilteredBlogPosts = (
   searchTerm?: string
 ): [string, Post[]][] => {
