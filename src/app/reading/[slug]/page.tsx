@@ -61,41 +61,36 @@ const BookDetailsPage: NextPage<{ params: Params }> = async (props) => {
           by {author}
         </p>
       </header>
-      <div className="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-x-2 md:gap-y-6">
-        <div className="space-y-2">
-          <Heading2 level="small">Rating</Heading2>
-          <Rating value={rating || 0} />
-        </div>
-        <div className="col-start-1 col-end-3 row-start-2 row-end-2">
-          <Link
-            target="_blank"
-            className="inline-block rounded-lg bg-neutral-800 px-3 py-2 font-sans text-xs font-medium antialiased md:text-sm"
-            href={url}
-          >
-            Buy on Amazon
-          </Link>
-        </div>
-        <div className="space-y-1">
-          <Heading2 level="small">Genres</Heading2>
-          <div className="inline-flex flex-wrap gap-2">
-            {(genres || []).map((genre) => (
-              <Link
-                key={genre.toLocaleLowerCase()}
-                underlined
-                className="text-sm"
-                href={`/reading?genre=${genre.toLowerCase()}`}
-              >
-                {genre}
-              </Link>
-            ))}
-          </div>
-        </div>
-        {description && (
-          <div className="col-start-1 col-end-3 row-start-3 row-end-3">
-            <Paragraph className="mt-0">{description}</Paragraph>
-          </div>
-        )}
+      <div className="space-y-2">
+        <Heading2 level="small">Rating</Heading2>
+        <Rating value={rating || 0} />
       </div>
+      <div className="space-y-1">
+        <Heading2 level="small">Genres</Heading2>
+        <div className="inline-flex flex-wrap gap-2">
+          {(genres || []).map((genre) => (
+            <Link
+              key={genre.toLocaleLowerCase()}
+              underlined
+              className="text-sm"
+              href={`/reading?genre=${genre.toLowerCase()}`}
+            >
+              {genre}
+            </Link>
+          ))}
+        </div>
+      </div>
+      <div>
+        <Link
+          target="_blank"
+          className="inline-block rounded-md bg-neutral-200 px-3 py-2.5 font-semibold text-neutral-700 antialiased dark:bg-neutral-800 dark:text-neutral-300"
+          underlined={false}
+          href={url}
+        >
+          Buy on Amazon
+        </Link>
+      </div>
+      {description && <Paragraph>{description}</Paragraph>}
     </main>
   )
 }
