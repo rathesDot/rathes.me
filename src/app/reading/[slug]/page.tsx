@@ -53,7 +53,7 @@ const BookDetailsPage: NextPage<{ params: Params }> = async (props) => {
   const { title, author, url, description, genres, rating } = book
 
   return (
-    <main className="space-y-4 px-4 py-4">
+    <main className="mx-auto max-w-lg space-y-4 px-4 py-4 sm:px-0">
       <BookSchema book={book} />
       <header>
         <Heading1 className="mb-0">{title}</Heading1>
