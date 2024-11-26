@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 const PhotoPage: NextPage = () => {
   return (
-    <main className="py-4">
+    <main className="py-4 lg:py-8">
       <section className="mx-auto max-w-lg px-4 sm:px-0">
         <Heading1>Photography</Heading1>
         <Paragraph>
