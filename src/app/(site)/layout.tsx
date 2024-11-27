@@ -30,9 +30,7 @@ export default function RootLayout({
         <SayHi />
         <div className="text-xs text-neutral-600 dark:text-neutral-400">
           &copy; {new Date(Date.now()).getFullYear()} /{" "}
-          <Link href="https://pinkary.com/@tamizhographer" target="_blank">
-            @tamizhographer
-          </Link>
+          <Link href="/links">@tamizhographer</Link>
         </div>
       </footer>
     </>
