@@ -33,10 +33,7 @@ const HomePage: NextPage = () => {
           businesses grow better.
         </p>
         <p className={heading({ level: "h1" })}>
-          Find out more about me on{" "}
-          <Link href="https://pinkary.com/@tamizhographer" target="_blank">
-            Pinkary
-          </Link>
+          Follow me on <Link href="/links">Blueksy, Instagram and more</Link>.
         </p>
       </section>
       <section className="mx-auto max-w-lg p-4 sm:px-0">
