@@ -585,6 +585,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@icons-pack/react-simple-icons@npm:^10.2.0":
+  version: 10.2.0
+  resolution: "@icons-pack/react-simple-icons@npm:10.2.0"
+  peerDependencies:
+    react: ^16.13 || ^17 || ^18 || ^19
+  checksum: 10c0/3721d5bd3f1b8b500902e9dfcfefb03a953e64008b4272478407dc34f33a0ac03d35fd2ffa85d537db18a345578def68dcc1945343588e5a8aaa9c9477832bbf
+  languageName: node
+  linkType: hard
+
 "@img/sharp-darwin-arm64@npm:0.33.5":
   version: 0.33.5
   resolution: "@img/sharp-darwin-arm64@npm:0.33.5"
@@ -7696,6 +7705,7 @@ __metadata:
   resolution: "rathes.me@workspace:."
   dependencies:
     "@heroicons/react": "npm:^2.2.0"
+    "@icons-pack/react-simple-icons": "npm:^10.2.0"
     "@mdx-js/mdx": "npm:^3.1.0"
     "@mdx-js/react": "npm:^3.1.0"
     "@radix-ui/react-checkbox": "npm:^1.1.2"
