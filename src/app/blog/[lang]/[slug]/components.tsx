@@ -2,18 +2,11 @@ import { ComponentPropsWithRef, PropsWithChildren } from "react"
 
 import { cva, VariantProps } from "../../../../../cva.config"
 
-import { Separator } from "../../../../components/Separator"
-
-import * as List from "../../../../components/List"
-import {
-  Heading1,
-  Heading2,
-  Heading3,
-  Heading4,
-} from "../../../../components/Heading"
-
-import { Paragraph } from "../../../../components/Paragraph"
-import { Link } from "../../../../components/Link"
+import { Separator } from "@/components/Separator"
+import * as List from "@/components/List"
+import { Heading1, Heading2, Heading3, Heading4 } from "@/components/Heading"
+import { Paragraph } from "@/components/Paragraph"
+import { Link } from "@/components/Link"
 
 const image = cva({
   base: "relative block my-4 [&_img]:object-cover [&_img]:object-center",

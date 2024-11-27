@@ -1,10 +1,9 @@
 import { Metadata, NextPage } from "next"
 
-import { Paragraph } from "../../components/Paragraph"
-import * as List from "../../components/List"
-
-import { heading, Heading1, Heading2 } from "../../components/Heading"
-import { Link } from "../../components/Link"
+import { Paragraph } from "@/components/Paragraph"
+import * as List from "@/components/List"
+import { heading, Heading1, Heading2 } from "@/components/Heading"
+import { Link } from "@/components/Link"
 
 export const metadata: Metadata = {
   title: "About me",

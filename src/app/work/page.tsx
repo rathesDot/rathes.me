@@ -4,14 +4,14 @@ import NextLink from "next/link"
 
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
 
-import { Link } from "../../components/Link"
-import { Paragraph } from "../../components/Paragraph"
-import { heading, Heading1, Heading2 } from "../../components/Heading"
-import { Card } from "../../components/Card"
+import { Link } from "@/components/Link"
+import { Paragraph } from "@/components/Paragraph"
+import { heading, Heading1, Heading2 } from "@/components/Heading"
+import { Card } from "@/components/Card"
 
-import CalaisPreview from "../../assets/images/calais-preview.png"
-import LearnTamilPreview from "../../assets/images/learn-tamil-preview.png"
-import KodiPreview from "../../assets/images/kodi-preview.png"
+import CalaisPreview from "@/assets/images/calais-preview.png"
+import LearnTamilPreview from "@/assets/images/learn-tamil-preview.png"
+import KodiPreview from "@/assets/images/kodi-preview.png"
 
 export const metadata: Metadata = {
   title: "Work",

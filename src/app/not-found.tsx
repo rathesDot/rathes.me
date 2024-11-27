@@ -1,8 +1,8 @@
 import React from "react"
 
-import { Heading1 } from "../components/Heading"
-import { Paragraph } from "../components/Paragraph"
-import * as List from "../components/List"
+import { Heading1 } from "@/components/Heading"
+import { Paragraph } from "@/components/Paragraph"
+import * as List from "@/components/List"
 
 export const metadata = {
   title: "Not Found",

@@ -1,11 +1,11 @@
 "use client"
 
 import React from "react"
+import { useRouter } from "next/navigation"
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
 
-import * as List from "../../components/List"
-import { Book, createSlug } from "../../services/books"
-import { useRouter } from "next/navigation"
+import * as List from "@/components/List"
+import { Book, createSlug } from "@/services/books"
 
 export const BookListItem: React.FC<{ book: Book }> = ({ book }) => {
   const router = useRouter()

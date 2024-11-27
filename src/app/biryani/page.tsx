@@ -3,8 +3,8 @@ import * as Checkbox from "@radix-ui/react-checkbox"
 import { CheckIcon } from "@heroicons/react/16/solid"
 import { cva } from "cva"
 
-import { Paragraph } from "../../components/Paragraph"
-import { Heading1, Heading2 } from "../../components/Heading"
+import { Paragraph } from "@/components/Paragraph"
+import { Heading1, Heading2 } from "@/components/Heading"
 
 export const metadata: Metadata = {
   title: "Biryani",

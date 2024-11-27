@@ -4,13 +4,13 @@ import { Metadata, NextPage } from "next"
 import * as Collapsible from "@radix-ui/react-collapsible"
 import { ChevronRightIcon, ChevronDownIcon } from "@heroicons/react/16/solid"
 
-import { getFilteredList } from "../../services/books"
+import { getFilteredList } from "@/services/books"
 
-import { Search } from "../../patterns/Search"
+import { Search } from "@/patterns/Search"
 
-import { Paragraph } from "../../components/Paragraph"
-import { heading, Heading1 } from "../../components/Heading"
-import * as List from "../../components/List"
+import { Paragraph } from "@/components/Paragraph"
+import { heading, Heading1 } from "@/components/Heading"
+import * as List from "@/components/List"
 
 import { BookListItem } from "./book-list-item"
 

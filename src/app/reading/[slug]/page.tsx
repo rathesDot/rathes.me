@@ -7,13 +7,13 @@ import {
   findBookBySlug,
   generateBookMetadata,
   generateBookParams,
-} from "../../../services/books"
+} from "@/services/books"
 
-import { Link } from "../../../components/Link"
-import { Paragraph } from "../../../components/Paragraph"
-import { Heading1, Heading2 } from "../../../components/Heading"
-import { Rating } from "../../../components/Rating"
-import { BookSchema } from "../../../components/BookSchema"
+import { Link } from "@/components/Link"
+import { Paragraph } from "@/components/Paragraph"
+import { Heading1, Heading2 } from "@/components/Heading"
+import { Rating } from "@/components/Rating"
+import { BookSchema } from "@/components/BookSchema"
 
 type Params = Promise<{ slug: string }>
 

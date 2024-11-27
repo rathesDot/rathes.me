@@ -3,17 +3,17 @@ import NextLink from "next/link"
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
 import Image from "next/image"
 
-import { getCurrentlyReading } from "../services/books"
-import { getLatestBlogposts } from "../services/blog"
+import { getCurrentlyReading } from "@/services/books"
+import { getLatestBlogposts } from "@/services/blog"
 
-import { Heading1, Heading2, heading } from "../components/Heading"
-import { Link } from "../components/Link"
-import { Card } from "../components/Card"
-import * as List from "../components/List"
+import { Heading1, Heading2, heading } from "@/components/Heading"
+import { Link } from "@/components/Link"
+import { Card } from "@/components/Card"
+import * as List from "@/components/List"
 
-import Iceland1 from "../assets/photos/202402_iceland_1.jpg"
-import Iceland2 from "../assets/photos/202402_iceland_2.jpg"
-import Iceland3 from "../assets/photos/202402_iceland_3.jpg"
+import Iceland1 from "@/assets/photos/202402_iceland_1.jpg"
+import Iceland2 from "@/assets/photos/202402_iceland_2.jpg"
+import Iceland3 from "@/assets/photos/202402_iceland_3.jpg"
 
 const HomePage: NextPage = () => {
   const books = getCurrentlyReading()

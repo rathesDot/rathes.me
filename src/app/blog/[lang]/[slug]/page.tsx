@@ -1,22 +1,22 @@
 import { Metadata, NextPage } from "next"
+import Image from "next/image"
+
 import { format } from "date-fns"
+import { MDXRemote } from "next-mdx-remote/rsc"
+import rehypeHighlight from "rehype-highlight"
+import remarkGfm from "remark-gfm"
 
 import {
   getBlogPost,
   generateBlogMetaData,
   generateBlogParams,
-} from "../../../../services/blog"
-import { MDXRemote } from "next-mdx-remote/rsc"
+} from "@/services/blog"
 
 import books from "../../../../../data/books.json"
 
-import Image from "next/image"
-
-import rehypeHighlight from "rehype-highlight"
-import remarkGfm from "remark-gfm"
+import { Heading1 } from "@/components/Heading"
 
 import { components, caption } from "./components"
-import { Heading1 } from "../../../../components/Heading"
 
 type Params = { lang: "en" | "de"; slug: string }
 

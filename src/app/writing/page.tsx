@@ -7,14 +7,14 @@ import {
   ArrowUpRightIcon,
 } from "@heroicons/react/16/solid"
 
-import { getFilteredBlogPosts } from "../../services/blog"
+import { getFilteredBlogPosts } from "@/services/blog"
 
-import { Link } from "../../components/Link"
-import { Paragraph } from "../../components/Paragraph"
-import { heading, Heading1 } from "../../components/Heading"
-import * as List from "../../components/List"
+import { Search } from "@/patterns/Search"
 
-import { Search } from "../../patterns/Search"
+import { Link } from "@/components/Link"
+import { Paragraph } from "@/components/Paragraph"
+import { heading, Heading1 } from "@/components/Heading"
+import * as List from "@/components/List"
 
 export const metadata: Metadata = {
   title: "Writing",

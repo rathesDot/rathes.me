@@ -1,14 +1,14 @@
 import { Inter } from "next/font/google"
 
-import Fathom from "../components/Fathom"
+import Fathom from "@/components/Fathom"
 
-import "../styles/globals.css"
+import "@/styles/globals.css"
 
-import * as Navbar from "../patterns/Navbar"
+import * as Navbar from "@/patterns/Navbar"
+import { SayHi } from "@/patterns/SayHi"
 
-import { SayHi } from "../patterns/SayHi"
-import { Link } from "../components/Link"
-import { Logo } from "../components/Logo"
+import { Link } from "@/components/Link"
+import { Logo } from "@/components/Logo"
 
 export const metadata = {
   title: {
