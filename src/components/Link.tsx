@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithRef } from "react"
 
-import { cva, VariantProps } from "../../cva.config"
+import { cva, VariantProps } from "../cva.config"
 import { type LinkProps } from "next/link"
 import BaseLink from "next/link"
 

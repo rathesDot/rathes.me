@@ -1,6 +1,6 @@
 import { ComponentPropsWithRef, PropsWithChildren } from "react"
 
-import { cva, VariantProps } from "../../../../../cva.config"
+import { cva, VariantProps } from "../../../../cva.config"
 
 import { Separator } from "@/components/Separator"
 import * as List from "@/components/List"

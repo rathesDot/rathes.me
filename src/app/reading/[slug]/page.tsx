@@ -1,7 +1,7 @@
 import { Metadata, NextPage } from "next"
 import { notFound } from "next/navigation"
 
-import { cva } from "../../../../cva.config"
+import { cva } from "../../../cva.config"
 
 import {
   findBookBySlug,
