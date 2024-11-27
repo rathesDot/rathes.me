@@ -4,6 +4,7 @@ import Link from "next/link"
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
 import {
   SiBluesky,
+  SiGithub,
   SiInstagram,
   SiLinkedin,
 } from "@icons-pack/react-simple-icons"
@@ -46,6 +47,12 @@ const LinksPage: NextPage = () => {
             <CardLink href="https://instagram.com/tamizhographer" external>
               <SiInstagram className="size-4" color="#E4405F" />
               Instagram
+            </CardLink>
+          </li>
+          <li>
+            <CardLink href="https://github.com/rathesDot" external>
+              <SiGithub className="size-4" />
+              GitHub
             </CardLink>
           </li>
           <li>
