@@ -1,7 +1,7 @@
 import { Metadata, NextPage } from "next"
 import * as Checkbox from "@radix-ui/react-checkbox"
 import { CheckIcon } from "@heroicons/react/16/solid"
-import { cva } from "cva"
+import { cva } from "@/src/cva.config"
 
 import { Paragraph } from "@/components/Paragraph"
 import { Heading1, Heading2 } from "@/components/Heading"

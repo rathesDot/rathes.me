@@ -1,7 +1,7 @@
 import React, { ComponentPropsWithRef } from "react"
 import RouterLink, { LinkProps as RouterLinkProps } from "next/link"
 
-import { cx } from "../cva.config"
+import { cx } from "@/src/cva.config"
 
 import { Heading2 } from "./Heading"
 

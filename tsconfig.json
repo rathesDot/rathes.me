@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": "src/",
+    "baseUrl": "./",
     "paths": {
-      "@/styles/*": ["styles/*"],
-      "@/components/*": ["components/*"],
-      "@/patterns/*": ["patterns/*"],
-      "@/services/*": ["services/*"],
-      "@/assets/*": ["assets/*"],
-      "@/content/*": ["content/*"]
+      "@/src/*": ["src/*"],
+      "@/styles/*": ["src/styles/*"],
+      "@/components/*": ["src/components/*"],
+      "@/patterns/*": ["src/patterns/*"],
+      "@/services/*": ["src/services/*"],
+      "@/assets/*": ["src/assets/*"],
+      "@/content/*": ["src/content/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],

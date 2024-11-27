@@ -1,5 +1,5 @@
 import { ComponentPropsWithRef } from "react"
-import { cx } from "../cva.config"
+import { cx } from "@/src/cva.config"
 import { Slot } from "@radix-ui/react-slot"
 
 type CardProps = ComponentPropsWithRef<"div"> & { asChild?: boolean }

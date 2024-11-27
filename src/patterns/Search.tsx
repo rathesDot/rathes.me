@@ -5,7 +5,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation"
 
 import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 
-import { cx } from "../cva.config"
+import { cx } from "@/src/cva.config"
 
 import { heading } from "@/components/Heading"
 

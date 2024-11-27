@@ -1,7 +1,7 @@
 import React from "react"
 import Image, { StaticImageData } from "next/image"
 
-import { cva } from "../cva.config"
+import { cva } from "@/src/cva.config"
 
 type PhotoMode = "portrait" | "landscape"
 

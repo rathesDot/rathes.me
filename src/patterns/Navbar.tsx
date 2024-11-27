@@ -3,7 +3,7 @@ import Link from "next/link"
 
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 
-import { cva } from "../cva.config"
+import { cva } from "@/src/cva.config"
 
 const rootStyles = cva({
   base: "sticky top-0 mt-0 border-b bg-white/70 backdrop-blur-sm dark:border-b-neutral-800 dark:bg-neutral-950/70",

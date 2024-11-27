@@ -1,6 +1,6 @@
 import React, { ComponentPropsWithRef, ElementType } from "react"
 
-import { cva, VariantProps } from "../cva.config"
+import { cva, VariantProps } from "@/src/cva.config"
 
 export const heading = cva({
   base: "text-neutral-950 antialiased dark:text-white not-first-of-type:mt-8",
