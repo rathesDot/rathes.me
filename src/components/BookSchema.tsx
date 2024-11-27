@@ -1,6 +1,6 @@
 import slugify from "slugify"
 
-import { Book } from "../services/books"
+import { Book } from "@/services/books"
 
 export const createSchemaForBook = (book: Book) => {
   return {
