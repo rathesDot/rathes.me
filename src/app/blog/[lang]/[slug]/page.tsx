@@ -12,7 +12,7 @@ import {
   generateBlogParams,
 } from "@/services/blog"
 
-import books from "../../../../../data/books.json"
+import books from "@/data/books.json"
 
 import { Heading1 } from "@/components/Heading"
 

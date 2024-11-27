@@ -1,6 +1,6 @@
 import slugify from "slugify"
 
-import data from "../../data/books.json"
+import data from "@/data/books.json"
 
 export type Book = {
   title: string
