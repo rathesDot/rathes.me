@@ -12,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-      <header className="mx-auto max-w-lg space-y-8 py-12 text-center">
+      <header className="mx-auto max-w-lg space-y-8 pt-16 pb-10 text-center">
         <Image
           src={Profile}
           alt="Profile picture of Rathes Sachchithananthan"

@@ -33,7 +33,7 @@ const CardLink = ({ href, children, external = false }: CardLinkProps) => (
 
 const LinksPage: NextPage = () => {
   return (
-    <main className="mx-auto max-w-lg space-y-16 px-4 py-4 sm:px-0 lg:py-8">
+    <main className="mx-auto max-w-lg space-y-16 px-4 sm:px-0">
       <section>
         <header className="mb-3 flex items-center justify-between">
           <Heading2 level="small">Social Media</Heading2>
