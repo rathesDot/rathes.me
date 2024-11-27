@@ -7,7 +7,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 
 import { cx } from "../../cva.config"
 
-import { heading } from "../components/Heading"
+import { heading } from "@/components/Heading"
 
 const TextField: React.FC<ComponentPropsWithRef<"input">> = ({
   className,

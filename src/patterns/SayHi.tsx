@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Link } from "../components/Link"
+import { Link } from "@/components/Link"
 
 export const SayHi: React.FC<React.PropsWithChildren<unknown>> = () => (
   <div className="font-sans text-[2rem] leading-[1.125em] font-bold text-neutral-950 antialiased dark:text-neutral-50">
