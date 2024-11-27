@@ -35,9 +35,6 @@ const LinksPage: NextPage = () => {
   return (
     <main className="mx-auto max-w-lg space-y-16 px-4 sm:px-0">
       <section>
-        <header className="mb-3 flex items-center justify-between">
-          <Heading2 level="small">Social Media</Heading2>
-        </header>
         <ul className="space-y-2">
           <li>
             <CardLink href="https://bsky.app/profile/rathes.me" external>
@@ -61,11 +58,11 @@ const LinksPage: NextPage = () => {
       </section>
       <section>
         <header className="mb-3 flex items-center justify-between">
-          <Heading2 level="small">My projects</Heading2>
+          <Heading2 level="small">Projects</Heading2>
         </header>
         <ul className="space-y-2">
           <li>
-            <CardLink href="/">My website</CardLink>
+            <CardLink href="/">Personal website</CardLink>
           </li>
           <li>
             <CardLink href="https://aheenam.com/templates/calais" external>
