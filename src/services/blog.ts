@@ -3,7 +3,7 @@ import fs from "fs"
 import { Metadata } from "next"
 import matter from "gray-matter"
 
-import externalLinks from "../content/blog/externalLinks"
+import externalLinks from "@/content/blog/externalLinks"
 
 type Post = {
   title: string
