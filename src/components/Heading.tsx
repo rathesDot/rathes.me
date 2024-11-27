@@ -1,4 +1,4 @@
-import React, { ComponentPropsWithRef, ElementType, HTMLProps } from "react"
+import React, { ComponentPropsWithRef, ElementType } from "react"
 
 import { cva, VariantProps } from "../../cva.config"
 
