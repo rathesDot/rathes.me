@@ -45,7 +45,9 @@ const WritingPage: NextPage<{
           I do write in English, German and Tamil. So if you do not understand
           the title, it may be that you do not speak the language. If you want
           me to translate a specific article, just drop a message{" "}
-          <Link href="https://twitter.com/rswebdesigner">@rswebdesigner</Link>
+          <Link target="_blank" href="https://bsky.app/profile/rathes.me">
+            on Bluesky
+          </Link>
         </Paragraph>
       </section>
 

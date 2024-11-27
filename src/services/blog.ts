@@ -137,7 +137,7 @@ export const generateBlogMetaData = async (
       locale: frontmatter.locale,
       images: frontmatter.social || frontmatter.image,
       title: frontmatter.title,
-      authors: "@rswebdesigner",
+      authors: "@rathes.me",
       url: `/blog/${lang}/${slug}`,
     },
   }
