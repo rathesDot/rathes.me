@@ -3,7 +3,7 @@ import fs from "fs"
 import { Metadata } from "next"
 import matter from "gray-matter"
 
-import externalLinks from "@/content/blog/externalLinks"
+import externalLinks from "@/data/blog/externalLinks"
 
 type Post = {
   title: string
@@ -15,7 +15,7 @@ type Post = {
 type Language = "en" | "de"
 
 const languages = ["en", "de"]
-const getBlogPath = () => path.join(process.cwd(), "./src/content/blog")
+const getBlogPath = () => path.join(process.cwd(), "./src/data/blog")
 
 const getFileFromSlug = (slug: string): string => `${slug}.mdx`
 const getSlugFromFile = (file: string): string => path.basename(file, ".mdx")
