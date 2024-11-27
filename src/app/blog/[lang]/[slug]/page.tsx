@@ -17,7 +17,6 @@ import remarkGfm from "remark-gfm"
 
 import { components, caption } from "./components"
 import { Heading1 } from "../../../../components/Heading"
-import { Link } from "../../../../components/Link"
 
 type Params = { lang: "en" | "de"; slug: string }
 
