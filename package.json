@@ -28,7 +28,7 @@
     "remark-gfm": "^4.0.0",
     "sharp": "^0.33.5",
     "slugify": "^1.6.6",
-    "tailwind-merge": "^2.5.4",
+    "tailwind-merge": "^2.5.5",
     "tailwindcss": "^4.0.0-beta.2"
   },
   "devDependencies": {
