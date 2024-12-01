@@ -7739,7 +7739,7 @@ __metadata:
     sharp: "npm:^0.33.5"
     slugify: "npm:^1.6.6"
     tailwind-merge: "npm:^2.5.5"
-    tailwindcss: "npm:^4.0.0-beta.2"
+    tailwindcss: "npm:^4.0.0-beta.4"
     typescript: "npm:^5.7.2"
   languageName: unknown
   linkType: soft
@@ -8687,10 +8687,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:4.0.0-beta.2, tailwindcss@npm:^4.0.0-beta.2":
+"tailwindcss@npm:4.0.0-beta.2":
   version: 4.0.0-beta.2
   resolution: "tailwindcss@npm:4.0.0-beta.2"
   checksum: 10c0/520432cd07b1f95149bddc4465eb2bcaafb190ce60c5549b8f2cc337d1b2f959ce5c1932dfb01316de0a38e916278d692c5f90076e85e5570bf72836ef9bcef4
+  languageName: node
+  linkType: hard
+
+"tailwindcss@npm:^4.0.0-beta.4":
+  version: 4.0.0-beta.4
+  resolution: "tailwindcss@npm:4.0.0-beta.4"
+  checksum: 10c0/4bed190eb69b9dfb695b6be042f7a1965a7fdd2914c3921f3a53227aab9a83a0f71a2e14f52f2c39fec37e69daf4948fb418ffe094a6da0e8346148f705da544
   languageName: node
   linkType: hard
 
