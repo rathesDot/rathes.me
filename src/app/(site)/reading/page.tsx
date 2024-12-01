@@ -65,13 +65,7 @@ const ReadingPage: NextPage<{ searchParams: Promise<Params> }> = async (
               className="mx-auto max-w-lg px-4 sm:px-0"
               key={`${listTitle}-${index}`}
             >
-              <Collapsible.Root
-                asChild
-                defaultOpen={
-                  listTitle === "Currently reading" ||
-                  (!!searchParams.q && searchParams.q.toString() !== "")
-                }
-              >
+              <Collapsible.Root asChild defaultOpen={listTitle !== "Wishlist"}>
                 <List.Root>
                   <Collapsible.Trigger
                     className={heading({

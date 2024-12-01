@@ -99,13 +99,7 @@ const WritingPage: NextPage<{
 
           return (
             <div className="mx-auto max-w-lg px-4 sm:px-0" key={key}>
-              <Collapsible.Root
-                asChild
-                defaultOpen={
-                  key === new Date().getFullYear().toString() ||
-                  (!!searchParams.q && searchParams.q.toString() !== "")
-                }
-              >
+              <Collapsible.Root asChild defaultOpen>
                 <List.Root>
                   <Collapsible.Trigger
                     className={heading({
