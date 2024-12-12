@@ -68,17 +68,20 @@
       "author": "Stuart Turton"
     },
     {
-      "title": "Butter",
-      "url": "https://amzn.to/3AqkEVf",
-      "author": "Asako Yuzuki"
-    },
-    {
       "title": "Origins: How the Earth Shaped Human History",
       "url": "https://amzn.to/3TiOthG",
       "author": "Lewis Dartnell"
     }
   ],
   "Reading List 2024": [
+    {
+      "title": "Butter",
+      "url": "https://amzn.to/3AqkEVf",
+      "author": "Asako Yuzuki",
+      "rating": 2,
+      "genres": ["Fiction", "Thriller", "Japanese Literature"],
+      "description": "While the plot itself was quite interesting, it was way too long to a point that at some point it was really hard to actually follow and keep on reading. But this could have also been caused by the translation."
+    },
     {
       "title": "The Templar Legacy (Cotton Malone 1)",
       "url": "https://amzn.to/3WLxZAh",
