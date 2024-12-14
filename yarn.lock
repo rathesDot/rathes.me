@@ -2891,10 +2891,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"clsx@npm:2.0.0":
-  version: 2.0.0
-  resolution: "clsx@npm:2.0.0"
-  checksum: 10c0/c09f43b3144a0b7826b6b11b6a111b2c7440831004eecc02d333533c5e58ef0aa5f2dce071d3b25fbb8c8ea97b45df96c74bcc1d51c8c2027eb981931107b0cd
+"clsx@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "clsx@npm:2.1.1"
+  checksum: 10c0/c4c8eb865f8c82baab07e71bfa8897c73454881c4f99d6bc81585aecd7c441746c1399d08363dc096c550cceaf97bd4ce1e8854e1771e9998d9f94c4fe075839
   languageName: node
   linkType: hard
 
@@ -3059,17 +3059,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cva@npm:^1.0.0-beta.1":
-  version: 1.0.0-beta.1
-  resolution: "cva@npm:1.0.0-beta.1"
+"cva@npm:^1.0.0-beta.2":
+  version: 1.0.0-beta.2
+  resolution: "cva@npm:1.0.0-beta.2"
   dependencies:
-    clsx: "npm:2.0.0"
+    clsx: "npm:^2.1.1"
   peerDependencies:
     typescript: ">= 4.5.5 < 6"
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/0ac27613b156d0ff6b1450c3257c1b98356865366165cb973748a102ed576dc07824cd098b23da6e24155d3b732d6222b4fa83cff85fbd2df3924a5b425bfbde
+  checksum: 10c0/2ffa4d327c25df2810704a8b76c2e4fb010ff33632c2e4f022b8a85039c08207ced9217b0e50d88e0282a39f4e1d15c9a3d1731dee0095f5b3bb707319a3799c
   languageName: node
   linkType: hard
 
@@ -7703,7 +7703,7 @@ __metadata:
     "@types/jest": "npm:^29.5.14"
     "@types/react": "npm:types-react@19.0.0-rc.1"
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
-    cva: "npm:^1.0.0-beta.1"
+    cva: "npm:^1.0.0-beta.2"
     date-fns: "npm:^4.1.0"
     eslint: "npm:9.17.0"
     eslint-config-next: "npm:15.1.0"

@@ -14,7 +14,7 @@
     "@radix-ui/react-navigation-menu": "^1.2.2",
     "@radix-ui/react-slot": "^1.1.1",
     "@tailwindcss/postcss": "^4.0.0-beta.2",
-    "cva": "^1.0.0-beta.1",
+    "cva": "^1.0.0-beta.2",
     "date-fns": "^4.1.0",
     "fathom-client": "^3.7.2",
     "gray-matter": "^4.0.3",
