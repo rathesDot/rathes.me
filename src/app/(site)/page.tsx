@@ -155,13 +155,17 @@ const HomePage: NextPage = () => {
         <div className="-mr-4">
           <div className="flex flex-nowrap items-start gap-4 overflow-x-auto pr-4 pb-2">
             <div className="flex-none">
-              <Image src={RuislipJeep} width={210} alt="work 3" />
+              <Image
+                src={RuislipJeep}
+                width={210}
+                alt="An old SUV on an autumn covered street"
+              />
             </div>
             <div className="flex-none">
               <Image src={Iceland1} width={210} alt="work 1" />
             </div>
             <div className="flex-none">
-              <Image src={Iceland2} width={210} alt="work 2" />
+              <Image src={Iceland2} width={210} alt="Van parked in snow" />
             </div>
           </div>
         </div>
