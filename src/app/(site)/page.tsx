@@ -12,7 +12,7 @@ import { Card } from "@/components/Card"
 import * as List from "@/components/List"
 
 import RuislipJeep from "@/assets/photos/202411_ruislip_jeep.jpg"
-import Iceland1 from "@/assets/photos/202402_iceland_1.jpg"
+import Bergen1 from "@/assets/photos/202404_Bergen_1.jpg"
 import Iceland2 from "@/assets/photos/202402_iceland_2.jpg"
 
 const HomePage: NextPage = () => {
@@ -162,7 +162,11 @@ const HomePage: NextPage = () => {
               />
             </div>
             <div className="flex-none">
-              <Image src={Iceland1} width={210} alt="work 1" />
+              <Image
+                src={Bergen1}
+                width={210}
+                alt="View of Bergen from above"
+              />
             </div>
             <div className="flex-none">
               <Image src={Iceland2} width={210} alt="Van parked in snow" />
