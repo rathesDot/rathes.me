@@ -11,9 +11,9 @@ import { Link } from "@/components/Link"
 import { Card } from "@/components/Card"
 import * as List from "@/components/List"
 
+import RuislipJeep from "@/assets/photos/202411_ruislip_jeep.jpg"
 import Iceland1 from "@/assets/photos/202402_iceland_1.jpg"
 import Iceland2 from "@/assets/photos/202402_iceland_2.jpg"
-import Iceland3 from "@/assets/photos/202402_iceland_3.jpg"
 
 const HomePage: NextPage = () => {
   const books = getCurrentlyReading()
@@ -155,13 +155,13 @@ const HomePage: NextPage = () => {
         <div className="-mr-4">
           <div className="flex flex-nowrap items-start gap-4 overflow-x-auto pr-4 pb-2">
             <div className="flex-none">
+              <Image src={RuislipJeep} width={210} alt="work 3" />
+            </div>
+            <div className="flex-none">
               <Image src={Iceland1} width={210} alt="work 1" />
             </div>
             <div className="flex-none">
               <Image src={Iceland2} width={210} alt="work 2" />
-            </div>
-            <div className="flex-none">
-              <Image src={Iceland3} width={210} alt="work 3" />
             </div>
           </div>
         </div>
