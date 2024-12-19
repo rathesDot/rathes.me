@@ -26,6 +26,7 @@ import Naples1 from "@/assets/photos/202204_naples_1.jpg"
 import Edinburgh from "@/assets/photos/202111_edinburgh.jpg"
 import KewGardens from "@/assets/photos/202110_kew_gardens.jpg"
 import Bergen1 from "@/assets/photos/202404_Bergen_1.jpg"
+import RuislipJeep from "@/assets/photos/202411_ruislip_jeep.jpg"
 
 export const metadata: Metadata = {
   title: "Photography",
@@ -52,6 +53,11 @@ const PhotoPage: NextPage = () => {
         </Paragraph>
       </section>
       <section className="mx-auto grid max-w-[656px] gap-8 py-8 md:grid-cols-2 md:gap-x-4 md:gap-y-8">
+        <Photo
+          image={RuislipJeep}
+          title="An old SUV on an autumn covered street"
+          caption="London, UK / November 2024"
+        />
         <Photo
           image={Bergen1}
           title="View of Bergen from above"
