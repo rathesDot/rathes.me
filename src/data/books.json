@@ -31,11 +31,6 @@
       "author": "Andy Weir"
     },
     {
-      "title": "Kakerlakkene, Cockroaches",
-      "url": "https://amzn.to/3BZqcmO",
-      "author": "Jo Nesbø"
-    },
-    {
       "title": "Hyperfocus: How to Work Less to Achieve More",
       "url": "https://amzn.to/3WBJiJn",
       "author": "Chris Bailey"
@@ -63,6 +58,11 @@
   ],
   "Currently reading": [
     {
+      "title": "Kakerlakkene, Cockroaches",
+      "url": "https://amzn.to/3BZqcmO",
+      "author": "Jo Nesbø"
+    },
+    {
       "title": "Origins: How the Earth Shaped Human History",
       "url": "https://amzn.to/3TiOthG",
       "author": "Lewis Dartnell"
@@ -74,7 +74,12 @@
       "url": "https://amzn.to/49bOXvf",
       "author": "Stuart Turton",
       "rating": 3,
-      "genres": ["Fiction", "Thriller", "Mystery", "Crime"],
+      "genres": [
+        "Fiction",
+        "Thriller",
+        "Mystery",
+        "Crime"
+      ],
       "description": "Really loved the idea of letting the main character relive the same day mutiple times but as different characters to solve a murder. But at some point it was a bit too repetetive and made it a bit harder to keep reading. Can see this as a really good plot for a Netflix show, though."
     },
     {
@@ -82,7 +87,11 @@
       "url": "https://amzn.to/3AqkEVf",
       "author": "Asako Yuzuki",
       "rating": 2,
-      "genres": ["Fiction", "Thriller", "Japanese Literature"],
+      "genres": [
+        "Fiction",
+        "Thriller",
+        "Japanese Literature"
+      ],
       "description": "While the plot itself was quite interesting, it was way too long to a point that at some point it was really hard to actually follow and keep on reading. But this could have also been caused by the translation."
     },
     {
@@ -90,7 +99,12 @@
       "url": "https://amzn.to/3WLxZAh",
       "author": "Steve Berry",
       "rating": 5,
-      "genres": ["Thriller", "Historical Fiction", "Mystery", "Fiction"],
+      "genres": [
+        "Thriller",
+        "Historical Fiction",
+        "Mystery",
+        "Fiction"
+      ],
       "description": "A really fast-paced book that was hard to put away. Especially if you are into the topic of templars and conspiracy theories around it."
     },
     {
@@ -98,7 +112,11 @@
       "url": "https://amzn.to/3WgvhSH",
       "author": "Friedemann Schulz von Thun",
       "rating": 4,
-      "genres": ["German", "Psychology", "Non-Fiction"],
+      "genres": [
+        "German",
+        "Psychology",
+        "Non-Fiction"
+      ],
       "description": "This book explains some quite theoretical concepts of communications psychology in terms that the regular reader can understand and even recognize in their own everyday life."
     },
     {
@@ -111,7 +129,11 @@
       "url": "https://amzn.to/4cYRQB1",
       "author": "Sarah Drasner",
       "rating": 4,
-      "genres": ["Tech", "Business", "Non-Fiction"],
+      "genres": [
+        "Tech",
+        "Business",
+        "Non-Fiction"
+      ],
       "description": "Really good introductory book about engineering management. It covers all the main topics and also gives a overview of what to expect when moving into this role from being an IC which was really valuable for myself. Could be a bit more detailed in some parts of the book."
     },
     {
@@ -139,7 +161,10 @@
       "url": "https://amzn.to/48BLztj",
       "author": "Mike McCrary",
       "rating": 3,
-      "genres": ["Thriller", "Fiction"],
+      "genres": [
+        "Thriller",
+        "Fiction"
+      ],
       "description": "While this book has it's twists and turns, most of the book felt like it was the same theme repeated over and over again without actually making any progress for the main character."
     }
   ],
