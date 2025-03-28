@@ -66,5 +66,5 @@
   "bugs": {
     "url": "https://github.com/rathesDot/rathes.me/issues"
   },
-  "packageManager": "yarn@4.5.1"
+  "packageManager": "yarn@4.8.0"
 }
