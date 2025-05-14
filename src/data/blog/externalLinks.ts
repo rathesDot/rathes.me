@@ -5,11 +5,6 @@ const links = [
     link: "https://getmaxout.app/blog/bringing-back-burpril",
   },
   {
-    title: "A complete guide to feature flags",
-    date: "May 19, 2024",
-    link: "https://getkodi.com/blog/guide-to-feature-flags",
-  },
-  {
     title: "12 books in 12 months",
     date: "Dec 10, 2017",
     link: "https://medium.com/@rathes/12-books-in-12-months-54db49d8aaec",

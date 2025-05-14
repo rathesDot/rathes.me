@@ -1,0 +1,120 @@
+---
+id: 20240517
+title: "A complete guide to feature flags"
+date: 2024-05-17T17:42:25+00:00
+author: Rathes Sachchithananthan
+template: post
+image: /images/blog/flags.jpg
+description: Learn everything you need to know about feature flags — What they are, the different types and how to best use them.
+categories:
+  - Web
+tags:
+  - Feature Flags
+  - Software Development
+locale: en_US
+---
+
+In the fast paced world of software development, it is key that you ship early and fast, learn from your customers and iterate quickly. At the same time, it is paramount to deliver reliable and stable software. Especially for us indiehackers, bootstrappers and small start ups, it's important that we are flexible enough to play around with new features for specific customer needs but at the same time also keep a lean product that's not filled with unnecessary complexities.
+
+Feature flags give us the flexibility to ship often and early but shield our customers from our experiments and unfinished features.
+
+## What is a Feature Flag?
+
+A feature flag (also known as a feature toggle) is a technique that allows you to enable or disable features in your application without deploying new code. By wrapping a feature in a flag, you can control who it is available to and when.
+
+Feature Flags are basically a conditional logic in your code base. Before executing a specific code path, we check if a feature flag is enabled and based on that go one way or another.
+
+```ts
+if (newFeatureEnabled) {
+  // do new feature work
+} else {
+  // do old feature work
+}
+```
+
+This mechanism allows for granular configuration over what features are active in your application at any given time.
+
+### Difference to config file
+
+While both feature flags and configuration files control application behavior, they serve different purposes. Feature flags are dynamic and allow real-time changes without redeployment, whereas configuration files are part of the code base and need a full cycle of code changes, reviews and deployment.
+
+A good feature flag system is simply covered by these three main aspects.
+
+1. **Definition**: You have one standardized way to define a feature flag. This allows everyone working on the project to confidently introduce new or work with existing feature flags.
+2. **Management**: You have an easy way to actually use these feature flags. You have a good overview of which flags are currently in use for whom and which not and you have a good understanding of what each flag is doing.
+3. **Integration**: The software engineer can easily integrate the feature flags into the codebase and also remove them when they are not needed anymore.
+
+## Types of Feature Flags
+
+In a typical feature flag system, you will find different types of flags. They all work the same on a technical level but they serve different purposes. That means they will also be treated and used differently.
+
+### Release Flags
+
+The most comming feature flags are release flags. These flags allow you to deploy code to production without actually releasing the feature to customers. The feature flag is then used to rollout a feature to customers at a given time that decoupled from when the software part was deployed.
+
+### Kill Switches
+
+Whenever you deploy something critical, you will wrap the code in a kill switch feature flag. This will allow you to turn off that feature when it is causing issues. Using feature flags in these scenarios is quicker than having to revert code changes and redeploy and usually also faster than rolling back on the CI/CD pipeline.
+
+### Experiment Flags
+
+If you combine feature flags with a good system to collect and analyze product metric, you can use it to run A/B tests or other experiment. Turn on a feature flag for a specific group of customers for a given time period and compare the changes in the metrics to the other customers that did not get that change.
+
+### Operational Flags
+
+Similar to using a feature flag as a kill switch, you can also use them to manage the behavior of your system under different conditions and circumstances. Imagine turning off non-essential features during peak loads to maintain performance. Or imagine you hitting a rate limit at a third party service that you are using, so you need to turn off a feature for a given period of time. Using feature flags for ops related tasks can happen manually or automated.
+
+### Permission Toggles
+
+Another type of feature flags is when you use them to control features based on customer status. A beta program is nothing than a long-running feature flag that you add customers to. Or when you implement certain features for a specific customer as part of the sales process.
+
+## Integrating feature flags into your software delivery process
+
+Feature flags enable you to separate the deployment of code from the release of features. By deploying code with features turned off by default, you can test in production and ensure stability before making features available to users. This approach reduces the risk associated with new releases and allows for more controlled rollouts.
+
+By using feature flags, you can now avoid having long-lived feature branches and there is no need anymore to deal with merge conflicts at the end of a project. Instead, feature flags allows [trunk-based development](https://www.atlassian.com/continuous-delivery/continuous-integration/trunk-based-development) with small and short-lived branches and frequent merges to your main branch. This not only allows software engineers to move faster but it also promotes continuously testing the feature that is being developed.
+
+One big benefit of feature flags is that when you develop a critical feature, you can roll it out slowly and monitor how the new feature impacts the system. It allows you to gradually improve performance.
+
+## Product Management
+
+If you don’t use feature flags, it usually means that releasing a product to customers always needs a software engineer at the time of the release. Various people like marketing or customer support rely on the software team to release reliably merge the feature to the production branch and deploying the code to the production instances. It’s a lot harder to coordinate and time campaigns as you don’t know how the release might go.
+
+With feature flags, software engineers don’t need to be part of the release because the software has already been merged and deployed way in advance. It’s been tested in production already and is ready to be turned on.
+
+All you need to do is flipping a feature flag and the new feature is ready to go. You can even automate the toggling of the feature flag and integrate that into your release workflow.
+
+Feature flags even allow you to release everything related at once: Marketing website changes, the new feature itself, help center articles and internal guides for customer support agents.
+
+## Who Uses Feature Flags?
+
+As we’ve seen above, feature flags are versatile tools that can be used across various teams, not only software engineers:
+
+- **QA**: Test functionality in production and validate changes.
+- **Sales**: Provision entitlements and manage access (to for example beta programs)
+- **Product Management**: Manage releases and rollouts based on business priorities and requirements
+- **Marketing**: Run A/B tests and coordinate releases with campaigns.
+
+## Best practices for using feature flags
+
+As with everything in software development, you need to keep maintaining a healthy usage of feature flags. Otherwise, they will add up to technical debt. Here are some best practices when working with feature flags:
+
+### Use descriptive names your feature flags
+
+Anyone should understand what the feature flag is about when they see it. Be it on the platform to manage the flags or in the code base itself. So make sure that you give the feature flags a descriptive name and make the key used in the code matches the name. If someone comes across something like `bp-2024` in the codebase, they will not be able to recognize it as the “Beta Program 2024”, something like `beta-program-2024` makes much more sense.
+
+When your platform allows to add a description to every feature flag, make use of it and describe the usage of the flag.
+
+### Clean up feature flags
+
+Unless the feature flag is explicitly meant to stay for a long time (or even forever) such as kill switches or operational feature flags, make sure that you clean up the code base from feature flags that are already rolled out.
+
+A good way to maintain a habit of cleaning up feature flags is to plan in the removal of the feature flag when you actually plan to add one.
+
+### Explicit ownership of feature flags
+
+Make sure that each feature flag has an explicit owner. Not every feature flag needs to be owned by a software engineers and does not always have to be them who keep an eye on every feature flag that is being used. Based on who needs the feature flag, the ownership should be shared across the various teams.
+
+---
+
+In conclusion, feature flags are powerful tools that can help indie hackers, bootstrappers, and small startups manage feature releases with confidence and precision. By implementing best practices and leveraging the full potential of feature flags, you can enhance your product’s agility, reliability, and user experience, setting your startup on a path to success.
