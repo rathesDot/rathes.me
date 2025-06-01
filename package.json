@@ -20,7 +20,7 @@
     "gray-matter": "^4.0.3",
     "next": "15.3.2",
     "next-mdx-remote": "^5.0.0",
-    "postcss": "^8.5.3",
+    "postcss": "^8.5.4",
     "prism-themes": "^1.9.0",
     "prismjs": "^1.30.0",
     "react": "^19.1.0",
@@ -30,7 +30,7 @@
     "sharp": "^0.34.1",
     "slugify": "^1.6.6",
     "tailwind-merge": "^3.3.0",
-    "tailwindcss": "^4.1.7"
+    "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
