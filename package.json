@@ -13,14 +13,14 @@
     "@radix-ui/react-collapsible": "^1.1.11",
     "@radix-ui/react-navigation-menu": "^1.2.13",
     "@radix-ui/react-slot": "^1.2.3",
-    "@tailwindcss/postcss": "^4.1.7",
+    "@tailwindcss/postcss": "^4.1.10",
     "cva": "^1.0.0-beta.2",
     "date-fns": "^4.1.0",
     "fathom-client": "^3.7.2",
     "gray-matter": "^4.0.3",
     "next": "15.3.2",
     "next-mdx-remote": "^5.0.0",
-    "postcss": "^8.5.3",
+    "postcss": "^8.5.5",
     "prism-themes": "^1.9.0",
     "prismjs": "^1.30.0",
     "react": "^19.1.0",
@@ -29,8 +29,8 @@
     "remark-gfm": "^4.0.1",
     "sharp": "^0.34.1",
     "slugify": "^1.6.6",
-    "tailwind-merge": "^3.3.0",
-    "tailwindcss": "^4.1.7"
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss": "^4.1.10"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
@@ -42,7 +42,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "next-sitemap": "^4.2.3",
     "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
+    "prettier-plugin-tailwindcss": "^0.6.12",
     "typescript": "^5.8.3"
   },
   "keywords": [
