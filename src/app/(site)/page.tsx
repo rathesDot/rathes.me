@@ -64,18 +64,6 @@ const HomePage: NextPage = () => {
             <Card>
               <NextLink
                 className="flex items-center justify-between"
-                href="https://getkodi.com/"
-                target="_blank"
-              >
-                Kodi
-                <ArrowUpRightIcon className="size-5 align-middle text-neutral-600 dark:text-neutral-200" />
-              </NextLink>
-            </Card>
-          </li>
-          <li>
-            <Card>
-              <NextLink
-                className="flex items-center justify-between"
                 href="https://learn-tamil.com/"
                 target="_blank"
               >

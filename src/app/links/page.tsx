@@ -77,11 +77,6 @@ const LinksPage: NextPage = () => {
             </CardLink>
           </li>
           <li>
-            <CardLink href="https://getkodi.com/" external>
-              Kodi
-            </CardLink>
-          </li>
-          <li>
             <CardLink href="https://learn-tamil.com/" external>
               Learn Tamil Online
             </CardLink>

@@ -113,14 +113,14 @@ const WorkPage: NextPage = () => {
           <div className="mx-auto max-w-lg px-4 sm:px-0">
             <header className="mb-1 flex items-center justify-between">
               <Heading2>Kodi</Heading2>
-              <Link
-                className={heading({ level: "small" })}
-                href="https://getkodi.com"
-                target="_blank"
-                underlined={false}
+              <span
+                className={heading({
+                  level: "small",
+                  className: "text-yellow-700",
+                })}
               >
-                Visit page <ArrowUpRightIcon className="inline size-4" />
-              </Link>
+                Temporarily closed
+              </span>
             </header>
             <Paragraph>
               My vision for this SaaS is to establish a feature flag and release
