@@ -171,18 +171,6 @@ const WorkPage: NextPage = () => {
               <Card>
                 <NextLink
                   className="flex items-center justify-between"
-                  href="https://espresso-at-home.com"
-                  target="_blank"
-                >
-                  Espresso at home
-                  <ArrowUpRightIcon className="size-5 align-middle text-neutral-600 dark:text-neutral-200" />
-                </NextLink>
-              </Card>
-            </li>
-            <li>
-              <Card>
-                <NextLink
-                  className="flex items-center justify-between"
                   href="/blog/en/closing-mozhi"
                 >
                   Mozhi

@@ -87,11 +87,6 @@ const LinksPage: NextPage = () => {
             </CardLink>
           </li>
           <li>
-            <CardLink href="https://espresso-at-home.com" external>
-              Espresso at home
-            </CardLink>
-          </li>
-          <li>
             <CardLink href="/blog/en/closing-mozhi">Mozhi</CardLink>
           </li>
         </ul>
