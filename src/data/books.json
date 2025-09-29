@@ -53,17 +53,20 @@
   ],
   "Currently reading": [
     {
-      "title": "Relic (Pendergast 1)",
-      "url": "https://amzn.to/3yx3a8e",
-      "author": "Douglas Preston & Lincoln Child"
-    },
-    {
       "title": "Origins: How the Earth Shaped Human History",
       "url": "https://amzn.to/3TiOthG",
       "author": "Lewis Dartnell"
     }
   ],
   "Reading List 2025": [
+    {
+      "title": "Relic (Pendergast 1)",
+      "url": "https://amzn.to/3yx3a8e",
+      "author": "Douglas Preston & Lincoln Child",
+      "rating": 4,
+      "genres": ["Fiction", "Thriller", "Mystery", "Horror", "Science Fiction"],
+      "description": "It was tough to get through the beginning but the more I kept reading, the better it became so that in the end, I was already looking for the next book."
+    },
     {
       "title": "Kakerlakkene, Cockroaches (Harry Hole 2)",
       "url": "https://amzn.to/3BZqcmO",
