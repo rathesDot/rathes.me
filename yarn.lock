@@ -3912,17 +3912,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cva@npm:^1.0.0-beta.2":
-  version: 1.0.0-beta.2
-  resolution: "cva@npm:1.0.0-beta.2"
+"cva@npm:^1.0.0-beta.4":
+  version: 1.0.0-beta.4
+  resolution: "cva@npm:1.0.0-beta.4"
   dependencies:
     clsx: "npm:^2.1.1"
   peerDependencies:
-    typescript: ">= 4.5.5 < 6"
+    typescript: ">= 4.5.5"
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: 10c0/2ffa4d327c25df2810704a8b76c2e4fb010ff33632c2e4f022b8a85039c08207ced9217b0e50d88e0282a39f4e1d15c9a3d1731dee0095f5b3bb707319a3799c
+  checksum: 10c0/2db439e4228e7d8ec4d1c6568c0e6093fcc8080d877a98a235908a6373c19cfaa4e3c84270719215d199f9238c52f2cfbf584c212d683296888fb878c2898c78
   languageName: node
   linkType: hard
 
@@ -8664,7 +8664,7 @@ __metadata:
     "@types/jest": "npm:^30.0.0"
     "@types/react": "npm:^19.1.16"
     "@types/react-dom": "npm:^19.1.9"
-    cva: "npm:^1.0.0-beta.2"
+    cva: "npm:^1.0.0-beta.4"
     date-fns: "npm:^4.1.0"
     eslint: "npm:9.36.0"
     eslint-config-next: "npm:15.5.4"
