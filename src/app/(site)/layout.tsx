@@ -29,7 +29,7 @@ export default function RootLayout({
       <footer className="mx-auto max-w-lg space-y-12 px-4 py-8 sm:px-0">
         <SayHi />
         <div className="text-xs text-neutral-600 dark:text-neutral-400">
-          &copy; {new Date(Date.now()).getFullYear()} /{" "}
+          &copy; {new Date().getFullYear()} /{" "}
           <Link href="/links">@tamizhographer</Link>
         </div>
       </footer>
