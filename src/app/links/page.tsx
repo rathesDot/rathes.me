@@ -56,7 +56,10 @@ const LinksPage: NextPage = () => {
             </CardLink>
           </li>
           <li>
-            <CardLink href="https://www.linkedin.com/in/rathes-sachchithananthan/" external>
+            <CardLink
+              href="https://www.linkedin.com/in/rathes-sachchithananthan/"
+              external
+            >
               <SiLinkedin className="size-4" color="#0A66C2" />
               LinkedIn
             </CardLink>

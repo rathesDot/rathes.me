@@ -55,7 +55,7 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "format": "prettier --write src/**/*",
+    "format": "prettier --write src/**/*.(tsx|ts|js|jsx|css)",
     "test": "jest",
     "lint": "eslint"
   },
