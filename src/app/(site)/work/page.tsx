@@ -12,6 +12,7 @@ import { Card } from "@/components/Card"
 import CalaisPreview from "@/assets/images/calais-preview.png"
 import LearnTamilPreview from "@/assets/images/learn-tamil-preview.png"
 import KodiPreview from "@/assets/images/kodi-preview.png"
+import OffsetPreview from "@/assets/images/offset-preview.png"
 
 export const metadata: Metadata = {
   title: "Work",
@@ -34,6 +35,35 @@ const WorkPage: NextPage = () => {
       </section>
 
       <div className="space-y-16 py-8 lg:space-y-32 lg:py-16">
+        <section className="space-y-8">
+          <div className="mx-auto max-w-lg px-4 sm:px-0">
+            <header className="mb-1 flex items-center justify-between">
+              <Heading2>Offset</Heading2>
+              <Link
+                className={heading({ level: "small" })}
+                href="https://aheenam.com/apps/offset"
+                target="_blank"
+                underlined={false}
+              >
+                Visit page <ArrowUpRightIcon className="inline size-4" />
+              </Link>
+            </header>
+            <Paragraph>
+              My first ever fully native macOS app. It's a simple menubar that
+              helps you quickly check your colleagues' local times across
+              different time zones.
+            </Paragraph>
+          </div>
+          <div className="overflow-hidden pl-4 sm:pl-0">
+            <Image
+              src={OffsetPreview}
+              alt="Preview of the macOS menubar app 'Offset'"
+              height={400}
+              className="mx-auto max-w-none"
+            />
+          </div>
+        </section>
+
         <section className="space-y-8">
           <div className="mx-auto max-w-lg px-4 sm:px-0">
             <header className="mb-1 flex items-center justify-between">
