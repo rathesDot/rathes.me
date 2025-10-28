@@ -4627,7 +4627,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-next@npm:16.0.1":
+"eslint-config-next@npm:^16.0.1":
   version: 16.0.1
   resolution: "eslint-config-next@npm:16.0.1"
   dependencies:
@@ -4831,7 +4831,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:9.38.0":
+"eslint@npm:^9.38.0":
   version: 9.38.0
   resolution: "eslint@npm:9.38.0"
   dependencies:
@@ -9104,8 +9104,8 @@ __metadata:
     "@types/react-dom": "npm:19.2.2"
     cva: "npm:^1.0.0-beta.4"
     date-fns: "npm:^4.1.0"
-    eslint: "npm:9.38.0"
-    eslint-config-next: "npm:16.0.1"
+    eslint: "npm:^9.38.0"
+    eslint-config-next: "npm:^16.0.1"
     fathom-client: "npm:^3.7.2"
     gray-matter: "npm:^4.0.3"
     jest: "npm:^30.2.0"
