@@ -49,7 +49,7 @@ const HomePage: NextPage = () => {
         </header>
         <ul className="space-y-2">
           <li>
-            <Card>
+            <Card asChild>
               <NextLink
                 className="flex items-center justify-between"
                 href="https://aheenam.com/apps/offset"
