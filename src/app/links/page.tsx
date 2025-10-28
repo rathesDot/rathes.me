@@ -23,6 +23,7 @@ const CardLink = ({ href, children, external = false }: CardLinkProps) => (
     <Link
       href={href}
       className="flex items-center justify-between transition-colors ease-in-out hover:border-neutral-400 dark:hover:border-neutral-600"
+      target={external ? "_blank" : undefined}
     >
       <span className="flex items-center gap-2">{children}</span>
       {external && (
