@@ -49,6 +49,18 @@ const HomePage: NextPage = () => {
         </header>
         <ul className="space-y-2">
           <li>
+            <Card>
+              <NextLink
+                className="flex items-center justify-between"
+                href="https://aheenam.com/apps/offset"
+                target="_blank"
+              >
+                Offset
+                <ArrowUpRightIcon className="size-5 align-middle text-neutral-600 dark:text-neutral-200" />
+              </NextLink>
+            </Card>
+          </li>
+          <li>
             <Card asChild>
               <NextLink
                 href="https://aheenam.com/templates/calais"
