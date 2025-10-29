@@ -29,8 +29,8 @@ const HomePage: NextPage = () => {
         </Heading1>
         <p className={heading({ level: "h1" })}>
           Currently, I work as a senior software engineer at{" "}
-          <Link href="https://www.hubspot.com/">HubSpot</Link> helping
-          businesses grow better.
+          <Link href="https://www.buffer.com/">Buffer</Link> building tools to
+          help small businesses get off the ground and grow.
         </p>
         <p className={heading({ level: "h1" })}>
           Follow me on <Link href="/links">Blueksy, Instagram and more</Link>.

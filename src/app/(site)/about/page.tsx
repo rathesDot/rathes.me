@@ -61,8 +61,16 @@ const AboutPage: NextPage = () => {
         </header>
         <List.Container className="space-y-6">
           <List.Item>
+            Senior Software Engineer / Buffer
+            <List.Subtitle>October 2025 — now</List.Subtitle>
+          </List.Item>
+          <List.Item>
             Senior Software Engineer / HubSpot
-            <List.Subtitle>July 2024 — now</List.Subtitle>
+            <List.Subtitle>July 2024 — October 2025</List.Subtitle>
+            <Paragraph className="mt-1 font-normal">
+              Working in growth teams with a focus on acquisition and retention
+              targetting different external and internal channels.
+            </Paragraph>
           </List.Item>
           <List.Item>
             Senior Engineer / Intercom
