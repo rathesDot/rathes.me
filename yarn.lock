@@ -1020,12 +1020,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@icons-pack/react-simple-icons@npm:^10.2.0":
-  version: 10.2.0
-  resolution: "@icons-pack/react-simple-icons@npm:10.2.0"
+"@icons-pack/react-simple-icons@npm:^13.8.0":
+  version: 13.8.0
+  resolution: "@icons-pack/react-simple-icons@npm:13.8.0"
   peerDependencies:
     react: ^16.13 || ^17 || ^18 || ^19
-  checksum: 10c0/3721d5bd3f1b8b500902e9dfcfefb03a953e64008b4272478407dc34f33a0ac03d35fd2ffa85d537db18a345578def68dcc1945343588e5a8aaa9c9477832bbf
+  checksum: 10c0/3cd5ad80c72b7615c80260321b80049f4313d0513ebafa06cf3b97c51da77a3e04117683405a1e1fed044b48710eb9a8b2a59c6ffb4669afd09e898c9ccfc0ad
   languageName: node
   linkType: hard
 
@@ -9091,7 +9091,7 @@ __metadata:
   resolution: "rathes.me@workspace:."
   dependencies:
     "@heroicons/react": "npm:^2.2.0"
-    "@icons-pack/react-simple-icons": "npm:^10.2.0"
+    "@icons-pack/react-simple-icons": "npm:^13.8.0"
     "@mdx-js/mdx": "npm:^3.1.1"
     "@mdx-js/react": "npm:^3.1.1"
     "@radix-ui/react-checkbox": "npm:^1.3.3"
