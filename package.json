@@ -13,7 +13,7 @@
     "@radix-ui/react-collapsible": "^1.1.12",
     "@radix-ui/react-navigation-menu": "^1.2.14",
     "@radix-ui/react-slot": "^1.2.4",
-    "@tailwindcss/postcss": "^4.1.17",
+    "@tailwindcss/postcss": "^4.1.18",
     "cva": "^1.0.0-beta.4",
     "date-fns": "^4.1.0",
     "fathom-client": "^3.7.2",
@@ -30,7 +30,7 @@
     "sharp": "^0.34.5",
     "slugify": "^1.6.6",
     "tailwind-merge": "^3.4.0",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
