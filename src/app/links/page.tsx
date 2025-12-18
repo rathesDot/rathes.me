@@ -5,7 +5,13 @@ import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
 
 import { Card } from "@/src/components/Card"
 import { Heading2 } from "@/src/components/Heading"
-import { Bluesky, Instagram, GitHub, LinkedIn } from "@/src/components/Icons"
+import {
+  Bluesky,
+  Instagram,
+  GitHub,
+  LinkedIn,
+  Threads,
+} from "@/src/components/Icons"
 
 type CardLinkProps = {
   children: React.ReactNode
@@ -58,6 +64,12 @@ const LinksPage: NextPage = () => {
             >
               <LinkedIn className="size-4" color="#0A66C2" />
               LinkedIn
+            </CardLink>
+          </li>
+          <li>
+            <CardLink href="https://threads.com/@tamizhographer" external>
+              <Threads className="size-4" color="#E4405F" />
+              Threads
             </CardLink>
           </li>
         </ul>
