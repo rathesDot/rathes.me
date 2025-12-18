@@ -11,6 +11,7 @@ import {
   GitHub,
   LinkedIn,
   Threads,
+  YouTube,
 } from "@/src/components/Icons"
 
 type CardLinkProps = {
@@ -70,6 +71,12 @@ const LinksPage: NextPage = () => {
             <CardLink href="https://threads.com/@tamizhographer" external>
               <Threads className="size-4" color="#E4405F" />
               Threads
+            </CardLink>
+          </li>
+          <li>
+            <CardLink href="https://youtube.com/@tamizhographer" external>
+              <YouTube className="size-4" color="#E4405F" />
+              YouTube
             </CardLink>
           </li>
         </ul>
