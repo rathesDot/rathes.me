@@ -2,15 +2,10 @@ import { NextPage } from "next"
 import Link from "next/link"
 
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
-import {
-  SiBluesky,
-  SiGithub,
-  SiInstagram,
-  SiLinkedin,
-} from "@icons-pack/react-simple-icons"
 
 import { Card } from "@/src/components/Card"
 import { Heading2 } from "@/src/components/Heading"
+import { Bluesky, Instagram, GitHub, LinkedIn } from "@/src/components/Icons"
 
 type CardLinkProps = {
   children: React.ReactNode
@@ -40,19 +35,19 @@ const LinksPage: NextPage = () => {
         <ul className="space-y-2">
           <li>
             <CardLink href="https://bsky.app/profile/rathes.me" external>
-              <SiBluesky className="size-4" color="#0285FF" />
+              <Bluesky className="size-4" color="#0285FF" />
               Bluesky
             </CardLink>
           </li>
           <li>
             <CardLink href="https://instagram.com/tamizhographer" external>
-              <SiInstagram className="size-4" color="#E4405F" />
+              <Instagram className="size-4" color="#E4405F" />
               Instagram
             </CardLink>
           </li>
           <li>
             <CardLink href="https://github.com/rathesDot" external>
-              <SiGithub className="size-4" />
+              <GitHub className="size-4" />
               GitHub
             </CardLink>
           </li>
@@ -61,7 +56,7 @@ const LinksPage: NextPage = () => {
               href="https://www.linkedin.com/in/rathes-sachchithananthan/"
               external
             >
-              <SiLinkedin className="size-4" color="#0A66C2" />
+              <LinkedIn className="size-4" color="#0A66C2" />
               LinkedIn
             </CardLink>
           </li>
