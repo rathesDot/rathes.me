@@ -30,6 +30,8 @@ import RuislipJeep from "@/assets/photos/202411_ruislip_jeep.jpg"
 import CoaldropYards1 from "@/assets/photos/202509_coaldrop_yards_1.jpg"
 import CoaldropYards2 from "@/assets/photos/202509_coaldrop_yards_2.jpg"
 import CoaldropYards3 from "@/assets/photos/202509_coaldrop_yards_3.jpg"
+import Hamburg1 from "@/assets/photos/202507_hamburg_1.jpg"
+import Hamburg2 from "@/assets/photos/202507_hamburg_2.jpg"
 
 export const metadata: Metadata = {
   title: "Photography",
@@ -70,6 +72,16 @@ const PhotoPage: NextPage = () => {
           image={CoaldropYards3}
           title="Coaldrop Yards"
           caption="Coaldrop Yards, London — September 2025"
+        />
+        <Photo
+          image={Hamburg1}
+          title="Hamburg"
+          caption="Hamburg, Germany — July 2025"
+        />
+        <Photo
+          image={Hamburg2}
+          title="Hamburg"
+          caption="Hamburg, Germany — July 2025"
         />
         <Photo
           image={RuislipJeep}
