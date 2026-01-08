@@ -2951,6 +2951,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/rss@npm:^0.0.32":
+  version: 0.0.32
+  resolution: "@types/rss@npm:0.0.32"
+  checksum: 10c0/b8e214cde30f0d31ad468bcdc8f5370ce7a4b0dc6f2cb131dcfa115a90b6dbc765c4f668e551d5638072f8c1f25e0e81048c3c684b046c91803a9e0dec157c72
+  languageName: node
+  linkType: hard
+
 "@types/stack-utils@npm:^2.0.3":
   version: 2.0.3
   resolution: "@types/stack-utils@npm:2.0.3"
@@ -8425,6 +8432,22 @@ __metadata:
   languageName: node
   linkType: hard
 
+"mime-db@npm:~1.25.0":
+  version: 1.25.0
+  resolution: "mime-db@npm:1.25.0"
+  checksum: 10c0/a90951c80700314d6131e106cbf56ae94718d046e9669a5afd7f91e603248da328aad5b63314865fd9547f4688465ac62d1ace59e1ffdb73688452a28a9c3622
+  languageName: node
+  linkType: hard
+
+"mime-types@npm:2.1.13":
+  version: 2.1.13
+  resolution: "mime-types@npm:2.1.13"
+  dependencies:
+    mime-db: "npm:~1.25.0"
+  checksum: 10c0/a53a0453f7863fa2d823025ce92978f5142a18528316caa53cbb1d4212be847973e9a5f2466362cbd2351a512e369252fc2c88c9c5bbc85df4bd8b42214f1785
+  languageName: node
+  linkType: hard
+
 "mimic-fn@npm:^2.1.0":
   version: 2.1.0
   resolution: "mimic-fn@npm:2.1.0"
@@ -9362,6 +9385,7 @@ __metadata:
     "@types/jest": "npm:^30.0.0"
     "@types/react": "npm:19.2.7"
     "@types/react-dom": "npm:19.2.3"
+    "@types/rss": "npm:^0.0.32"
     cva: "npm:^1.0.0-beta.4"
     date-fns: "npm:^4.1.0"
     eslint: "npm:^9.39.2"
@@ -9382,6 +9406,7 @@ __metadata:
     react-dom: "npm:19.2.3"
     rehype-highlight: "npm:^7.0.2"
     remark-gfm: "npm:^4.0.1"
+    rss: "npm:^1.2.2"
     sharp: "npm:^0.34.5"
     slugify: "npm:^1.6.6"
     tailwind-merge: "npm:^3.4.0"
@@ -9730,6 +9755,16 @@ __metadata:
   version: 0.8.0
   resolution: "rrweb-cssom@npm:0.8.0"
   checksum: 10c0/56f2bfd56733adb92c0b56e274c43f864b8dd48784d6fe946ef5ff8d438234015e59ad837fc2ad54714b6421384141c1add4eb569e72054e350d1f8a50b8ac7b
+  languageName: node
+  linkType: hard
+
+"rss@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "rss@npm:1.2.2"
+  dependencies:
+    mime-types: "npm:2.1.13"
+    xml: "npm:1.0.1"
+  checksum: 10c0/7e37a6ed1820b69476c76e4fefe09f69dd7505408e9fc7690441a5190aca2e2e2faf8d19575fd1efd66debfb178893374fbff9abf68e5416f5e4d4cccb7ae8b9
   languageName: node
   linkType: hard
 
@@ -11455,6 +11490,13 @@ __metadata:
   version: 5.0.0
   resolution: "xml-name-validator@npm:5.0.0"
   checksum: 10c0/3fcf44e7b73fb18be917fdd4ccffff3639373c7cb83f8fc35df6001fecba7942f1dbead29d91ebb8315e2f2ff786b508f0c9dc0215b6353f9983c6b7d62cb1f5
+  languageName: node
+  linkType: hard
+
+"xml@npm:1.0.1":
+  version: 1.0.1
+  resolution: "xml@npm:1.0.1"
+  checksum: 10c0/04bcc9b8b5e7b49392072fbd9c6b0f0958bd8e8f8606fee460318e43991349a68cbc5384038d179ff15aef7d222285f69ca0f067f53d071084eb14c7fdb30411
   languageName: node
   linkType: hard
 
