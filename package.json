@@ -20,7 +20,7 @@
     "gray-matter": "^4.0.3",
     "next": "16.1.6",
     "next-mdx-remote": "^5.0.0",
-    "postcss": "^8.5.6",
+    "postcss": "^8.5.10",
     "prism-themes": "^1.9.0",
     "prismjs": "^1.30.0",
     "react": "19.2.4",
