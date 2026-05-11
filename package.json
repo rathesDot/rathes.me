@@ -67,9 +67,15 @@
   "bugs": {
     "url": "https://github.com/rathesDot/rathes.me/issues"
   },
-  "packageManager": "yarn@4.9.1",
-  "resolutions": {
-    "@types/react": "19.2.10",
-    "@types/react-dom": "19.2.3"
+  "packageManager": "pnpm@10.11.0",
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.2.10",
+      "@types/react-dom": "19.2.3"
+    },
+    "onlyBuiltDependencies": [
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }
