@@ -1,30 +1,29 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
     "paths": {
       "@/src/*": [
-        "src/*"
+        "./src/*"
       ],
       "@/styles/*": [
-        "src/styles/*"
+        "./src/styles/*"
       ],
       "@/components/*": [
-        "src/components/*"
+        "./src/components/*"
       ],
       "@/patterns/*": [
-        "src/patterns/*"
+        "./src/patterns/*"
       ],
       "@/services/*": [
-        "src/services/*"
+        "./src/services/*"
       ],
       "@/assets/*": [
-        "src/assets/*"
+        "./src/assets/*"
       ],
       "@/data/*": [
-        "src/data/*"
+        "./src/data/*"
       ]
     },
-    "target": "es5",
+    "target": "ES2017",
     "lib": [
       "dom",
       "dom.iterable",
