@@ -12,8 +12,6 @@ import {
   generateBlogParams,
 } from "@/services/blog"
 
-import books from "@/data/books.json"
-
 import { Heading1 } from "@/components/Heading"
 
 import { components, caption } from "./components"
@@ -75,7 +73,6 @@ const BlogPage: NextPage<{ params: Promise<Params> }> = async (props) => {
         <MDXRemote
           source={content}
           options={{
-            scope: { books },
             mdxOptions: {
               remarkPlugins: [remarkGfm],
               rehypePlugins: [rehypeHighlight],
