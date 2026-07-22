@@ -8,6 +8,8 @@ import { Heading1, Heading2, Heading3, Heading4 } from "@/components/Heading"
 import { Paragraph } from "@/components/Paragraph"
 import { Link } from "@/components/Link"
 
+import { ReadingList } from "./ReadingList"
+
 const image = cva({
   base: "relative block my-4 [&_img]:object-cover [&_img]:object-center",
 })
@@ -145,6 +147,7 @@ export const components: any = {
       </List.Item>
     )
   },
+  ReadingList,
   Note: ({
     className,
     fontFamily,
