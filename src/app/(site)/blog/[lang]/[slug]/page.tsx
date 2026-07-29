@@ -14,6 +14,7 @@ import {
 } from "@/services/blog"
 
 import { Heading1 } from "@/components/Heading"
+import { BlogPostingSchema } from "@/components/BlogPostingSchema"
 
 import { components, caption } from "./components"
 
@@ -39,6 +40,16 @@ const BlogPage: NextPage<{ params: Promise<Params> }> = async (props) => {
 
   return (
     <main lang={lang} className="py-4 lg:py-8">
+      <BlogPostingSchema
+        post={{
+          title: data.title,
+          description: data.description,
+          date: data.date,
+          image: data.image,
+          lang,
+          path: `/blog/${params.lang}/${params.slug}`,
+        }}
+      />
       <header className="mx-auto mb-4 max-w-lg space-y-1 px-4 sm:px-0">
         <Heading1 className="mb-1">{data.title}</Heading1>
         <div className="flex items-center gap-2">
