@@ -1,4 +1,4 @@
-const SITE_URL = "https://rathes.me"
+import { SITE_URL } from "@/src/site.config"
 
 // Shared identity for the author entity, so posts, the site and any future
 // Person markup all consolidate into a single node instead of separate ones.
