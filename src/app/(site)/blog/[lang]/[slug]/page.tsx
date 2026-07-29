@@ -10,6 +10,7 @@ import {
   getBlogPost,
   generateBlogMetaData,
   generateBlogParams,
+  toBcp47,
 } from "@/services/blog"
 
 import { Heading1 } from "@/components/Heading"
@@ -34,9 +35,10 @@ export async function generateStaticParams() {
 const BlogPage: NextPage<{ params: Promise<Params> }> = async (props) => {
   const params = await props.params
   const { content, data } = getBlogPost(params.lang, params.slug)
+  const lang = toBcp47(data.locale, params.lang)
 
   return (
-    <main className="py-4 lg:py-8">
+    <main lang={lang} className="py-4 lg:py-8">
       <header className="mx-auto mb-4 max-w-lg space-y-1 px-4 sm:px-0">
         <Heading1 className="mb-1">{data.title}</Heading1>
         <div className="flex items-center gap-2">

@@ -10,9 +10,16 @@ type Post = {
   date: string
   link: string
   external?: boolean
+  lang?: string
 }
 
 type Language = "en" | "de"
+
+// Frontmatter stores POSIX-style locales (en_US, de_DE); HTML lang needs BCP-47
+export const toBcp47 = (locale: unknown, fallback: string): string =>
+  typeof locale === "string" && locale !== ""
+    ? locale.replace(/_/g, "-")
+    : fallback
 
 const languages = ["en", "de"]
 const getBlogPath = () => path.join(process.cwd(), "./src/data/blog")
@@ -58,6 +65,7 @@ export const getAllBlogPosts = () => {
           title: frontmatter.title,
           date: frontmatter.date,
           external: false,
+          lang: toBcp47(frontmatter.locale, language),
         }
       })
     )
@@ -71,7 +79,7 @@ export const getAllBlogPosts = () => {
   )
 }
 
-export const getLatestBlogposts = (count = 5) => {
+export const getLatestBlogposts = (count = 5): Post[] => {
   const posts = languages
     .map((language: Language) =>
       getPostsByLang(language).map((entry) => {
@@ -83,6 +91,7 @@ export const getLatestBlogposts = (count = 5) => {
           title: frontmatter.title,
           date: frontmatter.date,
           external: false,
+          lang: toBcp47(frontmatter.locale, language),
         }
       })
     )

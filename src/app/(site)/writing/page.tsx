@@ -117,6 +117,7 @@ const WritingPage: NextPage<{
                         <List.Item key={index}>
                           <List.Link
                             href={post.link}
+                            lang={post.lang}
                             className="flex items-center gap-1"
                           >
                             {post.title}

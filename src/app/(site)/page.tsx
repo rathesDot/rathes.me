@@ -102,7 +102,7 @@ const HomePage: NextPage = () => {
             {posts.map((posts, index) => {
               return (
                 <List.Item key={`post-${index}`}>
-                  <List.Link href={posts.link}>
+                  <List.Link href={posts.link} lang={posts.lang}>
                     {posts.title}
                     {posts.external && (
                       <>
