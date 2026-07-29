@@ -138,6 +138,12 @@ export const generateBlogMetaData = async (
     string
   >
 
+  // Defining openGraph on a route suppresses the site-wide opengraph-image.png
+  // that Next's file convention would otherwise supply, so posts without their
+  // own image fall back to it explicitly.
+  const image = frontmatter.social ||
+    frontmatter.image || { url: "/opengraph-image.png", width: 1600, height: 836 }
+
   return {
     title: {
       absolute: `${frontmatter.title} — rathes.me`,
@@ -146,7 +152,7 @@ export const generateBlogMetaData = async (
     openGraph: {
       type: "article",
       locale: frontmatter.locale,
-      images: frontmatter.social || frontmatter.image,
+      images: image,
       title: frontmatter.title,
       authors: [AUTHOR_NAME],
       publishedTime: new Date(frontmatter.date).toISOString(),
