@@ -10,6 +10,7 @@ import { Heading1, Heading2, heading } from "@/components/Heading"
 import { Link } from "@/components/Link"
 import { Card } from "@/components/Card"
 import * as List from "@/components/List"
+import { SiteSchema } from "@/components/SiteSchema"
 
 import RuislipJeep from "@/assets/photos/202411_ruislip_jeep.jpg"
 import Bergen1 from "@/assets/photos/202404_Bergen_1.jpg"
@@ -21,6 +22,7 @@ const HomePage: NextPage = () => {
 
   return (
     <main className="space-y-12 py-4">
+      <SiteSchema />
       <section className="mx-auto max-w-lg p-4 sm:px-0">
         <Heading1>
           I'm Rathes Sachchithananthan, a front-end engineer living in{" "}

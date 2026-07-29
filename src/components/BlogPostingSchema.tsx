@@ -1,8 +1,4 @@
-import { SITE_URL } from "@/src/site.config"
-
-// Shared identity for the author entity, so posts, the site and any future
-// Person markup all consolidate into a single node instead of separate ones.
-export const PERSON_ID = `${SITE_URL}/#person`
+import { AUTHOR_NAME, PERSON_ID, SITE_URL } from "@/src/site.config"
 
 export type BlogPost = {
   title: string
@@ -35,7 +31,7 @@ export const createSchemaForBlogPost = (post: BlogPost) => {
     author: {
       "@type": "Person",
       "@id": PERSON_ID,
-      name: "Rathes Sachchithananthan",
+      name: AUTHOR_NAME,
       url: `${SITE_URL}/about`,
     },
     publisher: { "@id": PERSON_ID },

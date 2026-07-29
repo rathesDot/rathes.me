@@ -3,6 +3,8 @@ import fs from "fs"
 import { Metadata } from "next"
 import matter from "gray-matter"
 
+import { AUTHOR_NAME } from "@/src/site.config"
+
 import externalLinks from "@/data/blog/externalLinks"
 
 type Post = {
@@ -146,7 +148,8 @@ export const generateBlogMetaData = async (
       locale: frontmatter.locale,
       images: frontmatter.social || frontmatter.image,
       title: frontmatter.title,
-      authors: "@rathes.me",
+      authors: [AUTHOR_NAME],
+      publishedTime: new Date(frontmatter.date).toISOString(),
       url: `/blog/${lang}/${slug}`,
     },
   }
