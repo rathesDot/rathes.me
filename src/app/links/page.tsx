@@ -1,4 +1,4 @@
-import { NextPage } from "next"
+import { Metadata, NextPage } from "next"
 import Link from "next/link"
 
 import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
@@ -13,6 +13,12 @@ import {
   Threads,
   YouTube,
 } from "@/src/components/Icons"
+
+export const metadata: Metadata = {
+  title: "Links",
+  description:
+    "Where to find Rathes Sachchithananthan online — Bluesky, Instagram, GitHub, LinkedIn, Threads and YouTube — plus the projects he is building.",
+}
 
 type CardLinkProps = {
   children: React.ReactNode

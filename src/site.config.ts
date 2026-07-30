@@ -2,6 +2,8 @@ export const SITE_URL = "https://rathes.me"
 
 export const AUTHOR_NAME = "Rathes Sachchithananthan"
 
+export const FEED_PATH = "/writing/feed.xml"
+
 // Stable identifiers so the Person and WebSite nodes emitted across the site
 // resolve to one entity each, instead of a new anonymous node per page.
 export const PERSON_ID = `${SITE_URL}/#person`

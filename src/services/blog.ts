@@ -3,7 +3,7 @@ import fs from "fs"
 import { Metadata } from "next"
 import matter from "gray-matter"
 
-import { AUTHOR_NAME } from "@/src/site.config"
+import { AUTHOR_NAME, FEED_PATH } from "@/src/site.config"
 
 import externalLinks from "@/data/blog/externalLinks"
 
@@ -23,7 +23,7 @@ export const toBcp47 = (locale: unknown, fallback: string): string =>
     ? locale.replace(/_/g, "-")
     : fallback
 
-const languages = ["en", "de"]
+const languages: Language[] = ["en", "de"]
 const getBlogPath = () => path.join(process.cwd(), "./src/data/blog")
 
 const getFileFromSlug = (slug: string): string => `${slug}.mdx`
@@ -54,6 +54,13 @@ export const getBlogPost = (lang: Language, slug: string) => {
 
 const getPostsByLang = (lang: Language) =>
   fs.readdirSync(path.join(getBlogPath(), lang))
+
+// Most posts exist in one language only; hreflang is emitted just for the few
+// that are genuinely published as translations of each other.
+const getTranslations = (slug: string): Language[] =>
+  languages.filter((language) =>
+    fs.existsSync(path.join(getBlogPath(), language, getFileFromSlug(slug)))
+  )
 
 export const getAllBlogPosts = () => {
   const posts = languages
@@ -144,11 +151,28 @@ export const generateBlogMetaData = async (
   const image = frontmatter.social ||
     frontmatter.image || { url: "/opengraph-image.png", width: 1600, height: 836 }
 
+  const translations = getTranslations(slug)
+
   return {
     title: {
       absolute: `${frontmatter.title} — rathes.me`,
     },
     description: frontmatter.description,
+    // Declaring alternates here replaces the root layout's, so the canonical and
+    // feed links have to be repeated rather than inherited.
+    alternates: {
+      canonical: `/blog/${lang}/${slug}`,
+      types: { "application/rss+xml": FEED_PATH },
+      languages:
+        translations.length > 1
+          ? Object.fromEntries(
+              translations.map((language) => [
+                language,
+                `/blog/${language}/${slug}`,
+              ])
+            )
+          : undefined,
+    },
     openGraph: {
       type: "article",
       locale: frontmatter.locale,
