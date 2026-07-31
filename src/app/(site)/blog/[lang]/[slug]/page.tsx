@@ -45,6 +45,7 @@ const BlogPage: NextPage<{ params: Promise<Params> }> = async (props) => {
           title: data.title,
           description: data.description,
           date: data.date,
+          updated: data.updated,
           image: data.image,
           lang,
           path: `/blog/${params.lang}/${params.slug}`,

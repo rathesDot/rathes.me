@@ -4,6 +4,7 @@ export type BlogPost = {
   title: string
   description?: string
   date: string
+  updated?: string
   image?: string
   lang: string
   path: string
@@ -27,6 +28,7 @@ export const createSchemaForBlogPost = (post: BlogPost) => {
     description: post.description || undefined,
     image: post.image ? absolute(post.image) : undefined,
     datePublished: new Date(post.date).toISOString(),
+    dateModified: post.updated ? new Date(post.updated).toISOString() : undefined,
     inLanguage: post.lang,
     author: {
       "@type": "Person",

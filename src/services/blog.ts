@@ -180,6 +180,9 @@ export const generateBlogMetaData = async (
       title: frontmatter.title,
       authors: [AUTHOR_NAME],
       publishedTime: new Date(frontmatter.date).toISOString(),
+      modifiedTime: frontmatter.updated
+        ? new Date(frontmatter.updated).toISOString()
+        : undefined,
       url: `/blog/${lang}/${slug}`,
     },
   }
