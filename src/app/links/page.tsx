@@ -1,7 +1,7 @@
 import { Metadata, NextPage } from "next"
 import Link from "next/link"
 
-import { ArrowUpRightIcon } from "@heroicons/react/16/solid"
+import { ArrowUpRightIcon, PencilIcon } from "@heroicons/react/16/solid"
 
 import { Card } from "@/src/components/Card"
 import { Heading2 } from "@/src/components/Heading"
@@ -46,6 +46,12 @@ const LinksPage: NextPage = () => {
     <main className="mx-auto max-w-lg space-y-16 px-4 sm:px-0">
       <section>
         <ul className="space-y-2">
+          <li>
+            <CardLink href="/writings/latest">
+              <PencilIcon className="size-4 text-neutral-600 dark:text-neutral-200" />
+              Latest blog post
+            </CardLink>
+          </li>
           <li>
             <CardLink href="https://bsky.app/profile/rathes.me" external>
               <Bluesky className="size-4" color="#0285FF" />
