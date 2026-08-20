@@ -46,7 +46,8 @@
         "name": "next"
       }
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "types": ["jest", "node"]
   },
   "include": [
     "next-env.d.ts",
