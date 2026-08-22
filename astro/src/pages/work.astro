@@ -1,0 +1,196 @@
+---
+import { Image } from "astro:assets"
+
+import Layout from "@/layouts/Layout.astro"
+import Link from "@/components/Link.astro"
+import Card from "@/components/Card.astro"
+import Heading from "@/components/Heading.astro"
+import Paragraph from "@/components/Paragraph.astro"
+import ArrowUpRightIcon from "@/components/ArrowUpRightIcon.astro"
+import { heading } from "@/components/Heading.astro"
+
+import OffsetPreview from "@/assets/images/offset-preview.png"
+import CalaisPreview from "@/assets/images/calais-preview.png"
+import LearnTamilPreview from "@/assets/images/learn-tamil-preview.png"
+import KodiPreview from "@/assets/images/kodi-preview.png"
+---
+
+<Layout
+  title="Work"
+  description="When I am not working at my day job, you will find me exploring new technology or design and working on some side projects. This is a list of the things I am working on at the moment."
+  path="/work"
+>
+  <main class="space-y-12 py-4 lg:py-8">
+    <section class="mx-auto max-w-lg px-4 sm:px-0">
+      <Heading as="h1">My work</Heading>
+      <Paragraph>
+        I work as a product engineer at Intercom at the moment, but I also
+        love to work on side projects. They do not necessarily have to be
+        development related. If you want to see my software engineering
+        related things, I recommend you visit my
+        <Link href="https://github.com/rathesDot">Github profile</Link>.
+      </Paragraph>
+    </section>
+
+    <div class="space-y-16 py-8 lg:space-y-32 lg:py-16">
+      <section class="space-y-8">
+        <div class="mx-auto max-w-lg px-4 sm:px-0">
+          <header class="mb-1 flex items-center justify-between">
+            <Heading as="h2">Offset</Heading>
+            <Link
+              class={heading({ level: "small" })}
+              href="https://aheenam.com/apps/offset"
+              target="_blank"
+              underlined={false}
+            >
+              Visit page <ArrowUpRightIcon class="inline size-4" />
+            </Link>
+          </header>
+          <Paragraph>
+            My first ever fully native macOS app. It's a simple menubar that
+            helps you quickly check your colleagues' local times across
+            different time zones.
+          </Paragraph>
+        </div>
+        <div class="overflow-hidden pl-4 sm:pl-0">
+          <Image
+            src={OffsetPreview}
+            alt="Preview of the macOS menubar app 'Offset'"
+            height={400}
+            class="mx-auto max-w-none"
+          />
+        </div>
+      </section>
+
+      <section class="space-y-8">
+        <div class="mx-auto max-w-lg px-4 sm:px-0">
+          <header class="mb-1 flex items-center justify-between">
+            <Heading as="h2">Calais</Heading>
+            <Link
+              class={heading({ level: "small" })}
+              href="https://aheenam.com/templates/calais"
+              target="_blank"
+              underlined={false}
+            >
+              Visit page <ArrowUpRightIcon class="inline size-4" />
+            </Link>
+          </header>
+          <Paragraph>
+            I created this personal portfolio theme as an exploration for my
+            own website here. Even though I did not end up with making this
+            radical change, I really like this minimal approach with a single
+            accent color.
+          </Paragraph>
+        </div>
+        <div class="overflow-hidden pl-4 sm:pl-0">
+          <Image
+            src={CalaisPreview}
+            alt="Preview of template named 'Calais'"
+            height={400}
+            class="mx-auto max-w-none"
+          />
+        </div>
+      </section>
+
+      <section class="space-y-8">
+        <div class="mx-auto max-w-lg px-4 sm:px-0">
+          <header class="mb-1 flex items-center justify-between">
+            <Heading as="h2">Learn Tamil Online</Heading>
+            <Link
+              class={heading({ level: "small" })}
+              href="https://learn-tamil.com/"
+              target="_blank"
+              underlined={false}
+            >
+              Visit page <ArrowUpRightIcon class="inline size-4" />
+            </Link>
+          </header>
+          <Paragraph>
+            My own mother tongue is one of the oldest languages that's still
+            in use and it is really close to my heart to keep this language
+            alive.
+          </Paragraph>
+          <Paragraph>
+            With Learn Tamil Online, I want to build a platform of various
+            resource that help with learning the language, starting with a
+            book about
+            <Link
+              target="_blank"
+              href="https://learn-tamil.com/books/guide-to-basic-tamil-grammar"
+            >
+              basic Tamil grammar
+            </Link>
+            and
+            <Link href="https://learn-tamil.com/resources/tamil-song-lyrics">
+              Tamil song lyrics
+            </Link>
+            that you can read in Tamil but also tap to read transliterated.
+          </Paragraph>
+        </div>
+        <div class="@container overflow-hidden">
+          <Image
+            src={LearnTamilPreview}
+            alt="Image showcasing a book cover on the left and two screens of the Learn Tamil App in the center and right"
+            height={350}
+            class="-ml-40 max-w-none @[456px]:mx-auto"
+          />
+        </div>
+      </section>
+
+      <section class="space-y-8">
+        <div class="mx-auto max-w-lg px-4 sm:px-0">
+          <header class="mb-1 flex items-center justify-between">
+            <Heading as="h2">Kodi</Heading>
+            <span class={heading({ level: "small", className: "text-yellow-700" })}>
+              Temporarily closed
+            </span>
+          </header>
+          <Paragraph>
+            My vision for this SaaS is to establish a feature flag and release
+            management platform that enables small startups and indiehackers
+            to ship more confidently and increase their tolerance towards
+            experimenting and exploring
+          </Paragraph>
+        </div>
+        <div class="overflow-hidden pl-4 drop-shadow sm:pl-0">
+          <Image
+            src={KodiPreview}
+            alt="Screenshot of the Kodi dashboard"
+            height={340}
+            class="mx-auto max-w-none"
+          />
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <div class="mx-auto max-w-lg px-4 sm:px-0">
+          <header class="mb-1 flex items-center justify-between">
+            <Heading as="h2">Other projects</Heading>
+          </header>
+          <Paragraph>
+            I love to explore and try out many different things. That's what
+            makes side projects a lot more enjoyable and feel less like
+            another job.
+          </Paragraph>
+          <Paragraph>
+            Below is an incomplete list of other projects that I work on from
+            time to time.
+          </Paragraph>
+        </div>
+        <ul class="mx-auto max-w-lg space-y-2 px-4 sm:px-0">
+          <li>
+            <Card href="https://getmaxout.app" target="_blank" class="flex items-center justify-between">
+              Maxout 2.0
+              <ArrowUpRightIcon class="size-5 align-middle text-neutral-600 dark:text-neutral-200" />
+            </Card>
+          </li>
+          <li>
+            <Card href="/blog/closing-mozhi" class="flex items-center justify-between">
+              Mozhi
+            </Card>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</Layout>
