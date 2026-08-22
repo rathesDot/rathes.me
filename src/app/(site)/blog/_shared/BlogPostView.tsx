@@ -1,4 +1,3 @@
-import { Metadata, NextPage } from "next"
 import Image from "next/image"
 
 import { format } from "date-fns"
@@ -6,41 +5,27 @@ import { MDXRemote } from "next-mdx-remote/rsc"
 import rehypeHighlight from "rehype-highlight"
 import remarkGfm from "remark-gfm"
 
-import {
-  getBlogPost,
-  getBlogPostUrl,
-  generateBlogMetaData,
-  generateBlogParams,
-  toBcp47,
-} from "@/services/blog"
+import { getBlogPost, getBlogPostUrl, toBcp47 } from "@/services/blog"
 
 import { Heading1 } from "@/components/Heading"
 import { BlogPostingSchema } from "@/components/BlogPostingSchema"
 
 import { components, caption } from "./components"
 
-type Params = { lang: "en" | "de"; slug: string }
+type Language = "en" | "de"
 
-export async function generateMetadata(props: {
-  params: Promise<Params>
-}): Promise<Metadata> {
-  const params = await props.params
-  return generateBlogMetaData(params.lang, params.slug)
-}
-
-export const dynamicParams = false
-
-export async function generateStaticParams() {
-  return generateBlogParams()
-}
-
-const BlogPage: NextPage<{ params: Promise<Params> }> = async (props) => {
-  const params = await props.params
-  const { content, data } = getBlogPost(params.lang, params.slug)
-  const lang = toBcp47(data.locale, params.lang)
+export const BlogPostView = async ({
+  lang,
+  slug,
+}: {
+  lang: Language
+  slug: string
+}) => {
+  const { content, data } = getBlogPost(lang, slug)
+  const postLang = toBcp47(data.locale, lang)
 
   return (
-    <main lang={lang} className="py-4 lg:py-8">
+    <main lang={postLang} className="py-4 lg:py-8">
       <BlogPostingSchema
         post={{
           title: data.title,
@@ -48,8 +33,8 @@ const BlogPage: NextPage<{ params: Promise<Params> }> = async (props) => {
           date: data.date,
           updated: data.updated,
           image: data.image,
-          lang,
-          path: getBlogPostUrl(params.lang, params.slug),
+          lang: postLang,
+          path: getBlogPostUrl(lang, slug),
         }}
       />
       <header className="mx-auto mb-4 max-w-lg space-y-1 px-4 sm:px-0">
@@ -99,5 +84,3 @@ const BlogPage: NextPage<{ params: Promise<Params> }> = async (props) => {
     </main>
   )
 }
-
-export default BlogPage

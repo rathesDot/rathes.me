@@ -11,7 +11,17 @@ const nextConfig: NextConfig = {
       { source: "/photos", destination: "/photography", permanent: true },
       {
         source: "/blog/json-web-token",
-        destination: "/blog/de/json-web-token",
+        destination: "/de/blog/json-web-token",
+        permanent: true,
+      },
+      {
+        source: "/blog/de/:slug",
+        destination: "/de/blog/:slug",
+        permanent: true,
+      },
+      {
+        source: "/blog/en/:slug",
+        destination: "/blog/:slug",
         permanent: true,
       },
       {

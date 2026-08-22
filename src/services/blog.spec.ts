@@ -8,10 +8,13 @@ import {
 
 describe("blog", () => {
   describe("getBlogPostUrl", () => {
-    it("builds the current /blog/{lang}/{slug} shape", () => {
-      expect(getBlogPostUrl("en", "fatherhood")).toBe("/blog/en/fatherhood")
+    it("builds /blog/{slug} for English", () => {
+      expect(getBlogPostUrl("en", "fatherhood")).toBe("/blog/fatherhood")
+    })
+
+    it("builds /de/blog/{slug} for German", () => {
       expect(getBlogPostUrl("de", "vue-app-auth")).toBe(
-        "/blog/de/vue-app-auth"
+        "/de/blog/vue-app-auth"
       )
     })
   })

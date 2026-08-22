@@ -201,7 +201,7 @@ const WorkPage: NextPage = () => {
               <Card>
                 <NextLink
                   className="flex items-center justify-between"
-                  href="/blog/en/closing-mozhi"
+                  href="/blog/closing-mozhi"
                 >
                   Mozhi
                 </NextLink>
