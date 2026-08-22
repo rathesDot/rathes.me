@@ -3,7 +3,7 @@ import fs from "fs"
 import { Metadata } from "next"
 import matter from "gray-matter"
 
-import { AUTHOR_NAME, FEED_PATH } from "@/src/site.config"
+import { AUTHOR_NAME, SITE_URL, FEED_PATH } from "@/src/site.config"
 
 import externalLinks from "@/data/blog/externalLinks"
 
@@ -28,6 +28,9 @@ const getBlogPath = () => path.join(process.cwd(), "./src/data/blog")
 
 const getFileFromSlug = (slug: string): string => `${slug}.mdx`
 const getSlugFromFile = (file: string): string => path.basename(file, ".mdx")
+
+export const getBlogPostUrl = (lang: Language, slug: string): string =>
+  `/blog/${lang}/${slug}`
 
 const fetchBlogPost = (lang: Language, file: string) => {
   return fs.readFileSync(path.join(getBlogPath(), `./${lang}/${file}`), "utf-8")
@@ -57,7 +60,7 @@ const getPostsByLang = (lang: Language) =>
 
 // Most posts exist in one language only; hreflang is emitted just for the few
 // that are genuinely published as translations of each other.
-const getTranslations = (slug: string): Language[] =>
+export const getTranslations = (slug: string): Language[] =>
   languages.filter((language) =>
     fs.existsSync(path.join(getBlogPath(), language, getFileFromSlug(slug)))
   )
@@ -70,7 +73,7 @@ export const getAllBlogPosts = () => {
         const { data: frontmatter } = matter(source)
 
         return {
-          link: `/blog/${language}/${getSlugFromFile(entry)}`,
+          link: getBlogPostUrl(language, getSlugFromFile(entry)),
           title: frontmatter.title,
           date: frontmatter.date,
           external: false,
@@ -96,7 +99,7 @@ export const getLatestBlogposts = (count = 5): Post[] => {
         const { data: frontmatter } = matter(source)
 
         return {
-          link: `/blog/${language}/${getSlugFromFile(entry)}`,
+          link: getBlogPostUrl(language, getSlugFromFile(entry)),
           title: frontmatter.title,
           date: frontmatter.date,
           external: false,
@@ -115,6 +118,31 @@ export const getLatestBlogposts = (count = 5): Post[] => {
           : 0
     )
     .slice(0, count)
+}
+
+export const getBlogPostsForFeed = (): {
+  title: string
+  url: string
+  date: Date
+  description: string
+}[] => {
+  const posts = languages
+    .map((language: Language) =>
+      getPostsByLang(language).map((entry) => {
+        const source = fetchBlogPost(language, entry)
+        const { data: frontmatter } = matter(source)
+
+        return {
+          title: frontmatter.title,
+          url: `${SITE_URL}${getBlogPostUrl(language, getSlugFromFile(entry))}`,
+          date: new Date(frontmatter.date),
+          description: frontmatter.description || "",
+        }
+      })
+    )
+    .flat()
+
+  return posts.sort((a, b) => b.date.getTime() - a.date.getTime())
 }
 
 export const getFilteredBlogPosts = (
@@ -161,14 +189,14 @@ export const generateBlogMetaData = async (
     // Declaring alternates here replaces the root layout's, so the canonical and
     // feed links have to be repeated rather than inherited.
     alternates: {
-      canonical: `/blog/${lang}/${slug}`,
+      canonical: getBlogPostUrl(lang, slug),
       types: { "application/rss+xml": FEED_PATH },
       languages:
         translations.length > 1
           ? Object.fromEntries(
               translations.map((language) => [
                 language,
-                `/blog/${language}/${slug}`,
+                getBlogPostUrl(language, slug),
               ])
             )
           : undefined,
@@ -183,7 +211,7 @@ export const generateBlogMetaData = async (
       modifiedTime: frontmatter.updated
         ? new Date(frontmatter.updated).toISOString()
         : undefined,
-      url: `/blog/${lang}/${slug}`,
+      url: getBlogPostUrl(lang, slug),
     },
   }
 }
@@ -212,7 +240,7 @@ export const groupPostsByYear = (posts: Post[]): { [key: number]: Post[] } => {
       ;(list[new Date(Date.parse(post.date)).getFullYear()] =
         list[new Date(Date.parse(post.date)).getFullYear()] || []).push(post)
       return list
-    }, {})
+    }, {} as { [key: number]: Post[] })
 }
 
 export const getSortedGroups = (groups: { [key: number]: Post[] }) => {

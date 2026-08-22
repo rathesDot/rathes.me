@@ -1,8 +1,6 @@
 import React, { ComponentPropsWithRef } from "react"
 import Link from "next/link"
 
-import * as NavigationMenu from "@radix-ui/react-navigation-menu"
-
 import { cva } from "@/src/cva.config"
 
 const rootStyles = cva({
@@ -12,8 +10,8 @@ const rootStyles = cva({
 export const Root = ({
   className,
   ...props
-}: NavigationMenu.NavigationMenuProps) => (
-  <NavigationMenu.Root className={rootStyles({ className })} {...props} />
+}: ComponentPropsWithRef<"nav">) => (
+  <nav className={rootStyles({ className })} {...props} />
 )
 
 const menuStyles = cva({ base: "flex items-center justify-between" })
@@ -21,8 +19,8 @@ const menuStyles = cva({ base: "flex items-center justify-between" })
 export const Menu = ({
   className,
   ...props
-}: NavigationMenu.NavigationMenuListProps) => (
-  <NavigationMenu.List className={menuStyles({ className })} {...props} />
+}: ComponentPropsWithRef<"ul">) => (
+  <ul className={menuStyles({ className })} {...props} />
 )
 
 const itemStyles = cva({
@@ -35,11 +33,9 @@ export const Item: React.FC<ComponentPropsWithRef<"a">> = ({
   href = "",
   ...props
 }) => (
-  <NavigationMenu.Item>
-    <NavigationMenu.Link asChild>
-      <Link href={href} className={itemStyles({ className })} {...props}>
-        {children}
-      </Link>
-    </NavigationMenu.Link>
-  </NavigationMenu.Item>
+  <li>
+    <Link href={href} className={itemStyles({ className })} {...props}>
+      {children}
+    </Link>
+  </li>
 )

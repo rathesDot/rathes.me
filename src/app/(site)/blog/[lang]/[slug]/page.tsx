@@ -8,6 +8,7 @@ import remarkGfm from "remark-gfm"
 
 import {
   getBlogPost,
+  getBlogPostUrl,
   generateBlogMetaData,
   generateBlogParams,
   toBcp47,
@@ -48,7 +49,7 @@ const BlogPage: NextPage<{ params: Promise<Params> }> = async (props) => {
           updated: data.updated,
           image: data.image,
           lang,
-          path: `/blog/${params.lang}/${params.slug}`,
+          path: getBlogPostUrl(params.lang, params.slug),
         }}
       />
       <header className="mx-auto mb-4 max-w-lg space-y-1 px-4 sm:px-0">
