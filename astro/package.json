@@ -1,0 +1,25 @@
+{
+  "name": "rathes.me-astro",
+  "private": true,
+  "description": "Astro build of rathes.me, migrated incrementally route by route from the Next.js site in the repo root.",
+  "version": "0.1.0",
+  "author": "Rathes Sachchithananthan <hello@rathes.me>",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.2.4",
+    "cva": "^1.0.0-beta.4",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "typescript": "^6.0.3"
+  }
+}

@@ -1,0 +1,11 @@
+---
+import { cva } from "@/src/cva.config"
+
+const styles = cva({
+  base: "mb-4 text-neutral-900 antialiased text-base last-of-type:mb-0 dark:text-neutral-400",
+})
+
+const { class: className, ...props } = Astro.props
+---
+
+<p class={styles({ className })} {...props}><slot /></p>
