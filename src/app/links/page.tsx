@@ -116,7 +116,7 @@ const LinksPage: NextPage = () => {
             </CardLink>
           </li>
           <li>
-            <CardLink href="/blog/en/closing-mozhi">Mozhi</CardLink>
+            <CardLink href="/blog/closing-mozhi">Mozhi</CardLink>
           </li>
         </ul>
       </section>
