@@ -30,7 +30,7 @@ const getFileFromSlug = (slug: string): string => `${slug}.mdx`
 const getSlugFromFile = (file: string): string => path.basename(file, ".mdx")
 
 export const getBlogPostUrl = (lang: Language, slug: string): string =>
-  `/blog/${lang}/${slug}`
+  lang === "en" ? `/blog/${slug}` : `/de/blog/${slug}`
 
 const fetchBlogPost = (lang: Language, file: string) => {
   return fs.readFileSync(path.join(getBlogPath(), `./${lang}/${file}`), "utf-8")
