@@ -1,0 +1,29 @@
+---
+import { cva, type VariantProps } from "@/src/cva.config"
+
+export const link = cva({
+  base: "text-current antialiased transition-colors dark:text-neutral-300 dark:hover:text-white",
+  variants: {
+    underlined: {
+      true: "underline underline-offset-2 decoration-neutral-300 hover:decoration-neutral-900 dark:decoration-neutral-600 dark:hover:decoration-neutral-400",
+      false: "no-underline",
+    },
+  },
+  defaultVariants: {
+    underlined: true,
+  },
+})
+
+type Props = VariantProps<typeof link> & {
+  href: string
+  class?: string
+  target?: string
+  rel?: string
+  title?: string
+  "aria-label"?: string
+}
+
+const { underlined, class: className, ...props } = Astro.props
+---
+
+<a class={link({ underlined, className })} {...props}><slot /></a>

@@ -1,0 +1,25 @@
+---
+import { cva, type VariantProps } from "@/src/cva.config"
+
+export const heading = cva({
+  base: "text-neutral-950 antialiased dark:text-white not-first-of-type:mt-8",
+  variants: {
+    level: {
+      h1: "text-2xl font-semibold tracking-[-0.03em] leading-tight mb-4",
+      h2: "text-lg font-semibold",
+      h3: "text-base font-semibold",
+      h4: "text-sm font-semibold",
+      small: "text-sm font-semibold text-neutral-600 dark:text-neutral-100",
+    },
+  },
+})
+
+type Props = VariantProps<typeof heading> & {
+  as: "h1" | "h2" | "h3" | "h4"
+  class?: string
+}
+
+const { as: Tag, level = Tag, class: className, ...props } = Astro.props
+---
+
+<Tag class={heading({ level, className })} {...props}><slot /></Tag>

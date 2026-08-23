@@ -16,6 +16,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // The Astro migration target is a separate project with its own tooling.
+    "astro/**",
   ]),
 ])
 

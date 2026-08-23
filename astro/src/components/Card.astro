@@ -1,0 +1,18 @@
+---
+import { cx } from "@/src/cva.config"
+
+type Props = {
+  href?: string
+  target?: string
+  class?: string
+}
+
+const { href, target, class: className } = Astro.props
+const Tag = href ? "a" : "div"
+const classes = cx(
+  "rounded-md border border-neutral-200 bg-neutral-50 px-4 py-3.5 text-neutral-900 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100",
+  className
+)
+---
+
+<Tag href={href} target={target} class={classes}><slot /></Tag>
