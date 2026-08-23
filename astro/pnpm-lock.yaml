@@ -17,6 +17,9 @@ importers:
       cva:
         specifier: ^1.0.0-beta.4
         version: 1.0.0-beta.8(typescript@6.0.3)
+      sharp:
+        specifier: ^0.35.3
+        version: 0.35.3
       tailwind-merge:
         specifier: ^3.4.0
         version: 3.6.0
@@ -2216,8 +2219,7 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
-  '@img/colour@1.1.0':
-    optional: true
+  '@img/colour@1.1.0': {}
 
   '@img/sharp-darwin-arm64@0.35.3':
     optionalDependencies:
@@ -3322,7 +3324,6 @@ snapshots:
       '@img/sharp-win32-arm64': 0.35.3
       '@img/sharp-win32-ia32': 0.35.3
       '@img/sharp-win32-x64': 0.35.3
-    optional: true
 
   shiki@4.4.3:
     dependencies:
