@@ -1,0 +1,7 @@
+---
+import { cx } from "@/src/cva.config"
+
+const { class: className } = Astro.props
+---
+
+<ul class={cx("space-y-1 not-first:my-4", className)}><slot /></ul>

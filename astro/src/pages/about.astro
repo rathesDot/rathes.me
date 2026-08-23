@@ -1,0 +1,149 @@
+---
+import Layout from "@/layouts/Layout.astro"
+import Link from "@/components/Link.astro"
+import Heading, { heading } from "@/components/Heading.astro"
+import Paragraph from "@/components/Paragraph.astro"
+import ListContainer from "@/components/list/Container.astro"
+import ListItem from "@/components/list/Item.astro"
+import ListSubtitle from "@/components/list/Subtitle.astro"
+---
+
+<Layout title="About me" path="/about">
+  <main class="space-y-12 py-4 sm:py-8">
+    <section class="mx-auto max-w-lg px-4 sm:px-0">
+      <Heading as="h1">
+        I'm a front-end engineer with over 10 years of web experience.
+      </Heading>
+      <Paragraph>
+        I started working as a web designer and web developer at a very young
+        age. I earned my first money as a web designer creating custom
+        MySpace layouts when I was just 14. In 2008, at the age of 16, I
+        founded my own company for web design and development. Since then, I
+        have worked with several clients doing quite a wide range of tasks.
+      </Paragraph>
+      <Paragraph>
+        For more than 10 years, I have been working as a web developer doing
+        problem-solving as a back-end engineer using languages such as PHP,
+        Python or Node.js but also as a front-end developer working with
+        HTML/CSS and JavaScript.
+      </Paragraph>
+      <Paragraph>
+        However, my real passion lies beyond software and development. I'm
+        more into solving problems for people, make their lives easier and
+        connecting them with each other. Alongside that, I'm passionate about
+        learning new languages and cultures.
+      </Paragraph>
+      <Heading as="h2">Career vision</Heading>
+      <Paragraph>
+        While I m currently on the IC track as a full-stack engineer, my
+        strength is my ability to understand and get all stakeholders on the
+        same page, enabling my team to deliver effectively and efficiently.
+      </Paragraph>
+      <Paragraph>
+        In the long term, I see myself in a role that allows me to support
+        and lead one or multiple teams to deliver impactful outcomes.
+      </Paragraph>
+    </section>
+
+    <section class="mx-auto max-w-lg px-4 sm:px-0">
+      <header class="mb-3 flex items-center justify-between">
+        <Heading as="h2" level="small">Work Experience</Heading>
+        <Link
+          class={heading({ level: "small" })}
+          href="/files/resume.pdf"
+          underlined={false}
+          download
+        >
+          Download CV
+        </Link>
+      </header>
+      <ListContainer class="space-y-6">
+        <ListItem>
+          Senior Software Engineer / Buffer
+          <ListSubtitle>October 2025 — now</ListSubtitle>
+        </ListItem>
+        <ListItem>
+          Senior Software Engineer / HubSpot
+          <ListSubtitle>July 2024 — October 2025</ListSubtitle>
+          <Paragraph class="mt-1 font-normal">
+            Working in growth teams with a focus on acquisition and retention
+            targetting different external and internal channels.
+          </Paragraph>
+        </ListItem>
+        <ListItem>
+          Senior Engineer / Intercom
+          <ListSubtitle>April 2024 — June 2024</ListSubtitle>
+          <Paragraph class="mt-1 font-normal">
+            Owning and leading bigger, more strategic projects at team level
+            and contributing to the roadmap and technical strategy. I'm also
+            coaching and mentoring other team mates to help the entire team
+            work as effective as possible
+          </Paragraph>
+        </ListItem>
+        <ListItem>
+          Product Engineer 3 / Intercom
+          <ListSubtitle>December 2021 — March 2024</ListSubtitle>
+        </ListItem>
+        <ListItem>
+          Engineering Team Lead / Hussle
+          <ListSubtitle>April 2021 — November 2021</ListSubtitle>
+          <Paragraph class="mt-1 font-normal">
+            As the team could not grow due to the impacts of the pandemic, I
+            was guiding and leading the front-end and back-end engineers to
+            collaborate and work closely together to help out each other to
+            fill gaps
+          </Paragraph>
+        </ListItem>
+        <ListItem>
+          Senior Frontend Engineer / Hussle
+          <ListSubtitle>February 2020 — March 2021</ListSubtitle>
+          <Paragraph class="mt-1 font-normal">
+            In 2020, I made the decision to make another big step and moved
+            to London to work in FitTech at Hussle. This was my chance to
+            combine my passion for fitness with my passion for tech.
+          </Paragraph>
+        </ListItem>
+        <ListItem>
+          Software Engineer / Teamleader
+          <ListSubtitle>May 2018 — January 2020</ListSubtitle>
+        </ListItem>
+        <ListItem>
+          Founder / Aheenam
+          <ListSubtitle>May 2016 — October 2021</ListSubtitle>
+          <Paragraph class="mt-1 font-normal">
+            In 2016, I decided decrease client work and focus more on
+            creating software products. Therefore, I changed the type of my
+            business and created a custom brand for this company
+          </Paragraph>
+        </ListItem>
+        <ListItem>
+          Web Developer / netinsiders
+          <ListSubtitle>November 2016 — April 2018</ListSubtitle>
+        </ListItem>
+        <ListItem>
+          Co-Founder / Kernwerk
+          <ListSubtitle>October 2015 — January 2018</ListSubtitle>
+          <Paragraph class="mt-1 font-normal">
+            Together with some friends, I created an awesome app for digital
+            personal training. I created the backend of first MVP using
+            Laravel as the framework of choice. Due to lack of time and shift
+            of interests, I left this project by the end of 2017.
+          </Paragraph>
+        </ListItem>
+        <ListItem>
+          Product Assistant / Kopierland GmbH
+          <ListSubtitle>June 2011 — March 2014</ListSubtitle>
+        </ListItem>
+        <ListItem>
+          Web Designer / rathesDot (CreativeCreation)
+          <ListSubtitle>June 2006 — March 2016</ListSubtitle>
+          <Paragraph class="mt-1 font-normal">
+            Earning my first money creating custom MySpace layouts, I went on
+            to create custom websites for various customer of different
+            sizes as a freelancer
+          </Paragraph>
+        </ListItem>
+      </ListContainer>
+    </section>
+  </main>
+</Layout>

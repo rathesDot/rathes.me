@@ -1,0 +1,11 @@
+---
+import { cx } from "@/src/cva.config"
+
+const { class: className } = Astro.props
+---
+
+<span
+  class={cx("block text-sm text-neutral-500 dark:text-neutral-400", className)}
+>
+  <slot />
+</span>
