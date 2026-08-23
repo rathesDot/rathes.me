@@ -1,0 +1,24 @@
+---
+import ArrowUpRightIcon from "@/components/ArrowUpRightIcon.astro"
+import Card from "@/components/Card.astro"
+
+type Props = {
+  href: string
+  external?: boolean
+}
+
+const { href, external = false } = Astro.props
+---
+
+<Card
+  href={href}
+  target={external ? "_blank" : undefined}
+  class="flex items-center justify-between transition-colors ease-in-out hover:border-neutral-400 dark:hover:border-neutral-600"
+>
+  <span class="flex items-center gap-2"><slot /></span>
+  {
+    external && (
+      <ArrowUpRightIcon class="size-5 align-middle text-neutral-600 dark:text-neutral-200" />
+    )
+  }
+</Card>
