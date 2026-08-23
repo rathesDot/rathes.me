@@ -19,3 +19,15 @@
   to = "https://astro-rathes.netlify.app/work"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/about"
+  to = "https://astro-rathes.netlify.app/about"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/photography"
+  to = "https://astro-rathes.netlify.app/photography"
+  status = 200
+  force = true
