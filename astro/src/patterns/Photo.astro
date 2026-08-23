@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets"
+import type { ImageMetadata } from "astro"
+
+import { cva } from "@/src/cva.config"
+
+type PhotoMode = "portrait" | "landscape"
+
+const container = cva({
+  base: "flex flex-col flex-none gap-1",
+  variants: {
+    mode: {
+      landscape: "md:max-w-[656px] md:col-span-2",
+      portrait: "md:max-w-[320px]",
+    },
+  },
+})
+
+type Props = {
+  image: ImageMetadata
+  title: string
+  caption?: string
+  mode?: PhotoMode
+}
+
+const { image, title, caption, mode = "portrait" } = Astro.props as Props
+---
+
+<figure class={container({ mode })}>
+  <Image src={image} alt={title} />
+  {
+    caption && (
+      <figcaption class="px-4 text-xs text-neutral-500 dark:text-neutral-400">
+        {caption}
+      </figcaption>
+    )
+  }
+</figure>
