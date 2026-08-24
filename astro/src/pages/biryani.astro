@@ -34,8 +34,7 @@ const ingredients = [
   { name: "Water", amount: 1200, unit: "ml" },
 ]
 
-// The Next version used the ingredient name verbatim as the checkbox id, which
-// isn't a valid HTML id once it contains a space ("Red Onions").
+// Ingredient names contain spaces, which an HTML id can't.
 const toId = (name: string) => `ingredient-${name.toLowerCase().replace(/\s+/g, "-")}`
 ---
 
@@ -61,9 +60,6 @@ const toId = (name: string) => `ingredient-${name.toLowerCase().replace(/\s+/g, 
           ingredients.map((ingredient) => (
             <li class="flex items-center gap-2">
               <span class="relative flex size-5 shrink-0 items-center justify-center">
-                {/* A native checkbox rather than a React island: the recipe
-                    checklist is a plain, non-persisted toggle, so it needs no
-                    client-side JavaScript at all. */}
                 <input
                   type="checkbox"
                   id={toId(ingredient.name)}
