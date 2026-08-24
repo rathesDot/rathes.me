@@ -1,14 +1,10 @@
-# Proxy control point for the incremental Next.js -> Astro migration.
-#
-# Both frameworks serve rathes.me simultaneously during the transition: this
-# site (Next.js) stays on the primary Netlify site, and a second Netlify site
-# hosts the Astro build. Routes move from Next to Astro one at a time by
-# adding a [[redirects]] block below, most-specific-first (Netlify matches
-# top-to-bottom) — Next keeps serving everything not listed here.
+# Routes below are served by the Astro build on its own Netlify site and
+# proxied in under rathes.me. Netlify matches top-to-bottom, so keep the
+# blocks most-specific-first.
 
 [[redirects]]
-  # Astro's hashed build assets, needed as soon as any migrated route ships
-  # them. Placed above the per-route rules since it's a broader prefix match.
+  # Astro's hashed build assets. Kept above the per-route rules, since this
+  # is a broader prefix match.
   from = "/_astro/*"
   to = "https://astro-rathes.netlify.app/_astro/:splat"
   status = 200
@@ -29,6 +25,12 @@
 [[redirects]]
   from = "/photography"
   to = "https://astro-rathes.netlify.app/photography"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/biryani"
+  to = "https://astro-rathes.netlify.app/biryani"
   status = 200
   force = true
 
