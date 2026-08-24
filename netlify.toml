@@ -33,3 +33,9 @@
   to = "https://astro-rathes.netlify.app/biryani"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/links"
+  to = "https://astro-rathes.netlify.app/links"
+  status = 200
+  force = true

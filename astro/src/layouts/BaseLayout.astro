@@ -1,0 +1,57 @@
+---
+import { SITE_URL } from "@/src/site.config"
+
+import "@/styles/globals.css"
+
+// Pages that don't set their own description inherit this one.
+const DEFAULT_DESCRIPTION =
+  "I'm a passionate software engineer and maker turning ideas into reality.  I specialize in web development with React and Laravel and can help you with custom solutions for your projects.  Let's discuss your project and see how I can help make it a success!"
+
+type Props = {
+  title: string
+  description?: string
+  path: string
+}
+
+const { title, description = DEFAULT_DESCRIPTION, path } = Astro.props
+const canonicalUrl = `${SITE_URL}${path}`
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --font-inter: "Inter", sans-serif;
+      }
+    </style>
+
+    <title>{title} — Rathes Sachchithananthan</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="author" href={SITE_URL} />
+    <meta name="author" content="Rathes Sachchithananthan" />
+    <meta name="referrer" content="origin-when-cross-origin" />
+    <meta name="creator" content="Rathes Sachchithananthan" />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+  </head>
+  <body
+    class="bg-white font-sans text-neutral-950 antialiased dark:bg-neutral-950 dark:text-neutral-50"
+  >
+    <slot />
+  </body>
+</html>
