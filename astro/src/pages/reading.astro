@@ -1,12 +1,12 @@
 ---
+import { Icon } from "astro-icon/components"
+
 import Layout from "@/layouts/Layout.astro"
 import Search from "@/patterns/Search.astro"
 import BookListItem from "@/patterns/BookListItem.astro"
 
 import Heading, { heading } from "@/components/Heading.astro"
 import Paragraph from "@/components/Paragraph.astro"
-import ChevronRightIcon from "@/components/ChevronRightIcon.astro"
-import ChevronDownIcon from "@/components/ChevronDownIcon.astro"
 import ListContainer from "@/components/list/Container.astro"
 
 import { getBookLists } from "@/services/books"
@@ -51,8 +51,14 @@ const summaryStyles = heading({
             <div class="mx-auto max-w-lg px-4 sm:px-0" data-book-group>
               <details class="group block" open={listTitle !== "Wishlist"}>
                 <summary class={summaryStyles}>
-                  <ChevronRightIcon class="size-4 group-open:hidden" />
-                  <ChevronDownIcon class="hidden size-4 group-open:block" />
+                  <Icon
+                    name="heroicons:chevron-right-16-solid"
+                    class="size-4 group-open:hidden"
+                  />
+                  <Icon
+                    name="heroicons:chevron-down-16-solid"
+                    class="hidden size-4 group-open:block"
+                  />
                   {listTitle}
                 </summary>
                 <ListContainer class="mt-3 space-y-3 pl-5">
