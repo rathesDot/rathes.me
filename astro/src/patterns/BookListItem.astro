@@ -1,0 +1,39 @@
+---
+import { Icon } from "astro-icon/components"
+
+import ListItem from "@/components/list/Item.astro"
+import ListSubtitle from "@/components/list/Subtitle.astro"
+
+import { getBookUrl, type Book } from "@/services/books"
+
+type Props = {
+  book: Book
+}
+
+const { book } = Astro.props
+
+// Only rated books have a detail page to link to; the rest link to the shop.
+const rated = !!book.rating
+---
+
+<ListItem data-book={`${book.title} ${book.author}`.toLowerCase()}>
+  {
+    rated ? (
+      <a href={getBookUrl(book)}>
+        {book.title}
+        <ListSubtitle>by {book.author}</ListSubtitle>
+      </a>
+    ) : (
+      <a class="block w-full text-left" href={book.url}>
+        <span class="flex items-center gap-1">
+          {book.title}
+          <Icon
+            name="heroicons:arrow-up-right-16-solid"
+            class="hidden size-5 text-neutral-400 sm:inline"
+          />
+        </span>
+        <ListSubtitle>by {book.author}</ListSubtitle>
+      </a>
+    )
+  }
+</ListItem>

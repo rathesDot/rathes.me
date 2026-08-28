@@ -1,5 +1,6 @@
 ---
-import ArrowUpRightIcon from "@/components/ArrowUpRightIcon.astro"
+import { Icon } from "astro-icon/components"
+
 import Card from "@/components/Card.astro"
 
 type Props = {
@@ -18,7 +19,10 @@ const { href, external = false } = Astro.props
   <span class="flex items-center gap-2"><slot /></span>
   {
     external && (
-      <ArrowUpRightIcon class="size-5 align-middle text-neutral-600 dark:text-neutral-200" />
+      <Icon
+        name="heroicons:arrow-up-right-16-solid"
+        class="size-5 align-middle text-neutral-600 dark:text-neutral-200"
+      />
     )
   }
 </Card>

@@ -1,12 +1,12 @@
 ---
 import { Image } from "astro:assets"
+import { Icon } from "astro-icon/components"
 
 import Layout from "@/layouts/Layout.astro"
 import Link from "@/components/Link.astro"
 import Card from "@/components/Card.astro"
 import Heading from "@/components/Heading.astro"
 import Paragraph from "@/components/Paragraph.astro"
-import ArrowUpRightIcon from "@/components/ArrowUpRightIcon.astro"
 import { heading } from "@/components/Heading.astro"
 
 import OffsetPreview from "@/assets/images/offset-preview.png"
@@ -43,7 +43,7 @@ import KodiPreview from "@/assets/images/kodi-preview.png"
               target="_blank"
               underlined={false}
             >
-              Visit page <ArrowUpRightIcon class="inline size-4" />
+              Visit page <Icon name="heroicons:arrow-up-right-16-solid" class="inline size-4" />
             </Link>
           </header>
           <Paragraph>
@@ -72,7 +72,7 @@ import KodiPreview from "@/assets/images/kodi-preview.png"
               target="_blank"
               underlined={false}
             >
-              Visit page <ArrowUpRightIcon class="inline size-4" />
+              Visit page <Icon name="heroicons:arrow-up-right-16-solid" class="inline size-4" />
             </Link>
           </header>
           <Paragraph>
@@ -102,7 +102,7 @@ import KodiPreview from "@/assets/images/kodi-preview.png"
               target="_blank"
               underlined={false}
             >
-              Visit page <ArrowUpRightIcon class="inline size-4" />
+              Visit page <Icon name="heroicons:arrow-up-right-16-solid" class="inline size-4" />
             </Link>
           </header>
           <Paragraph>
@@ -181,7 +181,10 @@ import KodiPreview from "@/assets/images/kodi-preview.png"
           <li>
             <Card href="https://getmaxout.app" target="_blank" class="flex items-center justify-between">
               Maxout 2.0
-              <ArrowUpRightIcon class="size-5 align-middle text-neutral-600 dark:text-neutral-200" />
+              <Icon
+                name="heroicons:arrow-up-right-16-solid"
+                class="size-5 align-middle text-neutral-600 dark:text-neutral-200"
+              />
             </Card>
           </li>
           <li>

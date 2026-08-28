@@ -1,6 +1,7 @@
 ---
+import { Icon } from "astro-icon/components"
+
 import Layout from "@/layouts/Layout.astro"
-import CheckIcon from "@/components/CheckIcon.astro"
 import Heading from "@/components/Heading.astro"
 import Paragraph from "@/components/Paragraph.astro"
 
@@ -65,7 +66,10 @@ const toId = (name: string) => `ingredient-${name.toLowerCase().replace(/\s+/g, 
                   id={toId(ingredient.name)}
                   class="peer absolute inset-0 size-5 appearance-none rounded bg-neutral-200 dark:bg-neutral-800"
                 />
-                <CheckIcon class="pointer-events-none relative hidden size-4 text-neutral-700 peer-checked:block dark:text-neutral-400" />
+                <Icon
+                  name="heroicons:check-16-solid"
+                  class="pointer-events-none relative hidden size-4 text-neutral-700 peer-checked:block dark:text-neutral-400"
+                />
               </span>
               <label
                 for={toId(ingredient.name)}

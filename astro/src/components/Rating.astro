@@ -1,0 +1,28 @@
+---
+import { Icon } from "astro-icon/components"
+
+type Props = {
+  value: number
+}
+
+const { value } = Astro.props
+
+// Guards the empty-star count below against ever going negative.
+const filled = Math.max(0, Math.min(5, value))
+---
+
+<div class="flex gap-1" role="img" aria-label={`Rated ${filled} out of 5`}>
+  {
+    Array.from({ length: filled }).map(() => (
+      <Icon
+        name="heroicons:star-solid"
+        class="size-6 text-neutral-800 dark:text-neutral-400"
+      />
+    ))
+  }
+  {
+    Array.from({ length: 5 - filled }).map(() => (
+      <Icon name="heroicons:star" class="h-6 w-6 text-neutral-300/90" />
+    ))
+  }
+</div>

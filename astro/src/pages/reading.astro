@@ -1,0 +1,127 @@
+---
+import { Icon } from "astro-icon/components"
+
+import Layout from "@/layouts/Layout.astro"
+import Search from "@/patterns/Search.astro"
+import BookListItem from "@/patterns/BookListItem.astro"
+
+import Heading, { heading } from "@/components/Heading.astro"
+import Paragraph from "@/components/Paragraph.astro"
+import ListContainer from "@/components/list/Container.astro"
+
+import { getBookLists } from "@/services/books"
+
+const DESCRIPTION =
+  "I love to read, I read any book that I can get my hands on."
+
+const lists = getBookLists()
+
+const summaryStyles = heading({
+  level: "small",
+  className:
+    "flex cursor-pointer list-none items-center gap-1 [&::-webkit-details-marker]:hidden",
+})
+---
+
+<Layout title="Reading" description={DESCRIPTION} path="/reading">
+  <main class="py-4 lg:py-8">
+    <section class="mx-auto max-w-lg px-4 sm:px-0">
+      <Heading as="h1">Reading</Heading>
+      <Paragraph>
+        Books play an important part in my life. Just sitting on my couch or bed
+        and reading a novel can be really inspiring.
+      </Paragraph>
+      <Paragraph>
+        I do fancy crime novels with interesting detective characters from good
+        old Sherlock Holmes to Harry Hole. But I read basically any kind of book
+        that can broaden one's horizons.
+      </Paragraph>
+      <Paragraph>
+        Actually, I dream of having my own library one day where I can invite
+        everybody to pick up a nice book and read.
+      </Paragraph>
+    </section>
+    <section class="space-y-8 py-8">
+      <div class="mx-auto max-w-lg px-4 sm:px-0">
+        <Search placeholder="Book title or Author" />
+      </div>
+      {
+        lists.map(([listTitle, books]) =>
+          books.length ? (
+            <div class="mx-auto max-w-lg px-4 sm:px-0" data-book-group>
+              <details class="group block" open={listTitle !== "Wishlist"}>
+                <summary class={summaryStyles}>
+                  <Icon
+                    name="heroicons:chevron-right-16-solid"
+                    class="size-4 group-open:hidden"
+                  />
+                  <Icon
+                    name="heroicons:chevron-down-16-solid"
+                    class="hidden size-4 group-open:block"
+                  />
+                  {listTitle}
+                </summary>
+                <ListContainer class="mt-3 space-y-3 pl-5">
+                  {books.map((book) => (
+                    <BookListItem book={book} />
+                  ))}
+                </ListContainer>
+              </details>
+            </div>
+          ) : null
+        )
+      }
+    </section>
+  </main>
+</Layout>
+
+<script>
+  const input = document.querySelector<HTMLInputElement>("#search")
+  const groups = document.querySelectorAll<HTMLElement>("[data-book-group]")
+
+  // The page ships every book, so searching is a matter of hiding the ones
+  // that don't match — no request, no re-render.
+  const applyFilter = (term: string) => {
+    const query = term.trim().toLowerCase()
+
+    groups.forEach((group) => {
+      let matches = 0
+
+      group.querySelectorAll<HTMLElement>("[data-book]").forEach((item) => {
+        const matched = (item.dataset.book ?? "").includes(query)
+        item.hidden = !matched
+        if (matched) matches += 1
+      })
+
+      // A list with nothing left in it drops out entirely, the way the
+      // server-rendered version used to skip empty groups.
+      group.hidden = matches === 0
+    })
+  }
+
+  const syncUrl = (term: string) => {
+    const url = new URL(window.location.href)
+
+    if (term) {
+      url.searchParams.set("q", term)
+    } else {
+      url.searchParams.delete("q")
+    }
+
+    window.history.replaceState(null, "", url)
+  }
+
+  // Nothing renders the search term server-side anymore, so a shared ?q= link
+  // is applied here on load instead.
+  const initialTerm = new URL(window.location.href).searchParams.get("q") ?? ""
+
+  if (input) {
+    input.value = initialTerm
+    input.addEventListener("input", () => {
+      applyFilter(input.value)
+      syncUrl(input.value)
+    })
+  }
+
+  applyFilter(initialTerm)
+</script>

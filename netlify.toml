@@ -39,3 +39,15 @@
   to = "https://astro-rathes.netlify.app/links"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/reading"
+  to = "https://astro-rathes.netlify.app/reading"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/reading/*"
+  to = "https://astro-rathes.netlify.app/reading/:splat"
+  status = 200
+  force = true
