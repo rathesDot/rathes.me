@@ -19,6 +19,8 @@ export const getAllBooks = (): Book[] => Object.values(books).flat()
 
 export const getBookLists = (): [string, Book[]][] => Object.entries(books)
 
+export const getCurrentlyReading = (): Book[] => books["Currently reading"]
+
 // Only rated books have a detail page — the rest link straight to the shop.
 export const getRatedBooks = (): Book[] =>
   getAllBooks().filter((book) => !!book.rating)

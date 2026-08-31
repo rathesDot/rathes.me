@@ -72,6 +72,24 @@ export const getAllBlogPosts = async (): Promise<[string, Post[]][]> => {
   )
 }
 
+const byNewestFirst = (a: Post, b: Post) =>
+  Date.parse(a.date) < Date.parse(b.date)
+    ? 1
+    : Date.parse(b.date) < Date.parse(a.date)
+      ? -1
+      : 0
+
+export const getLatestBlogposts = async (count = 5): Promise<Post[]> => {
+  const posts = (await getCollection("blog")).map(toPost)
+
+  return [
+    ...posts,
+    ...externalLinks.map((post) => ({ ...post, external: true })),
+  ]
+    .sort(byNewestFirst)
+    .slice(0, count)
+}
+
 export const getBlogPostsForFeed = async (): Promise<
   { title: string; url: string; date: Date; description: string }[]
 > =>
@@ -86,13 +104,7 @@ export const getBlogPostsForFeed = async (): Promise<
 
 export const groupPostsByYear = (posts: Post[]): { [key: number]: Post[] } => {
   return posts
-    .sort((a, b) =>
-      Date.parse(a.date) < Date.parse(b.date)
-        ? 1
-        : Date.parse(b.date) < Date.parse(a.date)
-          ? -1
-          : 0
-    )
+    .sort(byNewestFirst)
     .reduce(
       (list, post) => {
         ;(list[new Date(Date.parse(post.date)).getFullYear()] =
