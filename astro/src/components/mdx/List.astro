@@ -1,0 +1,14 @@
+---
+import ListRoot from "@/components/list/Root.astro"
+import ListTitle from "@/components/list/Title.astro"
+import ListContainer from "@/components/list/Container.astro"
+
+type Props = { title?: string }
+
+const { title } = Astro.props
+---
+
+<ListRoot>
+  {title && <ListTitle>{title}</ListTitle>}
+  <ListContainer class="my-8 space-y-4"><slot /></ListContainer>
+</ListRoot>

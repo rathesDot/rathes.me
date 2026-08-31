@@ -1,0 +1,7 @@
+---
+import Heading from "@/components/Heading.astro"
+
+const props = Astro.props
+---
+
+<Heading as="h3" {...props}><slot /></Heading>

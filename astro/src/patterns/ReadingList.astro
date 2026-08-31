@@ -1,0 +1,41 @@
+---
+import books from "@/data/books.json"
+
+import ListRoot from "@/components/list/Root.astro"
+import ListTitle from "@/components/list/Title.astro"
+import ListContainer from "@/components/list/Container.astro"
+import ListEntry from "@/components/list/Item.astro"
+import ListLink from "@/components/list/Link.astro"
+import ListSubtitle from "@/components/list/Subtitle.astro"
+
+type Book = {
+  title: string
+  author: string
+  url: string
+}
+
+type Props = {
+  listKey: string
+  title?: string
+}
+
+const { listKey, title = listKey } = Astro.props
+
+const items = (books as Record<string, Book[]>)[listKey] ?? []
+---
+
+<ListRoot>
+  {title && <ListTitle>{title}</ListTitle>}
+  <ListContainer class="my-8 space-y-4">
+    {
+      items.map((book) => (
+        <ListEntry>
+          <ListLink href={book.url}>
+            {book.title}
+            <ListSubtitle>by {book.author}</ListSubtitle>
+          </ListLink>
+        </ListEntry>
+      ))
+    }
+  </ListContainer>
+</ListRoot>

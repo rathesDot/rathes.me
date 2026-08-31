@@ -1,16 +1,12 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro"
+import BaseLayout, { type Props as BaseLayoutProps } from "@/layouts/BaseLayout.astro"
 import Link from "@/components/Link.astro"
 import Logo from "@/components/Logo.astro"
 import SayHi from "@/patterns/SayHi.astro"
 
-type Props = {
-  title: string
-  description?: string
-  path: string
-}
+type Props = BaseLayoutProps
 
-const { title, description, path } = Astro.props
+const props = Astro.props
 
 const navItems = [
   { href: "/about", label: "About" },
@@ -21,7 +17,7 @@ const navItems = [
 ]
 ---
 
-<BaseLayout title={title} description={description} path={path}>
+<BaseLayout {...props}>
   <nav
     class="sticky top-0 mt-0 border-b bg-white/70 backdrop-blur-sm dark:border-b-neutral-800 dark:bg-neutral-950/70"
   >

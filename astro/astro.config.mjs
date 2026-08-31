@@ -17,8 +17,12 @@ export default defineConfig({
     // The posts are rendered through the same remark/rehype pipeline the Next
     // site used, so the generated markup keeps matching what globals.css
     // styles -- rehype-highlight's hljs class names in particular.
+    // Astro's own Shiki highlighting stays off; rehype-highlight below does
+    // the job instead.
+    syntaxHighlight: false,
     processor: unified({
-      syntaxHighlight: false,
+      // The Next pipeline left quotes and dashes as written.
+      smartypants: false,
       rehypePlugins: [rehypeHighlight],
     }),
   },
