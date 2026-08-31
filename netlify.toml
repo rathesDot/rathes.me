@@ -107,3 +107,15 @@
   to = "https://astro-rathes.netlify.app/blog/:splat"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "https://astro-rathes.netlify.app/sitemap.xml"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/robots.txt"
+  to = "https://astro-rathes.netlify.app/robots.txt"
+  status = 200
+  force = true
