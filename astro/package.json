@@ -12,11 +12,15 @@
     "check": "astro check"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^7.2.4",
+    "@astrojs/mdx": "^7.0.8",
+    "@astrojs/rss": "^4.0.19",
     "@iconify-json/heroicons": "^1.2.3",
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.2.4",
     "astro-icon": "^1.2.0",
     "cva": "^1.0.0-beta.4",
+    "rehype-highlight": "^7.0.2",
     "sharp": "^0.35.3",
     "slugify": "^1.6.6",
     "tailwind-merge": "^3.4.0",

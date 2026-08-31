@@ -1,0 +1,11 @@
+---
+import { cva } from "@/src/cva.config"
+
+const styles = cva({
+  base: "line-through decoration-neutral-500 dark:decoration-neutral-400 transition-colors font-medium antialiased mb-4",
+})
+
+const { class: className, ...props } = Astro.props
+---
+
+<del class={styles({ className })} {...props}><slot /></del>

@@ -1,0 +1,136 @@
+---
+import { getImage, Image } from "astro:assets"
+import { render } from "astro:content"
+
+import { cva } from "@/src/cva.config"
+import { AUTHOR_NAME, SITE_URL } from "@/src/site.config"
+
+import Layout from "@/layouts/Layout.astro"
+
+import Heading from "@/components/Heading.astro"
+import BlogPostingSchema from "@/components/BlogPostingSchema.astro"
+import { components } from "@/components/mdx"
+
+import {
+  getBlogPostUrl,
+  getLanguage,
+  getSlug,
+  getTranslations,
+  toBcp47,
+  type BlogEntry,
+} from "@/services/blog"
+import { getBlogImage } from "@/services/blogImages"
+
+const caption = cva({
+  base: "text-neutral-500 dark:text-neutral-400 block my-1 text-xs",
+})
+
+type Props = {
+  entry: BlogEntry
+}
+
+const { entry } = Astro.props
+const { data } = entry
+
+const language = getLanguage(entry)
+const slug = getSlug(entry)
+const path = getBlogPostUrl(language, slug)
+const postLang = toBcp47(data.locale, language)
+
+const { Content } = await render(entry)
+
+const cover = getBlogImage(data.image)
+// Twice the 512px column, so the crop stays sharp on dense screens, but never
+// larger than the original.
+const coverWidth = cover && Math.min(1024, cover.width)
+
+// The sharing image is generated from the same source as the cover, so posts
+// stop handing social networks the multi-megabyte original.
+const socialSource = getBlogImage(data.social ?? data.image)
+const social = socialSource
+  ? await getImage({
+      src: socialSource,
+      width: Math.min(1200, socialSource.width),
+      format: "jpeg",
+    })
+  : undefined
+
+const translations = await getTranslations(slug)
+
+// Both sites build in UTC; pinning the zone keeps the rendered date matching
+// the date in the frontmatter wherever the build runs.
+const readableDate = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "2-digit",
+  year: "numeric",
+  timeZone: "UTC",
+}).format(data.date)
+const machineDate = data.date.toISOString().slice(0, 10)
+---
+
+<Layout
+  title={data.title}
+  documentTitle={`${data.title} — rathes.me`}
+  description={data.description ?? null}
+  path={path}
+  type="article"
+  locale={data.locale}
+  author={AUTHOR_NAME}
+  publishedTime={data.date.toISOString()}
+  modifiedTime={data.updated?.toISOString()}
+  image={social && { url: `${SITE_URL}${social.src}` }}
+  translations={translations.length > 1
+    ? translations.map((translation) => ({
+        language: translation,
+        path: getBlogPostUrl(translation, slug),
+      }))
+    : []}
+>
+  <main lang={postLang} class="py-4 lg:py-8">
+    <BlogPostingSchema
+      post={{
+        title: data.title,
+        description: data.description,
+        date: data.date,
+        updated: data.updated,
+        image: social && `${SITE_URL}${social.src}`,
+        lang: postLang,
+        path,
+      }}
+    />
+    <header class="mx-auto mb-4 max-w-lg space-y-1 px-4 sm:px-0">
+      <Heading as="h1" class="mb-1">{data.title}</Heading>
+      <div class="flex items-center gap-2">
+        <time
+          class="text-sm text-neutral-500 antialiased"
+          datetime={machineDate}
+        >
+          {readableDate}
+        </time>
+        <span class="text-sm text-neutral-500 antialiased">/</span>
+        <span class="text-sm text-neutral-500 antialiased">{AUTHOR_NAME}</span>
+      </div>
+    </header>
+    {
+      cover && (
+        <figure class="mx-auto my-4 max-w-lg sm:px-0">
+          <div class="relative aspect-3/2">
+            <Image
+              src={cover}
+              width={coverWidth}
+              loading="eager"
+              alt={data.title}
+              class="absolute inset-0 size-full object-cover object-center"
+            />
+          </div>
+          {data.imageCaption && (
+            <figcaption class={caption()}>{data.imageCaption}</figcaption>
+          )}
+        </figure>
+      )
+    }
+    <article class="mx-auto max-w-lg px-4 sm:px-0">
+      <Content components={components} />
+    </article>
+  </main>
+</Layout>

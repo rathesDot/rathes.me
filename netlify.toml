@@ -1,3 +1,28 @@
+# Phase 1 moved the blog off /blog/{lang}/{slug}, and next.config.ts has
+# redirected the old URLs ever since. The proxy rules below are forced, so they
+# would take /blog/en/* and /blog/de/* to Astro -- which has no such routes --
+# before Next ever got to redirect them. Netlify matches top-to-bottom, so the
+# redirects are restated here, above the proxy.
+
+[[redirects]]
+  # The only post that ever lived at /blog/{slug} in German.
+  from = "/blog/json-web-token"
+  to = "/de/blog/json-web-token"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/de/:slug"
+  to = "/de/blog/:slug"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/en/:slug"
+  to = "/blog/:slug"
+  status = 301
+  force = true
+
 # Routes below are served by the Astro build on its own Netlify site and
 # proxied in under rathes.me. Netlify matches top-to-bottom, so keep the
 # blocks most-specific-first.
@@ -49,5 +74,29 @@
 [[redirects]]
   from = "/reading/*"
   to = "https://astro-rathes.netlify.app/reading/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/writing/feed.xml"
+  to = "https://astro-rathes.netlify.app/writing/feed.xml"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/writing"
+  to = "https://astro-rathes.netlify.app/writing"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/de/blog/*"
+  to = "https://astro-rathes.netlify.app/de/blog/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/blog/*"
+  to = "https://astro-rathes.netlify.app/blog/:splat"
   status = 200
   force = true

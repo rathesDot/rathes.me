@@ -1,0 +1,21 @@
+---
+import { cva } from "@/src/cva.config"
+
+const styles = cva({
+  base: "font-mono text-sm",
+  variants: {
+    codeblock: {
+      false:
+        "whitespace-normal break-all text-neutral-300 bg-neutral-800 rounded-xs px-1 py-[0.1em]",
+    },
+  },
+})
+
+// rehype-highlight labels highlighted blocks with hljs class names, which the
+// styling does not need on the element itself — the spans inside carry the
+// colours. The incoming class is therefore read but not passed through, the
+// same as on the Next site.
+const { class: className, ...props } = Astro.props
+---
+
+<code class={styles({ codeblock: className !== "" })} {...props}><slot /></code>

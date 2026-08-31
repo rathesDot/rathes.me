@@ -1,0 +1,11 @@
+---
+import { cva } from "@/src/cva.config"
+
+const styles = cva({
+  base: "list-disc pl-6 my-4 space-y-4 marker:text-neutral-400",
+})
+
+const { class: className, ...props } = Astro.props
+---
+
+<ul class={styles({ className })} {...props}><slot /></ul>

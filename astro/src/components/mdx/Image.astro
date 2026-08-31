@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets"
+
+import { cva } from "@/src/cva.config"
+
+import { getBlogImage } from "@/services/blogImages"
+
+const styles = cva({
+  base: "relative block my-4 [&_img]:object-cover [&_img]:object-center",
+})
+
+const { class: className, src, alt = "", ...props } = Astro.props
+
+const asset = getBlogImage(typeof src === "string" ? src : undefined)
+
+// The column is 512px wide; smaller originals are served at their own size
+// rather than upscaled.
+const width = asset && Math.min(500, asset.width)
+---
+
+{
+  asset ? (
+    <Image
+      src={asset}
+      alt={alt}
+      width={width}
+      class={styles({ className })}
+      {...props}
+    />
+  ) : (
+    <img src={src} alt={alt} class={styles({ className })} {...props} />
+  )
+}

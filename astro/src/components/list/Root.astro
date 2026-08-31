@@ -1,0 +1,7 @@
+---
+import { cx } from "@/src/cva.config"
+
+const { class: className, ...props } = Astro.props
+---
+
+<div class={cx("block", className)} {...props}><slot /></div>

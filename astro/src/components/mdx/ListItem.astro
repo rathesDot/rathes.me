@@ -1,0 +1,25 @@
+---
+import ListEntry from "@/components/list/Item.astro"
+import ListLink from "@/components/list/Link.astro"
+import ListSubtitle from "@/components/list/Subtitle.astro"
+
+type Props = { link?: string; subtitle?: string }
+
+const { link, subtitle } = Astro.props
+---
+
+<ListEntry>
+  {
+    link ? (
+      <ListLink href={link}>
+        <slot />
+        {subtitle && <ListSubtitle>{subtitle}</ListSubtitle>}
+      </ListLink>
+    ) : (
+      <>
+        <slot />
+        {subtitle && <ListSubtitle>{subtitle}</ListSubtitle>}
+      </>
+    )
+  }
+</ListEntry>

@@ -1,0 +1,11 @@
+---
+import { cva } from "@/src/cva.config"
+
+const styles = cva({
+  base: "h-auto border-none leading-none my-8 text-neutral-600 antialiased font-semibold before:block before:content-['*_*_*']",
+})
+
+const { class: className, ...props } = Astro.props
+---
+
+<hr class={styles({ className })} {...props} />

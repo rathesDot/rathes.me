@@ -1,0 +1,13 @@
+---
+type Props = {
+  href: string
+  class?: string
+  lang?: string
+  target?: string
+  rel?: string
+}
+
+const props = Astro.props
+---
+
+<a {...props}><slot /></a>
