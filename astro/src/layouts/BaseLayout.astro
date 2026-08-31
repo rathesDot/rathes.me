@@ -103,6 +103,18 @@ const canonicalUrl = `${SITE_URL}${path}`
         <meta property="article:modified_time" content={modifiedTime} />
       )
     }
+    <!--
+      Fathom counts pageviews on its own here. The Next site had to track them
+      by hand, because its client-side router changes the URL without the
+      script noticing; navigating between Astro pages is a real page load.
+    -->
+    <script
+      is:inline
+      defer
+      src="https://cdn.usefathom.com/script.js"
+      data-site="ZYWCGBNZ"
+      data-included-domains="rathes.me"></script>
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
