@@ -4,3 +4,52 @@
 [build]
   command = "astro build"
   publish = "dist"
+
+# URLs the site used to serve, kept resolving in one hop. None of them
+# collides with a page this site builds, so they are left unforced: a real
+# page always wins over a redirect.
+
+[[redirects]]
+  # A sitemap index used to live here, and Google still knows the URL.
+  from = "/sitemap-0.xml"
+  to = "/sitemap.xml"
+  status = 301
+
+[[redirects]]
+  from = "/reading-list"
+  to = "/reading"
+  status = 301
+
+[[redirects]]
+  from = "/writings"
+  to = "/writing"
+  status = 301
+
+[[redirects]]
+  from = "/photos"
+  to = "/photography"
+  status = 301
+
+[[redirects]]
+  from = "/store/calais"
+  to = "https://aheenam.com/templates/calais"
+  status = 301
+
+# The blog was published under /blog/{lang}/{slug} until the URLs were
+# restructured to /blog/{slug} and /de/blog/{slug}.
+
+[[redirects]]
+  # The only post that ever lived at /blog/{slug} in German.
+  from = "/blog/json-web-token"
+  to = "/de/blog/json-web-token"
+  status = 301
+
+[[redirects]]
+  from = "/blog/de/:slug"
+  to = "/de/blog/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/blog/en/:slug"
+  to = "/blog/:slug"
+  status = 301
