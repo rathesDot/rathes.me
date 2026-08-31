@@ -1,0 +1,185 @@
+---
+import { Image } from "astro:assets"
+import { Icon } from "astro-icon/components"
+
+import Layout from "@/layouts/Layout.astro"
+
+import Card from "@/components/Card.astro"
+import Heading, { heading } from "@/components/Heading.astro"
+import Link from "@/components/Link.astro"
+import SiteSchema from "@/components/SiteSchema.astro"
+import ListRoot from "@/components/list/Root.astro"
+import ListContainer from "@/components/list/Container.astro"
+import ListItem from "@/components/list/Item.astro"
+import ListLink from "@/components/list/Link.astro"
+import ListSubtitle from "@/components/list/Subtitle.astro"
+
+import { getLatestBlogposts } from "@/services/blog"
+import { getCurrentlyReading } from "@/services/books"
+
+import RuislipJeep from "@/assets/photos/202411_ruislip_jeep.jpg"
+import Bergen1 from "@/assets/photos/202404_Bergen_1.jpg"
+import Iceland2 from "@/assets/photos/202402_iceland_2.jpg"
+
+const posts = await getLatestBlogposts()
+const books = getCurrentlyReading()
+
+const cardStyles = "flex items-center justify-between"
+const arrowStyles = "size-5 align-middle text-neutral-600 dark:text-neutral-200"
+---
+
+<Layout
+  title="Rathes Sachchithananthan"
+  documentTitle="Rathes Sachchithananthan"
+  path="/"
+>
+  <main class="space-y-12 py-4">
+    <SiteSchema />
+    <section class="mx-auto max-w-lg p-4 sm:px-0">
+      <Heading as="h1">
+        I'm Rathes Sachchithananthan, a front-end engineer living in{" "}
+        <Link href="https://goo.gl/maps/E9c5uw5SLjSbLZ9G9">London</Link>{" "}
+        interested in fitness, languages, books &amp; cooking.
+      </Heading>
+      <p class={heading({ level: "h1" })}>
+        Currently, I work as a senior software engineer at{" "}
+        <Link href="https://www.buffer.com/">Buffer</Link> building tools to help
+        small businesses get off the ground and grow.
+      </p>
+      <p class={heading({ level: "h1" })}>
+        Follow me on <Link href="/links">Blueksy, Instagram and more</Link>.
+      </p>
+    </section>
+
+    <section class="mx-auto max-w-lg p-4 sm:px-0">
+      <header class="mb-2 flex items-center justify-between">
+        <Heading as="h2" level="small">Current projects</Heading>
+        <Link class={heading({ level: "small" })} href="/work" underlined={false}>
+          See more
+        </Link>
+      </header>
+      <ul class="space-y-2">
+        <li>
+          <Card
+            href="https://aheenam.com/apps/offset"
+            target="_blank"
+            class={cardStyles}
+          >
+            Offset
+            <Icon name="heroicons:arrow-up-right-16-solid" class={arrowStyles} />
+          </Card>
+        </li>
+        <li>
+          <Card
+            href="https://aheenam.com/templates/calais"
+            target="_blank"
+            class={cardStyles}
+          >
+            Calais Portfolio Template{" "}
+            <Icon name="heroicons:arrow-up-right-16-solid" class={arrowStyles} />
+          </Card>
+        </li>
+        <li>
+          <Card
+            href="https://learn-tamil.com/"
+            target="_blank"
+            class={cardStyles}
+          >
+            Learn Tamil Online
+            <Icon name="heroicons:arrow-up-right-16-solid" class={arrowStyles} />
+          </Card>
+        </li>
+      </ul>
+    </section>
+
+    <section class="mx-auto max-w-lg p-4 sm:px-0">
+      <header class="mb-3 flex items-center justify-between">
+        <Heading as="h2" level="small">Latest blog posts</Heading>
+        <Link
+          class={heading({ level: "small" })}
+          href="/writing"
+          underlined={false}
+        >
+          Read more
+        </Link>
+      </header>
+      <ListRoot>
+        <ListContainer>
+          {
+            posts.map((post) => (
+              <ListItem>
+                <ListLink href={post.link} lang={post.lang}>
+                  {post.title}
+                  {post.external && (
+                    <>
+                      {" "}
+                      <Icon
+                        name="heroicons:arrow-up-right-16-solid"
+                        class="inline size-4"
+                      />
+                    </>
+                  )}
+                </ListLink>
+              </ListItem>
+            ))
+          }
+        </ListContainer>
+      </ListRoot>
+    </section>
+
+    <section class="mx-auto max-w-lg p-4 sm:px-0">
+      <header class="mb-3 flex items-center justify-between">
+        <Heading as="h2" level="small">Currently reading</Heading>
+        <Link
+          class={heading({ level: "small" })}
+          href="/reading"
+          underlined={false}
+        >
+          More books
+        </Link>
+      </header>
+      <ListRoot>
+        <ListContainer class="space-y-3">
+          {
+            books.map((book) => (
+              <ListItem>
+                {book.title}
+                <ListSubtitle>by {book.author}</ListSubtitle>
+              </ListItem>
+            ))
+          }
+        </ListContainer>
+      </ListRoot>
+    </section>
+
+    <section class="mx-auto max-w-[662px] p-4 sm:px-0">
+      <header class="mx-auto mb-3 flex max-w-lg items-center justify-between">
+        <Heading as="h2" level="small">Latest shots</Heading>
+        <Link
+          class={heading({ level: "small" })}
+          href="/photography"
+          underlined={false}
+        >
+          All photos
+        </Link>
+      </header>
+      <div class="-mr-4">
+        <div class="flex flex-nowrap items-start gap-4 overflow-x-auto pr-4 pb-2">
+          <div class="flex-none">
+            <Image
+              src={RuislipJeep}
+              width={210}
+              alt="An old SUV on an autumn covered street"
+            />
+          </div>
+          <div class="flex-none">
+            <Image src={Bergen1} width={210} alt="View of Bergen from above" />
+          </div>
+          <div class="flex-none">
+            <Image src={Iceland2} width={210} alt="Van parked in snow" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
