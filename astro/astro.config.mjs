@@ -12,6 +12,11 @@ export default defineConfig({
   trailingSlash: "never",
   build: {
     format: "file",
+    // The one stylesheet the site has is small enough that a separate request
+    // for it costs more than the bytes do -- and it is render blocking, behind
+    // the Netlify proxy hop on rathes.me. Inlining it into every page takes it
+    // off the critical path entirely.
+    inlineStylesheets: "always",
   },
   // Inter ships with the site instead of coming from fonts.googleapis.com, so
   // no third-party stylesheet sits in front of the first paint. The file comes
