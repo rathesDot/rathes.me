@@ -36,6 +36,13 @@
   force = true
 
 [[redirects]]
+  # The site root. An exact match, so it takes only the homepage itself.
+  from = "/"
+  to = "https://astro-rathes.netlify.app/"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/work"
   to = "https://astro-rathes.netlify.app/work"
   status = 200
