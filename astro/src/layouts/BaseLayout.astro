@@ -79,6 +79,19 @@ const canonicalUrl = `${SITE_URL}${path}`
       type="application/rss+xml"
       href={`${SITE_URL}${FEED_PATH}`}
     />
+    <!--
+      Both point at the one file: the Next site's icon.png and apple-icon.png
+      are byte-identical. /icon.png resolves through Next today and through
+      this site's own public/ once Next is retired, so the URL survives the
+      cutover either way.
+    -->
+    <link rel="icon" href="/icon.png" sizes="513x513" type="image/png" />
+    <link
+      rel="apple-touch-icon"
+      href="/icon.png"
+      sizes="513x513"
+      type="image/png"
+    />
     <link rel="author" href={SITE_URL} />
     <meta name="author" content="Rathes Sachchithananthan" />
     <meta name="referrer" content="origin-when-cross-origin" />
@@ -118,6 +131,11 @@ const canonicalUrl = `${SITE_URL}${path}`
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
+    <!--
+      The same image og:image carries, so a post's own cover is what gets
+      shared rather than the site-wide fallback.
+    -->
+    <meta name="twitter:image" content={image.url} />
   </head>
   <body
     class="bg-white font-sans text-neutral-950 antialiased dark:bg-neutral-950 dark:text-neutral-50"
