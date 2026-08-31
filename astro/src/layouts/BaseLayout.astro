@@ -79,6 +79,13 @@ const canonicalUrl = `${SITE_URL}${path}`
       type="application/rss+xml"
       href={`${SITE_URL}${FEED_PATH}`}
     />
+    <link rel="icon" href="/icon.png" sizes="513x513" type="image/png" />
+    <link
+      rel="apple-touch-icon"
+      href="/icon.png"
+      sizes="513x513"
+      type="image/png"
+    />
     <link rel="author" href={SITE_URL} />
     <meta name="author" content="Rathes Sachchithananthan" />
     <meta name="referrer" content="origin-when-cross-origin" />
@@ -103,11 +110,7 @@ const canonicalUrl = `${SITE_URL}${path}`
         <meta property="article:modified_time" content={modifiedTime} />
       )
     }
-    <!--
-      Fathom counts pageviews on its own here. The Next site had to track them
-      by hand, because its client-side router changes the URL without the
-      script noticing; navigating between Astro pages is a real page load.
-    -->
+    {/* Fathom counts pageviews on its own; every navigation is a page load. */}
     <script
       is:inline
       defer
@@ -118,6 +121,8 @@ const canonicalUrl = `${SITE_URL}${path}`
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
+    {/* The same image og:image carries, so a post shares its own cover. */}
+    <meta name="twitter:image" content={image.url} />
   </head>
   <body
     class="bg-white font-sans text-neutral-950 antialiased dark:bg-neutral-950 dark:text-neutral-50"
