@@ -79,12 +79,6 @@ const canonicalUrl = `${SITE_URL}${path}`
       type="application/rss+xml"
       href={`${SITE_URL}${FEED_PATH}`}
     />
-    <!--
-      Both point at the one file: the Next site's icon.png and apple-icon.png
-      are byte-identical. /icon.png resolves through Next today and through
-      this site's own public/ once Next is retired, so the URL survives the
-      cutover either way.
-    -->
     <link rel="icon" href="/icon.png" sizes="513x513" type="image/png" />
     <link
       rel="apple-touch-icon"
@@ -116,11 +110,7 @@ const canonicalUrl = `${SITE_URL}${path}`
         <meta property="article:modified_time" content={modifiedTime} />
       )
     }
-    <!--
-      Fathom counts pageviews on its own here. The Next site had to track them
-      by hand, because its client-side router changes the URL without the
-      script noticing; navigating between Astro pages is a real page load.
-    -->
+    {/* Fathom counts pageviews on its own; every navigation is a page load. */}
     <script
       is:inline
       defer
@@ -131,10 +121,7 @@ const canonicalUrl = `${SITE_URL}${path}`
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
-    <!--
-      The same image og:image carries, so a post's own cover is what gets
-      shared rather than the site-wide fallback.
-    -->
+    {/* The same image og:image carries, so a post shares its own cover. */}
     <meta name="twitter:image" content={image.url} />
   </head>
   <body
