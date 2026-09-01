@@ -1,6 +1,51 @@
-# This site's own Netlify config. Without it, Netlify falls back to the
-# repo-root netlify.toml, whose redirects point at this site — which would
-# leave it trying to proxy to itself.
 [build]
   command = "astro build"
   publish = "dist"
+
+# Every URL the site has ever published that no longer has a page behind it.
+# Netlify applies these only when nothing static matches, and resolves each in
+# a single hop -- no redirect ever points at another redirect's source.
+
+[[redirects]]
+  # next-sitemap used to emit a sitemap index pointing here; Google still knows
+  # the URL, so keep it resolving to the single sitemap.
+  from = "/sitemap-0.xml"
+  to = "/sitemap.xml"
+  status = 301
+
+[[redirects]]
+  from = "/reading-list"
+  to = "/reading"
+  status = 301
+
+[[redirects]]
+  from = "/writings"
+  to = "/writing"
+  status = 301
+
+[[redirects]]
+  from = "/photos"
+  to = "/photography"
+  status = 301
+
+[[redirects]]
+  # The only post that ever lived at /blog/{slug} in German.
+  from = "/blog/json-web-token"
+  to = "/de/blog/json-web-token"
+  status = 301
+
+[[redirects]]
+  # The blog moved off /blog/{lang}/{slug} to /blog/{slug} and /de/blog/{slug}.
+  from = "/blog/de/:slug"
+  to = "/de/blog/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/blog/en/:slug"
+  to = "/blog/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/store/calais"
+  to = "https://aheenam.com/templates/calais"
+  status = 301

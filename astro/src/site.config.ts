@@ -4,8 +4,9 @@ export const AUTHOR_NAME = "Rathes Sachchithananthan"
 
 export const FEED_PATH = "/writing/feed.xml"
 
-// The site-wide sharing image, still served by the Next site's file-convention
-// route, which posts without a cover image of their own fall back to.
+// The site-wide sharing image, used by every page that has no cover image of
+// its own. Kept in public/ rather than optimised through astro:assets so its
+// URL stays stable across builds -- social platforms cache what they scraped.
 export const DEFAULT_SOCIAL_IMAGE = {
   url: `${SITE_URL}/opengraph-image.png`,
   width: 1600,
