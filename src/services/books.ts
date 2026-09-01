@@ -15,22 +15,15 @@ export type Book = {
 
 const books: Record<string, Book[]> = data
 
-export const getAllBooks = (): Book[] => Object.values(data).flat()
+export const getAllBooks = (): Book[] => Object.values(books).flat()
 
-export const getFilteredList = (term: string): [string, Book[]][] => {
-  return Object.entries(books).map(([year, books]) => [
-    year,
-    books.filter(
-      (book) =>
-        book.title.toLowerCase().includes(term.toLocaleLowerCase()) ||
-        book.author.toLowerCase().includes(term.toLocaleLowerCase())
-    ),
-  ])
-}
+export const getBookLists = (): [string, Book[]][] => Object.entries(books)
 
-export const getCurrentlyReading = () => {
-  return books["Currently reading"]
-}
+export const getCurrentlyReading = (): Book[] => books["Currently reading"]
+
+// Only rated books have a detail page — the rest link straight to the shop.
+export const getRatedBooks = (): Book[] =>
+  getAllBooks().filter((book) => !!book.rating)
 
 export const createSlug = (book: Book): string => {
   return slugify(`${book.title} ${book.author}`, {
@@ -38,23 +31,4 @@ export const createSlug = (book: Book): string => {
   })
 }
 
-export const findBookBySlug = (slug: string): Book | undefined => {
-  return getAllBooks().find((book) => createSlug(book) === slug)
-}
-
-export const generateBookMetadata = (slug: string) => {
-  const book = findBookBySlug(slug)
-
-  if (!book) throw new Error(`No book found for ${slug}`)
-
-  return {
-    title: book.title,
-    description: book.description,
-  }
-}
-
-export const generateBookParams = () => {
-  return getAllBooks()
-    .filter((book) => !!book.rating)
-    .map((book) => ({ slug: createSlug(book) }))
-}
+export const getBookUrl = (book: Book): string => `/reading/${createSlug(book)}`

@@ -1,6 +1,0 @@
-# This site's own Netlify config. Without it, Netlify falls back to the
-# repo-root netlify.toml, whose redirects point at this site — which would
-# leave it trying to proxy to itself.
-[build]
-  command = "astro build"
-  publish = "dist"

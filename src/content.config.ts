@@ -1,10 +1,8 @@
 import { defineCollection, z } from "astro:content"
 import { glob } from "astro/loaders"
 
-// The posts stay where the Next site keeps them, so there is exactly one copy
-// of the content while both sites are live.
 const blog = defineCollection({
-  loader: glob({ base: "../src/data/blog", pattern: "{en,de}/*.mdx" }),
+  loader: glob({ base: "./src/data/blog", pattern: "{en,de}/*.mdx" }),
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),

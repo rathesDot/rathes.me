@@ -1,11 +1,11 @@
-import type { MetadataRoute } from "next"
+import type { APIRoute } from "astro"
 
 import { SITE_URL } from "@/src/site.config"
 
 import { getAllBlogPosts } from "@/services/blog"
-import { generateBookParams } from "@/services/books"
+import { getBookUrl, getRatedBooks } from "@/services/books"
 
-// Pages whose content has no date behind it. They deliberately omit lastModified
+// Pages whose content has no date behind it. They deliberately omit lastmod
 // rather than reporting the build date: a lastmod that changes on every deploy
 // teaches crawlers to distrust it, which costs recrawls on genuinely edited pages.
 const UNDATED_PAGES = [
@@ -17,8 +17,23 @@ const UNDATED_PAGES = [
   "/links",
 ]
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const posts = getAllBlogPosts()
+type SitemapEntry = {
+  url: string
+  lastModified?: Date
+}
+
+const toUrlElement = ({ url, lastModified }: SitemapEntry): string =>
+  [
+    "<url>",
+    `<loc>${url}</loc>`,
+    ...(lastModified
+      ? [`<lastmod>${lastModified.toISOString()}</lastmod>`]
+      : []),
+    "</url>",
+  ].join("\n")
+
+export const GET: APIRoute = async () => {
+  const posts = (await getAllBlogPosts())
     .flatMap(([, entries]) => entries)
     .filter((post) => !post.external)
 
@@ -28,7 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .map((post) => new Date(post.date))
     .reduce((latest, date) => (date > latest ? date : latest), new Date(0))
 
-  return [
+  const entries: SitemapEntry[] = [
     { url: SITE_URL, lastModified: latestPost },
     { url: `${SITE_URL}/writing`, lastModified: latestPost },
     ...UNDATED_PAGES.map((path) => ({ url: `${SITE_URL}${path}` })),
@@ -36,8 +51,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}${post.link}`,
       lastModified: new Date(post.date),
     })),
-    ...generateBookParams().map(({ slug }) => ({
-      url: `${SITE_URL}/reading/${slug}`,
+    ...getRatedBooks().map((book) => ({
+      url: `${SITE_URL}${getBookUrl(book)}`,
     })),
   ]
+
+  const body = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...entries.map(toUrlElement),
+    "</urlset>",
+    "",
+  ].join("\n")
+
+  return new Response(body, {
+    headers: { "Content-Type": "application/xml" },
+  })
 }

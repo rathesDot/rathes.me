@@ -8,20 +8,19 @@ This is the code base for my website at [rathes.me](https://rathes.me).
 
 ## Features
 
-This website uses [Next.js](https://nextjs.org), an open source framework based on React to build websites and apps. The blog is a bunch of markdown files (stored in `src/data/blog`) that are transformed into pages. Additionally, the blog list is populated with some links to external articles.
+This website uses [Astro](https://astro.build), an open source framework for building content-driven websites. The blog is a bunch of markdown files (stored in `src/data/blog`) that are transformed into pages. Additionally, the blog list is populated with some links to external articles.
 
 For the styling part, this website makes use of [Tailwind CSS](https://tailwindcss.com), a utility-first CSS framework.
 
-## Testing
-
-[Jest](https://jestjs.io/) is used for testing purposes. Run
+## Development
 
 ```sh
-npm test
+pnpm install
+pnpm dev
 ```
 
-to run the tests.
+`pnpm check` runs Astro's type checker over the project, and `pnpm build` produces the static site in `dist/`.
 
 ## Deployment
 
-This site is deployed on [netlify](https://www.netlify.com/), so whenever code is pushed to master in this repository, the changed are deployed continuously.
+This site is deployed on [netlify](https://www.netlify.com/), so whenever code is pushed to `main` in this repository, the changes are deployed continuously. Netlify builds from the repository root; `netlify.toml` holds the build settings and the redirects for URLs the site used to publish.
