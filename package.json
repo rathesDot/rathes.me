@@ -4,60 +4,42 @@
   "description": "This is the website how it is shown on rathes.me",
   "version": "0.1.0",
   "author": "Rathes Sachchithananthan <hello@rathes.me>",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "format": "prettier --write \"src/**/*.{astro,ts,js,css}\""
+  },
   "dependencies": {
-    "@heroicons/react": "^2.2.0",
-    "@mdx-js/mdx": "^3.1.1",
-    "@mdx-js/react": "^3.1.1",
-    "@radix-ui/react-checkbox": "^1.3.11",
-    "@radix-ui/react-collapsible": "^1.1.20",
-    "@radix-ui/react-slot": "^1.3.3",
-    "@tailwindcss/postcss": "^4.3.3",
-    "@types/rss": "^0.0.32",
+    "@astrojs/markdown-remark": "^7.2.4",
+    "@astrojs/mdx": "^7.0.8",
+    "@astrojs/rss": "^4.0.19",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@iconify-json/heroicons": "^1.2.3",
+    "@tailwindcss/vite": "^4.3.3",
+    "astro": "^7.2.4",
+    "astro-icon": "^1.2.0",
     "cva": "^1.0.0-beta.4",
-    "date-fns": "^4.4.0",
-    "fathom-client": "^3.7.2",
-    "gray-matter": "^4.0.3",
-    "next": "16.3.1",
-    "next-mdx-remote": "^6.0.0",
-    "postcss": "^8.5.26",
-    "prism-themes": "^1.9.0",
-    "prismjs": "^1.30.0",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
     "rehype-highlight": "^7.0.2",
-    "remark-gfm": "^4.0.1",
-    "rss": "^1.2.2",
     "sharp": "^0.35.3",
     "slugify": "^1.6.6",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "@types/jest": "^30.0.0",
-    "@types/node": "^22.20.1",
-    "@types/react": "19.2.18",
-    "@types/react-dom": "19.2.4",
-    "eslint": "^9.39.2",
-    "eslint-config-next": "^16.3.1",
-    "jest": "^30.2.0",
-    "jest-environment-jsdom": "^30.2.0",
+    "@astrojs/check": "^0.9.10",
     "prettier": "^3.9.6",
+    "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript": "^6.0.3"
   },
   "keywords": [
-    "nextjs",
+    "astro",
     "rathes"
   ],
   "license": "MIT",
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "format": "prettier --write src/**/*.(tsx|ts|js|jsx|css)",
-    "test": "jest",
-    "lint": "eslint"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/rathesDot/rathes.me"
@@ -65,15 +47,5 @@
   "bugs": {
     "url": "https://github.com/rathesDot/rathes.me/issues"
   },
-  "packageManager": "pnpm@10.11.0",
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.2.18",
-      "@types/react-dom": "19.2.4"
-    },
-    "onlyBuiltDependencies": [
-      "sharp",
-      "unrs-resolver"
-    ]
-  }
+  "packageManager": "pnpm@10.11.0"
 }

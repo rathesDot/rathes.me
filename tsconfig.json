@@ -1,62 +1,15 @@
 {
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "paths": {
-      "@/src/*": [
-        "./src/*"
-      ],
-      "@/styles/*": [
-        "./src/styles/*"
-      ],
-      "@/components/*": [
-        "./src/components/*"
-      ],
-      "@/patterns/*": [
-        "./src/patterns/*"
-      ],
-      "@/services/*": [
-        "./src/services/*"
-      ],
-      "@/assets/*": [
-        "./src/assets/*"
-      ],
-      "@/data/*": [
-        "./src/data/*"
-      ]
-    },
-    "target": "ES2017",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "incremental": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-    "types": ["jest", "node"]
-  },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "astro"
-  ]
+      "@/src/*": ["./src/*"],
+      "@/styles/*": ["./src/styles/*"],
+      "@/components/*": ["./src/components/*"],
+      "@/patterns/*": ["./src/patterns/*"],
+      "@/layouts/*": ["./src/layouts/*"],
+      "@/assets/*": ["./src/assets/*"],
+      "@/services/*": ["./src/services/*"],
+      "@/data/*": ["./src/data/*"]
+    }
+  }
 }

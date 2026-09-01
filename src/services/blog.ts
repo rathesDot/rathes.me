@@ -1,13 +1,13 @@
-import path from "path"
-import fs from "fs"
-import { Metadata } from "next"
-import matter from "gray-matter"
+import { getCollection, type CollectionEntry } from "astro:content"
 
-import { AUTHOR_NAME, SITE_URL, FEED_PATH } from "@/src/site.config"
+import { SITE_URL } from "@/src/site.config"
 
 import externalLinks from "@/data/blog/externalLinks"
 
-type Post = {
+export type Language = "en" | "de"
+export type BlogEntry = CollectionEntry<"blog">
+
+export type Post = {
   title: string
   date: string
   link: string
@@ -15,7 +15,10 @@ type Post = {
   lang?: string
 }
 
-type Language = "en" | "de"
+const languages: Language[] = ["en", "de"]
+
+export const getBlogPostUrl = (lang: Language, slug: string): string =>
+  lang === "en" ? `/blog/${slug}` : `/de/blog/${slug}`
 
 // Frontmatter stores POSIX-style locales (en_US, de_DE); HTML lang needs BCP-47
 export const toBcp47 = (locale: unknown, fallback: string): string =>
@@ -23,224 +26,93 @@ export const toBcp47 = (locale: unknown, fallback: string): string =>
     ? locale.replace(/_/g, "-")
     : fallback
 
-const languages: Language[] = ["en", "de"]
-const getBlogPath = () => path.join(process.cwd(), "./src/data/blog")
+// Collection ids mirror the paths under src/data/blog, so "en/some-slug".
+export const getLanguage = (entry: BlogEntry): Language =>
+  entry.id.split("/")[0] as Language
 
-const getFileFromSlug = (slug: string): string => `${slug}.mdx`
-const getSlugFromFile = (file: string): string => path.basename(file, ".mdx")
+export const getSlug = (entry: BlogEntry): string => entry.id.split("/")[1]
 
-export const getBlogPostUrl = (lang: Language, slug: string): string =>
-  lang === "en" ? `/blog/${slug}` : `/de/blog/${slug}`
-
-const fetchBlogPost = (lang: Language, file: string) => {
-  return fs.readFileSync(path.join(getBlogPath(), `./${lang}/${file}`), "utf-8")
-}
-
-const parseBlogPost = (source: string) => {
-  return matter(source)
-}
-
-const getFrontmatter = async (
-  lang: Language,
-  slug: string
-): Promise<Record<string, unknown>> => {
-  const source = fetchBlogPost(lang, getFileFromSlug(slug))
-  const { data } = parseBlogPost(source)
-
-  return data
-}
-
-export const getBlogPost = (lang: Language, slug: string) => {
-  const source = fetchBlogPost(lang, getFileFromSlug(slug))
-  return parseBlogPost(source)
-}
-
-const getPostsByLang = (lang: Language) =>
-  fs.readdirSync(path.join(getBlogPath(), lang))
+export const getPostsByLanguage = async (
+  language: Language
+): Promise<BlogEntry[]> =>
+  (await getCollection("blog")).filter(
+    (entry) => getLanguage(entry) === language
+  )
 
 // Most posts exist in one language only; hreflang is emitted just for the few
 // that are genuinely published as translations of each other.
-export const getTranslations = (slug: string): Language[] =>
-  languages.filter((language) =>
-    fs.existsSync(path.join(getBlogPath(), language, getFileFromSlug(slug)))
+export const getTranslations = async (slug: string): Promise<Language[]> => {
+  const posts = await getCollection("blog")
+
+  return languages.filter((language) =>
+    posts.some((entry) => entry.id === `${language}/${slug}`)
   )
+}
 
-export const getAllBlogPosts = () => {
-  const posts = languages
-    .map((language: Language) =>
-      getPostsByLang(language).map((entry) => {
-        const source = fetchBlogPost(language, entry)
-        const { data: frontmatter } = matter(source)
+const toPost = (entry: BlogEntry): Post => {
+  const language = getLanguage(entry)
 
-        return {
-          link: getBlogPostUrl(language, getSlugFromFile(entry)),
-          title: frontmatter.title,
-          date: frontmatter.date,
-          external: false,
-          lang: toBcp47(frontmatter.locale, language),
-        }
-      })
-    )
-    .flat()
+  return {
+    link: getBlogPostUrl(language, getSlug(entry)),
+    title: entry.data.title,
+    date: entry.data.date.toISOString(),
+    external: false,
+    lang: toBcp47(entry.data.locale, language),
+  }
+}
+
+export const getAllBlogPosts = async (): Promise<[string, Post[]][]> => {
+  const posts = (await getCollection("blog")).map(toPost)
 
   return getSortedGroups(
     groupPostsByYear([
       ...posts,
-      ...externalLinks.map((p) => ({ ...p, external: true })),
+      ...externalLinks.map((post) => ({ ...post, external: true })),
     ])
   )
 }
 
-export const getLatestBlogposts = (count = 5): Post[] => {
-  const posts = languages
-    .map((language: Language) =>
-      getPostsByLang(language).map((entry) => {
-        const source = fetchBlogPost(language, entry)
-        const { data: frontmatter } = matter(source)
+const byNewestFirst = (a: Post, b: Post) =>
+  Date.parse(a.date) < Date.parse(b.date)
+    ? 1
+    : Date.parse(b.date) < Date.parse(a.date)
+      ? -1
+      : 0
 
-        return {
-          link: getBlogPostUrl(language, getSlugFromFile(entry)),
-          title: frontmatter.title,
-          date: frontmatter.date,
-          external: false,
-          lang: toBcp47(frontmatter.locale, language),
-        }
-      })
-    )
-    .flat()
+export const getLatestBlogposts = async (count = 5): Promise<Post[]> => {
+  const posts = (await getCollection("blog")).map(toPost)
 
-  return [...posts, ...externalLinks.map((p) => ({ ...p, external: true }))]
-    .sort((a, b) =>
-      Date.parse(a.date) < Date.parse(b.date)
-        ? 1
-        : Date.parse(b.date) < Date.parse(a.date)
-          ? -1
-          : 0
-    )
+  return [
+    ...posts,
+    ...externalLinks.map((post) => ({ ...post, external: true })),
+  ]
+    .sort(byNewestFirst)
     .slice(0, count)
 }
 
-export const getBlogPostsForFeed = (): {
-  title: string
-  url: string
-  date: Date
-  description: string
-}[] => {
-  const posts = languages
-    .map((language: Language) =>
-      getPostsByLang(language).map((entry) => {
-        const source = fetchBlogPost(language, entry)
-        const { data: frontmatter } = matter(source)
-
-        return {
-          title: frontmatter.title,
-          url: `${SITE_URL}${getBlogPostUrl(language, getSlugFromFile(entry))}`,
-          date: new Date(frontmatter.date),
-          description: frontmatter.description || "",
-        }
-      })
-    )
-    .flat()
-
-  return posts.sort((a, b) => b.date.getTime() - a.date.getTime())
-}
-
-export const getFilteredBlogPosts = (
-  searchTerm?: string
-): [string, Post[]][] => {
-  const posts = getAllBlogPosts()
-
-  if (!searchTerm || searchTerm === "") return posts
-
-  return posts.map(([year, posts]) => {
-    return [
-      year,
-      posts.filter(
-        (post) =>
-          post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          post.link.toLowerCase().includes(searchTerm.toLowerCase())
-      ),
-    ]
-  })
-}
-
-export const generateBlogMetaData = async (
-  lang: Language,
-  slug: string
-): Promise<Metadata> => {
-  const frontmatter = (await getFrontmatter(lang, slug)) as Record<
-    string,
-    string
-  >
-
-  // Defining openGraph on a route suppresses the site-wide opengraph-image.png
-  // that Next's file convention would otherwise supply, so posts without their
-  // own image fall back to it explicitly.
-  const image = frontmatter.social ||
-    frontmatter.image || { url: "/opengraph-image.png", width: 1600, height: 836 }
-
-  const translations = getTranslations(slug)
-
-  return {
-    title: {
-      absolute: `${frontmatter.title} — rathes.me`,
-    },
-    description: frontmatter.description,
-    // Declaring alternates here replaces the root layout's, so the canonical and
-    // feed links have to be repeated rather than inherited.
-    alternates: {
-      canonical: getBlogPostUrl(lang, slug),
-      types: { "application/rss+xml": FEED_PATH },
-      languages:
-        translations.length > 1
-          ? Object.fromEntries(
-              translations.map((language) => [
-                language,
-                getBlogPostUrl(language, slug),
-              ])
-            )
-          : undefined,
-    },
-    openGraph: {
-      type: "article",
-      locale: frontmatter.locale,
-      images: image,
-      title: frontmatter.title,
-      authors: [AUTHOR_NAME],
-      publishedTime: new Date(frontmatter.date).toISOString(),
-      modifiedTime: frontmatter.updated
-        ? new Date(frontmatter.updated).toISOString()
-        : undefined,
-      url: getBlogPostUrl(lang, slug),
-    },
-  }
-}
-
-export const generateBlogParams = (): { lang: Language; slug: string }[] => {
-  return languages
-    .map((lang: Language) =>
-      getPostsByLang(lang).map((entry) => ({
-        lang,
-        slug: `${path.basename(entry, ".mdx")}`,
-      }))
-    )
-    .flat()
-}
+export const getBlogPostsForFeed = async (): Promise<
+  { title: string; url: string; date: Date; description: string }[]
+> =>
+  (await getCollection("blog"))
+    .map((entry) => ({
+      title: entry.data.title,
+      url: `${SITE_URL}${getBlogPostUrl(getLanguage(entry), getSlug(entry))}`,
+      date: entry.data.date,
+      description: entry.data.description || "",
+    }))
+    .sort((a, b) => b.date.getTime() - a.date.getTime())
 
 export const groupPostsByYear = (posts: Post[]): { [key: number]: Post[] } => {
   return posts
-    .sort((a, b) =>
-      Date.parse(a.date) < Date.parse(b.date)
-        ? 1
-        : Date.parse(b.date) < Date.parse(a.date)
-          ? -1
-          : 0
+    .sort(byNewestFirst)
+    .reduce(
+      (list, post) => {
+        ;(list[new Date(Date.parse(post.date)).getFullYear()] =
+          list[new Date(Date.parse(post.date)).getFullYear()] || []).push(post)
+        return list
+      },
+      {} as { [key: number]: Post[] }
     )
-    .reduce((list, post) => {
-      ;(list[new Date(Date.parse(post.date)).getFullYear()] =
-        list[new Date(Date.parse(post.date)).getFullYear()] || []).push(post)
-      return list
-    }, {} as { [key: number]: Post[] })
 }
 
 export const getSortedGroups = (groups: { [key: number]: Post[] }) => {
