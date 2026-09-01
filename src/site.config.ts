@@ -4,6 +4,10 @@ export const AUTHOR_NAME = "Rathes Sachchithananthan"
 
 export const FEED_PATH = "/writing/feed.xml"
 
+// Pages that don't set their own description inherit this one.
+export const DEFAULT_DESCRIPTION =
+  "I'm a passionate software engineer and maker turning ideas into reality.  I specialize in web development with React and Laravel and can help you with custom solutions for your projects.  Let's discuss your project and see how I can help make it a success!"
+
 // The site-wide sharing image, used by every page that has no cover image of
 // its own. Kept in public/ rather than optimised through astro:assets so its
 // URL stays stable across builds -- social platforms cache what they scraped.
