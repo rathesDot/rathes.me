@@ -55,5 +55,15 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    build: {
+      // The reading/writing search scripts are a few hundred bytes each, well
+      // under Vite's default 4kB inline threshold, so Astro would otherwise
+      // bundle them straight into the page as an inline <script> -- which a
+      // strict CSP script-src can't allow without 'unsafe-inline' or a
+      // content hash that breaks on every minifier-output change. Disabling
+      // the threshold keeps them as external, hashed /_astro/*.js files that
+      // 'self' already covers.
+      assetsInlineLimit: 0,
+    },
   },
 })

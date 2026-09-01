@@ -2,6 +2,19 @@
   command = "pnpm build"
   publish = "dist"
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Every script on the site is either self-hosted (bundled by Astro under
+    # /_astro) or Fathom's analytics beacon -- nothing else needs script-src.
+    # style-src needs 'unsafe-inline' for the single inline @font-face block
+    # Astro's font pipeline emits in <head>; nothing else uses inline styles.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdn.usefathom.com; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self' https://cdn.usefathom.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
 # Every URL the site has ever published that no longer has a page behind it.
 # Netlify applies these only when nothing static matches, and resolves each in
 # a single hop -- no redirect ever points at another redirect's source.
