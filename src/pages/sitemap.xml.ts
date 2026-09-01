@@ -26,7 +26,9 @@ const toUrlElement = ({ url, lastModified }: SitemapEntry): string =>
   [
     "<url>",
     `<loc>${url}</loc>`,
-    ...(lastModified ? [`<lastmod>${lastModified.toISOString()}</lastmod>`] : []),
+    ...(lastModified
+      ? [`<lastmod>${lastModified.toISOString()}</lastmod>`]
+      : []),
     "</url>",
   ].join("\n")
 
@@ -49,7 +51,9 @@ export const GET: APIRoute = async () => {
       url: `${SITE_URL}${post.link}`,
       lastModified: new Date(post.date),
     })),
-    ...getRatedBooks().map((book) => ({ url: `${SITE_URL}${getBookUrl(book)}` })),
+    ...getRatedBooks().map((book) => ({
+      url: `${SITE_URL}${getBookUrl(book)}`,
+    })),
   ]
 
   const body = [
@@ -57,6 +61,7 @@ export const GET: APIRoute = async () => {
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ...entries.map(toUrlElement),
     "</urlset>",
+    "",
   ].join("\n")
 
   return new Response(body, {
