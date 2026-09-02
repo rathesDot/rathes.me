@@ -53,11 +53,6 @@ const canonicalUrl = `${SITE_URL}${path}`
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {
-      /* Inter is self-hosted, so its @font-face rules come inline instead of
-        behind a stylesheet from fonts.googleapis.com, and the one file the
-        family needs is preloaded. */
-    }
     <Font cssVariable="--font-inter" preload />
 
     <title>{documentTitle ?? `${title} — Rathes Sachchithananthan`}</title>
@@ -116,7 +111,6 @@ const canonicalUrl = `${SITE_URL}${path}`
         <meta property="article:modified_time" content={modifiedTime} />
       )
     }
-    {/* Fathom counts pageviews on its own; every navigation is a page load. */}
     <script
       is:inline
       defer
@@ -127,7 +121,6 @@ const canonicalUrl = `${SITE_URL}${path}`
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     {description && <meta name="twitter:description" content={description} />}
-    {/* The same image og:image carries, so a post shares its own cover. */}
     <meta name="twitter:image" content={image.url} />
   </head>
   <body
