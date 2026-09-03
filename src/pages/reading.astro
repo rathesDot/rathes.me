@@ -25,7 +25,7 @@ const summaryStyles = heading({
 
 <Layout title="Reading" description={DESCRIPTION} path="/reading">
   <main class="py-4 lg:py-8">
-    <section class="mx-auto max-w-lg px-4 sm:px-0">
+    <section class="max-w-lg px-4 sm:px-0">
       <Heading as="h1">Reading</Heading>
       <Paragraph>
         Books play an important part in my life. Just sitting on my couch or bed
@@ -42,13 +42,13 @@ const summaryStyles = heading({
       </Paragraph>
     </section>
     <section class="space-y-8 py-8">
-      <div class="mx-auto max-w-lg px-4 sm:px-0">
+      <div class="max-w-lg px-4 sm:px-0">
         <Search placeholder="Book title or Author" />
       </div>
       {
         lists.map(([listTitle, books]) =>
           books.length ? (
-            <div class="mx-auto max-w-lg px-4 sm:px-0" data-book-group>
+            <div class="max-w-lg px-4 sm:px-0" data-book-group>
               <details class="group block" open={listTitle !== "Wishlist"}>
                 <summary class={summaryStyles}>
                   <Icon
