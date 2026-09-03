@@ -1,5 +1,9 @@
 ---
-import BaseLayout, { type Props as BaseLayoutProps } from "@/layouts/BaseLayout.astro"
+import { Icon } from "astro-icon/components"
+
+import BaseLayout, {
+  type Props as BaseLayoutProps,
+} from "@/layouts/BaseLayout.astro"
 import Link from "@/components/Link.astro"
 import Logo from "@/components/Logo.astro"
 import SayHi from "@/patterns/SayHi.astro"
@@ -19,32 +23,57 @@ const navItems = [
 
 <BaseLayout {...props}>
   <nav
-    class="sticky top-0 mt-0 border-b bg-white/70 backdrop-blur-sm dark:border-b-neutral-800 dark:bg-neutral-950/70"
+    id="site-nav"
+    class="group peer ease sticky top-2 z-50 mx-2 max-w-2xl overflow-hidden rounded-2xl border border-neutral-900/5 bg-white/70 backdrop-blur-sm transition-colors data-open:border-transparent data-open:bg-neutral-50 sm:mx-auto md:top-4 dark:border-neutral-800/50 dark:bg-neutral-950/70 dark:data-open:bg-neutral-50/5"
   >
-    <div class="mx-auto max-w-lg px-4 sm:px-0">
-      <ul class="flex items-center justify-between">
-        <li>
-          <a
-            href="/"
-            title="Home"
-            class="block px-1 py-4 text-sm text-neutral-900 antialiased dark:text-neutral-400"
+    <div class="px-1.5">
+      <div class="flex flex-wrap items-center justify-between md:flex-nowrap">
+        <a
+          href="/"
+          title="Home"
+          class="block px-1 py-4 text-sm text-neutral-900 antialiased dark:text-neutral-400"
+        >
+          <Logo class="size-5 text-neutral-900 dark:text-neutral-400" />
+        </a>
+        <button
+          type="button"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Toggle navigation"
+          class="relative -m-1 flex size-9 shrink-0 items-center justify-center rounded-full text-neutral-900 transition-colors hover:bg-black/5 md:hidden dark:text-neutral-400 dark:hover:bg-white/10"
+        >
+          <Icon
+            name="heroicons:bars-3"
+            class="absolute inset-0 m-auto size-5 transition-all duration-200 group-data-open:rotate-90 group-data-open:opacity-0"
+          />
+          <Icon
+            name="heroicons:x-mark"
+            class="absolute inset-0 m-auto size-5 -rotate-90 opacity-0 transition-all duration-200 group-data-open:rotate-0 group-data-open:opacity-100"
+          />
+        </button>
+        <div
+          class="grid w-full grid-rows-[0fr] overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out group-data-open:grid-rows-[1fr] md:w-auto md:grid-rows-[1fr] md:overflow-visible md:transition-none"
+        >
+          <ul
+            id="nav-links"
+            class="flex min-h-0 flex-col md:flex-row md:items-center md:gap-6 md:pb-0"
           >
-            <Logo class="size-5 text-neutral-900 dark:text-neutral-400" />
-          </a>
-        </li>
-        {
-          navItems.map((item) => (
-            <li>
-              <a
-                href={item.href}
-                class="block px-1 py-4 text-sm text-neutral-900 antialiased dark:text-neutral-400"
-              >
-                {item.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
+            {
+              navItems.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="block px-1 py-2 text-xs font-medium text-neutral-600 antialiased transition-colors hover:text-neutral-950 md:py-4 dark:text-neutral-400 dark:hover:text-neutral-100"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -58,4 +87,6 @@ const navItems = [
       >
     </div>
   </footer>
+
+  <script src="../scripts/nav-menu.ts"></script>
 </BaseLayout>
