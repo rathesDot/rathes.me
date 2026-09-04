@@ -25,6 +25,12 @@
 }
 
 @layer components {
+  @media (min-width: 768px) {
+    #nav-links:has(a:hover) a:not(:hover) {
+      opacity: 0.7;
+    }
+  }
+
   @media (prefers-color-scheme: light) {
     .hljs {
       color: #24292e;
