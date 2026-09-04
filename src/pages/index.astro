@@ -138,18 +138,20 @@ const arrowStyles = "size-5 align-middle text-neutral-600 dark:text-neutral-200"
           {
             posts.map((post) => (
               <ListItem>
-                <ListLink href={post.link} lang={post.lang}>
-                  {post.title}
-                  {post.external && (
-                    <>
-                      {" "}
-                      <Icon
-                        name="heroicons:arrow-up-right-16-solid"
-                        class="inline size-4"
-                      />
-                    </>
-                  )}
-                </ListLink>
+                <div class="max-w-[52ch]">
+                  <ListLink href={post.link} lang={post.lang}>
+                    {post.title}
+                    {post.external && (
+                      <>
+                        {" "}
+                        <Icon
+                          name="heroicons:arrow-up-right-16-solid"
+                          class="inline size-4"
+                        />
+                      </>
+                    )}
+                  </ListLink>
+                </div>
               </ListItem>
             ))
           }
@@ -178,8 +180,10 @@ const arrowStyles = "size-5 align-middle text-neutral-600 dark:text-neutral-200"
           {
             books.map((book) => (
               <ListItem>
-                {book.title}
-                <ListSubtitle>by {book.author}</ListSubtitle>
+                <div class="max-w-[52ch]">
+                  {book.title}
+                  <ListSubtitle>by {book.author}</ListSubtitle>
+                </div>
               </ListItem>
             ))
           }
