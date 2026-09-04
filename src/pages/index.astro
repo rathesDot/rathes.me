@@ -17,9 +17,9 @@ import ListSubtitle from "@/components/list/Subtitle.astro"
 import { getLatestBlogposts } from "@/services/blog"
 import { getCurrentlyReading } from "@/services/books"
 
-import RuislipJeep from "@/assets/photos/202411_ruislip_jeep.jpg"
-import Bergen1 from "@/assets/photos/202404_Bergen_1.jpg"
-import Iceland2 from "@/assets/photos/202402_iceland_2.jpg"
+import CoaldropYards1 from "@/assets/photos/202509_coaldrop_yards_1.jpg"
+import CoaldropYards2 from "@/assets/photos/202509_coaldrop_yards_2.jpg"
+import CoaldropYards3 from "@/assets/photos/202509_coaldrop_yards_3.jpg"
 import Paragraph from "../components/Paragraph.astro"
 
 const posts = await getLatestBlogposts()
@@ -215,16 +215,24 @@ const arrowStyles = "size-5 align-middle text-neutral-600 dark:text-neutral-200"
         <div class="flex flex-nowrap items-start gap-1 overflow-x-auto pb-2">
           <div class="flex-none">
             <Image
-              src={RuislipJeep}
+              src={CoaldropYards1}
               width={210}
-              alt="An old SUV on an autumn covered street"
+              alt="Front of a black vintage Oldsmobile Cutlass parked against a brick wall"
             />
           </div>
           <div class="flex-none">
-            <Image src={Bergen1} width={210} alt="View of Bergen from above" />
+            <Image
+              src={CoaldropYards2}
+              width={210}
+              alt="Front of a black vintage car at a street market, with shoppers browsing stalls behind it"
+            />
           </div>
           <div class="flex-none">
-            <Image src={Iceland2} width={210} alt="Van parked in snow" />
+            <Image
+              src={CoaldropYards3}
+              width={210}
+              alt="A teal Datsun 260Z parked outside a restaurant at dusk"
+            />
           </div>
         </div>
       </div>
