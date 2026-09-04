@@ -25,7 +25,8 @@ import Paragraph from "../components/Paragraph.astro"
 const posts = await getLatestBlogposts()
 const books = getCurrentlyReading()
 
-const cardStyles = "flex items-center justify-between"
+const cardStyles =
+  "flex items-center justify-between hover:bg-neutral-100 hover:border-neutral-100 dark:hover:bg-neutral-900/70 dark:hover:border-neutral-900/70 transition-colors"
 const arrowStyles = "size-5 align-middle text-neutral-600 dark:text-neutral-200"
 ---
 
@@ -57,11 +58,16 @@ const arrowStyles = "size-5 align-middle text-neutral-600 dark:text-neutral-200"
       </Paragraph>
     </section>
 
-    <section class="mx-auto max-w-lg p-4 sm:px-0">
-      <header class="mb-2 flex items-center justify-between">
+    <section class="p-4 sm:px-0">
+      <header class="mb-2 flex items-center">
         <Heading as="h2" level="small">Current projects</Heading>
+        <span class="px-2">&middot;</span>
         <Link
-          class={heading({ level: "small" })}
+          class={heading({
+            level: "small",
+            class:
+              "text-neutral-400 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-100 transition-colors duration-300",
+          })}
           href="/work"
           underlined={false}
         >
