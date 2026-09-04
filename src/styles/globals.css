@@ -31,7 +31,7 @@
     }
 
     .home-blog-list:has(a:hover) a:not(:hover) {
-      opacity: 0.7;
+      opacity: 0.4;
     }
   }
 
