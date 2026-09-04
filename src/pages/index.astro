@@ -134,12 +134,16 @@ const arrowStyles = "size-5 align-middle text-neutral-600 dark:text-neutral-200"
         </Link>
       </header>
       <ListRoot>
-        <ListContainer>
+        <ListContainer class="home-blog-list">
           {
             posts.map((post) => (
               <ListItem>
                 <div class="max-w-[52ch]">
-                  <ListLink href={post.link} lang={post.lang}>
+                  <ListLink
+                    href={post.link}
+                    lang={post.lang}
+                    class="transition-opacity duration-200"
+                  >
                     {post.title}
                     {post.external && (
                       <>

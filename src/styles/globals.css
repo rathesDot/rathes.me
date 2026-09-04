@@ -29,6 +29,10 @@
     #nav-links:has(a:hover) a:not(:hover) {
       opacity: 0.7;
     }
+
+    .home-blog-list:has(a:hover) a:not(:hover) {
+      opacity: 0.7;
+    }
   }
 
   @media (prefers-color-scheme: light) {
