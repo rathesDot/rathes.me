@@ -195,21 +195,24 @@ const arrowStyles = "size-5 align-middle text-neutral-600 dark:text-neutral-200"
       </ListRoot>
     </section>
 
-    <section class="mx-auto max-w-[662px] p-4 sm:px-0">
-      <header class="mx-auto mb-3 flex max-w-lg items-center justify-between">
+    <section class="p-4 sm:px-0">
+      <header class="mb-3 flex items-center">
         <Heading as="h2" level="small">Latest shots</Heading>
+        <span class="px-2">&middot;</span>
         <Link
-          class={heading({ level: "small" })}
+          class={heading({
+            level: "small",
+            class:
+              "text-neutral-400 hover:text-neutral-600 dark:text-neutral-400 dark:hover:text-neutral-100 transition-colors duration-300",
+          })}
           href="/photography"
           underlined={false}
         >
           All photos
         </Link>
       </header>
-      <div class="-mr-4">
-        <div
-          class="flex flex-nowrap items-start gap-4 overflow-x-auto pr-4 pb-2"
-        >
+      <div>
+        <div class="flex flex-nowrap items-start gap-1 overflow-x-auto pb-2">
           <div class="flex-none">
             <Image
               src={RuislipJeep}
