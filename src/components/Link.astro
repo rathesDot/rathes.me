@@ -1,6 +1,8 @@
 ---
 import { cva, type VariantProps } from "@/src/cva.config"
 
+import { getBlogImage } from "@/services/blogImages"
+
 export const link = cva({
   base: "text-current antialiased transition-colors dark:text-neutral-300 dark:hover:text-white",
   variants: {
@@ -24,7 +26,12 @@ type Props = VariantProps<typeof link> & {
   "aria-label"?: string
 }
 
-const { underlined, class: className, ...props } = Astro.props
+const { underlined, class: className, href, ...props } = Astro.props
+
+// Posts sometimes link to a blog image directly by its old public path.
+const resolvedHref = getBlogImage(href)?.src ?? href
 ---
 
-<a class={link({ underlined, className })} {...props}><slot /></a>
+<a class={link({ underlined, className })} href={resolvedHref} {...props}>
+  <slot />
+</a>
