@@ -1,0 +1,42 @@
+---
+import type { ImageMetadata } from "astro"
+import { Image } from "astro:assets"
+
+import Heading, { heading } from "@/components/Heading.astro"
+import Link from "@/components/Link.astro"
+import Paragraph from "@/components/Paragraph.astro"
+
+type Props = {
+  title: string
+  description: string
+  href: string
+  image?: ImageMetadata
+  imageAlt?: string
+}
+
+const { title, description, href, image, imageAlt = "" } = Astro.props
+---
+
+<div>
+  <div
+    class="aspect-7/5 overflow-hidden rounded-md bg-neutral-100 dark:bg-neutral-900"
+  >
+    {
+      image && (
+        <Image src={image} alt={imageAlt} class="size-full object-cover" />
+      )
+    }
+  </div>
+  <Heading as="h2" level="small" class="mt-3">
+    {title}
+  </Heading>
+  <Paragraph class="mt-1">{description}</Paragraph>
+  <Link
+    href={href}
+    target="_blank"
+    underlined={false}
+    class={heading({ level: "small", class: "mt-1 inline-block" })}
+  >
+    Visit page
+  </Link>
+</div>
