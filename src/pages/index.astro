@@ -27,7 +27,6 @@ const books = getCurrentlyReading()
 
 const cardStyles =
   "flex items-center justify-between hover:bg-neutral-100 hover:border-neutral-100 dark:hover:bg-neutral-900/70 dark:hover:border-neutral-900/70 transition-colors"
-const arrowStyles = "size-5 align-middle text-neutral-600 dark:text-neutral-200"
 ---
 
 <Layout
@@ -81,11 +80,7 @@ const arrowStyles = "size-5 align-middle text-neutral-600 dark:text-neutral-200"
             target="_blank"
             class={cardStyles}
           >
-            Aisle Zero{" "}
-            <Icon
-              name="heroicons:arrow-up-right-16-solid"
-              class={arrowStyles}
-            />
+            Aisle Zero
           </Card>
         </li>
         <li>
@@ -95,10 +90,6 @@ const arrowStyles = "size-5 align-middle text-neutral-600 dark:text-neutral-200"
             class={cardStyles}
           >
             Learn Tamil Online
-            <Icon
-              name="heroicons:arrow-up-right-16-solid"
-              class={arrowStyles}
-            />
           </Card>
         </li>
         <li>
@@ -108,10 +99,6 @@ const arrowStyles = "size-5 align-middle text-neutral-600 dark:text-neutral-200"
             class={cardStyles}
           >
             Offset
-            <Icon
-              name="heroicons:arrow-up-right-16-solid"
-              class={arrowStyles}
-            />
           </Card>
         </li>
       </ul>

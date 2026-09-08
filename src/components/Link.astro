@@ -1,5 +1,7 @@
 ---
-import { cva, type VariantProps } from "@/src/cva.config"
+import { Icon } from "astro-icon/components"
+
+import { cva, cx, type VariantProps } from "@/src/cva.config"
 
 import { getBlogImage } from "@/services/blogImages"
 
@@ -26,12 +28,33 @@ type Props = VariantProps<typeof link> & {
   "aria-label"?: string
 }
 
-const { underlined, class: className, href, ...props } = Astro.props
+const { underlined, class: className, href, target, ...props } = Astro.props
 
 // Posts sometimes link to a blog image directly by its old public path.
 const resolvedHref = getBlogImage(href)?.src ?? href
+const isExternal = target === "_blank"
+const isUnderlined = underlined ?? true
 ---
 
-<a class={link({ underlined, className })} href={resolvedHref} {...props}>
+<a
+  class={link({
+    underlined,
+    className: cx(className, isExternal && "whitespace-nowrap"),
+  })}
+  href={resolvedHref}
+  target={target}
+  {...props}
+>
   <slot />
+  {
+    isExternal && (
+      <Icon
+        name="heroicons:arrow-up-right-16-solid"
+        class={cx(
+          "ml-1 inline size-[0.95em] align-middle opacity-60",
+          isUnderlined && "underline"
+        )}
+      />
+    )
+  }
 </a>

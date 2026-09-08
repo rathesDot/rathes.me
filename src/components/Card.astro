@@ -1,4 +1,6 @@
 ---
+import { Icon } from "astro-icon/components"
+
 import { cx } from "@/src/cva.config"
 
 type Props = {
@@ -9,10 +11,22 @@ type Props = {
 
 const { href, target, class: className } = Astro.props
 const Tag = href ? "a" : "div"
+const isExternal = target === "_blank"
 const classes = cx(
   "rounded-md border border-neutral-200 bg-neutral-50 px-4 py-3.5 text-neutral-900 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-100",
-  className
+  className,
+  isExternal && "whitespace-nowrap"
 )
 ---
 
-<Tag href={href} target={target} class={classes}><slot /></Tag>
+<Tag href={href} target={target} class={classes}>
+  <slot />
+  {
+    isExternal && (
+      <Icon
+        name="heroicons:arrow-up-right-16-solid"
+        class="ml-1 inline size-[0.95em] align-middle opacity-60"
+      />
+    )
+  }
+</Tag>
