@@ -98,7 +98,7 @@ const machineDate = data.date.toISOString().slice(0, 10)
         path,
       }}
     />
-    <header class="mx-auto mb-4 max-w-lg space-y-1 px-4 sm:px-0">
+    <header class="mb-4 max-w-[52ch] space-y-1">
       <Heading as="h1" class="mb-1">{data.title}</Heading>
       <div class="flex items-center gap-2">
         <time
@@ -113,7 +113,7 @@ const machineDate = data.date.toISOString().slice(0, 10)
     </header>
     {
       cover && (
-        <figure class="mx-auto my-4 max-w-lg sm:px-0">
+        <figure class="my-4">
           <div class="relative aspect-3/2">
             <Image
               src={cover}
@@ -129,7 +129,7 @@ const machineDate = data.date.toISOString().slice(0, 10)
         </figure>
       )
     }
-    <article class="mx-auto max-w-lg px-4 sm:px-0">
+    <article class="max-w-[52ch]">
       <Content components={components} />
     </article>
   </main>
