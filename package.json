@@ -23,7 +23,7 @@
     "astro-icon": "^1.2.0",
     "cva": "^1.0.0-beta.4",
     "rehype-highlight": "^7.0.2",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.4",
     "slugify": "^1.6.6",
     "tailwind-merge": "^3.4.0",
     "tailwindcss": "^4.3.3"
