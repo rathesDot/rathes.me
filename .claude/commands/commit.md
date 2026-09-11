@@ -53,6 +53,8 @@ Working tree status:
       - 💡 Comments
       - 🎉 Initial commit
       - 🍱 Assets
+      - 📖 Add a currently-reading book
+      - 📚 Update reading lists (finished/wishlist books)
       - 🗃️ Database/model changes
       - 📱 Responsive/mobile
       - 🩹 Simple fix
