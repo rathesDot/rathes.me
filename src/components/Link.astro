@@ -46,16 +46,14 @@ const isUnderlined = underlined ?? true
   {...props}
 >
   <slot />
-  {
-    isExternal && (
-      <Icon
-        name="heroicons:arrow-up-right-16-solid"
-        aria-hidden="true"
-        class={cx(
-          "inline size-[0.95em] align-middle opacity-40",
-          isUnderlined && "underline"
-        )}
-      />
-    )
-  }
+  {isExternal && (
+    <Icon
+      name="heroicons:arrow-up-right-16-solid"
+      aria-hidden="true"
+      class={cx(
+        "inline size-[0.95em] align-middle opacity-40",
+        isUnderlined && "underline"
+      )}
+    />
+  )}
 </a>

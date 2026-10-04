@@ -28,11 +28,9 @@ const { image, title, caption, mode = "portrait" } = Astro.props as Props
 
 <figure class={container({ mode })}>
   <Image src={image} alt={title} />
-  {
-    caption && (
-      <figcaption class="px-4 text-xs text-neutral-500 dark:text-neutral-400">
-        {caption}
-      </figcaption>
-    )
-  }
+  {caption && (
+    <figcaption class="px-4 text-xs text-neutral-500 dark:text-neutral-400">
+      {caption}
+    </figcaption>
+  )}
 </figure>

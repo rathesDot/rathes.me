@@ -80,12 +80,14 @@ const machineDate = data.date.toISOString().slice(0, 10)
   publishedTime={data.date.toISOString()}
   modifiedTime={data.updated?.toISOString()}
   image={social && { url: `${SITE_URL}${social.src}` }}
-  translations={translations.length > 1
-    ? translations.map((translation) => ({
-        language: translation,
-        path: getBlogPostUrl(translation, slug),
-      }))
-    : []}
+  translations={
+    translations.length > 1
+      ? translations.map((translation) => ({
+          language: translation,
+          path: getBlogPostUrl(translation, slug),
+        }))
+      : []
+  }
 >
   <main lang={postLang} class="py-4 lg:py-8">
     <BlogPostingSchema
@@ -100,7 +102,9 @@ const machineDate = data.date.toISOString().slice(0, 10)
       }}
     />
     <header class="mb-4 max-w-[52ch] space-y-1">
-      <Heading as="h1" class="mb-1">{data.title}</Heading>
+      <Heading as="h1" class="mb-1">
+        {data.title}
+      </Heading>
       <div class="flex items-center gap-2">
         <time
           class="text-sm text-neutral-500 antialiased"
@@ -112,24 +116,22 @@ const machineDate = data.date.toISOString().slice(0, 10)
         <span class="text-sm text-neutral-500 antialiased">{AUTHOR_NAME}</span>
       </div>
     </header>
-    {
-      cover && (
-        <figure class="my-4">
-          <div class="relative aspect-3/2">
-            <Image
-              src={cover}
-              width={coverWidth}
-              loading="eager"
-              alt={data.title}
-              class="absolute inset-0 size-full object-cover object-center"
-            />
-          </div>
-          {data.imageCaption && (
-            <figcaption class={caption()}>{data.imageCaption}</figcaption>
-          )}
-        </figure>
-      )
-    }
+    {cover && (
+      <figure class="my-4">
+        <div class="relative aspect-3/2">
+          <Image
+            src={cover}
+            width={coverWidth}
+            loading="eager"
+            alt={data.title}
+            class="absolute inset-0 size-full object-cover object-center"
+          />
+        </div>
+        {data.imageCaption && (
+          <figcaption class={caption()}>{data.imageCaption}</figcaption>
+        )}
+      </figure>
+    )}
     <article class="max-w-[65ch]">
       <Content components={components} />
     </article>

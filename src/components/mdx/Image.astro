@@ -18,16 +18,14 @@ const asset = getBlogImage(typeof src === "string" ? src : undefined)
 const width = asset && Math.min(500, asset.width)
 ---
 
-{
-  asset ? (
-    <Image
-      src={asset}
-      alt={alt}
-      width={width}
-      class={styles({ className })}
-      {...props}
-    />
-  ) : (
-    <img src={src} alt={alt} class={styles({ className })} {...props} />
-  )
-}
+{asset ? (
+  <Image
+    src={asset}
+    alt={alt}
+    width={width}
+    class={styles({ className })}
+    {...props}
+  />
+) : (
+  <img src={src} alt={alt} class={styles({ className })} {...props} />
+)}

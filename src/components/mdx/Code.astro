@@ -18,4 +18,6 @@ const styles = cva({
 const { class: className, ...props } = Astro.props
 ---
 
-<code class={styles({ codeblock: className !== "" })} {...props}><slot /></code>
+<code class={styles({ codeblock: className !== "" })} {...props}>
+  <slot />
+</code>

@@ -10,5 +10,7 @@ const { title } = Astro.props
 
 <ListRoot>
   {title && <ListTitle>{title}</ListTitle>}
-  <ListContainer class="my-8 space-y-4"><slot /></ListContainer>
+  <ListContainer class="my-8 space-y-4">
+    <slot />
+  </ListContainer>
 </ListRoot>

@@ -45,32 +45,30 @@ const summaryStyles = heading({
       <div class="max-w-lg px-4 sm:px-0">
         <Search placeholder="Book title or Author" />
       </div>
-      {
-        lists.map(([listTitle, books]) =>
-          books.length ? (
-            <div class="max-w-lg px-4 sm:px-0" data-book-group>
-              <details class="group block" open={listTitle !== "Wishlist"}>
-                <summary class={summaryStyles}>
-                  <Icon
-                    name="heroicons:chevron-right-16-solid"
-                    class="size-4 group-open:hidden"
-                  />
-                  <Icon
-                    name="heroicons:chevron-down-16-solid"
-                    class="hidden size-4 group-open:block"
-                  />
-                  {listTitle}
-                </summary>
-                <ListContainer class="mt-3 space-y-3 pl-5">
-                  {books.map((book) => (
-                    <BookListItem book={book} />
-                  ))}
-                </ListContainer>
-              </details>
-            </div>
-          ) : null
-        )
-      }
+      {lists.map(([listTitle, books]) =>
+        books.length ? (
+          <div class="max-w-lg px-4 sm:px-0" data-book-group>
+            <details class="group block" open={listTitle !== "Wishlist"}>
+              <summary class={summaryStyles}>
+                <Icon
+                  name="heroicons:chevron-right-16-solid"
+                  class="size-4 group-open:hidden"
+                />
+                <Icon
+                  name="heroicons:chevron-down-16-solid"
+                  class="hidden size-4 group-open:block"
+                />
+                {listTitle}
+              </summary>
+              <ListContainer class="mt-3 space-y-3 pl-5">
+                {books.map((book) => (
+                  <BookListItem book={book} />
+                ))}
+              </ListContainer>
+            </details>
+          </div>
+        ) : null
+      )}
     </section>
   </main>
 </Layout>

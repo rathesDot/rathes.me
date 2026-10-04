@@ -42,15 +42,18 @@ const cardStyles =
         <span class="block text-neutral-400">Engineer, Maker & Founder.</span>
       </Heading>
       <Paragraph>
-        I live with my wonderful wife and son in <Link
-          href="https://maps.app.goo.gl/EtXN9kDEX3PuJy9P8"
-          >a small town in Germany</Link
-        >. Interested in fitness, languages, books & cooking.
+        I live with my wonderful wife and son in{" "}
+        <Link href="https://maps.app.goo.gl/EtXN9kDEX3PuJy9P8">
+          a small town in Germany
+        </Link>
+        . Interested in fitness, languages, books & cooking.
       </Paragraph>
       <Paragraph>
         Currently, I work as a senior software engineer at{" "}
-        <Link href="https://www.buffer.com/" target="_blank">Buffer</Link> building
-        tools to help small businesses get off the ground and grow.
+        <Link href="https://www.buffer.com/" target="_blank">
+          Buffer
+        </Link>{" "}
+        building tools to help small businesses get off the ground and grow.
       </Paragraph>
       <Paragraph>
         Follow me on <Link href="/links">Blueksy, Instagram and more</Link>.
@@ -59,7 +62,9 @@ const cardStyles =
 
     <section class="py-4">
       <header class="mb-2 flex items-center">
-        <Heading as="h2" level="small">Current projects</Heading>
+        <Heading as="h2" level="small">
+          Current projects
+        </Heading>
         <span class="px-2">&middot;</span>
         <Link
           class={heading({
@@ -106,7 +111,9 @@ const cardStyles =
 
     <section class="py-4">
       <header class="mb-3 flex items-center">
-        <Heading as="h2" level="small">Latest blog posts</Heading>
+        <Heading as="h2" level="small">
+          Latest blog posts
+        </Heading>
         <span class="px-2">&middot;</span>
         <Link
           class={heading({
@@ -122,37 +129,37 @@ const cardStyles =
       </header>
       <ListRoot>
         <ListContainer class="home-blog-list">
-          {
-            posts.map((post) => (
-              <ListItem>
-                <div class="max-w-[52ch]">
-                  <ListLink
-                    href={post.link}
-                    lang={post.lang}
-                    class="transition-opacity duration-200"
-                  >
-                    {post.title}
-                    {post.external && (
-                      <>
-                        {" "}
-                        <Icon
-                          name="heroicons:arrow-up-right-16-solid"
-                          class="inline size-4"
-                        />
-                      </>
-                    )}
-                  </ListLink>
-                </div>
-              </ListItem>
-            ))
-          }
+          {posts.map((post) => (
+            <ListItem>
+              <div class="max-w-[52ch]">
+                <ListLink
+                  href={post.link}
+                  lang={post.lang}
+                  class="transition-opacity duration-200"
+                >
+                  {post.title}
+                  {post.external && (
+                    <>
+                      {" "}
+                      <Icon
+                        name="heroicons:arrow-up-right-16-solid"
+                        class="inline size-4"
+                      />
+                    </>
+                  )}
+                </ListLink>
+              </div>
+            </ListItem>
+          ))}
         </ListContainer>
       </ListRoot>
     </section>
 
     <section class="py-4">
       <header class="mb-3 flex items-center">
-        <Heading as="h2" level="small">Currently reading</Heading>
+        <Heading as="h2" level="small">
+          Currently reading
+        </Heading>
         <span class="px-2">&middot;</span>
         <Link
           class={heading({
@@ -168,23 +175,23 @@ const cardStyles =
       </header>
       <ListRoot>
         <ListContainer class="space-y-3">
-          {
-            books.map((book) => (
-              <ListItem>
-                <div class="max-w-[52ch]">
-                  {book.title}
-                  <ListSubtitle>by {book.author}</ListSubtitle>
-                </div>
-              </ListItem>
-            ))
-          }
+          {books.map((book) => (
+            <ListItem>
+              <div class="max-w-[52ch]">
+                {book.title}
+                <ListSubtitle>by {book.author}</ListSubtitle>
+              </div>
+            </ListItem>
+          ))}
         </ListContainer>
       </ListRoot>
     </section>
 
     <section class="py-4">
       <header class="mb-3 flex items-center">
-        <Heading as="h2" level="small">Latest shots</Heading>
+        <Heading as="h2" level="small">
+          Latest shots
+        </Heading>
         <span class="px-2">&middot;</span>
         <Link
           class={heading({

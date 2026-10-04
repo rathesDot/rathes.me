@@ -15,4 +15,6 @@ type Props = VariantProps<typeof styles> & { class?: string }
 const { class: className, fontFamily, ...props } = Astro.props
 ---
 
-<div class={styles({ fontFamily, className })} {...props}><slot /></div>
+<div class={styles({ fontFamily, className })} {...props}>
+  <slot />
+</div>

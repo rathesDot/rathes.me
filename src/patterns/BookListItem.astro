@@ -17,23 +17,21 @@ const rated = !!book.rating
 ---
 
 <ListItem data-book={`${book.title} ${book.author}`.toLowerCase()}>
-  {
-    rated ? (
-      <a href={getBookUrl(book)}>
+  {rated ? (
+    <a href={getBookUrl(book)}>
+      {book.title}
+      <ListSubtitle>by {book.author}</ListSubtitle>
+    </a>
+  ) : (
+    <a class="block w-full text-left" href={book.url}>
+      <span class="flex items-center gap-1">
         {book.title}
-        <ListSubtitle>by {book.author}</ListSubtitle>
-      </a>
-    ) : (
-      <a class="block w-full text-left" href={book.url}>
-        <span class="flex items-center gap-1">
-          {book.title}
-          <Icon
-            name="heroicons:arrow-up-right-16-solid"
-            class="hidden size-5 text-neutral-400 sm:inline"
-          />
-        </span>
-        <ListSubtitle>by {book.author}</ListSubtitle>
-      </a>
-    )
-  }
+        <Icon
+          name="heroicons:arrow-up-right-16-solid"
+          class="hidden size-5 text-neutral-400 sm:inline"
+        />
+      </span>
+      <ListSubtitle>by {book.author}</ListSubtitle>
+    </a>
+  )}
 </ListItem>

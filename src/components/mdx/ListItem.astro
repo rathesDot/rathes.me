@@ -9,17 +9,15 @@ const { link, subtitle } = Astro.props
 ---
 
 <ListEntry>
-  {
-    link ? (
-      <ListLink href={link}>
-        <slot />
-        {subtitle && <ListSubtitle>{subtitle}</ListSubtitle>}
-      </ListLink>
-    ) : (
-      <>
-        <slot />
-        {subtitle && <ListSubtitle>{subtitle}</ListSubtitle>}
-      </>
-    )
-  }
+  {link ? (
+    <ListLink href={link}>
+      <slot />
+      {subtitle && <ListSubtitle>{subtitle}</ListSubtitle>}
+    </ListLink>
+  ) : (
+    <>
+      <slot />
+      {subtitle && <ListSubtitle>{subtitle}</ListSubtitle>}
+    </>
+  )}
 </ListEntry>

@@ -73,21 +73,21 @@ const projects = [
       <Paragraph>
         By day, I'm a Senior Software Engineer at Buffer. After hours, I'm
         building out{" "}
-        <Link href="https://aheenam.com" target="_blank">Aheenam</Link>, a
-        studio for the ideas I can't leave alone — the projects below are what I
-        am currently working on or what landed.
+        <Link href="https://aheenam.com" target="_blank">
+          Aheenam
+        </Link>
+        , a studio for the ideas I can't leave alone — the projects below are
+        what I am currently working on or what landed.
       </Paragraph>
     </section>
 
     <section>
       <ul class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2">
-        {
-          projects.map((project) => (
-            <li>
-              <ProjectCard {...project} />
-            </li>
-          ))
-        }
+        {projects.map((project) => (
+          <li>
+            <ProjectCard {...project} />
+          </li>
+        ))}
       </ul>
     </section>
   </main>

@@ -18,14 +18,10 @@ const { title, description, href, image, imageAlt = "" } = Astro.props
 ---
 
 <div>
-  <div
-    class="aspect-7/5 overflow-hidden rounded-md bg-neutral-100 dark:bg-neutral-900"
-  >
-    {
-      image && (
-        <Image src={image} alt={imageAlt} class="size-full object-cover" />
-      )
-    }
+  <div class="aspect-7/5 overflow-hidden rounded-md bg-neutral-100 dark:bg-neutral-900">
+    {image && (
+      <Image src={image} alt={imageAlt} class="size-full object-cover" />
+    )}
   </div>
   <Heading as="h2" level="small" class="mt-3">
     {title}

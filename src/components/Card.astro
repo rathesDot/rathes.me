@@ -21,13 +21,11 @@ const classes = cx(
 
 <Tag href={href} target={target} class={classes}>
   <slot />
-  {
-    isExternal && (
-      <Icon
-        name="heroicons:arrow-up-right-16-solid"
-        aria-hidden="true"
-        class="inline size-[0.95em] align-middle opacity-40"
-      />
-    )
-  }
+  {isExternal && (
+    <Icon
+      name="heroicons:arrow-up-right-16-solid"
+      aria-hidden="true"
+      class="inline size-[0.95em] align-middle opacity-40"
+    />
+  )}
 </Tag>

@@ -6,4 +6,6 @@ const styles = cva({ base: "antialiased [&_p]:mb-0" })
 const { class: className, ...props } = Astro.props
 ---
 
-<li class={styles({ className })} {...props}><slot /></li>
+<li class={styles({ className })} {...props}>
+  <slot />
+</li>
