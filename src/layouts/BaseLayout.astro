@@ -21,6 +21,7 @@ export type Props = {
   path: string
   type?: "website" | "article"
   locale?: string
+  lang?: string
   image?: { url: string; width?: number; height?: number }
   publishedTime?: string
   modifiedTime?: string
@@ -36,6 +37,7 @@ const {
   path,
   type = "website",
   locale,
+  lang = "en",
   image = DEFAULT_SOCIAL_IMAGE,
   publishedTime,
   modifiedTime,
@@ -49,7 +51,7 @@ const description =
 const canonicalUrl = `${SITE_URL}${path}`
 ---
 
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
