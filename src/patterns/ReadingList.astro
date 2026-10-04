@@ -27,15 +27,13 @@ const items = (books as Record<string, Book[]>)[listKey] ?? []
 <ListRoot>
   {title && <ListTitle>{title}</ListTitle>}
   <ListContainer class="my-8 space-y-4">
-    {
-      items.map((book) => (
-        <ListEntry>
-          <ListLink href={book.url}>
-            {book.title}
-            <ListSubtitle>by {book.author}</ListSubtitle>
-          </ListLink>
-        </ListEntry>
-      ))
-    }
+    {items.map((book) => (
+      <ListEntry>
+        <ListLink href={book.url}>
+          {book.title}
+          <ListSubtitle>by {book.author}</ListSubtitle>
+        </ListLink>
+      </ListEntry>
+    ))}
   </ListContainer>
 </ListRoot>

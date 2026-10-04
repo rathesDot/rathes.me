@@ -67,9 +67,7 @@ const summaryStyles = heading({
             </summary>
             <ListContainer class="mt-3 space-y-2 pl-5">
               <ListEntry>
-                <ListLink
-                  href="https://learn-tamil.com/books/guide-to-basic-tamil-grammar"
-                >
+                <ListLink href="https://learn-tamil.com/books/guide-to-basic-tamil-grammar">
                   A Guide To Basic Tamil Grammar
                 </ListLink>
               </ListEntry>
@@ -81,50 +79,48 @@ const summaryStyles = heading({
         </ListRoot>
       </div>
 
-      {
-        groups.map(([year, posts]) =>
-          posts.length ? (
-            <div class="max-w-lg px-4 sm:px-0" data-post-group>
-              <ListRoot>
-                <details class="group block" open>
-                  <summary class={summaryStyles}>
-                    <Icon
-                      name="heroicons:chevron-right-16-solid"
-                      class="size-4 group-open:hidden"
-                    />
-                    <Icon
-                      name="heroicons:chevron-down-16-solid"
-                      class="hidden size-4 group-open:block"
-                    />
-                    {year}
-                  </summary>
-                  <ListContainer class="mt-3 space-y-2 pl-5">
-                    {posts.map((post) => (
-                      <ListEntry
-                        data-post={`${post.title} ${post.link}`.toLowerCase()}
+      {groups.map(([year, posts]) =>
+        posts.length ? (
+          <div class="max-w-lg px-4 sm:px-0" data-post-group>
+            <ListRoot>
+              <details class="group block" open>
+                <summary class={summaryStyles}>
+                  <Icon
+                    name="heroicons:chevron-right-16-solid"
+                    class="size-4 group-open:hidden"
+                  />
+                  <Icon
+                    name="heroicons:chevron-down-16-solid"
+                    class="hidden size-4 group-open:block"
+                  />
+                  {year}
+                </summary>
+                <ListContainer class="mt-3 space-y-2 pl-5">
+                  {posts.map((post) => (
+                    <ListEntry
+                      data-post={`${post.title} ${post.link}`.toLowerCase()}
+                    >
+                      <ListLink
+                        href={post.link}
+                        lang={post.lang}
+                        class="flex items-center gap-1"
                       >
-                        <ListLink
-                          href={post.link}
-                          lang={post.lang}
-                          class="flex items-center gap-1"
-                        >
-                          {post.title}
-                          {post.external && (
-                            <Icon
-                              name="heroicons:arrow-up-right-16-solid"
-                              class="inline size-5 text-neutral-400"
-                            />
-                          )}
-                        </ListLink>
-                      </ListEntry>
-                    ))}
-                  </ListContainer>
-                </details>
-              </ListRoot>
-            </div>
-          ) : null
-        )
-      }
+                        {post.title}
+                        {post.external && (
+                          <Icon
+                            name="heroicons:arrow-up-right-16-solid"
+                            class="inline size-5 text-neutral-400"
+                          />
+                        )}
+                      </ListLink>
+                    </ListEntry>
+                  ))}
+                </ListContainer>
+              </details>
+            </ListRoot>
+          </div>
+        ) : null
+      )}
     </section>
   </main>
 </Layout>

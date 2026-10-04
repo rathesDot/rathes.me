@@ -8,4 +8,6 @@ const styles = cva({
 const { class: className, ...props } = Astro.props
 ---
 
-<del class={styles({ className })} {...props}><slot /></del>
+<del class={styles({ className })} {...props}>
+  <slot />
+</del>

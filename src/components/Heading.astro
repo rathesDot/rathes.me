@@ -22,4 +22,6 @@ type Props = VariantProps<typeof heading> & {
 const { as: Tag, level = Tag, class: className, ...props } = Astro.props
 ---
 
-<Tag class={heading({ level, className })} {...props}><slot /></Tag>
+<Tag class={heading({ level, className })} {...props}>
+  <slot />
+</Tag>

@@ -1,10 +1,5 @@
 ---
-import {
-  AUTHOR_NAME,
-  PERSON_ID,
-  SITE_URL,
-  WEBSITE_ID,
-} from "@/src/site.config"
+import { AUTHOR_NAME, PERSON_ID, SITE_URL, WEBSITE_ID } from "@/src/site.config"
 
 // Profiles linked from /links. These are what tie the Person node to the same
 // identity on other platforms, so keep them in sync with that page.
@@ -46,4 +41,8 @@ const schema = {
 }
 ---
 
-<script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify(schema)}
+/>

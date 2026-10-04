@@ -103,16 +103,14 @@ export const getBlogPostsForFeed = async (): Promise<
     .sort((a, b) => b.date.getTime() - a.date.getTime())
 
 export const groupPostsByYear = (posts: Post[]): { [key: number]: Post[] } => {
-  return posts
-    .sort(byNewestFirst)
-    .reduce(
-      (list, post) => {
-        ;(list[new Date(Date.parse(post.date)).getFullYear()] =
-          list[new Date(Date.parse(post.date)).getFullYear()] || []).push(post)
-        return list
-      },
-      {} as { [key: number]: Post[] }
-    )
+  return posts.sort(byNewestFirst).reduce(
+    (list, post) => {
+      ;(list[new Date(Date.parse(post.date)).getFullYear()] =
+        list[new Date(Date.parse(post.date)).getFullYear()] || []).push(post)
+      return list
+    },
+    {} as { [key: number]: Post[] }
+  )
 }
 
 export const getSortedGroups = (groups: { [key: number]: Post[] }) => {

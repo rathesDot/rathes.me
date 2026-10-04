@@ -8,7 +8,10 @@ const blog = defineCollection({
     date: z.coerce.date(),
     updated: z.coerce.date().optional(),
     // One post leaves the key present but empty, which YAML reads as null.
-    description: z.string().nullish().transform((value) => value ?? undefined),
+    description: z
+      .string()
+      .nullish()
+      .transform((value) => value ?? undefined),
     // Frontmatter stores POSIX-style locales (en_US, de_DE); HTML lang needs
     // BCP-47, so this gets normalised at read time rather than in the content.
     locale: z.string(),

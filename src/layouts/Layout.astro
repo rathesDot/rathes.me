@@ -53,33 +53,29 @@ const navItems = [
             class="absolute inset-0 m-auto size-5 -rotate-90 opacity-0 transition-all duration-200 group-data-open:rotate-0 group-data-open:opacity-100"
           />
         </button>
-        <div
-          class="grid w-full grid-rows-[0fr] overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out group-data-open:grid-rows-[1fr] md:w-auto md:grid-rows-[1fr] md:overflow-visible md:transition-none"
-        >
+        <div class="grid w-full grid-rows-[0fr] overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out group-data-open:grid-rows-[1fr] md:w-auto md:grid-rows-[1fr] md:overflow-visible md:transition-none">
           <ul
             id="nav-links"
             class="flex min-h-0 flex-col md:flex-row md:items-center md:pb-0"
           >
-            {
-              navItems.map((item) => (
-                <li>
-                  <a
-                    href={item.href}
-                    target={item.external ? "_blank" : undefined}
-                    rel={item.external ? "noopener noreferrer" : undefined}
-                    class="flex items-center gap-1.5 px-1 py-2 text-xs font-medium text-neutral-600 antialiased transition-[color,opacity] hover:text-neutral-950 md:inline-flex md:px-3 md:py-4 dark:text-neutral-400 dark:hover:text-neutral-100"
-                  >
-                    {item.label}
-                    {item.external && (
-                      <Icon
-                        name="heroicons:arrow-up-right-16-solid"
-                        class="size-3"
-                      />
-                    )}
-                  </a>
-                </li>
-              ))
-            }
+            {navItems.map((item) => (
+              <li>
+                <a
+                  href={item.href}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
+                  class="flex items-center gap-1.5 px-1 py-2 text-xs font-medium text-neutral-600 antialiased transition-[color,opacity] hover:text-neutral-950 md:inline-flex md:px-3 md:py-4 dark:text-neutral-400 dark:hover:text-neutral-100"
+                >
+                  {item.label}
+                  {item.external && (
+                    <Icon
+                      name="heroicons:arrow-up-right-16-solid"
+                      class="size-3"
+                    />
+                  )}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
@@ -94,9 +90,8 @@ const navItems = [
     <footer class="max-w-lg space-y-12 py-8">
       <SayHi />
       <div class="text-xs text-neutral-600 dark:text-neutral-400">
-        &copy; {new Date().getFullYear()} / <Link href="/links"
-          >@tamizhographer</Link
-        >
+        &copy; {new Date().getFullYear()} /{" "}
+        <Link href="/links">@tamizhographer</Link>
       </div>
     </footer>
   </div>
