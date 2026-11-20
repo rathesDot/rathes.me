@@ -23,4 +23,4 @@ pnpm dev
 
 ## Deployment
 
-This site is deployed on [netlify](https://www.netlify.com/), so whenever code is pushed to `main` in this repository, the changes are deployed continuously. Netlify builds from the repository root; `netlify.toml` holds the build settings and the redirects for URLs the site used to publish.
+This site is deployed on [Cloudflare Pages](https://pages.cloudflare.com/) by the `Deploy to Cloudflare Pages` GitHub Actions workflow: pushes to `main` go to production and pull requests get a preview. Response headers and redirects live in `public/_headers` and `public/_redirects`.
