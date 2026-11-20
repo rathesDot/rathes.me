@@ -2,63 +2,6 @@
   command = "pnpm build"
   publish = "dist"
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    # Every script on the site is either self-hosted (bundled by Astro under
-    # /_astro) or Fathom's analytics beacon -- nothing else needs script-src.
-    # style-src needs 'unsafe-inline' for the single inline @font-face block
-    # Astro's font pipeline emits in <head>; nothing else uses inline styles.
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://cdn.usefathom.com; style-src 'self' 'unsafe-inline'; img-src 'self'; font-src 'self'; connect-src 'self' https://cdn.usefathom.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'"
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-
-# Every URL the site has ever published that no longer has a page behind it.
-# Netlify applies these only when nothing static matches, and resolves each in
-# a single hop -- no redirect ever points at another redirect's source.
-
-[[redirects]]
-  # next-sitemap used to emit a sitemap index pointing here; Google still knows
-  # the URL, so keep it resolving to the single sitemap.
-  from = "/sitemap-0.xml"
-  to = "/sitemap.xml"
-  status = 301
-
-[[redirects]]
-  from = "/reading-list"
-  to = "/reading"
-  status = 301
-
-[[redirects]]
-  from = "/writings"
-  to = "/writing"
-  status = 301
-
-[[redirects]]
-  from = "/photos"
-  to = "/photography"
-  status = 301
-
-[[redirects]]
-  # The only post that ever lived at /blog/{slug} in German.
-  from = "/blog/json-web-token"
-  to = "/de/blog/json-web-token"
-  status = 301
-
-[[redirects]]
-  # The blog moved off /blog/{lang}/{slug} to /blog/{slug} and /de/blog/{slug}.
-  from = "/blog/de/:slug"
-  to = "/de/blog/:slug"
-  status = 301
-
-[[redirects]]
-  from = "/blog/en/:slug"
-  to = "/blog/:slug"
-  status = 301
-
-[[redirects]]
-  from = "/store/calais"
-  to = "https://aheenam.com/templates/calais"
-  status = 301
+# Headers and redirects live in public/_headers and public/_redirects, which
+# both Netlify and Cloudflare Pages read from the publish directory. This file
+# goes away once the site is served from Cloudflare Pages.

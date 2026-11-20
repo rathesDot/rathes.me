@@ -28,6 +28,9 @@ export type Props = {
   author?: string
   // hreflang entries, emitted only for posts that exist in both languages.
   translations?: { language: string; path: string }[]
+  // Keeps the page out of search results and drops its canonical link (the
+  // 404 page, which Cloudflare Pages also serves at /404 with a 200).
+  noindex?: boolean
 }
 
 const {
@@ -43,6 +46,7 @@ const {
   modifiedTime,
   author,
   translations = [],
+  noindex = false,
 } = Astro.props
 
 const description =
@@ -59,7 +63,11 @@ const canonicalUrl = `${SITE_URL}${path}`
 
     <title>{documentTitle ?? `${title} — Rathes Sachchithananthan`}</title>
     {description && <meta name="description" content={description} />}
-    <link rel="canonical" href={canonicalUrl} />
+    {noindex ? (
+      <meta name="robots" content="noindex" />
+    ) : (
+      <link rel="canonical" href={canonicalUrl} />
+    )}
     {translations.map((translation) => (
       <link
         rel="alternate"
