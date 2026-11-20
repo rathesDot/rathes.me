@@ -1,0 +1,20 @@
+# Every URL the site has ever published that no longer has a page behind it
+# (moved from netlify.toml). No source has a page of its own, and each resolves
+# in a single hop -- no redirect ever points at another redirect's source.
+
+# next-sitemap used to emit a sitemap index pointing here; Google still knows
+# the URL, so keep it resolving to the single sitemap.
+/sitemap-0.xml /sitemap.xml 301
+
+/reading-list /reading 301
+/writings /writing 301
+/photos /photography 301
+
+# The only post that ever lived at /blog/{slug} in German.
+/blog/json-web-token /de/blog/json-web-token 301
+
+# The blog moved off /blog/{lang}/{slug} to /blog/{slug} and /de/blog/{slug}.
+/blog/de/:slug /de/blog/:slug 301
+/blog/en/:slug /blog/:slug 301
+
+/store/calais https://aheenam.com/templates/calais 301

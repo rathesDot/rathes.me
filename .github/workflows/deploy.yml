@@ -1,0 +1,44 @@
+# Builds the site and deploys it to the Cloudflare Pages project `rathes-me`
+# (Direct Upload). Push to main = production; pull requests get a preview at
+# <branch>.rathes-me.pages.dev.
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: deploy-${{ github.head_ref || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  deploy:
+    # Fork PRs get no secrets, so there is nothing to deploy.
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@73e46992e05b19abd31f2f3c20e0e7370d762115 # v6.1.1; pnpm version comes from packageManager
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+      - name: Deploy
+        run: >-
+          pnpm dlx wrangler@4.162.0 pages deploy dist
+          --project-name rathes-me
+          --branch "$BRANCH"
+          --commit-hash "$GITHUB_SHA"
+          --commit-message "$(git log -1 --pretty=%s | cut -c1-380)"
+          --commit-dirty=false
+        env:
+          BRANCH: ${{ github.head_ref || github.ref_name }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
