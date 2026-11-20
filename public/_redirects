@@ -18,3 +18,14 @@
 /blog/en/:slug /blog/:slug 301
 
 /store/calais https://aheenam.com/templates/calais 301
+
+# The same sources with a trailing slash: Netlify matched them implicitly,
+# Cloudflare Pages needs them spelled out.
+/sitemap-0.xml/ /sitemap.xml 301
+/reading-list/ /reading 301
+/writings/ /writing 301
+/photos/ /photography 301
+/blog/json-web-token/ /de/blog/json-web-token 301
+/blog/de/:slug/ /de/blog/:slug 301
+/blog/en/:slug/ /blog/:slug 301
+/store/calais/ https://aheenam.com/templates/calais 301
