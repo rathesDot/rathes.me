@@ -1,7 +1,0 @@
-[build]
-  command = "pnpm build"
-  publish = "dist"
-
-# Headers and redirects live in public/_headers and public/_redirects, which
-# both Netlify and Cloudflare Pages read from the publish directory. This file
-# goes away once the site is served from Cloudflare Pages.
